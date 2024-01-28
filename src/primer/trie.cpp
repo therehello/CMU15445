@@ -1,7 +1,9 @@
 #include "primer/trie.h"
+#include <cstddef>
 #include <memory>
 #include <stdexcept>
 #include <string_view>
+#include <utility>
 #include "common/exception.h"
 
 namespace bustub {
@@ -30,8 +32,40 @@ auto Trie::Get(std::string_view key) const -> const T * {
 
 template <class T>
 auto Trie::Put(std::string_view key, T value) const -> Trie {
+  if (key.empty()) {
+    std::shared_ptr<TrieNode> new_trie{nullptr};
+    if (root_) {
+      new_trie = std::make_shared<TrieNodeWithValue<T>>(root_->children_, std::make_shared<T>(std::move(value)));
+    } else {
+      new_trie = std::make_shared<TrieNodeWithValue<T>>(std::make_shared<T>(std::move(value)));
+    }
+    return Trie(new_trie);
+  }
+  auto new_trie = root_ ? root_->Clone() : std::make_shared<TrieNode>();
+  auto curr = new_trie;
+  for (auto &ch : key) {
+    auto i = curr->children_.find(ch);
+    if (i != curr->children_.end()) {
+      if (&ch != &key.back()) {
+        curr = i->second->Clone();
+      } else {
+        curr = std::make_shared<TrieNodeWithValue<T>>(i->second->children_, std::make_shared<T>(std::move(value)));
+      }
+      i->second = curr;
+    } else {
+      std::shared_ptr<TrieNode> new_node{nullptr};
+      if (&ch != &key.back()) {
+        new_node = std::make_shared<TrieNode>();
+      } else {
+        new_node = std::make_shared<TrieNodeWithValue<T>>(std::make_shared<T>(std::move(value)));
+      }
+      curr->children_[ch] = new_node;
+      curr = new_node;
+    }
+  }
+  return Trie(new_trie);
+
   // Note that `T` might be a non-copyable type. Always use `std::move` when creating `shared_ptr` on that value.
-  throw NotImplementedException("Trie::Put is not implemented.");
 
   // You should walk through the trie and create new nodes if necessary. If the node corresponding to the key already
   // exists, you should create a new `TrieNodeWithValue`.
