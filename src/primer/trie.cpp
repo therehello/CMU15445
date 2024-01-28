@@ -11,6 +11,9 @@ namespace bustub {
 
 template <class T>
 auto Trie::Get(std::string_view key) const -> const T * {
+  if (root_ == nullptr) {
+    return nullptr;
+  }
   auto curr = root_;
   for (auto &ch : key) {
     try {
