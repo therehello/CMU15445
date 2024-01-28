@@ -1,4 +1,5 @@
 #include "primer/trie.h"
+#include <cassert>
 #include <cstddef>
 #include <memory>
 #include <stdexcept>
@@ -72,7 +73,41 @@ auto Trie::Put(std::string_view key, T value) const -> Trie {
 }
 
 auto Trie::Remove(std::string_view key) const -> Trie {
-  throw NotImplementedException("Trie::Remove is not implemented.");
+  if (root_ == nullptr) {
+    return *this;
+  }
+  auto new_root = std::shared_ptr<TrieNode>(root_->Clone());
+  if (key.empty()) {
+    if (new_root->children_.empty()) {
+      new_root = nullptr;
+    } else {
+      new_root = std::make_shared<TrieNode>(new_root->children_);
+    }
+    return Trie(move(new_root));
+  }
+  auto curr = new_root;
+  std::vector<std::pair<std::shared_ptr<TrieNode>, char>> nodes;
+  for (auto &ch : key) {
+    auto it = curr->children_.find(ch);
+    if (it == curr->children_.end()) {
+      return Trie(move(new_root));
+    }
+    nodes.emplace_back(curr, ch);
+    curr = it->second->Clone();
+    it->second = curr;
+  }
+  nodes.back().first->children_[nodes.back().second] = std::make_shared<TrieNode>(curr->children_);
+  if (!curr->children_.empty()) {
+    return Trie(move(new_root));
+  }
+  for (auto it = nodes.rbegin(); it != nodes.rend(); it++) {
+    auto &[node, ch] = *it;
+    node->children_.erase(ch);
+    if (node->is_value_node_ || !node->children_.empty()) {
+      return Trie(move(new_root));
+    }
+  }
+  return Trie(nullptr);
 
   // You should walk through the trie and remove nodes if necessary. If the node doesn't contain a value any more,
   // you should convert it to `TrieNode`. If a node doesn't have children any more, you should remove it.
