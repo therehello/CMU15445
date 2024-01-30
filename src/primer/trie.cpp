@@ -52,19 +52,24 @@ auto Trie::Put(std::string_view key, T value) const -> Trie {
     if (i != curr->children_.end()) {
       if (&ch != &key.back()) {
         curr = i->second->Clone();
+        i->second = curr;
       } else {
         curr = std::make_shared<TrieNodeWithValue<T>>(i->second->children_, std::make_shared<T>(std::move(value)));
+        i->second = curr;
+        break;
       }
-      i->second = curr;
     } else {
       std::shared_ptr<TrieNode> new_node{nullptr};
       if (&ch != &key.back()) {
         new_node = std::make_shared<TrieNode>();
+        curr->children_[ch] = new_node;
+        curr = new_node;
       } else {
         new_node = std::make_shared<TrieNodeWithValue<T>>(std::make_shared<T>(std::move(value)));
+        curr->children_[ch] = new_node;
+        curr = new_node;
+        break;
       }
-      curr->children_[ch] = new_node;
-      curr = new_node;
     }
   }
   return Trie(new_trie);
