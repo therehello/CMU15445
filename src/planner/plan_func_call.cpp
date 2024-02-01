@@ -36,6 +36,11 @@ auto Planner::PlanFuncCall(const BoundFuncCall &expr, const std::vector<Abstract
 // NOLINTNEXTLINE
 auto Planner::GetFuncCallFromFactory(const std::string &func_name, std::vector<AbstractExpressionRef> args)
     -> AbstractExpressionRef {
+  if (!((func_name == "lower" || func_name == "upper") && args.size() == 1)) {
+    throw Exception("wow");
+  }
+  auto expr_type = func_name == "lower" ? StringExpressionType::Lower : StringExpressionType::Upper;
+  return std::make_shared<StringExpression>(args[0], expr_type);
   // 1. check if the parsed function name is "lower" or "upper".
   // 2. verify the number of args (should be 1), refer to the test cases for when you should throw an `Exception`.
   // 3. return a `StringExpression` std::shared_ptr.
