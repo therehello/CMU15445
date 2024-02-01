@@ -1,10 +1,22 @@
 #include "primer/trie_store.h"
+#include <mutex>
+#include <optional>
 #include "common/exception.h"
+#include "type/value.h"
 
 namespace bustub {
 
 template <class T>
 auto TrieStore::Get(std::string_view key) -> std::optional<ValueGuard<T>> {
+  root_lock_.lock();
+  auto curr = root_;
+  root_lock_.unlock();
+  auto res = curr.Get<T>(key);
+  if (res == nullptr) {
+    return std::nullopt;
+  }
+  return ValueGuard<T>(std::move(curr), *res);
+
   // Pseudo-code:
   // (1) Take the root lock, get the root, and release the root lock. Don't lookup the value in the
   //     trie while holding the root lock.
@@ -16,12 +28,24 @@ auto TrieStore::Get(std::string_view key) -> std::optional<ValueGuard<T>> {
 
 template <class T>
 void TrieStore::Put(std::string_view key, T value) {
+  std::lock_guard lk(write_lock_);
+  auto new_trie = root_.Put(key, std::move(value));
+  root_lock_.lock();
+  root_ = new_trie;
+  root_lock_.unlock();
+  return;
   // You will need to ensure there is only one writer at a time. Think of how you can achieve this.
   // The logic should be somehow similar to `TrieStore::Get`.
   throw NotImplementedException("TrieStore::Put is not implemented.");
 }
 
 void TrieStore::Remove(std::string_view key) {
+  std::lock_guard lk(write_lock_);
+  auto new_trie = root_.Remove(key);
+  root_lock_.lock();
+  root_ = new_trie;
+  root_lock_.unlock();
+  return;
   // You will need to ensure there is only one writer at a time. Think of how you can achieve this.
   // The logic should be somehow similar to `TrieStore::Get`.
   throw NotImplementedException("TrieStore::Remove is not implemented.");
