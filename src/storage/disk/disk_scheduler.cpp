@@ -43,6 +43,7 @@ void DiskScheduler::ProcessDiskRequest(DiskRequest r) {
   } else {
     disk_manager_->ReadPage(r.page_id_, r.data_);
   }
+  r.callback_.set_value(true);
 }
 
 void DiskScheduler::StartWorkerThread() {
