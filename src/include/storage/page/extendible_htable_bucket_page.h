@@ -68,6 +68,7 @@ class ExtendibleHTableBucketPage {
    */
   auto Lookup(const KeyType &key, ValueType &value, const KeyComparator &cmp) const -> bool;
 
+  auto KeyIndex(const KeyType &key, const KeyComparator &cmp) const -> uint32_t;
   /**
    * Attempts to insert a key and value in the bucket.
    *
@@ -132,7 +133,7 @@ class ExtendibleHTableBucketPage {
   void PrintBucket() const;
 
  private:
-  uint32_t size_;
+  uint32_t size_{};
   uint32_t max_size_;
   MappingType array_[HTableBucketArraySize(sizeof(MappingType))];
 };
