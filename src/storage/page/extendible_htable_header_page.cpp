@@ -15,7 +15,6 @@
 #include <cassert>
 
 #include "common/config.h"
-#include "common/exception.h"
 
 namespace bustub {
 
@@ -25,7 +24,8 @@ void ExtendibleHTableHeaderPage::Init(uint32_t max_depth) {
 }
 
 auto ExtendibleHTableHeaderPage::HashToDirectoryIndex(uint32_t hash) const -> uint32_t {
-  return hash >> (sizeof(uint32_t) * 8 - max_depth_);
+  /**  右移位数大于等于变量的位数时为ub https://zh.cppreference.com/w/cpp/language/operator_arithmetic */
+  return max_depth_ != 0U ? hash >> (32 - max_depth_) : 0;
 }
 
 auto ExtendibleHTableHeaderPage::GetDirectoryPageId(uint32_t directory_idx) const -> uint32_t {
