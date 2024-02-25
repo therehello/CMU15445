@@ -16,7 +16,6 @@
 #include <iostream>
 #include <mutex>  // NOLINT
 #include <string>
-#include <thread>  // NOLINT
 
 #include "common/exception.h"
 #include "common/logger.h"

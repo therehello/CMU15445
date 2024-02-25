@@ -4,14 +4,9 @@
 
 #include "buffer/lru_k_replacer.h"
 
-#include <algorithm>
 #include <cstdio>
-#include <memory>
-#include <random>
-#include <set>
-#include <thread>  // NOLINT
-#include <vector>
 
+#include "common/config.h"
 #include "gtest/gtest.h"
 
 namespace bustub {
@@ -95,4 +90,20 @@ TEST(LRUKReplacerTest, SampleTest) {
   ASSERT_EQ(false, lru_replacer.Evict(&value));
   ASSERT_EQ(0, lru_replacer.Size());
 }
+
+TEST(LRUKReplacerTest, SampleTest2) {
+  LRUKReplacer lru_replacer(7, 2);
+  lru_replacer.RecordAccess(1);
+  lru_replacer.RecordAccess(2);
+  lru_replacer.SetEvictable(1, true);
+  lru_replacer.SetEvictable(2, true);
+  lru_replacer.RecordAccess(2);
+  lru_replacer.RecordAccess(1);
+  lru_replacer.RecordAccess(2);
+  lru_replacer.RecordAccess(1);
+  frame_id_t frame_id;
+  ASSERT_EQ(true, lru_replacer.Evict(&frame_id));
+  ASSERT_EQ(2, frame_id);
+}
+
 }  // namespace bustub
