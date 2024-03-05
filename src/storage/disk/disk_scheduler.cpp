@@ -46,13 +46,10 @@ void DiskScheduler::ProcessDiskRequest(DiskRequest r) {
 }
 
 void DiskScheduler::StartWorkerThread() {
-  std::vector<std::thread> threads;
   std::optional<DiskRequest> r;
   while ((r = request_queue_.Get())) {
-    threads.emplace_back(&DiskScheduler::ProcessDiskRequest, this, std::move(r.value()));
-  }
-  for (auto &thr : threads) {
-    thr.join();
+    std::thread t(&DiskScheduler::ProcessDiskRequest, this, std::move(r.value()));
+    t.join();
   }
 }
 
