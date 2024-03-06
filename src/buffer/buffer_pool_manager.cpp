@@ -71,9 +71,10 @@ auto BufferPoolManager::FetchPage(page_id_t page_id, [[maybe_unused]] AccessType
   std::lock_guard lock_latch(latch_);
   auto p = page_table_.find(page_id);
   if (p != page_table_.end()) {
-    Page *page = pages_ + p->second;
-    replacer_->RecordAccess(p->second);
-    replacer_->SetEvictable(p->second, false);
+    auto frame_id = p->second;
+    auto page = pages_ + frame_id;
+    replacer_->RecordAccess(frame_id);
+    replacer_->SetEvictable(frame_id, false);
     page->pin_count_++;
     return page;
   }
@@ -94,6 +95,7 @@ auto BufferPoolManager::FetchPage(page_id_t page_id, [[maybe_unused]] AccessType
     future.get();
     page->is_dirty_ = false;
   }
+  page_table_.erase(page->GetPageId());
   page_table_[page_id] = frame_id;
   page->page_id_ = page_id;
   page->pin_count_ = 1;
@@ -102,7 +104,7 @@ auto BufferPoolManager::FetchPage(page_id_t page_id, [[maybe_unused]] AccessType
   replacer_->SetEvictable(frame_id, false);
   auto promise = disk_scheduler_->CreatePromise();
   auto future = promise.get_future();
-  disk_scheduler_->Schedule({false, page->GetData(), page->GetPageId(), std::move(promise)});
+  disk_scheduler_->Schedule({false, page->GetData(), page_id, std::move(promise)});
   future.get();
   return page;
 }
@@ -129,7 +131,7 @@ auto BufferPoolManager::UnpinPage(page_id_t page_id, bool is_dirty, [[maybe_unus
 }
 
 auto BufferPoolManager::FlushPage(page_id_t page_id) -> bool {
-  if (page_id != INVALID_PAGE_ID) {
+  if (page_id == INVALID_PAGE_ID) {
     return false;
   }
   std::lock_guard lock_latch(latch_);
@@ -173,13 +175,19 @@ auto BufferPoolManager::DeletePage(page_id_t page_id) -> bool {
   if (page->GetPinCount() > 0) {
     return false;
   }
+  if (page->IsDirty()) {
+    auto promise = disk_scheduler_->CreatePromise();
+    auto future = promise.get_future();
+    disk_scheduler_->Schedule({true, page->GetData(), page->GetPageId(), std::move(promise)});
+    future.get();
+    page->is_dirty_ = false;
+  }
   page_table_.erase(p);
   free_list_.push_back(frame_id);
   replacer_->Remove(frame_id);
   page->ResetMemory();
   page->page_id_ = INVALID_PAGE_ID;
-  page->is_dirty_ = false;
-  DeallocatePage(frame_id);
+  DeallocatePage(page_id);
   return true;
 }
 
