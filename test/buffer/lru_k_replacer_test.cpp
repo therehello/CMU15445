@@ -99,8 +99,8 @@ TEST(LRUKReplacerTest, SampleTest2) {
   lru_replacer.SetEvictable(2, true);
   lru_replacer.RecordAccess(2);
   lru_replacer.RecordAccess(1);
-  lru_replacer.RecordAccess(2);
   lru_replacer.RecordAccess(1);
+  lru_replacer.RecordAccess(2);
   frame_id_t frame_id;
   ASSERT_EQ(true, lru_replacer.Evict(&frame_id));
   ASSERT_EQ(2, frame_id);
