@@ -12,10 +12,12 @@
 
 #pragma once
 
+#include <condition_variable>
 #include <list>
 #include <memory>
 #include <mutex>  // NOLINT
 #include <unordered_map>
+#include <vector>
 
 #include "buffer/lru_k_replacer.h"
 #include "common/config.h"
@@ -193,6 +195,13 @@ class BufferPoolManager {
   /** This latch protects shared data structures. We recommend updating this comment to describe what it protects. */
   std::mutex latch_;
 
+  /** 控制是否已经读取好数据 */
+  std::vector<bool> avaliable_;
+  std::vector<std::condition_variable> cond_;
+
+  void WritePage(frame_id_t frame_id);
+
+  void ReadPage(frame_id_t frame_id);
   /**
    * @brief Allocate a page on disk. Caller should acquire the latch before calling this function.
    * @return the id of the allocated page

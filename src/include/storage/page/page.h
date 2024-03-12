@@ -13,7 +13,6 @@
 #pragma once
 
 #include <cstring>
-#include <iostream>
 
 #include "common/config.h"
 #include "common/rwlatch.h"
