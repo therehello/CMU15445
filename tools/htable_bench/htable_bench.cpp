@@ -1,9 +1,7 @@
-#include <chrono>
 #include <iostream>
 #include <memory>
 #include <mutex>  // NOLINT
 #include <random>
-#include <sstream>
 #include <string>
 #include <thread>
 #include <vector>
@@ -11,15 +9,11 @@
 #include <cpp_random_distributions/zipfian_int_distribution.h>
 
 #include "argparse/argparse.hpp"
-#include "binder/binder.h"
 #include "buffer/buffer_pool_manager.h"
 #include "buffer/lru_k_replacer.h"
 #include "common/config.h"
-#include "common/exception.h"
 #include "common/rid.h"
-#include "common/util/string_util.h"
 #include "container/disk/hash/disk_extendible_hash_table.h"
-#include "fmt/format.h"
 #include "storage/disk/disk_manager_memory.h"
 #include "storage/index/generic_key.h"
 #include "test_util.h"
