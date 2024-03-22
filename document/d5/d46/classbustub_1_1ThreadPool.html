@@ -1,0 +1,321 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>数据库系统 CMU15-445/645: bustub::ThreadPool类 参考</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/searchdata.js"></script>
+<script type="text/javascript" src="../../search/search.js"></script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">数据库系统 CMU15-445/645<span id="projectnumber">&#160;1.0.0</span>
+   </div>
+   <div id="projectbrief">CMU15-445/645 是基于现代 C++ 开发的支持并发操作的简单 SQL 操作的单机数据库</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.9.8 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "../../search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('../../',true,false,'search.php','搜索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="../../de/dda/namespacebustub.html">bustub</a></li><li class="navelem"><a class="el" href="../../d5/d46/classbustub_1_1ThreadPool.html">ThreadPool</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Public 成员函数</a> &#124;
+<a href="#pri-attribs">Private 属性</a> &#124;
+<a href="../../d6/ddc/classbustub_1_1ThreadPool-members.html">所有成员列表</a>  </div>
+  <div class="headertitle"><div class="title">bustub::ThreadPool类 参考</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p><code>#include &lt;<a class="el" href="../../d1/df2/disk__scheduler_8h_source.html">disk_scheduler.h</a>&gt;</code></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Public 成员函数</h2></td></tr>
+<tr class="memitem:a2549a2ab5556937d075c9ee9c54b90e2" id="r_a2549a2ab5556937d075c9ee9c54b90e2"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d46/classbustub_1_1ThreadPool.html#a2549a2ab5556937d075c9ee9c54b90e2">ThreadPool</a> (size_t threads)</td></tr>
+<tr class="separator:a2549a2ab5556937d075c9ee9c54b90e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5d653708eb8fb13cb01e1283ba9f63c1" id="r_a5d653708eb8fb13cb01e1283ba9f63c1"><td class="memTemplParams" colspan="2">template&lt;typename F , typename... Args, typename return_t  = std::invoke_result_t&lt;F, Args...&gt;&gt; </td></tr>
+<tr class="memitem:a5d653708eb8fb13cb01e1283ba9f63c1"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d5/d46/classbustub_1_1ThreadPool.html#a5d653708eb8fb13cb01e1283ba9f63c1">Submit</a> (F &amp;&amp;f, Args &amp;&amp;...args) -&gt; std::future&lt; return_t &gt;</td></tr>
+<tr class="separator:a5d653708eb8fb13cb01e1283ba9f63c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ada21ab8eaa4b5dd4afda24fefddd5e7c" id="r_ada21ab8eaa4b5dd4afda24fefddd5e7c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d46/classbustub_1_1ThreadPool.html#ada21ab8eaa4b5dd4afda24fefddd5e7c">~ThreadPool</a> ()</td></tr>
+<tr class="separator:ada21ab8eaa4b5dd4afda24fefddd5e7c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
+Private 属性</h2></td></tr>
+<tr class="memitem:a7bd703835872b018ea766435560a8e32" id="r_a7bd703835872b018ea766435560a8e32"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::thread &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d46/classbustub_1_1ThreadPool.html#a7bd703835872b018ea766435560a8e32">workers_</a></td></tr>
+<tr class="separator:a7bd703835872b018ea766435560a8e32"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a15f6031b1ceaf0638b49b75cbbd5a298" id="r_a15f6031b1ceaf0638b49b75cbbd5a298"><td class="memItemLeft" align="right" valign="top">std::queue&lt; std::function&lt; void()&gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d46/classbustub_1_1ThreadPool.html#a15f6031b1ceaf0638b49b75cbbd5a298">tasks_</a></td></tr>
+<tr class="separator:a15f6031b1ceaf0638b49b75cbbd5a298"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeff80833551b10cfe5176c87185c0d85" id="r_aeff80833551b10cfe5176c87185c0d85"><td class="memItemLeft" align="right" valign="top">std::mutex&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d46/classbustub_1_1ThreadPool.html#aeff80833551b10cfe5176c87185c0d85">queue_mutex_</a></td></tr>
+<tr class="separator:aeff80833551b10cfe5176c87185c0d85"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1b5ef05f472e233046b007a980266f4a" id="r_a1b5ef05f472e233046b007a980266f4a"><td class="memItemLeft" align="right" valign="top">std::condition_variable&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d46/classbustub_1_1ThreadPool.html#a1b5ef05f472e233046b007a980266f4a">condition_</a></td></tr>
+<tr class="separator:a1b5ef05f472e233046b007a980266f4a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa0e66f5ad6de3a31767e4abd354d78b4" id="r_aa0e66f5ad6de3a31767e4abd354d78b4"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d46/classbustub_1_1ThreadPool.html#aa0e66f5ad6de3a31767e4abd354d78b4">stop_</a> {}</td></tr>
+<tr class="separator:aa0e66f5ad6de3a31767e4abd354d78b4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">构造及析构函数说明</h2>
+<a id="a2549a2ab5556937d075c9ee9c54b90e2" name="a2549a2ab5556937d075c9ee9c54b90e2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2549a2ab5556937d075c9ee9c54b90e2">&#9670;&#160;</a></span>ThreadPool()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bustub::ThreadPool::ThreadPool </td>
+          <td>(</td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>threads</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">explicit</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ada21ab8eaa4b5dd4afda24fefddd5e7c" name="ada21ab8eaa4b5dd4afda24fefddd5e7c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ada21ab8eaa4b5dd4afda24fefddd5e7c">&#9670;&#160;</a></span>~ThreadPool()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bustub::ThreadPool::~ThreadPool </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">成员函数说明</h2>
+<a id="a5d653708eb8fb13cb01e1283ba9f63c1" name="a5d653708eb8fb13cb01e1283ba9f63c1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5d653708eb8fb13cb01e1283ba9f63c1">&#9670;&#160;</a></span>Submit()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename F , typename... Args, typename return_t  = std::invoke_result_t&lt;F, Args...&gt;&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto bustub::ThreadPool::Submit </td>
+          <td>(</td>
+          <td class="paramtype">F &amp;&amp;&#160;</td>
+          <td class="paramname"><em>f</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Args &amp;&amp;...&#160;</td>
+          <td class="paramname"><em>args</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> -&gt; std::future&lt;return_t&gt; </td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">类成员变量说明</h2>
+<a id="a1b5ef05f472e233046b007a980266f4a" name="a1b5ef05f472e233046b007a980266f4a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1b5ef05f472e233046b007a980266f4a">&#9670;&#160;</a></span>condition_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::condition_variable bustub::ThreadPool::condition_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aeff80833551b10cfe5176c87185c0d85" name="aeff80833551b10cfe5176c87185c0d85"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aeff80833551b10cfe5176c87185c0d85">&#9670;&#160;</a></span>queue_mutex_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::mutex bustub::ThreadPool::queue_mutex_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aa0e66f5ad6de3a31767e4abd354d78b4" name="aa0e66f5ad6de3a31767e4abd354d78b4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa0e66f5ad6de3a31767e4abd354d78b4">&#9670;&#160;</a></span>stop_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool bustub::ThreadPool::stop_ {}</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a15f6031b1ceaf0638b49b75cbbd5a298" name="a15f6031b1ceaf0638b49b75cbbd5a298"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a15f6031b1ceaf0638b49b75cbbd5a298">&#9670;&#160;</a></span>tasks_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::queue&lt;std::function&lt;void()&gt; &gt; bustub::ThreadPool::tasks_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a7bd703835872b018ea766435560a8e32" name="a7bd703835872b018ea766435560a8e32"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7bd703835872b018ea766435560a8e32">&#9670;&#160;</a></span>workers_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt;std::thread&gt; bustub::ThreadPool::workers_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<hr/>该类的文档由以下文件生成:<ul>
+<li>src/include/storage/disk/<a class="el" href="../../d1/df2/disk__scheduler_8h_source.html">disk_scheduler.h</a></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
+</small></address>
+</body>
+</html>

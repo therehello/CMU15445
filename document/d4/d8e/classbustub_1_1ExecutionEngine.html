@@ -1,0 +1,400 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>数据库系统 CMU15-445/645: bustub::ExecutionEngine类 参考</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/searchdata.js"></script>
+<script type="text/javascript" src="../../search/search.js"></script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">数据库系统 CMU15-445/645<span id="projectnumber">&#160;1.0.0</span>
+   </div>
+   <div id="projectbrief">CMU15-445/645 是基于现代 C++ 开发的支持并发操作的简单 SQL 操作的单机数据库</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.9.8 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "../../search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('../../',true,false,'search.php','搜索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="../../de/dda/namespacebustub.html">bustub</a></li><li class="navelem"><a class="el" href="../../d4/d8e/classbustub_1_1ExecutionEngine.html">ExecutionEngine</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Public 成员函数</a> &#124;
+<a href="#pri-static-methods">静态 Private 成员函数</a> &#124;
+<a href="#pri-attribs">Private 属性</a> &#124;
+<a href="../../d6/d11/classbustub_1_1ExecutionEngine-members.html">所有成员列表</a>  </div>
+  <div class="headertitle"><div class="title">bustub::ExecutionEngine类 参考</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p><code>#include &lt;<a class="el" href="../../d1/d8d/execution__engine_8h_source.html">execution_engine.h</a>&gt;</code></p>
+<div class="dynheader">
+bustub::ExecutionEngine 的协作图:</div>
+<div class="dyncontent">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d6/d20/classbustub_1_1ExecutionEngine__coll__graph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<center><span class="legend">[<a href="../../graph_legend.html">图例</a>]</span></center></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Public 成员函数</h2></td></tr>
+<tr class="memitem:aeb72ee9b98d3c1ee36ef5122218e4eab" id="r_aeb72ee9b98d3c1ee36ef5122218e4eab"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d8e/classbustub_1_1ExecutionEngine.html#aeb72ee9b98d3c1ee36ef5122218e4eab">ExecutionEngine</a> (<a class="el" href="../../d6/d5d/classbustub_1_1BufferPoolManager.html">BufferPoolManager</a> *bpm, <a class="el" href="../../dc/ddc/classbustub_1_1TransactionManager.html">TransactionManager</a> *txn_mgr, <a class="el" href="../../d7/ddd/classbustub_1_1Catalog.html">Catalog</a> *catalog)</td></tr>
+<tr class="separator:aeb72ee9b98d3c1ee36ef5122218e4eab"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a16fa8f9b9220a0ff60245b41e4ba1f07" id="r_a16fa8f9b9220a0ff60245b41e4ba1f07"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d8e/classbustub_1_1ExecutionEngine.html#a16fa8f9b9220a0ff60245b41e4ba1f07">DISALLOW_COPY_AND_MOVE</a> (<a class="el" href="../../d4/d8e/classbustub_1_1ExecutionEngine.html">ExecutionEngine</a>)</td></tr>
+<tr class="separator:a16fa8f9b9220a0ff60245b41e4ba1f07"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab3974c43d4094fcd8966445f0325a7ab" id="r_ab3974c43d4094fcd8966445f0325a7ab"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d8e/classbustub_1_1ExecutionEngine.html#ab3974c43d4094fcd8966445f0325a7ab">Execute</a> (const <a class="el" href="../../de/dda/namespacebustub.html#a354095e050bd1915a499a31c062c7303">AbstractPlanNodeRef</a> &amp;plan, std::vector&lt; <a class="el" href="../../d0/ded/classbustub_1_1Tuple.html">Tuple</a> &gt; *result_set, <a class="el" href="../../db/d88/classbustub_1_1Transaction.html">Transaction</a> *txn, <a class="el" href="../../dd/d02/classbustub_1_1ExecutorContext.html">ExecutorContext</a> *exec_ctx) -&gt; bool</td></tr>
+<tr class="separator:ab3974c43d4094fcd8966445f0325a7ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a520059cf85e0188d063cc1de1a1582b5" id="r_a520059cf85e0188d063cc1de1a1582b5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d8e/classbustub_1_1ExecutionEngine.html#a520059cf85e0188d063cc1de1a1582b5">PerformChecks</a> (<a class="el" href="../../dd/d02/classbustub_1_1ExecutorContext.html">ExecutorContext</a> *exec_ctx)</td></tr>
+<tr class="separator:a520059cf85e0188d063cc1de1a1582b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-static-methods" name="pri-static-methods"></a>
+静态 Private 成员函数</h2></td></tr>
+<tr class="memitem:a156e65d5cbad416bbca723a0929874d3" id="r_a156e65d5cbad416bbca723a0929874d3"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d8e/classbustub_1_1ExecutionEngine.html#a156e65d5cbad416bbca723a0929874d3">PollExecutor</a> (<a class="el" href="../../d2/d28/classbustub_1_1AbstractExecutor.html">AbstractExecutor</a> *executor, const <a class="el" href="../../de/dda/namespacebustub.html#a354095e050bd1915a499a31c062c7303">AbstractPlanNodeRef</a> &amp;plan, std::vector&lt; <a class="el" href="../../d0/ded/classbustub_1_1Tuple.html">Tuple</a> &gt; *result_set)</td></tr>
+<tr class="separator:a156e65d5cbad416bbca723a0929874d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
+Private 属性</h2></td></tr>
+<tr class="memitem:aca4c9b1330e973b9c5d9cf12623bf162" id="r_aca4c9b1330e973b9c5d9cf12623bf162"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d6/d5d/classbustub_1_1BufferPoolManager.html">BufferPoolManager</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d8e/classbustub_1_1ExecutionEngine.html#aca4c9b1330e973b9c5d9cf12623bf162">bpm_</a></td></tr>
+<tr class="separator:aca4c9b1330e973b9c5d9cf12623bf162"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa63eb8b37c9c05a93bd8bc16f7019148" id="r_aa63eb8b37c9c05a93bd8bc16f7019148"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../dc/ddc/classbustub_1_1TransactionManager.html">TransactionManager</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d8e/classbustub_1_1ExecutionEngine.html#aa63eb8b37c9c05a93bd8bc16f7019148">txn_mgr_</a></td></tr>
+<tr class="separator:aa63eb8b37c9c05a93bd8bc16f7019148"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a425e4a7ee4ec8b756d56cb7f4fbb4de7" id="r_a425e4a7ee4ec8b756d56cb7f4fbb4de7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d7/ddd/classbustub_1_1Catalog.html">Catalog</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d8e/classbustub_1_1ExecutionEngine.html#a425e4a7ee4ec8b756d56cb7f4fbb4de7">catalog_</a></td></tr>
+<tr class="separator:a425e4a7ee4ec8b756d56cb7f4fbb4de7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
+<div class="textblock"><p>The <a class="el" href="../../d4/d8e/classbustub_1_1ExecutionEngine.html">ExecutionEngine</a> class executes query plans. </p>
+</div><h2 class="groupheader">构造及析构函数说明</h2>
+<a id="aeb72ee9b98d3c1ee36ef5122218e4eab" name="aeb72ee9b98d3c1ee36ef5122218e4eab"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aeb72ee9b98d3c1ee36ef5122218e4eab">&#9670;&#160;</a></span>ExecutionEngine()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bustub::ExecutionEngine::ExecutionEngine </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../d6/d5d/classbustub_1_1BufferPoolManager.html">BufferPoolManager</a> *&#160;</td>
+          <td class="paramname"><em>bpm</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="../../dc/ddc/classbustub_1_1TransactionManager.html">TransactionManager</a> *&#160;</td>
+          <td class="paramname"><em>txn_mgr</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="../../d7/ddd/classbustub_1_1Catalog.html">Catalog</a> *&#160;</td>
+          <td class="paramname"><em>catalog</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Construct a new <a class="el" href="../../d4/d8e/classbustub_1_1ExecutionEngine.html">ExecutionEngine</a> instance. </p><dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">bpm</td><td>The buffer pool manager used by the execution engine </td></tr>
+    <tr><td class="paramname">txn_mgr</td><td>The transaction manager used by the execution engine </td></tr>
+    <tr><td class="paramname">catalog</td><td>The catalog used by the execution engine </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<h2 class="groupheader">成员函数说明</h2>
+<a id="a16fa8f9b9220a0ff60245b41e4ba1f07" name="a16fa8f9b9220a0ff60245b41e4ba1f07"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a16fa8f9b9220a0ff60245b41e4ba1f07">&#9670;&#160;</a></span>DISALLOW_COPY_AND_MOVE()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bustub::ExecutionEngine::DISALLOW_COPY_AND_MOVE </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../d4/d8e/classbustub_1_1ExecutionEngine.html">ExecutionEngine</a>&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ab3974c43d4094fcd8966445f0325a7ab" name="ab3974c43d4094fcd8966445f0325a7ab"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab3974c43d4094fcd8966445f0325a7ab">&#9670;&#160;</a></span>Execute()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto bustub::ExecutionEngine::Execute </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="../../de/dda/namespacebustub.html#a354095e050bd1915a499a31c062c7303">AbstractPlanNodeRef</a> &amp;&#160;</td>
+          <td class="paramname"><em>plan</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::vector&lt; <a class="el" href="../../d0/ded/classbustub_1_1Tuple.html">Tuple</a> &gt; *&#160;</td>
+          <td class="paramname"><em>result_set</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="../../db/d88/classbustub_1_1Transaction.html">Transaction</a> *&#160;</td>
+          <td class="paramname"><em>txn</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="../../dd/d02/classbustub_1_1ExecutorContext.html">ExecutorContext</a> *&#160;</td>
+          <td class="paramname"><em>exec_ctx</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> -&gt; bool </td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Execute a query plan. </p><dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">plan</td><td>The query plan to execute </td></tr>
+    <tr><td class="paramname">result_set</td><td>The set of tuples produced by executing the plan </td></tr>
+    <tr><td class="paramname">txn</td><td>The transaction context in which the query executes </td></tr>
+    <tr><td class="paramname">exec_ctx</td><td>The executor context in which the query executes </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd><code>true</code> if execution of the query plan succeeds, <code>false</code> otherwise </dd></dl>
+
+</div>
+</div>
+<a id="a520059cf85e0188d063cc1de1a1582b5" name="a520059cf85e0188d063cc1de1a1582b5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a520059cf85e0188d063cc1de1a1582b5">&#9670;&#160;</a></span>PerformChecks()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void bustub::ExecutionEngine::PerformChecks </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../dd/d02/classbustub_1_1ExecutorContext.html">ExecutorContext</a> *&#160;</td>
+          <td class="paramname"><em>exec_ctx</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a156e65d5cbad416bbca723a0929874d3" name="a156e65d5cbad416bbca723a0929874d3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a156e65d5cbad416bbca723a0929874d3">&#9670;&#160;</a></span>PollExecutor()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void bustub::ExecutionEngine::PollExecutor </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../d2/d28/classbustub_1_1AbstractExecutor.html">AbstractExecutor</a> *&#160;</td>
+          <td class="paramname"><em>executor</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="../../de/dda/namespacebustub.html#a354095e050bd1915a499a31c062c7303">AbstractPlanNodeRef</a> &amp;&#160;</td>
+          <td class="paramname"><em>plan</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::vector&lt; <a class="el" href="../../d0/ded/classbustub_1_1Tuple.html">Tuple</a> &gt; *&#160;</td>
+          <td class="paramname"><em>result_set</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Poll the executor until exhausted, or exception escapes. </p><dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">executor</td><td>The root executor </td></tr>
+    <tr><td class="paramname">plan</td><td>The plan to execute </td></tr>
+    <tr><td class="paramname">result_set</td><td>The tuple result set </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<h2 class="groupheader">类成员变量说明</h2>
+<a id="aca4c9b1330e973b9c5d9cf12623bf162" name="aca4c9b1330e973b9c5d9cf12623bf162"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aca4c9b1330e973b9c5d9cf12623bf162">&#9670;&#160;</a></span>bpm_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d6/d5d/classbustub_1_1BufferPoolManager.html">BufferPoolManager</a>* bustub::ExecutionEngine::bpm_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a425e4a7ee4ec8b756d56cb7f4fbb4de7" name="a425e4a7ee4ec8b756d56cb7f4fbb4de7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a425e4a7ee4ec8b756d56cb7f4fbb4de7">&#9670;&#160;</a></span>catalog_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d7/ddd/classbustub_1_1Catalog.html">Catalog</a>* bustub::ExecutionEngine::catalog_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aa63eb8b37c9c05a93bd8bc16f7019148" name="aa63eb8b37c9c05a93bd8bc16f7019148"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa63eb8b37c9c05a93bd8bc16f7019148">&#9670;&#160;</a></span>txn_mgr_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../dc/ddc/classbustub_1_1TransactionManager.html">TransactionManager</a>* bustub::ExecutionEngine::txn_mgr_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<hr/>该类的文档由以下文件生成:<ul>
+<li>src/include/execution/<a class="el" href="../../d1/d8d/execution__engine_8h_source.html">execution_engine.h</a></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
+</small></address>
+</body>
+</html>

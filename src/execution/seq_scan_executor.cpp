@@ -17,9 +17,9 @@
 namespace bustub {
 
 SeqScanExecutor::SeqScanExecutor(ExecutorContext *exec_ctx, const SeqScanPlanNode *plan)
-    : AbstractExecutor(exec_ctx), plan_(plan), table_info(exec_ctx->GetCatalog()->GetTable(plan_->GetTableOid())) {}
+    : AbstractExecutor(exec_ctx), plan_(plan), table_info_(exec_ctx->GetCatalog()->GetTable(plan_->GetTableOid())) {}
 
-void SeqScanExecutor::Init() { iter_ = std::make_unique<TableIterator>(table_info->table_->MakeIterator()); }
+void SeqScanExecutor::Init() { iter_ = std::make_unique<TableIterator>(table_info_->table_->MakeIterator()); }
 
 auto SeqScanExecutor::Next(Tuple *tuple, RID *rid) -> bool {
   for (; !iter_->IsEnd(); ++(*iter_)) {
@@ -30,7 +30,7 @@ auto SeqScanExecutor::Next(Tuple *tuple, RID *rid) -> bool {
     *tuple = _tuple;
     *rid = iter_->GetRID();
     if (plan_->filter_predicate_) {
-      if (!plan_->filter_predicate_->Evaluate(tuple, table_info->schema_).GetAs<bool>()) {
+      if (!plan_->filter_predicate_->Evaluate(tuple, table_info_->schema_).GetAs<bool>()) {
         continue;
       }
     }

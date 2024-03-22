@@ -1,0 +1,576 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>数据库系统 CMU15-445/645: bustub::Schema类 参考</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/searchdata.js"></script>
+<script type="text/javascript" src="../../search/search.js"></script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">数据库系统 CMU15-445/645<span id="projectnumber">&#160;1.0.0</span>
+   </div>
+   <div id="projectbrief">CMU15-445/645 是基于现代 C++ 开发的支持并发操作的简单 SQL 操作的单机数据库</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.9.8 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "../../search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('../../',true,false,'search.php','搜索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="../../de/dda/namespacebustub.html">bustub</a></li><li class="navelem"><a class="el" href="../../da/d36/classbustub_1_1Schema.html">Schema</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Public 成员函数</a> &#124;
+<a href="#pub-static-methods">静态 Public 成员函数</a> &#124;
+<a href="#pri-attribs">Private 属性</a> &#124;
+<a href="../../d2/de7/classbustub_1_1Schema-members.html">所有成员列表</a>  </div>
+  <div class="headertitle"><div class="title">bustub::Schema类 参考</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p><code>#include &lt;<a class="el" href="../../d7/de3/schema_8h_source.html">schema.h</a>&gt;</code></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Public 成员函数</h2></td></tr>
+<tr class="memitem:a19f218ba430d407d31665c2f2e60e621" id="r_a19f218ba430d407d31665c2f2e60e621"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d36/classbustub_1_1Schema.html#a19f218ba430d407d31665c2f2e60e621">Schema</a> (const std::vector&lt; <a class="el" href="../../db/d7f/classbustub_1_1Column.html">Column</a> &gt; &amp;columns)</td></tr>
+<tr class="separator:a19f218ba430d407d31665c2f2e60e621"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6d0bde8fda3135aa4206845a1817578a" id="r_a6d0bde8fda3135aa4206845a1817578a"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d36/classbustub_1_1Schema.html#a6d0bde8fda3135aa4206845a1817578a">GetColumns</a> () const -&gt; const std::vector&lt; <a class="el" href="../../db/d7f/classbustub_1_1Column.html">Column</a> &gt; &amp;</td></tr>
+<tr class="separator:a6d0bde8fda3135aa4206845a1817578a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a323376fa5c13c0d2aab1e80079da7bd8" id="r_a323376fa5c13c0d2aab1e80079da7bd8"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d36/classbustub_1_1Schema.html#a323376fa5c13c0d2aab1e80079da7bd8">GetColumn</a> (const uint32_t col_idx) const -&gt; const <a class="el" href="../../db/d7f/classbustub_1_1Column.html">Column</a> &amp;</td></tr>
+<tr class="separator:a323376fa5c13c0d2aab1e80079da7bd8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aee899d889d48109814fe56cfac94f71e" id="r_aee899d889d48109814fe56cfac94f71e"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d36/classbustub_1_1Schema.html#aee899d889d48109814fe56cfac94f71e">GetColIdx</a> (const std::string &amp;col_name) const -&gt; uint32_t</td></tr>
+<tr class="separator:aee899d889d48109814fe56cfac94f71e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a709fb72a33fa2aad977b5362e84a8e59" id="r_a709fb72a33fa2aad977b5362e84a8e59"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d36/classbustub_1_1Schema.html#a709fb72a33fa2aad977b5362e84a8e59">TryGetColIdx</a> (const std::string &amp;col_name) const -&gt; std::optional&lt; uint32_t &gt;</td></tr>
+<tr class="separator:a709fb72a33fa2aad977b5362e84a8e59"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad6a14eca89f654fb047ed90bb3059097" id="r_ad6a14eca89f654fb047ed90bb3059097"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d36/classbustub_1_1Schema.html#ad6a14eca89f654fb047ed90bb3059097">GetUnlinedColumns</a> () const -&gt; const std::vector&lt; uint32_t &gt; &amp;</td></tr>
+<tr class="separator:ad6a14eca89f654fb047ed90bb3059097"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8efc3d3d9c8076ddf31fbdb25a1f9746" id="r_a8efc3d3d9c8076ddf31fbdb25a1f9746"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d36/classbustub_1_1Schema.html#a8efc3d3d9c8076ddf31fbdb25a1f9746">GetColumnCount</a> () const -&gt; uint32_t</td></tr>
+<tr class="separator:a8efc3d3d9c8076ddf31fbdb25a1f9746"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a17da479c72408cff5fc74f482c78aac1" id="r_a17da479c72408cff5fc74f482c78aac1"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d36/classbustub_1_1Schema.html#a17da479c72408cff5fc74f482c78aac1">GetUnlinedColumnCount</a> () const -&gt; uint32_t</td></tr>
+<tr class="separator:a17da479c72408cff5fc74f482c78aac1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8c0385ca396e34209acac5ae4b46a0c4" id="r_a8c0385ca396e34209acac5ae4b46a0c4"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d36/classbustub_1_1Schema.html#a8c0385ca396e34209acac5ae4b46a0c4">GetLength</a> () const -&gt; uint32_t</td></tr>
+<tr class="separator:a8c0385ca396e34209acac5ae4b46a0c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a63e0a5d7447ed20426d4f74c865893b9" id="r_a63e0a5d7447ed20426d4f74c865893b9"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d36/classbustub_1_1Schema.html#a63e0a5d7447ed20426d4f74c865893b9">IsInlined</a> () const -&gt; bool</td></tr>
+<tr class="separator:a63e0a5d7447ed20426d4f74c865893b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a500c5cd930c2b87c99dfe16fbf136bec" id="r_a500c5cd930c2b87c99dfe16fbf136bec"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d36/classbustub_1_1Schema.html#a500c5cd930c2b87c99dfe16fbf136bec">ToString</a> (bool simplified=true) const -&gt; std::string</td></tr>
+<tr class="separator:a500c5cd930c2b87c99dfe16fbf136bec"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
+静态 Public 成员函数</h2></td></tr>
+<tr class="memitem:a6046d5871da1d03a3f6dd505180863d0" id="r_a6046d5871da1d03a3f6dd505180863d0"><td class="memItemLeft" align="right" valign="top">static auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d36/classbustub_1_1Schema.html#a6046d5871da1d03a3f6dd505180863d0">CopySchema</a> (const <a class="el" href="../../da/d36/classbustub_1_1Schema.html">Schema</a> *from, const std::vector&lt; uint32_t &gt; &amp;attrs) -&gt; <a class="el" href="../../da/d36/classbustub_1_1Schema.html">Schema</a></td></tr>
+<tr class="separator:a6046d5871da1d03a3f6dd505180863d0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
+Private 属性</h2></td></tr>
+<tr class="memitem:aaae0ca26f5660b26ecbcfab34d14aedb" id="r_aaae0ca26f5660b26ecbcfab34d14aedb"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d36/classbustub_1_1Schema.html#aaae0ca26f5660b26ecbcfab34d14aedb">length_</a></td></tr>
+<tr class="separator:aaae0ca26f5660b26ecbcfab34d14aedb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a09bfb5258f1f0cfd46b3aac4f427f7c9" id="r_a09bfb5258f1f0cfd46b3aac4f427f7c9"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="../../db/d7f/classbustub_1_1Column.html">Column</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d36/classbustub_1_1Schema.html#a09bfb5258f1f0cfd46b3aac4f427f7c9">columns_</a></td></tr>
+<tr class="separator:a09bfb5258f1f0cfd46b3aac4f427f7c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5a3064005743da1f53aa262825cce4bb" id="r_a5a3064005743da1f53aa262825cce4bb"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d36/classbustub_1_1Schema.html#a5a3064005743da1f53aa262825cce4bb">tuple_is_inlined_</a> {true}</td></tr>
+<tr class="separator:a5a3064005743da1f53aa262825cce4bb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a54d04e58c91920dd984ef57bfc2b4814" id="r_a54d04e58c91920dd984ef57bfc2b4814"><td class="memItemLeft" align="right" valign="top">std::vector&lt; uint32_t &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d36/classbustub_1_1Schema.html#a54d04e58c91920dd984ef57bfc2b4814">uninlined_columns_</a></td></tr>
+<tr class="separator:a54d04e58c91920dd984ef57bfc2b4814"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">构造及析构函数说明</h2>
+<a id="a19f218ba430d407d31665c2f2e60e621" name="a19f218ba430d407d31665c2f2e60e621"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a19f218ba430d407d31665c2f2e60e621">&#9670;&#160;</a></span>Schema()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bustub::Schema::Schema </td>
+          <td>(</td>
+          <td class="paramtype">const std::vector&lt; <a class="el" href="../../db/d7f/classbustub_1_1Column.html">Column</a> &gt; &amp;&#160;</td>
+          <td class="paramname"><em>columns</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">explicit</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Constructs the schema corresponding to the vector of columns, read left-to-right. </p><dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">columns</td><td>columns that describe the schema's individual columns </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<h2 class="groupheader">成员函数说明</h2>
+<a id="a6046d5871da1d03a3f6dd505180863d0" name="a6046d5871da1d03a3f6dd505180863d0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6046d5871da1d03a3f6dd505180863d0">&#9670;&#160;</a></span>CopySchema()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static auto bustub::Schema::CopySchema </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="../../da/d36/classbustub_1_1Schema.html">Schema</a> *&#160;</td>
+          <td class="paramname"><em>from</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::vector&lt; uint32_t &gt; &amp;&#160;</td>
+          <td class="paramname"><em>attrs</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> -&gt; <a class="el" href="../../da/d36/classbustub_1_1Schema.html">Schema</a> </td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aee899d889d48109814fe56cfac94f71e" name="aee899d889d48109814fe56cfac94f71e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aee899d889d48109814fe56cfac94f71e">&#9670;&#160;</a></span>GetColIdx()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto bustub::Schema::GetColIdx </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>col_name</em></td><td>)</td>
+          <td> const -&gt; uint32_t </td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Looks up and returns the index of the first column in the schema with the specified name. If multiple columns have the same name, the first such index is returned. </p><dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">col_name</td><td>name of column to look for </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>the index of a column with the given name, throws an exception if it does not exist </dd></dl>
+
+</div>
+</div>
+<a id="a323376fa5c13c0d2aab1e80079da7bd8" name="a323376fa5c13c0d2aab1e80079da7bd8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a323376fa5c13c0d2aab1e80079da7bd8">&#9670;&#160;</a></span>GetColumn()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto bustub::Schema::GetColumn </td>
+          <td>(</td>
+          <td class="paramtype">const uint32_t&#160;</td>
+          <td class="paramname"><em>col_idx</em></td><td>)</td>
+          <td> const -&gt; const <a class="el" href="../../db/d7f/classbustub_1_1Column.html">Column</a> &amp; </td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Returns a specific column from the schema. </p><dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">col_idx</td><td>index of requested column </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>requested column </dd></dl>
+
+</div>
+</div>
+<a id="a8efc3d3d9c8076ddf31fbdb25a1f9746" name="a8efc3d3d9c8076ddf31fbdb25a1f9746"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8efc3d3d9c8076ddf31fbdb25a1f9746">&#9670;&#160;</a></span>GetColumnCount()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto bustub::Schema::GetColumnCount </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const -&gt; uint32_t </td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<dl class="section return"><dt>返回</dt><dd>the number of columns in the schema for the tuple </dd></dl>
+
+</div>
+</div>
+<a id="a6d0bde8fda3135aa4206845a1817578a" name="a6d0bde8fda3135aa4206845a1817578a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6d0bde8fda3135aa4206845a1817578a">&#9670;&#160;</a></span>GetColumns()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto bustub::Schema::GetColumns </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const -&gt; const std::vector&lt;<a class="el" href="../../db/d7f/classbustub_1_1Column.html">Column</a>&gt; &amp; </td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<dl class="section return"><dt>返回</dt><dd>all the columns in the schema </dd></dl>
+
+</div>
+</div>
+<a id="a8c0385ca396e34209acac5ae4b46a0c4" name="a8c0385ca396e34209acac5ae4b46a0c4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8c0385ca396e34209acac5ae4b46a0c4">&#9670;&#160;</a></span>GetLength()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto bustub::Schema::GetLength </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const -&gt; uint32_t </td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<dl class="section return"><dt>返回</dt><dd>the number of bytes used by one tuple </dd></dl>
+
+</div>
+</div>
+<a id="a17da479c72408cff5fc74f482c78aac1" name="a17da479c72408cff5fc74f482c78aac1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a17da479c72408cff5fc74f482c78aac1">&#9670;&#160;</a></span>GetUnlinedColumnCount()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto bustub::Schema::GetUnlinedColumnCount </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const -&gt; uint32_t </td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<dl class="section return"><dt>返回</dt><dd>the number of non-inlined columns </dd></dl>
+
+</div>
+</div>
+<a id="ad6a14eca89f654fb047ed90bb3059097" name="ad6a14eca89f654fb047ed90bb3059097"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad6a14eca89f654fb047ed90bb3059097">&#9670;&#160;</a></span>GetUnlinedColumns()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto bustub::Schema::GetUnlinedColumns </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const -&gt; const std::vector&lt;uint32_t&gt; &amp; </td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<dl class="section return"><dt>返回</dt><dd>the indices of non-inlined columns </dd></dl>
+
+</div>
+</div>
+<a id="a63e0a5d7447ed20426d4f74c865893b9" name="a63e0a5d7447ed20426d4f74c865893b9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a63e0a5d7447ed20426d4f74c865893b9">&#9670;&#160;</a></span>IsInlined()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto bustub::Schema::IsInlined </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const -&gt; bool </td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<dl class="section return"><dt>返回</dt><dd>true if all columns are inlined, false otherwise </dd></dl>
+
+</div>
+</div>
+<a id="a500c5cd930c2b87c99dfe16fbf136bec" name="a500c5cd930c2b87c99dfe16fbf136bec"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a500c5cd930c2b87c99dfe16fbf136bec">&#9670;&#160;</a></span>ToString()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto bustub::Schema::ToString </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>simplified</em> = <code>true</code></td><td>)</td>
+          <td> const -&gt; std::string</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="section return"><dt>返回</dt><dd>string representation of this schema </dd></dl>
+
+</div>
+</div>
+<a id="a709fb72a33fa2aad977b5362e84a8e59" name="a709fb72a33fa2aad977b5362e84a8e59"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a709fb72a33fa2aad977b5362e84a8e59">&#9670;&#160;</a></span>TryGetColIdx()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto bustub::Schema::TryGetColIdx </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>col_name</em></td><td>)</td>
+          <td> const -&gt; std::optional&lt;uint32_t&gt; </td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Looks up and returns the index of the first column in the schema with the specified name. If multiple columns have the same name, the first such index is returned. </p><dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">col_name</td><td>name of column to look for </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>the index of a column with the given name, <code>std::nullopt</code> if it does not exist </dd></dl>
+
+</div>
+</div>
+<h2 class="groupheader">类成员变量说明</h2>
+<a id="a09bfb5258f1f0cfd46b3aac4f427f7c9" name="a09bfb5258f1f0cfd46b3aac4f427f7c9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a09bfb5258f1f0cfd46b3aac4f427f7c9">&#9670;&#160;</a></span>columns_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt;<a class="el" href="../../db/d7f/classbustub_1_1Column.html">Column</a>&gt; bustub::Schema::columns_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>All the columns in the schema, inlined and uninlined. </p>
+
+</div>
+</div>
+<a id="aaae0ca26f5660b26ecbcfab34d14aedb" name="aaae0ca26f5660b26ecbcfab34d14aedb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaae0ca26f5660b26ecbcfab34d14aedb">&#9670;&#160;</a></span>length_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32_t bustub::Schema::length_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Fixed-length column size, i.e. the number of bytes used by one tuple. </p>
+
+</div>
+</div>
+<a id="a5a3064005743da1f53aa262825cce4bb" name="a5a3064005743da1f53aa262825cce4bb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5a3064005743da1f53aa262825cce4bb">&#9670;&#160;</a></span>tuple_is_inlined_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool bustub::Schema::tuple_is_inlined_ {true}</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>True if all the columns are inlined, false otherwise. </p>
+
+</div>
+</div>
+<a id="a54d04e58c91920dd984ef57bfc2b4814" name="a54d04e58c91920dd984ef57bfc2b4814"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a54d04e58c91920dd984ef57bfc2b4814">&#9670;&#160;</a></span>uninlined_columns_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt;uint32_t&gt; bustub::Schema::uninlined_columns_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Indices of all uninlined columns. </p>
+
+</div>
+</div>
+<hr/>该类的文档由以下文件生成:<ul>
+<li>src/include/catalog/<a class="el" href="../../d7/de3/schema_8h_source.html">schema.h</a></li>
+<li>src/catalog/<a class="el" href="../../d5/dfe/schema_8cpp.html">schema.cpp</a></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
+</small></address>
+</body>
+</html>

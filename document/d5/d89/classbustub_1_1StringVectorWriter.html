@@ -1,0 +1,375 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>数据库系统 CMU15-445/645: bustub::StringVectorWriter类 参考</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/searchdata.js"></script>
+<script type="text/javascript" src="../../search/search.js"></script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">数据库系统 CMU15-445/645<span id="projectnumber">&#160;1.0.0</span>
+   </div>
+   <div id="projectbrief">CMU15-445/645 是基于现代 C++ 开发的支持并发操作的简单 SQL 操作的单机数据库</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.9.8 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "../../search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('../../',true,false,'search.php','搜索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="../../de/dda/namespacebustub.html">bustub</a></li><li class="navelem"><a class="el" href="../../d5/d89/classbustub_1_1StringVectorWriter.html">StringVectorWriter</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Public 成员函数</a> &#124;
+<a href="#pub-attribs">Public 属性</a> &#124;
+<a href="../../dc/d0a/classbustub_1_1StringVectorWriter-members.html">所有成员列表</a>  </div>
+  <div class="headertitle"><div class="title">bustub::StringVectorWriter类 参考</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p><code>#include &lt;<a class="el" href="../../d3/d68/bustub__instance_8h_source.html">bustub_instance.h</a>&gt;</code></p>
+<div class="dynheader">
+类 bustub::StringVectorWriter 继承关系图:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../d5/d00/classbustub_1_1StringVectorWriter__inherit__graph.svg" width="204" height="110"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<center><span class="legend">[<a href="../../graph_legend.html">图例</a>]</span></center></div>
+<div class="dynheader">
+bustub::StringVectorWriter 的协作图:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../de/d16/classbustub_1_1StringVectorWriter__coll__graph.svg" width="204" height="110"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<center><span class="legend">[<a href="../../graph_legend.html">图例</a>]</span></center></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Public 成员函数</h2></td></tr>
+<tr class="memitem:a1bede6b50ab0b0b2c3be411fdad4852a" id="r_a1bede6b50ab0b0b2c3be411fdad4852a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d89/classbustub_1_1StringVectorWriter.html#a1bede6b50ab0b0b2c3be411fdad4852a">WriteCell</a> (const std::string &amp;cell) override</td></tr>
+<tr class="separator:a1bede6b50ab0b0b2c3be411fdad4852a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a291dc0bd4da72b4dcbb8277dd05767c8" id="r_a291dc0bd4da72b4dcbb8277dd05767c8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d89/classbustub_1_1StringVectorWriter.html#a291dc0bd4da72b4dcbb8277dd05767c8">WriteHeaderCell</a> (const std::string &amp;cell) override</td></tr>
+<tr class="separator:a291dc0bd4da72b4dcbb8277dd05767c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a602f529d2653e90930fe0c32e3e4de5e" id="r_a602f529d2653e90930fe0c32e3e4de5e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d89/classbustub_1_1StringVectorWriter.html#a602f529d2653e90930fe0c32e3e4de5e">BeginHeader</a> () override</td></tr>
+<tr class="separator:a602f529d2653e90930fe0c32e3e4de5e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af31feb70c00b3d0c0903f338a65770e6" id="r_af31feb70c00b3d0c0903f338a65770e6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d89/classbustub_1_1StringVectorWriter.html#af31feb70c00b3d0c0903f338a65770e6">EndHeader</a> () override</td></tr>
+<tr class="separator:af31feb70c00b3d0c0903f338a65770e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4b76ad51bdfd2a05617711a61f713bbf" id="r_a4b76ad51bdfd2a05617711a61f713bbf"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d89/classbustub_1_1StringVectorWriter.html#a4b76ad51bdfd2a05617711a61f713bbf">BeginRow</a> () override</td></tr>
+<tr class="separator:a4b76ad51bdfd2a05617711a61f713bbf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a08a1450cf601bbfe02fe08ba76fa5d90" id="r_a08a1450cf601bbfe02fe08ba76fa5d90"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d89/classbustub_1_1StringVectorWriter.html#a08a1450cf601bbfe02fe08ba76fa5d90">EndRow</a> () override</td></tr>
+<tr class="separator:a08a1450cf601bbfe02fe08ba76fa5d90"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a70d94ca9698c7bf4bbd7758db602ed93" id="r_a70d94ca9698c7bf4bbd7758db602ed93"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d89/classbustub_1_1StringVectorWriter.html#a70d94ca9698c7bf4bbd7758db602ed93">BeginTable</a> (bool simplified_output) override</td></tr>
+<tr class="separator:a70d94ca9698c7bf4bbd7758db602ed93"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8b952e246815583cf0295eb1f130b8d9" id="r_a8b952e246815583cf0295eb1f130b8d9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d89/classbustub_1_1StringVectorWriter.html#a8b952e246815583cf0295eb1f130b8d9">EndTable</a> () override</td></tr>
+<tr class="separator:a8b952e246815583cf0295eb1f130b8d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_methods_classbustub_1_1ResultWriter"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classbustub_1_1ResultWriter')"><img src="../../closed.png" alt="-"/>&#160;Public 成员函数 继承自 <a class="el" href="../../d6/dd6/classbustub_1_1ResultWriter.html">bustub::ResultWriter</a></td></tr>
+<tr class="memitem:acfcd6eb3d4a2debeb18ce524f2374118 inherit pub_methods_classbustub_1_1ResultWriter" id="r_acfcd6eb3d4a2debeb18ce524f2374118"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/dd6/classbustub_1_1ResultWriter.html#acfcd6eb3d4a2debeb18ce524f2374118">ResultWriter</a> ()=default</td></tr>
+<tr class="separator:acfcd6eb3d4a2debeb18ce524f2374118 inherit pub_methods_classbustub_1_1ResultWriter"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a25bd7a1a70fee791010011bd59e1b438 inherit pub_methods_classbustub_1_1ResultWriter" id="r_a25bd7a1a70fee791010011bd59e1b438"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/dd6/classbustub_1_1ResultWriter.html#a25bd7a1a70fee791010011bd59e1b438">~ResultWriter</a> ()=default</td></tr>
+<tr class="separator:a25bd7a1a70fee791010011bd59e1b438 inherit pub_methods_classbustub_1_1ResultWriter"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a67527b95f4138d6072a3be501307f5e6 inherit pub_methods_classbustub_1_1ResultWriter" id="r_a67527b95f4138d6072a3be501307f5e6"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/dd6/classbustub_1_1ResultWriter.html#a67527b95f4138d6072a3be501307f5e6">OneCell</a> (const std::string &amp;cell)</td></tr>
+<tr class="separator:a67527b95f4138d6072a3be501307f5e6 inherit pub_methods_classbustub_1_1ResultWriter"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
+Public 属性</h2></td></tr>
+<tr class="memitem:a5888155c4babb32eb0cc04c4048ae0eb" id="r_a5888155c4babb32eb0cc04c4048ae0eb"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::vector&lt; std::string &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d89/classbustub_1_1StringVectorWriter.html#a5888155c4babb32eb0cc04c4048ae0eb">values_</a></td></tr>
+<tr class="separator:a5888155c4babb32eb0cc04c4048ae0eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_attribs_classbustub_1_1ResultWriter"><td colspan="2" onclick="javascript:toggleInherit('pub_attribs_classbustub_1_1ResultWriter')"><img src="../../closed.png" alt="-"/>&#160;Public 属性 继承自 <a class="el" href="../../d6/dd6/classbustub_1_1ResultWriter.html">bustub::ResultWriter</a></td></tr>
+<tr class="memitem:a152bbe886fa0a3c96ecd1341845c54c6 inherit pub_attribs_classbustub_1_1ResultWriter" id="r_a152bbe886fa0a3c96ecd1341845c54c6"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/dd6/classbustub_1_1ResultWriter.html#a152bbe886fa0a3c96ecd1341845c54c6">simplified_output_</a> {false}</td></tr>
+<tr class="separator:a152bbe886fa0a3c96ecd1341845c54c6 inherit pub_attribs_classbustub_1_1ResultWriter"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">成员函数说明</h2>
+<a id="a602f529d2653e90930fe0c32e3e4de5e" name="a602f529d2653e90930fe0c32e3e4de5e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a602f529d2653e90930fe0c32e3e4de5e">&#9670;&#160;</a></span>BeginHeader()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void bustub::StringVectorWriter::BeginHeader </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>实现了 <a class="el" href="../../d6/dd6/classbustub_1_1ResultWriter.html#ac7493774f43bfad34871c0c8cbc25b7f">bustub::ResultWriter</a>.</p>
+
+</div>
+</div>
+<a id="a4b76ad51bdfd2a05617711a61f713bbf" name="a4b76ad51bdfd2a05617711a61f713bbf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4b76ad51bdfd2a05617711a61f713bbf">&#9670;&#160;</a></span>BeginRow()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void bustub::StringVectorWriter::BeginRow </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>实现了 <a class="el" href="../../d6/dd6/classbustub_1_1ResultWriter.html#ac5cedbe208feacc64e367a1a6661f098">bustub::ResultWriter</a>.</p>
+
+</div>
+</div>
+<a id="a70d94ca9698c7bf4bbd7758db602ed93" name="a70d94ca9698c7bf4bbd7758db602ed93"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a70d94ca9698c7bf4bbd7758db602ed93">&#9670;&#160;</a></span>BeginTable()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void bustub::StringVectorWriter::BeginTable </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>simplified_output</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>实现了 <a class="el" href="../../d6/dd6/classbustub_1_1ResultWriter.html#a923a2a3dd4300898df4336f2bf09fdfd">bustub::ResultWriter</a>.</p>
+
+</div>
+</div>
+<a id="af31feb70c00b3d0c0903f338a65770e6" name="af31feb70c00b3d0c0903f338a65770e6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af31feb70c00b3d0c0903f338a65770e6">&#9670;&#160;</a></span>EndHeader()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void bustub::StringVectorWriter::EndHeader </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>实现了 <a class="el" href="../../d6/dd6/classbustub_1_1ResultWriter.html#aa737e7dca0fd63cad8b88c4002bf7db8">bustub::ResultWriter</a>.</p>
+
+</div>
+</div>
+<a id="a08a1450cf601bbfe02fe08ba76fa5d90" name="a08a1450cf601bbfe02fe08ba76fa5d90"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a08a1450cf601bbfe02fe08ba76fa5d90">&#9670;&#160;</a></span>EndRow()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void bustub::StringVectorWriter::EndRow </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>实现了 <a class="el" href="../../d6/dd6/classbustub_1_1ResultWriter.html#a14d759fe6f554b05fb5c0074e18fa7ea">bustub::ResultWriter</a>.</p>
+
+</div>
+</div>
+<a id="a8b952e246815583cf0295eb1f130b8d9" name="a8b952e246815583cf0295eb1f130b8d9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8b952e246815583cf0295eb1f130b8d9">&#9670;&#160;</a></span>EndTable()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void bustub::StringVectorWriter::EndTable </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>实现了 <a class="el" href="../../d6/dd6/classbustub_1_1ResultWriter.html#a899d787946aa8ffc8e08c068f09fa1b6">bustub::ResultWriter</a>.</p>
+
+</div>
+</div>
+<a id="a1bede6b50ab0b0b2c3be411fdad4852a" name="a1bede6b50ab0b0b2c3be411fdad4852a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1bede6b50ab0b0b2c3be411fdad4852a">&#9670;&#160;</a></span>WriteCell()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void bustub::StringVectorWriter::WriteCell </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>cell</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>实现了 <a class="el" href="../../d6/dd6/classbustub_1_1ResultWriter.html#a0bf857bced6e248beec522f3a9ab610c">bustub::ResultWriter</a>.</p>
+
+</div>
+</div>
+<a id="a291dc0bd4da72b4dcbb8277dd05767c8" name="a291dc0bd4da72b4dcbb8277dd05767c8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a291dc0bd4da72b4dcbb8277dd05767c8">&#9670;&#160;</a></span>WriteHeaderCell()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void bustub::StringVectorWriter::WriteHeaderCell </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>cell</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>实现了 <a class="el" href="../../d6/dd6/classbustub_1_1ResultWriter.html#ac3afbecc4b9ac75a74deaf9f43e9b4b8">bustub::ResultWriter</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">类成员变量说明</h2>
+<a id="a5888155c4babb32eb0cc04c4048ae0eb" name="a5888155c4babb32eb0cc04c4048ae0eb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5888155c4babb32eb0cc04c4048ae0eb">&#9670;&#160;</a></span>values_</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt;std::vector&lt;std::string&gt; &gt; bustub::StringVectorWriter::values_</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<hr/>该类的文档由以下文件生成:<ul>
+<li>src/include/common/<a class="el" href="../../d3/d68/bustub__instance_8h_source.html">bustub_instance.h</a></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
+</small></address>
+</body>
+</html>

@@ -1,0 +1,801 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>数据库系统 CMU15-445/645: bustub::ExtendibleHTableDirectoryPage类 参考</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/searchdata.js"></script>
+<script type="text/javascript" src="../../search/search.js"></script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">数据库系统 CMU15-445/645<span id="projectnumber">&#160;1.0.0</span>
+   </div>
+   <div id="projectbrief">CMU15-445/645 是基于现代 C++ 开发的支持并发操作的简单 SQL 操作的单机数据库</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.9.8 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "../../search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('../../',true,false,'search.php','搜索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="../../de/dda/namespacebustub.html">bustub</a></li><li class="navelem"><a class="el" href="../../d5/d68/classbustub_1_1ExtendibleHTableDirectoryPage.html">ExtendibleHTableDirectoryPage</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Public 成员函数</a> &#124;
+<a href="#pri-methods">Private 成员函数</a> &#124;
+<a href="#pri-attribs">Private 属性</a> &#124;
+<a href="../../d3/d58/classbustub_1_1ExtendibleHTableDirectoryPage-members.html">所有成员列表</a>  </div>
+  <div class="headertitle"><div class="title">bustub::ExtendibleHTableDirectoryPage类 参考</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p><code>#include &lt;<a class="el" href="../../da/d0c/extendible__htable__directory__page_8h_source.html">extendible_htable_directory_page.h</a>&gt;</code></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Public 成员函数</h2></td></tr>
+<tr class="memitem:a354306529fc6cea46242af8e247550ee" id="r_a354306529fc6cea46242af8e247550ee"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d68/classbustub_1_1ExtendibleHTableDirectoryPage.html#a354306529fc6cea46242af8e247550ee">ExtendibleHTableDirectoryPage</a> ()=delete</td></tr>
+<tr class="separator:a354306529fc6cea46242af8e247550ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aad647e85071481006f2ffcb151c3d810" id="r_aad647e85071481006f2ffcb151c3d810"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d68/classbustub_1_1ExtendibleHTableDirectoryPage.html#aad647e85071481006f2ffcb151c3d810">DISALLOW_COPY_AND_MOVE</a> (<a class="el" href="../../d5/d68/classbustub_1_1ExtendibleHTableDirectoryPage.html">ExtendibleHTableDirectoryPage</a>)</td></tr>
+<tr class="separator:aad647e85071481006f2ffcb151c3d810"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abe0fb42560630061d2323ddee2ed6885" id="r_abe0fb42560630061d2323ddee2ed6885"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d68/classbustub_1_1ExtendibleHTableDirectoryPage.html#abe0fb42560630061d2323ddee2ed6885">Init</a> (uint32_t max_depth=<a class="el" href="../../de/dda/namespacebustub.html#a2bff7c86391d59e9bfdb44c86f0bf5af">HTABLE_DIRECTORY_MAX_DEPTH</a>)</td></tr>
+<tr class="separator:abe0fb42560630061d2323ddee2ed6885"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a50180cdcd0db2f1137ad94511a714d3e" id="r_a50180cdcd0db2f1137ad94511a714d3e"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d68/classbustub_1_1ExtendibleHTableDirectoryPage.html#a50180cdcd0db2f1137ad94511a714d3e">HashToBucketIndex</a> (uint32_t hash) const -&gt; uint32_t</td></tr>
+<tr class="separator:a50180cdcd0db2f1137ad94511a714d3e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4cecc38d33f326010a84f7b93b72791b" id="r_a4cecc38d33f326010a84f7b93b72791b"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d68/classbustub_1_1ExtendibleHTableDirectoryPage.html#a4cecc38d33f326010a84f7b93b72791b">GetBucketPageId</a> (uint32_t bucket_idx) const -&gt; <a class="el" href="../../de/dda/namespacebustub.html#a8de4ac099b23d712481109bb846decde">page_id_t</a></td></tr>
+<tr class="separator:a4cecc38d33f326010a84f7b93b72791b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a61e05082098fa4f76a66b7f421f993be" id="r_a61e05082098fa4f76a66b7f421f993be"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d68/classbustub_1_1ExtendibleHTableDirectoryPage.html#a61e05082098fa4f76a66b7f421f993be">SetBucketPageId</a> (uint32_t bucket_idx, <a class="el" href="../../de/dda/namespacebustub.html#a8de4ac099b23d712481109bb846decde">page_id_t</a> bucket_page_id)</td></tr>
+<tr class="separator:a61e05082098fa4f76a66b7f421f993be"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afddd75c17d9b16463ef6e5a54ce32535" id="r_afddd75c17d9b16463ef6e5a54ce32535"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d68/classbustub_1_1ExtendibleHTableDirectoryPage.html#afddd75c17d9b16463ef6e5a54ce32535">GetSplitImageIndex</a> (uint32_t bucket_idx) const -&gt; uint32_t</td></tr>
+<tr class="separator:afddd75c17d9b16463ef6e5a54ce32535"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a93cea74b7c8a115e14d271ff8b577cca" id="r_a93cea74b7c8a115e14d271ff8b577cca"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d68/classbustub_1_1ExtendibleHTableDirectoryPage.html#a93cea74b7c8a115e14d271ff8b577cca">GetGlobalDepthMask</a> () const -&gt; uint32_t</td></tr>
+<tr class="separator:a93cea74b7c8a115e14d271ff8b577cca"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a091e35cbfeda592eefbb7d9bd45c648b" id="r_a091e35cbfeda592eefbb7d9bd45c648b"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d68/classbustub_1_1ExtendibleHTableDirectoryPage.html#a091e35cbfeda592eefbb7d9bd45c648b">GetLocalDepthMask</a> (uint32_t bucket_idx) const -&gt; uint32_t</td></tr>
+<tr class="separator:a091e35cbfeda592eefbb7d9bd45c648b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac35bd6c9cbf9e10c645d3158134628c7" id="r_ac35bd6c9cbf9e10c645d3158134628c7"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d68/classbustub_1_1ExtendibleHTableDirectoryPage.html#ac35bd6c9cbf9e10c645d3158134628c7">GetGlobalDepth</a> () const -&gt; uint32_t</td></tr>
+<tr class="separator:ac35bd6c9cbf9e10c645d3158134628c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adc4254fe482a2e3e4f55a799a4e5a30b" id="r_adc4254fe482a2e3e4f55a799a4e5a30b"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d68/classbustub_1_1ExtendibleHTableDirectoryPage.html#adc4254fe482a2e3e4f55a799a4e5a30b">GetMaxDepth</a> () const -&gt; uint32_t</td></tr>
+<tr class="separator:adc4254fe482a2e3e4f55a799a4e5a30b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abe1aad5d4cc90abc83bc33066c08e897" id="r_abe1aad5d4cc90abc83bc33066c08e897"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d68/classbustub_1_1ExtendibleHTableDirectoryPage.html#abe1aad5d4cc90abc83bc33066c08e897">IncrGlobalDepth</a> ()</td></tr>
+<tr class="separator:abe1aad5d4cc90abc83bc33066c08e897"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a30837b877ad4d8f554a187fc0664beaf" id="r_a30837b877ad4d8f554a187fc0664beaf"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d68/classbustub_1_1ExtendibleHTableDirectoryPage.html#a30837b877ad4d8f554a187fc0664beaf">DecrGlobalDepth</a> ()</td></tr>
+<tr class="separator:a30837b877ad4d8f554a187fc0664beaf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abd26e655e2d4ab0c4c0a8ebf2d2822ef" id="r_abd26e655e2d4ab0c4c0a8ebf2d2822ef"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d68/classbustub_1_1ExtendibleHTableDirectoryPage.html#abd26e655e2d4ab0c4c0a8ebf2d2822ef">CanShrink</a> () -&gt; bool</td></tr>
+<tr class="separator:abd26e655e2d4ab0c4c0a8ebf2d2822ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a989cac4fd0b7b12bc56dee248cf343f1" id="r_a989cac4fd0b7b12bc56dee248cf343f1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d68/classbustub_1_1ExtendibleHTableDirectoryPage.html#a989cac4fd0b7b12bc56dee248cf343f1">Shrink</a> ()</td></tr>
+<tr class="separator:a989cac4fd0b7b12bc56dee248cf343f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a590b3765ba69658b0c25fcbab15a0ae8" id="r_a590b3765ba69658b0c25fcbab15a0ae8"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d68/classbustub_1_1ExtendibleHTableDirectoryPage.html#a590b3765ba69658b0c25fcbab15a0ae8">Size</a> () const -&gt; uint32_t</td></tr>
+<tr class="separator:a590b3765ba69658b0c25fcbab15a0ae8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3071d9d8fd3ec98491250e1f178a83f2" id="r_a3071d9d8fd3ec98491250e1f178a83f2"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d68/classbustub_1_1ExtendibleHTableDirectoryPage.html#a3071d9d8fd3ec98491250e1f178a83f2">MaxSize</a> () const -&gt; uint32_t</td></tr>
+<tr class="separator:a3071d9d8fd3ec98491250e1f178a83f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad044c2115cc286ee4d864d9f0ab21460" id="r_ad044c2115cc286ee4d864d9f0ab21460"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d68/classbustub_1_1ExtendibleHTableDirectoryPage.html#ad044c2115cc286ee4d864d9f0ab21460">GetLocalDepth</a> (uint32_t bucket_idx) const -&gt; uint32_t</td></tr>
+<tr class="separator:ad044c2115cc286ee4d864d9f0ab21460"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae48267a4a1e4f10b0196b8fd2e394fc0" id="r_ae48267a4a1e4f10b0196b8fd2e394fc0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d68/classbustub_1_1ExtendibleHTableDirectoryPage.html#ae48267a4a1e4f10b0196b8fd2e394fc0">SetLocalDepth</a> (uint32_t bucket_idx, uint8_t local_depth)</td></tr>
+<tr class="separator:ae48267a4a1e4f10b0196b8fd2e394fc0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5de8638158d5b4d7255ac3a5455f48e9" id="r_a5de8638158d5b4d7255ac3a5455f48e9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d68/classbustub_1_1ExtendibleHTableDirectoryPage.html#a5de8638158d5b4d7255ac3a5455f48e9">IncrLocalDepth</a> (uint32_t bucket_idx)</td></tr>
+<tr class="separator:a5de8638158d5b4d7255ac3a5455f48e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9c6c4177f757f773c2cc102dc82dc44d" id="r_a9c6c4177f757f773c2cc102dc82dc44d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d68/classbustub_1_1ExtendibleHTableDirectoryPage.html#a9c6c4177f757f773c2cc102dc82dc44d">DecrLocalDepth</a> (uint32_t bucket_idx)</td></tr>
+<tr class="separator:a9c6c4177f757f773c2cc102dc82dc44d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa7f00dfce64c64c789b0aa005e85fe64" id="r_aa7f00dfce64c64c789b0aa005e85fe64"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d68/classbustub_1_1ExtendibleHTableDirectoryPage.html#aa7f00dfce64c64c789b0aa005e85fe64">VerifyIntegrity</a> () const</td></tr>
+<tr class="separator:aa7f00dfce64c64c789b0aa005e85fe64"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a68b4574c1a8c9880d7cc317d0180c644" id="r_a68b4574c1a8c9880d7cc317d0180c644"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d68/classbustub_1_1ExtendibleHTableDirectoryPage.html#a68b4574c1a8c9880d7cc317d0180c644">PrintDirectory</a> () const</td></tr>
+<tr class="separator:a68b4574c1a8c9880d7cc317d0180c644"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-methods" name="pri-methods"></a>
+Private 成员函数</h2></td></tr>
+<tr class="memitem:a526c0bea9f8230bd6671c6dbd04f2bcd" id="r_a526c0bea9f8230bd6671c6dbd04f2bcd"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d68/classbustub_1_1ExtendibleHTableDirectoryPage.html#a526c0bea9f8230bd6671c6dbd04f2bcd">GetMaxLocalDepth</a> () const -&gt; uint32_t</td></tr>
+<tr class="separator:a526c0bea9f8230bd6671c6dbd04f2bcd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
+Private 属性</h2></td></tr>
+<tr class="memitem:ad04ea757c54f7b57de2e9066b44c1679" id="r_ad04ea757c54f7b57de2e9066b44c1679"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d68/classbustub_1_1ExtendibleHTableDirectoryPage.html#ad04ea757c54f7b57de2e9066b44c1679">max_depth_</a></td></tr>
+<tr class="separator:ad04ea757c54f7b57de2e9066b44c1679"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a66e284a0d97e4f91f3d5bb69458ca59b" id="r_a66e284a0d97e4f91f3d5bb69458ca59b"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d68/classbustub_1_1ExtendibleHTableDirectoryPage.html#a66e284a0d97e4f91f3d5bb69458ca59b">global_depth_</a></td></tr>
+<tr class="separator:a66e284a0d97e4f91f3d5bb69458ca59b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a14ee80663f08af2b810142da4486aa0a" id="r_a14ee80663f08af2b810142da4486aa0a"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d68/classbustub_1_1ExtendibleHTableDirectoryPage.html#a14ee80663f08af2b810142da4486aa0a">local_depths_</a> [<a class="el" href="../../de/dda/namespacebustub.html#a637f064c056f13ded34a4e941ff7215d">HTABLE_DIRECTORY_ARRAY_SIZE</a>]</td></tr>
+<tr class="separator:a14ee80663f08af2b810142da4486aa0a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9651dddcf4f86ea5167b9685dc89e899" id="r_a9651dddcf4f86ea5167b9685dc89e899"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../de/dda/namespacebustub.html#a8de4ac099b23d712481109bb846decde">page_id_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d68/classbustub_1_1ExtendibleHTableDirectoryPage.html#a9651dddcf4f86ea5167b9685dc89e899">bucket_page_ids_</a> [<a class="el" href="../../de/dda/namespacebustub.html#a637f064c056f13ded34a4e941ff7215d">HTABLE_DIRECTORY_ARRAY_SIZE</a>]</td></tr>
+<tr class="separator:a9651dddcf4f86ea5167b9685dc89e899"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
+<div class="textblock"><p>Directory <a class="el" href="../../d4/d87/classbustub_1_1Page.html">Page</a> for extendible hash table. </p>
+</div><h2 class="groupheader">构造及析构函数说明</h2>
+<a id="a354306529fc6cea46242af8e247550ee" name="a354306529fc6cea46242af8e247550ee"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a354306529fc6cea46242af8e247550ee">&#9670;&#160;</a></span>ExtendibleHTableDirectoryPage()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bustub::ExtendibleHTableDirectoryPage::ExtendibleHTableDirectoryPage </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">delete</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">成员函数说明</h2>
+<a id="abd26e655e2d4ab0c4c0a8ebf2d2822ef" name="abd26e655e2d4ab0c4c0a8ebf2d2822ef"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abd26e655e2d4ab0c4c0a8ebf2d2822ef">&#9670;&#160;</a></span>CanShrink()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto bustub::ExtendibleHTableDirectoryPage::CanShrink </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> -&gt; bool</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="section return"><dt>返回</dt><dd>true if the directory can be shrunk </dd></dl>
+
+</div>
+</div>
+<a id="a30837b877ad4d8f554a187fc0664beaf" name="a30837b877ad4d8f554a187fc0664beaf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a30837b877ad4d8f554a187fc0664beaf">&#9670;&#160;</a></span>DecrGlobalDepth()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void bustub::ExtendibleHTableDirectoryPage::DecrGlobalDepth </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Decrement the global depth of the directory </p>
+
+</div>
+</div>
+<a id="a9c6c4177f757f773c2cc102dc82dc44d" name="a9c6c4177f757f773c2cc102dc82dc44d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9c6c4177f757f773c2cc102dc82dc44d">&#9670;&#160;</a></span>DecrLocalDepth()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void bustub::ExtendibleHTableDirectoryPage::DecrLocalDepth </td>
+          <td>(</td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>bucket_idx</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Decrement the local depth of the bucket at bucket_idx </p><dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">bucket_idx</td><td>bucket index to decrement </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="aad647e85071481006f2ffcb151c3d810" name="aad647e85071481006f2ffcb151c3d810"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aad647e85071481006f2ffcb151c3d810">&#9670;&#160;</a></span>DISALLOW_COPY_AND_MOVE()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bustub::ExtendibleHTableDirectoryPage::DISALLOW_COPY_AND_MOVE </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../d5/d68/classbustub_1_1ExtendibleHTableDirectoryPage.html">ExtendibleHTableDirectoryPage</a>&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a4cecc38d33f326010a84f7b93b72791b" name="a4cecc38d33f326010a84f7b93b72791b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4cecc38d33f326010a84f7b93b72791b">&#9670;&#160;</a></span>GetBucketPageId()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto bustub::ExtendibleHTableDirectoryPage::GetBucketPageId </td>
+          <td>(</td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>bucket_idx</em></td><td>)</td>
+          <td> const -&gt; <a class="el" href="../../de/dda/namespacebustub.html#a8de4ac099b23d712481109bb846decde">page_id_t</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Lookup a bucket page using a directory index</p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">bucket_idx</td><td>the index in the directory to lookup </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>bucket page_id corresponding to bucket_idx </dd></dl>
+
+</div>
+</div>
+<a id="ac35bd6c9cbf9e10c645d3158134628c7" name="ac35bd6c9cbf9e10c645d3158134628c7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac35bd6c9cbf9e10c645d3158134628c7">&#9670;&#160;</a></span>GetGlobalDepth()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto bustub::ExtendibleHTableDirectoryPage::GetGlobalDepth </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const -&gt; uint32_t</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Get the global depth of the hash table directory</p>
+<dl class="section return"><dt>返回</dt><dd>the global depth of the directory </dd></dl>
+
+</div>
+</div>
+<a id="a93cea74b7c8a115e14d271ff8b577cca" name="a93cea74b7c8a115e14d271ff8b577cca"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a93cea74b7c8a115e14d271ff8b577cca">&#9670;&#160;</a></span>GetGlobalDepthMask()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto bustub::ExtendibleHTableDirectoryPage::GetGlobalDepthMask </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const -&gt; uint32_t</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>GetGlobalDepthMask - returns a mask of global_depth 1's and the rest 0's.</p>
+<p>In Extendible Hashing we map a key to a directory index using the following hash + mask function.</p>
+<p>DirectoryIndex = Hash(key) &amp; GLOBAL_DEPTH_MASK</p>
+<p>where GLOBAL_DEPTH_MASK is a mask with exactly GLOBAL_DEPTH 1's from LSB upwards. For example, global depth 3 corresponds to 0x00000007 in a 32-bit representation.</p>
+<dl class="section return"><dt>返回</dt><dd>mask of global_depth 1's and the rest 0's (with 1's from LSB upwards) </dd></dl>
+
+</div>
+</div>
+<a id="ad044c2115cc286ee4d864d9f0ab21460" name="ad044c2115cc286ee4d864d9f0ab21460"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad044c2115cc286ee4d864d9f0ab21460">&#9670;&#160;</a></span>GetLocalDepth()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto bustub::ExtendibleHTableDirectoryPage::GetLocalDepth </td>
+          <td>(</td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>bucket_idx</em></td><td>)</td>
+          <td> const -&gt; uint32_t</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Gets the local depth of the bucket at bucket_idx</p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">bucket_idx</td><td>the bucket index to lookup </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>the local depth of the bucket at bucket_idx </dd></dl>
+
+</div>
+</div>
+<a id="a091e35cbfeda592eefbb7d9bd45c648b" name="a091e35cbfeda592eefbb7d9bd45c648b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a091e35cbfeda592eefbb7d9bd45c648b">&#9670;&#160;</a></span>GetLocalDepthMask()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto bustub::ExtendibleHTableDirectoryPage::GetLocalDepthMask </td>
+          <td>(</td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>bucket_idx</em></td><td>)</td>
+          <td> const -&gt; uint32_t</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>GetLocalDepthMask - same as global depth mask, except it uses the local depth of the bucket located at bucket_idx</p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">bucket_idx</td><td>the index to use for looking up local depth </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>mask of local 1's and the rest 0's (with 1's from LSB upwards) </dd></dl>
+
+</div>
+</div>
+<a id="adc4254fe482a2e3e4f55a799a4e5a30b" name="adc4254fe482a2e3e4f55a799a4e5a30b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adc4254fe482a2e3e4f55a799a4e5a30b">&#9670;&#160;</a></span>GetMaxDepth()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto bustub::ExtendibleHTableDirectoryPage::GetMaxDepth </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const -&gt; uint32_t</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a526c0bea9f8230bd6671c6dbd04f2bcd" name="a526c0bea9f8230bd6671c6dbd04f2bcd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a526c0bea9f8230bd6671c6dbd04f2bcd">&#9670;&#160;</a></span>GetMaxLocalDepth()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto bustub::ExtendibleHTableDirectoryPage::GetMaxLocalDepth </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const -&gt; uint32_t</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="afddd75c17d9b16463ef6e5a54ce32535" name="afddd75c17d9b16463ef6e5a54ce32535"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afddd75c17d9b16463ef6e5a54ce32535">&#9670;&#160;</a></span>GetSplitImageIndex()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto bustub::ExtendibleHTableDirectoryPage::GetSplitImageIndex </td>
+          <td>(</td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>bucket_idx</em></td><td>)</td>
+          <td> const -&gt; uint32_t</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Gets the split image of an index</p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">bucket_idx</td><td>the directory index for which to find the split image </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>the directory index of the split image </dd></dl>
+
+</div>
+</div>
+<a id="a50180cdcd0db2f1137ad94511a714d3e" name="a50180cdcd0db2f1137ad94511a714d3e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a50180cdcd0db2f1137ad94511a714d3e">&#9670;&#160;</a></span>HashToBucketIndex()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto bustub::ExtendibleHTableDirectoryPage::HashToBucketIndex </td>
+          <td>(</td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>hash</em></td><td>)</td>
+          <td> const -&gt; uint32_t</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Get the bucket index that the key is hashed to</p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">hash</td><td>the hash of the key </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>bucket index current key is hashed to </dd></dl>
+
+</div>
+</div>
+<a id="abe1aad5d4cc90abc83bc33066c08e897" name="abe1aad5d4cc90abc83bc33066c08e897"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abe1aad5d4cc90abc83bc33066c08e897">&#9670;&#160;</a></span>IncrGlobalDepth()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void bustub::ExtendibleHTableDirectoryPage::IncrGlobalDepth </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Increment the global depth of the directory </p>
+
+</div>
+</div>
+<a id="a5de8638158d5b4d7255ac3a5455f48e9" name="a5de8638158d5b4d7255ac3a5455f48e9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5de8638158d5b4d7255ac3a5455f48e9">&#9670;&#160;</a></span>IncrLocalDepth()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void bustub::ExtendibleHTableDirectoryPage::IncrLocalDepth </td>
+          <td>(</td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>bucket_idx</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Increment the local depth of the bucket at bucket_idx </p><dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">bucket_idx</td><td>bucket index to increment </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="abe0fb42560630061d2323ddee2ed6885" name="abe0fb42560630061d2323ddee2ed6885"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abe0fb42560630061d2323ddee2ed6885">&#9670;&#160;</a></span>Init()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void bustub::ExtendibleHTableDirectoryPage::Init </td>
+          <td>(</td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>max_depth</em> = <code><a class="el" href="../../de/dda/namespacebustub.html#a2bff7c86391d59e9bfdb44c86f0bf5af">HTABLE_DIRECTORY_MAX_DEPTH</a></code></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>After creating a new directory page from buffer pool, must call initialize method to set default values </p><dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">max_depth</td><td>Max depth in the directory page </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a3071d9d8fd3ec98491250e1f178a83f2" name="a3071d9d8fd3ec98491250e1f178a83f2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3071d9d8fd3ec98491250e1f178a83f2">&#9670;&#160;</a></span>MaxSize()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto bustub::ExtendibleHTableDirectoryPage::MaxSize </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const -&gt; uint32_t</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="section return"><dt>返回</dt><dd>the max directory size </dd></dl>
+
+</div>
+</div>
+<a id="a68b4574c1a8c9880d7cc317d0180c644" name="a68b4574c1a8c9880d7cc317d0180c644"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a68b4574c1a8c9880d7cc317d0180c644">&#9670;&#160;</a></span>PrintDirectory()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void bustub::ExtendibleHTableDirectoryPage::PrintDirectory </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Prints the current directory </p>
+
+</div>
+</div>
+<a id="a61e05082098fa4f76a66b7f421f993be" name="a61e05082098fa4f76a66b7f421f993be"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a61e05082098fa4f76a66b7f421f993be">&#9670;&#160;</a></span>SetBucketPageId()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void bustub::ExtendibleHTableDirectoryPage::SetBucketPageId </td>
+          <td>(</td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>bucket_idx</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="../../de/dda/namespacebustub.html#a8de4ac099b23d712481109bb846decde">page_id_t</a>&#160;</td>
+          <td class="paramname"><em>bucket_page_id</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Updates the directory index using a bucket index and page_id</p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">bucket_idx</td><td>directory index at which to insert page_id </td></tr>
+    <tr><td class="paramname">bucket_page_id</td><td>page_id to insert </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ae48267a4a1e4f10b0196b8fd2e394fc0" name="ae48267a4a1e4f10b0196b8fd2e394fc0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae48267a4a1e4f10b0196b8fd2e394fc0">&#9670;&#160;</a></span>SetLocalDepth()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void bustub::ExtendibleHTableDirectoryPage::SetLocalDepth </td>
+          <td>(</td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>bucket_idx</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>local_depth</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Set the local depth of the bucket at bucket_idx to local_depth</p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">bucket_idx</td><td>bucket index to update </td></tr>
+    <tr><td class="paramname">local_depth</td><td>new local depth </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a989cac4fd0b7b12bc56dee248cf343f1" name="a989cac4fd0b7b12bc56dee248cf343f1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a989cac4fd0b7b12bc56dee248cf343f1">&#9670;&#160;</a></span>Shrink()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void bustub::ExtendibleHTableDirectoryPage::Shrink </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a590b3765ba69658b0c25fcbab15a0ae8" name="a590b3765ba69658b0c25fcbab15a0ae8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a590b3765ba69658b0c25fcbab15a0ae8">&#9670;&#160;</a></span>Size()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto bustub::ExtendibleHTableDirectoryPage::Size </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const -&gt; uint32_t</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="section return"><dt>返回</dt><dd>the current directory size </dd></dl>
+
+</div>
+</div>
+<a id="aa7f00dfce64c64c789b0aa005e85fe64" name="aa7f00dfce64c64c789b0aa005e85fe64"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa7f00dfce64c64c789b0aa005e85fe64">&#9670;&#160;</a></span>VerifyIntegrity()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void bustub::ExtendibleHTableDirectoryPage::VerifyIntegrity </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>VerifyIntegrity</p>
+<p>Verify the following invariants: (1) All LD &lt;= GD. (2) Each bucket has precisely 2^(GD - LD) pointers pointing to it. (3) The LD is the same at each index with the same bucket_page_id </p>
+
+</div>
+</div>
+<h2 class="groupheader">类成员变量说明</h2>
+<a id="a9651dddcf4f86ea5167b9685dc89e899" name="a9651dddcf4f86ea5167b9685dc89e899"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9651dddcf4f86ea5167b9685dc89e899">&#9670;&#160;</a></span>bucket_page_ids_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../de/dda/namespacebustub.html#a8de4ac099b23d712481109bb846decde">page_id_t</a> bustub::ExtendibleHTableDirectoryPage::bucket_page_ids_[<a class="el" href="../../de/dda/namespacebustub.html#a637f064c056f13ded34a4e941ff7215d">HTABLE_DIRECTORY_ARRAY_SIZE</a>]</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a66e284a0d97e4f91f3d5bb69458ca59b" name="a66e284a0d97e4f91f3d5bb69458ca59b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a66e284a0d97e4f91f3d5bb69458ca59b">&#9670;&#160;</a></span>global_depth_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32_t bustub::ExtendibleHTableDirectoryPage::global_depth_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a14ee80663f08af2b810142da4486aa0a" name="a14ee80663f08af2b810142da4486aa0a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a14ee80663f08af2b810142da4486aa0a">&#9670;&#160;</a></span>local_depths_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t bustub::ExtendibleHTableDirectoryPage::local_depths_[<a class="el" href="../../de/dda/namespacebustub.html#a637f064c056f13ded34a4e941ff7215d">HTABLE_DIRECTORY_ARRAY_SIZE</a>]</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ad04ea757c54f7b57de2e9066b44c1679" name="ad04ea757c54f7b57de2e9066b44c1679"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad04ea757c54f7b57de2e9066b44c1679">&#9670;&#160;</a></span>max_depth_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32_t bustub::ExtendibleHTableDirectoryPage::max_depth_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<hr/>该类的文档由以下文件生成:<ul>
+<li>src/include/storage/page/<a class="el" href="../../da/d0c/extendible__htable__directory__page_8h_source.html">extendible_htable_directory_page.h</a></li>
+<li>src/storage/page/<a class="el" href="../../df/d51/extendible__htable__directory__page_8cpp.html">extendible_htable_directory_page.cpp</a></li>
+<li>src/storage/page/<a class="el" href="../../db/da3/extendible__htable__page__utils_8cpp.html">extendible_htable_page_utils.cpp</a></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
+</small></address>
+</body>
+</html>

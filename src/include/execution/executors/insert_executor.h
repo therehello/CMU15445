@@ -63,7 +63,7 @@ class InsertExecutor : public AbstractExecutor {
   /** The insert plan node to be executed*/
   const InsertPlanNode *plan_;
   const TableInfo *table_info_;
-  std::vector<IndexInfo *> index_infos;
+  std::vector<IndexInfo *> index_infos_;
   std::unique_ptr<AbstractExecutor> child_executor_;
   bool is_end_{};
 };

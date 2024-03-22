@@ -1,0 +1,1199 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>数据库系统 CMU15-445/645: bustub::LogRecord类 参考</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/searchdata.js"></script>
+<script type="text/javascript" src="../../search/search.js"></script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">数据库系统 CMU15-445/645<span id="projectnumber">&#160;1.0.0</span>
+   </div>
+   <div id="projectbrief">CMU15-445/645 是基于现代 C++ 开发的支持并发操作的简单 SQL 操作的单机数据库</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.9.8 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "../../search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('../../',true,false,'search.php','搜索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="../../de/dda/namespacebustub.html">bustub</a></li><li class="navelem"><a class="el" href="../../d8/de4/classbustub_1_1LogRecord.html">LogRecord</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Public 成员函数</a> &#124;
+<a href="#pri-attribs">Private 属性</a> &#124;
+<a href="#pri-static-attribs">静态 Private 属性</a> &#124;
+<a href="#friends">友元</a> &#124;
+<a href="../../d5/dd4/classbustub_1_1LogRecord-members.html">所有成员列表</a>  </div>
+  <div class="headertitle"><div class="title">bustub::LogRecord类 参考</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p><code>#include &lt;<a class="el" href="../../db/d40/log__record_8h_source.html">log_record.h</a>&gt;</code></p>
+<div class="dynheader">
+bustub::LogRecord 的协作图:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../dd/dc7/classbustub_1_1LogRecord__coll__graph.svg" width="271" height="275"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<center><span class="legend">[<a href="../../graph_legend.html">图例</a>]</span></center></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Public 成员函数</h2></td></tr>
+<tr class="memitem:ac42f06f821c1e9ebb80a647e3d4a0d28" id="r_ac42f06f821c1e9ebb80a647e3d4a0d28"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/de4/classbustub_1_1LogRecord.html#ac42f06f821c1e9ebb80a647e3d4a0d28">LogRecord</a> ()=default</td></tr>
+<tr class="separator:ac42f06f821c1e9ebb80a647e3d4a0d28"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad8571e9de7b2180e5b6a499e1734e14f" id="r_ad8571e9de7b2180e5b6a499e1734e14f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/de4/classbustub_1_1LogRecord.html#ad8571e9de7b2180e5b6a499e1734e14f">LogRecord</a> (<a class="el" href="../../de/dda/namespacebustub.html#a6fc9c36dd76ed654983fc39f5fef1235">txn_id_t</a> txn_id, <a class="el" href="../../de/dda/namespacebustub.html#a8ceb3d9746c8621a11887b2754e385f2">lsn_t</a> prev_lsn, <a class="el" href="../../de/dda/namespacebustub.html#a43eda6cb555f74433d860efc5e45b9cc">LogRecordType</a> log_record_type)</td></tr>
+<tr class="separator:ad8571e9de7b2180e5b6a499e1734e14f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0928587b6dae9e6336e6ebd4534416a6" id="r_a0928587b6dae9e6336e6ebd4534416a6"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/de4/classbustub_1_1LogRecord.html#a0928587b6dae9e6336e6ebd4534416a6">LogRecord</a> (<a class="el" href="../../de/dda/namespacebustub.html#a6fc9c36dd76ed654983fc39f5fef1235">txn_id_t</a> txn_id, <a class="el" href="../../de/dda/namespacebustub.html#a8ceb3d9746c8621a11887b2754e385f2">lsn_t</a> prev_lsn, <a class="el" href="../../de/dda/namespacebustub.html#a43eda6cb555f74433d860efc5e45b9cc">LogRecordType</a> log_record_type, const <a class="el" href="../../d3/d22/classbustub_1_1RID.html">RID</a> &amp;rid, const <a class="el" href="../../d0/ded/classbustub_1_1Tuple.html">Tuple</a> &amp;tuple)</td></tr>
+<tr class="separator:a0928587b6dae9e6336e6ebd4534416a6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae0a6385db4601054c2a9f688cc49010c" id="r_ae0a6385db4601054c2a9f688cc49010c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/de4/classbustub_1_1LogRecord.html#ae0a6385db4601054c2a9f688cc49010c">LogRecord</a> (<a class="el" href="../../de/dda/namespacebustub.html#a6fc9c36dd76ed654983fc39f5fef1235">txn_id_t</a> txn_id, <a class="el" href="../../de/dda/namespacebustub.html#a8ceb3d9746c8621a11887b2754e385f2">lsn_t</a> prev_lsn, <a class="el" href="../../de/dda/namespacebustub.html#a43eda6cb555f74433d860efc5e45b9cc">LogRecordType</a> log_record_type, const <a class="el" href="../../d3/d22/classbustub_1_1RID.html">RID</a> &amp;update_rid, const <a class="el" href="../../d0/ded/classbustub_1_1Tuple.html">Tuple</a> &amp;old_tuple, const <a class="el" href="../../d0/ded/classbustub_1_1Tuple.html">Tuple</a> &amp;new_tuple)</td></tr>
+<tr class="separator:ae0a6385db4601054c2a9f688cc49010c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a48c7b48c6c51d38516e205aa38b8b5a9" id="r_a48c7b48c6c51d38516e205aa38b8b5a9"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/de4/classbustub_1_1LogRecord.html#a48c7b48c6c51d38516e205aa38b8b5a9">LogRecord</a> (<a class="el" href="../../de/dda/namespacebustub.html#a6fc9c36dd76ed654983fc39f5fef1235">txn_id_t</a> txn_id, <a class="el" href="../../de/dda/namespacebustub.html#a8ceb3d9746c8621a11887b2754e385f2">lsn_t</a> prev_lsn, <a class="el" href="../../de/dda/namespacebustub.html#a43eda6cb555f74433d860efc5e45b9cc">LogRecordType</a> log_record_type, <a class="el" href="../../de/dda/namespacebustub.html#a8de4ac099b23d712481109bb846decde">page_id_t</a> prev_page_id, <a class="el" href="../../de/dda/namespacebustub.html#a8de4ac099b23d712481109bb846decde">page_id_t</a> page_id)</td></tr>
+<tr class="separator:a48c7b48c6c51d38516e205aa38b8b5a9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1a92d2d915cab58ec52ed7fbbd82803d" id="r_a1a92d2d915cab58ec52ed7fbbd82803d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/de4/classbustub_1_1LogRecord.html#a1a92d2d915cab58ec52ed7fbbd82803d">~LogRecord</a> ()=default</td></tr>
+<tr class="separator:a1a92d2d915cab58ec52ed7fbbd82803d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9674f470888fcc3257623424e7da7c28" id="r_a9674f470888fcc3257623424e7da7c28"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/de4/classbustub_1_1LogRecord.html#a9674f470888fcc3257623424e7da7c28">GetDeleteTuple</a> () -&gt; <a class="el" href="../../d0/ded/classbustub_1_1Tuple.html">Tuple</a> &amp;</td></tr>
+<tr class="separator:a9674f470888fcc3257623424e7da7c28"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a05fd82680082b07d64f6d280b57a3230" id="r_a05fd82680082b07d64f6d280b57a3230"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/de4/classbustub_1_1LogRecord.html#a05fd82680082b07d64f6d280b57a3230">GetDeleteRID</a> () -&gt; <a class="el" href="../../d3/d22/classbustub_1_1RID.html">RID</a> &amp;</td></tr>
+<tr class="separator:a05fd82680082b07d64f6d280b57a3230"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad5f8e7b5cb99dfb1efda0b646d5e5c3f" id="r_ad5f8e7b5cb99dfb1efda0b646d5e5c3f"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/de4/classbustub_1_1LogRecord.html#ad5f8e7b5cb99dfb1efda0b646d5e5c3f">GetInsertTuple</a> () -&gt; <a class="el" href="../../d0/ded/classbustub_1_1Tuple.html">Tuple</a> &amp;</td></tr>
+<tr class="separator:ad5f8e7b5cb99dfb1efda0b646d5e5c3f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a629b36d2119d93bc15c52515291a2193" id="r_a629b36d2119d93bc15c52515291a2193"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/de4/classbustub_1_1LogRecord.html#a629b36d2119d93bc15c52515291a2193">GetInsertRID</a> () -&gt; <a class="el" href="../../d3/d22/classbustub_1_1RID.html">RID</a> &amp;</td></tr>
+<tr class="separator:a629b36d2119d93bc15c52515291a2193"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a78da33e50728029c99aa561ddfa93000" id="r_a78da33e50728029c99aa561ddfa93000"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/de4/classbustub_1_1LogRecord.html#a78da33e50728029c99aa561ddfa93000">GetOriginalTuple</a> () -&gt; <a class="el" href="../../d0/ded/classbustub_1_1Tuple.html">Tuple</a> &amp;</td></tr>
+<tr class="separator:a78da33e50728029c99aa561ddfa93000"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac808a7f6922f9aef6533c28935c7ef1c" id="r_ac808a7f6922f9aef6533c28935c7ef1c"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/de4/classbustub_1_1LogRecord.html#ac808a7f6922f9aef6533c28935c7ef1c">GetUpdateTuple</a> () -&gt; <a class="el" href="../../d0/ded/classbustub_1_1Tuple.html">Tuple</a> &amp;</td></tr>
+<tr class="separator:ac808a7f6922f9aef6533c28935c7ef1c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a529ed69b29aa941435f6bf96fb06d22f" id="r_a529ed69b29aa941435f6bf96fb06d22f"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/de4/classbustub_1_1LogRecord.html#a529ed69b29aa941435f6bf96fb06d22f">GetUpdateRID</a> () -&gt; <a class="el" href="../../d3/d22/classbustub_1_1RID.html">RID</a> &amp;</td></tr>
+<tr class="separator:a529ed69b29aa941435f6bf96fb06d22f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeea00fef352692a5f2c58519f9616b0d" id="r_aeea00fef352692a5f2c58519f9616b0d"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/de4/classbustub_1_1LogRecord.html#aeea00fef352692a5f2c58519f9616b0d">GetNewPageRecord</a> () -&gt; <a class="el" href="../../de/dda/namespacebustub.html#a8de4ac099b23d712481109bb846decde">page_id_t</a></td></tr>
+<tr class="separator:aeea00fef352692a5f2c58519f9616b0d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a44f86cf0e98c6562932a130677a909f9" id="r_a44f86cf0e98c6562932a130677a909f9"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/de4/classbustub_1_1LogRecord.html#a44f86cf0e98c6562932a130677a909f9">GetSize</a> () -&gt; int32_t</td></tr>
+<tr class="separator:a44f86cf0e98c6562932a130677a909f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad4c3cd64a35ef22ce2e4684a60e954d3" id="r_ad4c3cd64a35ef22ce2e4684a60e954d3"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/de4/classbustub_1_1LogRecord.html#ad4c3cd64a35ef22ce2e4684a60e954d3">GetLSN</a> () -&gt; <a class="el" href="../../de/dda/namespacebustub.html#a8ceb3d9746c8621a11887b2754e385f2">lsn_t</a></td></tr>
+<tr class="separator:ad4c3cd64a35ef22ce2e4684a60e954d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a34c2efe77473eab7624583d2cb9307f2" id="r_a34c2efe77473eab7624583d2cb9307f2"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/de4/classbustub_1_1LogRecord.html#a34c2efe77473eab7624583d2cb9307f2">GetTxnId</a> () -&gt; <a class="el" href="../../de/dda/namespacebustub.html#a6fc9c36dd76ed654983fc39f5fef1235">txn_id_t</a></td></tr>
+<tr class="separator:a34c2efe77473eab7624583d2cb9307f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acbda02dd2f56b895e0d53c06ce4fdb50" id="r_acbda02dd2f56b895e0d53c06ce4fdb50"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/de4/classbustub_1_1LogRecord.html#acbda02dd2f56b895e0d53c06ce4fdb50">GetPrevLSN</a> () -&gt; <a class="el" href="../../de/dda/namespacebustub.html#a8ceb3d9746c8621a11887b2754e385f2">lsn_t</a></td></tr>
+<tr class="separator:acbda02dd2f56b895e0d53c06ce4fdb50"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab3546f49c885d6882901ddf95e43bab1" id="r_ab3546f49c885d6882901ddf95e43bab1"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/de4/classbustub_1_1LogRecord.html#ab3546f49c885d6882901ddf95e43bab1">GetLogRecordType</a> () -&gt; <a class="el" href="../../de/dda/namespacebustub.html#a43eda6cb555f74433d860efc5e45b9cc">LogRecordType</a> &amp;</td></tr>
+<tr class="separator:ab3546f49c885d6882901ddf95e43bab1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad6eab990f353f8e1c6a8bb476abb3512" id="r_ad6eab990f353f8e1c6a8bb476abb3512"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/de4/classbustub_1_1LogRecord.html#ad6eab990f353f8e1c6a8bb476abb3512">ToString</a> () const -&gt; std::string</td></tr>
+<tr class="separator:ad6eab990f353f8e1c6a8bb476abb3512"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
+Private 属性</h2></td></tr>
+<tr class="memitem:ab9b216833c9e1f496e3da968db422a58" id="r_ab9b216833c9e1f496e3da968db422a58"><td class="memItemLeft" align="right" valign="top">int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/de4/classbustub_1_1LogRecord.html#ab9b216833c9e1f496e3da968db422a58">size_</a> {0}</td></tr>
+<tr class="separator:ab9b216833c9e1f496e3da968db422a58"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6814f01da5717dd2fbe829fc3990bd0d" id="r_a6814f01da5717dd2fbe829fc3990bd0d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../de/dda/namespacebustub.html#a8ceb3d9746c8621a11887b2754e385f2">lsn_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/de4/classbustub_1_1LogRecord.html#a6814f01da5717dd2fbe829fc3990bd0d">lsn_</a> {<a class="el" href="../../de/dda/namespacebustub.html#a66748b38863ce1e7a8d7fcd374904def">INVALID_LSN</a>}</td></tr>
+<tr class="separator:a6814f01da5717dd2fbe829fc3990bd0d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a798afb39b1a92dd528612c82499ffe63" id="r_a798afb39b1a92dd528612c82499ffe63"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../de/dda/namespacebustub.html#a6fc9c36dd76ed654983fc39f5fef1235">txn_id_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/de4/classbustub_1_1LogRecord.html#a798afb39b1a92dd528612c82499ffe63">txn_id_</a> {<a class="el" href="../../de/dda/namespacebustub.html#a8da1cfb31d4478719e87214c5789cf01">INVALID_TXN_ID</a>}</td></tr>
+<tr class="separator:a798afb39b1a92dd528612c82499ffe63"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad774274cf9104e138dbd31c3b0ca29e4" id="r_ad774274cf9104e138dbd31c3b0ca29e4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../de/dda/namespacebustub.html#a8ceb3d9746c8621a11887b2754e385f2">lsn_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/de4/classbustub_1_1LogRecord.html#ad774274cf9104e138dbd31c3b0ca29e4">prev_lsn_</a> {<a class="el" href="../../de/dda/namespacebustub.html#a66748b38863ce1e7a8d7fcd374904def">INVALID_LSN</a>}</td></tr>
+<tr class="separator:ad774274cf9104e138dbd31c3b0ca29e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a719e6385a92789729952fa4311dd56d9" id="r_a719e6385a92789729952fa4311dd56d9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../de/dda/namespacebustub.html#a43eda6cb555f74433d860efc5e45b9cc">LogRecordType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/de4/classbustub_1_1LogRecord.html#a719e6385a92789729952fa4311dd56d9">log_record_type_</a> {<a class="el" href="../../de/dda/namespacebustub.html#a43eda6cb555f74433d860efc5e45b9ccaccc0377a8afbf50e7094f5c23a8af223">LogRecordType::INVALID</a>}</td></tr>
+<tr class="separator:a719e6385a92789729952fa4311dd56d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad8deca5cbb0f2c85d5f7fdef0fc8762d" id="r_ad8deca5cbb0f2c85d5f7fdef0fc8762d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d3/d22/classbustub_1_1RID.html">RID</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/de4/classbustub_1_1LogRecord.html#ad8deca5cbb0f2c85d5f7fdef0fc8762d">delete_rid_</a></td></tr>
+<tr class="separator:ad8deca5cbb0f2c85d5f7fdef0fc8762d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9e6bd949387b4f6d400a00834d2f63e2" id="r_a9e6bd949387b4f6d400a00834d2f63e2"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d0/ded/classbustub_1_1Tuple.html">Tuple</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/de4/classbustub_1_1LogRecord.html#a9e6bd949387b4f6d400a00834d2f63e2">delete_tuple_</a></td></tr>
+<tr class="separator:a9e6bd949387b4f6d400a00834d2f63e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a87baa2847e295bb5a1f293cac34f91bd" id="r_a87baa2847e295bb5a1f293cac34f91bd"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d3/d22/classbustub_1_1RID.html">RID</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/de4/classbustub_1_1LogRecord.html#a87baa2847e295bb5a1f293cac34f91bd">insert_rid_</a></td></tr>
+<tr class="separator:a87baa2847e295bb5a1f293cac34f91bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad73d62a9dbf923c72e98d89d0f7fc4a2" id="r_ad73d62a9dbf923c72e98d89d0f7fc4a2"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d0/ded/classbustub_1_1Tuple.html">Tuple</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/de4/classbustub_1_1LogRecord.html#ad73d62a9dbf923c72e98d89d0f7fc4a2">insert_tuple_</a></td></tr>
+<tr class="separator:ad73d62a9dbf923c72e98d89d0f7fc4a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9d29baba5f6837a8013ccbfdc50f7fc5" id="r_a9d29baba5f6837a8013ccbfdc50f7fc5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d3/d22/classbustub_1_1RID.html">RID</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/de4/classbustub_1_1LogRecord.html#a9d29baba5f6837a8013ccbfdc50f7fc5">update_rid_</a></td></tr>
+<tr class="separator:a9d29baba5f6837a8013ccbfdc50f7fc5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0e4dc5a6995cbd937df59d101db21afd" id="r_a0e4dc5a6995cbd937df59d101db21afd"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d0/ded/classbustub_1_1Tuple.html">Tuple</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/de4/classbustub_1_1LogRecord.html#a0e4dc5a6995cbd937df59d101db21afd">old_tuple_</a></td></tr>
+<tr class="separator:a0e4dc5a6995cbd937df59d101db21afd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1982860a3e82221ad0e5785124780750" id="r_a1982860a3e82221ad0e5785124780750"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d0/ded/classbustub_1_1Tuple.html">Tuple</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/de4/classbustub_1_1LogRecord.html#a1982860a3e82221ad0e5785124780750">new_tuple_</a></td></tr>
+<tr class="separator:a1982860a3e82221ad0e5785124780750"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a21d40eb4e147b88f424ef99c0bc32768" id="r_a21d40eb4e147b88f424ef99c0bc32768"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../de/dda/namespacebustub.html#a8de4ac099b23d712481109bb846decde">page_id_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/de4/classbustub_1_1LogRecord.html#a21d40eb4e147b88f424ef99c0bc32768">prev_page_id_</a> {<a class="el" href="../../de/dda/namespacebustub.html#ae9dd773eae7950183ebc60def880f499">INVALID_PAGE_ID</a>}</td></tr>
+<tr class="separator:a21d40eb4e147b88f424ef99c0bc32768"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a28fd0009d6fe5620d68272abc0723487" id="r_a28fd0009d6fe5620d68272abc0723487"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../de/dda/namespacebustub.html#a8de4ac099b23d712481109bb846decde">page_id_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/de4/classbustub_1_1LogRecord.html#a28fd0009d6fe5620d68272abc0723487">page_id_</a> {<a class="el" href="../../de/dda/namespacebustub.html#ae9dd773eae7950183ebc60def880f499">INVALID_PAGE_ID</a>}</td></tr>
+<tr class="separator:a28fd0009d6fe5620d68272abc0723487"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-static-attribs" name="pri-static-attribs"></a>
+静态 Private 属性</h2></td></tr>
+<tr class="memitem:ac5d6d466d54587a5a795534761f89532" id="r_ac5d6d466d54587a5a795534761f89532"><td class="memItemLeft" align="right" valign="top">static const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/de4/classbustub_1_1LogRecord.html#ac5d6d466d54587a5a795534761f89532">HEADER_SIZE</a> = 20</td></tr>
+<tr class="separator:ac5d6d466d54587a5a795534761f89532"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="friends" name="friends"></a>
+友元</h2></td></tr>
+<tr class="memitem:a42122844816425e371e961638cdaf796" id="r_a42122844816425e371e961638cdaf796"><td class="memItemLeft" align="right" valign="top">class&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/de4/classbustub_1_1LogRecord.html#a42122844816425e371e961638cdaf796">LogManager</a></td></tr>
+<tr class="separator:a42122844816425e371e961638cdaf796"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0a38999bad446d23993955f77e0acce0" id="r_a0a38999bad446d23993955f77e0acce0"><td class="memItemLeft" align="right" valign="top">class&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/de4/classbustub_1_1LogRecord.html#a0a38999bad446d23993955f77e0acce0">LogRecovery</a></td></tr>
+<tr class="separator:a0a38999bad446d23993955f77e0acce0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
+<div class="textblock"><p>For every write operation on the table page, you should write ahead a corresponding log record.</p>
+<h2><a class="anchor" id="autotoc_md0"></a>
+For EACH log record, HEADER is like (5 fields in common, 20 bytes in total).</h2>
+<h2><a class="anchor" id="autotoc_md1"></a>
+| size | LSN | transID | prevLSN | LogType |</h2>
+<h2><a class="anchor" id="autotoc_md2"></a>
+For insert type log record</h2>
+<h2><a class="anchor" id="autotoc_md3"></a>
+| HEADER | tuple_rid | tuple_size | tuple_data(char[] array) |</h2>
+<h2><a class="anchor" id="autotoc_md4"></a>
+For delete type (including markdelete, rollbackdelete, applydelete)</h2>
+<h2><a class="anchor" id="autotoc_md5"></a>
+| HEADER | tuple_rid | tuple_size | tuple_data(char[] array) |</h2>
+<h2><a class="anchor" id="autotoc_md6"></a>
+For update type log record</h2>
+<h2><a class="anchor" id="autotoc_md7"></a>
+| HEADER | tuple_rid | tuple_size | old_tuple_data | tuple_size | new_tuple_data |</h2>
+<h2><a class="anchor" id="autotoc_md8"></a>
+For new page type log record</h2>
+<h2><a class="anchor" id="autotoc_md9"></a>
+| HEADER | prev_page_id |</h2>
+</div><h2 class="groupheader">构造及析构函数说明</h2>
+<a id="ac42f06f821c1e9ebb80a647e3d4a0d28" name="ac42f06f821c1e9ebb80a647e3d4a0d28"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac42f06f821c1e9ebb80a647e3d4a0d28">&#9670;&#160;</a></span>LogRecord() <span class="overload">[1/5]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bustub::LogRecord::LogRecord </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">default</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ad8571e9de7b2180e5b6a499e1734e14f" name="ad8571e9de7b2180e5b6a499e1734e14f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad8571e9de7b2180e5b6a499e1734e14f">&#9670;&#160;</a></span>LogRecord() <span class="overload">[2/5]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bustub::LogRecord::LogRecord </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../de/dda/namespacebustub.html#a6fc9c36dd76ed654983fc39f5fef1235">txn_id_t</a>&#160;</td>
+          <td class="paramname"><em>txn_id</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="../../de/dda/namespacebustub.html#a8ceb3d9746c8621a11887b2754e385f2">lsn_t</a>&#160;</td>
+          <td class="paramname"><em>prev_lsn</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="../../de/dda/namespacebustub.html#a43eda6cb555f74433d860efc5e45b9cc">LogRecordType</a>&#160;</td>
+          <td class="paramname"><em>log_record_type</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a0928587b6dae9e6336e6ebd4534416a6" name="a0928587b6dae9e6336e6ebd4534416a6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0928587b6dae9e6336e6ebd4534416a6">&#9670;&#160;</a></span>LogRecord() <span class="overload">[3/5]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bustub::LogRecord::LogRecord </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../de/dda/namespacebustub.html#a6fc9c36dd76ed654983fc39f5fef1235">txn_id_t</a>&#160;</td>
+          <td class="paramname"><em>txn_id</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="../../de/dda/namespacebustub.html#a8ceb3d9746c8621a11887b2754e385f2">lsn_t</a>&#160;</td>
+          <td class="paramname"><em>prev_lsn</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="../../de/dda/namespacebustub.html#a43eda6cb555f74433d860efc5e45b9cc">LogRecordType</a>&#160;</td>
+          <td class="paramname"><em>log_record_type</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="../../d3/d22/classbustub_1_1RID.html">RID</a> &amp;&#160;</td>
+          <td class="paramname"><em>rid</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="../../d0/ded/classbustub_1_1Tuple.html">Tuple</a> &amp;&#160;</td>
+          <td class="paramname"><em>tuple</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ae0a6385db4601054c2a9f688cc49010c" name="ae0a6385db4601054c2a9f688cc49010c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae0a6385db4601054c2a9f688cc49010c">&#9670;&#160;</a></span>LogRecord() <span class="overload">[4/5]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bustub::LogRecord::LogRecord </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../de/dda/namespacebustub.html#a6fc9c36dd76ed654983fc39f5fef1235">txn_id_t</a>&#160;</td>
+          <td class="paramname"><em>txn_id</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="../../de/dda/namespacebustub.html#a8ceb3d9746c8621a11887b2754e385f2">lsn_t</a>&#160;</td>
+          <td class="paramname"><em>prev_lsn</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="../../de/dda/namespacebustub.html#a43eda6cb555f74433d860efc5e45b9cc">LogRecordType</a>&#160;</td>
+          <td class="paramname"><em>log_record_type</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="../../d3/d22/classbustub_1_1RID.html">RID</a> &amp;&#160;</td>
+          <td class="paramname"><em>update_rid</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="../../d0/ded/classbustub_1_1Tuple.html">Tuple</a> &amp;&#160;</td>
+          <td class="paramname"><em>old_tuple</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="../../d0/ded/classbustub_1_1Tuple.html">Tuple</a> &amp;&#160;</td>
+          <td class="paramname"><em>new_tuple</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a48c7b48c6c51d38516e205aa38b8b5a9" name="a48c7b48c6c51d38516e205aa38b8b5a9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a48c7b48c6c51d38516e205aa38b8b5a9">&#9670;&#160;</a></span>LogRecord() <span class="overload">[5/5]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bustub::LogRecord::LogRecord </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../de/dda/namespacebustub.html#a6fc9c36dd76ed654983fc39f5fef1235">txn_id_t</a>&#160;</td>
+          <td class="paramname"><em>txn_id</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="../../de/dda/namespacebustub.html#a8ceb3d9746c8621a11887b2754e385f2">lsn_t</a>&#160;</td>
+          <td class="paramname"><em>prev_lsn</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="../../de/dda/namespacebustub.html#a43eda6cb555f74433d860efc5e45b9cc">LogRecordType</a>&#160;</td>
+          <td class="paramname"><em>log_record_type</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="../../de/dda/namespacebustub.html#a8de4ac099b23d712481109bb846decde">page_id_t</a>&#160;</td>
+          <td class="paramname"><em>prev_page_id</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="../../de/dda/namespacebustub.html#a8de4ac099b23d712481109bb846decde">page_id_t</a>&#160;</td>
+          <td class="paramname"><em>page_id</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a1a92d2d915cab58ec52ed7fbbd82803d" name="a1a92d2d915cab58ec52ed7fbbd82803d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1a92d2d915cab58ec52ed7fbbd82803d">&#9670;&#160;</a></span>~LogRecord()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bustub::LogRecord::~LogRecord </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">default</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">成员函数说明</h2>
+<a id="a05fd82680082b07d64f6d280b57a3230" name="a05fd82680082b07d64f6d280b57a3230"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a05fd82680082b07d64f6d280b57a3230">&#9670;&#160;</a></span>GetDeleteRID()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto bustub::LogRecord::GetDeleteRID </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> -&gt; <a class="el" href="../../d3/d22/classbustub_1_1RID.html">RID</a> &amp; </td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a9674f470888fcc3257623424e7da7c28" name="a9674f470888fcc3257623424e7da7c28"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9674f470888fcc3257623424e7da7c28">&#9670;&#160;</a></span>GetDeleteTuple()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto bustub::LogRecord::GetDeleteTuple </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> -&gt; <a class="el" href="../../d0/ded/classbustub_1_1Tuple.html">Tuple</a> &amp; </td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a629b36d2119d93bc15c52515291a2193" name="a629b36d2119d93bc15c52515291a2193"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a629b36d2119d93bc15c52515291a2193">&#9670;&#160;</a></span>GetInsertRID()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto bustub::LogRecord::GetInsertRID </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> -&gt; <a class="el" href="../../d3/d22/classbustub_1_1RID.html">RID</a> &amp; </td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ad5f8e7b5cb99dfb1efda0b646d5e5c3f" name="ad5f8e7b5cb99dfb1efda0b646d5e5c3f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad5f8e7b5cb99dfb1efda0b646d5e5c3f">&#9670;&#160;</a></span>GetInsertTuple()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto bustub::LogRecord::GetInsertTuple </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> -&gt; <a class="el" href="../../d0/ded/classbustub_1_1Tuple.html">Tuple</a> &amp; </td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ab3546f49c885d6882901ddf95e43bab1" name="ab3546f49c885d6882901ddf95e43bab1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab3546f49c885d6882901ddf95e43bab1">&#9670;&#160;</a></span>GetLogRecordType()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto bustub::LogRecord::GetLogRecordType </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> -&gt; <a class="el" href="../../de/dda/namespacebustub.html#a43eda6cb555f74433d860efc5e45b9cc">LogRecordType</a> &amp; </td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ad4c3cd64a35ef22ce2e4684a60e954d3" name="ad4c3cd64a35ef22ce2e4684a60e954d3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad4c3cd64a35ef22ce2e4684a60e954d3">&#9670;&#160;</a></span>GetLSN()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto bustub::LogRecord::GetLSN </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> -&gt; <a class="el" href="../../de/dda/namespacebustub.html#a8ceb3d9746c8621a11887b2754e385f2">lsn_t</a> </td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aeea00fef352692a5f2c58519f9616b0d" name="aeea00fef352692a5f2c58519f9616b0d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aeea00fef352692a5f2c58519f9616b0d">&#9670;&#160;</a></span>GetNewPageRecord()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto bustub::LogRecord::GetNewPageRecord </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> -&gt; <a class="el" href="../../de/dda/namespacebustub.html#a8de4ac099b23d712481109bb846decde">page_id_t</a> </td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a78da33e50728029c99aa561ddfa93000" name="a78da33e50728029c99aa561ddfa93000"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a78da33e50728029c99aa561ddfa93000">&#9670;&#160;</a></span>GetOriginalTuple()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto bustub::LogRecord::GetOriginalTuple </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> -&gt; <a class="el" href="../../d0/ded/classbustub_1_1Tuple.html">Tuple</a> &amp; </td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="acbda02dd2f56b895e0d53c06ce4fdb50" name="acbda02dd2f56b895e0d53c06ce4fdb50"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acbda02dd2f56b895e0d53c06ce4fdb50">&#9670;&#160;</a></span>GetPrevLSN()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto bustub::LogRecord::GetPrevLSN </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> -&gt; <a class="el" href="../../de/dda/namespacebustub.html#a8ceb3d9746c8621a11887b2754e385f2">lsn_t</a> </td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a44f86cf0e98c6562932a130677a909f9" name="a44f86cf0e98c6562932a130677a909f9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a44f86cf0e98c6562932a130677a909f9">&#9670;&#160;</a></span>GetSize()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto bustub::LogRecord::GetSize </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> -&gt; int32_t </td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a34c2efe77473eab7624583d2cb9307f2" name="a34c2efe77473eab7624583d2cb9307f2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a34c2efe77473eab7624583d2cb9307f2">&#9670;&#160;</a></span>GetTxnId()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto bustub::LogRecord::GetTxnId </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> -&gt; <a class="el" href="../../de/dda/namespacebustub.html#a6fc9c36dd76ed654983fc39f5fef1235">txn_id_t</a> </td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a529ed69b29aa941435f6bf96fb06d22f" name="a529ed69b29aa941435f6bf96fb06d22f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a529ed69b29aa941435f6bf96fb06d22f">&#9670;&#160;</a></span>GetUpdateRID()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto bustub::LogRecord::GetUpdateRID </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> -&gt; <a class="el" href="../../d3/d22/classbustub_1_1RID.html">RID</a> &amp; </td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ac808a7f6922f9aef6533c28935c7ef1c" name="ac808a7f6922f9aef6533c28935c7ef1c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac808a7f6922f9aef6533c28935c7ef1c">&#9670;&#160;</a></span>GetUpdateTuple()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto bustub::LogRecord::GetUpdateTuple </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> -&gt; <a class="el" href="../../d0/ded/classbustub_1_1Tuple.html">Tuple</a> &amp; </td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ad6eab990f353f8e1c6a8bb476abb3512" name="ad6eab990f353f8e1c6a8bb476abb3512"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad6eab990f353f8e1c6a8bb476abb3512">&#9670;&#160;</a></span>ToString()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto bustub::LogRecord::ToString </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const -&gt; std::string </td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">友元及相关函数文档</h2>
+<a id="a42122844816425e371e961638cdaf796" name="a42122844816425e371e961638cdaf796"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a42122844816425e371e961638cdaf796">&#9670;&#160;</a></span>LogManager</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">friend class <a class="el" href="../../d7/d4e/classbustub_1_1LogManager.html">LogManager</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">friend</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a0a38999bad446d23993955f77e0acce0" name="a0a38999bad446d23993955f77e0acce0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0a38999bad446d23993955f77e0acce0">&#9670;&#160;</a></span>LogRecovery</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">friend class <a class="el" href="../../de/dc1/classbustub_1_1LogRecovery.html">LogRecovery</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">friend</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">类成员变量说明</h2>
+<a id="ad8deca5cbb0f2c85d5f7fdef0fc8762d" name="ad8deca5cbb0f2c85d5f7fdef0fc8762d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad8deca5cbb0f2c85d5f7fdef0fc8762d">&#9670;&#160;</a></span>delete_rid_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d3/d22/classbustub_1_1RID.html">RID</a> bustub::LogRecord::delete_rid_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a9e6bd949387b4f6d400a00834d2f63e2" name="a9e6bd949387b4f6d400a00834d2f63e2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9e6bd949387b4f6d400a00834d2f63e2">&#9670;&#160;</a></span>delete_tuple_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d0/ded/classbustub_1_1Tuple.html">Tuple</a> bustub::LogRecord::delete_tuple_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ac5d6d466d54587a5a795534761f89532" name="ac5d6d466d54587a5a795534761f89532"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac5d6d466d54587a5a795534761f89532">&#9670;&#160;</a></span>HEADER_SIZE</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const int bustub::LogRecord::HEADER_SIZE = 20</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a87baa2847e295bb5a1f293cac34f91bd" name="a87baa2847e295bb5a1f293cac34f91bd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a87baa2847e295bb5a1f293cac34f91bd">&#9670;&#160;</a></span>insert_rid_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d3/d22/classbustub_1_1RID.html">RID</a> bustub::LogRecord::insert_rid_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ad73d62a9dbf923c72e98d89d0f7fc4a2" name="ad73d62a9dbf923c72e98d89d0f7fc4a2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad73d62a9dbf923c72e98d89d0f7fc4a2">&#9670;&#160;</a></span>insert_tuple_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d0/ded/classbustub_1_1Tuple.html">Tuple</a> bustub::LogRecord::insert_tuple_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a719e6385a92789729952fa4311dd56d9" name="a719e6385a92789729952fa4311dd56d9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a719e6385a92789729952fa4311dd56d9">&#9670;&#160;</a></span>log_record_type_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../de/dda/namespacebustub.html#a43eda6cb555f74433d860efc5e45b9cc">LogRecordType</a> bustub::LogRecord::log_record_type_ {<a class="el" href="../../de/dda/namespacebustub.html#a43eda6cb555f74433d860efc5e45b9ccaccc0377a8afbf50e7094f5c23a8af223">LogRecordType::INVALID</a>}</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a6814f01da5717dd2fbe829fc3990bd0d" name="a6814f01da5717dd2fbe829fc3990bd0d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6814f01da5717dd2fbe829fc3990bd0d">&#9670;&#160;</a></span>lsn_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../de/dda/namespacebustub.html#a8ceb3d9746c8621a11887b2754e385f2">lsn_t</a> bustub::LogRecord::lsn_ {<a class="el" href="../../de/dda/namespacebustub.html#a66748b38863ce1e7a8d7fcd374904def">INVALID_LSN</a>}</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a1982860a3e82221ad0e5785124780750" name="a1982860a3e82221ad0e5785124780750"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1982860a3e82221ad0e5785124780750">&#9670;&#160;</a></span>new_tuple_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d0/ded/classbustub_1_1Tuple.html">Tuple</a> bustub::LogRecord::new_tuple_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a0e4dc5a6995cbd937df59d101db21afd" name="a0e4dc5a6995cbd937df59d101db21afd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0e4dc5a6995cbd937df59d101db21afd">&#9670;&#160;</a></span>old_tuple_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d0/ded/classbustub_1_1Tuple.html">Tuple</a> bustub::LogRecord::old_tuple_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a28fd0009d6fe5620d68272abc0723487" name="a28fd0009d6fe5620d68272abc0723487"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a28fd0009d6fe5620d68272abc0723487">&#9670;&#160;</a></span>page_id_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../de/dda/namespacebustub.html#a8de4ac099b23d712481109bb846decde">page_id_t</a> bustub::LogRecord::page_id_ {<a class="el" href="../../de/dda/namespacebustub.html#ae9dd773eae7950183ebc60def880f499">INVALID_PAGE_ID</a>}</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ad774274cf9104e138dbd31c3b0ca29e4" name="ad774274cf9104e138dbd31c3b0ca29e4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad774274cf9104e138dbd31c3b0ca29e4">&#9670;&#160;</a></span>prev_lsn_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../de/dda/namespacebustub.html#a8ceb3d9746c8621a11887b2754e385f2">lsn_t</a> bustub::LogRecord::prev_lsn_ {<a class="el" href="../../de/dda/namespacebustub.html#a66748b38863ce1e7a8d7fcd374904def">INVALID_LSN</a>}</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a21d40eb4e147b88f424ef99c0bc32768" name="a21d40eb4e147b88f424ef99c0bc32768"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a21d40eb4e147b88f424ef99c0bc32768">&#9670;&#160;</a></span>prev_page_id_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../de/dda/namespacebustub.html#a8de4ac099b23d712481109bb846decde">page_id_t</a> bustub::LogRecord::prev_page_id_ {<a class="el" href="../../de/dda/namespacebustub.html#ae9dd773eae7950183ebc60def880f499">INVALID_PAGE_ID</a>}</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ab9b216833c9e1f496e3da968db422a58" name="ab9b216833c9e1f496e3da968db422a58"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab9b216833c9e1f496e3da968db422a58">&#9670;&#160;</a></span>size_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int32_t bustub::LogRecord::size_ {0}</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a798afb39b1a92dd528612c82499ffe63" name="a798afb39b1a92dd528612c82499ffe63"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a798afb39b1a92dd528612c82499ffe63">&#9670;&#160;</a></span>txn_id_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../de/dda/namespacebustub.html#a6fc9c36dd76ed654983fc39f5fef1235">txn_id_t</a> bustub::LogRecord::txn_id_ {<a class="el" href="../../de/dda/namespacebustub.html#a8da1cfb31d4478719e87214c5789cf01">INVALID_TXN_ID</a>}</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a9d29baba5f6837a8013ccbfdc50f7fc5" name="a9d29baba5f6837a8013ccbfdc50f7fc5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9d29baba5f6837a8013ccbfdc50f7fc5">&#9670;&#160;</a></span>update_rid_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d3/d22/classbustub_1_1RID.html">RID</a> bustub::LogRecord::update_rid_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<hr/>该类的文档由以下文件生成:<ul>
+<li>src/include/recovery/<a class="el" href="../../db/d40/log__record_8h_source.html">log_record.h</a></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
+</small></address>
+</body>
+</html>

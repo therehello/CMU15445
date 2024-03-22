@@ -1,0 +1,778 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>数据库系统 CMU15-445/645: bustub::DiskManager类 参考</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/searchdata.js"></script>
+<script type="text/javascript" src="../../search/search.js"></script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">数据库系统 CMU15-445/645<span id="projectnumber">&#160;1.0.0</span>
+   </div>
+   <div id="projectbrief">CMU15-445/645 是基于现代 C++ 开发的支持并发操作的简单 SQL 操作的单机数据库</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.9.8 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "../../search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('../../',true,false,'search.php','搜索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="../../de/dda/namespacebustub.html">bustub</a></li><li class="navelem"><a class="el" href="../../da/dfe/classbustub_1_1DiskManager.html">DiskManager</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Public 成员函数</a> &#124;
+<a href="#pro-methods">Protected 成员函数</a> &#124;
+<a href="#pro-attribs">Protected 属性</a> &#124;
+<a href="../../d3/d59/classbustub_1_1DiskManager-members.html">所有成员列表</a>  </div>
+  <div class="headertitle"><div class="title">bustub::DiskManager类 参考</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p><code>#include &lt;<a class="el" href="../../d6/d30/disk__manager_8h_source.html">disk_manager.h</a>&gt;</code></p>
+<div class="dynheader">
+类 bustub::DiskManager 继承关系图:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../d8/d6c/classbustub_1_1DiskManager__inherit__graph.svg" width="475" height="124"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<center><span class="legend">[<a href="../../graph_legend.html">图例</a>]</span></center></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Public 成员函数</h2></td></tr>
+<tr class="memitem:aba194755344868fb657ee9fa9588b41c" id="r_aba194755344868fb657ee9fa9588b41c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/dfe/classbustub_1_1DiskManager.html#aba194755344868fb657ee9fa9588b41c">DiskManager</a> (const std::string &amp;db_file)</td></tr>
+<tr class="separator:aba194755344868fb657ee9fa9588b41c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2317635875456e4ff539683405315c2a" id="r_a2317635875456e4ff539683405315c2a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/dfe/classbustub_1_1DiskManager.html#a2317635875456e4ff539683405315c2a">DiskManager</a> ()=default</td></tr>
+<tr class="separator:a2317635875456e4ff539683405315c2a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a908abd3c04c69e1e8253b08705636961" id="r_a908abd3c04c69e1e8253b08705636961"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/dfe/classbustub_1_1DiskManager.html#a908abd3c04c69e1e8253b08705636961">~DiskManager</a> ()=default</td></tr>
+<tr class="separator:a908abd3c04c69e1e8253b08705636961"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a570857ef083e9f7410309850609db52b" id="r_a570857ef083e9f7410309850609db52b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/dfe/classbustub_1_1DiskManager.html#a570857ef083e9f7410309850609db52b">ShutDown</a> ()</td></tr>
+<tr class="separator:a570857ef083e9f7410309850609db52b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae89df7f59076403589c78c52482c4ceb" id="r_ae89df7f59076403589c78c52482c4ceb"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/dfe/classbustub_1_1DiskManager.html#ae89df7f59076403589c78c52482c4ceb">WritePage</a> (<a class="el" href="../../de/dda/namespacebustub.html#a8de4ac099b23d712481109bb846decde">page_id_t</a> page_id, const char *page_data)</td></tr>
+<tr class="separator:ae89df7f59076403589c78c52482c4ceb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa6cc12345be1e07c2fdb70c50af5e2d8" id="r_aa6cc12345be1e07c2fdb70c50af5e2d8"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/dfe/classbustub_1_1DiskManager.html#aa6cc12345be1e07c2fdb70c50af5e2d8">ReadPage</a> (<a class="el" href="../../de/dda/namespacebustub.html#a8de4ac099b23d712481109bb846decde">page_id_t</a> page_id, char *page_data)</td></tr>
+<tr class="separator:aa6cc12345be1e07c2fdb70c50af5e2d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae3764dd5b64c7cfed48d9ee3f8490171" id="r_ae3764dd5b64c7cfed48d9ee3f8490171"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/dfe/classbustub_1_1DiskManager.html#ae3764dd5b64c7cfed48d9ee3f8490171">WriteLog</a> (char *log_data, int size)</td></tr>
+<tr class="separator:ae3764dd5b64c7cfed48d9ee3f8490171"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abc4de13866f2af455f9d4cd8400921b8" id="r_abc4de13866f2af455f9d4cd8400921b8"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/dfe/classbustub_1_1DiskManager.html#abc4de13866f2af455f9d4cd8400921b8">ReadLog</a> (char *log_data, int size, int offset) -&gt; bool</td></tr>
+<tr class="separator:abc4de13866f2af455f9d4cd8400921b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a191b2770ba4ef62ad0a226241c1fcc40" id="r_a191b2770ba4ef62ad0a226241c1fcc40"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/dfe/classbustub_1_1DiskManager.html#a191b2770ba4ef62ad0a226241c1fcc40">GetNumFlushes</a> () const -&gt; int</td></tr>
+<tr class="separator:a191b2770ba4ef62ad0a226241c1fcc40"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a065b3a5a661fb1adb2aefbe11ab416fc" id="r_a065b3a5a661fb1adb2aefbe11ab416fc"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/dfe/classbustub_1_1DiskManager.html#a065b3a5a661fb1adb2aefbe11ab416fc">GetFlushState</a> () const -&gt; bool</td></tr>
+<tr class="separator:a065b3a5a661fb1adb2aefbe11ab416fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1c1c85719410ab479c43b36f355ab635" id="r_a1c1c85719410ab479c43b36f355ab635"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/dfe/classbustub_1_1DiskManager.html#a1c1c85719410ab479c43b36f355ab635">GetNumWrites</a> () const -&gt; int</td></tr>
+<tr class="separator:a1c1c85719410ab479c43b36f355ab635"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac26ad206410e4a792e0f095e3ba27f96" id="r_ac26ad206410e4a792e0f095e3ba27f96"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/dfe/classbustub_1_1DiskManager.html#ac26ad206410e4a792e0f095e3ba27f96">SetFlushLogFuture</a> (std::future&lt; void &gt; *f)</td></tr>
+<tr class="separator:ac26ad206410e4a792e0f095e3ba27f96"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad2415e36d53680b31a605a68bc0d85b4" id="r_ad2415e36d53680b31a605a68bc0d85b4"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/dfe/classbustub_1_1DiskManager.html#ad2415e36d53680b31a605a68bc0d85b4">HasFlushLogFuture</a> () -&gt; bool</td></tr>
+<tr class="separator:ad2415e36d53680b31a605a68bc0d85b4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-methods" name="pro-methods"></a>
+Protected 成员函数</h2></td></tr>
+<tr class="memitem:ad592519c24c6543ec42b6c438d33a803" id="r_ad592519c24c6543ec42b6c438d33a803"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/dfe/classbustub_1_1DiskManager.html#ad592519c24c6543ec42b6c438d33a803">GetFileSize</a> (const std::string &amp;file_name) -&gt; int</td></tr>
+<tr class="separator:ad592519c24c6543ec42b6c438d33a803"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-attribs" name="pro-attribs"></a>
+Protected 属性</h2></td></tr>
+<tr class="memitem:a493e9240d61edf1db9cc8a4bea992424" id="r_a493e9240d61edf1db9cc8a4bea992424"><td class="memItemLeft" align="right" valign="top">std::fstream&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/dfe/classbustub_1_1DiskManager.html#a493e9240d61edf1db9cc8a4bea992424">log_io_</a></td></tr>
+<tr class="separator:a493e9240d61edf1db9cc8a4bea992424"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aedd66bf4c7da5a7f7e2ead6764f73453" id="r_aedd66bf4c7da5a7f7e2ead6764f73453"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/dfe/classbustub_1_1DiskManager.html#aedd66bf4c7da5a7f7e2ead6764f73453">log_name_</a></td></tr>
+<tr class="separator:aedd66bf4c7da5a7f7e2ead6764f73453"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2c6c98205be53d3d31ab5c49dd1368f5" id="r_a2c6c98205be53d3d31ab5c49dd1368f5"><td class="memItemLeft" align="right" valign="top">std::fstream&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/dfe/classbustub_1_1DiskManager.html#a2c6c98205be53d3d31ab5c49dd1368f5">db_io_</a></td></tr>
+<tr class="separator:a2c6c98205be53d3d31ab5c49dd1368f5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a81e667f23aa033ea1617dc27df953579" id="r_a81e667f23aa033ea1617dc27df953579"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/dfe/classbustub_1_1DiskManager.html#a81e667f23aa033ea1617dc27df953579">file_name_</a></td></tr>
+<tr class="separator:a81e667f23aa033ea1617dc27df953579"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9b3276c9ce47bfd5ff32e3edb05201a9" id="r_a9b3276c9ce47bfd5ff32e3edb05201a9"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/dfe/classbustub_1_1DiskManager.html#a9b3276c9ce47bfd5ff32e3edb05201a9">num_flushes_</a> {0}</td></tr>
+<tr class="separator:a9b3276c9ce47bfd5ff32e3edb05201a9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aea3a4e42c5ce7177358a38a179c2764d" id="r_aea3a4e42c5ce7177358a38a179c2764d"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/dfe/classbustub_1_1DiskManager.html#aea3a4e42c5ce7177358a38a179c2764d">num_writes_</a> {0}</td></tr>
+<tr class="separator:aea3a4e42c5ce7177358a38a179c2764d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7588ef5f0aa8ef3dae0bf2c17ea0133e" id="r_a7588ef5f0aa8ef3dae0bf2c17ea0133e"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/dfe/classbustub_1_1DiskManager.html#a7588ef5f0aa8ef3dae0bf2c17ea0133e">flush_log_</a> {false}</td></tr>
+<tr class="separator:a7588ef5f0aa8ef3dae0bf2c17ea0133e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8337d45616f9440ad5513788de7d6845" id="r_a8337d45616f9440ad5513788de7d6845"><td class="memItemLeft" align="right" valign="top">std::future&lt; void &gt; *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/dfe/classbustub_1_1DiskManager.html#a8337d45616f9440ad5513788de7d6845">flush_log_f_</a> {nullptr}</td></tr>
+<tr class="separator:a8337d45616f9440ad5513788de7d6845"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3d6535c2f881be1013f554eacdcb7de1" id="r_a3d6535c2f881be1013f554eacdcb7de1"><td class="memItemLeft" align="right" valign="top">std::mutex&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/dfe/classbustub_1_1DiskManager.html#a3d6535c2f881be1013f554eacdcb7de1">db_io_latch_</a></td></tr>
+<tr class="separator:a3d6535c2f881be1013f554eacdcb7de1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
+<div class="textblock"><p><a class="el" href="../../da/dfe/classbustub_1_1DiskManager.html">DiskManager</a> takes care of the allocation and deallocation of pages within a database. It performs the reading and writing of pages to and from disk, providing a logical file layer within the context of a database management system. </p>
+</div><h2 class="groupheader">构造及析构函数说明</h2>
+<a id="aba194755344868fb657ee9fa9588b41c" name="aba194755344868fb657ee9fa9588b41c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aba194755344868fb657ee9fa9588b41c">&#9670;&#160;</a></span>DiskManager() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bustub::DiskManager::DiskManager </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>db_file</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">explicit</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Creates a new disk manager that writes to the specified database file. </p><dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">db_file</td><td>the file name of the database file to write to</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>Constructor: open/create a single database file &amp; log file @input db_file: database file name </p>
+
+</div>
+</div>
+<a id="a2317635875456e4ff539683405315c2a" name="a2317635875456e4ff539683405315c2a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2317635875456e4ff539683405315c2a">&#9670;&#160;</a></span>DiskManager() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bustub::DiskManager::DiskManager </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">default</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>FOR TEST / LEADERBOARD ONLY, used by <a class="el" href="../../d5/da4/classbustub_1_1DiskManagerMemory.html">DiskManagerMemory</a> </p>
+
+</div>
+</div>
+<a id="a908abd3c04c69e1e8253b08705636961" name="a908abd3c04c69e1e8253b08705636961"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a908abd3c04c69e1e8253b08705636961">&#9670;&#160;</a></span>~DiskManager()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual bustub::DiskManager::~DiskManager </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span><span class="mlabel">default</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">成员函数说明</h2>
+<a id="ad592519c24c6543ec42b6c438d33a803" name="ad592519c24c6543ec42b6c438d33a803"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad592519c24c6543ec42b6c438d33a803">&#9670;&#160;</a></span>GetFileSize()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto bustub::DiskManager::GetFileSize </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>file_name</em></td><td>)</td>
+          <td> -&gt; int</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Private helper function to get disk file size </p>
+
+</div>
+</div>
+<a id="a065b3a5a661fb1adb2aefbe11ab416fc" name="a065b3a5a661fb1adb2aefbe11ab416fc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a065b3a5a661fb1adb2aefbe11ab416fc">&#9670;&#160;</a></span>GetFlushState()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto bustub::DiskManager::GetFlushState </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const -&gt; bool</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="section return"><dt>返回</dt><dd>true iff the in-memory content has not been flushed yet</dd></dl>
+<p>Returns true if the log is currently being flushed </p>
+
+</div>
+</div>
+<a id="a191b2770ba4ef62ad0a226241c1fcc40" name="a191b2770ba4ef62ad0a226241c1fcc40"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a191b2770ba4ef62ad0a226241c1fcc40">&#9670;&#160;</a></span>GetNumFlushes()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto bustub::DiskManager::GetNumFlushes </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const -&gt; int</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="section return"><dt>返回</dt><dd>the number of disk flushes</dd></dl>
+<p>Returns number of flushes made so far </p>
+
+</div>
+</div>
+<a id="a1c1c85719410ab479c43b36f355ab635" name="a1c1c85719410ab479c43b36f355ab635"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1c1c85719410ab479c43b36f355ab635">&#9670;&#160;</a></span>GetNumWrites()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto bustub::DiskManager::GetNumWrites </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const -&gt; int</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="section return"><dt>返回</dt><dd>the number of disk writes</dd></dl>
+<p>Returns number of Writes made so far </p>
+
+</div>
+</div>
+<a id="ad2415e36d53680b31a605a68bc0d85b4" name="ad2415e36d53680b31a605a68bc0d85b4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad2415e36d53680b31a605a68bc0d85b4">&#9670;&#160;</a></span>HasFlushLogFuture()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto bustub::DiskManager::HasFlushLogFuture </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> -&gt; bool </td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Checks if the non-blocking flush future was set. </p>
+
+</div>
+</div>
+<a id="abc4de13866f2af455f9d4cd8400921b8" name="abc4de13866f2af455f9d4cd8400921b8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abc4de13866f2af455f9d4cd8400921b8">&#9670;&#160;</a></span>ReadLog()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto bustub::DiskManager::ReadLog </td>
+          <td>(</td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>log_data</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>size</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>offset</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> -&gt; bool</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Read a log entry from the log file. </p><dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[out]</td><td class="paramname">log_data</td><td>output buffer </td></tr>
+    <tr><td class="paramdir"></td><td class="paramname">size</td><td>size of the log entry </td></tr>
+    <tr><td class="paramdir"></td><td class="paramname">offset</td><td>offset of the log entry in the file </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>true if the read was successful, false otherwise</dd></dl>
+<p>Read the contents of the log into the given memory area Always read from the beginning and perform sequence read </p><dl class="section return"><dt>返回</dt><dd>: false means already reach the end </dd></dl>
+
+</div>
+</div>
+<a id="aa6cc12345be1e07c2fdb70c50af5e2d8" name="aa6cc12345be1e07c2fdb70c50af5e2d8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa6cc12345be1e07c2fdb70c50af5e2d8">&#9670;&#160;</a></span>ReadPage()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void bustub::DiskManager::ReadPage </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../de/dda/namespacebustub.html#a8de4ac099b23d712481109bb846decde">page_id_t</a>&#160;</td>
+          <td class="paramname"><em>page_id</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>page_data</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Read a page from the database file. </p><dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir"></td><td class="paramname">page_id</td><td>id of the page </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">page_data</td><td>output buffer</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>Read the contents of the specified page into the given memory area </p>
+
+<p>被 <a class="el" href="../../d5/da4/classbustub_1_1DiskManagerMemory.html#ac7b7c26dc8c1dd3b8d4154f0f9eabc26">bustub::DiskManagerMemory</a> , 以及 <a class="el" href="../../d3/db8/classbustub_1_1DiskManagerUnlimitedMemory.html#ac602ac7692498661e601297178533c40">bustub::DiskManagerUnlimitedMemory</a> 重载.</p>
+
+</div>
+</div>
+<a id="ac26ad206410e4a792e0f095e3ba27f96" name="ac26ad206410e4a792e0f095e3ba27f96"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac26ad206410e4a792e0f095e3ba27f96">&#9670;&#160;</a></span>SetFlushLogFuture()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void bustub::DiskManager::SetFlushLogFuture </td>
+          <td>(</td>
+          <td class="paramtype">std::future&lt; void &gt; *&#160;</td>
+          <td class="paramname"><em>f</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Sets the future which is used to check for non-blocking flushes. </p><dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">f</td><td>the non-blocking flush check </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a570857ef083e9f7410309850609db52b" name="a570857ef083e9f7410309850609db52b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a570857ef083e9f7410309850609db52b">&#9670;&#160;</a></span>ShutDown()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void bustub::DiskManager::ShutDown </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Shut down the disk manager and close all the file resources.</p>
+<p>Close all file streams </p>
+
+</div>
+</div>
+<a id="ae3764dd5b64c7cfed48d9ee3f8490171" name="ae3764dd5b64c7cfed48d9ee3f8490171"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae3764dd5b64c7cfed48d9ee3f8490171">&#9670;&#160;</a></span>WriteLog()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void bustub::DiskManager::WriteLog </td>
+          <td>(</td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>log_data</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>size</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Flush the entire log buffer into disk. </p><dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">log_data</td><td>raw log data </td></tr>
+    <tr><td class="paramname">size</td><td>size of log entry</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>Write the contents of the log into disk file Only return when sync is done, and only perform sequence write </p>
+
+</div>
+</div>
+<a id="ae89df7f59076403589c78c52482c4ceb" name="ae89df7f59076403589c78c52482c4ceb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae89df7f59076403589c78c52482c4ceb">&#9670;&#160;</a></span>WritePage()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void bustub::DiskManager::WritePage </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../de/dda/namespacebustub.html#a8de4ac099b23d712481109bb846decde">page_id_t</a>&#160;</td>
+          <td class="paramname"><em>page_id</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>page_data</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Write a page to the database file. </p><dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">page_id</td><td>id of the page </td></tr>
+    <tr><td class="paramname">page_data</td><td>raw page data</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>Write the contents of the specified page into disk file </p>
+
+<p>被 <a class="el" href="../../d5/da4/classbustub_1_1DiskManagerMemory.html#a8504fdeacf18e39a88107e4897003708">bustub::DiskManagerMemory</a> , 以及 <a class="el" href="../../d3/db8/classbustub_1_1DiskManagerUnlimitedMemory.html#a49178f13725196cb4f57a259ba5ce4ed">bustub::DiskManagerUnlimitedMemory</a> 重载.</p>
+
+</div>
+</div>
+<h2 class="groupheader">类成员变量说明</h2>
+<a id="a2c6c98205be53d3d31ab5c49dd1368f5" name="a2c6c98205be53d3d31ab5c49dd1368f5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2c6c98205be53d3d31ab5c49dd1368f5">&#9670;&#160;</a></span>db_io_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::fstream bustub::DiskManager::db_io_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a3d6535c2f881be1013f554eacdcb7de1" name="a3d6535c2f881be1013f554eacdcb7de1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3d6535c2f881be1013f554eacdcb7de1">&#9670;&#160;</a></span>db_io_latch_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::mutex bustub::DiskManager::db_io_latch_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a81e667f23aa033ea1617dc27df953579" name="a81e667f23aa033ea1617dc27df953579"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a81e667f23aa033ea1617dc27df953579">&#9670;&#160;</a></span>file_name_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string bustub::DiskManager::file_name_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a7588ef5f0aa8ef3dae0bf2c17ea0133e" name="a7588ef5f0aa8ef3dae0bf2c17ea0133e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7588ef5f0aa8ef3dae0bf2c17ea0133e">&#9670;&#160;</a></span>flush_log_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool bustub::DiskManager::flush_log_ {false}</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a8337d45616f9440ad5513788de7d6845" name="a8337d45616f9440ad5513788de7d6845"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8337d45616f9440ad5513788de7d6845">&#9670;&#160;</a></span>flush_log_f_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::future&lt;void&gt;* bustub::DiskManager::flush_log_f_ {nullptr}</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a493e9240d61edf1db9cc8a4bea992424" name="a493e9240d61edf1db9cc8a4bea992424"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a493e9240d61edf1db9cc8a4bea992424">&#9670;&#160;</a></span>log_io_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::fstream bustub::DiskManager::log_io_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aedd66bf4c7da5a7f7e2ead6764f73453" name="aedd66bf4c7da5a7f7e2ead6764f73453"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aedd66bf4c7da5a7f7e2ead6764f73453">&#9670;&#160;</a></span>log_name_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string bustub::DiskManager::log_name_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a9b3276c9ce47bfd5ff32e3edb05201a9" name="a9b3276c9ce47bfd5ff32e3edb05201a9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9b3276c9ce47bfd5ff32e3edb05201a9">&#9670;&#160;</a></span>num_flushes_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int bustub::DiskManager::num_flushes_ {0}</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aea3a4e42c5ce7177358a38a179c2764d" name="aea3a4e42c5ce7177358a38a179c2764d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aea3a4e42c5ce7177358a38a179c2764d">&#9670;&#160;</a></span>num_writes_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int bustub::DiskManager::num_writes_ {0}</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<hr/>该类的文档由以下文件生成:<ul>
+<li>src/include/storage/disk/<a class="el" href="../../d6/d30/disk__manager_8h_source.html">disk_manager.h</a></li>
+<li>src/storage/disk/<a class="el" href="../../dc/db7/disk__manager_8cpp.html">disk_manager.cpp</a></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
+</small></address>
+</body>
+</html>

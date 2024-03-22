@@ -55,8 +55,6 @@ class BufferPoolManager {
   auto GetPages() -> Page * { return pages_; }
 
   /**
-   * TODO(P1): Add implementation
-   *
    * @brief Create a new page in the buffer pool. Set page_id to the new page's id, or nullptr if all frames
    * are currently in use and not evictable (in another word, pinned).
    *
@@ -74,8 +72,6 @@ class BufferPoolManager {
   auto NewPage(page_id_t *page_id) -> Page *;
 
   /**
-   * TODO(P2): Add implementation
-   *
    * @brief PageGuard wrapper for NewPage
    *
    * Functionality should be the same as NewPage, except that
@@ -88,8 +84,6 @@ class BufferPoolManager {
   auto NewPageGuarded(page_id_t *page_id) -> BasicPageGuard;
 
   /**
-   * TODO(P1): Add implementation
-   *
    * @brief Fetch the requested page from the buffer pool. Return nullptr if page_id needs to be fetched from the disk
    * but all frames are currently in use and not evictable (in another word, pinned).
    *
@@ -107,8 +101,6 @@ class BufferPoolManager {
   auto FetchPage(page_id_t page_id, AccessType access_type = AccessType::Unknown) -> Page *;
 
   /**
-   * TODO(P2): Add implementation
-   *
    * @brief PageGuard wrappers for FetchPage
    *
    * Functionality should be the same as FetchPage, except
@@ -124,8 +116,6 @@ class BufferPoolManager {
   auto FetchPageWrite(page_id_t page_id) -> WritePageGuard;
 
   /**
-   * TODO(P1): Add implementation
-   *
    * @brief Unpin the target page from the buffer pool. If page_id is not in the buffer pool or its pin count is already
    * 0, return false.
    *
@@ -140,8 +130,6 @@ class BufferPoolManager {
   auto UnpinPage(page_id_t page_id, bool is_dirty, AccessType access_type = AccessType::Unknown) -> bool;
 
   /**
-   * TODO(P1): Add implementation
-   *
    * @brief Flush the target page to disk.
    *
    * Use the DiskManager::WritePage() method to flush a page to disk, REGARDLESS of the dirty flag.
@@ -153,15 +141,11 @@ class BufferPoolManager {
   auto FlushPage(page_id_t page_id) -> bool;
 
   /**
-   * TODO(P1): Add implementation
-   *
    * @brief Flush all the pages in the buffer pool to disk.
    */
   void FlushAllPages();
 
   /**
-   * TODO(P1): Add implementation
-   *
    * @brief Delete a page from the buffer pool. If page_id is not in the buffer pool, do nothing and return true. If the
    * page is pinned and cannot be deleted, return false immediately.
    *
@@ -183,9 +167,9 @@ class BufferPoolManager {
   /** Array of buffer pool pages. */
   Page *pages_;
   /** Pointer to the disk sheduler. */
-  std::unique_ptr<DiskScheduler> disk_scheduler_ __attribute__((__unused__));
+  std::unique_ptr<DiskScheduler> disk_scheduler_;
   /** Pointer to the log manager. Please ignore this for P1. */
-  LogManager *log_manager_ __attribute__((__unused__));
+  [[maybe_unused]] LogManager *log_manager_;
   /** Page table for keeping track of buffer pool pages. */
   std::unordered_map<page_id_t, frame_id_t> page_table_;
   /** Replacer to find unpinned pages for replacement. */
@@ -212,7 +196,7 @@ class BufferPoolManager {
    * @brief Deallocate a page on disk. Caller should acquire the latch before calling this function.
    * @param page_id id of the page to deallocate
    */
-  void DeallocatePage(__attribute__((unused)) page_id_t page_id) {
+  void DeallocatePage(page_id_t page_id) {
     // This is a no-nop right now without a more complex data structure to track deallocated pages
   }
 

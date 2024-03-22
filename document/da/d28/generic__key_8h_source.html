@@ -1,0 +1,227 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>数据库系统 CMU15-445/645: src/include/storage/index/generic_key.h 源文件</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/searchdata.js"></script>
+<script type="text/javascript" src="../../search/search.js"></script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">数据库系统 CMU15-445/645<span id="projectnumber">&#160;1.0.0</span>
+   </div>
+   <div id="projectbrief">CMU15-445/645 是基于现代 C++ 开发的支持并发操作的简单 SQL 操作的单机数据库</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.9.8 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "../../search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('../../',true,false,'search.php','搜索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function() { init_codefold(1); });
+/* @license-end */
+</script>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="../../dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="../../dir_b0856f6b0d80ccb263b2f415c91f9e17.html">include</a></li><li class="navelem"><a class="el" href="../../dir_0a30ac4aed38d1936bbd6d702d96fbd8.html">storage</a></li><li class="navelem"><a class="el" href="../../dir_68b285a99db82172e89ff1958533507d.html">index</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle"><div class="title">generic_key.h</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="../../da/d28/generic__key_8h.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">//===----------------------------------------------------------------------===//</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="comment">//</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="comment">//                         BusTub</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment">//</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="comment">// generic_key.h</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="comment">//</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="comment">// Identification: src/include/storage/index/generic_key.h</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="comment">//</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="comment">// Copyright (c) 2015-2019, Carnegie Mellon University Database Group</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="comment">//</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="comment">//===----------------------------------------------------------------------===//</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#pragma once</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="preprocessor">#include &lt;cstring&gt;</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span> </div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="preprocessor">#include &quot;<a class="code" href="../../d2/d20/tuple_8h.html">storage/table/tuple.h</a>&quot;</span></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="preprocessor">#include &quot;<a class="code" href="../../d4/d3f/value_8h.html">type/value.h</a>&quot;</span></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span> </div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="keyword">namespace </span><a class="code hl_namespace" href="../../de/dda/namespacebustub.html">bustub</a> {</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> </div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span><span class="keyword">template</span> &lt;<span class="keywordtype">size_t</span> KeySize&gt;</div>
+<div class="foldopen" id="foldopen00030" data-start="{" data-end="};">
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno"><a class="line" href="../../de/da1/classbustub_1_1GenericKey.html">   30</a></span><span class="keyword">class </span><a class="code hl_class" href="../../de/da1/classbustub_1_1GenericKey.html">GenericKey</a> {</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span> <span class="keyword">public</span>:</div>
+<div class="foldopen" id="foldopen00032" data-start="{" data-end="}">
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno"><a class="line" href="../../de/da1/classbustub_1_1GenericKey.html#a1673f86b5bce161d3dd556c09e7cd572">   32</a></span>  <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code hl_function" href="../../de/da1/classbustub_1_1GenericKey.html#a1673f86b5bce161d3dd556c09e7cd572">SetFromKey</a>(<span class="keyword">const</span> <a class="code hl_class" href="../../d0/ded/classbustub_1_1Tuple.html">Tuple</a> &amp;tuple) {</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    <span class="comment">// initialize to 0</span></div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    memset(<a class="code hl_variable" href="../../de/da1/classbustub_1_1GenericKey.html#a0c55198d7686c3b411a549455f9a8b6d">data_</a>, 0, KeySize);</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    memcpy(<a class="code hl_variable" href="../../de/da1/classbustub_1_1GenericKey.html#a0c55198d7686c3b411a549455f9a8b6d">data_</a>, tuple.<a class="code hl_function" href="../../d0/ded/classbustub_1_1Tuple.html#a22260a59ae7b049336f4d939dc06c63f">GetData</a>(), tuple.<a class="code hl_function" href="../../d0/ded/classbustub_1_1Tuple.html#a15e49ccb842fc088f9cc76da570e024f">GetLength</a>());</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>  }</div>
+</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span> </div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>  <span class="comment">// NOTE: for test purpose only</span></div>
+<div class="foldopen" id="foldopen00039" data-start="{" data-end="}">
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno"><a class="line" href="../../de/da1/classbustub_1_1GenericKey.html#a3cdd6f68405050a6059ad62232d3ecee">   39</a></span>  <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code hl_function" href="../../de/da1/classbustub_1_1GenericKey.html#a3cdd6f68405050a6059ad62232d3ecee">SetFromInteger</a>(int64_t key) {</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    memset(<a class="code hl_variable" href="../../de/da1/classbustub_1_1GenericKey.html#a0c55198d7686c3b411a549455f9a8b6d">data_</a>, 0, KeySize);</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    memcpy(<a class="code hl_variable" href="../../de/da1/classbustub_1_1GenericKey.html#a0c55198d7686c3b411a549455f9a8b6d">data_</a>, &amp;key, <span class="keyword">sizeof</span>(int64_t));</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>  }</div>
+</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span> </div>
+<div class="foldopen" id="foldopen00044" data-start="{" data-end="}">
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno"><a class="line" href="../../de/da1/classbustub_1_1GenericKey.html#afc791d18fddc487140f43d7ec635fdcf">   44</a></span>  <span class="keyword">inline</span> <span class="keyword">auto</span> <a class="code hl_function" href="../../de/da1/classbustub_1_1GenericKey.html#afc791d18fddc487140f43d7ec635fdcf">ToValue</a>(<a class="code hl_class" href="../../da/d36/classbustub_1_1Schema.html">Schema</a> *schema, uint32_t column_idx) <span class="keyword">const</span> -&gt; <a class="code hl_class" href="../../d4/df7/classbustub_1_1Value.html">Value</a> {</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    <span class="keyword">const</span> <span class="keywordtype">char</span> *data_ptr;</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>    <span class="keyword">const</span> <span class="keyword">auto</span> &amp;col = schema-&gt;GetColumn(column_idx);</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>    <span class="keyword">const</span> <a class="code hl_enumeration" href="../../de/dda/namespacebustub.html#a49735e6748963f5515394bbb228f1fc8">TypeId</a> column_type = col.GetType();</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>    <span class="keyword">const</span> <span class="keywordtype">bool</span> is_inlined = col.IsInlined();</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>    <span class="keywordflow">if</span> (is_inlined) {</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>      data_ptr = (<a class="code hl_variable" href="../../de/da1/classbustub_1_1GenericKey.html#a0c55198d7686c3b411a549455f9a8b6d">data_</a> + col.GetOffset());</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>    } <span class="keywordflow">else</span> {</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>      int32_t offset = *<span class="keyword">reinterpret_cast&lt;</span>int32_t *<span class="keyword">&gt;</span>(<span class="keyword">const_cast&lt;</span><span class="keywordtype">char</span> *<span class="keyword">&gt;</span>(<a class="code hl_variable" href="../../de/da1/classbustub_1_1GenericKey.html#a0c55198d7686c3b411a549455f9a8b6d">data_</a> + col.GetOffset()));</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>      data_ptr = (<a class="code hl_variable" href="../../de/da1/classbustub_1_1GenericKey.html#a0c55198d7686c3b411a549455f9a8b6d">data_</a> + offset);</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>    }</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>    <span class="keywordflow">return</span> <a class="code hl_function" href="../../d4/df7/classbustub_1_1Value.html#a1134305e8eda5e2dd89c8d001f6a9a48">Value::DeserializeFrom</a>(data_ptr, column_type);</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>  }</div>
+</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span> </div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>  <span class="comment">// NOTE: for test purpose only</span></div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>  <span class="comment">// interpret the first 8 bytes as int64_t from data vector</span></div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno"><a class="line" href="../../de/da1/classbustub_1_1GenericKey.html#a1d0c9eb4a8bca07961263ef5e01b1116">   60</a></span>  <span class="keyword">inline</span> <span class="keyword">auto</span> <a class="code hl_function" href="../../de/da1/classbustub_1_1GenericKey.html#a1d0c9eb4a8bca07961263ef5e01b1116">ToString</a>() const -&gt; int64_t { <span class="keywordflow">return</span> *<span class="keyword">reinterpret_cast&lt;</span>int64_t *<span class="keyword">&gt;</span>(<span class="keyword">const_cast&lt;</span><span class="keywordtype">char</span> *<span class="keyword">&gt;</span>(<a class="code hl_variable" href="../../de/da1/classbustub_1_1GenericKey.html#a0c55198d7686c3b411a549455f9a8b6d">data_</a>)); }</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span> </div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>  <span class="comment">// NOTE: for test purpose only</span></div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>  <span class="comment">// interpret the first 8 bytes as int64_t from data vector</span></div>
+<div class="foldopen" id="foldopen00064" data-start="{" data-end="};">
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno"><a class="line" href="../../de/da1/classbustub_1_1GenericKey.html#a30c12ee3b4eb55607ec71f16fa63dbe5">   64</a></span>  <span class="keyword">friend</span> <span class="keyword">auto</span> <a class="code hl_friend" href="../../de/da1/classbustub_1_1GenericKey.html#a30c12ee3b4eb55607ec71f16fa63dbe5">operator&lt;&lt;</a>(std::ostream &amp;os, <span class="keyword">const</span> <a class="code hl_class" href="../../de/da1/classbustub_1_1GenericKey.html">GenericKey</a> &amp;key) -&gt; std::ostream &amp; {</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>    os &lt;&lt; key.ToString();</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>    <span class="keywordflow">return</span> os;</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>  }</div>
+</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span> </div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>  <span class="comment">// actual location of data, extends past the end.</span></div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno"><a class="line" href="../../de/da1/classbustub_1_1GenericKey.html#a0c55198d7686c3b411a549455f9a8b6d">   70</a></span>  <span class="keywordtype">char</span> <a class="code hl_variable" href="../../de/da1/classbustub_1_1GenericKey.html#a0c55198d7686c3b411a549455f9a8b6d">data_</a>[KeySize];</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>};</div>
+</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span> </div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span><span class="keyword">template</span> &lt;<span class="keywordtype">size_t</span> KeySize&gt;</div>
+<div class="foldopen" id="foldopen00077" data-start="{" data-end="};">
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno"><a class="line" href="../../d6/d13/classbustub_1_1GenericComparator.html">   77</a></span><span class="keyword">class </span><a class="code hl_class" href="../../d6/d13/classbustub_1_1GenericComparator.html">GenericComparator</a> {</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span> <span class="keyword">public</span>:</div>
+<div class="foldopen" id="foldopen00079" data-start="{" data-end="}">
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno"><a class="line" href="../../d6/d13/classbustub_1_1GenericComparator.html#afd91d7a82351027436e891786417b3ec">   79</a></span>  <span class="keyword">inline</span> <span class="keyword">auto</span> <a class="code hl_function" href="../../d6/d13/classbustub_1_1GenericComparator.html#afd91d7a82351027436e891786417b3ec">operator()</a>(<span class="keyword">const</span> <a class="code hl_class" href="../../de/da1/classbustub_1_1GenericKey.html">GenericKey&lt;KeySize&gt;</a> &amp;lhs, <span class="keyword">const</span> <a class="code hl_class" href="../../de/da1/classbustub_1_1GenericKey.html">GenericKey&lt;KeySize&gt;</a> &amp;rhs) <span class="keyword">const</span> -&gt; <span class="keywordtype">int</span> {</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>    uint32_t column_count = <a class="code hl_variable" href="../../d6/d13/classbustub_1_1GenericComparator.html#a0f4978bc0ecbc1f2bfbfed9b22817f07">key_schema_</a>-&gt;<a class="code hl_function" href="../../da/d36/classbustub_1_1Schema.html#a8efc3d3d9c8076ddf31fbdb25a1f9746">GetColumnCount</a>();</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span> </div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>    <span class="keywordflow">for</span> (uint32_t i = 0; i &lt; column_count; i++) {</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>      <a class="code hl_class" href="../../d4/df7/classbustub_1_1Value.html">Value</a> lhs_value = (lhs.ToValue(<a class="code hl_variable" href="../../d6/d13/classbustub_1_1GenericComparator.html#a0f4978bc0ecbc1f2bfbfed9b22817f07">key_schema_</a>, i));</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>      <a class="code hl_class" href="../../d4/df7/classbustub_1_1Value.html">Value</a> rhs_value = (rhs.ToValue(<a class="code hl_variable" href="../../d6/d13/classbustub_1_1GenericComparator.html#a0f4978bc0ecbc1f2bfbfed9b22817f07">key_schema_</a>, i));</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span> </div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>      <span class="keywordflow">if</span> (lhs_value.<a class="code hl_function" href="../../d4/df7/classbustub_1_1Value.html#aa6fad9496ebfd97b04ce5adc6811cb7d">CompareLessThan</a>(rhs_value) == <a class="code hl_enumvalue" href="../../de/dda/namespacebustub.html#a0b4071db2dd630bdbf7a86b4f251f560a4485704eca2114c51657b73f650d9771">CmpBool::CmpTrue</a>) {</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>        <span class="keywordflow">return</span> -1;</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>      }</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>      <span class="keywordflow">if</span> (lhs_value.<a class="code hl_function" href="../../d4/df7/classbustub_1_1Value.html#a7e0d712ba68741978ff821203089dfe9">CompareGreaterThan</a>(rhs_value) == <a class="code hl_enumvalue" href="../../de/dda/namespacebustub.html#a0b4071db2dd630bdbf7a86b4f251f560a4485704eca2114c51657b73f650d9771">CmpBool::CmpTrue</a>) {</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>        <span class="keywordflow">return</span> 1;</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>      }</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>    }</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>    <span class="comment">// equals</span></div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>    <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>  }</div>
+</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span> </div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno"><a class="line" href="../../d6/d13/classbustub_1_1GenericComparator.html#a71139a4b6ba21a3f988c06d3bdfa082d">   97</a></span>  <a class="code hl_function" href="../../d6/d13/classbustub_1_1GenericComparator.html#a71139a4b6ba21a3f988c06d3bdfa082d">GenericComparator</a>(<span class="keyword">const</span> <a class="code hl_class" href="../../d6/d13/classbustub_1_1GenericComparator.html">GenericComparator</a> &amp;other) : <a class="code hl_variable" href="../../d6/d13/classbustub_1_1GenericComparator.html#a0f4978bc0ecbc1f2bfbfed9b22817f07">key_schema_</a>{other.<a class="code hl_variable" href="../../d6/d13/classbustub_1_1GenericComparator.html#a0f4978bc0ecbc1f2bfbfed9b22817f07">key_schema_</a>} {}</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span> </div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>  <span class="comment">// constructor</span></div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno"><a class="line" href="../../d6/d13/classbustub_1_1GenericComparator.html#a3485563eb7d5f8ff3aef4e18cef7a989">  100</a></span>  <span class="keyword">explicit</span> <a class="code hl_function" href="../../d6/d13/classbustub_1_1GenericComparator.html#a3485563eb7d5f8ff3aef4e18cef7a989">GenericComparator</a>(<a class="code hl_class" href="../../da/d36/classbustub_1_1Schema.html">Schema</a> *key_schema) : <a class="code hl_variable" href="../../d6/d13/classbustub_1_1GenericComparator.html#a0f4978bc0ecbc1f2bfbfed9b22817f07">key_schema_</a>(key_schema) {}</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span> </div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span> <span class="keyword">private</span>:</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno"><a class="line" href="../../d6/d13/classbustub_1_1GenericComparator.html#a0f4978bc0ecbc1f2bfbfed9b22817f07">  103</a></span>  <a class="code hl_class" href="../../da/d36/classbustub_1_1Schema.html">Schema</a> *<a class="code hl_variable" href="../../d6/d13/classbustub_1_1GenericComparator.html#a0f4978bc0ecbc1f2bfbfed9b22817f07">key_schema_</a>;</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>};</div>
+</div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span> </div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>}  <span class="comment">// namespace bustub</span></div>
+<div class="ttc" id="aclassbustub_1_1GenericComparator_html"><div class="ttname"><a href="../../d6/d13/classbustub_1_1GenericComparator.html">bustub::GenericComparator</a></div><div class="ttdef"><b>Definition</b> generic_key.h:77</div></div>
+<div class="ttc" id="aclassbustub_1_1GenericComparator_html_a0f4978bc0ecbc1f2bfbfed9b22817f07"><div class="ttname"><a href="../../d6/d13/classbustub_1_1GenericComparator.html#a0f4978bc0ecbc1f2bfbfed9b22817f07">bustub::GenericComparator::key_schema_</a></div><div class="ttdeci">Schema * key_schema_</div><div class="ttdef"><b>Definition</b> generic_key.h:103</div></div>
+<div class="ttc" id="aclassbustub_1_1GenericComparator_html_a3485563eb7d5f8ff3aef4e18cef7a989"><div class="ttname"><a href="../../d6/d13/classbustub_1_1GenericComparator.html#a3485563eb7d5f8ff3aef4e18cef7a989">bustub::GenericComparator::GenericComparator</a></div><div class="ttdeci">GenericComparator(Schema *key_schema)</div><div class="ttdef"><b>Definition</b> generic_key.h:100</div></div>
+<div class="ttc" id="aclassbustub_1_1GenericComparator_html_a71139a4b6ba21a3f988c06d3bdfa082d"><div class="ttname"><a href="../../d6/d13/classbustub_1_1GenericComparator.html#a71139a4b6ba21a3f988c06d3bdfa082d">bustub::GenericComparator::GenericComparator</a></div><div class="ttdeci">GenericComparator(const GenericComparator &amp;other)</div><div class="ttdef"><b>Definition</b> generic_key.h:97</div></div>
+<div class="ttc" id="aclassbustub_1_1GenericComparator_html_afd91d7a82351027436e891786417b3ec"><div class="ttname"><a href="../../d6/d13/classbustub_1_1GenericComparator.html#afd91d7a82351027436e891786417b3ec">bustub::GenericComparator::operator()</a></div><div class="ttdeci">auto operator()(const GenericKey&lt; KeySize &gt; &amp;lhs, const GenericKey&lt; KeySize &gt; &amp;rhs) const -&gt; int</div><div class="ttdef"><b>Definition</b> generic_key.h:79</div></div>
+<div class="ttc" id="aclassbustub_1_1GenericKey_html"><div class="ttname"><a href="../../de/da1/classbustub_1_1GenericKey.html">bustub::GenericKey</a></div><div class="ttdef"><b>Definition</b> generic_key.h:30</div></div>
+<div class="ttc" id="aclassbustub_1_1GenericKey_html_a0c55198d7686c3b411a549455f9a8b6d"><div class="ttname"><a href="../../de/da1/classbustub_1_1GenericKey.html#a0c55198d7686c3b411a549455f9a8b6d">bustub::GenericKey::data_</a></div><div class="ttdeci">char data_[KeySize]</div><div class="ttdef"><b>Definition</b> generic_key.h:70</div></div>
+<div class="ttc" id="aclassbustub_1_1GenericKey_html_a1673f86b5bce161d3dd556c09e7cd572"><div class="ttname"><a href="../../de/da1/classbustub_1_1GenericKey.html#a1673f86b5bce161d3dd556c09e7cd572">bustub::GenericKey::SetFromKey</a></div><div class="ttdeci">void SetFromKey(const Tuple &amp;tuple)</div><div class="ttdef"><b>Definition</b> generic_key.h:32</div></div>
+<div class="ttc" id="aclassbustub_1_1GenericKey_html_a1d0c9eb4a8bca07961263ef5e01b1116"><div class="ttname"><a href="../../de/da1/classbustub_1_1GenericKey.html#a1d0c9eb4a8bca07961263ef5e01b1116">bustub::GenericKey::ToString</a></div><div class="ttdeci">auto ToString() const -&gt; int64_t</div><div class="ttdef"><b>Definition</b> generic_key.h:60</div></div>
+<div class="ttc" id="aclassbustub_1_1GenericKey_html_a30c12ee3b4eb55607ec71f16fa63dbe5"><div class="ttname"><a href="../../de/da1/classbustub_1_1GenericKey.html#a30c12ee3b4eb55607ec71f16fa63dbe5">bustub::GenericKey::operator&lt;&lt;</a></div><div class="ttdeci">friend auto operator&lt;&lt;(std::ostream &amp;os, const GenericKey &amp;key) -&gt; std::ostream &amp;</div><div class="ttdef"><b>Definition</b> generic_key.h:64</div></div>
+<div class="ttc" id="aclassbustub_1_1GenericKey_html_a3cdd6f68405050a6059ad62232d3ecee"><div class="ttname"><a href="../../de/da1/classbustub_1_1GenericKey.html#a3cdd6f68405050a6059ad62232d3ecee">bustub::GenericKey::SetFromInteger</a></div><div class="ttdeci">void SetFromInteger(int64_t key)</div><div class="ttdef"><b>Definition</b> generic_key.h:39</div></div>
+<div class="ttc" id="aclassbustub_1_1GenericKey_html_afc791d18fddc487140f43d7ec635fdcf"><div class="ttname"><a href="../../de/da1/classbustub_1_1GenericKey.html#afc791d18fddc487140f43d7ec635fdcf">bustub::GenericKey::ToValue</a></div><div class="ttdeci">auto ToValue(Schema *schema, uint32_t column_idx) const -&gt; Value</div><div class="ttdef"><b>Definition</b> generic_key.h:44</div></div>
+<div class="ttc" id="aclassbustub_1_1Schema_html"><div class="ttname"><a href="../../da/d36/classbustub_1_1Schema.html">bustub::Schema</a></div><div class="ttdef"><b>Definition</b> schema.h:29</div></div>
+<div class="ttc" id="aclassbustub_1_1Schema_html_a8efc3d3d9c8076ddf31fbdb25a1f9746"><div class="ttname"><a href="../../da/d36/classbustub_1_1Schema.html#a8efc3d3d9c8076ddf31fbdb25a1f9746">bustub::Schema::GetColumnCount</a></div><div class="ttdeci">auto GetColumnCount() const -&gt; uint32_t</div><div class="ttdef"><b>Definition</b> schema.h:88</div></div>
+<div class="ttc" id="aclassbustub_1_1Tuple_html"><div class="ttname"><a href="../../d0/ded/classbustub_1_1Tuple.html">bustub::Tuple</a></div><div class="ttdef"><b>Definition</b> tuple.h:51</div></div>
+<div class="ttc" id="aclassbustub_1_1Tuple_html_a15e49ccb842fc088f9cc76da570e024f"><div class="ttname"><a href="../../d0/ded/classbustub_1_1Tuple.html#a15e49ccb842fc088f9cc76da570e024f">bustub::Tuple::GetLength</a></div><div class="ttdeci">auto GetLength() const -&gt; uint32_t</div><div class="ttdef"><b>Definition</b> tuple.h:95</div></div>
+<div class="ttc" id="aclassbustub_1_1Tuple_html_a22260a59ae7b049336f4d939dc06c63f"><div class="ttname"><a href="../../d0/ded/classbustub_1_1Tuple.html#a22260a59ae7b049336f4d939dc06c63f">bustub::Tuple::GetData</a></div><div class="ttdeci">auto GetData() const -&gt; const char *</div><div class="ttdef"><b>Definition</b> tuple.h:92</div></div>
+<div class="ttc" id="aclassbustub_1_1Value_html"><div class="ttname"><a href="../../d4/df7/classbustub_1_1Value.html">bustub::Value</a></div><div class="ttdef"><b>Definition</b> value.h:32</div></div>
+<div class="ttc" id="aclassbustub_1_1Value_html_a1134305e8eda5e2dd89c8d001f6a9a48"><div class="ttname"><a href="../../d4/df7/classbustub_1_1Value.html#a1134305e8eda5e2dd89c8d001f6a9a48">bustub::Value::DeserializeFrom</a></div><div class="ttdeci">static auto DeserializeFrom(const char *storage, const TypeId type_id) -&gt; Value</div><div class="ttdef"><b>Definition</b> value.h:145</div></div>
+<div class="ttc" id="aclassbustub_1_1Value_html_a7e0d712ba68741978ff821203089dfe9"><div class="ttname"><a href="../../d4/df7/classbustub_1_1Value.html#a7e0d712ba68741978ff821203089dfe9">bustub::Value::CompareGreaterThan</a></div><div class="ttdeci">auto CompareGreaterThan(const Value &amp;o) const -&gt; CmpBool</div><div class="ttdef"><b>Definition</b> value.h:116</div></div>
+<div class="ttc" id="aclassbustub_1_1Value_html_aa6fad9496ebfd97b04ce5adc6811cb7d"><div class="ttname"><a href="../../d4/df7/classbustub_1_1Value.html#aa6fad9496ebfd97b04ce5adc6811cb7d">bustub::Value::CompareLessThan</a></div><div class="ttdeci">auto CompareLessThan(const Value &amp;o) const -&gt; CmpBool</div><div class="ttdef"><b>Definition</b> value.h:110</div></div>
+<div class="ttc" id="anamespacebustub_html"><div class="ttname"><a href="../../de/dda/namespacebustub.html">bustub</a></div><div class="ttdef"><b>Definition</b> bind_create.cpp:53</div></div>
+<div class="ttc" id="anamespacebustub_html_a0b4071db2dd630bdbf7a86b4f251f560a4485704eca2114c51657b73f650d9771"><div class="ttname"><a href="../../de/dda/namespacebustub.html#a0b4071db2dd630bdbf7a86b4f251f560a4485704eca2114c51657b73f650d9771">bustub::CmpBool::CmpTrue</a></div><div class="ttdeci">@ CmpTrue</div></div>
+<div class="ttc" id="anamespacebustub_html_a49735e6748963f5515394bbb228f1fc8"><div class="ttname"><a href="../../de/dda/namespacebustub.html#a49735e6748963f5515394bbb228f1fc8">bustub::TypeId</a></div><div class="ttdeci">TypeId</div><div class="ttdef"><b>Definition</b> type_id.h:17</div></div>
+<div class="ttc" id="atuple_8h_html"><div class="ttname"><a href="../../d2/d20/tuple_8h.html">tuple.h</a></div></div>
+<div class="ttc" id="avalue_8h_html"><div class="ttname"><a href="../../d4/d3f/value_8h.html">value.h</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
+</small></address>
+</body>
+</html>

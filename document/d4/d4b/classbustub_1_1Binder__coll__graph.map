@@ -1,0 +1,30 @@
+<map id="bustub::Binder" name="bustub::Binder">
+<area shape="rect" id="Node000001" title=" " alt="" coords="1339,165,1455,191"/>
+<area shape="rect" id="Node000002" href="$d7/ddd/classbustub_1_1Catalog.html" title=" " alt="" coords="1003,95,1127,120"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="1117,122,1175,138,1261,155,1340,168,1339,173,1260,161,1174,143,1116,127"/>
+<area shape="rect" id="Node000011" href="$dc/ddc/classbustub_1_1TransactionManager.html" title=" " alt="" coords="1295,43,1500,68"/>
+<area shape="poly" id="edge13_Node000011_Node000002" title=" " alt="" coords="1141,93,1315,65,1316,71,1141,98"/>
+<area shape="rect" id="Node000003" href="$df/d04/structbustub_1_1TableInfo.html" title=" " alt="" coords="641,69,774,95"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="788,85,1003,100,1003,106,788,90"/>
+<area shape="rect" id="Node000004" href="$da/d36/classbustub_1_1Schema.html" title=" " alt="" coords="322,41,449,67"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="463,62,487,65,641,76,640,81,486,70,462,67"/>
+<area shape="rect" id="Node000005" href="$d4/d5c/structbustub_1_1IndexInfo.html" title=" " alt="" coords="640,20,775,45"/>
+<area shape="poly" id="edge5_Node000005_Node000004" title=" " alt="" coords="462,46,640,34,640,40,462,52"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="789,38,870,50,957,67,1033,92,1032,97,955,73,869,55,788,44"/>
+<area shape="rect" id="Node000006" href="$d6/d5d/classbustub_1_1BufferPoolManager.html" title=" " alt="" coords="608,119,807,144"/>
+<area shape="poly" id="edge6_Node000002_Node000006" title=" " alt="" coords="820,131,956,125,1005,117,1006,123,956,130,821,136"/>
+<area shape="rect" id="Node000007" href="$d4/d87/classbustub_1_1Page.html" title=" " alt="" coords="333,111,438,136"/>
+<area shape="poly" id="edge7_Node000006_Node000007" title=" " alt="" coords="452,122,607,126,607,132,452,128"/>
+<area shape="rect" id="Node000008" href="$d8/dbd/classbustub_1_1ReaderWriterLatch.html" title=" " alt="" coords="5,111,200,136"/>
+<area shape="poly" id="edge8_Node000007_Node000008" title=" " alt="" coords="214,121,332,121,332,126,214,126"/>
+<area shape="rect" id="Node000009" href="$d7/d4e/classbustub_1_1LogManager.html" title=" " alt="" coords="308,180,463,205"/>
+<area shape="poly" id="edge14_Node000002_Node000009" title=" " alt="" coords="477,190,631,185,806,169,881,155,955,135,1020,118,1022,123,957,141,882,160,807,174,631,190,477,195"/>
+<area shape="poly" id="edge9_Node000006_Node000009" title=" " alt="" coords="466,175,639,141,640,147,467,180"/>
+<area shape="rect" id="Node000010" href="$df/d43/classbustub_1_1LockManager.html" title=" " alt="" coords="1645,73,1807,99"/>
+<area shape="poly" id="edge10_Node000002_Node000010" title=" " alt="" coords="1632,92,1500,97,1128,108,1128,103,1500,91,1632,87"/>
+<area shape="poly" id="edge11_Node000010_Node000011" title=" " alt="" coords="1514,63,1645,76,1645,81,1513,69"/>
+<area shape="rect" id="Node000012" href="$d8/d96/classbustub_1_1Watermark.html" title="tracks all the read timestamps." alt="" coords="992,5,1139,31"/>
+<area shape="poly" id="edge12_Node000011_Node000012" title=" " alt="" coords="1153,25,1295,41,1294,46,1152,30"/>
+<area shape="rect" id="Node000013" href="$d3/da8/classbustub_1_1BoundTableRef.html" title=" " alt="" coords="980,175,1151,200"/>
+<area shape="poly" id="edge15_Node000001_Node000013" title=" " alt="" coords="1165,185,1271,183,1339,180,1339,185,1271,189,1165,190"/>
+</map>

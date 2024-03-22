@@ -1,0 +1,250 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>数据库系统 CMU15-445/645: src/include/common/exception.h 源文件</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/searchdata.js"></script>
+<script type="text/javascript" src="../../search/search.js"></script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">数据库系统 CMU15-445/645<span id="projectnumber">&#160;1.0.0</span>
+   </div>
+   <div id="projectbrief">CMU15-445/645 是基于现代 C++ 开发的支持并发操作的简单 SQL 操作的单机数据库</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.9.8 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "../../search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('../../',true,false,'search.php','搜索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function() { init_codefold(1); });
+/* @license-end */
+</script>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="../../dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="../../dir_b0856f6b0d80ccb263b2f415c91f9e17.html">include</a></li><li class="navelem"><a class="el" href="../../dir_e73942be4139c49ff686e607a1824de2.html">common</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle"><div class="title">exception.h</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="../../dd/d2d/exception_8h.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">//===----------------------------------------------------------------------===//</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="comment">//</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="comment">//                         BusTub</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment">//</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="comment">// exception.h</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="comment">//</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="comment">// Identification: src/include/common/exception.h</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="comment">//</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="comment">// Copyright (c) 2015-2019, Carnegie Mellon University Database Group</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="comment">//</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="comment">//===----------------------------------------------------------------------===//</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#pragma once</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="preprocessor">#include &lt;atomic&gt;</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="preprocessor">#include &lt;cstdio&gt;</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="preprocessor">#include &lt;cstdlib&gt;</span></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="preprocessor">#include &lt;iostream&gt;</span></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="preprocessor">#include &lt;memory&gt;</span></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="preprocessor">#include &lt;stdexcept&gt;</span></div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="preprocessor">#include &lt;string&gt;</span></div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="preprocessor">#include &quot;<a class="code" href="../../df/def/type_8h.html">type/type.h</a>&quot;</span></div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span> </div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="keyword">namespace </span><a class="code hl_namespace" href="../../de/dda/namespacebustub.html">bustub</a> {</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span> </div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span><span class="comment">// TODO(WAN): the comment I added below is a lie, but you shouldn&#39;t need to poke around here. Don&#39;t worry about it.</span></div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="comment">//  Most of the exception types are type subsystem madness. I think we can get rid of it at some point.</span></div>
+<div class="foldopen" id="foldopen00030" data-start="{" data-end="};">
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno"><a class="line" href="../../de/dda/namespacebustub.html#adf0139878332d20b97b4aeadbc3aafdd">   30</a></span><span class="keyword">enum class</span> <a class="code hl_enumeration" href="../../de/dda/namespacebustub.html#adf0139878332d20b97b4aeadbc3aafdd">ExceptionType</a> {</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>  <a class="code hl_enumvalue" href="../../de/dda/namespacebustub.html#a49735e6748963f5515394bbb228f1fc8a3e1271c17ff094d1820c69fbcc4c19eb">INVALID</a> = 0,</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>  <a class="code hl_enumvalue" href="../../de/dda/namespacebustub.html#adf0139878332d20b97b4aeadbc3aafdda6feaf66704b269610cff9431d5519cad">OUT_OF_RANGE</a> = 1,</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>  <a class="code hl_enumvalue" href="../../de/dda/namespacebustub.html#adf0139878332d20b97b4aeadbc3aafdda4f95b2b3043e8094e82b1df5e337ab4c">CONVERSION</a> = 2,</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>  <a class="code hl_enumvalue" href="../../de/dda/namespacebustub.html#adf0139878332d20b97b4aeadbc3aafdda7280a7d8974164a48d863dee5e341f27">UNKNOWN_TYPE</a> = 3,</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>  <a class="code hl_enumvalue" href="../../de/dda/namespacebustub.html#a49735e6748963f5515394bbb228f1fc8ab2b72097010116f1391d0defef5e8944">DECIMAL</a> = 4,</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>  <a class="code hl_enumvalue" href="../../de/dda/namespacebustub.html#adf0139878332d20b97b4aeadbc3aafdda33d60725121c9a1e353da43ef92a4c8d">MISMATCH_TYPE</a> = 5,</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>  <a class="code hl_enumvalue" href="../../de/dda/namespacebustub.html#adf0139878332d20b97b4aeadbc3aafdda89a05339f968a0ed7c666568913388ca">DIVIDE_BY_ZERO</a> = 6,</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>  <a class="code hl_enumvalue" href="../../de/dda/namespacebustub.html#adf0139878332d20b97b4aeadbc3aafddaa8bb5c14878aebbc01bfa548b2359bcf">INCOMPATIBLE_TYPE</a> = 8,</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>  <a class="code hl_enumvalue" href="../../de/dda/namespacebustub.html#adf0139878332d20b97b4aeadbc3aafddac56ddb8056b120c9d5fee05981f219c6">OUT_OF_MEMORY</a> = 9,</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>  <a class="code hl_enumvalue" href="../../de/dda/namespacebustub.html#adf0139878332d20b97b4aeadbc3aafdda3e860a081575fc82cc7b6ed2ca602947">NOT_IMPLEMENTED</a> = 11,</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>  <a class="code hl_enumvalue" href="../../de/dda/namespacebustub.html#adf0139878332d20b97b4aeadbc3aafdda65e53f0d00733750044f3a002608329c">EXECUTION</a> = 12,</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>};</div>
+</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span> </div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span><span class="keyword">extern</span> std::atomic&lt;bool&gt; <a class="code hl_variable" href="../../de/dda/namespacebustub.html#a632382e00bfab0cdad85b610b9ad9da7">global_disable_execution_exception_print</a>;</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span> </div>
+<div class="foldopen" id="foldopen00057" data-start="{" data-end="};">
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno"><a class="line" href="../../de/d90/classbustub_1_1Exception.html">   57</a></span><span class="keyword">class </span><a class="code hl_class" href="../../de/d90/classbustub_1_1Exception.html">Exception</a> : <span class="keyword">public</span> std::runtime_error {</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span> <span class="keyword">public</span>:</div>
+<div class="foldopen" id="foldopen00063" data-start="{" data-end="}">
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno"><a class="line" href="../../de/d90/classbustub_1_1Exception.html#ae798f05c7eebe36d86c72b1af05c0c75">   63</a></span>  <span class="keyword">explicit</span> <a class="code hl_function" href="../../de/d90/classbustub_1_1Exception.html#ae798f05c7eebe36d86c72b1af05c0c75">Exception</a>(<span class="keyword">const</span> std::string &amp;message, <span class="keywordtype">bool</span> print = <span class="keyword">true</span>)</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>      : <a class="code hl_namespace" href="../../d8/dcc/namespacestd.html">std</a>::runtime_error(message), <a class="code hl_variable" href="../../de/d90/classbustub_1_1Exception.html#a58f965ecc3cb682a5bea32a16f6c7c73">type_</a>(<a class="code hl_enumeration" href="../../de/dda/namespacebustub.html#adf0139878332d20b97b4aeadbc3aafdd">ExceptionType</a>::<a class="code hl_enumvalue" href="../../de/dda/namespacebustub.html#a49735e6748963f5515394bbb228f1fc8a3e1271c17ff094d1820c69fbcc4c19eb">INVALID</a>) {</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span><span class="preprocessor">#ifndef NDEBUG</span></div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>    <span class="keywordflow">if</span> (print) {</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>      std::string exception_message = <span class="stringliteral">&quot;Message :: &quot;</span> + message + <span class="stringliteral">&quot;\n&quot;</span>;</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>      std::cerr &lt;&lt; exception_message;</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>    }</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>  }</div>
+</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span> </div>
+<div class="foldopen" id="foldopen00078" data-start="{" data-end="}">
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno"><a class="line" href="../../de/d90/classbustub_1_1Exception.html#a6f16607d9d9dc36131b7e43cc22a1a39">   78</a></span>  <a class="code hl_function" href="../../de/d90/classbustub_1_1Exception.html#a6f16607d9d9dc36131b7e43cc22a1a39">Exception</a>(<a class="code hl_enumeration" href="../../de/dda/namespacebustub.html#adf0139878332d20b97b4aeadbc3aafdd">ExceptionType</a> exception_type, <span class="keyword">const</span> std::string &amp;message, <span class="keywordtype">bool</span> print = <span class="keyword">true</span>)</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>      : <a class="code hl_namespace" href="../../d8/dcc/namespacestd.html">std</a>::runtime_error(message), <a class="code hl_variable" href="../../de/d90/classbustub_1_1Exception.html#a58f965ecc3cb682a5bea32a16f6c7c73">type_</a>(exception_type) {</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span><span class="preprocessor">#ifndef NDEBUG</span></div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>    <span class="keywordflow">if</span> (print &amp;&amp; !<a class="code hl_variable" href="../../de/dda/namespacebustub.html#a632382e00bfab0cdad85b610b9ad9da7">global_disable_execution_exception_print</a>.load()) {</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>      std::string exception_message =</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>          <span class="stringliteral">&quot;\nException Type :: &quot;</span> + <a class="code hl_function" href="../../de/d90/classbustub_1_1Exception.html#aea8d4e0c8e9f578c6ba678fe6db36ab6">ExceptionTypeToString</a>(<a class="code hl_variable" href="../../de/d90/classbustub_1_1Exception.html#a58f965ecc3cb682a5bea32a16f6c7c73">type_</a>) + <span class="stringliteral">&quot;, Message :: &quot;</span> + message + <span class="stringliteral">&quot;\n\n&quot;</span>;</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>      std::cerr &lt;&lt; exception_message;</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>    }</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>  }</div>
+</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span> </div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno"><a class="line" href="../../de/d90/classbustub_1_1Exception.html#aa2bb3f78cefc15ab8026f6b748e66feb">   90</a></span>  <span class="keyword">auto</span> <a class="code hl_function" href="../../de/d90/classbustub_1_1Exception.html#aa2bb3f78cefc15ab8026f6b748e66feb">GetType</a>() const -&gt; <a class="code hl_enumeration" href="../../de/dda/namespacebustub.html#adf0139878332d20b97b4aeadbc3aafdd">ExceptionType</a> { <span class="keywordflow">return</span> <a class="code hl_variable" href="../../de/d90/classbustub_1_1Exception.html#a58f965ecc3cb682a5bea32a16f6c7c73">type_</a>; }</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span> </div>
+<div class="foldopen" id="foldopen00093" data-start="{" data-end="}">
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno"><a class="line" href="../../de/d90/classbustub_1_1Exception.html#aea8d4e0c8e9f578c6ba678fe6db36ab6">   93</a></span>  <span class="keyword">static</span> <span class="keyword">auto</span> <a class="code hl_function" href="../../de/d90/classbustub_1_1Exception.html#aea8d4e0c8e9f578c6ba678fe6db36ab6">ExceptionTypeToString</a>(<a class="code hl_enumeration" href="../../de/dda/namespacebustub.html#adf0139878332d20b97b4aeadbc3aafdd">ExceptionType</a> type) -&gt; std::string {</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>    <span class="keywordflow">switch</span> (type) {</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>      <span class="keywordflow">case</span> <a class="code hl_enumvalue" href="../../de/dda/namespacebustub.html#adf0139878332d20b97b4aeadbc3aafddaccc0377a8afbf50e7094f5c23a8af223">ExceptionType::INVALID</a>:</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>        <span class="keywordflow">return</span> <span class="stringliteral">&quot;Invalid&quot;</span>;</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>      <span class="keywordflow">case</span> <a class="code hl_enumvalue" href="../../de/dda/namespacebustub.html#adf0139878332d20b97b4aeadbc3aafdda6feaf66704b269610cff9431d5519cad">ExceptionType::OUT_OF_RANGE</a>:</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>        <span class="keywordflow">return</span> <span class="stringliteral">&quot;Out of Range&quot;</span>;</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>      <span class="keywordflow">case</span> <a class="code hl_enumvalue" href="../../de/dda/namespacebustub.html#adf0139878332d20b97b4aeadbc3aafdda4f95b2b3043e8094e82b1df5e337ab4c">ExceptionType::CONVERSION</a>:</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>        <span class="keywordflow">return</span> <span class="stringliteral">&quot;Conversion&quot;</span>;</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>      <span class="keywordflow">case</span> <a class="code hl_enumvalue" href="../../de/dda/namespacebustub.html#adf0139878332d20b97b4aeadbc3aafdda7280a7d8974164a48d863dee5e341f27">ExceptionType::UNKNOWN_TYPE</a>:</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>        <span class="keywordflow">return</span> <span class="stringliteral">&quot;Unknown Type&quot;</span>;</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>      <span class="keywordflow">case</span> <a class="code hl_enumvalue" href="../../de/dda/namespacebustub.html#adf0139878332d20b97b4aeadbc3aafdda13d992d671957e9a2b3e936ca0cf14a4">ExceptionType::DECIMAL</a>:</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>        <span class="keywordflow">return</span> <span class="stringliteral">&quot;Decimal&quot;</span>;</div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>      <span class="keywordflow">case</span> <a class="code hl_enumvalue" href="../../de/dda/namespacebustub.html#adf0139878332d20b97b4aeadbc3aafdda33d60725121c9a1e353da43ef92a4c8d">ExceptionType::MISMATCH_TYPE</a>:</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>        <span class="keywordflow">return</span> <span class="stringliteral">&quot;Mismatch Type&quot;</span>;</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>      <span class="keywordflow">case</span> <a class="code hl_enumvalue" href="../../de/dda/namespacebustub.html#adf0139878332d20b97b4aeadbc3aafdda89a05339f968a0ed7c666568913388ca">ExceptionType::DIVIDE_BY_ZERO</a>:</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>        <span class="keywordflow">return</span> <span class="stringliteral">&quot;Divide by Zero&quot;</span>;</div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>      <span class="keywordflow">case</span> <a class="code hl_enumvalue" href="../../de/dda/namespacebustub.html#adf0139878332d20b97b4aeadbc3aafddaa8bb5c14878aebbc01bfa548b2359bcf">ExceptionType::INCOMPATIBLE_TYPE</a>:</div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>        <span class="keywordflow">return</span> <span class="stringliteral">&quot;Incompatible type&quot;</span>;</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>      <span class="keywordflow">case</span> <a class="code hl_enumvalue" href="../../de/dda/namespacebustub.html#adf0139878332d20b97b4aeadbc3aafddac56ddb8056b120c9d5fee05981f219c6">ExceptionType::OUT_OF_MEMORY</a>:</div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>        <span class="keywordflow">return</span> <span class="stringliteral">&quot;Out of Memory&quot;</span>;</div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>      <span class="keywordflow">case</span> <a class="code hl_enumvalue" href="../../de/dda/namespacebustub.html#adf0139878332d20b97b4aeadbc3aafdda3e860a081575fc82cc7b6ed2ca602947">ExceptionType::NOT_IMPLEMENTED</a>:</div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>        <span class="keywordflow">return</span> <span class="stringliteral">&quot;Not implemented&quot;</span>;</div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>      <span class="keywordflow">case</span> <a class="code hl_enumvalue" href="../../de/dda/namespacebustub.html#adf0139878332d20b97b4aeadbc3aafdda65e53f0d00733750044f3a002608329c">ExceptionType::EXECUTION</a>:</div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>        <span class="keywordflow">return</span> <span class="stringliteral">&quot;Execution&quot;</span>;</div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>      <span class="keywordflow">default</span>:</div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>        <span class="keywordflow">return</span> <span class="stringliteral">&quot;Unknown&quot;</span>;</div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>    }</div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>  }</div>
+</div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span> </div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span> <span class="keyword">private</span>:</div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno"><a class="line" href="../../de/d90/classbustub_1_1Exception.html#a58f965ecc3cb682a5bea32a16f6c7c73">  123</a></span>  <a class="code hl_enumeration" href="../../de/dda/namespacebustub.html#adf0139878332d20b97b4aeadbc3aafdd">ExceptionType</a> <a class="code hl_variable" href="../../de/d90/classbustub_1_1Exception.html#a58f965ecc3cb682a5bea32a16f6c7c73">type_</a>;</div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>};</div>
+</div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span> </div>
+<div class="foldopen" id="foldopen00126" data-start="{" data-end="};">
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno"><a class="line" href="../../d9/df6/classbustub_1_1NotImplementedException.html">  126</a></span><span class="keyword">class </span><a class="code hl_class" href="../../d9/df6/classbustub_1_1NotImplementedException.html">NotImplementedException</a> : <span class="keyword">public</span> <a class="code hl_class" href="../../de/d90/classbustub_1_1Exception.html">Exception</a> {</div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span> <span class="keyword">public</span>:</div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno"><a class="line" href="../../d9/df6/classbustub_1_1NotImplementedException.html#aa860b3e37677fa96ee139d5fc33747d7">  128</a></span>  <a class="code hl_function" href="../../d9/df6/classbustub_1_1NotImplementedException.html#aa860b3e37677fa96ee139d5fc33747d7">NotImplementedException</a>() = <span class="keyword">delete</span>;</div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno"><a class="line" href="../../d9/df6/classbustub_1_1NotImplementedException.html#a7f4a1bdee225ad1656f7dab3c6db0d55">  129</a></span>  <span class="keyword">explicit</span> <a class="code hl_function" href="../../d9/df6/classbustub_1_1NotImplementedException.html#a7f4a1bdee225ad1656f7dab3c6db0d55">NotImplementedException</a>(<span class="keyword">const</span> std::string &amp;msg) : <a class="code hl_class" href="../../de/d90/classbustub_1_1Exception.html">Exception</a>(<a class="code hl_enumeration" href="../../de/dda/namespacebustub.html#adf0139878332d20b97b4aeadbc3aafdd">ExceptionType</a>::<a class="code hl_enumvalue" href="../../de/dda/namespacebustub.html#adf0139878332d20b97b4aeadbc3aafdda3e860a081575fc82cc7b6ed2ca602947">NOT_IMPLEMENTED</a>, msg) {}</div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>};</div>
+</div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span> </div>
+<div class="foldopen" id="foldopen00132" data-start="{" data-end="};">
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno"><a class="line" href="../../d2/d07/classbustub_1_1ExecutionException.html">  132</a></span><span class="keyword">class </span><a class="code hl_class" href="../../d2/d07/classbustub_1_1ExecutionException.html">ExecutionException</a> : <span class="keyword">public</span> <a class="code hl_class" href="../../de/d90/classbustub_1_1Exception.html">Exception</a> {</div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span> <span class="keyword">public</span>:</div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno"><a class="line" href="../../d2/d07/classbustub_1_1ExecutionException.html#a0872156acbea8d6e39978335fb4140ff">  134</a></span>  <a class="code hl_function" href="../../d2/d07/classbustub_1_1ExecutionException.html#a0872156acbea8d6e39978335fb4140ff">ExecutionException</a>() = <span class="keyword">delete</span>;</div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno"><a class="line" href="../../d2/d07/classbustub_1_1ExecutionException.html#af8261ce3e0c5882d1a9212ea8413f0c5">  135</a></span>  <span class="keyword">explicit</span> <a class="code hl_function" href="../../d2/d07/classbustub_1_1ExecutionException.html#af8261ce3e0c5882d1a9212ea8413f0c5">ExecutionException</a>(<span class="keyword">const</span> std::string &amp;msg) : <a class="code hl_class" href="../../de/d90/classbustub_1_1Exception.html">Exception</a>(<a class="code hl_enumeration" href="../../de/dda/namespacebustub.html#adf0139878332d20b97b4aeadbc3aafdd">ExceptionType</a>::<a class="code hl_enumvalue" href="../../de/dda/namespacebustub.html#adf0139878332d20b97b4aeadbc3aafdda65e53f0d00733750044f3a002608329c">EXECUTION</a>, msg, true) {}</div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span>};</div>
+</div>
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span> </div>
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span>}  <span class="comment">// namespace bustub</span></div>
+<div class="ttc" id="aclassbustub_1_1Exception_html"><div class="ttname"><a href="../../de/d90/classbustub_1_1Exception.html">bustub::Exception</a></div><div class="ttdef"><b>Definition</b> exception.h:57</div></div>
+<div class="ttc" id="aclassbustub_1_1Exception_html_a58f965ecc3cb682a5bea32a16f6c7c73"><div class="ttname"><a href="../../de/d90/classbustub_1_1Exception.html#a58f965ecc3cb682a5bea32a16f6c7c73">bustub::Exception::type_</a></div><div class="ttdeci">ExceptionType type_</div><div class="ttdef"><b>Definition</b> exception.h:123</div></div>
+<div class="ttc" id="aclassbustub_1_1Exception_html_a6f16607d9d9dc36131b7e43cc22a1a39"><div class="ttname"><a href="../../de/d90/classbustub_1_1Exception.html#a6f16607d9d9dc36131b7e43cc22a1a39">bustub::Exception::Exception</a></div><div class="ttdeci">Exception(ExceptionType exception_type, const std::string &amp;message, bool print=true)</div><div class="ttdef"><b>Definition</b> exception.h:78</div></div>
+<div class="ttc" id="aclassbustub_1_1Exception_html_aa2bb3f78cefc15ab8026f6b748e66feb"><div class="ttname"><a href="../../de/d90/classbustub_1_1Exception.html#aa2bb3f78cefc15ab8026f6b748e66feb">bustub::Exception::GetType</a></div><div class="ttdeci">auto GetType() const -&gt; ExceptionType</div><div class="ttdef"><b>Definition</b> exception.h:90</div></div>
+<div class="ttc" id="aclassbustub_1_1Exception_html_ae798f05c7eebe36d86c72b1af05c0c75"><div class="ttname"><a href="../../de/d90/classbustub_1_1Exception.html#ae798f05c7eebe36d86c72b1af05c0c75">bustub::Exception::Exception</a></div><div class="ttdeci">Exception(const std::string &amp;message, bool print=true)</div><div class="ttdef"><b>Definition</b> exception.h:63</div></div>
+<div class="ttc" id="aclassbustub_1_1Exception_html_aea8d4e0c8e9f578c6ba678fe6db36ab6"><div class="ttname"><a href="../../de/d90/classbustub_1_1Exception.html#aea8d4e0c8e9f578c6ba678fe6db36ab6">bustub::Exception::ExceptionTypeToString</a></div><div class="ttdeci">static auto ExceptionTypeToString(ExceptionType type) -&gt; std::string</div><div class="ttdef"><b>Definition</b> exception.h:93</div></div>
+<div class="ttc" id="aclassbustub_1_1ExecutionException_html"><div class="ttname"><a href="../../d2/d07/classbustub_1_1ExecutionException.html">bustub::ExecutionException</a></div><div class="ttdef"><b>Definition</b> exception.h:132</div></div>
+<div class="ttc" id="aclassbustub_1_1ExecutionException_html_a0872156acbea8d6e39978335fb4140ff"><div class="ttname"><a href="../../d2/d07/classbustub_1_1ExecutionException.html#a0872156acbea8d6e39978335fb4140ff">bustub::ExecutionException::ExecutionException</a></div><div class="ttdeci">ExecutionException()=delete</div></div>
+<div class="ttc" id="aclassbustub_1_1ExecutionException_html_af8261ce3e0c5882d1a9212ea8413f0c5"><div class="ttname"><a href="../../d2/d07/classbustub_1_1ExecutionException.html#af8261ce3e0c5882d1a9212ea8413f0c5">bustub::ExecutionException::ExecutionException</a></div><div class="ttdeci">ExecutionException(const std::string &amp;msg)</div><div class="ttdef"><b>Definition</b> exception.h:135</div></div>
+<div class="ttc" id="aclassbustub_1_1NotImplementedException_html"><div class="ttname"><a href="../../d9/df6/classbustub_1_1NotImplementedException.html">bustub::NotImplementedException</a></div><div class="ttdef"><b>Definition</b> exception.h:126</div></div>
+<div class="ttc" id="aclassbustub_1_1NotImplementedException_html_a7f4a1bdee225ad1656f7dab3c6db0d55"><div class="ttname"><a href="../../d9/df6/classbustub_1_1NotImplementedException.html#a7f4a1bdee225ad1656f7dab3c6db0d55">bustub::NotImplementedException::NotImplementedException</a></div><div class="ttdeci">NotImplementedException(const std::string &amp;msg)</div><div class="ttdef"><b>Definition</b> exception.h:129</div></div>
+<div class="ttc" id="aclassbustub_1_1NotImplementedException_html_aa860b3e37677fa96ee139d5fc33747d7"><div class="ttname"><a href="../../d9/df6/classbustub_1_1NotImplementedException.html#aa860b3e37677fa96ee139d5fc33747d7">bustub::NotImplementedException::NotImplementedException</a></div><div class="ttdeci">NotImplementedException()=delete</div></div>
+<div class="ttc" id="anamespacebustub_html"><div class="ttname"><a href="../../de/dda/namespacebustub.html">bustub</a></div><div class="ttdef"><b>Definition</b> bind_create.cpp:53</div></div>
+<div class="ttc" id="anamespacebustub_html_a49735e6748963f5515394bbb228f1fc8a3e1271c17ff094d1820c69fbcc4c19eb"><div class="ttname"><a href="../../de/dda/namespacebustub.html#a49735e6748963f5515394bbb228f1fc8a3e1271c17ff094d1820c69fbcc4c19eb">bustub::INVALID</a></div><div class="ttdeci">@ INVALID</div><div class="ttdef"><b>Definition</b> type_id.h:17</div></div>
+<div class="ttc" id="anamespacebustub_html_a49735e6748963f5515394bbb228f1fc8ab2b72097010116f1391d0defef5e8944"><div class="ttname"><a href="../../de/dda/namespacebustub.html#a49735e6748963f5515394bbb228f1fc8ab2b72097010116f1391d0defef5e8944">bustub::DECIMAL</a></div><div class="ttdeci">@ DECIMAL</div><div class="ttdef"><b>Definition</b> type_id.h:17</div></div>
+<div class="ttc" id="anamespacebustub_html_a632382e00bfab0cdad85b610b9ad9da7"><div class="ttname"><a href="../../de/dda/namespacebustub.html#a632382e00bfab0cdad85b610b9ad9da7">bustub::global_disable_execution_exception_print</a></div><div class="ttdeci">std::atomic&lt; bool &gt; global_disable_execution_exception_print</div><div class="ttdef"><b>Definition</b> config.cpp:23</div></div>
+<div class="ttc" id="anamespacebustub_html_adf0139878332d20b97b4aeadbc3aafdd"><div class="ttname"><a href="../../de/dda/namespacebustub.html#adf0139878332d20b97b4aeadbc3aafdd">bustub::ExceptionType</a></div><div class="ttdeci">ExceptionType</div><div class="ttdef"><b>Definition</b> exception.h:30</div></div>
+<div class="ttc" id="anamespacebustub_html_adf0139878332d20b97b4aeadbc3aafdda13d992d671957e9a2b3e936ca0cf14a4"><div class="ttname"><a href="../../de/dda/namespacebustub.html#adf0139878332d20b97b4aeadbc3aafdda13d992d671957e9a2b3e936ca0cf14a4">bustub::ExceptionType::DECIMAL</a></div><div class="ttdeci">@ DECIMAL</div></div>
+<div class="ttc" id="anamespacebustub_html_adf0139878332d20b97b4aeadbc3aafdda33d60725121c9a1e353da43ef92a4c8d"><div class="ttname"><a href="../../de/dda/namespacebustub.html#adf0139878332d20b97b4aeadbc3aafdda33d60725121c9a1e353da43ef92a4c8d">bustub::ExceptionType::MISMATCH_TYPE</a></div><div class="ttdeci">@ MISMATCH_TYPE</div></div>
+<div class="ttc" id="anamespacebustub_html_adf0139878332d20b97b4aeadbc3aafdda3e860a081575fc82cc7b6ed2ca602947"><div class="ttname"><a href="../../de/dda/namespacebustub.html#adf0139878332d20b97b4aeadbc3aafdda3e860a081575fc82cc7b6ed2ca602947">bustub::ExceptionType::NOT_IMPLEMENTED</a></div><div class="ttdeci">@ NOT_IMPLEMENTED</div></div>
+<div class="ttc" id="anamespacebustub_html_adf0139878332d20b97b4aeadbc3aafdda4f95b2b3043e8094e82b1df5e337ab4c"><div class="ttname"><a href="../../de/dda/namespacebustub.html#adf0139878332d20b97b4aeadbc3aafdda4f95b2b3043e8094e82b1df5e337ab4c">bustub::ExceptionType::CONVERSION</a></div><div class="ttdeci">@ CONVERSION</div></div>
+<div class="ttc" id="anamespacebustub_html_adf0139878332d20b97b4aeadbc3aafdda65e53f0d00733750044f3a002608329c"><div class="ttname"><a href="../../de/dda/namespacebustub.html#adf0139878332d20b97b4aeadbc3aafdda65e53f0d00733750044f3a002608329c">bustub::ExceptionType::EXECUTION</a></div><div class="ttdeci">@ EXECUTION</div></div>
+<div class="ttc" id="anamespacebustub_html_adf0139878332d20b97b4aeadbc3aafdda6feaf66704b269610cff9431d5519cad"><div class="ttname"><a href="../../de/dda/namespacebustub.html#adf0139878332d20b97b4aeadbc3aafdda6feaf66704b269610cff9431d5519cad">bustub::ExceptionType::OUT_OF_RANGE</a></div><div class="ttdeci">@ OUT_OF_RANGE</div></div>
+<div class="ttc" id="anamespacebustub_html_adf0139878332d20b97b4aeadbc3aafdda7280a7d8974164a48d863dee5e341f27"><div class="ttname"><a href="../../de/dda/namespacebustub.html#adf0139878332d20b97b4aeadbc3aafdda7280a7d8974164a48d863dee5e341f27">bustub::ExceptionType::UNKNOWN_TYPE</a></div><div class="ttdeci">@ UNKNOWN_TYPE</div></div>
+<div class="ttc" id="anamespacebustub_html_adf0139878332d20b97b4aeadbc3aafdda89a05339f968a0ed7c666568913388ca"><div class="ttname"><a href="../../de/dda/namespacebustub.html#adf0139878332d20b97b4aeadbc3aafdda89a05339f968a0ed7c666568913388ca">bustub::ExceptionType::DIVIDE_BY_ZERO</a></div><div class="ttdeci">@ DIVIDE_BY_ZERO</div></div>
+<div class="ttc" id="anamespacebustub_html_adf0139878332d20b97b4aeadbc3aafddaa8bb5c14878aebbc01bfa548b2359bcf"><div class="ttname"><a href="../../de/dda/namespacebustub.html#adf0139878332d20b97b4aeadbc3aafddaa8bb5c14878aebbc01bfa548b2359bcf">bustub::ExceptionType::INCOMPATIBLE_TYPE</a></div><div class="ttdeci">@ INCOMPATIBLE_TYPE</div></div>
+<div class="ttc" id="anamespacebustub_html_adf0139878332d20b97b4aeadbc3aafddac56ddb8056b120c9d5fee05981f219c6"><div class="ttname"><a href="../../de/dda/namespacebustub.html#adf0139878332d20b97b4aeadbc3aafddac56ddb8056b120c9d5fee05981f219c6">bustub::ExceptionType::OUT_OF_MEMORY</a></div><div class="ttdeci">@ OUT_OF_MEMORY</div></div>
+<div class="ttc" id="anamespacebustub_html_adf0139878332d20b97b4aeadbc3aafddaccc0377a8afbf50e7094f5c23a8af223"><div class="ttname"><a href="../../de/dda/namespacebustub.html#adf0139878332d20b97b4aeadbc3aafddaccc0377a8afbf50e7094f5c23a8af223">bustub::ExceptionType::INVALID</a></div><div class="ttdeci">@ INVALID</div></div>
+<div class="ttc" id="anamespacestd_html"><div class="ttname"><a href="../../d8/dcc/namespacestd.html">std</a></div><div class="ttdef"><b>Definition</b> rid.h:70</div></div>
+<div class="ttc" id="atype_8h_html"><div class="ttname"><a href="../../df/def/type_8h.html">type.h</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
+</small></address>
+</body>
+</html>

@@ -1,0 +1,536 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>数据库系统 CMU15-445/645: bustub::LogManager类 参考</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/searchdata.js"></script>
+<script type="text/javascript" src="../../search/search.js"></script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">数据库系统 CMU15-445/645<span id="projectnumber">&#160;1.0.0</span>
+   </div>
+   <div id="projectbrief">CMU15-445/645 是基于现代 C++ 开发的支持并发操作的简单 SQL 操作的单机数据库</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.9.8 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "../../search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('../../',true,false,'search.php','搜索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="../../de/dda/namespacebustub.html">bustub</a></li><li class="navelem"><a class="el" href="../../d7/d4e/classbustub_1_1LogManager.html">LogManager</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Public 成员函数</a> &#124;
+<a href="#pri-methods">Private 成员函数</a> &#124;
+<a href="#pri-attribs">Private 属性</a> &#124;
+<a href="../../d3/de6/classbustub_1_1LogManager-members.html">所有成员列表</a>  </div>
+  <div class="headertitle"><div class="title">bustub::LogManager类 参考</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p><code>#include &lt;<a class="el" href="../../db/d36/log__manager_8h_source.html">log_manager.h</a>&gt;</code></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Public 成员函数</h2></td></tr>
+<tr class="memitem:a977736471c8af225c05910c73c406d1a" id="r_a977736471c8af225c05910c73c406d1a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d4e/classbustub_1_1LogManager.html#a977736471c8af225c05910c73c406d1a">LogManager</a> (<a class="el" href="../../da/dfe/classbustub_1_1DiskManager.html">DiskManager</a> *disk_manager)</td></tr>
+<tr class="separator:a977736471c8af225c05910c73c406d1a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a458fb8788f0a56e48f8c119c54eab3a7" id="r_a458fb8788f0a56e48f8c119c54eab3a7"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d4e/classbustub_1_1LogManager.html#a458fb8788f0a56e48f8c119c54eab3a7">~LogManager</a> ()</td></tr>
+<tr class="separator:a458fb8788f0a56e48f8c119c54eab3a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aed5cfe542a06ac552fa9af09df523456" id="r_aed5cfe542a06ac552fa9af09df523456"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d4e/classbustub_1_1LogManager.html#aed5cfe542a06ac552fa9af09df523456">RunFlushThread</a> ()</td></tr>
+<tr class="separator:aed5cfe542a06ac552fa9af09df523456"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8662153d94b4c02b5993c5966cd5b8be" id="r_a8662153d94b4c02b5993c5966cd5b8be"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d4e/classbustub_1_1LogManager.html#a8662153d94b4c02b5993c5966cd5b8be">StopFlushThread</a> ()</td></tr>
+<tr class="separator:a8662153d94b4c02b5993c5966cd5b8be"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a545e09c960cd9c2b29a771da1428e527" id="r_a545e09c960cd9c2b29a771da1428e527"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d4e/classbustub_1_1LogManager.html#a545e09c960cd9c2b29a771da1428e527">AppendLogRecord</a> (<a class="el" href="../../d8/de4/classbustub_1_1LogRecord.html">LogRecord</a> *log_record) -&gt; <a class="el" href="../../de/dda/namespacebustub.html#a8ceb3d9746c8621a11887b2754e385f2">lsn_t</a></td></tr>
+<tr class="separator:a545e09c960cd9c2b29a771da1428e527"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8b026c8d3aac1544f91f6a86ad1114b0" id="r_a8b026c8d3aac1544f91f6a86ad1114b0"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d4e/classbustub_1_1LogManager.html#a8b026c8d3aac1544f91f6a86ad1114b0">GetNextLSN</a> () -&gt; <a class="el" href="../../de/dda/namespacebustub.html#a8ceb3d9746c8621a11887b2754e385f2">lsn_t</a></td></tr>
+<tr class="separator:a8b026c8d3aac1544f91f6a86ad1114b0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1791dc98b2a3a867727d45ef3993d131" id="r_a1791dc98b2a3a867727d45ef3993d131"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d4e/classbustub_1_1LogManager.html#a1791dc98b2a3a867727d45ef3993d131">GetPersistentLSN</a> () -&gt; <a class="el" href="../../de/dda/namespacebustub.html#a8ceb3d9746c8621a11887b2754e385f2">lsn_t</a></td></tr>
+<tr class="separator:a1791dc98b2a3a867727d45ef3993d131"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2895715933995bb794729404e4d60ac0" id="r_a2895715933995bb794729404e4d60ac0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d4e/classbustub_1_1LogManager.html#a2895715933995bb794729404e4d60ac0">SetPersistentLSN</a> (<a class="el" href="../../de/dda/namespacebustub.html#a8ceb3d9746c8621a11887b2754e385f2">lsn_t</a> lsn)</td></tr>
+<tr class="separator:a2895715933995bb794729404e4d60ac0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7d3cad673419b2ef3f0edb645c79782a" id="r_a7d3cad673419b2ef3f0edb645c79782a"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d4e/classbustub_1_1LogManager.html#a7d3cad673419b2ef3f0edb645c79782a">GetLogBuffer</a> () -&gt; char *</td></tr>
+<tr class="separator:a7d3cad673419b2ef3f0edb645c79782a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-methods" name="pri-methods"></a>
+Private 成员函数</h2></td></tr>
+<tr class="memitem:a09ac4fd57a500360b598d62e99f84cb4" id="r_a09ac4fd57a500360b598d62e99f84cb4"><td class="memItemLeft" align="right" valign="top">std::thread *flush_thread_&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d4e/classbustub_1_1LogManager.html#a09ac4fd57a500360b598d62e99f84cb4">__attribute__</a> ((__unused__))</td></tr>
+<tr class="separator:a09ac4fd57a500360b598d62e99f84cb4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3742b96eb2ff9d5fd044d8fe63504e85" id="r_a3742b96eb2ff9d5fd044d8fe63504e85"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../da/dfe/classbustub_1_1DiskManager.html">DiskManager</a> *disk_manager_&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d4e/classbustub_1_1LogManager.html#a3742b96eb2ff9d5fd044d8fe63504e85">__attribute__</a> ((__unused__))</td></tr>
+<tr class="separator:a3742b96eb2ff9d5fd044d8fe63504e85"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
+Private 属性</h2></td></tr>
+<tr class="memitem:a759ca3c82bff9fcedaf0b881e48b939c" id="r_a759ca3c82bff9fcedaf0b881e48b939c"><td class="memItemLeft" align="right" valign="top">std::atomic&lt; <a class="el" href="../../de/dda/namespacebustub.html#a8ceb3d9746c8621a11887b2754e385f2">lsn_t</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d4e/classbustub_1_1LogManager.html#a759ca3c82bff9fcedaf0b881e48b939c">next_lsn_</a></td></tr>
+<tr class="separator:a759ca3c82bff9fcedaf0b881e48b939c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a61f6f2f521c3db1e99d54c23d6874a29" id="r_a61f6f2f521c3db1e99d54c23d6874a29"><td class="memItemLeft" align="right" valign="top">std::atomic&lt; <a class="el" href="../../de/dda/namespacebustub.html#a8ceb3d9746c8621a11887b2754e385f2">lsn_t</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d4e/classbustub_1_1LogManager.html#a61f6f2f521c3db1e99d54c23d6874a29">persistent_lsn_</a></td></tr>
+<tr class="separator:a61f6f2f521c3db1e99d54c23d6874a29"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aad02f1cfa00311a10f2346bb339aa77b" id="r_aad02f1cfa00311a10f2346bb339aa77b"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d4e/classbustub_1_1LogManager.html#aad02f1cfa00311a10f2346bb339aa77b">log_buffer_</a></td></tr>
+<tr class="separator:aad02f1cfa00311a10f2346bb339aa77b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6a3255c0fab090a6ae88a3f7d43be7fa" id="r_a6a3255c0fab090a6ae88a3f7d43be7fa"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d4e/classbustub_1_1LogManager.html#a6a3255c0fab090a6ae88a3f7d43be7fa">flush_buffer_</a></td></tr>
+<tr class="separator:a6a3255c0fab090a6ae88a3f7d43be7fa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad8b1ddc101109a11b78649befcf32735" id="r_ad8b1ddc101109a11b78649befcf32735"><td class="memItemLeft" align="right" valign="top">std::mutex&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d4e/classbustub_1_1LogManager.html#ad8b1ddc101109a11b78649befcf32735">latch_</a></td></tr>
+<tr class="separator:ad8b1ddc101109a11b78649befcf32735"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4b64133b6fb4b9a6dc91bfc9a36cca7f" id="r_a4b64133b6fb4b9a6dc91bfc9a36cca7f"><td class="memItemLeft" align="right" valign="top">std::condition_variable&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d4e/classbustub_1_1LogManager.html#a4b64133b6fb4b9a6dc91bfc9a36cca7f">cv_</a></td></tr>
+<tr class="separator:a4b64133b6fb4b9a6dc91bfc9a36cca7f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
+<div class="textblock"><p><a class="el" href="../../d7/d4e/classbustub_1_1LogManager.html">LogManager</a> maintains a separate thread that is awakened whenever the log buffer is full or whenever a timeout happens. When the thread is awakened, the log buffer's content is written into the disk log file. </p>
+</div><h2 class="groupheader">构造及析构函数说明</h2>
+<a id="a977736471c8af225c05910c73c406d1a" name="a977736471c8af225c05910c73c406d1a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a977736471c8af225c05910c73c406d1a">&#9670;&#160;</a></span>LogManager()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bustub::LogManager::LogManager </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../da/dfe/classbustub_1_1DiskManager.html">DiskManager</a> *&#160;</td>
+          <td class="paramname"><em>disk_manager</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">explicit</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a458fb8788f0a56e48f8c119c54eab3a7" name="a458fb8788f0a56e48f8c119c54eab3a7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a458fb8788f0a56e48f8c119c54eab3a7">&#9670;&#160;</a></span>~LogManager()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bustub::LogManager::~LogManager </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">成员函数说明</h2>
+<a id="a09ac4fd57a500360b598d62e99f84cb4" name="a09ac4fd57a500360b598d62e99f84cb4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a09ac4fd57a500360b598d62e99f84cb4">&#9670;&#160;</a></span>__attribute__() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::thread *flush_thread_ bustub::LogManager::__attribute__ </td>
+          <td>(</td>
+          <td class="paramtype">(__unused__)&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a3742b96eb2ff9d5fd044d8fe63504e85" name="a3742b96eb2ff9d5fd044d8fe63504e85"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3742b96eb2ff9d5fd044d8fe63504e85">&#9670;&#160;</a></span>__attribute__() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../da/dfe/classbustub_1_1DiskManager.html">DiskManager</a> *disk_manager_ bustub::LogManager::__attribute__ </td>
+          <td>(</td>
+          <td class="paramtype">(__unused__)&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a545e09c960cd9c2b29a771da1428e527" name="a545e09c960cd9c2b29a771da1428e527"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a545e09c960cd9c2b29a771da1428e527">&#9670;&#160;</a></span>AppendLogRecord()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto bustub::LogManager::AppendLogRecord </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../d8/de4/classbustub_1_1LogRecord.html">LogRecord</a> *&#160;</td>
+          <td class="paramname"><em>log_record</em></td><td>)</td>
+          <td> -&gt; <a class="el" href="../../de/dda/namespacebustub.html#a8ceb3d9746c8621a11887b2754e385f2">lsn_t</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a7d3cad673419b2ef3f0edb645c79782a" name="a7d3cad673419b2ef3f0edb645c79782a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7d3cad673419b2ef3f0edb645c79782a">&#9670;&#160;</a></span>GetLogBuffer()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto bustub::LogManager::GetLogBuffer </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> -&gt; char * </td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a8b026c8d3aac1544f91f6a86ad1114b0" name="a8b026c8d3aac1544f91f6a86ad1114b0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8b026c8d3aac1544f91f6a86ad1114b0">&#9670;&#160;</a></span>GetNextLSN()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto bustub::LogManager::GetNextLSN </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> -&gt; <a class="el" href="../../de/dda/namespacebustub.html#a8ceb3d9746c8621a11887b2754e385f2">lsn_t</a> </td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a1791dc98b2a3a867727d45ef3993d131" name="a1791dc98b2a3a867727d45ef3993d131"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1791dc98b2a3a867727d45ef3993d131">&#9670;&#160;</a></span>GetPersistentLSN()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto bustub::LogManager::GetPersistentLSN </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> -&gt; <a class="el" href="../../de/dda/namespacebustub.html#a8ceb3d9746c8621a11887b2754e385f2">lsn_t</a> </td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aed5cfe542a06ac552fa9af09df523456" name="aed5cfe542a06ac552fa9af09df523456"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aed5cfe542a06ac552fa9af09df523456">&#9670;&#160;</a></span>RunFlushThread()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void bustub::LogManager::RunFlushThread </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a2895715933995bb794729404e4d60ac0" name="a2895715933995bb794729404e4d60ac0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2895715933995bb794729404e4d60ac0">&#9670;&#160;</a></span>SetPersistentLSN()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void bustub::LogManager::SetPersistentLSN </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../de/dda/namespacebustub.html#a8ceb3d9746c8621a11887b2754e385f2">lsn_t</a>&#160;</td>
+          <td class="paramname"><em>lsn</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a8662153d94b4c02b5993c5966cd5b8be" name="a8662153d94b4c02b5993c5966cd5b8be"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8662153d94b4c02b5993c5966cd5b8be">&#9670;&#160;</a></span>StopFlushThread()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void bustub::LogManager::StopFlushThread </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">类成员变量说明</h2>
+<a id="a4b64133b6fb4b9a6dc91bfc9a36cca7f" name="a4b64133b6fb4b9a6dc91bfc9a36cca7f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4b64133b6fb4b9a6dc91bfc9a36cca7f">&#9670;&#160;</a></span>cv_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::condition_variable bustub::LogManager::cv_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a6a3255c0fab090a6ae88a3f7d43be7fa" name="a6a3255c0fab090a6ae88a3f7d43be7fa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6a3255c0fab090a6ae88a3f7d43be7fa">&#9670;&#160;</a></span>flush_buffer_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">char* bustub::LogManager::flush_buffer_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ad8b1ddc101109a11b78649befcf32735" name="ad8b1ddc101109a11b78649befcf32735"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad8b1ddc101109a11b78649befcf32735">&#9670;&#160;</a></span>latch_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::mutex bustub::LogManager::latch_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aad02f1cfa00311a10f2346bb339aa77b" name="aad02f1cfa00311a10f2346bb339aa77b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aad02f1cfa00311a10f2346bb339aa77b">&#9670;&#160;</a></span>log_buffer_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">char* bustub::LogManager::log_buffer_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a759ca3c82bff9fcedaf0b881e48b939c" name="a759ca3c82bff9fcedaf0b881e48b939c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a759ca3c82bff9fcedaf0b881e48b939c">&#9670;&#160;</a></span>next_lsn_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::atomic&lt;<a class="el" href="../../de/dda/namespacebustub.html#a8ceb3d9746c8621a11887b2754e385f2">lsn_t</a>&gt; bustub::LogManager::next_lsn_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>The atomic counter which records the next log sequence number. </p>
+
+</div>
+</div>
+<a id="a61f6f2f521c3db1e99d54c23d6874a29" name="a61f6f2f521c3db1e99d54c23d6874a29"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a61f6f2f521c3db1e99d54c23d6874a29">&#9670;&#160;</a></span>persistent_lsn_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::atomic&lt;<a class="el" href="../../de/dda/namespacebustub.html#a8ceb3d9746c8621a11887b2754e385f2">lsn_t</a>&gt; bustub::LogManager::persistent_lsn_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>The log records before and including the persistent lsn have been written to disk. </p>
+
+</div>
+</div>
+<hr/>该类的文档由以下文件生成:<ul>
+<li>src/include/recovery/<a class="el" href="../../db/d36/log__manager_8h_source.html">log_manager.h</a></li>
+<li>src/recovery/<a class="el" href="../../d9/d63/log__manager_8cpp.html">log_manager.cpp</a></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
+</small></address>
+</body>
+</html>

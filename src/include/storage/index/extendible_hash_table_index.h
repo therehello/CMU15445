@@ -12,9 +12,7 @@
 
 #pragma once
 
-#include <map>
 #include <memory>
-#include <string>
 #include <vector>
 
 #include "container/disk/hash/disk_extendible_hash_table.h"

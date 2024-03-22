@@ -1,0 +1,210 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>数据库系统 CMU15-445/645: src/include/catalog/table_generator.h 源文件</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/searchdata.js"></script>
+<script type="text/javascript" src="../../search/search.js"></script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">数据库系统 CMU15-445/645<span id="projectnumber">&#160;1.0.0</span>
+   </div>
+   <div id="projectbrief">CMU15-445/645 是基于现代 C++ 开发的支持并发操作的简单 SQL 操作的单机数据库</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.9.8 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "../../search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('../../',true,false,'search.php','搜索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function() { init_codefold(1); });
+/* @license-end */
+</script>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="../../dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="../../dir_b0856f6b0d80ccb263b2f415c91f9e17.html">include</a></li><li class="navelem"><a class="el" href="../../dir_a8b1cd4a4819f17e891fed4be1bf613f.html">catalog</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle"><div class="title">table_generator.h</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="../../d8/d2b/table__generator_8h.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#pragma once</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span> </div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &lt;utility&gt;</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &lt;vector&gt;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span> </div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &quot;<a class="code" href="../../d1/d1e/catalog_8h.html">catalog/catalog.h</a>&quot;</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &quot;<a class="code" href="../../df/dc6/executor__context_8h.html">execution/executor_context.h</a>&quot;</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &quot;<a class="code" href="../../d1/d71/table__heap_8h.html">storage/table/table_heap.h</a>&quot;</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span> </div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="keyword">namespace </span><a class="code hl_namespace" href="../../de/dda/namespacebustub.html">bustub</a> {</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span> </div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno"><a class="line" href="../../de/dda/namespacebustub.html#a685cefb5b82c2af82d0dc8bd19d12ec3">   12</a></span><span class="keyword">static</span> <span class="keyword">constexpr</span> uint32_t <a class="code hl_variable" href="../../de/dda/namespacebustub.html#a685cefb5b82c2af82d0dc8bd19d12ec3">TEST1_SIZE</a> = 1000;</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno"><a class="line" href="../../de/dda/namespacebustub.html#ac709acf11d721e19e6371f43e6d586d6">   13</a></span><span class="keyword">static</span> <span class="keyword">constexpr</span> uint32_t <a class="code hl_variable" href="../../de/dda/namespacebustub.html#ac709acf11d721e19e6371f43e6d586d6">TEST2_SIZE</a> = 100;</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno"><a class="line" href="../../de/dda/namespacebustub.html#a13c8c8e458065b75fc0bff5f52351f44">   14</a></span><span class="keyword">static</span> <span class="keyword">constexpr</span> uint32_t <a class="code hl_variable" href="../../de/dda/namespacebustub.html#a13c8c8e458065b75fc0bff5f52351f44">TEST3_SIZE</a> = 100;</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno"><a class="line" href="../../de/dda/namespacebustub.html#a01171a5ff55649f67443880b83907ab8">   15</a></span><span class="keyword">static</span> <span class="keyword">constexpr</span> uint32_t <a class="code hl_variable" href="../../de/dda/namespacebustub.html#a01171a5ff55649f67443880b83907ab8">TEST4_SIZE</a> = 100;</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno"><a class="line" href="../../de/dda/namespacebustub.html#a346dafccb7d2685e133493a14fc4b0e3">   16</a></span><span class="keyword">static</span> <span class="keyword">constexpr</span> uint32_t <a class="code hl_variable" href="../../de/dda/namespacebustub.html#a346dafccb7d2685e133493a14fc4b0e3">TEST6_SIZE</a> = 100;</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno"><a class="line" href="../../de/dda/namespacebustub.html#a445b4384bc5b33e084b2a7d80fa9b960">   17</a></span><span class="keyword">static</span> <span class="keyword">constexpr</span> uint32_t <a class="code hl_variable" href="../../de/dda/namespacebustub.html#a445b4384bc5b33e084b2a7d80fa9b960">TEST7_SIZE</a> = 100;</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno"><a class="line" href="../../de/dda/namespacebustub.html#aa77100b0b2e54761030073b15a33ac56">   18</a></span><span class="keyword">static</span> <span class="keyword">constexpr</span> uint32_t <a class="code hl_variable" href="../../de/dda/namespacebustub.html#aa77100b0b2e54761030073b15a33ac56">TEST8_SIZE</a> = 10;</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno"><a class="line" href="../../de/dda/namespacebustub.html#a2a504d890ecafd429b46e93116d6d3c8">   19</a></span><span class="keyword">static</span> <span class="keyword">constexpr</span> uint32_t <a class="code hl_variable" href="../../de/dda/namespacebustub.html#a2a504d890ecafd429b46e93116d6d3c8">TEST9_SIZE</a> = 10;</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno"><a class="line" href="../../de/dda/namespacebustub.html#a1019099ba85988b14f6f9495a55580cf">   20</a></span><span class="keyword">static</span> <span class="keyword">constexpr</span> uint32_t <a class="code hl_variable" href="../../de/dda/namespacebustub.html#a1019099ba85988b14f6f9495a55580cf">TEST_VARLEN_SIZE</a> = 10;</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> </div>
+<div class="foldopen" id="foldopen00022" data-start="{" data-end="};">
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno"><a class="line" href="../../d6/df8/classbustub_1_1TableGenerator.html">   22</a></span><span class="keyword">class </span><a class="code hl_class" href="../../d6/df8/classbustub_1_1TableGenerator.html">TableGenerator</a> {</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span> <span class="keyword">public</span>:</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno"><a class="line" href="../../d6/df8/classbustub_1_1TableGenerator.html#aee7106bfc52a583ffcc551ee225bde78">   27</a></span>  <span class="keyword">explicit</span> <a class="code hl_function" href="../../d6/df8/classbustub_1_1TableGenerator.html#aee7106bfc52a583ffcc551ee225bde78">TableGenerator</a>(<a class="code hl_class" href="../../dd/d02/classbustub_1_1ExecutorContext.html">ExecutorContext</a> *exec_ctx) : <a class="code hl_variable" href="../../d6/df8/classbustub_1_1TableGenerator.html#a868d96ac855316ace39d40615c5c81df">exec_ctx_</a>{exec_ctx} {}</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span> </div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="../../d6/df8/classbustub_1_1TableGenerator.html#a38027e024ff7fc2e74a656ca72d9bc5f">GenerateTestTables</a>();</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span> </div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span> <span class="keyword">private</span>:</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno"><a class="line" href="../../d6/df8/classbustub_1_1TableGenerator.html#ad79524601636f35597efab81db0994c8">   36</a></span>  <span class="keyword">enum class</span> <a class="code hl_enumeration" href="../../d6/df8/classbustub_1_1TableGenerator.html#ad79524601636f35597efab81db0994c8">Dist</a> : uint8_t { <a class="code hl_enumvalue" href="../../d6/df8/classbustub_1_1TableGenerator.html#ad79524601636f35597efab81db0994c8af19516d11f2946f894070e92fcb56b6d">Uniform</a>, <a class="code hl_enumvalue" href="../../d6/df8/classbustub_1_1TableGenerator.html#ad79524601636f35597efab81db0994c8a9dfbff72c45087f6a15b468f79b62e44">Zipf_50</a>, <a class="code hl_enumvalue" href="../../d6/df8/classbustub_1_1TableGenerator.html#ad79524601636f35597efab81db0994c8a81d986b349cdc85f21fc1100369df7ce">Zipf_75</a>, <a class="code hl_enumvalue" href="../../d6/df8/classbustub_1_1TableGenerator.html#ad79524601636f35597efab81db0994c8a2b05fd4ac08fef6463a2b6562838a6d2">Zipf_95</a>, <a class="code hl_enumvalue" href="../../d6/df8/classbustub_1_1TableGenerator.html#ad79524601636f35597efab81db0994c8ae3444121ed4cedc447ec47d88d282e48">Zipf_99</a>, <a class="code hl_enumvalue" href="../../d6/df8/classbustub_1_1TableGenerator.html#ad79524601636f35597efab81db0994c8a5255d3daaa0a6276b844d61401e6f493">Serial</a>, <a class="code hl_enumvalue" href="../../d6/df8/classbustub_1_1TableGenerator.html#ad79524601636f35597efab81db0994c8ad71670d62b238eaf063979407361034e">Cyclic</a> };</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span> </div>
+<div class="foldopen" id="foldopen00042" data-start="{" data-end="};">
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno"><a class="line" href="../../d6/d68/structbustub_1_1TableGenerator_1_1ColumnInsertMeta.html">   42</a></span>  <span class="keyword">struct </span><a class="code hl_struct" href="../../d6/d68/structbustub_1_1TableGenerator_1_1ColumnInsertMeta.html">ColumnInsertMeta</a> {</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno"><a class="line" href="../../d6/d68/structbustub_1_1TableGenerator_1_1ColumnInsertMeta.html#af3778a32553036cebf850be5baa8ab54">   46</a></span>    <span class="keyword">const</span> <span class="keywordtype">char</span> *<a class="code hl_variable" href="../../d6/d68/structbustub_1_1TableGenerator_1_1ColumnInsertMeta.html#af3778a32553036cebf850be5baa8ab54">name_</a>;</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno"><a class="line" href="../../d6/d68/structbustub_1_1TableGenerator_1_1ColumnInsertMeta.html#a8747779266fce3a7f4a756e79c36f71a">   50</a></span>    <span class="keyword">const</span> <a class="code hl_enumeration" href="../../de/dda/namespacebustub.html#a49735e6748963f5515394bbb228f1fc8">TypeId</a> <a class="code hl_variable" href="../../d6/d68/structbustub_1_1TableGenerator_1_1ColumnInsertMeta.html#a8747779266fce3a7f4a756e79c36f71a">type_</a>;</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno"><a class="line" href="../../d6/d68/structbustub_1_1TableGenerator_1_1ColumnInsertMeta.html#acc1ca6fb2bc87aedea97974314274e77">   54</a></span>    <span class="keywordtype">bool</span> <a class="code hl_variable" href="../../d6/d68/structbustub_1_1TableGenerator_1_1ColumnInsertMeta.html#acc1ca6fb2bc87aedea97974314274e77">nullable_</a>;</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno"><a class="line" href="../../d6/d68/structbustub_1_1TableGenerator_1_1ColumnInsertMeta.html#a197ee5dd0fad53258c828743a9fb9bb0">   58</a></span>    <a class="code hl_enumeration" href="../../d6/df8/classbustub_1_1TableGenerator.html#ad79524601636f35597efab81db0994c8">Dist</a> <a class="code hl_variable" href="../../d6/d68/structbustub_1_1TableGenerator_1_1ColumnInsertMeta.html#a197ee5dd0fad53258c828743a9fb9bb0">dist_</a>;</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno"><a class="line" href="../../d6/d68/structbustub_1_1TableGenerator_1_1ColumnInsertMeta.html#ad41c2c52254989053ca95d3cc49fb003">   62</a></span>    uint64_t <a class="code hl_variable" href="../../d6/d68/structbustub_1_1TableGenerator_1_1ColumnInsertMeta.html#ad41c2c52254989053ca95d3cc49fb003">min_</a>;</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno"><a class="line" href="../../d6/d68/structbustub_1_1TableGenerator_1_1ColumnInsertMeta.html#a410feaf90e2c2059477908e88d01d9d3">   66</a></span>    uint64_t <a class="code hl_variable" href="../../d6/d68/structbustub_1_1TableGenerator_1_1ColumnInsertMeta.html#a410feaf90e2c2059477908e88d01d9d3">max_</a>;</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno"><a class="line" href="../../d6/d68/structbustub_1_1TableGenerator_1_1ColumnInsertMeta.html#af5d8092f36de08f668ee9686a69c867d">   70</a></span>    uint64_t <a class="code hl_variable" href="../../d6/d68/structbustub_1_1TableGenerator_1_1ColumnInsertMeta.html#af5d8092f36de08f668ee9686a69c867d">serial_counter_</a>{0};</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span> </div>
+<div class="foldopen" id="foldopen00075" data-start="{" data-end="}">
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno"><a class="line" href="../../d6/d68/structbustub_1_1TableGenerator_1_1ColumnInsertMeta.html#a459e6c9f5353d22e38f70dea669e4103">   75</a></span>    <a class="code hl_function" href="../../d6/d68/structbustub_1_1TableGenerator_1_1ColumnInsertMeta.html#a459e6c9f5353d22e38f70dea669e4103">ColumnInsertMeta</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *name, <span class="keyword">const</span> <a class="code hl_enumeration" href="../../de/dda/namespacebustub.html#a49735e6748963f5515394bbb228f1fc8">TypeId</a> type, <span class="keywordtype">bool</span> nullable, <a class="code hl_enumeration" href="../../d6/df8/classbustub_1_1TableGenerator.html#ad79524601636f35597efab81db0994c8">Dist</a> dist, uint64_t min, uint64_t max)</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>        : <a class="code hl_variable" href="../../d6/d68/structbustub_1_1TableGenerator_1_1ColumnInsertMeta.html#af3778a32553036cebf850be5baa8ab54">name_</a>(name), <a class="code hl_variable" href="../../d6/d68/structbustub_1_1TableGenerator_1_1ColumnInsertMeta.html#a8747779266fce3a7f4a756e79c36f71a">type_</a>(type), <a class="code hl_variable" href="../../d6/d68/structbustub_1_1TableGenerator_1_1ColumnInsertMeta.html#acc1ca6fb2bc87aedea97974314274e77">nullable_</a>(nullable), <a class="code hl_variable" href="../../d6/d68/structbustub_1_1TableGenerator_1_1ColumnInsertMeta.html#a197ee5dd0fad53258c828743a9fb9bb0">dist_</a>(dist), <a class="code hl_variable" href="../../d6/d68/structbustub_1_1TableGenerator_1_1ColumnInsertMeta.html#ad41c2c52254989053ca95d3cc49fb003">min_</a>(min), <a class="code hl_variable" href="../../d6/d68/structbustub_1_1TableGenerator_1_1ColumnInsertMeta.html#a410feaf90e2c2059477908e88d01d9d3">max_</a>(max) {}</div>
+</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>  };</div>
+</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span> </div>
+<div class="foldopen" id="foldopen00083" data-start="{" data-end="};">
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno"><a class="line" href="../../de/d85/structbustub_1_1TableGenerator_1_1TableInsertMeta.html">   83</a></span>  <span class="keyword">struct </span><a class="code hl_struct" href="../../de/d85/structbustub_1_1TableGenerator_1_1TableInsertMeta.html">TableInsertMeta</a> {</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno"><a class="line" href="../../de/d85/structbustub_1_1TableGenerator_1_1TableInsertMeta.html#a4b23db6f18efa487e36759df0fdc6f9f">   87</a></span>    <span class="keyword">const</span> <span class="keywordtype">char</span> *<a class="code hl_variable" href="../../de/d85/structbustub_1_1TableGenerator_1_1TableInsertMeta.html#a4b23db6f18efa487e36759df0fdc6f9f">name_</a>;</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno"><a class="line" href="../../de/d85/structbustub_1_1TableGenerator_1_1TableInsertMeta.html#a41c6d0ebeec51c23e7f62ae762ae347b">   91</a></span>    uint32_t <a class="code hl_variable" href="../../de/d85/structbustub_1_1TableGenerator_1_1TableInsertMeta.html#a41c6d0ebeec51c23e7f62ae762ae347b">num_rows_</a>;</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno"><a class="line" href="../../de/d85/structbustub_1_1TableGenerator_1_1TableInsertMeta.html#ab5f1a293ae73a8d34803a4aa61c7a6b2">   95</a></span>    std::vector&lt;ColumnInsertMeta&gt; <a class="code hl_variable" href="../../de/d85/structbustub_1_1TableGenerator_1_1TableInsertMeta.html#ab5f1a293ae73a8d34803a4aa61c7a6b2">col_meta_</a>;</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span> </div>
+<div class="foldopen" id="foldopen00100" data-start="{" data-end="}">
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno"><a class="line" href="../../de/d85/structbustub_1_1TableGenerator_1_1TableInsertMeta.html#a2137a58749909f4b6b4885026a149288">  100</a></span>    <a class="code hl_function" href="../../de/d85/structbustub_1_1TableGenerator_1_1TableInsertMeta.html#a2137a58749909f4b6b4885026a149288">TableInsertMeta</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *name, uint32_t num_rows, std::vector&lt;ColumnInsertMeta&gt; col_meta)</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>        : <a class="code hl_variable" href="../../de/d85/structbustub_1_1TableGenerator_1_1TableInsertMeta.html#a4b23db6f18efa487e36759df0fdc6f9f">name_</a>(name), <a class="code hl_variable" href="../../de/d85/structbustub_1_1TableGenerator_1_1TableInsertMeta.html#a41c6d0ebeec51c23e7f62ae762ae347b">num_rows_</a>(num_rows), <a class="code hl_variable" href="../../de/d85/structbustub_1_1TableGenerator_1_1TableInsertMeta.html#ab5f1a293ae73a8d34803a4aa61c7a6b2">col_meta_</a>(<a class="code hl_namespace" href="../../d8/dcc/namespacestd.html">std</a>::move(col_meta)) {}</div>
+</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>  };</div>
+</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span> </div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="../../d6/df8/classbustub_1_1TableGenerator.html#a5317e5396357844b1a4e26fe6fe25e08">FillTable</a>(<a class="code hl_struct" href="../../df/d04/structbustub_1_1TableInfo.html">TableInfo</a> *info, TableInsertMeta *table_meta);</div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span> </div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>  <span class="keyword">auto</span> <a class="code hl_function" href="../../d6/df8/classbustub_1_1TableGenerator.html#af0bb8a721d7cc01ae07c04381faeb9b3">MakeValues</a>(ColumnInsertMeta *col_meta, uint32_t count) -&gt; std::vector&lt;Value&gt;;</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span> </div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>  <span class="keyword">template</span> &lt;<span class="keyword">typename</span> CppType&gt;</div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>  <span class="keyword">auto</span> <a class="code hl_function" href="../../d6/df8/classbustub_1_1TableGenerator.html#a9f6260659756679c6cdfa1ca9ef96229">GenNumericValues</a>(ColumnInsertMeta *col_meta, uint32_t count) -&gt; std::vector&lt;Value&gt;;</div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span> </div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span> <span class="keyword">private</span>:</div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno"><a class="line" href="../../d6/df8/classbustub_1_1TableGenerator.html#a868d96ac855316ace39d40615c5c81df">  112</a></span>  <a class="code hl_class" href="../../dd/d02/classbustub_1_1ExecutorContext.html">ExecutorContext</a> *<a class="code hl_variable" href="../../d6/df8/classbustub_1_1TableGenerator.html#a868d96ac855316ace39d40615c5c81df">exec_ctx_</a>;</div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>};</div>
+</div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>}  <span class="comment">// namespace bustub</span></div>
+<div class="ttc" id="acatalog_8h_html"><div class="ttname"><a href="../../d1/d1e/catalog_8h.html">catalog.h</a></div></div>
+<div class="ttc" id="aclassbustub_1_1ExecutorContext_html"><div class="ttname"><a href="../../dd/d02/classbustub_1_1ExecutorContext.html">bustub::ExecutorContext</a></div><div class="ttdef"><b>Definition</b> executor_context.h:32</div></div>
+<div class="ttc" id="aclassbustub_1_1TableGenerator_html"><div class="ttname"><a href="../../d6/df8/classbustub_1_1TableGenerator.html">bustub::TableGenerator</a></div><div class="ttdef"><b>Definition</b> table_generator.h:22</div></div>
+<div class="ttc" id="aclassbustub_1_1TableGenerator_html_a38027e024ff7fc2e74a656ca72d9bc5f"><div class="ttname"><a href="../../d6/df8/classbustub_1_1TableGenerator.html#a38027e024ff7fc2e74a656ca72d9bc5f">bustub::TableGenerator::GenerateTestTables</a></div><div class="ttdeci">void GenerateTestTables()</div><div class="ttdef"><b>Definition</b> table_generator.cpp:87</div></div>
+<div class="ttc" id="aclassbustub_1_1TableGenerator_html_a5317e5396357844b1a4e26fe6fe25e08"><div class="ttname"><a href="../../d6/df8/classbustub_1_1TableGenerator.html#a5317e5396357844b1a4e26fe6fe25e08">bustub::TableGenerator::FillTable</a></div><div class="ttdeci">void FillTable(TableInfo *info, TableInsertMeta *table_meta)</div><div class="ttdef"><b>Definition</b> table_generator.cpp:65</div></div>
+<div class="ttc" id="aclassbustub_1_1TableGenerator_html_a868d96ac855316ace39d40615c5c81df"><div class="ttname"><a href="../../d6/df8/classbustub_1_1TableGenerator.html#a868d96ac855316ace39d40615c5c81df">bustub::TableGenerator::exec_ctx_</a></div><div class="ttdeci">ExecutorContext * exec_ctx_</div><div class="ttdef"><b>Definition</b> table_generator.h:112</div></div>
+<div class="ttc" id="aclassbustub_1_1TableGenerator_html_a9f6260659756679c6cdfa1ca9ef96229"><div class="ttname"><a href="../../d6/df8/classbustub_1_1TableGenerator.html#a9f6260659756679c6cdfa1ca9ef96229">bustub::TableGenerator::GenNumericValues</a></div><div class="ttdeci">auto GenNumericValues(ColumnInsertMeta *col_meta, uint32_t count) -&gt; std::vector&lt; Value &gt;</div><div class="ttdef"><b>Definition</b> table_generator.cpp:11</div></div>
+<div class="ttc" id="aclassbustub_1_1TableGenerator_html_ad79524601636f35597efab81db0994c8"><div class="ttname"><a href="../../d6/df8/classbustub_1_1TableGenerator.html#ad79524601636f35597efab81db0994c8">bustub::TableGenerator::Dist</a></div><div class="ttdeci">Dist</div><div class="ttdef"><b>Definition</b> table_generator.h:36</div></div>
+<div class="ttc" id="aclassbustub_1_1TableGenerator_html_ad79524601636f35597efab81db0994c8a2b05fd4ac08fef6463a2b6562838a6d2"><div class="ttname"><a href="../../d6/df8/classbustub_1_1TableGenerator.html#ad79524601636f35597efab81db0994c8a2b05fd4ac08fef6463a2b6562838a6d2">bustub::TableGenerator::Dist::Zipf_95</a></div><div class="ttdeci">@ Zipf_95</div></div>
+<div class="ttc" id="aclassbustub_1_1TableGenerator_html_ad79524601636f35597efab81db0994c8a5255d3daaa0a6276b844d61401e6f493"><div class="ttname"><a href="../../d6/df8/classbustub_1_1TableGenerator.html#ad79524601636f35597efab81db0994c8a5255d3daaa0a6276b844d61401e6f493">bustub::TableGenerator::Dist::Serial</a></div><div class="ttdeci">@ Serial</div></div>
+<div class="ttc" id="aclassbustub_1_1TableGenerator_html_ad79524601636f35597efab81db0994c8a81d986b349cdc85f21fc1100369df7ce"><div class="ttname"><a href="../../d6/df8/classbustub_1_1TableGenerator.html#ad79524601636f35597efab81db0994c8a81d986b349cdc85f21fc1100369df7ce">bustub::TableGenerator::Dist::Zipf_75</a></div><div class="ttdeci">@ Zipf_75</div></div>
+<div class="ttc" id="aclassbustub_1_1TableGenerator_html_ad79524601636f35597efab81db0994c8a9dfbff72c45087f6a15b468f79b62e44"><div class="ttname"><a href="../../d6/df8/classbustub_1_1TableGenerator.html#ad79524601636f35597efab81db0994c8a9dfbff72c45087f6a15b468f79b62e44">bustub::TableGenerator::Dist::Zipf_50</a></div><div class="ttdeci">@ Zipf_50</div></div>
+<div class="ttc" id="aclassbustub_1_1TableGenerator_html_ad79524601636f35597efab81db0994c8ad71670d62b238eaf063979407361034e"><div class="ttname"><a href="../../d6/df8/classbustub_1_1TableGenerator.html#ad79524601636f35597efab81db0994c8ad71670d62b238eaf063979407361034e">bustub::TableGenerator::Dist::Cyclic</a></div><div class="ttdeci">@ Cyclic</div></div>
+<div class="ttc" id="aclassbustub_1_1TableGenerator_html_ad79524601636f35597efab81db0994c8ae3444121ed4cedc447ec47d88d282e48"><div class="ttname"><a href="../../d6/df8/classbustub_1_1TableGenerator.html#ad79524601636f35597efab81db0994c8ae3444121ed4cedc447ec47d88d282e48">bustub::TableGenerator::Dist::Zipf_99</a></div><div class="ttdeci">@ Zipf_99</div></div>
+<div class="ttc" id="aclassbustub_1_1TableGenerator_html_ad79524601636f35597efab81db0994c8af19516d11f2946f894070e92fcb56b6d"><div class="ttname"><a href="../../d6/df8/classbustub_1_1TableGenerator.html#ad79524601636f35597efab81db0994c8af19516d11f2946f894070e92fcb56b6d">bustub::TableGenerator::Dist::Uniform</a></div><div class="ttdeci">@ Uniform</div></div>
+<div class="ttc" id="aclassbustub_1_1TableGenerator_html_aee7106bfc52a583ffcc551ee225bde78"><div class="ttname"><a href="../../d6/df8/classbustub_1_1TableGenerator.html#aee7106bfc52a583ffcc551ee225bde78">bustub::TableGenerator::TableGenerator</a></div><div class="ttdeci">TableGenerator(ExecutorContext *exec_ctx)</div><div class="ttdef"><b>Definition</b> table_generator.h:27</div></div>
+<div class="ttc" id="aclassbustub_1_1TableGenerator_html_af0bb8a721d7cc01ae07c04381faeb9b3"><div class="ttname"><a href="../../d6/df8/classbustub_1_1TableGenerator.html#af0bb8a721d7cc01ae07c04381faeb9b3">bustub::TableGenerator::MakeValues</a></div><div class="ttdeci">auto MakeValues(ColumnInsertMeta *col_meta, uint32_t count) -&gt; std::vector&lt; Value &gt;</div><div class="ttdef"><b>Definition</b> table_generator.cpp:47</div></div>
+<div class="ttc" id="aexecutor__context_8h_html"><div class="ttname"><a href="../../df/dc6/executor__context_8h.html">executor_context.h</a></div></div>
+<div class="ttc" id="anamespacebustub_html"><div class="ttname"><a href="../../de/dda/namespacebustub.html">bustub</a></div><div class="ttdef"><b>Definition</b> bind_create.cpp:53</div></div>
+<div class="ttc" id="anamespacebustub_html_a01171a5ff55649f67443880b83907ab8"><div class="ttname"><a href="../../de/dda/namespacebustub.html#a01171a5ff55649f67443880b83907ab8">bustub::TEST4_SIZE</a></div><div class="ttdeci">static constexpr uint32_t TEST4_SIZE</div><div class="ttdef"><b>Definition</b> table_generator.h:15</div></div>
+<div class="ttc" id="anamespacebustub_html_a1019099ba85988b14f6f9495a55580cf"><div class="ttname"><a href="../../de/dda/namespacebustub.html#a1019099ba85988b14f6f9495a55580cf">bustub::TEST_VARLEN_SIZE</a></div><div class="ttdeci">static constexpr uint32_t TEST_VARLEN_SIZE</div><div class="ttdef"><b>Definition</b> table_generator.h:20</div></div>
+<div class="ttc" id="anamespacebustub_html_a13c8c8e458065b75fc0bff5f52351f44"><div class="ttname"><a href="../../de/dda/namespacebustub.html#a13c8c8e458065b75fc0bff5f52351f44">bustub::TEST3_SIZE</a></div><div class="ttdeci">static constexpr uint32_t TEST3_SIZE</div><div class="ttdef"><b>Definition</b> table_generator.h:14</div></div>
+<div class="ttc" id="anamespacebustub_html_a2a504d890ecafd429b46e93116d6d3c8"><div class="ttname"><a href="../../de/dda/namespacebustub.html#a2a504d890ecafd429b46e93116d6d3c8">bustub::TEST9_SIZE</a></div><div class="ttdeci">static constexpr uint32_t TEST9_SIZE</div><div class="ttdef"><b>Definition</b> table_generator.h:19</div></div>
+<div class="ttc" id="anamespacebustub_html_a346dafccb7d2685e133493a14fc4b0e3"><div class="ttname"><a href="../../de/dda/namespacebustub.html#a346dafccb7d2685e133493a14fc4b0e3">bustub::TEST6_SIZE</a></div><div class="ttdeci">static constexpr uint32_t TEST6_SIZE</div><div class="ttdef"><b>Definition</b> table_generator.h:16</div></div>
+<div class="ttc" id="anamespacebustub_html_a445b4384bc5b33e084b2a7d80fa9b960"><div class="ttname"><a href="../../de/dda/namespacebustub.html#a445b4384bc5b33e084b2a7d80fa9b960">bustub::TEST7_SIZE</a></div><div class="ttdeci">static constexpr uint32_t TEST7_SIZE</div><div class="ttdef"><b>Definition</b> table_generator.h:17</div></div>
+<div class="ttc" id="anamespacebustub_html_a49735e6748963f5515394bbb228f1fc8"><div class="ttname"><a href="../../de/dda/namespacebustub.html#a49735e6748963f5515394bbb228f1fc8">bustub::TypeId</a></div><div class="ttdeci">TypeId</div><div class="ttdef"><b>Definition</b> type_id.h:17</div></div>
+<div class="ttc" id="anamespacebustub_html_a685cefb5b82c2af82d0dc8bd19d12ec3"><div class="ttname"><a href="../../de/dda/namespacebustub.html#a685cefb5b82c2af82d0dc8bd19d12ec3">bustub::TEST1_SIZE</a></div><div class="ttdeci">static constexpr uint32_t TEST1_SIZE</div><div class="ttdef"><b>Definition</b> table_generator.h:12</div></div>
+<div class="ttc" id="anamespacebustub_html_aa77100b0b2e54761030073b15a33ac56"><div class="ttname"><a href="../../de/dda/namespacebustub.html#aa77100b0b2e54761030073b15a33ac56">bustub::TEST8_SIZE</a></div><div class="ttdeci">static constexpr uint32_t TEST8_SIZE</div><div class="ttdef"><b>Definition</b> table_generator.h:18</div></div>
+<div class="ttc" id="anamespacebustub_html_ac709acf11d721e19e6371f43e6d586d6"><div class="ttname"><a href="../../de/dda/namespacebustub.html#ac709acf11d721e19e6371f43e6d586d6">bustub::TEST2_SIZE</a></div><div class="ttdeci">static constexpr uint32_t TEST2_SIZE</div><div class="ttdef"><b>Definition</b> table_generator.h:13</div></div>
+<div class="ttc" id="anamespacestd_html"><div class="ttname"><a href="../../d8/dcc/namespacestd.html">std</a></div><div class="ttdef"><b>Definition</b> rid.h:70</div></div>
+<div class="ttc" id="astructbustub_1_1TableGenerator_1_1ColumnInsertMeta_html"><div class="ttname"><a href="../../d6/d68/structbustub_1_1TableGenerator_1_1ColumnInsertMeta.html">bustub::TableGenerator::ColumnInsertMeta</a></div><div class="ttdef"><b>Definition</b> table_generator.h:42</div></div>
+<div class="ttc" id="astructbustub_1_1TableGenerator_1_1ColumnInsertMeta_html_a197ee5dd0fad53258c828743a9fb9bb0"><div class="ttname"><a href="../../d6/d68/structbustub_1_1TableGenerator_1_1ColumnInsertMeta.html#a197ee5dd0fad53258c828743a9fb9bb0">bustub::TableGenerator::ColumnInsertMeta::dist_</a></div><div class="ttdeci">Dist dist_</div><div class="ttdef"><b>Definition</b> table_generator.h:58</div></div>
+<div class="ttc" id="astructbustub_1_1TableGenerator_1_1ColumnInsertMeta_html_a410feaf90e2c2059477908e88d01d9d3"><div class="ttname"><a href="../../d6/d68/structbustub_1_1TableGenerator_1_1ColumnInsertMeta.html#a410feaf90e2c2059477908e88d01d9d3">bustub::TableGenerator::ColumnInsertMeta::max_</a></div><div class="ttdeci">uint64_t max_</div><div class="ttdef"><b>Definition</b> table_generator.h:66</div></div>
+<div class="ttc" id="astructbustub_1_1TableGenerator_1_1ColumnInsertMeta_html_a459e6c9f5353d22e38f70dea669e4103"><div class="ttname"><a href="../../d6/d68/structbustub_1_1TableGenerator_1_1ColumnInsertMeta.html#a459e6c9f5353d22e38f70dea669e4103">bustub::TableGenerator::ColumnInsertMeta::ColumnInsertMeta</a></div><div class="ttdeci">ColumnInsertMeta(const char *name, const TypeId type, bool nullable, Dist dist, uint64_t min, uint64_t max)</div><div class="ttdef"><b>Definition</b> table_generator.h:75</div></div>
+<div class="ttc" id="astructbustub_1_1TableGenerator_1_1ColumnInsertMeta_html_a8747779266fce3a7f4a756e79c36f71a"><div class="ttname"><a href="../../d6/d68/structbustub_1_1TableGenerator_1_1ColumnInsertMeta.html#a8747779266fce3a7f4a756e79c36f71a">bustub::TableGenerator::ColumnInsertMeta::type_</a></div><div class="ttdeci">const TypeId type_</div><div class="ttdef"><b>Definition</b> table_generator.h:50</div></div>
+<div class="ttc" id="astructbustub_1_1TableGenerator_1_1ColumnInsertMeta_html_acc1ca6fb2bc87aedea97974314274e77"><div class="ttname"><a href="../../d6/d68/structbustub_1_1TableGenerator_1_1ColumnInsertMeta.html#acc1ca6fb2bc87aedea97974314274e77">bustub::TableGenerator::ColumnInsertMeta::nullable_</a></div><div class="ttdeci">bool nullable_</div><div class="ttdef"><b>Definition</b> table_generator.h:54</div></div>
+<div class="ttc" id="astructbustub_1_1TableGenerator_1_1ColumnInsertMeta_html_ad41c2c52254989053ca95d3cc49fb003"><div class="ttname"><a href="../../d6/d68/structbustub_1_1TableGenerator_1_1ColumnInsertMeta.html#ad41c2c52254989053ca95d3cc49fb003">bustub::TableGenerator::ColumnInsertMeta::min_</a></div><div class="ttdeci">uint64_t min_</div><div class="ttdef"><b>Definition</b> table_generator.h:62</div></div>
+<div class="ttc" id="astructbustub_1_1TableGenerator_1_1ColumnInsertMeta_html_af3778a32553036cebf850be5baa8ab54"><div class="ttname"><a href="../../d6/d68/structbustub_1_1TableGenerator_1_1ColumnInsertMeta.html#af3778a32553036cebf850be5baa8ab54">bustub::TableGenerator::ColumnInsertMeta::name_</a></div><div class="ttdeci">const char * name_</div><div class="ttdef"><b>Definition</b> table_generator.h:46</div></div>
+<div class="ttc" id="astructbustub_1_1TableGenerator_1_1ColumnInsertMeta_html_af5d8092f36de08f668ee9686a69c867d"><div class="ttname"><a href="../../d6/d68/structbustub_1_1TableGenerator_1_1ColumnInsertMeta.html#af5d8092f36de08f668ee9686a69c867d">bustub::TableGenerator::ColumnInsertMeta::serial_counter_</a></div><div class="ttdeci">uint64_t serial_counter_</div><div class="ttdef"><b>Definition</b> table_generator.h:70</div></div>
+<div class="ttc" id="astructbustub_1_1TableGenerator_1_1TableInsertMeta_html"><div class="ttname"><a href="../../de/d85/structbustub_1_1TableGenerator_1_1TableInsertMeta.html">bustub::TableGenerator::TableInsertMeta</a></div><div class="ttdef"><b>Definition</b> table_generator.h:83</div></div>
+<div class="ttc" id="astructbustub_1_1TableGenerator_1_1TableInsertMeta_html_a2137a58749909f4b6b4885026a149288"><div class="ttname"><a href="../../de/d85/structbustub_1_1TableGenerator_1_1TableInsertMeta.html#a2137a58749909f4b6b4885026a149288">bustub::TableGenerator::TableInsertMeta::TableInsertMeta</a></div><div class="ttdeci">TableInsertMeta(const char *name, uint32_t num_rows, std::vector&lt; ColumnInsertMeta &gt; col_meta)</div><div class="ttdef"><b>Definition</b> table_generator.h:100</div></div>
+<div class="ttc" id="astructbustub_1_1TableGenerator_1_1TableInsertMeta_html_a41c6d0ebeec51c23e7f62ae762ae347b"><div class="ttname"><a href="../../de/d85/structbustub_1_1TableGenerator_1_1TableInsertMeta.html#a41c6d0ebeec51c23e7f62ae762ae347b">bustub::TableGenerator::TableInsertMeta::num_rows_</a></div><div class="ttdeci">uint32_t num_rows_</div><div class="ttdef"><b>Definition</b> table_generator.h:91</div></div>
+<div class="ttc" id="astructbustub_1_1TableGenerator_1_1TableInsertMeta_html_a4b23db6f18efa487e36759df0fdc6f9f"><div class="ttname"><a href="../../de/d85/structbustub_1_1TableGenerator_1_1TableInsertMeta.html#a4b23db6f18efa487e36759df0fdc6f9f">bustub::TableGenerator::TableInsertMeta::name_</a></div><div class="ttdeci">const char * name_</div><div class="ttdef"><b>Definition</b> table_generator.h:87</div></div>
+<div class="ttc" id="astructbustub_1_1TableGenerator_1_1TableInsertMeta_html_ab5f1a293ae73a8d34803a4aa61c7a6b2"><div class="ttname"><a href="../../de/d85/structbustub_1_1TableGenerator_1_1TableInsertMeta.html#ab5f1a293ae73a8d34803a4aa61c7a6b2">bustub::TableGenerator::TableInsertMeta::col_meta_</a></div><div class="ttdeci">std::vector&lt; ColumnInsertMeta &gt; col_meta_</div><div class="ttdef"><b>Definition</b> table_generator.h:95</div></div>
+<div class="ttc" id="astructbustub_1_1TableInfo_html"><div class="ttname"><a href="../../df/d04/structbustub_1_1TableInfo.html">bustub::TableInfo</a></div><div class="ttdef"><b>Definition</b> catalog.h:44</div></div>
+<div class="ttc" id="atable__heap_8h_html"><div class="ttname"><a href="../../d1/d71/table__heap_8h.html">table_heap.h</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
+</small></address>
+</body>
+</html>

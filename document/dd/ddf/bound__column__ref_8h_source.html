@@ -1,0 +1,145 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>数据库系统 CMU15-445/645: src/include/binder/expressions/bound_column_ref.h 源文件</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/searchdata.js"></script>
+<script type="text/javascript" src="../../search/search.js"></script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">数据库系统 CMU15-445/645<span id="projectnumber">&#160;1.0.0</span>
+   </div>
+   <div id="projectbrief">CMU15-445/645 是基于现代 C++ 开发的支持并发操作的简单 SQL 操作的单机数据库</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.9.8 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "../../search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('../../',true,false,'search.php','搜索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function() { init_codefold(1); });
+/* @license-end */
+</script>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="../../dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="../../dir_b0856f6b0d80ccb263b2f415c91f9e17.html">include</a></li><li class="navelem"><a class="el" href="../../dir_2e0f860ba5ab93b304ae8e341906fe46.html">binder</a></li><li class="navelem"><a class="el" href="../../dir_d5e23e06757c608612918fbbc353c268.html">expressions</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle"><div class="title">bound_column_ref.h</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="../../dd/ddf/bound__column__ref_8h.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#pragma once</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span> </div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &lt;algorithm&gt;</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &lt;iterator&gt;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &lt;memory&gt;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &lt;string&gt;</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &lt;utility&gt;</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &lt;vector&gt;</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span> </div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &quot;<a class="code" href="../../dc/d8b/bound__expression_8h.html">binder/bound_expression.h</a>&quot;</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &quot;<a class="code" href="../../de/d3c/macros_8h.html">common/macros.h</a>&quot;</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="keyword">namespace </span><a class="code hl_namespace" href="../../de/dda/namespacebustub.html">bustub</a> {</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
+<div class="foldopen" id="foldopen00018" data-start="{" data-end="};">
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno"><a class="line" href="../../d1/dd0/classbustub_1_1BoundColumnRef.html">   18</a></span><span class="keyword">class </span><a class="code hl_class" href="../../d1/dd0/classbustub_1_1BoundColumnRef.html">BoundColumnRef</a> : <span class="keyword">public</span> <a class="code hl_class" href="../../de/d78/classbustub_1_1BoundExpression.html">BoundExpression</a> {</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span> <span class="keyword">public</span>:</div>
+<div class="foldopen" id="foldopen00020" data-start="{" data-end="}">
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno"><a class="line" href="../../d1/dd0/classbustub_1_1BoundColumnRef.html#a4dc9a231145140699890d30d32cc5a47">   20</a></span>  <span class="keyword">explicit</span> <a class="code hl_function" href="../../d1/dd0/classbustub_1_1BoundColumnRef.html#a4dc9a231145140699890d30d32cc5a47">BoundColumnRef</a>(std::vector&lt;std::string&gt; col_name)</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>      : <a class="code hl_class" href="../../de/d78/classbustub_1_1BoundExpression.html">BoundExpression</a>(<a class="code hl_enumeration" href="../../de/dda/namespacebustub.html#ad966f68740f50281536bcc3db49e3854">ExpressionType</a>::<a class="code hl_enumvalue" href="../../de/dda/namespacebustub.html#ad966f68740f50281536bcc3db49e3854ac8b01296b2ca946ec0de3397573179e9">COLUMN_REF</a>), <a class="code hl_variable" href="../../d1/dd0/classbustub_1_1BoundColumnRef.html#ab84d52ee63ed86cf763bf0140ef9d653">col_name_</a>(<a class="code hl_namespace" href="../../d8/dcc/namespacestd.html">std</a>::move(col_name)) {}</div>
+</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
+<div class="foldopen" id="foldopen00023" data-start="{" data-end="}">
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno"><a class="line" href="../../d1/dd0/classbustub_1_1BoundColumnRef.html#a61c0c7c7fc96bf5e755d54520eb7e5c2">   23</a></span>  <span class="keyword">static</span> <span class="keyword">auto</span> <a class="code hl_function" href="../../d1/dd0/classbustub_1_1BoundColumnRef.html#a61c0c7c7fc96bf5e755d54520eb7e5c2">Prepend</a>(std::unique_ptr&lt;BoundColumnRef&gt; self, std::string prefix) -&gt; std::unique_ptr&lt;BoundColumnRef&gt; {</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    <span class="keywordflow">if</span> (self == <span class="keyword">nullptr</span>) {</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>      <span class="keywordflow">return</span> <span class="keyword">nullptr</span>;</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    }</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    std::vector&lt;std::string&gt; col_name{std::move(prefix)};</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    std::copy(self-&gt;col_name_.cbegin(), self-&gt;col_name_.cend(), std::back_inserter(col_name));</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    <span class="keywordflow">return</span> std::make_unique&lt;BoundColumnRef&gt;(std::move(col_name));</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>  }</div>
+</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span> </div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno"><a class="line" href="../../d1/dd0/classbustub_1_1BoundColumnRef.html#a622a193664b8560dae80e3e55a14fe04">   32</a></span>  <span class="keyword">auto</span> <a class="code hl_function" href="../../d1/dd0/classbustub_1_1BoundColumnRef.html#a622a193664b8560dae80e3e55a14fe04">ToString</a>() const -&gt; <a class="code hl_namespace" href="../../d8/dcc/namespacestd.html">std</a>::<span class="keywordtype">string</span><span class="keyword"> override </span>{ <span class="keywordflow">return</span> fmt::format(<span class="stringliteral">&quot;{}&quot;</span>, fmt::join(<a class="code hl_variable" href="../../d1/dd0/classbustub_1_1BoundColumnRef.html#ab84d52ee63ed86cf763bf0140ef9d653">col_name_</a>, <span class="stringliteral">&quot;.&quot;</span>)); }</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span> </div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno"><a class="line" href="../../d1/dd0/classbustub_1_1BoundColumnRef.html#a692cd9b735fc48d0fd7d51befb01397e">   34</a></span>  <span class="keyword">auto</span> <a class="code hl_function" href="../../d1/dd0/classbustub_1_1BoundColumnRef.html#a692cd9b735fc48d0fd7d51befb01397e">HasAggregation</a>() const -&gt; <span class="keywordtype">bool</span><span class="keyword"> override </span>{ <span class="keywordflow">return</span> <span class="keyword">false</span>; }</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span> </div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno"><a class="line" href="../../d1/dd0/classbustub_1_1BoundColumnRef.html#ab84d52ee63ed86cf763bf0140ef9d653">   37</a></span>  std::vector&lt;std::string&gt; <a class="code hl_variable" href="../../d1/dd0/classbustub_1_1BoundColumnRef.html#ab84d52ee63ed86cf763bf0140ef9d653">col_name_</a>;</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>};</div>
+</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>}  <span class="comment">// namespace bustub</span></div>
+<div class="ttc" id="abound__expression_8h_html"><div class="ttname"><a href="../../dc/d8b/bound__expression_8h.html">bound_expression.h</a></div></div>
+<div class="ttc" id="aclassbustub_1_1BoundColumnRef_html"><div class="ttname"><a href="../../d1/dd0/classbustub_1_1BoundColumnRef.html">bustub::BoundColumnRef</a></div><div class="ttdef"><b>Definition</b> bound_column_ref.h:18</div></div>
+<div class="ttc" id="aclassbustub_1_1BoundColumnRef_html_a4dc9a231145140699890d30d32cc5a47"><div class="ttname"><a href="../../d1/dd0/classbustub_1_1BoundColumnRef.html#a4dc9a231145140699890d30d32cc5a47">bustub::BoundColumnRef::BoundColumnRef</a></div><div class="ttdeci">BoundColumnRef(std::vector&lt; std::string &gt; col_name)</div><div class="ttdef"><b>Definition</b> bound_column_ref.h:20</div></div>
+<div class="ttc" id="aclassbustub_1_1BoundColumnRef_html_a61c0c7c7fc96bf5e755d54520eb7e5c2"><div class="ttname"><a href="../../d1/dd0/classbustub_1_1BoundColumnRef.html#a61c0c7c7fc96bf5e755d54520eb7e5c2">bustub::BoundColumnRef::Prepend</a></div><div class="ttdeci">static auto Prepend(std::unique_ptr&lt; BoundColumnRef &gt; self, std::string prefix) -&gt; std::unique_ptr&lt; BoundColumnRef &gt;</div><div class="ttdef"><b>Definition</b> bound_column_ref.h:23</div></div>
+<div class="ttc" id="aclassbustub_1_1BoundColumnRef_html_a622a193664b8560dae80e3e55a14fe04"><div class="ttname"><a href="../../d1/dd0/classbustub_1_1BoundColumnRef.html#a622a193664b8560dae80e3e55a14fe04">bustub::BoundColumnRef::ToString</a></div><div class="ttdeci">auto ToString() const -&gt; std::string override</div><div class="ttdef"><b>Definition</b> bound_column_ref.h:32</div></div>
+<div class="ttc" id="aclassbustub_1_1BoundColumnRef_html_a692cd9b735fc48d0fd7d51befb01397e"><div class="ttname"><a href="../../d1/dd0/classbustub_1_1BoundColumnRef.html#a692cd9b735fc48d0fd7d51befb01397e">bustub::BoundColumnRef::HasAggregation</a></div><div class="ttdeci">auto HasAggregation() const -&gt; bool override</div><div class="ttdef"><b>Definition</b> bound_column_ref.h:34</div></div>
+<div class="ttc" id="aclassbustub_1_1BoundColumnRef_html_ab84d52ee63ed86cf763bf0140ef9d653"><div class="ttname"><a href="../../d1/dd0/classbustub_1_1BoundColumnRef.html#ab84d52ee63ed86cf763bf0140ef9d653">bustub::BoundColumnRef::col_name_</a></div><div class="ttdeci">std::vector&lt; std::string &gt; col_name_</div><div class="ttdef"><b>Definition</b> bound_column_ref.h:37</div></div>
+<div class="ttc" id="aclassbustub_1_1BoundExpression_html"><div class="ttname"><a href="../../de/d78/classbustub_1_1BoundExpression.html">bustub::BoundExpression</a></div><div class="ttdef"><b>Definition</b> bound_expression.h:31</div></div>
+<div class="ttc" id="amacros_8h_html"><div class="ttname"><a href="../../de/d3c/macros_8h.html">macros.h</a></div></div>
+<div class="ttc" id="anamespacebustub_html"><div class="ttname"><a href="../../de/dda/namespacebustub.html">bustub</a></div><div class="ttdef"><b>Definition</b> bind_create.cpp:53</div></div>
+<div class="ttc" id="anamespacebustub_html_ad966f68740f50281536bcc3db49e3854"><div class="ttname"><a href="../../de/dda/namespacebustub.html#ad966f68740f50281536bcc3db49e3854">bustub::ExpressionType</a></div><div class="ttdeci">ExpressionType</div><div class="ttdef"><b>Definition</b> bound_expression.h:13</div></div>
+<div class="ttc" id="anamespacebustub_html_ad966f68740f50281536bcc3db49e3854ac8b01296b2ca946ec0de3397573179e9"><div class="ttname"><a href="../../de/dda/namespacebustub.html#ad966f68740f50281536bcc3db49e3854ac8b01296b2ca946ec0de3397573179e9">bustub::ExpressionType::COLUMN_REF</a></div><div class="ttdeci">@ COLUMN_REF</div></div>
+<div class="ttc" id="anamespacestd_html"><div class="ttname"><a href="../../d8/dcc/namespacestd.html">std</a></div><div class="ttdef"><b>Definition</b> rid.h:70</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
+</small></address>
+</body>
+</html>

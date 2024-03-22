@@ -1,0 +1,203 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>数据库系统 CMU15-445/645: src/include/storage/page/hash_table_directory_page.h 源文件</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/searchdata.js"></script>
+<script type="text/javascript" src="../../search/search.js"></script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">数据库系统 CMU15-445/645<span id="projectnumber">&#160;1.0.0</span>
+   </div>
+   <div id="projectbrief">CMU15-445/645 是基于现代 C++ 开发的支持并发操作的简单 SQL 操作的单机数据库</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.9.8 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "../../search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('../../',true,false,'search.php','搜索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function() { init_codefold(1); });
+/* @license-end */
+</script>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="../../dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="../../dir_b0856f6b0d80ccb263b2f415c91f9e17.html">include</a></li><li class="navelem"><a class="el" href="../../dir_0a30ac4aed38d1936bbd6d702d96fbd8.html">storage</a></li><li class="navelem"><a class="el" href="../../dir_aa62e7e4f393bdf63f8ca74ad42976cf.html">page</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle"><div class="title">hash_table_directory_page.h</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="../../d9/dce/hash__table__directory__page_8h.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">//===----------------------------------------------------------------------===//</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="comment">//</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="comment">//                         BusTub</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment">//</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="comment">// hash_table_directory_page.h</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="comment">//</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="comment">// Identification: src/include/storage/page/hash_table_directory_page.h</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="comment">//</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="comment">// Copyright (c) 2015-2021, Carnegie Mellon University Database Group</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="comment">//</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="comment">//===----------------------------------------------------------------------===//</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#pragma once</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="preprocessor">#include &lt;cassert&gt;</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="preprocessor">#include &lt;climits&gt;</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="preprocessor">#include &lt;cstdlib&gt;</span></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="preprocessor">#include &lt;string&gt;</span></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span> </div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="preprocessor">#include &quot;<a class="code" href="../../da/d28/generic__key_8h.html">storage/index/generic_key.h</a>&quot;</span></div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="preprocessor">#include &quot;<a class="code" href="../../d6/d3b/hash__table__page__defs_8h.html">storage/page/hash_table_page_defs.h</a>&quot;</span></div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="keyword">namespace </span><a class="code hl_namespace" href="../../de/dda/namespacebustub.html">bustub</a> {</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span> </div>
+<div class="foldopen" id="foldopen00034" data-start="{" data-end="};">
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno"><a class="line" href="../../d1/d9d/classbustub_1_1HashTableDirectoryPage.html">   34</a></span><span class="keyword">class </span><a class="code hl_class" href="../../d1/d9d/classbustub_1_1HashTableDirectoryPage.html">HashTableDirectoryPage</a> {</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span> <span class="keyword">public</span>:</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>  <span class="keyword">auto</span> <a class="code hl_function" href="../../d1/d9d/classbustub_1_1HashTableDirectoryPage.html#af656388d4fe170c641af27dfd59138c3">GetPageId</a>() <span class="keyword">const</span> -&gt; <a class="code hl_typedef" href="../../de/dda/namespacebustub.html#a8de4ac099b23d712481109bb846decde">page_id_t</a>;</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span> </div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="../../d1/d9d/classbustub_1_1HashTableDirectoryPage.html#a255199f616b4ca95f904fd2abf752f44">SetPageId</a>(<a class="code hl_typedef" href="../../de/dda/namespacebustub.html#a8de4ac099b23d712481109bb846decde">page_id_t</a> page_id);</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span> </div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>  <span class="keyword">auto</span> <a class="code hl_function" href="../../d1/d9d/classbustub_1_1HashTableDirectoryPage.html#a4ab658450f0e9b351b102a782a7f543a">GetLSN</a>() <span class="keyword">const</span> -&gt; <a class="code hl_typedef" href="../../de/dda/namespacebustub.html#a8ceb3d9746c8621a11887b2754e385f2">lsn_t</a>;</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span> </div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="../../d1/d9d/classbustub_1_1HashTableDirectoryPage.html#abc4d69b9115258ef80479f9ff38ca04a">SetLSN</a>(<a class="code hl_typedef" href="../../de/dda/namespacebustub.html#a8ceb3d9746c8621a11887b2754e385f2">lsn_t</a> lsn);</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span> </div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>  <span class="keyword">auto</span> <a class="code hl_function" href="../../d1/d9d/classbustub_1_1HashTableDirectoryPage.html#aa0f93a1b512b58b575d2980751e37b67">GetBucketPageId</a>(uint32_t bucket_idx) -&gt; <a class="code hl_typedef" href="../../de/dda/namespacebustub.html#a8de4ac099b23d712481109bb846decde">page_id_t</a>;</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span> </div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="../../d1/d9d/classbustub_1_1HashTableDirectoryPage.html#a0242e06f667b6f54cc68c64dcc574825">SetBucketPageId</a>(uint32_t bucket_idx, <a class="code hl_typedef" href="../../de/dda/namespacebustub.html#a8de4ac099b23d712481109bb846decde">page_id_t</a> bucket_page_id);</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span> </div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno"><a class="line" href="../../d1/d9d/classbustub_1_1HashTableDirectoryPage.html#a02152cb798bdad68e9d554349f4a723d">   82</a></span>  <span class="keyword">auto</span> <a class="code hl_function" href="../../d1/d9d/classbustub_1_1HashTableDirectoryPage.html#a02152cb798bdad68e9d554349f4a723d">GetSplitImageIndex</a>(uint32_t bucket_idx) -&gt; uint32_t;</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span> </div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>  <span class="keyword">auto</span> <a class="code hl_function" href="../../d1/d9d/classbustub_1_1HashTableDirectoryPage.html#a907e4ee8bfe5981efb3ff9ca7270be10">GetGlobalDepthMask</a>() -&gt; uint32_t;</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span> </div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno"><a class="line" href="../../d1/d9d/classbustub_1_1HashTableDirectoryPage.html#a332e6fdce4bb463b23414bd12615aef2">  107</a></span>  <span class="keyword">auto</span> <a class="code hl_function" href="../../d1/d9d/classbustub_1_1HashTableDirectoryPage.html#a332e6fdce4bb463b23414bd12615aef2">GetLocalDepthMask</a>(uint32_t bucket_idx) -&gt; uint32_t;</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span> </div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>  <span class="keyword">auto</span> <a class="code hl_function" href="../../d1/d9d/classbustub_1_1HashTableDirectoryPage.html#a85c6c8365d85f5737988a0dcf4dc63ad">GetGlobalDepth</a>() -&gt; uint32_t;</div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span> </div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="../../d1/d9d/classbustub_1_1HashTableDirectoryPage.html#acd4263a587809e84a5d29d90641951ae">IncrGlobalDepth</a>();</div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span> </div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="../../d1/d9d/classbustub_1_1HashTableDirectoryPage.html#a8ea296d93236186470590e96666f359b">DecrGlobalDepth</a>();</div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span> </div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>  <span class="keyword">auto</span> <a class="code hl_function" href="../../d1/d9d/classbustub_1_1HashTableDirectoryPage.html#ac5d96c138dab86925614b2c8e5002da2">CanShrink</a>() -&gt; bool;</div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span> </div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span>  <span class="keyword">auto</span> <a class="code hl_function" href="../../d1/d9d/classbustub_1_1HashTableDirectoryPage.html#a9f46fcf6f4b595f9f5bfa076206ab668">Size</a>() -&gt; uint32_t;</div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span> </div>
+<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span>  <span class="keyword">auto</span> <a class="code hl_function" href="../../d1/d9d/classbustub_1_1HashTableDirectoryPage.html#a86b2229da9e8dc8dfe00f4742c075bd4">GetLocalDepth</a>(uint32_t bucket_idx) -&gt; uint32_t;</div>
+<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span> </div>
+<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="../../d1/d9d/classbustub_1_1HashTableDirectoryPage.html#abf6579dbeb0578e253eca628e269ef79">SetLocalDepth</a>(uint32_t bucket_idx, uint8_t local_depth);</div>
+<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span> </div>
+<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="../../d1/d9d/classbustub_1_1HashTableDirectoryPage.html#adbf1b84efc76ddf3b33b7a81674a0b2b">IncrLocalDepth</a>(uint32_t bucket_idx);</div>
+<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span> </div>
+<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="../../d1/d9d/classbustub_1_1HashTableDirectoryPage.html#a10d893e4e2c218a8e7e9495b16e0ee44">DecrLocalDepth</a>(uint32_t bucket_idx);</div>
+<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span> </div>
+<div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span>  <span class="keyword">auto</span> <a class="code hl_function" href="../../d1/d9d/classbustub_1_1HashTableDirectoryPage.html#a2601d9f7f99a6808f1598d50e016adb3">GetLocalHighBit</a>(uint32_t bucket_idx) -&gt; uint32_t;</div>
+<div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span> </div>
+<div class="line"><a id="l00182" name="l00182"></a><span class="lineno">  182</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="../../d1/d9d/classbustub_1_1HashTableDirectoryPage.html#a16e17686660e6ca7e5a351fb52bbc470">VerifyIntegrity</a>();</div>
+<div class="line"><a id="l00183" name="l00183"></a><span class="lineno">  183</span> </div>
+<div class="line"><a id="l00187" name="l00187"></a><span class="lineno">  187</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="../../d1/d9d/classbustub_1_1HashTableDirectoryPage.html#a226bfa888ec59c25d3686aa663fa51df">PrintDirectory</a>();</div>
+<div class="line"><a id="l00188" name="l00188"></a><span class="lineno">  188</span> </div>
+<div class="line"><a id="l00189" name="l00189"></a><span class="lineno">  189</span> <span class="keyword">private</span>:</div>
+<div class="line"><a id="l00190" name="l00190"></a><span class="lineno"><a class="line" href="../../d1/d9d/classbustub_1_1HashTableDirectoryPage.html#a57894487572b7953ee1620f13f13112d">  190</a></span>  <a class="code hl_typedef" href="../../de/dda/namespacebustub.html#a8de4ac099b23d712481109bb846decde">page_id_t</a> <a class="code hl_variable" href="../../d1/d9d/classbustub_1_1HashTableDirectoryPage.html#a57894487572b7953ee1620f13f13112d">page_id_</a>;</div>
+<div class="line"><a id="l00191" name="l00191"></a><span class="lineno"><a class="line" href="../../d1/d9d/classbustub_1_1HashTableDirectoryPage.html#ad5424cbee9a05c22913fc536864150f2">  191</a></span>  <a class="code hl_typedef" href="../../de/dda/namespacebustub.html#a8ceb3d9746c8621a11887b2754e385f2">lsn_t</a> <a class="code hl_variable" href="../../d1/d9d/classbustub_1_1HashTableDirectoryPage.html#ad5424cbee9a05c22913fc536864150f2">lsn_</a>;</div>
+<div class="line"><a id="l00192" name="l00192"></a><span class="lineno"><a class="line" href="../../d1/d9d/classbustub_1_1HashTableDirectoryPage.html#a8cfe41a20d6cc1ba639ce75d909af73f">  192</a></span>  uint32_t <a class="code hl_variable" href="../../d1/d9d/classbustub_1_1HashTableDirectoryPage.html#a8cfe41a20d6cc1ba639ce75d909af73f">global_depth_</a>{0};</div>
+<div class="line"><a id="l00193" name="l00193"></a><span class="lineno"><a class="line" href="../../d1/d9d/classbustub_1_1HashTableDirectoryPage.html#a5bfce67300b086c7d28f7762a4b0068a">  193</a></span>  uint8_t <a class="code hl_variable" href="../../d1/d9d/classbustub_1_1HashTableDirectoryPage.html#a5bfce67300b086c7d28f7762a4b0068a">local_depths_</a>[<a class="code hl_define" href="../../d6/d3b/hash__table__page__defs_8h.html#a33263f2fd1edcc681ea3692a02901e16">DIRECTORY_ARRAY_SIZE</a>];</div>
+<div class="line"><a id="l00194" name="l00194"></a><span class="lineno"><a class="line" href="../../d1/d9d/classbustub_1_1HashTableDirectoryPage.html#aa8428da272db2bb2ba750c17febf5ed2">  194</a></span>  <a class="code hl_typedef" href="../../de/dda/namespacebustub.html#a8de4ac099b23d712481109bb846decde">page_id_t</a> <a class="code hl_variable" href="../../d1/d9d/classbustub_1_1HashTableDirectoryPage.html#aa8428da272db2bb2ba750c17febf5ed2">bucket_page_ids_</a>[<a class="code hl_define" href="../../d6/d3b/hash__table__page__defs_8h.html#a33263f2fd1edcc681ea3692a02901e16">DIRECTORY_ARRAY_SIZE</a>];</div>
+<div class="line"><a id="l00195" name="l00195"></a><span class="lineno">  195</span>};</div>
+</div>
+<div class="line"><a id="l00196" name="l00196"></a><span class="lineno">  196</span> </div>
+<div class="line"><a id="l00197" name="l00197"></a><span class="lineno">  197</span>}  <span class="comment">// namespace bustub</span></div>
+<div class="ttc" id="aclassbustub_1_1HashTableDirectoryPage_html"><div class="ttname"><a href="../../d1/d9d/classbustub_1_1HashTableDirectoryPage.html">bustub::HashTableDirectoryPage</a></div><div class="ttdef"><b>Definition</b> hash_table_directory_page.h:34</div></div>
+<div class="ttc" id="aclassbustub_1_1HashTableDirectoryPage_html_a02152cb798bdad68e9d554349f4a723d"><div class="ttname"><a href="../../d1/d9d/classbustub_1_1HashTableDirectoryPage.html#a02152cb798bdad68e9d554349f4a723d">bustub::HashTableDirectoryPage::GetSplitImageIndex</a></div><div class="ttdeci">auto GetSplitImageIndex(uint32_t bucket_idx) -&gt; uint32_t</div></div>
+<div class="ttc" id="aclassbustub_1_1HashTableDirectoryPage_html_a0242e06f667b6f54cc68c64dcc574825"><div class="ttname"><a href="../../d1/d9d/classbustub_1_1HashTableDirectoryPage.html#a0242e06f667b6f54cc68c64dcc574825">bustub::HashTableDirectoryPage::SetBucketPageId</a></div><div class="ttdeci">void SetBucketPageId(uint32_t bucket_idx, page_id_t bucket_page_id)</div><div class="ttdef"><b>Definition</b> hash_table_directory_page.cpp:37</div></div>
+<div class="ttc" id="aclassbustub_1_1HashTableDirectoryPage_html_a10d893e4e2c218a8e7e9495b16e0ee44"><div class="ttname"><a href="../../d1/d9d/classbustub_1_1HashTableDirectoryPage.html#a10d893e4e2c218a8e7e9495b16e0ee44">bustub::HashTableDirectoryPage::DecrLocalDepth</a></div><div class="ttdeci">void DecrLocalDepth(uint32_t bucket_idx)</div><div class="ttdef"><b>Definition</b> hash_table_directory_page.cpp:49</div></div>
+<div class="ttc" id="aclassbustub_1_1HashTableDirectoryPage_html_a16e17686660e6ca7e5a351fb52bbc470"><div class="ttname"><a href="../../d1/d9d/classbustub_1_1HashTableDirectoryPage.html#a16e17686660e6ca7e5a351fb52bbc470">bustub::HashTableDirectoryPage::VerifyIntegrity</a></div><div class="ttdeci">void VerifyIntegrity()</div><div class="ttdef"><b>Definition</b> hash_table_directory_page.cpp:63</div></div>
+<div class="ttc" id="aclassbustub_1_1HashTableDirectoryPage_html_a226bfa888ec59c25d3686aa663fa51df"><div class="ttname"><a href="../../d1/d9d/classbustub_1_1HashTableDirectoryPage.html#a226bfa888ec59c25d3686aa663fa51df">bustub::HashTableDirectoryPage::PrintDirectory</a></div><div class="ttdeci">void PrintDirectory()</div><div class="ttdef"><b>Definition</b> hash_table_directory_page.cpp:105</div></div>
+<div class="ttc" id="aclassbustub_1_1HashTableDirectoryPage_html_a255199f616b4ca95f904fd2abf752f44"><div class="ttname"><a href="../../d1/d9d/classbustub_1_1HashTableDirectoryPage.html#a255199f616b4ca95f904fd2abf752f44">bustub::HashTableDirectoryPage::SetPageId</a></div><div class="ttdeci">void SetPageId(page_id_t page_id)</div><div class="ttdef"><b>Definition</b> hash_table_directory_page.cpp:21</div></div>
+<div class="ttc" id="aclassbustub_1_1HashTableDirectoryPage_html_a2601d9f7f99a6808f1598d50e016adb3"><div class="ttname"><a href="../../d1/d9d/classbustub_1_1HashTableDirectoryPage.html#a2601d9f7f99a6808f1598d50e016adb3">bustub::HashTableDirectoryPage::GetLocalHighBit</a></div><div class="ttdeci">auto GetLocalHighBit(uint32_t bucket_idx) -&gt; uint32_t</div><div class="ttdef"><b>Definition</b> hash_table_directory_page.cpp:51</div></div>
+<div class="ttc" id="aclassbustub_1_1HashTableDirectoryPage_html_a332e6fdce4bb463b23414bd12615aef2"><div class="ttname"><a href="../../d1/d9d/classbustub_1_1HashTableDirectoryPage.html#a332e6fdce4bb463b23414bd12615aef2">bustub::HashTableDirectoryPage::GetLocalDepthMask</a></div><div class="ttdeci">auto GetLocalDepthMask(uint32_t bucket_idx) -&gt; uint32_t</div></div>
+<div class="ttc" id="aclassbustub_1_1HashTableDirectoryPage_html_a4ab658450f0e9b351b102a782a7f543a"><div class="ttname"><a href="../../d1/d9d/classbustub_1_1HashTableDirectoryPage.html#a4ab658450f0e9b351b102a782a7f543a">bustub::HashTableDirectoryPage::GetLSN</a></div><div class="ttdeci">auto GetLSN() const -&gt; lsn_t</div><div class="ttdef"><b>Definition</b> hash_table_directory_page.cpp:23</div></div>
+<div class="ttc" id="aclassbustub_1_1HashTableDirectoryPage_html_a57894487572b7953ee1620f13f13112d"><div class="ttname"><a href="../../d1/d9d/classbustub_1_1HashTableDirectoryPage.html#a57894487572b7953ee1620f13f13112d">bustub::HashTableDirectoryPage::page_id_</a></div><div class="ttdeci">page_id_t page_id_</div><div class="ttdef"><b>Definition</b> hash_table_directory_page.h:190</div></div>
+<div class="ttc" id="aclassbustub_1_1HashTableDirectoryPage_html_a5bfce67300b086c7d28f7762a4b0068a"><div class="ttname"><a href="../../d1/d9d/classbustub_1_1HashTableDirectoryPage.html#a5bfce67300b086c7d28f7762a4b0068a">bustub::HashTableDirectoryPage::local_depths_</a></div><div class="ttdeci">uint8_t local_depths_[DIRECTORY_ARRAY_SIZE]</div><div class="ttdef"><b>Definition</b> hash_table_directory_page.h:193</div></div>
+<div class="ttc" id="aclassbustub_1_1HashTableDirectoryPage_html_a85c6c8365d85f5737988a0dcf4dc63ad"><div class="ttname"><a href="../../d1/d9d/classbustub_1_1HashTableDirectoryPage.html#a85c6c8365d85f5737988a0dcf4dc63ad">bustub::HashTableDirectoryPage::GetGlobalDepth</a></div><div class="ttdeci">auto GetGlobalDepth() -&gt; uint32_t</div><div class="ttdef"><b>Definition</b> hash_table_directory_page.cpp:27</div></div>
+<div class="ttc" id="aclassbustub_1_1HashTableDirectoryPage_html_a86b2229da9e8dc8dfe00f4742c075bd4"><div class="ttname"><a href="../../d1/d9d/classbustub_1_1HashTableDirectoryPage.html#a86b2229da9e8dc8dfe00f4742c075bd4">bustub::HashTableDirectoryPage::GetLocalDepth</a></div><div class="ttdeci">auto GetLocalDepth(uint32_t bucket_idx) -&gt; uint32_t</div><div class="ttdef"><b>Definition</b> hash_table_directory_page.cpp:43</div></div>
+<div class="ttc" id="aclassbustub_1_1HashTableDirectoryPage_html_a8cfe41a20d6cc1ba639ce75d909af73f"><div class="ttname"><a href="../../d1/d9d/classbustub_1_1HashTableDirectoryPage.html#a8cfe41a20d6cc1ba639ce75d909af73f">bustub::HashTableDirectoryPage::global_depth_</a></div><div class="ttdeci">uint32_t global_depth_</div><div class="ttdef"><b>Definition</b> hash_table_directory_page.h:192</div></div>
+<div class="ttc" id="aclassbustub_1_1HashTableDirectoryPage_html_a8ea296d93236186470590e96666f359b"><div class="ttname"><a href="../../d1/d9d/classbustub_1_1HashTableDirectoryPage.html#a8ea296d93236186470590e96666f359b">bustub::HashTableDirectoryPage::DecrGlobalDepth</a></div><div class="ttdeci">void DecrGlobalDepth()</div><div class="ttdef"><b>Definition</b> hash_table_directory_page.cpp:33</div></div>
+<div class="ttc" id="aclassbustub_1_1HashTableDirectoryPage_html_a907e4ee8bfe5981efb3ff9ca7270be10"><div class="ttname"><a href="../../d1/d9d/classbustub_1_1HashTableDirectoryPage.html#a907e4ee8bfe5981efb3ff9ca7270be10">bustub::HashTableDirectoryPage::GetGlobalDepthMask</a></div><div class="ttdeci">auto GetGlobalDepthMask() -&gt; uint32_t</div><div class="ttdef"><b>Definition</b> hash_table_directory_page.cpp:29</div></div>
+<div class="ttc" id="aclassbustub_1_1HashTableDirectoryPage_html_a9f46fcf6f4b595f9f5bfa076206ab668"><div class="ttname"><a href="../../d1/d9d/classbustub_1_1HashTableDirectoryPage.html#a9f46fcf6f4b595f9f5bfa076206ab668">bustub::HashTableDirectoryPage::Size</a></div><div class="ttdeci">auto Size() -&gt; uint32_t</div><div class="ttdef"><b>Definition</b> hash_table_directory_page.cpp:39</div></div>
+<div class="ttc" id="aclassbustub_1_1HashTableDirectoryPage_html_aa0f93a1b512b58b575d2980751e37b67"><div class="ttname"><a href="../../d1/d9d/classbustub_1_1HashTableDirectoryPage.html#aa0f93a1b512b58b575d2980751e37b67">bustub::HashTableDirectoryPage::GetBucketPageId</a></div><div class="ttdeci">auto GetBucketPageId(uint32_t bucket_idx) -&gt; page_id_t</div><div class="ttdef"><b>Definition</b> hash_table_directory_page.cpp:35</div></div>
+<div class="ttc" id="aclassbustub_1_1HashTableDirectoryPage_html_aa8428da272db2bb2ba750c17febf5ed2"><div class="ttname"><a href="../../d1/d9d/classbustub_1_1HashTableDirectoryPage.html#aa8428da272db2bb2ba750c17febf5ed2">bustub::HashTableDirectoryPage::bucket_page_ids_</a></div><div class="ttdeci">page_id_t bucket_page_ids_[DIRECTORY_ARRAY_SIZE]</div><div class="ttdef"><b>Definition</b> hash_table_directory_page.h:194</div></div>
+<div class="ttc" id="aclassbustub_1_1HashTableDirectoryPage_html_abc4d69b9115258ef80479f9ff38ca04a"><div class="ttname"><a href="../../d1/d9d/classbustub_1_1HashTableDirectoryPage.html#abc4d69b9115258ef80479f9ff38ca04a">bustub::HashTableDirectoryPage::SetLSN</a></div><div class="ttdeci">void SetLSN(lsn_t lsn)</div><div class="ttdef"><b>Definition</b> hash_table_directory_page.cpp:25</div></div>
+<div class="ttc" id="aclassbustub_1_1HashTableDirectoryPage_html_abf6579dbeb0578e253eca628e269ef79"><div class="ttname"><a href="../../d1/d9d/classbustub_1_1HashTableDirectoryPage.html#abf6579dbeb0578e253eca628e269ef79">bustub::HashTableDirectoryPage::SetLocalDepth</a></div><div class="ttdeci">void SetLocalDepth(uint32_t bucket_idx, uint8_t local_depth)</div><div class="ttdef"><b>Definition</b> hash_table_directory_page.cpp:45</div></div>
+<div class="ttc" id="aclassbustub_1_1HashTableDirectoryPage_html_ac5d96c138dab86925614b2c8e5002da2"><div class="ttname"><a href="../../d1/d9d/classbustub_1_1HashTableDirectoryPage.html#ac5d96c138dab86925614b2c8e5002da2">bustub::HashTableDirectoryPage::CanShrink</a></div><div class="ttdeci">auto CanShrink() -&gt; bool</div><div class="ttdef"><b>Definition</b> hash_table_directory_page.cpp:41</div></div>
+<div class="ttc" id="aclassbustub_1_1HashTableDirectoryPage_html_acd4263a587809e84a5d29d90641951ae"><div class="ttname"><a href="../../d1/d9d/classbustub_1_1HashTableDirectoryPage.html#acd4263a587809e84a5d29d90641951ae">bustub::HashTableDirectoryPage::IncrGlobalDepth</a></div><div class="ttdeci">void IncrGlobalDepth()</div><div class="ttdef"><b>Definition</b> hash_table_directory_page.cpp:31</div></div>
+<div class="ttc" id="aclassbustub_1_1HashTableDirectoryPage_html_ad5424cbee9a05c22913fc536864150f2"><div class="ttname"><a href="../../d1/d9d/classbustub_1_1HashTableDirectoryPage.html#ad5424cbee9a05c22913fc536864150f2">bustub::HashTableDirectoryPage::lsn_</a></div><div class="ttdeci">lsn_t lsn_</div><div class="ttdef"><b>Definition</b> hash_table_directory_page.h:191</div></div>
+<div class="ttc" id="aclassbustub_1_1HashTableDirectoryPage_html_adbf1b84efc76ddf3b33b7a81674a0b2b"><div class="ttname"><a href="../../d1/d9d/classbustub_1_1HashTableDirectoryPage.html#adbf1b84efc76ddf3b33b7a81674a0b2b">bustub::HashTableDirectoryPage::IncrLocalDepth</a></div><div class="ttdeci">void IncrLocalDepth(uint32_t bucket_idx)</div><div class="ttdef"><b>Definition</b> hash_table_directory_page.cpp:47</div></div>
+<div class="ttc" id="aclassbustub_1_1HashTableDirectoryPage_html_af656388d4fe170c641af27dfd59138c3"><div class="ttname"><a href="../../d1/d9d/classbustub_1_1HashTableDirectoryPage.html#af656388d4fe170c641af27dfd59138c3">bustub::HashTableDirectoryPage::GetPageId</a></div><div class="ttdeci">auto GetPageId() const -&gt; page_id_t</div><div class="ttdef"><b>Definition</b> hash_table_directory_page.cpp:19</div></div>
+<div class="ttc" id="ageneric__key_8h_html"><div class="ttname"><a href="../../da/d28/generic__key_8h.html">generic_key.h</a></div></div>
+<div class="ttc" id="ahash__table__page__defs_8h_html"><div class="ttname"><a href="../../d6/d3b/hash__table__page__defs_8h.html">hash_table_page_defs.h</a></div></div>
+<div class="ttc" id="ahash__table__page__defs_8h_html_a33263f2fd1edcc681ea3692a02901e16"><div class="ttname"><a href="../../d6/d3b/hash__table__page__defs_8h.html#a33263f2fd1edcc681ea3692a02901e16">DIRECTORY_ARRAY_SIZE</a></div><div class="ttdeci">#define DIRECTORY_ARRAY_SIZE</div><div class="ttdef"><b>Definition</b> hash_table_page_defs.h:52</div></div>
+<div class="ttc" id="anamespacebustub_html"><div class="ttname"><a href="../../de/dda/namespacebustub.html">bustub</a></div><div class="ttdef"><b>Definition</b> bind_create.cpp:53</div></div>
+<div class="ttc" id="anamespacebustub_html_a8ceb3d9746c8621a11887b2754e385f2"><div class="ttname"><a href="../../de/dda/namespacebustub.html#a8ceb3d9746c8621a11887b2754e385f2">bustub::lsn_t</a></div><div class="ttdeci">int32_t lsn_t</div><div class="ttdef"><b>Definition</b> config.h:46</div></div>
+<div class="ttc" id="anamespacebustub_html_a8de4ac099b23d712481109bb846decde"><div class="ttname"><a href="../../de/dda/namespacebustub.html#a8de4ac099b23d712481109bb846decde">bustub::page_id_t</a></div><div class="ttdeci">int32_t page_id_t</div><div class="ttdef"><b>Definition</b> config.h:44</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
+</small></address>
+</body>
+</html>

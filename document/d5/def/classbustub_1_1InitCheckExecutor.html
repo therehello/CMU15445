@@ -1,0 +1,492 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>数据库系统 CMU15-445/645: bustub::InitCheckExecutor类 参考</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/searchdata.js"></script>
+<script type="text/javascript" src="../../search/search.js"></script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">数据库系统 CMU15-445/645<span id="projectnumber">&#160;1.0.0</span>
+   </div>
+   <div id="projectbrief">CMU15-445/645 是基于现代 C++ 开发的支持并发操作的简单 SQL 操作的单机数据库</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.9.8 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "../../search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('../../',true,false,'search.php','搜索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="../../de/dda/namespacebustub.html">bustub</a></li><li class="navelem"><a class="el" href="../../d5/def/classbustub_1_1InitCheckExecutor.html">InitCheckExecutor</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Public 成员函数</a> &#124;
+<a href="#pri-attribs">Private 属性</a> &#124;
+<a href="#pri-static-attribs">静态 Private 属性</a> &#124;
+<a href="../../d0/dec/classbustub_1_1InitCheckExecutor-members.html">所有成员列表</a>  </div>
+  <div class="headertitle"><div class="title">bustub::InitCheckExecutor类 参考</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p><code>#include &lt;<a class="el" href="../../d5/dc5/init__check__executor_8h_source.html">init_check_executor.h</a>&gt;</code></p>
+<div class="dynheader">
+类 bustub::InitCheckExecutor 继承关系图:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../df/dac/classbustub_1_1InitCheckExecutor__inherit__graph.svg" width="202" height="110"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<center><span class="legend">[<a href="../../graph_legend.html">图例</a>]</span></center></div>
+<div class="dynheader">
+bustub::InitCheckExecutor 的协作图:</div>
+<div class="dyncontent">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d1/d1c/classbustub_1_1InitCheckExecutor__coll__graph.svg" width="100%" height="505"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<center><span class="legend">[<a href="../../graph_legend.html">图例</a>]</span></center></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Public 成员函数</h2></td></tr>
+<tr class="memitem:a8ae58f019788e6c0214a5f2a05119b0a" id="r_a8ae58f019788e6c0214a5f2a05119b0a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/def/classbustub_1_1InitCheckExecutor.html#a8ae58f019788e6c0214a5f2a05119b0a">InitCheckExecutor</a> (<a class="el" href="../../dd/d02/classbustub_1_1ExecutorContext.html">ExecutorContext</a> *exec_ctx, <a class="el" href="../../de/dda/namespacebustub.html#a354095e050bd1915a499a31c062c7303">AbstractPlanNodeRef</a> plan, std::unique_ptr&lt; <a class="el" href="../../d2/d28/classbustub_1_1AbstractExecutor.html">AbstractExecutor</a> &gt; &amp;&amp;child_executor)</td></tr>
+<tr class="separator:a8ae58f019788e6c0214a5f2a05119b0a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3f52f45cd712edd035ca061bcba568d1" id="r_a3f52f45cd712edd035ca061bcba568d1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/def/classbustub_1_1InitCheckExecutor.html#a3f52f45cd712edd035ca061bcba568d1">Init</a> () override</td></tr>
+<tr class="separator:a3f52f45cd712edd035ca061bcba568d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a41c99123d7cedd473c122d03df0a4943" id="r_a41c99123d7cedd473c122d03df0a4943"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/def/classbustub_1_1InitCheckExecutor.html#a41c99123d7cedd473c122d03df0a4943">Next</a> (<a class="el" href="../../d0/ded/classbustub_1_1Tuple.html">Tuple</a> *tuple, <a class="el" href="../../d3/d22/classbustub_1_1RID.html">RID</a> *rid) -&gt; bool override</td></tr>
+<tr class="separator:a41c99123d7cedd473c122d03df0a4943"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a65e0b96d2b9bbd77773d3c807bd06109" id="r_a65e0b96d2b9bbd77773d3c807bd06109"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/def/classbustub_1_1InitCheckExecutor.html#a65e0b96d2b9bbd77773d3c807bd06109">GetOutputSchema</a> () const -&gt; const <a class="el" href="../../da/d36/classbustub_1_1Schema.html">Schema</a> &amp;override</td></tr>
+<tr class="separator:a65e0b96d2b9bbd77773d3c807bd06109"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1ed47d2cec2d4b82122b9c8bb6e14ee8" id="r_a1ed47d2cec2d4b82122b9c8bb6e14ee8"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/def/classbustub_1_1InitCheckExecutor.html#a1ed47d2cec2d4b82122b9c8bb6e14ee8">GetInitCount</a> () const -&gt; std::size_t</td></tr>
+<tr class="separator:a1ed47d2cec2d4b82122b9c8bb6e14ee8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acae8f416ca0d785a5aed5ab9a936f7ce" id="r_acae8f416ca0d785a5aed5ab9a936f7ce"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/def/classbustub_1_1InitCheckExecutor.html#acae8f416ca0d785a5aed5ab9a936f7ce">GetNextCount</a> () const -&gt; std::size_t</td></tr>
+<tr class="separator:acae8f416ca0d785a5aed5ab9a936f7ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_methods_classbustub_1_1AbstractExecutor"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classbustub_1_1AbstractExecutor')"><img src="../../closed.png" alt="-"/>&#160;Public 成员函数 继承自 <a class="el" href="../../d2/d28/classbustub_1_1AbstractExecutor.html">bustub::AbstractExecutor</a></td></tr>
+<tr class="memitem:a77aac90325e53499c7dc96fea4a0f6c9 inherit pub_methods_classbustub_1_1AbstractExecutor" id="r_a77aac90325e53499c7dc96fea4a0f6c9"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d28/classbustub_1_1AbstractExecutor.html#a77aac90325e53499c7dc96fea4a0f6c9">AbstractExecutor</a> (<a class="el" href="../../dd/d02/classbustub_1_1ExecutorContext.html">ExecutorContext</a> *exec_ctx)</td></tr>
+<tr class="separator:a77aac90325e53499c7dc96fea4a0f6c9 inherit pub_methods_classbustub_1_1AbstractExecutor"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab28201d3024a7b09e8c41af42a8def68 inherit pub_methods_classbustub_1_1AbstractExecutor" id="r_ab28201d3024a7b09e8c41af42a8def68"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d28/classbustub_1_1AbstractExecutor.html#ab28201d3024a7b09e8c41af42a8def68">~AbstractExecutor</a> ()=default</td></tr>
+<tr class="separator:ab28201d3024a7b09e8c41af42a8def68 inherit pub_methods_classbustub_1_1AbstractExecutor"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab9895b6c56048bdd668aebd506c7d444 inherit pub_methods_classbustub_1_1AbstractExecutor" id="r_ab9895b6c56048bdd668aebd506c7d444"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d28/classbustub_1_1AbstractExecutor.html#ab9895b6c56048bdd668aebd506c7d444">GetExecutorContext</a> () -&gt; <a class="el" href="../../dd/d02/classbustub_1_1ExecutorContext.html">ExecutorContext</a> *</td></tr>
+<tr class="separator:ab9895b6c56048bdd668aebd506c7d444 inherit pub_methods_classbustub_1_1AbstractExecutor"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
+Private 属性</h2></td></tr>
+<tr class="memitem:a38289e57d97b6530bbe661c2046b4621" id="r_a38289e57d97b6530bbe661c2046b4621"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../de/dda/namespacebustub.html#a354095e050bd1915a499a31c062c7303">AbstractPlanNodeRef</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/def/classbustub_1_1InitCheckExecutor.html#a38289e57d97b6530bbe661c2046b4621">plan_</a></td></tr>
+<tr class="separator:a38289e57d97b6530bbe661c2046b4621"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a79a1816c4846b35f70f3cf2d6ff34154" id="r_a79a1816c4846b35f70f3cf2d6ff34154"><td class="memItemLeft" align="right" valign="top">std::unique_ptr&lt; <a class="el" href="../../d2/d28/classbustub_1_1AbstractExecutor.html">AbstractExecutor</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/def/classbustub_1_1InitCheckExecutor.html#a79a1816c4846b35f70f3cf2d6ff34154">child_executor_</a></td></tr>
+<tr class="separator:a79a1816c4846b35f70f3cf2d6ff34154"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4e302ff40ac02d8bc976b882ed8b03f6" id="r_a4e302ff40ac02d8bc976b882ed8b03f6"><td class="memItemLeft" align="right" valign="top">std::size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/def/classbustub_1_1InitCheckExecutor.html#a4e302ff40ac02d8bc976b882ed8b03f6">n_init_</a> {0}</td></tr>
+<tr class="separator:a4e302ff40ac02d8bc976b882ed8b03f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abac613bf56881c8fdb2d168979bb382d" id="r_abac613bf56881c8fdb2d168979bb382d"><td class="memItemLeft" align="right" valign="top">std::size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/def/classbustub_1_1InitCheckExecutor.html#abac613bf56881c8fdb2d168979bb382d">n_next_</a> {0}</td></tr>
+<tr class="separator:abac613bf56881c8fdb2d168979bb382d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-static-attribs" name="pri-static-attribs"></a>
+静态 Private 属性</h2></td></tr>
+<tr class="memitem:a12d754335416e6bf1920a0438c352b38" id="r_a12d754335416e6bf1920a0438c352b38"><td class="memItemLeft" align="right" valign="top">static constexpr const bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/def/classbustub_1_1InitCheckExecutor.html#a12d754335416e6bf1920a0438c352b38">EXECUTOR_ACTIVE</a> {true}</td></tr>
+<tr class="separator:a12d754335416e6bf1920a0438c352b38"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a392ab22015734691bc7f2b8cc0b4d12b" id="r_a392ab22015734691bc7f2b8cc0b4d12b"><td class="memItemLeft" align="right" valign="top">static constexpr const bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/def/classbustub_1_1InitCheckExecutor.html#a392ab22015734691bc7f2b8cc0b4d12b">EXECUTOR_EXHAUSTED</a> {false}</td></tr>
+<tr class="separator:a392ab22015734691bc7f2b8cc0b4d12b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="inherited" name="inherited"></a>
+额外继承的成员函数</h2></td></tr>
+<tr class="inherit_header pro_attribs_classbustub_1_1AbstractExecutor"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_classbustub_1_1AbstractExecutor')"><img src="../../closed.png" alt="-"/>&#160;Protected 属性 继承自 <a class="el" href="../../d2/d28/classbustub_1_1AbstractExecutor.html">bustub::AbstractExecutor</a></td></tr>
+<tr class="memitem:a5591a244cd884bbae01ebbc58b3b2769 inherit pro_attribs_classbustub_1_1AbstractExecutor" id="r_a5591a244cd884bbae01ebbc58b3b2769"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../dd/d02/classbustub_1_1ExecutorContext.html">ExecutorContext</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d28/classbustub_1_1AbstractExecutor.html#a5591a244cd884bbae01ebbc58b3b2769">exec_ctx_</a></td></tr>
+<tr class="separator:a5591a244cd884bbae01ebbc58b3b2769 inherit pro_attribs_classbustub_1_1AbstractExecutor"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
+<div class="textblock"><p><a class="el" href="../../d5/def/classbustub_1_1InitCheckExecutor.html">InitCheckExecutor</a> counts the number of times the child operator calls init. </p>
+</div><h2 class="groupheader">构造及析构函数说明</h2>
+<a id="a8ae58f019788e6c0214a5f2a05119b0a" name="a8ae58f019788e6c0214a5f2a05119b0a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8ae58f019788e6c0214a5f2a05119b0a">&#9670;&#160;</a></span>InitCheckExecutor()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bustub::InitCheckExecutor::InitCheckExecutor </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../dd/d02/classbustub_1_1ExecutorContext.html">ExecutorContext</a> *&#160;</td>
+          <td class="paramname"><em>exec_ctx</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="../../de/dda/namespacebustub.html#a354095e050bd1915a499a31c062c7303">AbstractPlanNodeRef</a>&#160;</td>
+          <td class="paramname"><em>plan</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::unique_ptr&lt; <a class="el" href="../../d2/d28/classbustub_1_1AbstractExecutor.html">AbstractExecutor</a> &gt; &amp;&amp;&#160;</td>
+          <td class="paramname"><em>child_executor</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Construct a new <a class="el" href="../../d5/def/classbustub_1_1InitCheckExecutor.html">InitCheckExecutor</a> instance. </p><dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">exec_ctx</td><td>The executor context </td></tr>
+    <tr><td class="paramname">plan</td><td>The init check plan to be executed </td></tr>
+    <tr><td class="paramname">child_executor</td><td>The child executor from which init calls are counted </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<h2 class="groupheader">成员函数说明</h2>
+<a id="a1ed47d2cec2d4b82122b9c8bb6e14ee8" name="a1ed47d2cec2d4b82122b9c8bb6e14ee8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1ed47d2cec2d4b82122b9c8bb6e14ee8">&#9670;&#160;</a></span>GetInitCount()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto bustub::InitCheckExecutor::GetInitCount </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const -&gt; std::size_t </td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<dl class="section return"><dt>返回</dt><dd>The number of inits </dd></dl>
+
+</div>
+</div>
+<a id="acae8f416ca0d785a5aed5ab9a936f7ce" name="acae8f416ca0d785a5aed5ab9a936f7ce"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acae8f416ca0d785a5aed5ab9a936f7ce">&#9670;&#160;</a></span>GetNextCount()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto bustub::InitCheckExecutor::GetNextCount </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const -&gt; std::size_t </td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<dl class="section return"><dt>返回</dt><dd>The number of nexts </dd></dl>
+
+</div>
+</div>
+<a id="a65e0b96d2b9bbd77773d3c807bd06109" name="a65e0b96d2b9bbd77773d3c807bd06109"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a65e0b96d2b9bbd77773d3c807bd06109">&#9670;&#160;</a></span>GetOutputSchema()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto bustub::InitCheckExecutor::GetOutputSchema </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const -&gt; const <a class="el" href="../../da/d36/classbustub_1_1Schema.html">Schema</a> &amp;</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<dl class="section return"><dt>返回</dt><dd>The output schema for the child executor </dd></dl>
+
+<p>实现了 <a class="el" href="../../d2/d28/classbustub_1_1AbstractExecutor.html#ab72f75f9f8f5728a727609bd70070888">bustub::AbstractExecutor</a>.</p>
+
+</div>
+</div>
+<a id="a3f52f45cd712edd035ca061bcba568d1" name="a3f52f45cd712edd035ca061bcba568d1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3f52f45cd712edd035ca061bcba568d1">&#9670;&#160;</a></span>Init()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void bustub::InitCheckExecutor::Init </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Initialize the InitCheck </p>
+
+<p>实现了 <a class="el" href="../../d2/d28/classbustub_1_1AbstractExecutor.html#a8de18536ea3222d01514b14387082ec8">bustub::AbstractExecutor</a>.</p>
+
+</div>
+</div>
+<a id="a41c99123d7cedd473c122d03df0a4943" name="a41c99123d7cedd473c122d03df0a4943"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a41c99123d7cedd473c122d03df0a4943">&#9670;&#160;</a></span>Next()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto bustub::InitCheckExecutor::Next </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../d0/ded/classbustub_1_1Tuple.html">Tuple</a> *&#160;</td>
+          <td class="paramname"><em>tuple</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="../../d3/d22/classbustub_1_1RID.html">RID</a> *&#160;</td>
+          <td class="paramname"><em>rid</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> -&gt; bool</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Yield the next tuple from the child executor. </p><dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[out]</td><td class="paramname">tuple</td><td>The next tuple produced by the child executor </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">rid</td><td>The next tuple <a class="el" href="../../d3/d22/classbustub_1_1RID.html">RID</a> produced by the child executor </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd><code>true</code> if a tuple was produced, <code>false</code> if there are no more tuples </dd></dl>
+
+<p>实现了 <a class="el" href="../../d2/d28/classbustub_1_1AbstractExecutor.html#aa0eeb57bf174ccd25466e2b137024b4d">bustub::AbstractExecutor</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">类成员变量说明</h2>
+<a id="a79a1816c4846b35f70f3cf2d6ff34154" name="a79a1816c4846b35f70f3cf2d6ff34154"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a79a1816c4846b35f70f3cf2d6ff34154">&#9670;&#160;</a></span>child_executor_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::unique_ptr&lt;<a class="el" href="../../d2/d28/classbustub_1_1AbstractExecutor.html">AbstractExecutor</a>&gt; bustub::InitCheckExecutor::child_executor_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>The child executor from which tuples are obtained </p>
+
+</div>
+</div>
+<a id="a12d754335416e6bf1920a0438c352b38" name="a12d754335416e6bf1920a0438c352b38"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a12d754335416e6bf1920a0438c352b38">&#9670;&#160;</a></span>EXECUTOR_ACTIVE</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr const bool bustub::InitCheckExecutor::EXECUTOR_ACTIVE {true}</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">constexpr</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p><a class="el" href="../../d5/def/classbustub_1_1InitCheckExecutor.html">InitCheckExecutor</a> returns <code>true</code> when it should be polled again </p>
+
+</div>
+</div>
+<a id="a392ab22015734691bc7f2b8cc0b4d12b" name="a392ab22015734691bc7f2b8cc0b4d12b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a392ab22015734691bc7f2b8cc0b4d12b">&#9670;&#160;</a></span>EXECUTOR_EXHAUSTED</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr const bool bustub::InitCheckExecutor::EXECUTOR_EXHAUSTED {false}</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">constexpr</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p><a class="el" href="../../d5/def/classbustub_1_1InitCheckExecutor.html">InitCheckExecutor</a> returns <code>false</code> when child executor is exhausted </p>
+
+</div>
+</div>
+<a id="a4e302ff40ac02d8bc976b882ed8b03f6" name="a4e302ff40ac02d8bc976b882ed8b03f6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4e302ff40ac02d8bc976b882ed8b03f6">&#9670;&#160;</a></span>n_init_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::size_t bustub::InitCheckExecutor::n_init_ {0}</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>The number of times init was called </p>
+
+</div>
+</div>
+<a id="abac613bf56881c8fdb2d168979bb382d" name="abac613bf56881c8fdb2d168979bb382d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abac613bf56881c8fdb2d168979bb382d">&#9670;&#160;</a></span>n_next_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::size_t bustub::InitCheckExecutor::n_next_ {0}</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a38289e57d97b6530bbe661c2046b4621" name="a38289e57d97b6530bbe661c2046b4621"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a38289e57d97b6530bbe661c2046b4621">&#9670;&#160;</a></span>plan_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../de/dda/namespacebustub.html#a354095e050bd1915a499a31c062c7303">AbstractPlanNodeRef</a> bustub::InitCheckExecutor::plan_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>The init check plan node to be executed </p>
+
+</div>
+</div>
+<hr/>该类的文档由以下文件生成:<ul>
+<li>src/include/execution/executors/<a class="el" href="../../d5/dc5/init__check__executor_8h_source.html">init_check_executor.h</a></li>
+<li>src/execution/<a class="el" href="../../d6/d94/init__check__executor_8cpp.html">init_check_executor.cpp</a></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
+</small></address>
+</body>
+</html>

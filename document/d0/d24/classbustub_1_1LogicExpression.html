@@ -1,0 +1,417 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>数据库系统 CMU15-445/645: bustub::LogicExpression类 参考</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/searchdata.js"></script>
+<script type="text/javascript" src="../../search/search.js"></script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">数据库系统 CMU15-445/645<span id="projectnumber">&#160;1.0.0</span>
+   </div>
+   <div id="projectbrief">CMU15-445/645 是基于现代 C++ 开发的支持并发操作的简单 SQL 操作的单机数据库</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.9.8 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "../../search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('../../',true,false,'search.php','搜索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="../../de/dda/namespacebustub.html">bustub</a></li><li class="navelem"><a class="el" href="../../d0/d24/classbustub_1_1LogicExpression.html">LogicExpression</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Public 成员函数</a> &#124;
+<a href="#pub-attribs">Public 属性</a> &#124;
+<a href="#pri-methods">Private 成员函数</a> &#124;
+<a href="../../da/d9a/classbustub_1_1LogicExpression-members.html">所有成员列表</a>  </div>
+  <div class="headertitle"><div class="title">bustub::LogicExpression类 参考</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p><code>#include &lt;<a class="el" href="../../dd/d76/logic__expression_8h_source.html">logic_expression.h</a>&gt;</code></p>
+<div class="dynheader">
+类 bustub::LogicExpression 继承关系图:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../d9/d63/classbustub_1_1LogicExpression__inherit__graph.svg" width="210" height="110"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<center><span class="legend">[<a href="../../graph_legend.html">图例</a>]</span></center></div>
+<div class="dynheader">
+bustub::LogicExpression 的协作图:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../d5/d80/classbustub_1_1LogicExpression__coll__graph.svg" width="210" height="110"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<center><span class="legend">[<a href="../../graph_legend.html">图例</a>]</span></center></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Public 成员函数</h2></td></tr>
+<tr class="memitem:a7408f08d258e742d91f7f3b4a2f1aa92" id="r_a7408f08d258e742d91f7f3b4a2f1aa92"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d24/classbustub_1_1LogicExpression.html#a7408f08d258e742d91f7f3b4a2f1aa92">LogicExpression</a> (<a class="el" href="../../de/dda/namespacebustub.html#af0cfd2fbbabe21e0e95790ff99273105">AbstractExpressionRef</a> left, <a class="el" href="../../de/dda/namespacebustub.html#af0cfd2fbbabe21e0e95790ff99273105">AbstractExpressionRef</a> right, <a class="el" href="../../de/dda/namespacebustub.html#ab0aafa03618bd145828f0fa216732343">LogicType</a> logic_type)</td></tr>
+<tr class="separator:a7408f08d258e742d91f7f3b4a2f1aa92"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:add099f4101e66db7a5a0dcde608046c4" id="r_add099f4101e66db7a5a0dcde608046c4"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d24/classbustub_1_1LogicExpression.html#add099f4101e66db7a5a0dcde608046c4">Evaluate</a> (const <a class="el" href="../../d0/ded/classbustub_1_1Tuple.html">Tuple</a> *tuple, const <a class="el" href="../../da/d36/classbustub_1_1Schema.html">Schema</a> &amp;schema) const -&gt; <a class="el" href="../../d4/df7/classbustub_1_1Value.html">Value</a> override</td></tr>
+<tr class="separator:add099f4101e66db7a5a0dcde608046c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeda6aed86873a2bd9291db140601f514" id="r_aeda6aed86873a2bd9291db140601f514"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d24/classbustub_1_1LogicExpression.html#aeda6aed86873a2bd9291db140601f514">EvaluateJoin</a> (const <a class="el" href="../../d0/ded/classbustub_1_1Tuple.html">Tuple</a> *left_tuple, const <a class="el" href="../../da/d36/classbustub_1_1Schema.html">Schema</a> &amp;left_schema, const <a class="el" href="../../d0/ded/classbustub_1_1Tuple.html">Tuple</a> *right_tuple, const <a class="el" href="../../da/d36/classbustub_1_1Schema.html">Schema</a> &amp;right_schema) const -&gt; <a class="el" href="../../d4/df7/classbustub_1_1Value.html">Value</a> override</td></tr>
+<tr class="separator:aeda6aed86873a2bd9291db140601f514"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2bbbb2ed494237d5188b7aff9f2f5ed3" id="r_a2bbbb2ed494237d5188b7aff9f2f5ed3"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d24/classbustub_1_1LogicExpression.html#a2bbbb2ed494237d5188b7aff9f2f5ed3">ToString</a> () const -&gt; std::string override</td></tr>
+<tr class="separator:a2bbbb2ed494237d5188b7aff9f2f5ed3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab25d4f676e43123251299585eb9b33a9" id="r_ab25d4f676e43123251299585eb9b33a9"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d24/classbustub_1_1LogicExpression.html#ab25d4f676e43123251299585eb9b33a9">BUSTUB_EXPR_CLONE_WITH_CHILDREN</a> (<a class="el" href="../../d0/d24/classbustub_1_1LogicExpression.html">LogicExpression</a>)</td></tr>
+<tr class="separator:ab25d4f676e43123251299585eb9b33a9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_methods_classbustub_1_1AbstractExpression"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classbustub_1_1AbstractExpression')"><img src="../../closed.png" alt="-"/>&#160;Public 成员函数 继承自 <a class="el" href="../../da/dd5/classbustub_1_1AbstractExpression.html">bustub::AbstractExpression</a></td></tr>
+<tr class="memitem:a4971caece7d908db0327e252d573f7ab inherit pub_methods_classbustub_1_1AbstractExpression" id="r_a4971caece7d908db0327e252d573f7ab"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/dd5/classbustub_1_1AbstractExpression.html#a4971caece7d908db0327e252d573f7ab">AbstractExpression</a> (std::vector&lt; <a class="el" href="../../de/dda/namespacebustub.html#af0cfd2fbbabe21e0e95790ff99273105">AbstractExpressionRef</a> &gt; children, <a class="el" href="../../de/dda/namespacebustub.html#a49735e6748963f5515394bbb228f1fc8">TypeId</a> ret_type)</td></tr>
+<tr class="separator:a4971caece7d908db0327e252d573f7ab inherit pub_methods_classbustub_1_1AbstractExpression"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a39d2128291169c6fd8beaf2203aefd7e inherit pub_methods_classbustub_1_1AbstractExpression" id="r_a39d2128291169c6fd8beaf2203aefd7e"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/dd5/classbustub_1_1AbstractExpression.html#a39d2128291169c6fd8beaf2203aefd7e">~AbstractExpression</a> ()=default</td></tr>
+<tr class="separator:a39d2128291169c6fd8beaf2203aefd7e inherit pub_methods_classbustub_1_1AbstractExpression"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ace9300c6e593db82a686c5fb0d7d5019 inherit pub_methods_classbustub_1_1AbstractExpression" id="r_ace9300c6e593db82a686c5fb0d7d5019"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/dd5/classbustub_1_1AbstractExpression.html#ace9300c6e593db82a686c5fb0d7d5019">GetChildAt</a> (uint32_t child_idx) const -&gt; const <a class="el" href="../../de/dda/namespacebustub.html#af0cfd2fbbabe21e0e95790ff99273105">AbstractExpressionRef</a> &amp;</td></tr>
+<tr class="separator:ace9300c6e593db82a686c5fb0d7d5019 inherit pub_methods_classbustub_1_1AbstractExpression"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab8850ea3c5efc9f62fce252a3257664c inherit pub_methods_classbustub_1_1AbstractExpression" id="r_ab8850ea3c5efc9f62fce252a3257664c"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/dd5/classbustub_1_1AbstractExpression.html#ab8850ea3c5efc9f62fce252a3257664c">GetChildren</a> () const -&gt; const std::vector&lt; <a class="el" href="../../de/dda/namespacebustub.html#af0cfd2fbbabe21e0e95790ff99273105">AbstractExpressionRef</a> &gt; &amp;</td></tr>
+<tr class="separator:ab8850ea3c5efc9f62fce252a3257664c inherit pub_methods_classbustub_1_1AbstractExpression"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9d024f136c325b498711e882afc25e35 inherit pub_methods_classbustub_1_1AbstractExpression" id="r_a9d024f136c325b498711e882afc25e35"><td class="memItemLeft" align="right" valign="top">virtual auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/dd5/classbustub_1_1AbstractExpression.html#a9d024f136c325b498711e882afc25e35">GetReturnType</a> () const -&gt; <a class="el" href="../../de/dda/namespacebustub.html#a49735e6748963f5515394bbb228f1fc8">TypeId</a></td></tr>
+<tr class="separator:a9d024f136c325b498711e882afc25e35 inherit pub_methods_classbustub_1_1AbstractExpression"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a75a238e99b0fbe8fd192f806d27b68eb inherit pub_methods_classbustub_1_1AbstractExpression" id="r_a75a238e99b0fbe8fd192f806d27b68eb"><td class="memItemLeft" align="right" valign="top">virtual auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/dd5/classbustub_1_1AbstractExpression.html#a75a238e99b0fbe8fd192f806d27b68eb">CloneWithChildren</a> (std::vector&lt; <a class="el" href="../../de/dda/namespacebustub.html#af0cfd2fbbabe21e0e95790ff99273105">AbstractExpressionRef</a> &gt; children) const -&gt; std::unique_ptr&lt; <a class="el" href="../../da/dd5/classbustub_1_1AbstractExpression.html">AbstractExpression</a> &gt;=0</td></tr>
+<tr class="separator:a75a238e99b0fbe8fd192f806d27b68eb inherit pub_methods_classbustub_1_1AbstractExpression"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
+Public 属性</h2></td></tr>
+<tr class="memitem:a87afb8cea5f2ca634af588060a728503" id="r_a87afb8cea5f2ca634af588060a728503"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../de/dda/namespacebustub.html#ab0aafa03618bd145828f0fa216732343">LogicType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d24/classbustub_1_1LogicExpression.html#a87afb8cea5f2ca634af588060a728503">logic_type_</a></td></tr>
+<tr class="separator:a87afb8cea5f2ca634af588060a728503"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_attribs_classbustub_1_1AbstractExpression"><td colspan="2" onclick="javascript:toggleInherit('pub_attribs_classbustub_1_1AbstractExpression')"><img src="../../closed.png" alt="-"/>&#160;Public 属性 继承自 <a class="el" href="../../da/dd5/classbustub_1_1AbstractExpression.html">bustub::AbstractExpression</a></td></tr>
+<tr class="memitem:a01667804ea9a85a0237207af6feaa815 inherit pub_attribs_classbustub_1_1AbstractExpression" id="r_a01667804ea9a85a0237207af6feaa815"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="../../de/dda/namespacebustub.html#af0cfd2fbbabe21e0e95790ff99273105">AbstractExpressionRef</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/dd5/classbustub_1_1AbstractExpression.html#a01667804ea9a85a0237207af6feaa815">children_</a></td></tr>
+<tr class="separator:a01667804ea9a85a0237207af6feaa815 inherit pub_attribs_classbustub_1_1AbstractExpression"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-methods" name="pri-methods"></a>
+Private 成员函数</h2></td></tr>
+<tr class="memitem:a0c387e886658556b467d39f459c2d01c" id="r_a0c387e886658556b467d39f459c2d01c"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d24/classbustub_1_1LogicExpression.html#a0c387e886658556b467d39f459c2d01c">GetBoolAsCmpBool</a> (const <a class="el" href="../../d4/df7/classbustub_1_1Value.html">Value</a> &amp;val) const -&gt; <a class="el" href="../../de/dda/namespacebustub.html#a0b4071db2dd630bdbf7a86b4f251f560">CmpBool</a></td></tr>
+<tr class="separator:a0c387e886658556b467d39f459c2d01c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a262f3fd7f2d1d6b28eea67322003feb2" id="r_a262f3fd7f2d1d6b28eea67322003feb2"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d24/classbustub_1_1LogicExpression.html#a262f3fd7f2d1d6b28eea67322003feb2">PerformComputation</a> (const <a class="el" href="../../d4/df7/classbustub_1_1Value.html">Value</a> &amp;lhs, const <a class="el" href="../../d4/df7/classbustub_1_1Value.html">Value</a> &amp;rhs) const -&gt; <a class="el" href="../../de/dda/namespacebustub.html#a0b4071db2dd630bdbf7a86b4f251f560">CmpBool</a></td></tr>
+<tr class="separator:a262f3fd7f2d1d6b28eea67322003feb2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
+<div class="textblock"><p><a class="el" href="../../d0/d24/classbustub_1_1LogicExpression.html">LogicExpression</a> represents two expressions being computed. </p>
+</div><h2 class="groupheader">构造及析构函数说明</h2>
+<a id="a7408f08d258e742d91f7f3b4a2f1aa92" name="a7408f08d258e742d91f7f3b4a2f1aa92"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7408f08d258e742d91f7f3b4a2f1aa92">&#9670;&#160;</a></span>LogicExpression()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bustub::LogicExpression::LogicExpression </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../de/dda/namespacebustub.html#af0cfd2fbbabe21e0e95790ff99273105">AbstractExpressionRef</a>&#160;</td>
+          <td class="paramname"><em>left</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="../../de/dda/namespacebustub.html#af0cfd2fbbabe21e0e95790ff99273105">AbstractExpressionRef</a>&#160;</td>
+          <td class="paramname"><em>right</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="../../de/dda/namespacebustub.html#ab0aafa03618bd145828f0fa216732343">LogicType</a>&#160;</td>
+          <td class="paramname"><em>logic_type</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Creates a new comparison expression representing (left comp_type right). </p>
+
+</div>
+</div>
+<h2 class="groupheader">成员函数说明</h2>
+<a id="ab25d4f676e43123251299585eb9b33a9" name="ab25d4f676e43123251299585eb9b33a9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab25d4f676e43123251299585eb9b33a9">&#9670;&#160;</a></span>BUSTUB_EXPR_CLONE_WITH_CHILDREN()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bustub::LogicExpression::BUSTUB_EXPR_CLONE_WITH_CHILDREN </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../d0/d24/classbustub_1_1LogicExpression.html">LogicExpression</a>&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="add099f4101e66db7a5a0dcde608046c4" name="add099f4101e66db7a5a0dcde608046c4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#add099f4101e66db7a5a0dcde608046c4">&#9670;&#160;</a></span>Evaluate()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto bustub::LogicExpression::Evaluate </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="../../d0/ded/classbustub_1_1Tuple.html">Tuple</a> *&#160;</td>
+          <td class="paramname"><em>tuple</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="../../da/d36/classbustub_1_1Schema.html">Schema</a> &amp;&#160;</td>
+          <td class="paramname"><em>schema</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const -&gt;  <a class="el" href="../../d4/df7/classbustub_1_1Value.html">Value</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<dl class="section return"><dt>返回</dt><dd>The value obtained by evaluating the tuple with the given schema </dd></dl>
+
+<p>实现了 <a class="el" href="../../da/dd5/classbustub_1_1AbstractExpression.html#a366d870041b1283ed90f66be269372a0">bustub::AbstractExpression</a>.</p>
+
+</div>
+</div>
+<a id="aeda6aed86873a2bd9291db140601f514" name="aeda6aed86873a2bd9291db140601f514"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aeda6aed86873a2bd9291db140601f514">&#9670;&#160;</a></span>EvaluateJoin()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto bustub::LogicExpression::EvaluateJoin </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="../../d0/ded/classbustub_1_1Tuple.html">Tuple</a> *&#160;</td>
+          <td class="paramname"><em>left_tuple</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="../../da/d36/classbustub_1_1Schema.html">Schema</a> &amp;&#160;</td>
+          <td class="paramname"><em>left_schema</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="../../d0/ded/classbustub_1_1Tuple.html">Tuple</a> *&#160;</td>
+          <td class="paramname"><em>right_tuple</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="../../da/d36/classbustub_1_1Schema.html">Schema</a> &amp;&#160;</td>
+          <td class="paramname"><em>right_schema</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const -&gt;  <a class="el" href="../../d4/df7/classbustub_1_1Value.html">Value</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Returns the value obtained by evaluating a JOIN. </p><dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">left_tuple</td><td>The left tuple </td></tr>
+    <tr><td class="paramname">left_schema</td><td>The left tuple's schema </td></tr>
+    <tr><td class="paramname">right_tuple</td><td>The right tuple </td></tr>
+    <tr><td class="paramname">right_schema</td><td>The right tuple's schema </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>The value obtained by evaluating a JOIN on the left and right </dd></dl>
+
+<p>实现了 <a class="el" href="../../da/dd5/classbustub_1_1AbstractExpression.html#ad9c06936d8acfb8cbb260d887c9f6e94">bustub::AbstractExpression</a>.</p>
+
+</div>
+</div>
+<a id="a0c387e886658556b467d39f459c2d01c" name="a0c387e886658556b467d39f459c2d01c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0c387e886658556b467d39f459c2d01c">&#9670;&#160;</a></span>GetBoolAsCmpBool()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto bustub::LogicExpression::GetBoolAsCmpBool </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="../../d4/df7/classbustub_1_1Value.html">Value</a> &amp;&#160;</td>
+          <td class="paramname"><em>val</em></td><td>)</td>
+          <td> const -&gt; <a class="el" href="../../de/dda/namespacebustub.html#a0b4071db2dd630bdbf7a86b4f251f560">CmpBool</a> </td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a262f3fd7f2d1d6b28eea67322003feb2" name="a262f3fd7f2d1d6b28eea67322003feb2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a262f3fd7f2d1d6b28eea67322003feb2">&#9670;&#160;</a></span>PerformComputation()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto bustub::LogicExpression::PerformComputation </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="../../d4/df7/classbustub_1_1Value.html">Value</a> &amp;&#160;</td>
+          <td class="paramname"><em>lhs</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="../../d4/df7/classbustub_1_1Value.html">Value</a> &amp;&#160;</td>
+          <td class="paramname"><em>rhs</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const -&gt; <a class="el" href="../../de/dda/namespacebustub.html#a0b4071db2dd630bdbf7a86b4f251f560">CmpBool</a> </td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a2bbbb2ed494237d5188b7aff9f2f5ed3" name="a2bbbb2ed494237d5188b7aff9f2f5ed3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2bbbb2ed494237d5188b7aff9f2f5ed3">&#9670;&#160;</a></span>ToString()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto bustub::LogicExpression::ToString </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const -&gt; std::string</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<dl class="section return"><dt>返回</dt><dd>the string representation of the expression node and its children </dd></dl>
+
+<p>重载 <a class="el" href="../../da/dd5/classbustub_1_1AbstractExpression.html#af19014e7cce7d2c94e5ddc557e0088e8">bustub::AbstractExpression</a> .</p>
+
+</div>
+</div>
+<h2 class="groupheader">类成员变量说明</h2>
+<a id="a87afb8cea5f2ca634af588060a728503" name="a87afb8cea5f2ca634af588060a728503"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a87afb8cea5f2ca634af588060a728503">&#9670;&#160;</a></span>logic_type_</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../de/dda/namespacebustub.html#ab0aafa03618bd145828f0fa216732343">LogicType</a> bustub::LogicExpression::logic_type_</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<hr/>该类的文档由以下文件生成:<ul>
+<li>src/include/execution/expressions/<a class="el" href="../../dd/d76/logic__expression_8h_source.html">logic_expression.h</a></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
+</small></address>
+</body>
+</html>

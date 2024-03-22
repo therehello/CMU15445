@@ -1,0 +1,307 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>数据库系统 CMU15-445/645: bustub::SortExecutor类 参考</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/searchdata.js"></script>
+<script type="text/javascript" src="../../search/search.js"></script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">数据库系统 CMU15-445/645<span id="projectnumber">&#160;1.0.0</span>
+   </div>
+   <div id="projectbrief">CMU15-445/645 是基于现代 C++ 开发的支持并发操作的简单 SQL 操作的单机数据库</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.9.8 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "../../search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('../../',true,false,'search.php','搜索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="../../de/dda/namespacebustub.html">bustub</a></li><li class="navelem"><a class="el" href="../../d1/d76/classbustub_1_1SortExecutor.html">SortExecutor</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Public 成员函数</a> &#124;
+<a href="#pri-attribs">Private 属性</a> &#124;
+<a href="../../df/d1e/classbustub_1_1SortExecutor-members.html">所有成员列表</a>  </div>
+  <div class="headertitle"><div class="title">bustub::SortExecutor类 参考</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p><code>#include &lt;<a class="el" href="../../da/dd0/sort__executor_8h_source.html">sort_executor.h</a>&gt;</code></p>
+<div class="dynheader">
+类 bustub::SortExecutor 继承关系图:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../de/d56/classbustub_1_1SortExecutor__inherit__graph.svg" width="195" height="110"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<center><span class="legend">[<a href="../../graph_legend.html">图例</a>]</span></center></div>
+<div class="dynheader">
+bustub::SortExecutor 的协作图:</div>
+<div class="dyncontent">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d6/d40/classbustub_1_1SortExecutor__coll__graph.svg" width="100%" height="505"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<center><span class="legend">[<a href="../../graph_legend.html">图例</a>]</span></center></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Public 成员函数</h2></td></tr>
+<tr class="memitem:a428faee14a42f9d88ac925d8c8518fa2" id="r_a428faee14a42f9d88ac925d8c8518fa2"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d76/classbustub_1_1SortExecutor.html#a428faee14a42f9d88ac925d8c8518fa2">SortExecutor</a> (<a class="el" href="../../dd/d02/classbustub_1_1ExecutorContext.html">ExecutorContext</a> *exec_ctx, const <a class="el" href="../../de/db5/classbustub_1_1SortPlanNode.html">SortPlanNode</a> *plan, std::unique_ptr&lt; <a class="el" href="../../d2/d28/classbustub_1_1AbstractExecutor.html">AbstractExecutor</a> &gt; &amp;&amp;child_executor)</td></tr>
+<tr class="separator:a428faee14a42f9d88ac925d8c8518fa2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa41b54ff324f778f3007ba984c83ace6" id="r_aa41b54ff324f778f3007ba984c83ace6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d76/classbustub_1_1SortExecutor.html#aa41b54ff324f778f3007ba984c83ace6">Init</a> () override</td></tr>
+<tr class="separator:aa41b54ff324f778f3007ba984c83ace6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a25e4466bbee829a5dd9a872e7b33cfb1" id="r_a25e4466bbee829a5dd9a872e7b33cfb1"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d76/classbustub_1_1SortExecutor.html#a25e4466bbee829a5dd9a872e7b33cfb1">Next</a> (<a class="el" href="../../d0/ded/classbustub_1_1Tuple.html">Tuple</a> *tuple, <a class="el" href="../../d3/d22/classbustub_1_1RID.html">RID</a> *rid) -&gt; bool override</td></tr>
+<tr class="separator:a25e4466bbee829a5dd9a872e7b33cfb1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a196ccd7b43004c406d1231bc4c0e1657" id="r_a196ccd7b43004c406d1231bc4c0e1657"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d76/classbustub_1_1SortExecutor.html#a196ccd7b43004c406d1231bc4c0e1657">GetOutputSchema</a> () const -&gt; const <a class="el" href="../../da/d36/classbustub_1_1Schema.html">Schema</a> &amp;override</td></tr>
+<tr class="separator:a196ccd7b43004c406d1231bc4c0e1657"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_methods_classbustub_1_1AbstractExecutor"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classbustub_1_1AbstractExecutor')"><img src="../../closed.png" alt="-"/>&#160;Public 成员函数 继承自 <a class="el" href="../../d2/d28/classbustub_1_1AbstractExecutor.html">bustub::AbstractExecutor</a></td></tr>
+<tr class="memitem:a77aac90325e53499c7dc96fea4a0f6c9 inherit pub_methods_classbustub_1_1AbstractExecutor" id="r_a77aac90325e53499c7dc96fea4a0f6c9"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d28/classbustub_1_1AbstractExecutor.html#a77aac90325e53499c7dc96fea4a0f6c9">AbstractExecutor</a> (<a class="el" href="../../dd/d02/classbustub_1_1ExecutorContext.html">ExecutorContext</a> *exec_ctx)</td></tr>
+<tr class="separator:a77aac90325e53499c7dc96fea4a0f6c9 inherit pub_methods_classbustub_1_1AbstractExecutor"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab28201d3024a7b09e8c41af42a8def68 inherit pub_methods_classbustub_1_1AbstractExecutor" id="r_ab28201d3024a7b09e8c41af42a8def68"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d28/classbustub_1_1AbstractExecutor.html#ab28201d3024a7b09e8c41af42a8def68">~AbstractExecutor</a> ()=default</td></tr>
+<tr class="separator:ab28201d3024a7b09e8c41af42a8def68 inherit pub_methods_classbustub_1_1AbstractExecutor"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab9895b6c56048bdd668aebd506c7d444 inherit pub_methods_classbustub_1_1AbstractExecutor" id="r_ab9895b6c56048bdd668aebd506c7d444"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d28/classbustub_1_1AbstractExecutor.html#ab9895b6c56048bdd668aebd506c7d444">GetExecutorContext</a> () -&gt; <a class="el" href="../../dd/d02/classbustub_1_1ExecutorContext.html">ExecutorContext</a> *</td></tr>
+<tr class="separator:ab9895b6c56048bdd668aebd506c7d444 inherit pub_methods_classbustub_1_1AbstractExecutor"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
+Private 属性</h2></td></tr>
+<tr class="memitem:ac829328accabfe9e3cea010f385a8a71" id="r_ac829328accabfe9e3cea010f385a8a71"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="../../de/db5/classbustub_1_1SortPlanNode.html">SortPlanNode</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d76/classbustub_1_1SortExecutor.html#ac829328accabfe9e3cea010f385a8a71">plan_</a></td></tr>
+<tr class="separator:ac829328accabfe9e3cea010f385a8a71"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="inherited" name="inherited"></a>
+额外继承的成员函数</h2></td></tr>
+<tr class="inherit_header pro_attribs_classbustub_1_1AbstractExecutor"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_classbustub_1_1AbstractExecutor')"><img src="../../closed.png" alt="-"/>&#160;Protected 属性 继承自 <a class="el" href="../../d2/d28/classbustub_1_1AbstractExecutor.html">bustub::AbstractExecutor</a></td></tr>
+<tr class="memitem:a5591a244cd884bbae01ebbc58b3b2769 inherit pro_attribs_classbustub_1_1AbstractExecutor" id="r_a5591a244cd884bbae01ebbc58b3b2769"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../dd/d02/classbustub_1_1ExecutorContext.html">ExecutorContext</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d28/classbustub_1_1AbstractExecutor.html#a5591a244cd884bbae01ebbc58b3b2769">exec_ctx_</a></td></tr>
+<tr class="separator:a5591a244cd884bbae01ebbc58b3b2769 inherit pro_attribs_classbustub_1_1AbstractExecutor"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
+<div class="textblock"><p>The <a class="el" href="../../d1/d76/classbustub_1_1SortExecutor.html">SortExecutor</a> executor executes a sort. </p>
+</div><h2 class="groupheader">构造及析构函数说明</h2>
+<a id="a428faee14a42f9d88ac925d8c8518fa2" name="a428faee14a42f9d88ac925d8c8518fa2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a428faee14a42f9d88ac925d8c8518fa2">&#9670;&#160;</a></span>SortExecutor()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bustub::SortExecutor::SortExecutor </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../dd/d02/classbustub_1_1ExecutorContext.html">ExecutorContext</a> *&#160;</td>
+          <td class="paramname"><em>exec_ctx</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="../../de/db5/classbustub_1_1SortPlanNode.html">SortPlanNode</a> *&#160;</td>
+          <td class="paramname"><em>plan</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::unique_ptr&lt; <a class="el" href="../../d2/d28/classbustub_1_1AbstractExecutor.html">AbstractExecutor</a> &gt; &amp;&amp;&#160;</td>
+          <td class="paramname"><em>child_executor</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Construct a new <a class="el" href="../../d1/d76/classbustub_1_1SortExecutor.html">SortExecutor</a> instance. </p><dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">exec_ctx</td><td>The executor context </td></tr>
+    <tr><td class="paramname">plan</td><td>The sort plan to be executed </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<h2 class="groupheader">成员函数说明</h2>
+<a id="a196ccd7b43004c406d1231bc4c0e1657" name="a196ccd7b43004c406d1231bc4c0e1657"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a196ccd7b43004c406d1231bc4c0e1657">&#9670;&#160;</a></span>GetOutputSchema()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto bustub::SortExecutor::GetOutputSchema </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const -&gt; const <a class="el" href="../../da/d36/classbustub_1_1Schema.html">Schema</a> &amp;</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<dl class="section return"><dt>返回</dt><dd>The output schema for the sort </dd></dl>
+
+<p>实现了 <a class="el" href="../../d2/d28/classbustub_1_1AbstractExecutor.html#ab72f75f9f8f5728a727609bd70070888">bustub::AbstractExecutor</a>.</p>
+
+</div>
+</div>
+<a id="aa41b54ff324f778f3007ba984c83ace6" name="aa41b54ff324f778f3007ba984c83ace6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa41b54ff324f778f3007ba984c83ace6">&#9670;&#160;</a></span>Init()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void bustub::SortExecutor::Init </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Initialize the sort </p>
+
+<p>实现了 <a class="el" href="../../d2/d28/classbustub_1_1AbstractExecutor.html#a8de18536ea3222d01514b14387082ec8">bustub::AbstractExecutor</a>.</p>
+
+</div>
+</div>
+<a id="a25e4466bbee829a5dd9a872e7b33cfb1" name="a25e4466bbee829a5dd9a872e7b33cfb1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a25e4466bbee829a5dd9a872e7b33cfb1">&#9670;&#160;</a></span>Next()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto bustub::SortExecutor::Next </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../d0/ded/classbustub_1_1Tuple.html">Tuple</a> *&#160;</td>
+          <td class="paramname"><em>tuple</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="../../d3/d22/classbustub_1_1RID.html">RID</a> *&#160;</td>
+          <td class="paramname"><em>rid</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> -&gt; bool</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Yield the next tuple from the sort. </p><dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[out]</td><td class="paramname">tuple</td><td>The next tuple produced by the sort </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">rid</td><td>The next tuple <a class="el" href="../../d3/d22/classbustub_1_1RID.html">RID</a> produced by the sort </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd><code>true</code> if a tuple was produced, <code>false</code> if there are no more tuples </dd></dl>
+
+<p>实现了 <a class="el" href="../../d2/d28/classbustub_1_1AbstractExecutor.html#aa0eeb57bf174ccd25466e2b137024b4d">bustub::AbstractExecutor</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">类成员变量说明</h2>
+<a id="ac829328accabfe9e3cea010f385a8a71" name="ac829328accabfe9e3cea010f385a8a71"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac829328accabfe9e3cea010f385a8a71">&#9670;&#160;</a></span>plan_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="../../de/db5/classbustub_1_1SortPlanNode.html">SortPlanNode</a>* bustub::SortExecutor::plan_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>The sort plan node to be executed </p>
+
+</div>
+</div>
+<hr/>该类的文档由以下文件生成:<ul>
+<li>src/include/execution/executors/<a class="el" href="../../da/dd0/sort__executor_8h_source.html">sort_executor.h</a></li>
+<li>src/execution/<a class="el" href="../../df/da6/sort__executor_8cpp.html">sort_executor.cpp</a></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
+</small></address>
+</body>
+</html>

@@ -1,0 +1,260 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>数据库系统 CMU15-445/645: src/include/execution/plans/window_plan.h 源文件</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/searchdata.js"></script>
+<script type="text/javascript" src="../../search/search.js"></script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">数据库系统 CMU15-445/645<span id="projectnumber">&#160;1.0.0</span>
+   </div>
+   <div id="projectbrief">CMU15-445/645 是基于现代 C++ 开发的支持并发操作的简单 SQL 操作的单机数据库</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.9.8 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "../../search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('../../',true,false,'search.php','搜索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function() { init_codefold(1); });
+/* @license-end */
+</script>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="../../dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="../../dir_b0856f6b0d80ccb263b2f415c91f9e17.html">include</a></li><li class="navelem"><a class="el" href="../../dir_b06aa2129a2c7a1df27e7eac52e5ce56.html">execution</a></li><li class="navelem"><a class="el" href="../../dir_63705f3595bc98d4b211a7e671416fe4.html">plans</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle"><div class="title">window_plan.h</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="../../d2/d47/window__plan_8h.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">//===----------------------------------------------------------------------===//</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="comment">//</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="comment">//                         BusTub</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment">//</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="comment">// aggregation_plan.h</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="comment">//</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="comment">// Identification: src/include/execution/plans/aggregation_plan.h</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="comment">//</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="comment">// Copyright (c) 2015-2021, Carnegie Mellon University Database Group</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="comment">//</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="comment">//===----------------------------------------------------------------------===//</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#pragma once</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="preprocessor">#include &lt;memory&gt;</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="preprocessor">#include &lt;string&gt;</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="preprocessor">#include &lt;unordered_map&gt;</span></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="preprocessor">#include &lt;utility&gt;</span></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="preprocessor">#include &lt;vector&gt;</span></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span> </div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="preprocessor">#include &quot;<a class="code" href="../../df/d21/bound__order__by_8h.html">binder/bound_order_by.h</a>&quot;</span></div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="preprocessor">#include &quot;<a class="code" href="../../db/dbe/util_2hash__util_8h.html">common/util/hash_util.h</a>&quot;</span></div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="preprocessor">#include &quot;<a class="code" href="../../df/d86/abstract__expression_8h.html">execution/expressions/abstract_expression.h</a>&quot;</span></div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="preprocessor">#include &quot;<a class="code" href="../../d3/d94/abstract__plan_8h.html">execution/plans/abstract_plan.h</a>&quot;</span></div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="preprocessor">#include &quot;fmt/format.h&quot;</span></div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="preprocessor">#include &quot;<a class="code" href="../../d2/d20/tuple_8h.html">storage/table/tuple.h</a>&quot;</span></div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span> </div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="keyword">namespace </span><a class="code hl_namespace" href="../../de/dda/namespacebustub.html">bustub</a> {</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span> </div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno"><a class="line" href="../../de/dda/namespacebustub.html#a9ae3921998c2e878c715a3fc8d5b33df">   31</a></span><span class="keyword">enum class</span> <a class="code hl_enumeration" href="../../de/dda/namespacebustub.html#a9ae3921998c2e878c715a3fc8d5b33df">WindowFunctionType</a> { <a class="code hl_enumvalue" href="../../de/dda/namespacebustub.html#a00cf530eb8a8c97e85e5030651b64fffa09deae1407c2b44a477757475a98a1d9">CountStarAggregate</a>, <a class="code hl_enumvalue" href="../../de/dda/namespacebustub.html#a00cf530eb8a8c97e85e5030651b64fffa8680b6686c29f5bfdad5ce95bcec6cc5">CountAggregate</a>, <a class="code hl_enumvalue" href="../../de/dda/namespacebustub.html#a00cf530eb8a8c97e85e5030651b64fffad1debde475bd10120fc7c9bec94c2b8e">SumAggregate</a>, <a class="code hl_enumvalue" href="../../de/dda/namespacebustub.html#a00cf530eb8a8c97e85e5030651b64fffae4fc8446a8df86a42a1efdc33d760e26">MinAggregate</a>, <a class="code hl_enumvalue" href="../../de/dda/namespacebustub.html#a00cf530eb8a8c97e85e5030651b64fffa4cca396904429e99393b99aa650d3456">MaxAggregate</a>, <a class="code hl_enumvalue" href="../../de/dda/namespacebustub.html#a9ae3921998c2e878c715a3fc8d5b33dfa021da1b20f73dc252361a54d80497ef3">Rank</a> };</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span> </div>
+<div class="foldopen" id="foldopen00033" data-start="{" data-end="};">
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno"><a class="line" href="../../da/da1/classbustub_1_1WindowFunctionPlanNode.html">   33</a></span><span class="keyword">class </span><a class="code hl_class" href="../../da/da1/classbustub_1_1WindowFunctionPlanNode.html">WindowFunctionPlanNode</a> : <span class="keyword">public</span> <a class="code hl_class" href="../../d6/d8c/classbustub_1_1AbstractPlanNode.html">AbstractPlanNode</a> {</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span> <span class="keyword">public</span>:</div>
+<div class="foldopen" id="foldopen00061" data-start="{" data-end="}">
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno"><a class="line" href="../../da/da1/classbustub_1_1WindowFunctionPlanNode.html#a3aa559fef147bf5509a02c4bf124fc10">   61</a></span>  <a class="code hl_function" href="../../da/da1/classbustub_1_1WindowFunctionPlanNode.html#a3aa559fef147bf5509a02c4bf124fc10">WindowFunctionPlanNode</a>(<a class="code hl_typedef" href="../../de/dda/namespacebustub.html#a55b0598dc53e990803d5fd093fc6a59f">SchemaRef</a> output_schema, <a class="code hl_typedef" href="../../de/dda/namespacebustub.html#a354095e050bd1915a499a31c062c7303">AbstractPlanNodeRef</a> child, std::vector&lt;uint32_t&gt; window_func_indexes,</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>                         std::vector&lt;AbstractExpressionRef&gt; columns,</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>                         std::vector&lt;std::vector&lt;AbstractExpressionRef&gt;&gt; partition_bys,</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>                         std::vector&lt;std::vector&lt;std::pair&lt;OrderByType, AbstractExpressionRef&gt;&gt;&gt; order_bys,</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>                         std::vector&lt;AbstractExpressionRef&gt; functions,</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>                         std::vector&lt;WindowFunctionType&gt; window_func_types)</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>      : <a class="code hl_class" href="../../d6/d8c/classbustub_1_1AbstractPlanNode.html">AbstractPlanNode</a>(<a class="code hl_namespace" href="../../d8/dcc/namespacestd.html">std</a>::move(output_schema), {std::move(child)}), <a class="code hl_variable" href="../../da/da1/classbustub_1_1WindowFunctionPlanNode.html#ad87b008cc3eb1bf33d21dd5a91aa418b">columns_</a>(std::move(columns)) {</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>    <span class="keywordflow">for</span> (uint32_t i = 0; i &lt; window_func_indexes.size(); i++) {</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>      <a class="code hl_variable" href="../../da/da1/classbustub_1_1WindowFunctionPlanNode.html#a05eda9614903f687ab6bb82570200cad">window_functions_</a>[window_func_indexes[i]] =</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>          WindowFunction{functions[i], window_func_types[i], partition_bys[i], order_bys[i]};</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>    }</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>  }</div>
+</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span> </div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno"><a class="line" href="../../da/da1/classbustub_1_1WindowFunctionPlanNode.html#a7a9cf533e6012dc9b7380e6c679bb1a9">   75</a></span>  <span class="keyword">auto</span> <a class="code hl_function" href="../../da/da1/classbustub_1_1WindowFunctionPlanNode.html#a7a9cf533e6012dc9b7380e6c679bb1a9">GetType</a>() const -&gt; <a class="code hl_enumeration" href="../../de/dda/namespacebustub.html#ad7d821859993f0ecb02cde3b7a9f2ccf">PlanType</a><span class="keyword"> override </span>{ <span class="keywordflow">return</span> <a class="code hl_enumvalue" href="../../de/dda/namespacebustub.html#ad7d821859993f0ecb02cde3b7a9f2ccfac89686a387d2b12b3c729ce35a0bcb5b">PlanType::Window</a>; }</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span> </div>
+<div class="foldopen" id="foldopen00078" data-start="{" data-end="}">
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno"><a class="line" href="../../da/da1/classbustub_1_1WindowFunctionPlanNode.html#a365174b2fff8ffd153562487234332c2">   78</a></span>  <span class="keyword">auto</span> <a class="code hl_function" href="../../da/da1/classbustub_1_1WindowFunctionPlanNode.html#a365174b2fff8ffd153562487234332c2">GetChildPlan</a>() const -&gt; <a class="code hl_typedef" href="../../de/dda/namespacebustub.html#a354095e050bd1915a499a31c062c7303">AbstractPlanNodeRef</a> {</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>    <a class="code hl_define" href="../../de/d3c/macros_8h.html#a76a969385a538dabceb09997d3c06c31">BUSTUB_ASSERT</a>(<a class="code hl_function" href="../../d6/d8c/classbustub_1_1AbstractPlanNode.html#ad2c3dd9b5718a2097bd37c9856a8441d">GetChildren</a>().size() == 1, <span class="stringliteral">&quot;Window Aggregation expected to only have one child.&quot;</span>);</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>    <span class="keywordflow">return</span> <a class="code hl_function" href="../../d6/d8c/classbustub_1_1AbstractPlanNode.html#a7d96d4434acb6bf335e08fc47eda5072">GetChildAt</a>(0);</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>  }</div>
+</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span> </div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>  <span class="keyword">static</span> <span class="keyword">auto</span> <a class="code hl_function" href="../../da/da1/classbustub_1_1WindowFunctionPlanNode.html#a9fda51aa573b28439114040ce317ce77">InferWindowSchema</a>(<span class="keyword">const</span> std::vector&lt;AbstractExpressionRef&gt; &amp;columns) -&gt; <a class="code hl_class" href="../../da/d36/classbustub_1_1Schema.html">Schema</a>;</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span> </div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno"><a class="line" href="../../da/da1/classbustub_1_1WindowFunctionPlanNode.html#a67d457477659dfa57de178a5fc51f6e1">   85</a></span>  <a class="code hl_function" href="../../da/da1/classbustub_1_1WindowFunctionPlanNode.html#a67d457477659dfa57de178a5fc51f6e1">BUSTUB_PLAN_NODE_CLONE_WITH_CHILDREN</a>(<a class="code hl_class" href="../../da/da1/classbustub_1_1WindowFunctionPlanNode.html">WindowFunctionPlanNode</a>);</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span> </div>
+<div class="foldopen" id="foldopen00087" data-start="{" data-end="};">
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno"><a class="line" href="../../df/d6e/structbustub_1_1WindowFunctionPlanNode_1_1WindowFunction.html">   87</a></span>  <span class="keyword">struct </span><a class="code hl_struct" href="../../df/d6e/structbustub_1_1WindowFunctionPlanNode_1_1WindowFunction.html">WindowFunction</a> {</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno"><a class="line" href="../../df/d6e/structbustub_1_1WindowFunctionPlanNode_1_1WindowFunction.html#a4df85ae1cbc784796a095ff55c24ca03">   88</a></span>    <a class="code hl_typedef" href="../../de/dda/namespacebustub.html#af0cfd2fbbabe21e0e95790ff99273105">AbstractExpressionRef</a> <a class="code hl_variable" href="../../df/d6e/structbustub_1_1WindowFunctionPlanNode_1_1WindowFunction.html#a4df85ae1cbc784796a095ff55c24ca03">function_</a>;</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno"><a class="line" href="../../df/d6e/structbustub_1_1WindowFunctionPlanNode_1_1WindowFunction.html#a81e5b49ea28adb6a681480ec88df42ed">   89</a></span>    <a class="code hl_enumeration" href="../../de/dda/namespacebustub.html#a9ae3921998c2e878c715a3fc8d5b33df">WindowFunctionType</a> <a class="code hl_variable" href="../../df/d6e/structbustub_1_1WindowFunctionPlanNode_1_1WindowFunction.html#a81e5b49ea28adb6a681480ec88df42ed">type_</a>;</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno"><a class="line" href="../../df/d6e/structbustub_1_1WindowFunctionPlanNode_1_1WindowFunction.html#ab1b24ce35514704a18755f8b4230befb">   90</a></span>    std::vector&lt;AbstractExpressionRef&gt; <a class="code hl_variable" href="../../df/d6e/structbustub_1_1WindowFunctionPlanNode_1_1WindowFunction.html#ab1b24ce35514704a18755f8b4230befb">partition_by_</a>;</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno"><a class="line" href="../../df/d6e/structbustub_1_1WindowFunctionPlanNode_1_1WindowFunction.html#af7ffbbc4a1ccc822a6ca67bd4268b340">   91</a></span>    std::vector&lt;std::pair&lt;OrderByType, AbstractExpressionRef&gt;&gt; <a class="code hl_variable" href="../../df/d6e/structbustub_1_1WindowFunctionPlanNode_1_1WindowFunction.html#af7ffbbc4a1ccc822a6ca67bd4268b340">order_by_</a>;</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>  };</div>
+</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span> </div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno"><a class="line" href="../../da/da1/classbustub_1_1WindowFunctionPlanNode.html#ad87b008cc3eb1bf33d21dd5a91aa418b">   95</a></span>  std::vector&lt;AbstractExpressionRef&gt; <a class="code hl_variable" href="../../da/da1/classbustub_1_1WindowFunctionPlanNode.html#ad87b008cc3eb1bf33d21dd5a91aa418b">columns_</a>;</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span> </div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno"><a class="line" href="../../da/da1/classbustub_1_1WindowFunctionPlanNode.html#a05eda9614903f687ab6bb82570200cad">   97</a></span>  std::unordered_map&lt;uint32_t, WindowFunction&gt; <a class="code hl_variable" href="../../da/da1/classbustub_1_1WindowFunctionPlanNode.html#a05eda9614903f687ab6bb82570200cad">window_functions_</a>;</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span> </div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span> <span class="keyword">protected</span>:</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>  <span class="keyword">auto</span> <a class="code hl_function" href="../../da/da1/classbustub_1_1WindowFunctionPlanNode.html#a1843f8008ae3a0881fcbd974009e2980">PlanNodeToString</a>() const -&gt; <a class="code hl_namespace" href="../../d8/dcc/namespacestd.html">std</a>::<span class="keywordtype">string</span> override;</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>};</div>
+</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span> </div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>}  <span class="comment">// namespace bustub</span></div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span> </div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>template &lt;&gt;</div>
+<div class="foldopen" id="foldopen00106" data-start="{" data-end="};">
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno"><a class="line" href="../../d4/dd6/structfmt_1_1formatter_3_01bustub_1_1WindowFunctionPlanNode_1_1WindowFunction_01_4.html">  106</a></span>struct fmt::formatter&lt;<a class="code hl_namespace" href="../../de/dda/namespacebustub.html">bustub</a>::WindowFunctionPlanNode::WindowFunction&gt; : formatter&lt;<a class="code hl_namespace" href="../../d8/dcc/namespacestd.html">std</a>::<span class="keywordtype">string</span>&gt; {</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>  <span class="keyword">template</span> &lt;<span class="keyword">typename</span> FormatContext&gt;</div>
+<div class="foldopen" id="foldopen00108" data-start="{" data-end="}">
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno"><a class="line" href="../../d4/dd6/structfmt_1_1formatter_3_01bustub_1_1WindowFunctionPlanNode_1_1WindowFunction_01_4.html#a0432e6e8786f1057640616731faffaa3">  108</a></span>  <span class="keyword">auto</span> <a class="code hl_function" href="../../d4/dd6/structfmt_1_1formatter_3_01bustub_1_1WindowFunctionPlanNode_1_1WindowFunction_01_4.html#a0432e6e8786f1057640616731faffaa3">format</a>(<span class="keyword">const</span> <a class="code hl_struct" href="../../df/d6e/structbustub_1_1WindowFunctionPlanNode_1_1WindowFunction.html">bustub::WindowFunctionPlanNode::WindowFunction</a> &amp;x, FormatContext &amp;ctx)<span class="keyword"> const </span>{</div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>    <span class="keywordflow">return</span> formatter&lt;std::string&gt;::format(fmt::format(<span class="stringliteral">&quot;{{ function_arg={}, type={}, partition_by={}, order_by={} }}&quot;</span>,</div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>                                                      x.<a class="code hl_variable" href="../../df/d6e/structbustub_1_1WindowFunctionPlanNode_1_1WindowFunction.html#a4df85ae1cbc784796a095ff55c24ca03">function_</a>, x.<a class="code hl_variable" href="../../df/d6e/structbustub_1_1WindowFunctionPlanNode_1_1WindowFunction.html#a81e5b49ea28adb6a681480ec88df42ed">type_</a>, x.<a class="code hl_variable" href="../../df/d6e/structbustub_1_1WindowFunctionPlanNode_1_1WindowFunction.html#ab1b24ce35514704a18755f8b4230befb">partition_by_</a>, x.<a class="code hl_variable" href="../../df/d6e/structbustub_1_1WindowFunctionPlanNode_1_1WindowFunction.html#af7ffbbc4a1ccc822a6ca67bd4268b340">order_by_</a>),</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>                                          ctx);</div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>  }</div>
+</div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>};</div>
+</div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span> </div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span><span class="keyword">template</span> &lt;&gt;</div>
+<div class="foldopen" id="foldopen00116" data-start="{" data-end="};">
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno"><a class="line" href="../../d5/df2/structfmt_1_1formatter_3_01bustub_1_1WindowFunctionType_01_4.html">  116</a></span><span class="keyword">struct </span>fmt::formatter&lt;<a class="code hl_namespace" href="../../de/dda/namespacebustub.html">bustub</a>::<a class="code hl_enumeration" href="../../de/dda/namespacebustub.html#a9ae3921998c2e878c715a3fc8d5b33df">WindowFunctionType</a>&gt; : formatter&lt;std::string&gt; {</div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>  <span class="keyword">template</span> &lt;<span class="keyword">typename</span> FormatContext&gt;</div>
+<div class="foldopen" id="foldopen00118" data-start="{" data-end="}">
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno"><a class="line" href="../../d5/df2/structfmt_1_1formatter_3_01bustub_1_1WindowFunctionType_01_4.html#a7adbb9e3b679e7e3547c3648eb6a0260">  118</a></span>  <span class="keyword">auto</span> <a class="code hl_function" href="../../d5/df2/structfmt_1_1formatter_3_01bustub_1_1WindowFunctionType_01_4.html#a7adbb9e3b679e7e3547c3648eb6a0260">format</a>(<a class="code hl_enumeration" href="../../de/dda/namespacebustub.html#a9ae3921998c2e878c715a3fc8d5b33df">bustub::WindowFunctionType</a> c, FormatContext &amp;ctx)<span class="keyword"> const </span>{</div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>    <span class="keyword">using </span><a class="code hl_enumeration" href="../../de/dda/namespacebustub.html#a9ae3921998c2e878c715a3fc8d5b33df">bustub::WindowFunctionType</a>;</div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>    std::string name = <span class="stringliteral">&quot;unknown&quot;</span>;</div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>    <span class="keywordflow">switch</span> (c) {</div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>      <span class="keywordflow">case</span> WindowFunctionType::CountStarAggregate:</div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>        name = <span class="stringliteral">&quot;count_star&quot;</span>;</div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>        <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>      <span class="keywordflow">case</span> WindowFunctionType::CountAggregate:</div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>        name = <span class="stringliteral">&quot;count&quot;</span>;</div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>        <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>      <span class="keywordflow">case</span> WindowFunctionType::SumAggregate:</div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>        name = <span class="stringliteral">&quot;sum&quot;</span>;</div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>        <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>      <span class="keywordflow">case</span> WindowFunctionType::MinAggregate:</div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>        name = <span class="stringliteral">&quot;min&quot;</span>;</div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>        <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span>      <span class="keywordflow">case</span> WindowFunctionType::MaxAggregate:</div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span>        name = <span class="stringliteral">&quot;max&quot;</span>;</div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span>        <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span>      <span class="keywordflow">case</span> WindowFunctionType::Rank:</div>
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span>        name = <span class="stringliteral">&quot;rank&quot;</span>;</div>
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span>        <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span>    }</div>
+<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span>    <span class="keywordflow">return</span> formatter&lt;std::string&gt;::format(name, ctx);</div>
+<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span>  }</div>
+</div>
+<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span>};</div>
+</div>
+<div class="ttc" id="aabstract__expression_8h_html"><div class="ttname"><a href="../../df/d86/abstract__expression_8h.html">abstract_expression.h</a></div></div>
+<div class="ttc" id="aabstract__plan_8h_html"><div class="ttname"><a href="../../d3/d94/abstract__plan_8h.html">abstract_plan.h</a></div></div>
+<div class="ttc" id="abound__order__by_8h_html"><div class="ttname"><a href="../../df/d21/bound__order__by_8h.html">bound_order_by.h</a></div></div>
+<div class="ttc" id="aclassbustub_1_1AbstractPlanNode_html"><div class="ttname"><a href="../../d6/d8c/classbustub_1_1AbstractPlanNode.html">bustub::AbstractPlanNode</a></div><div class="ttdef"><b>Definition</b> abstract_plan.h:65</div></div>
+<div class="ttc" id="aclassbustub_1_1AbstractPlanNode_html_a7d96d4434acb6bf335e08fc47eda5072"><div class="ttname"><a href="../../d6/d8c/classbustub_1_1AbstractPlanNode.html#a7d96d4434acb6bf335e08fc47eda5072">bustub::AbstractPlanNode::GetChildAt</a></div><div class="ttdeci">auto GetChildAt(uint32_t child_idx) const -&gt; AbstractPlanNodeRef</div><div class="ttdef"><b>Definition</b> abstract_plan.h:82</div></div>
+<div class="ttc" id="aclassbustub_1_1AbstractPlanNode_html_ad2c3dd9b5718a2097bd37c9856a8441d"><div class="ttname"><a href="../../d6/d8c/classbustub_1_1AbstractPlanNode.html#ad2c3dd9b5718a2097bd37c9856a8441d">bustub::AbstractPlanNode::GetChildren</a></div><div class="ttdeci">auto GetChildren() const -&gt; const std::vector&lt; AbstractPlanNodeRef &gt; &amp;</div><div class="ttdef"><b>Definition</b> abstract_plan.h:85</div></div>
+<div class="ttc" id="aclassbustub_1_1Schema_html"><div class="ttname"><a href="../../da/d36/classbustub_1_1Schema.html">bustub::Schema</a></div><div class="ttdef"><b>Definition</b> schema.h:29</div></div>
+<div class="ttc" id="aclassbustub_1_1WindowFunctionPlanNode_html"><div class="ttname"><a href="../../da/da1/classbustub_1_1WindowFunctionPlanNode.html">bustub::WindowFunctionPlanNode</a></div><div class="ttdef"><b>Definition</b> window_plan.h:33</div></div>
+<div class="ttc" id="aclassbustub_1_1WindowFunctionPlanNode_html_a05eda9614903f687ab6bb82570200cad"><div class="ttname"><a href="../../da/da1/classbustub_1_1WindowFunctionPlanNode.html#a05eda9614903f687ab6bb82570200cad">bustub::WindowFunctionPlanNode::window_functions_</a></div><div class="ttdeci">std::unordered_map&lt; uint32_t, WindowFunction &gt; window_functions_</div><div class="ttdef"><b>Definition</b> window_plan.h:97</div></div>
+<div class="ttc" id="aclassbustub_1_1WindowFunctionPlanNode_html_a1843f8008ae3a0881fcbd974009e2980"><div class="ttname"><a href="../../da/da1/classbustub_1_1WindowFunctionPlanNode.html#a1843f8008ae3a0881fcbd974009e2980">bustub::WindowFunctionPlanNode::PlanNodeToString</a></div><div class="ttdeci">auto PlanNodeToString() const -&gt; std::string override</div><div class="ttdef"><b>Definition</b> fmt_impl.cpp:41</div></div>
+<div class="ttc" id="aclassbustub_1_1WindowFunctionPlanNode_html_a365174b2fff8ffd153562487234332c2"><div class="ttname"><a href="../../da/da1/classbustub_1_1WindowFunctionPlanNode.html#a365174b2fff8ffd153562487234332c2">bustub::WindowFunctionPlanNode::GetChildPlan</a></div><div class="ttdeci">auto GetChildPlan() const -&gt; AbstractPlanNodeRef</div><div class="ttdef"><b>Definition</b> window_plan.h:78</div></div>
+<div class="ttc" id="aclassbustub_1_1WindowFunctionPlanNode_html_a3aa559fef147bf5509a02c4bf124fc10"><div class="ttname"><a href="../../da/da1/classbustub_1_1WindowFunctionPlanNode.html#a3aa559fef147bf5509a02c4bf124fc10">bustub::WindowFunctionPlanNode::WindowFunctionPlanNode</a></div><div class="ttdeci">WindowFunctionPlanNode(SchemaRef output_schema, AbstractPlanNodeRef child, std::vector&lt; uint32_t &gt; window_func_indexes, std::vector&lt; AbstractExpressionRef &gt; columns, std::vector&lt; std::vector&lt; AbstractExpressionRef &gt; &gt; partition_bys, std::vector&lt; std::vector&lt; std::pair&lt; OrderByType, AbstractExpressionRef &gt; &gt; &gt; order_bys, std::vector&lt; AbstractExpressionRef &gt; functions, std::vector&lt; WindowFunctionType &gt; window_func_types)</div><div class="ttdef"><b>Definition</b> window_plan.h:61</div></div>
+<div class="ttc" id="aclassbustub_1_1WindowFunctionPlanNode_html_a67d457477659dfa57de178a5fc51f6e1"><div class="ttname"><a href="../../da/da1/classbustub_1_1WindowFunctionPlanNode.html#a67d457477659dfa57de178a5fc51f6e1">bustub::WindowFunctionPlanNode::BUSTUB_PLAN_NODE_CLONE_WITH_CHILDREN</a></div><div class="ttdeci">BUSTUB_PLAN_NODE_CLONE_WITH_CHILDREN(WindowFunctionPlanNode)</div></div>
+<div class="ttc" id="aclassbustub_1_1WindowFunctionPlanNode_html_a7a9cf533e6012dc9b7380e6c679bb1a9"><div class="ttname"><a href="../../da/da1/classbustub_1_1WindowFunctionPlanNode.html#a7a9cf533e6012dc9b7380e6c679bb1a9">bustub::WindowFunctionPlanNode::GetType</a></div><div class="ttdeci">auto GetType() const -&gt; PlanType override</div><div class="ttdef"><b>Definition</b> window_plan.h:75</div></div>
+<div class="ttc" id="aclassbustub_1_1WindowFunctionPlanNode_html_a9fda51aa573b28439114040ce317ce77"><div class="ttname"><a href="../../da/da1/classbustub_1_1WindowFunctionPlanNode.html#a9fda51aa573b28439114040ce317ce77">bustub::WindowFunctionPlanNode::InferWindowSchema</a></div><div class="ttdeci">static auto InferWindowSchema(const std::vector&lt; AbstractExpressionRef &gt; &amp;columns) -&gt; Schema</div><div class="ttdef"><b>Definition</b> plan_node.cpp:83</div></div>
+<div class="ttc" id="aclassbustub_1_1WindowFunctionPlanNode_html_ad87b008cc3eb1bf33d21dd5a91aa418b"><div class="ttname"><a href="../../da/da1/classbustub_1_1WindowFunctionPlanNode.html#ad87b008cc3eb1bf33d21dd5a91aa418b">bustub::WindowFunctionPlanNode::columns_</a></div><div class="ttdeci">std::vector&lt; AbstractExpressionRef &gt; columns_</div><div class="ttdef"><b>Definition</b> window_plan.h:95</div></div>
+<div class="ttc" id="amacros_8h_html_a76a969385a538dabceb09997d3c06c31"><div class="ttname"><a href="../../de/d3c/macros_8h.html#a76a969385a538dabceb09997d3c06c31">BUSTUB_ASSERT</a></div><div class="ttdeci">#define BUSTUB_ASSERT(expr, message)</div><div class="ttdef"><b>Definition</b> macros.h:21</div></div>
+<div class="ttc" id="anamespacebustub_html"><div class="ttname"><a href="../../de/dda/namespacebustub.html">bustub</a></div><div class="ttdef"><b>Definition</b> bind_create.cpp:53</div></div>
+<div class="ttc" id="anamespacebustub_html_a00cf530eb8a8c97e85e5030651b64fffa09deae1407c2b44a477757475a98a1d9"><div class="ttname"><a href="../../de/dda/namespacebustub.html#a00cf530eb8a8c97e85e5030651b64fffa09deae1407c2b44a477757475a98a1d9">bustub::AggregationType::CountStarAggregate</a></div><div class="ttdeci">@ CountStarAggregate</div></div>
+<div class="ttc" id="anamespacebustub_html_a00cf530eb8a8c97e85e5030651b64fffa4cca396904429e99393b99aa650d3456"><div class="ttname"><a href="../../de/dda/namespacebustub.html#a00cf530eb8a8c97e85e5030651b64fffa4cca396904429e99393b99aa650d3456">bustub::AggregationType::MaxAggregate</a></div><div class="ttdeci">@ MaxAggregate</div></div>
+<div class="ttc" id="anamespacebustub_html_a00cf530eb8a8c97e85e5030651b64fffa8680b6686c29f5bfdad5ce95bcec6cc5"><div class="ttname"><a href="../../de/dda/namespacebustub.html#a00cf530eb8a8c97e85e5030651b64fffa8680b6686c29f5bfdad5ce95bcec6cc5">bustub::AggregationType::CountAggregate</a></div><div class="ttdeci">@ CountAggregate</div></div>
+<div class="ttc" id="anamespacebustub_html_a00cf530eb8a8c97e85e5030651b64fffad1debde475bd10120fc7c9bec94c2b8e"><div class="ttname"><a href="../../de/dda/namespacebustub.html#a00cf530eb8a8c97e85e5030651b64fffad1debde475bd10120fc7c9bec94c2b8e">bustub::AggregationType::SumAggregate</a></div><div class="ttdeci">@ SumAggregate</div></div>
+<div class="ttc" id="anamespacebustub_html_a00cf530eb8a8c97e85e5030651b64fffae4fc8446a8df86a42a1efdc33d760e26"><div class="ttname"><a href="../../de/dda/namespacebustub.html#a00cf530eb8a8c97e85e5030651b64fffae4fc8446a8df86a42a1efdc33d760e26">bustub::AggregationType::MinAggregate</a></div><div class="ttdeci">@ MinAggregate</div></div>
+<div class="ttc" id="anamespacebustub_html_a354095e050bd1915a499a31c062c7303"><div class="ttname"><a href="../../de/dda/namespacebustub.html#a354095e050bd1915a499a31c062c7303">bustub::AbstractPlanNodeRef</a></div><div class="ttdeci">std::shared_ptr&lt; const AbstractPlanNode &gt; AbstractPlanNodeRef</div><div class="ttdef"><b>Definition</b> abstract_plan.h:57</div></div>
+<div class="ttc" id="anamespacebustub_html_a55b0598dc53e990803d5fd093fc6a59f"><div class="ttname"><a href="../../de/dda/namespacebustub.html#a55b0598dc53e990803d5fd093fc6a59f">bustub::SchemaRef</a></div><div class="ttdeci">std::shared_ptr&lt; const Schema &gt; SchemaRef</div><div class="ttdef"><b>Definition</b> schema.h:27</div></div>
+<div class="ttc" id="anamespacebustub_html_a9ae3921998c2e878c715a3fc8d5b33df"><div class="ttname"><a href="../../de/dda/namespacebustub.html#a9ae3921998c2e878c715a3fc8d5b33df">bustub::WindowFunctionType</a></div><div class="ttdeci">WindowFunctionType</div><div class="ttdef"><b>Definition</b> window_plan.h:31</div></div>
+<div class="ttc" id="anamespacebustub_html_a9ae3921998c2e878c715a3fc8d5b33dfa021da1b20f73dc252361a54d80497ef3"><div class="ttname"><a href="../../de/dda/namespacebustub.html#a9ae3921998c2e878c715a3fc8d5b33dfa021da1b20f73dc252361a54d80497ef3">bustub::WindowFunctionType::Rank</a></div><div class="ttdeci">@ Rank</div></div>
+<div class="ttc" id="anamespacebustub_html_ad7d821859993f0ecb02cde3b7a9f2ccf"><div class="ttname"><a href="../../de/dda/namespacebustub.html#ad7d821859993f0ecb02cde3b7a9f2ccf">bustub::PlanType</a></div><div class="ttdeci">PlanType</div><div class="ttdef"><b>Definition</b> abstract_plan.h:34</div></div>
+<div class="ttc" id="anamespacebustub_html_ad7d821859993f0ecb02cde3b7a9f2ccfac89686a387d2b12b3c729ce35a0bcb5b"><div class="ttname"><a href="../../de/dda/namespacebustub.html#ad7d821859993f0ecb02cde3b7a9f2ccfac89686a387d2b12b3c729ce35a0bcb5b">bustub::PlanType::Window</a></div><div class="ttdeci">@ Window</div></div>
+<div class="ttc" id="anamespacebustub_html_af0cfd2fbbabe21e0e95790ff99273105"><div class="ttname"><a href="../../de/dda/namespacebustub.html#af0cfd2fbbabe21e0e95790ff99273105">bustub::AbstractExpressionRef</a></div><div class="ttdeci">std::shared_ptr&lt; AbstractExpression &gt; AbstractExpressionRef</div><div class="ttdef"><b>Definition</b> abstract_expression.h:35</div></div>
+<div class="ttc" id="anamespacestd_html"><div class="ttname"><a href="../../d8/dcc/namespacestd.html">std</a></div><div class="ttdef"><b>Definition</b> rid.h:70</div></div>
+<div class="ttc" id="astructbustub_1_1WindowFunctionPlanNode_1_1WindowFunction_html"><div class="ttname"><a href="../../df/d6e/structbustub_1_1WindowFunctionPlanNode_1_1WindowFunction.html">bustub::WindowFunctionPlanNode::WindowFunction</a></div><div class="ttdef"><b>Definition</b> window_plan.h:87</div></div>
+<div class="ttc" id="astructbustub_1_1WindowFunctionPlanNode_1_1WindowFunction_html_a4df85ae1cbc784796a095ff55c24ca03"><div class="ttname"><a href="../../df/d6e/structbustub_1_1WindowFunctionPlanNode_1_1WindowFunction.html#a4df85ae1cbc784796a095ff55c24ca03">bustub::WindowFunctionPlanNode::WindowFunction::function_</a></div><div class="ttdeci">AbstractExpressionRef function_</div><div class="ttdef"><b>Definition</b> window_plan.h:88</div></div>
+<div class="ttc" id="astructbustub_1_1WindowFunctionPlanNode_1_1WindowFunction_html_a81e5b49ea28adb6a681480ec88df42ed"><div class="ttname"><a href="../../df/d6e/structbustub_1_1WindowFunctionPlanNode_1_1WindowFunction.html#a81e5b49ea28adb6a681480ec88df42ed">bustub::WindowFunctionPlanNode::WindowFunction::type_</a></div><div class="ttdeci">WindowFunctionType type_</div><div class="ttdef"><b>Definition</b> window_plan.h:89</div></div>
+<div class="ttc" id="astructbustub_1_1WindowFunctionPlanNode_1_1WindowFunction_html_ab1b24ce35514704a18755f8b4230befb"><div class="ttname"><a href="../../df/d6e/structbustub_1_1WindowFunctionPlanNode_1_1WindowFunction.html#ab1b24ce35514704a18755f8b4230befb">bustub::WindowFunctionPlanNode::WindowFunction::partition_by_</a></div><div class="ttdeci">std::vector&lt; AbstractExpressionRef &gt; partition_by_</div><div class="ttdef"><b>Definition</b> window_plan.h:90</div></div>
+<div class="ttc" id="astructbustub_1_1WindowFunctionPlanNode_1_1WindowFunction_html_af7ffbbc4a1ccc822a6ca67bd4268b340"><div class="ttname"><a href="../../df/d6e/structbustub_1_1WindowFunctionPlanNode_1_1WindowFunction.html#af7ffbbc4a1ccc822a6ca67bd4268b340">bustub::WindowFunctionPlanNode::WindowFunction::order_by_</a></div><div class="ttdeci">std::vector&lt; std::pair&lt; OrderByType, AbstractExpressionRef &gt; &gt; order_by_</div><div class="ttdef"><b>Definition</b> window_plan.h:91</div></div>
+<div class="ttc" id="astructfmt_1_1formatter_3_01bustub_1_1WindowFunctionPlanNode_1_1WindowFunction_01_4_html_a0432e6e8786f1057640616731faffaa3"><div class="ttname"><a href="../../d4/dd6/structfmt_1_1formatter_3_01bustub_1_1WindowFunctionPlanNode_1_1WindowFunction_01_4.html#a0432e6e8786f1057640616731faffaa3">fmt::formatter&lt; bustub::WindowFunctionPlanNode::WindowFunction &gt;::format</a></div><div class="ttdeci">auto format(const bustub::WindowFunctionPlanNode::WindowFunction &amp;x, FormatContext &amp;ctx) const</div><div class="ttdef"><b>Definition</b> window_plan.h:108</div></div>
+<div class="ttc" id="astructfmt_1_1formatter_3_01bustub_1_1WindowFunctionType_01_4_html_a7adbb9e3b679e7e3547c3648eb6a0260"><div class="ttname"><a href="../../d5/df2/structfmt_1_1formatter_3_01bustub_1_1WindowFunctionType_01_4.html#a7adbb9e3b679e7e3547c3648eb6a0260">fmt::formatter&lt; bustub::WindowFunctionType &gt;::format</a></div><div class="ttdeci">auto format(bustub::WindowFunctionType c, FormatContext &amp;ctx) const</div><div class="ttdef"><b>Definition</b> window_plan.h:118</div></div>
+<div class="ttc" id="atuple_8h_html"><div class="ttname"><a href="../../d2/d20/tuple_8h.html">tuple.h</a></div></div>
+<div class="ttc" id="autil_2hash__util_8h_html"><div class="ttname"><a href="../../db/dbe/util_2hash__util_8h.html">hash_util.h</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
+</small></address>
+</body>
+</html>

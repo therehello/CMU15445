@@ -1,0 +1,184 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>数据库系统 CMU15-445/645: src/include/storage/page/hash_table_bucket_page.h 源文件</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/searchdata.js"></script>
+<script type="text/javascript" src="../../search/search.js"></script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">数据库系统 CMU15-445/645<span id="projectnumber">&#160;1.0.0</span>
+   </div>
+   <div id="projectbrief">CMU15-445/645 是基于现代 C++ 开发的支持并发操作的简单 SQL 操作的单机数据库</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.9.8 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "../../search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('../../',true,false,'search.php','搜索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function() { init_codefold(1); });
+/* @license-end */
+</script>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="../../dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="../../dir_b0856f6b0d80ccb263b2f415c91f9e17.html">include</a></li><li class="navelem"><a class="el" href="../../dir_0a30ac4aed38d1936bbd6d702d96fbd8.html">storage</a></li><li class="navelem"><a class="el" href="../../dir_aa62e7e4f393bdf63f8ca74ad42976cf.html">page</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle"><div class="title">hash_table_bucket_page.h</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="../../d2/d8a/hash__table__bucket__page_8h.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">//===----------------------------------------------------------------------===//</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="comment">//</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="comment">//                         BusTub</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment">//</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="comment">// hash_table_bucket_page.h</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="comment">//</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="comment">// Identification: src/include/storage/page/hash_table_bucket_page.h</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="comment">//</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="comment">// Copyright (c) 2015-2021, Carnegie Mellon University Database Group</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="comment">//</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="comment">//===----------------------------------------------------------------------===//</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#pragma once</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="preprocessor">#include &lt;utility&gt;</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="preprocessor">#include &lt;vector&gt;</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span> </div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="preprocessor">#include &quot;<a class="code" href="../../db/d16/config_8h.html">common/config.h</a>&quot;</span></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="preprocessor">#include &quot;<a class="code" href="../../d5/d78/int__comparator_8h.html">storage/index/int_comparator.h</a>&quot;</span></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="preprocessor">#include &quot;<a class="code" href="../../d6/d3b/hash__table__page__defs_8h.html">storage/page/hash_table_page_defs.h</a>&quot;</span></div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> </div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="keyword">namespace </span><a class="code hl_namespace" href="../../de/dda/namespacebustub.html">bustub</a> {</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> KeyType, <span class="keyword">typename</span> ValueType, <span class="keyword">typename</span> KeyComparator&gt;</div>
+<div class="foldopen" id="foldopen00038" data-start="{" data-end="};">
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno"><a class="line" href="../../d3/d9b/classbustub_1_1HashTableBucketPage.html">   38</a></span><span class="keyword">class </span><a class="code hl_class" href="../../d3/d9b/classbustub_1_1HashTableBucketPage.html">HashTableBucketPage</a> {</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span> <span class="keyword">public</span>:</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>  <span class="comment">// Delete all constructor / destructor to ensure memory safety</span></div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno"><a class="line" href="../../d3/d9b/classbustub_1_1HashTableBucketPage.html#a577ff32109e3f194ced7dd86f1ded714">   41</a></span>  <a class="code hl_function" href="../../d3/d9b/classbustub_1_1HashTableBucketPage.html#a577ff32109e3f194ced7dd86f1ded714">HashTableBucketPage</a>() = <span class="keyword">delete</span>;</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span> </div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno"><a class="line" href="../../d3/d9b/classbustub_1_1HashTableBucketPage.html#a58740775ce68a85cbe956d27ca4d7c1f">   48</a></span>  <span class="keyword">auto</span> <a class="code hl_function" href="../../d3/d9b/classbustub_1_1HashTableBucketPage.html#a58740775ce68a85cbe956d27ca4d7c1f">GetValue</a>(KeyType key, KeyComparator cmp, std::vector&lt;ValueType&gt; *result) -&gt; bool;</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span> </div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno"><a class="line" href="../../d3/d9b/classbustub_1_1HashTableBucketPage.html#af0c12b1b41092c7b48539ea2b1289e66">   58</a></span>  <span class="keyword">auto</span> <a class="code hl_function" href="../../d3/d9b/classbustub_1_1HashTableBucketPage.html#af0c12b1b41092c7b48539ea2b1289e66">Insert</a>(KeyType key, ValueType value, KeyComparator cmp) -&gt; bool;</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span> </div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno"><a class="line" href="../../d3/d9b/classbustub_1_1HashTableBucketPage.html#a3f5c4b758ee0ffa141c4e27896266292">   65</a></span>  <span class="keyword">auto</span> <a class="code hl_function" href="../../d3/d9b/classbustub_1_1HashTableBucketPage.html#a3f5c4b758ee0ffa141c4e27896266292">Remove</a>(KeyType key, ValueType value, KeyComparator cmp) -&gt; bool;</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span> </div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno"><a class="line" href="../../d3/d9b/classbustub_1_1HashTableBucketPage.html#aef065d0825121f78a556397649ecf8f6">   73</a></span>  <span class="keyword">auto</span> <a class="code hl_function" href="../../d3/d9b/classbustub_1_1HashTableBucketPage.html#aef065d0825121f78a556397649ecf8f6">KeyAt</a>(uint32_t bucket_idx) <span class="keyword">const</span> -&gt; KeyType;</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span> </div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno"><a class="line" href="../../d3/d9b/classbustub_1_1HashTableBucketPage.html#a97fdb035ea0c76d2b785e454eb79760a">   81</a></span>  <span class="keyword">auto</span> <a class="code hl_function" href="../../d3/d9b/classbustub_1_1HashTableBucketPage.html#a97fdb035ea0c76d2b785e454eb79760a">ValueAt</a>(uint32_t bucket_idx) <span class="keyword">const</span> -&gt; ValueType;</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span> </div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno"><a class="line" href="../../d3/d9b/classbustub_1_1HashTableBucketPage.html#aa84685c50c65907b1ecb0a627149b347">   86</a></span>  <span class="keywordtype">void</span> <a class="code hl_function" href="../../d3/d9b/classbustub_1_1HashTableBucketPage.html#aa84685c50c65907b1ecb0a627149b347">RemoveAt</a>(uint32_t bucket_idx);</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span> </div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno"><a class="line" href="../../d3/d9b/classbustub_1_1HashTableBucketPage.html#ad4d89a3a89f2a51c1520ea0ad0e9e75b">   94</a></span>  <span class="keyword">auto</span> <a class="code hl_function" href="../../d3/d9b/classbustub_1_1HashTableBucketPage.html#ad4d89a3a89f2a51c1520ea0ad0e9e75b">IsOccupied</a>(uint32_t bucket_idx) <span class="keyword">const</span> -&gt; bool;</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span> </div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno"><a class="line" href="../../d3/d9b/classbustub_1_1HashTableBucketPage.html#a4207fa9f15422fe24c97bf36e708172a">  102</a></span>  <span class="keywordtype">void</span> <a class="code hl_function" href="../../d3/d9b/classbustub_1_1HashTableBucketPage.html#a4207fa9f15422fe24c97bf36e708172a">SetOccupied</a>(uint32_t bucket_idx);</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span> </div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno"><a class="line" href="../../d3/d9b/classbustub_1_1HashTableBucketPage.html#a3fc57e1d8e9ab8c9d8a98926bcb668ff">  110</a></span>  <span class="keyword">auto</span> <a class="code hl_function" href="../../d3/d9b/classbustub_1_1HashTableBucketPage.html#a3fc57e1d8e9ab8c9d8a98926bcb668ff">IsReadable</a>(uint32_t bucket_idx) <span class="keyword">const</span> -&gt; bool;</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span> </div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno"><a class="line" href="../../d3/d9b/classbustub_1_1HashTableBucketPage.html#ade46b57720d5cc3b41924434b9cff910">  118</a></span>  <span class="keywordtype">void</span> <a class="code hl_function" href="../../d3/d9b/classbustub_1_1HashTableBucketPage.html#ade46b57720d5cc3b41924434b9cff910">SetReadable</a>(uint32_t bucket_idx);</div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span> </div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno"><a class="line" href="../../d3/d9b/classbustub_1_1HashTableBucketPage.html#a632e4deaa8a8a56bcd5320382686b24c">  123</a></span>  <span class="keyword">auto</span> <a class="code hl_function" href="../../d3/d9b/classbustub_1_1HashTableBucketPage.html#a632e4deaa8a8a56bcd5320382686b24c">NumReadable</a>() -&gt; uint32_t;</div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span> </div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno"><a class="line" href="../../d3/d9b/classbustub_1_1HashTableBucketPage.html#a2012e2d5665383b7528ce8618747a81f">  128</a></span>  <span class="keyword">auto</span> <a class="code hl_function" href="../../d3/d9b/classbustub_1_1HashTableBucketPage.html#a2012e2d5665383b7528ce8618747a81f">IsFull</a>() -&gt; bool;</div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span> </div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno"><a class="line" href="../../d3/d9b/classbustub_1_1HashTableBucketPage.html#a9129f24305558c41a1618fd0ec256341">  133</a></span>  <span class="keyword">auto</span> <a class="code hl_function" href="../../d3/d9b/classbustub_1_1HashTableBucketPage.html#a9129f24305558c41a1618fd0ec256341">IsEmpty</a>() -&gt; bool;</div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span> </div>
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno"><a class="line" href="../../d3/d9b/classbustub_1_1HashTableBucketPage.html#a8aa61d6ccb313bf5d7de0cb68b813d01">  138</a></span>  <span class="keywordtype">void</span> <a class="code hl_function" href="../../d3/d9b/classbustub_1_1HashTableBucketPage.html#a8aa61d6ccb313bf5d7de0cb68b813d01">PrintBucket</a>();</div>
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span> </div>
+<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span> <span class="keyword">private</span>:</div>
+<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span>  <span class="comment">//  For more on BUCKET_ARRAY_SIZE see storage/page/hash_table_page_defs.h</span></div>
+<div class="line"><a id="l00142" name="l00142"></a><span class="lineno"><a class="line" href="../../d3/d9b/classbustub_1_1HashTableBucketPage.html#a849891449fac72b99a4a44ccc4cb9c3b">  142</a></span>  <span class="keywordtype">char</span> <a class="code hl_variable" href="../../d3/d9b/classbustub_1_1HashTableBucketPage.html#a849891449fac72b99a4a44ccc4cb9c3b">occupied_</a>[(<a class="code hl_define" href="../../d6/d3b/hash__table__page__defs_8h.html#a621d10a678ff99f5854a9833fb02e610">BUCKET_ARRAY_SIZE</a> - 1) / 8 + 1];</div>
+<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span>  <span class="comment">// 0 if tombstone/brand new (never occupied), 1 otherwise.</span></div>
+<div class="line"><a id="l00144" name="l00144"></a><span class="lineno"><a class="line" href="../../d3/d9b/classbustub_1_1HashTableBucketPage.html#afddb99bb0519012abdf77b46a4c92b0d">  144</a></span>  <span class="keywordtype">char</span> <a class="code hl_variable" href="../../d3/d9b/classbustub_1_1HashTableBucketPage.html#afddb99bb0519012abdf77b46a4c92b0d">readable_</a>[(<a class="code hl_define" href="../../d6/d3b/hash__table__page__defs_8h.html#a621d10a678ff99f5854a9833fb02e610">BUCKET_ARRAY_SIZE</a> - 1) / 8 + 1];</div>
+<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span>  <span class="comment">// Flexible array member for page data.</span></div>
+<div class="line"><a id="l00146" name="l00146"></a><span class="lineno"><a class="line" href="../../d3/d9b/classbustub_1_1HashTableBucketPage.html#ae48d1837b0246b168954dda06bc89e3c">  146</a></span>  <a class="code hl_define" href="../../d1/d36/b__plus__tree__page_8h.html#a139704601c819af8cdce06a6c1080a85">MappingType</a> <a class="code hl_variable" href="../../d3/d9b/classbustub_1_1HashTableBucketPage.html#ae48d1837b0246b168954dda06bc89e3c">array_</a>[1];</div>
+<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span>};</div>
+</div>
+<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span> </div>
+<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span>}  <span class="comment">// namespace bustub</span></div>
+<div class="ttc" id="ab__plus__tree__page_8h_html_a139704601c819af8cdce06a6c1080a85"><div class="ttname"><a href="../../d1/d36/b__plus__tree__page_8h.html#a139704601c819af8cdce06a6c1080a85">MappingType</a></div><div class="ttdeci">#define MappingType</div><div class="ttdef"><b>Definition</b> b_plus_tree_page.h:23</div></div>
+<div class="ttc" id="aclassbustub_1_1HashTableBucketPage_html"><div class="ttname"><a href="../../d3/d9b/classbustub_1_1HashTableBucketPage.html">bustub::HashTableBucketPage</a></div><div class="ttdef"><b>Definition</b> hash_table_bucket_page.h:38</div></div>
+<div class="ttc" id="aclassbustub_1_1HashTableBucketPage_html_a2012e2d5665383b7528ce8618747a81f"><div class="ttname"><a href="../../d3/d9b/classbustub_1_1HashTableBucketPage.html#a2012e2d5665383b7528ce8618747a81f">bustub::HashTableBucketPage::IsFull</a></div><div class="ttdeci">auto IsFull() -&gt; bool</div></div>
+<div class="ttc" id="aclassbustub_1_1HashTableBucketPage_html_a3f5c4b758ee0ffa141c4e27896266292"><div class="ttname"><a href="../../d3/d9b/classbustub_1_1HashTableBucketPage.html#a3f5c4b758ee0ffa141c4e27896266292">bustub::HashTableBucketPage::Remove</a></div><div class="ttdeci">auto Remove(KeyType key, ValueType value, KeyComparator cmp) -&gt; bool</div></div>
+<div class="ttc" id="aclassbustub_1_1HashTableBucketPage_html_a3fc57e1d8e9ab8c9d8a98926bcb668ff"><div class="ttname"><a href="../../d3/d9b/classbustub_1_1HashTableBucketPage.html#a3fc57e1d8e9ab8c9d8a98926bcb668ff">bustub::HashTableBucketPage::IsReadable</a></div><div class="ttdeci">auto IsReadable(uint32_t bucket_idx) const -&gt; bool</div></div>
+<div class="ttc" id="aclassbustub_1_1HashTableBucketPage_html_a4207fa9f15422fe24c97bf36e708172a"><div class="ttname"><a href="../../d3/d9b/classbustub_1_1HashTableBucketPage.html#a4207fa9f15422fe24c97bf36e708172a">bustub::HashTableBucketPage::SetOccupied</a></div><div class="ttdeci">void SetOccupied(uint32_t bucket_idx)</div></div>
+<div class="ttc" id="aclassbustub_1_1HashTableBucketPage_html_a577ff32109e3f194ced7dd86f1ded714"><div class="ttname"><a href="../../d3/d9b/classbustub_1_1HashTableBucketPage.html#a577ff32109e3f194ced7dd86f1ded714">bustub::HashTableBucketPage::HashTableBucketPage</a></div><div class="ttdeci">HashTableBucketPage()=delete</div></div>
+<div class="ttc" id="aclassbustub_1_1HashTableBucketPage_html_a58740775ce68a85cbe956d27ca4d7c1f"><div class="ttname"><a href="../../d3/d9b/classbustub_1_1HashTableBucketPage.html#a58740775ce68a85cbe956d27ca4d7c1f">bustub::HashTableBucketPage::GetValue</a></div><div class="ttdeci">auto GetValue(KeyType key, KeyComparator cmp, std::vector&lt; ValueType &gt; *result) -&gt; bool</div></div>
+<div class="ttc" id="aclassbustub_1_1HashTableBucketPage_html_a632e4deaa8a8a56bcd5320382686b24c"><div class="ttname"><a href="../../d3/d9b/classbustub_1_1HashTableBucketPage.html#a632e4deaa8a8a56bcd5320382686b24c">bustub::HashTableBucketPage::NumReadable</a></div><div class="ttdeci">auto NumReadable() -&gt; uint32_t</div></div>
+<div class="ttc" id="aclassbustub_1_1HashTableBucketPage_html_a849891449fac72b99a4a44ccc4cb9c3b"><div class="ttname"><a href="../../d3/d9b/classbustub_1_1HashTableBucketPage.html#a849891449fac72b99a4a44ccc4cb9c3b">bustub::HashTableBucketPage::occupied_</a></div><div class="ttdeci">char occupied_[(BUCKET_ARRAY_SIZE - 1)/8+1]</div><div class="ttdef"><b>Definition</b> hash_table_bucket_page.h:142</div></div>
+<div class="ttc" id="aclassbustub_1_1HashTableBucketPage_html_a8aa61d6ccb313bf5d7de0cb68b813d01"><div class="ttname"><a href="../../d3/d9b/classbustub_1_1HashTableBucketPage.html#a8aa61d6ccb313bf5d7de0cb68b813d01">bustub::HashTableBucketPage::PrintBucket</a></div><div class="ttdeci">void PrintBucket()</div></div>
+<div class="ttc" id="aclassbustub_1_1HashTableBucketPage_html_a9129f24305558c41a1618fd0ec256341"><div class="ttname"><a href="../../d3/d9b/classbustub_1_1HashTableBucketPage.html#a9129f24305558c41a1618fd0ec256341">bustub::HashTableBucketPage::IsEmpty</a></div><div class="ttdeci">auto IsEmpty() -&gt; bool</div></div>
+<div class="ttc" id="aclassbustub_1_1HashTableBucketPage_html_a97fdb035ea0c76d2b785e454eb79760a"><div class="ttname"><a href="../../d3/d9b/classbustub_1_1HashTableBucketPage.html#a97fdb035ea0c76d2b785e454eb79760a">bustub::HashTableBucketPage::ValueAt</a></div><div class="ttdeci">auto ValueAt(uint32_t bucket_idx) const -&gt; ValueType</div></div>
+<div class="ttc" id="aclassbustub_1_1HashTableBucketPage_html_aa84685c50c65907b1ecb0a627149b347"><div class="ttname"><a href="../../d3/d9b/classbustub_1_1HashTableBucketPage.html#aa84685c50c65907b1ecb0a627149b347">bustub::HashTableBucketPage::RemoveAt</a></div><div class="ttdeci">void RemoveAt(uint32_t bucket_idx)</div></div>
+<div class="ttc" id="aclassbustub_1_1HashTableBucketPage_html_ad4d89a3a89f2a51c1520ea0ad0e9e75b"><div class="ttname"><a href="../../d3/d9b/classbustub_1_1HashTableBucketPage.html#ad4d89a3a89f2a51c1520ea0ad0e9e75b">bustub::HashTableBucketPage::IsOccupied</a></div><div class="ttdeci">auto IsOccupied(uint32_t bucket_idx) const -&gt; bool</div></div>
+<div class="ttc" id="aclassbustub_1_1HashTableBucketPage_html_ade46b57720d5cc3b41924434b9cff910"><div class="ttname"><a href="../../d3/d9b/classbustub_1_1HashTableBucketPage.html#ade46b57720d5cc3b41924434b9cff910">bustub::HashTableBucketPage::SetReadable</a></div><div class="ttdeci">void SetReadable(uint32_t bucket_idx)</div></div>
+<div class="ttc" id="aclassbustub_1_1HashTableBucketPage_html_ae48d1837b0246b168954dda06bc89e3c"><div class="ttname"><a href="../../d3/d9b/classbustub_1_1HashTableBucketPage.html#ae48d1837b0246b168954dda06bc89e3c">bustub::HashTableBucketPage::array_</a></div><div class="ttdeci">MappingType array_[1]</div><div class="ttdef"><b>Definition</b> hash_table_bucket_page.h:146</div></div>
+<div class="ttc" id="aclassbustub_1_1HashTableBucketPage_html_aef065d0825121f78a556397649ecf8f6"><div class="ttname"><a href="../../d3/d9b/classbustub_1_1HashTableBucketPage.html#aef065d0825121f78a556397649ecf8f6">bustub::HashTableBucketPage::KeyAt</a></div><div class="ttdeci">auto KeyAt(uint32_t bucket_idx) const -&gt; KeyType</div></div>
+<div class="ttc" id="aclassbustub_1_1HashTableBucketPage_html_af0c12b1b41092c7b48539ea2b1289e66"><div class="ttname"><a href="../../d3/d9b/classbustub_1_1HashTableBucketPage.html#af0c12b1b41092c7b48539ea2b1289e66">bustub::HashTableBucketPage::Insert</a></div><div class="ttdeci">auto Insert(KeyType key, ValueType value, KeyComparator cmp) -&gt; bool</div></div>
+<div class="ttc" id="aclassbustub_1_1HashTableBucketPage_html_afddb99bb0519012abdf77b46a4c92b0d"><div class="ttname"><a href="../../d3/d9b/classbustub_1_1HashTableBucketPage.html#afddb99bb0519012abdf77b46a4c92b0d">bustub::HashTableBucketPage::readable_</a></div><div class="ttdeci">char readable_[(BUCKET_ARRAY_SIZE - 1)/8+1]</div><div class="ttdef"><b>Definition</b> hash_table_bucket_page.h:144</div></div>
+<div class="ttc" id="aconfig_8h_html"><div class="ttname"><a href="../../db/d16/config_8h.html">config.h</a></div></div>
+<div class="ttc" id="ahash__table__page__defs_8h_html"><div class="ttname"><a href="../../d6/d3b/hash__table__page__defs_8h.html">hash_table_page_defs.h</a></div></div>
+<div class="ttc" id="ahash__table__page__defs_8h_html_a621d10a678ff99f5854a9833fb02e610"><div class="ttname"><a href="../../d6/d3b/hash__table__page__defs_8h.html#a621d10a678ff99f5854a9833fb02e610">BUCKET_ARRAY_SIZE</a></div><div class="ttdeci">#define BUCKET_ARRAY_SIZE</div><div class="ttdef"><b>Definition</b> hash_table_page_defs.h:43</div></div>
+<div class="ttc" id="aint__comparator_8h_html"><div class="ttname"><a href="../../d5/d78/int__comparator_8h.html">int_comparator.h</a></div></div>
+<div class="ttc" id="anamespacebustub_html"><div class="ttname"><a href="../../de/dda/namespacebustub.html">bustub</a></div><div class="ttdef"><b>Definition</b> bind_create.cpp:53</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
+</small></address>
+</body>
+</html>

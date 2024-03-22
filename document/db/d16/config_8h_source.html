@@ -1,0 +1,163 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>数据库系统 CMU15-445/645: src/include/common/config.h 源文件</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/searchdata.js"></script>
+<script type="text/javascript" src="../../search/search.js"></script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">数据库系统 CMU15-445/645<span id="projectnumber">&#160;1.0.0</span>
+   </div>
+   <div id="projectbrief">CMU15-445/645 是基于现代 C++ 开发的支持并发操作的简单 SQL 操作的单机数据库</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.9.8 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "../../search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('../../',true,false,'search.php','搜索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function() { init_codefold(1); });
+/* @license-end */
+</script>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="../../dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="../../dir_b0856f6b0d80ccb263b2f415c91f9e17.html">include</a></li><li class="navelem"><a class="el" href="../../dir_e73942be4139c49ff686e607a1824de2.html">common</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle"><div class="title">config.h</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="../../db/d16/config_8h.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">//===----------------------------------------------------------------------===//</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="comment">//</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="comment">//                         BusTub</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment">//</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="comment">// config.h</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="comment">//</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="comment">// Identification: src/include/common/config.h</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="comment">//</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="comment">// Copyright (c) 2015-2019, Carnegie Mellon University Database Group</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="comment">//</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="comment">//===----------------------------------------------------------------------===//</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#pragma once</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="preprocessor">#include &lt;atomic&gt;</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="preprocessor">#include &lt;chrono&gt;</span>  <span class="comment">// NOLINT</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="preprocessor">#include &lt;cstdint&gt;</span></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno"><a class="line" href="../../db/d16/config_8h.html#a2e098be5951a7171f36450d66ac54570">   19</a></span><span class="preprocessor">#define DISABLE_LOCK_MANAGER</span></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno"><a class="line" href="../../db/d16/config_8h.html#a27255e5cfa16e8ee64790e4efc44c25b">   20</a></span><span class="preprocessor">#define DISABLE_CHECKPOINT_MANAGER</span></div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> </div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="keyword">namespace </span><a class="code hl_namespace" href="../../de/dda/namespacebustub.html">bustub</a> {</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span> </div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="keyword">extern</span> std::chrono::milliseconds <a class="code hl_variable" href="../../de/dda/namespacebustub.html#a3e991b8b17817406c60408a91065c04d">cycle_detection_interval</a>;</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span> </div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="keyword">extern</span> std::atomic&lt;bool&gt; <a class="code hl_variable" href="../../de/dda/namespacebustub.html#ac3aec770af444ee5fec39d7b6362fe57">enable_logging</a>;</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span> </div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span><span class="keyword">extern</span> std::chrono::duration&lt;int64_t&gt; <a class="code hl_variable" href="../../de/dda/namespacebustub.html#af3a04e89f498bec1b21073c7f2760221">log_timeout</a>;</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span> </div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno"><a class="line" href="../../de/dda/namespacebustub.html#ae9dd773eae7950183ebc60def880f499">   33</a></span><span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="keywordtype">int</span> <a class="code hl_variable" href="../../de/dda/namespacebustub.html#ae9dd773eae7950183ebc60def880f499">INVALID_PAGE_ID</a> = -1;                                           <span class="comment">// invalid page id</span></div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno"><a class="line" href="../../de/dda/namespacebustub.html#a8da1cfb31d4478719e87214c5789cf01">   34</a></span><span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="keywordtype">int</span> <a class="code hl_variable" href="../../de/dda/namespacebustub.html#a8da1cfb31d4478719e87214c5789cf01">INVALID_TXN_ID</a> = -1;                                            <span class="comment">// invalid transaction id</span></div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno"><a class="line" href="../../de/dda/namespacebustub.html#a66748b38863ce1e7a8d7fcd374904def">   35</a></span><span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="keywordtype">int</span> <a class="code hl_variable" href="../../de/dda/namespacebustub.html#a66748b38863ce1e7a8d7fcd374904def">INVALID_LSN</a> = -1;                                               <span class="comment">// invalid log sequence number</span></div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno"><a class="line" href="../../de/dda/namespacebustub.html#aa00b5c366a48efeffdc39b14694a4cf9">   36</a></span><span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="keywordtype">int</span> <a class="code hl_variable" href="../../de/dda/namespacebustub.html#aa00b5c366a48efeffdc39b14694a4cf9">HEADER_PAGE_ID</a> = 0;                                             <span class="comment">// the header page id</span></div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno"><a class="line" href="../../de/dda/namespacebustub.html#a07360ca59dac7e03b3d988f005057273">   37</a></span><span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="keywordtype">int</span> <a class="code hl_variable" href="../../de/dda/namespacebustub.html#a07360ca59dac7e03b3d988f005057273">BUSTUB_PAGE_SIZE</a> = 4096;                                        <span class="comment">// size of a data page in byte</span></div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno"><a class="line" href="../../de/dda/namespacebustub.html#a5a18f451940bac6c1a4467ef1b4fe95d">   38</a></span><span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="keywordtype">int</span> <a class="code hl_variable" href="../../de/dda/namespacebustub.html#a5a18f451940bac6c1a4467ef1b4fe95d">BUFFER_POOL_SIZE</a> = 10;                                          <span class="comment">// size of buffer pool</span></div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno"><a class="line" href="../../de/dda/namespacebustub.html#a17672d19626e716dd42fa2960b9b29be">   39</a></span><span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="keywordtype">int</span> <a class="code hl_variable" href="../../de/dda/namespacebustub.html#a17672d19626e716dd42fa2960b9b29be">LOG_BUFFER_SIZE</a> = ((<a class="code hl_variable" href="../../de/dda/namespacebustub.html#a5a18f451940bac6c1a4467ef1b4fe95d">BUFFER_POOL_SIZE</a> + 1) * <a class="code hl_variable" href="../../de/dda/namespacebustub.html#a07360ca59dac7e03b3d988f005057273">BUSTUB_PAGE_SIZE</a>);  <span class="comment">// size of a log buffer in byte</span></div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno"><a class="line" href="../../de/dda/namespacebustub.html#aeea8453b4a9acf88bcb83a2018f04120">   40</a></span><span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="keywordtype">int</span> <a class="code hl_variable" href="../../de/dda/namespacebustub.html#aeea8453b4a9acf88bcb83a2018f04120">BUCKET_SIZE</a> = 50;                                               <span class="comment">// size of extendible hash bucket</span></div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno"><a class="line" href="../../de/dda/namespacebustub.html#ab16ec636e3ba427ecd724fe29a554f27">   41</a></span><span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="keywordtype">int</span> <a class="code hl_variable" href="../../de/dda/namespacebustub.html#ab16ec636e3ba427ecd724fe29a554f27">LRUK_REPLACER_K</a> = 10;  <span class="comment">// lookback window for lru-k replacer</span></div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span> </div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno"><a class="line" href="../../de/dda/namespacebustub.html#a0f35ab53da3f49c3adf60f5174b16a4a">   43</a></span><span class="keyword">using </span><a class="code hl_typedef" href="../../de/dda/namespacebustub.html#a0f35ab53da3f49c3adf60f5174b16a4a">frame_id_t</a> = int32_t;    <span class="comment">// frame id type</span></div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno"><a class="line" href="../../de/dda/namespacebustub.html#a8de4ac099b23d712481109bb846decde">   44</a></span><span class="keyword">using </span><a class="code hl_typedef" href="../../de/dda/namespacebustub.html#a8de4ac099b23d712481109bb846decde">page_id_t</a> = int32_t;     <span class="comment">// page id type</span></div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno"><a class="line" href="../../de/dda/namespacebustub.html#a6fc9c36dd76ed654983fc39f5fef1235">   45</a></span><span class="keyword">using </span><a class="code hl_typedef" href="../../de/dda/namespacebustub.html#a6fc9c36dd76ed654983fc39f5fef1235">txn_id_t</a> = int64_t;      <span class="comment">// transaction id type</span></div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno"><a class="line" href="../../de/dda/namespacebustub.html#a8ceb3d9746c8621a11887b2754e385f2">   46</a></span><span class="keyword">using </span><a class="code hl_typedef" href="../../de/dda/namespacebustub.html#a8ceb3d9746c8621a11887b2754e385f2">lsn_t</a> = int32_t;         <span class="comment">// log sequence number type</span></div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno"><a class="line" href="../../de/dda/namespacebustub.html#af654f3e6b0049833791de7ee61bf5bca">   47</a></span><span class="keyword">using </span><a class="code hl_typedef" href="../../de/dda/namespacebustub.html#af654f3e6b0049833791de7ee61bf5bca">slot_offset_t</a> = size_t;  <span class="comment">// slot offset type</span></div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno"><a class="line" href="../../de/dda/namespacebustub.html#a9e192401a154d46651d1c11c916fff2f">   48</a></span><span class="keyword">using </span><a class="code hl_typedef" href="../../de/dda/namespacebustub.html#a9e192401a154d46651d1c11c916fff2f">oid_t</a> = uint16_t;</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span> </div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno"><a class="line" href="../../de/dda/namespacebustub.html#a6d7e397593711068cd7c9f6a0fb429b5">   50</a></span><span class="keyword">const</span> <a class="code hl_typedef" href="../../de/dda/namespacebustub.html#a6fc9c36dd76ed654983fc39f5fef1235">txn_id_t</a> <a class="code hl_variable" href="../../de/dda/namespacebustub.html#a6d7e397593711068cd7c9f6a0fb429b5">TXN_START_ID</a> = 1LL &lt;&lt; 62;  <span class="comment">// first txn id</span></div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span> </div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno"><a class="line" href="../../de/dda/namespacebustub.html#a38967c4544a5bf0d9b0e0289f67f01c0">   52</a></span><span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="keywordtype">int</span> <a class="code hl_variable" href="../../de/dda/namespacebustub.html#a38967c4544a5bf0d9b0e0289f67f01c0">VARCHAR_DEFAULT_LENGTH</a> = 128;  <span class="comment">// default length for varchar when constructing the column</span></div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span> </div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>}  <span class="comment">// namespace bustub</span></div>
+<div class="ttc" id="anamespacebustub_html"><div class="ttname"><a href="../../de/dda/namespacebustub.html">bustub</a></div><div class="ttdef"><b>Definition</b> bind_create.cpp:53</div></div>
+<div class="ttc" id="anamespacebustub_html_a07360ca59dac7e03b3d988f005057273"><div class="ttname"><a href="../../de/dda/namespacebustub.html#a07360ca59dac7e03b3d988f005057273">bustub::BUSTUB_PAGE_SIZE</a></div><div class="ttdeci">static constexpr int BUSTUB_PAGE_SIZE</div><div class="ttdef"><b>Definition</b> config.h:37</div></div>
+<div class="ttc" id="anamespacebustub_html_a0f35ab53da3f49c3adf60f5174b16a4a"><div class="ttname"><a href="../../de/dda/namespacebustub.html#a0f35ab53da3f49c3adf60f5174b16a4a">bustub::frame_id_t</a></div><div class="ttdeci">int32_t frame_id_t</div><div class="ttdef"><b>Definition</b> config.h:43</div></div>
+<div class="ttc" id="anamespacebustub_html_a17672d19626e716dd42fa2960b9b29be"><div class="ttname"><a href="../../de/dda/namespacebustub.html#a17672d19626e716dd42fa2960b9b29be">bustub::LOG_BUFFER_SIZE</a></div><div class="ttdeci">static constexpr int LOG_BUFFER_SIZE</div><div class="ttdef"><b>Definition</b> config.h:39</div></div>
+<div class="ttc" id="anamespacebustub_html_a38967c4544a5bf0d9b0e0289f67f01c0"><div class="ttname"><a href="../../de/dda/namespacebustub.html#a38967c4544a5bf0d9b0e0289f67f01c0">bustub::VARCHAR_DEFAULT_LENGTH</a></div><div class="ttdeci">static constexpr int VARCHAR_DEFAULT_LENGTH</div><div class="ttdef"><b>Definition</b> config.h:52</div></div>
+<div class="ttc" id="anamespacebustub_html_a3e991b8b17817406c60408a91065c04d"><div class="ttname"><a href="../../de/dda/namespacebustub.html#a3e991b8b17817406c60408a91065c04d">bustub::cycle_detection_interval</a></div><div class="ttdeci">std::chrono::milliseconds cycle_detection_interval</div><div class="ttdef"><b>Definition</b> config.cpp:21</div></div>
+<div class="ttc" id="anamespacebustub_html_a5a18f451940bac6c1a4467ef1b4fe95d"><div class="ttname"><a href="../../de/dda/namespacebustub.html#a5a18f451940bac6c1a4467ef1b4fe95d">bustub::BUFFER_POOL_SIZE</a></div><div class="ttdeci">static constexpr int BUFFER_POOL_SIZE</div><div class="ttdef"><b>Definition</b> config.h:38</div></div>
+<div class="ttc" id="anamespacebustub_html_a66748b38863ce1e7a8d7fcd374904def"><div class="ttname"><a href="../../de/dda/namespacebustub.html#a66748b38863ce1e7a8d7fcd374904def">bustub::INVALID_LSN</a></div><div class="ttdeci">static constexpr int INVALID_LSN</div><div class="ttdef"><b>Definition</b> config.h:35</div></div>
+<div class="ttc" id="anamespacebustub_html_a6d7e397593711068cd7c9f6a0fb429b5"><div class="ttname"><a href="../../de/dda/namespacebustub.html#a6d7e397593711068cd7c9f6a0fb429b5">bustub::TXN_START_ID</a></div><div class="ttdeci">const txn_id_t TXN_START_ID</div><div class="ttdef"><b>Definition</b> config.h:50</div></div>
+<div class="ttc" id="anamespacebustub_html_a6fc9c36dd76ed654983fc39f5fef1235"><div class="ttname"><a href="../../de/dda/namespacebustub.html#a6fc9c36dd76ed654983fc39f5fef1235">bustub::txn_id_t</a></div><div class="ttdeci">int64_t txn_id_t</div><div class="ttdef"><b>Definition</b> config.h:45</div></div>
+<div class="ttc" id="anamespacebustub_html_a8ceb3d9746c8621a11887b2754e385f2"><div class="ttname"><a href="../../de/dda/namespacebustub.html#a8ceb3d9746c8621a11887b2754e385f2">bustub::lsn_t</a></div><div class="ttdeci">int32_t lsn_t</div><div class="ttdef"><b>Definition</b> config.h:46</div></div>
+<div class="ttc" id="anamespacebustub_html_a8da1cfb31d4478719e87214c5789cf01"><div class="ttname"><a href="../../de/dda/namespacebustub.html#a8da1cfb31d4478719e87214c5789cf01">bustub::INVALID_TXN_ID</a></div><div class="ttdeci">static constexpr int INVALID_TXN_ID</div><div class="ttdef"><b>Definition</b> config.h:34</div></div>
+<div class="ttc" id="anamespacebustub_html_a8de4ac099b23d712481109bb846decde"><div class="ttname"><a href="../../de/dda/namespacebustub.html#a8de4ac099b23d712481109bb846decde">bustub::page_id_t</a></div><div class="ttdeci">int32_t page_id_t</div><div class="ttdef"><b>Definition</b> config.h:44</div></div>
+<div class="ttc" id="anamespacebustub_html_a9e192401a154d46651d1c11c916fff2f"><div class="ttname"><a href="../../de/dda/namespacebustub.html#a9e192401a154d46651d1c11c916fff2f">bustub::oid_t</a></div><div class="ttdeci">uint16_t oid_t</div><div class="ttdef"><b>Definition</b> config.h:48</div></div>
+<div class="ttc" id="anamespacebustub_html_aa00b5c366a48efeffdc39b14694a4cf9"><div class="ttname"><a href="../../de/dda/namespacebustub.html#aa00b5c366a48efeffdc39b14694a4cf9">bustub::HEADER_PAGE_ID</a></div><div class="ttdeci">static constexpr int HEADER_PAGE_ID</div><div class="ttdef"><b>Definition</b> config.h:36</div></div>
+<div class="ttc" id="anamespacebustub_html_ab16ec636e3ba427ecd724fe29a554f27"><div class="ttname"><a href="../../de/dda/namespacebustub.html#ab16ec636e3ba427ecd724fe29a554f27">bustub::LRUK_REPLACER_K</a></div><div class="ttdeci">static constexpr int LRUK_REPLACER_K</div><div class="ttdef"><b>Definition</b> config.h:41</div></div>
+<div class="ttc" id="anamespacebustub_html_ac3aec770af444ee5fec39d7b6362fe57"><div class="ttname"><a href="../../de/dda/namespacebustub.html#ac3aec770af444ee5fec39d7b6362fe57">bustub::enable_logging</a></div><div class="ttdeci">std::atomic&lt; bool &gt; enable_logging</div></div>
+<div class="ttc" id="anamespacebustub_html_ae9dd773eae7950183ebc60def880f499"><div class="ttname"><a href="../../de/dda/namespacebustub.html#ae9dd773eae7950183ebc60def880f499">bustub::INVALID_PAGE_ID</a></div><div class="ttdeci">static constexpr int INVALID_PAGE_ID</div><div class="ttdef"><b>Definition</b> config.h:33</div></div>
+<div class="ttc" id="anamespacebustub_html_aeea8453b4a9acf88bcb83a2018f04120"><div class="ttname"><a href="../../de/dda/namespacebustub.html#aeea8453b4a9acf88bcb83a2018f04120">bustub::BUCKET_SIZE</a></div><div class="ttdeci">static constexpr int BUCKET_SIZE</div><div class="ttdef"><b>Definition</b> config.h:40</div></div>
+<div class="ttc" id="anamespacebustub_html_af3a04e89f498bec1b21073c7f2760221"><div class="ttname"><a href="../../de/dda/namespacebustub.html#af3a04e89f498bec1b21073c7f2760221">bustub::log_timeout</a></div><div class="ttdeci">std::chrono::duration&lt; int64_t &gt; log_timeout</div><div class="ttdef"><b>Definition</b> config.cpp:19</div></div>
+<div class="ttc" id="anamespacebustub_html_af654f3e6b0049833791de7ee61bf5bca"><div class="ttname"><a href="../../de/dda/namespacebustub.html#af654f3e6b0049833791de7ee61bf5bca">bustub::slot_offset_t</a></div><div class="ttdeci">size_t slot_offset_t</div><div class="ttdef"><b>Definition</b> config.h:47</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
+</small></address>
+</body>
+</html>

@@ -1,0 +1,398 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>数据库系统 CMU15-445/645: bustub::BPlusTreeInternalPage类 参考</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/searchdata.js"></script>
+<script type="text/javascript" src="../../search/search.js"></script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">数据库系统 CMU15-445/645<span id="projectnumber">&#160;1.0.0</span>
+   </div>
+   <div id="projectbrief">CMU15-445/645 是基于现代 C++ 开发的支持并发操作的简单 SQL 操作的单机数据库</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.9.8 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "../../search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('../../',true,false,'search.php','搜索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="../../de/dda/namespacebustub.html">bustub</a></li><li class="navelem"><a class="el" href="../../da/d05/classbustub_1_1BPlusTreeInternalPage.html">BPlusTreeInternalPage</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Public 成员函数</a> &#124;
+<a href="#pri-attribs">Private 属性</a> &#124;
+<a href="../../db/ded/classbustub_1_1BPlusTreeInternalPage-members.html">所有成员列表</a>  </div>
+  <div class="headertitle"><div class="title">bustub::BPlusTreeInternalPage类 参考</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p><code>#include &lt;<a class="el" href="../../da/d30/b__plus__tree__internal__page_8h_source.html">b_plus_tree_internal_page.h</a>&gt;</code></p>
+<div class="dynheader">
+类 bustub::BPlusTreeInternalPage 继承关系图:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../d7/d1a/classbustub_1_1BPlusTreeInternalPage__inherit__graph.svg" width="230" height="110"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<center><span class="legend">[<a href="../../graph_legend.html">图例</a>]</span></center></div>
+<div class="dynheader">
+bustub::BPlusTreeInternalPage 的协作图:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../d3/dee/classbustub_1_1BPlusTreeInternalPage__coll__graph.svg" width="230" height="110"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<center><span class="legend">[<a href="../../graph_legend.html">图例</a>]</span></center></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Public 成员函数</h2></td></tr>
+<tr class="memitem:a0cf806706d80691d1636a08512dba0cb" id="r_a0cf806706d80691d1636a08512dba0cb"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d05/classbustub_1_1BPlusTreeInternalPage.html#a0cf806706d80691d1636a08512dba0cb">BPlusTreeInternalPage</a> ()=delete</td></tr>
+<tr class="separator:a0cf806706d80691d1636a08512dba0cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7e658918d2a9471357b356e05ad421ec" id="r_a7e658918d2a9471357b356e05ad421ec"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d05/classbustub_1_1BPlusTreeInternalPage.html#a7e658918d2a9471357b356e05ad421ec">BPlusTreeInternalPage</a> (const <a class="el" href="../../da/d05/classbustub_1_1BPlusTreeInternalPage.html">BPlusTreeInternalPage</a> &amp;other)=delete</td></tr>
+<tr class="separator:a7e658918d2a9471357b356e05ad421ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa8fddf8d870ccc8432bef38d6d426890" id="r_aa8fddf8d870ccc8432bef38d6d426890"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d05/classbustub_1_1BPlusTreeInternalPage.html#aa8fddf8d870ccc8432bef38d6d426890">Init</a> (int max_size=<a class="el" href="../../da/d30/b__plus__tree__internal__page_8h.html#a04db3f924b29e986d8b3e94dbbbb9d55">INTERNAL_PAGE_SIZE</a>)</td></tr>
+<tr class="separator:aa8fddf8d870ccc8432bef38d6d426890"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaf628ab8d4d22f9d2eff78af408cb894" id="r_aaf628ab8d4d22f9d2eff78af408cb894"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d05/classbustub_1_1BPlusTreeInternalPage.html#aaf628ab8d4d22f9d2eff78af408cb894">KeyAt</a> (int index) const -&gt; KeyType</td></tr>
+<tr class="separator:aaf628ab8d4d22f9d2eff78af408cb894"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae62354e05741a3ba82a12e26e65cf480" id="r_ae62354e05741a3ba82a12e26e65cf480"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d05/classbustub_1_1BPlusTreeInternalPage.html#ae62354e05741a3ba82a12e26e65cf480">SetKeyAt</a> (int index, const KeyType &amp;key)</td></tr>
+<tr class="separator:ae62354e05741a3ba82a12e26e65cf480"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a73d81a9e2a6084d87f034f2ed4af2d75" id="r_a73d81a9e2a6084d87f034f2ed4af2d75"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d05/classbustub_1_1BPlusTreeInternalPage.html#a73d81a9e2a6084d87f034f2ed4af2d75">ValueIndex</a> (const ValueType &amp;value) const -&gt; int</td></tr>
+<tr class="separator:a73d81a9e2a6084d87f034f2ed4af2d75"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9ed2e8d698204a7f0d9b6e92a9103bc0" id="r_a9ed2e8d698204a7f0d9b6e92a9103bc0"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d05/classbustub_1_1BPlusTreeInternalPage.html#a9ed2e8d698204a7f0d9b6e92a9103bc0">ValueAt</a> (int index) const -&gt; ValueType</td></tr>
+<tr class="separator:a9ed2e8d698204a7f0d9b6e92a9103bc0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a99e4c23404a6e075dc152f8fc104dbbf" id="r_a99e4c23404a6e075dc152f8fc104dbbf"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d05/classbustub_1_1BPlusTreeInternalPage.html#a99e4c23404a6e075dc152f8fc104dbbf">ToString</a> () const -&gt; std::string</td></tr>
+<tr class="memdesc:a99e4c23404a6e075dc152f8fc104dbbf"><td class="mdescLeft">&#160;</td><td class="mdescRight">For test only, return a string representing all keys in this internal page, formatted as "(key1,key2,key3,...)"  <br /></td></tr>
+<tr class="separator:a99e4c23404a6e075dc152f8fc104dbbf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_methods_classbustub_1_1BPlusTreePage"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classbustub_1_1BPlusTreePage')"><img src="../../closed.png" alt="-"/>&#160;Public 成员函数 继承自 <a class="el" href="../../d6/d48/classbustub_1_1BPlusTreePage.html">bustub::BPlusTreePage</a></td></tr>
+<tr class="memitem:adaf9384d3040cc7fed55668c1cb22219 inherit pub_methods_classbustub_1_1BPlusTreePage" id="r_adaf9384d3040cc7fed55668c1cb22219"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d48/classbustub_1_1BPlusTreePage.html#adaf9384d3040cc7fed55668c1cb22219">BPlusTreePage</a> ()=delete</td></tr>
+<tr class="separator:adaf9384d3040cc7fed55668c1cb22219 inherit pub_methods_classbustub_1_1BPlusTreePage"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5dc819c2fd81426ce7c0143a307f90ac inherit pub_methods_classbustub_1_1BPlusTreePage" id="r_a5dc819c2fd81426ce7c0143a307f90ac"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d48/classbustub_1_1BPlusTreePage.html#a5dc819c2fd81426ce7c0143a307f90ac">BPlusTreePage</a> (const <a class="el" href="../../d6/d48/classbustub_1_1BPlusTreePage.html">BPlusTreePage</a> &amp;other)=delete</td></tr>
+<tr class="separator:a5dc819c2fd81426ce7c0143a307f90ac inherit pub_methods_classbustub_1_1BPlusTreePage"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2fd46e8c76b5285060894be93300f42a inherit pub_methods_classbustub_1_1BPlusTreePage" id="r_a2fd46e8c76b5285060894be93300f42a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d48/classbustub_1_1BPlusTreePage.html#a2fd46e8c76b5285060894be93300f42a">~BPlusTreePage</a> ()=delete</td></tr>
+<tr class="separator:a2fd46e8c76b5285060894be93300f42a inherit pub_methods_classbustub_1_1BPlusTreePage"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6f47f7d6d7351f353468099d55330c2a inherit pub_methods_classbustub_1_1BPlusTreePage" id="r_a6f47f7d6d7351f353468099d55330c2a"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d48/classbustub_1_1BPlusTreePage.html#a6f47f7d6d7351f353468099d55330c2a">IsLeafPage</a> () const -&gt; bool</td></tr>
+<tr class="separator:a6f47f7d6d7351f353468099d55330c2a inherit pub_methods_classbustub_1_1BPlusTreePage"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abd41e488b49c43aba310e23b54efa4d8 inherit pub_methods_classbustub_1_1BPlusTreePage" id="r_abd41e488b49c43aba310e23b54efa4d8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d48/classbustub_1_1BPlusTreePage.html#abd41e488b49c43aba310e23b54efa4d8">SetPageType</a> (<a class="el" href="../../de/dda/namespacebustub.html#aa22b843a31f36c3abba2ac5410480497">IndexPageType</a> page_type)</td></tr>
+<tr class="separator:abd41e488b49c43aba310e23b54efa4d8 inherit pub_methods_classbustub_1_1BPlusTreePage"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac14c9a021e6f9c4a83dffaa81c6b41e7 inherit pub_methods_classbustub_1_1BPlusTreePage" id="r_ac14c9a021e6f9c4a83dffaa81c6b41e7"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d48/classbustub_1_1BPlusTreePage.html#ac14c9a021e6f9c4a83dffaa81c6b41e7">GetSize</a> () const -&gt; int</td></tr>
+<tr class="separator:ac14c9a021e6f9c4a83dffaa81c6b41e7 inherit pub_methods_classbustub_1_1BPlusTreePage"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a56166803db1e1191762a0926eb30d15e inherit pub_methods_classbustub_1_1BPlusTreePage" id="r_a56166803db1e1191762a0926eb30d15e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d48/classbustub_1_1BPlusTreePage.html#a56166803db1e1191762a0926eb30d15e">SetSize</a> (int size)</td></tr>
+<tr class="separator:a56166803db1e1191762a0926eb30d15e inherit pub_methods_classbustub_1_1BPlusTreePage"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8ae64d1ba6391c486d085d9fabb91bba inherit pub_methods_classbustub_1_1BPlusTreePage" id="r_a8ae64d1ba6391c486d085d9fabb91bba"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d48/classbustub_1_1BPlusTreePage.html#a8ae64d1ba6391c486d085d9fabb91bba">IncreaseSize</a> (int amount)</td></tr>
+<tr class="separator:a8ae64d1ba6391c486d085d9fabb91bba inherit pub_methods_classbustub_1_1BPlusTreePage"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a95547fdcfe0b47e80324e15af4091f3f inherit pub_methods_classbustub_1_1BPlusTreePage" id="r_a95547fdcfe0b47e80324e15af4091f3f"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d48/classbustub_1_1BPlusTreePage.html#a95547fdcfe0b47e80324e15af4091f3f">GetMaxSize</a> () const -&gt; int</td></tr>
+<tr class="separator:a95547fdcfe0b47e80324e15af4091f3f inherit pub_methods_classbustub_1_1BPlusTreePage"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac76f8f14d792d36de9c32ef6e1f407d0 inherit pub_methods_classbustub_1_1BPlusTreePage" id="r_ac76f8f14d792d36de9c32ef6e1f407d0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d48/classbustub_1_1BPlusTreePage.html#ac76f8f14d792d36de9c32ef6e1f407d0">SetMaxSize</a> (int max_size)</td></tr>
+<tr class="separator:ac76f8f14d792d36de9c32ef6e1f407d0 inherit pub_methods_classbustub_1_1BPlusTreePage"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0158785c88299536a14b9ea78bd082ac inherit pub_methods_classbustub_1_1BPlusTreePage" id="r_a0158785c88299536a14b9ea78bd082ac"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d48/classbustub_1_1BPlusTreePage.html#a0158785c88299536a14b9ea78bd082ac">GetMinSize</a> () const -&gt; int</td></tr>
+<tr class="separator:a0158785c88299536a14b9ea78bd082ac inherit pub_methods_classbustub_1_1BPlusTreePage"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
+Private 属性</h2></td></tr>
+<tr class="memitem:a6cb4ade29327995a5e64c125cda13cce" id="r_a6cb4ade29327995a5e64c125cda13cce"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d1/d36/b__plus__tree__page_8h.html#a139704601c819af8cdce06a6c1080a85">MappingType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d05/classbustub_1_1BPlusTreeInternalPage.html#a6cb4ade29327995a5e64c125cda13cce">array_</a> [0]</td></tr>
+<tr class="separator:a6cb4ade29327995a5e64c125cda13cce"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
+<div class="textblock"><p>Store <code>n</code> indexed keys and <code>n + 1</code> child pointers (page_id) within internal page. Pointer PAGE_ID(i) points to a subtree in which all keys K satisfy: K(i) &lt;= K &lt; K(i+1). NOTE: Since the number of keys does not equal to number of child pointers, the first key always remains invalid. That is to say, any search / lookup should ignore the first key.</p>
+<h2><a class="anchor" id="autotoc_md10"></a>
+Internal page format (keys are stored in increasing order):</h2>
+<h2><a class="anchor" id="autotoc_md11"></a>
+| HEADER | KEY(1) + PAGE_ID(1) | KEY(2) + PAGE_ID(2) | ... | KEY(n) + PAGE_ID(n) |</h2>
+</div><h2 class="groupheader">构造及析构函数说明</h2>
+<a id="a0cf806706d80691d1636a08512dba0cb" name="a0cf806706d80691d1636a08512dba0cb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0cf806706d80691d1636a08512dba0cb">&#9670;&#160;</a></span>BPlusTreeInternalPage() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bustub::BPlusTreeInternalPage::BPlusTreeInternalPage </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">delete</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a7e658918d2a9471357b356e05ad421ec" name="a7e658918d2a9471357b356e05ad421ec"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7e658918d2a9471357b356e05ad421ec">&#9670;&#160;</a></span>BPlusTreeInternalPage() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bustub::BPlusTreeInternalPage::BPlusTreeInternalPage </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="../../da/d05/classbustub_1_1BPlusTreeInternalPage.html">BPlusTreeInternalPage</a> &amp;&#160;</td>
+          <td class="paramname"><em>other</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">delete</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">成员函数说明</h2>
+<a id="aa8fddf8d870ccc8432bef38d6d426890" name="aa8fddf8d870ccc8432bef38d6d426890"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa8fddf8d870ccc8432bef38d6d426890">&#9670;&#160;</a></span>Init()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void bustub::BPlusTreeInternalPage::Init </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>max_size</em> = <code><a class="el" href="../../da/d30/b__plus__tree__internal__page_8h.html#a04db3f924b29e986d8b3e94dbbbb9d55">INTERNAL_PAGE_SIZE</a></code></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Writes the necessary header information to a newly created page, must be called after the creation of a new page to make a valid <code><a class="el" href="../../da/d05/classbustub_1_1BPlusTreeInternalPage.html">BPlusTreeInternalPage</a></code> </p><dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">max_size</td><td>Maximal size of the page </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="aaf628ab8d4d22f9d2eff78af408cb894" name="aaf628ab8d4d22f9d2eff78af408cb894"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaf628ab8d4d22f9d2eff78af408cb894">&#9670;&#160;</a></span>KeyAt()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto bustub::BPlusTreeInternalPage::KeyAt </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>index</em></td><td>)</td>
+          <td> const -&gt;  KeyType</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">index</td><td>The index of the key to get. <a class="el" href="../../d5/def/classbustub_1_1Index.html">Index</a> must be non-zero. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>Key at index </dd></dl>
+
+</div>
+</div>
+<a id="ae62354e05741a3ba82a12e26e65cf480" name="ae62354e05741a3ba82a12e26e65cf480"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae62354e05741a3ba82a12e26e65cf480">&#9670;&#160;</a></span>SetKeyAt()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void bustub::BPlusTreeInternalPage::SetKeyAt </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>index</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const KeyType &amp;&#160;</td>
+          <td class="paramname"><em>key</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">index</td><td>The index of the key to set. <a class="el" href="../../d5/def/classbustub_1_1Index.html">Index</a> must be non-zero. </td></tr>
+    <tr><td class="paramname">key</td><td>The new value for key </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a99e4c23404a6e075dc152f8fc104dbbf" name="a99e4c23404a6e075dc152f8fc104dbbf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a99e4c23404a6e075dc152f8fc104dbbf">&#9670;&#160;</a></span>ToString()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto bustub::BPlusTreeInternalPage::ToString </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const -&gt; std::string </td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>For test only, return a string representing all keys in this internal page, formatted as "(key1,key2,key3,...)" </p>
+<dl class="section return"><dt>返回</dt><dd>The string representation of all keys in the current internal page </dd></dl>
+
+</div>
+</div>
+<a id="a9ed2e8d698204a7f0d9b6e92a9103bc0" name="a9ed2e8d698204a7f0d9b6e92a9103bc0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9ed2e8d698204a7f0d9b6e92a9103bc0">&#9670;&#160;</a></span>ValueAt()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto bustub::BPlusTreeInternalPage::ValueAt </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>index</em></td><td>)</td>
+          <td> const -&gt;  ValueType</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">index</td><td>The index to search for </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>The value at the index </dd></dl>
+
+</div>
+</div>
+<a id="a73d81a9e2a6084d87f034f2ed4af2d75" name="a73d81a9e2a6084d87f034f2ed4af2d75"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a73d81a9e2a6084d87f034f2ed4af2d75">&#9670;&#160;</a></span>ValueIndex()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto bustub::BPlusTreeInternalPage::ValueIndex </td>
+          <td>(</td>
+          <td class="paramtype">const ValueType &amp;&#160;</td>
+          <td class="paramname"><em>value</em></td><td>)</td>
+          <td> const -&gt;  int</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">value</td><td>The value to search for </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>The index that corresponds to the specified value </dd></dl>
+
+</div>
+</div>
+<h2 class="groupheader">类成员变量说明</h2>
+<a id="a6cb4ade29327995a5e64c125cda13cce" name="a6cb4ade29327995a5e64c125cda13cce"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6cb4ade29327995a5e64c125cda13cce">&#9670;&#160;</a></span>array_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d1/d36/b__plus__tree__page_8h.html#a139704601c819af8cdce06a6c1080a85">MappingType</a> bustub::BPlusTreeInternalPage::array_[0]</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<hr/>该类的文档由以下文件生成:<ul>
+<li>src/include/storage/page/<a class="el" href="../../da/d30/b__plus__tree__internal__page_8h_source.html">b_plus_tree_internal_page.h</a></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
+</small></address>
+</body>
+</html>

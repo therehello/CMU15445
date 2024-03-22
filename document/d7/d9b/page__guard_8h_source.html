@@ -1,0 +1,295 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>数据库系统 CMU15-445/645: src/include/storage/page/page_guard.h 源文件</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/searchdata.js"></script>
+<script type="text/javascript" src="../../search/search.js"></script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">数据库系统 CMU15-445/645<span id="projectnumber">&#160;1.0.0</span>
+   </div>
+   <div id="projectbrief">CMU15-445/645 是基于现代 C++ 开发的支持并发操作的简单 SQL 操作的单机数据库</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.9.8 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "../../search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('../../',true,false,'search.php','搜索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function() { init_codefold(1); });
+/* @license-end */
+</script>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="../../dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="../../dir_b0856f6b0d80ccb263b2f415c91f9e17.html">include</a></li><li class="navelem"><a class="el" href="../../dir_0a30ac4aed38d1936bbd6d702d96fbd8.html">storage</a></li><li class="navelem"><a class="el" href="../../dir_aa62e7e4f393bdf63f8ca74ad42976cf.html">page</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle"><div class="title">page_guard.h</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="../../d7/d9b/page__guard_8h.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#pragma once</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span> </div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &quot;<a class="code" href="../../de/dad/page_8h.html">storage/page/page.h</a>&quot;</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span> </div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="keyword">namespace </span><a class="code hl_namespace" href="../../de/dda/namespacebustub.html">bustub</a> {</div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span> </div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="keyword">class </span>BufferPoolManager;</div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="keyword">class </span>ReadPageGuard;</div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="keyword">class </span>WritePageGuard;</div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span> </div>
+<div class="foldopen" id="foldopen00011" data-start="{" data-end="};">
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno"><a class="line" href="../../db/d3a/classbustub_1_1BasicPageGuard.html">   11</a></span><span class="keyword">class </span><a class="code hl_class" href="../../db/d3a/classbustub_1_1BasicPageGuard.html">BasicPageGuard</a> {</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> <span class="keyword">public</span>:</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno"><a class="line" href="../../db/d3a/classbustub_1_1BasicPageGuard.html#a0c7f168136dd531e739be3b06031845a">   13</a></span>  <a class="code hl_function" href="../../db/d3a/classbustub_1_1BasicPageGuard.html#a0c7f168136dd531e739be3b06031845a">BasicPageGuard</a>() = <span class="keywordflow">default</span>;</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno"><a class="line" href="../../db/d3a/classbustub_1_1BasicPageGuard.html#a2760cfab0dc996dc2c6a6b654b276de1">   15</a></span>  <a class="code hl_function" href="../../db/d3a/classbustub_1_1BasicPageGuard.html#a2760cfab0dc996dc2c6a6b654b276de1">BasicPageGuard</a>(<a class="code hl_class" href="../../d6/d5d/classbustub_1_1BufferPoolManager.html">BufferPoolManager</a> *bpm, <a class="code hl_class" href="../../d4/d87/classbustub_1_1Page.html">Page</a> *page) : <a class="code hl_variable" href="../../db/d3a/classbustub_1_1BasicPageGuard.html#a3237a2310a087e9d69faf098d838b3e8">bpm_</a>(bpm), <a class="code hl_variable" href="../../db/d3a/classbustub_1_1BasicPageGuard.html#a051186c0c579ab088023ff141bc2c928">page_</a>(page) {}</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span> </div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno"><a class="line" href="../../db/d3a/classbustub_1_1BasicPageGuard.html#a5dcb7eb8fe3eec301248d24d6940e718">   17</a></span>  <a class="code hl_function" href="../../db/d3a/classbustub_1_1BasicPageGuard.html#a5dcb7eb8fe3eec301248d24d6940e718">BasicPageGuard</a>(<span class="keyword">const</span> <a class="code hl_class" href="../../db/d3a/classbustub_1_1BasicPageGuard.html">BasicPageGuard</a> &amp;) = <span class="keyword">delete</span>;</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno"><a class="line" href="../../db/d3a/classbustub_1_1BasicPageGuard.html#adc97c1218df3657177a3a7cac1ee967f">   18</a></span>  <span class="keyword">auto</span> <a class="code hl_function" href="../../db/d3a/classbustub_1_1BasicPageGuard.html#adc97c1218df3657177a3a7cac1ee967f">operator=</a>(<span class="keyword">const</span> <a class="code hl_class" href="../../db/d3a/classbustub_1_1BasicPageGuard.html">BasicPageGuard</a> &amp;) -&gt; <a class="code hl_class" href="../../db/d3a/classbustub_1_1BasicPageGuard.html">BasicPageGuard</a> &amp; = <span class="keyword">delete</span>;</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span> </div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>  <a class="code hl_function" href="../../db/d3a/classbustub_1_1BasicPageGuard.html#a0c7f168136dd531e739be3b06031845a">BasicPageGuard</a>(<a class="code hl_class" href="../../db/d3a/classbustub_1_1BasicPageGuard.html">BasicPageGuard</a> &amp;&amp;that) <span class="keyword">noexcept</span>;</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span> </div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="../../db/d3a/classbustub_1_1BasicPageGuard.html#a9e70fa4b918f206c8ba8fd61c22bea07">Drop</a>();</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span> </div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>  <span class="keyword">auto</span> <a class="code hl_function" href="../../db/d3a/classbustub_1_1BasicPageGuard.html#adc97c1218df3657177a3a7cac1ee967f">operator=</a>(<a class="code hl_class" href="../../db/d3a/classbustub_1_1BasicPageGuard.html">BasicPageGuard</a> &amp;&amp;that) <span class="keyword">noexcept</span> -&gt; <a class="code hl_class" href="../../db/d3a/classbustub_1_1BasicPageGuard.html">BasicPageGuard</a> &amp;;</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span> </div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>  <a class="code hl_function" href="../../db/d3a/classbustub_1_1BasicPageGuard.html#a36f790075811859a4fc06c6f6fba4134">~BasicPageGuard</a>();</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span> </div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>  <span class="keyword">auto</span> <a class="code hl_function" href="../../db/d3a/classbustub_1_1BasicPageGuard.html#a8f3e6495d44b6c5b9b3e63f3fcf3d6dd">UpgradeRead</a>() -&gt; <a class="code hl_friend" href="../../db/d3a/classbustub_1_1BasicPageGuard.html#a11b4e8677c74e94eb4d431f14e69b9ed">ReadPageGuard</a>;</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span> </div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>  <span class="keyword">auto</span> <a class="code hl_function" href="../../db/d3a/classbustub_1_1BasicPageGuard.html#a5804f3626a563cf01ce5006cd5f1cfd2">UpgradeWrite</a>() -&gt; <a class="code hl_friend" href="../../db/d3a/classbustub_1_1BasicPageGuard.html#a1bdaa6e50a29a591f34aff8b62cae552">WritePageGuard</a>;</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span> </div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno"><a class="line" href="../../db/d3a/classbustub_1_1BasicPageGuard.html#a9eeaf42ca7acef5c35dc1df8070884e1">   86</a></span>  <span class="keyword">auto</span> <a class="code hl_function" href="../../db/d3a/classbustub_1_1BasicPageGuard.html#a9eeaf42ca7acef5c35dc1df8070884e1">PageId</a>() -&gt; <a class="code hl_typedef" href="../../de/dda/namespacebustub.html#a8de4ac099b23d712481109bb846decde">page_id_t</a> { <span class="keywordflow">return</span> <a class="code hl_variable" href="../../db/d3a/classbustub_1_1BasicPageGuard.html#a051186c0c579ab088023ff141bc2c928">page_</a>-&gt;<a class="code hl_function" href="../../d4/d87/classbustub_1_1Page.html#aadc3a3c718b6a2146c4e210f64e7d515">GetPageId</a>(); }</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span> </div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno"><a class="line" href="../../db/d3a/classbustub_1_1BasicPageGuard.html#a5679a313928179a09f2d4c79b51bf337">   88</a></span>  <span class="keyword">auto</span> <a class="code hl_function" href="../../db/d3a/classbustub_1_1BasicPageGuard.html#a5679a313928179a09f2d4c79b51bf337">GetData</a>() -&gt; <span class="keyword">const</span> <span class="keywordtype">char</span> * { <span class="keywordflow">return</span> <a class="code hl_variable" href="../../db/d3a/classbustub_1_1BasicPageGuard.html#a051186c0c579ab088023ff141bc2c928">page_</a>-&gt;<a class="code hl_function" href="../../d4/d87/classbustub_1_1Page.html#ab989a25fb06b004c7e659904375293df">GetData</a>(); }</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span> </div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>  <span class="keyword">template</span> &lt;<span class="keyword">class</span> T&gt;</div>
+<div class="foldopen" id="foldopen00091" data-start="{" data-end="}">
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno"><a class="line" href="../../db/d3a/classbustub_1_1BasicPageGuard.html#a144687778880f84353cea2a7301674dc">   91</a></span>  <span class="keyword">auto</span> <a class="code hl_function" href="../../db/d3a/classbustub_1_1BasicPageGuard.html#a144687778880f84353cea2a7301674dc">As</a>() -&gt; <span class="keyword">const</span> T * {</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>    <span class="keywordflow">return</span> <span class="keyword">reinterpret_cast&lt;</span><span class="keyword">const </span>T *<span class="keyword">&gt;</span>(<a class="code hl_function" href="../../db/d3a/classbustub_1_1BasicPageGuard.html#a5679a313928179a09f2d4c79b51bf337">GetData</a>());</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>  }</div>
+</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span> </div>
+<div class="foldopen" id="foldopen00095" data-start="{" data-end="}">
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno"><a class="line" href="../../db/d3a/classbustub_1_1BasicPageGuard.html#ab32fd3722723f1e3a87f9bbcba3d0a08">   95</a></span>  <span class="keyword">auto</span> <a class="code hl_function" href="../../db/d3a/classbustub_1_1BasicPageGuard.html#ab32fd3722723f1e3a87f9bbcba3d0a08">GetDataMut</a>() -&gt; <span class="keywordtype">char</span> * {</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>    <a class="code hl_variable" href="../../db/d3a/classbustub_1_1BasicPageGuard.html#a045869dce2fd3e99ed93525da7104e63">is_dirty_</a> = <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="../../db/d3a/classbustub_1_1BasicPageGuard.html#a051186c0c579ab088023ff141bc2c928">page_</a>-&gt;<a class="code hl_function" href="../../d4/d87/classbustub_1_1Page.html#ab989a25fb06b004c7e659904375293df">GetData</a>();</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>  }</div>
+</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span> </div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>  <span class="keyword">template</span> &lt;<span class="keyword">class</span> T&gt;</div>
+<div class="foldopen" id="foldopen00101" data-start="{" data-end="}">
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno"><a class="line" href="../../db/d3a/classbustub_1_1BasicPageGuard.html#a762d05dc05a9e3df0300e7a3e9400f27">  101</a></span>  <span class="keyword">auto</span> <a class="code hl_function" href="../../db/d3a/classbustub_1_1BasicPageGuard.html#a762d05dc05a9e3df0300e7a3e9400f27">AsMut</a>() -&gt; T * {</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>    <span class="keywordflow">return</span> <span class="keyword">reinterpret_cast&lt;</span>T *<span class="keyword">&gt;</span>(<a class="code hl_function" href="../../db/d3a/classbustub_1_1BasicPageGuard.html#ab32fd3722723f1e3a87f9bbcba3d0a08">GetDataMut</a>());</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>  }</div>
+</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span> </div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="../../db/d3a/classbustub_1_1BasicPageGuard.html#a76d1f4e1bf4a26c5ea83f997fe9c6f03">Swap</a>(<a class="code hl_class" href="../../db/d3a/classbustub_1_1BasicPageGuard.html">BasicPageGuard</a> &amp;that);</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span> </div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span> <span class="keyword">private</span>:</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno"><a class="line" href="../../db/d3a/classbustub_1_1BasicPageGuard.html#a11b4e8677c74e94eb4d431f14e69b9ed">  108</a></span>  <span class="keyword">friend</span> <span class="keyword">class </span><a class="code hl_class" href="../../d8/d80/classbustub_1_1ReadPageGuard.html">ReadPageGuard</a>;</div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno"><a class="line" href="../../db/d3a/classbustub_1_1BasicPageGuard.html#a1bdaa6e50a29a591f34aff8b62cae552">  109</a></span>  <span class="keyword">friend</span> <span class="keyword">class </span><a class="code hl_class" href="../../d8/dd6/classbustub_1_1WritePageGuard.html">WritePageGuard</a>;</div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span> </div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno"><a class="line" href="../../db/d3a/classbustub_1_1BasicPageGuard.html#a3237a2310a087e9d69faf098d838b3e8">  111</a></span>  [[maybe_unused]] <a class="code hl_class" href="../../d6/d5d/classbustub_1_1BufferPoolManager.html">BufferPoolManager</a> *<a class="code hl_variable" href="../../db/d3a/classbustub_1_1BasicPageGuard.html#a3237a2310a087e9d69faf098d838b3e8">bpm_</a>{<span class="keyword">nullptr</span>};</div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno"><a class="line" href="../../db/d3a/classbustub_1_1BasicPageGuard.html#a051186c0c579ab088023ff141bc2c928">  112</a></span>  <a class="code hl_class" href="../../d4/d87/classbustub_1_1Page.html">Page</a> *<a class="code hl_variable" href="../../db/d3a/classbustub_1_1BasicPageGuard.html#a051186c0c579ab088023ff141bc2c928">page_</a>{<span class="keyword">nullptr</span>};</div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno"><a class="line" href="../../db/d3a/classbustub_1_1BasicPageGuard.html#a045869dce2fd3e99ed93525da7104e63">  113</a></span>  <span class="keywordtype">bool</span> <a class="code hl_variable" href="../../db/d3a/classbustub_1_1BasicPageGuard.html#a045869dce2fd3e99ed93525da7104e63">is_dirty_</a>{<span class="keyword">false</span>};</div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>};</div>
+</div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span> </div>
+<div class="foldopen" id="foldopen00116" data-start="{" data-end="};">
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno"><a class="line" href="../../d8/d80/classbustub_1_1ReadPageGuard.html">  116</a></span><span class="keyword">class </span><a class="code hl_class" href="../../d8/d80/classbustub_1_1ReadPageGuard.html">ReadPageGuard</a> {</div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span> <span class="keyword">public</span>:</div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno"><a class="line" href="../../d8/d80/classbustub_1_1ReadPageGuard.html#a4c0be5e02c42a19c58d02c0a863f578d">  118</a></span>  <a class="code hl_function" href="../../d8/d80/classbustub_1_1ReadPageGuard.html#a4c0be5e02c42a19c58d02c0a863f578d">ReadPageGuard</a>() = <span class="keywordflow">default</span>;</div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno"><a class="line" href="../../d8/d80/classbustub_1_1ReadPageGuard.html#aa04d58b0931074ace49112a5f849538b">  119</a></span>  <a class="code hl_function" href="../../d8/d80/classbustub_1_1ReadPageGuard.html#aa04d58b0931074ace49112a5f849538b">ReadPageGuard</a>(<a class="code hl_class" href="../../d6/d5d/classbustub_1_1BufferPoolManager.html">BufferPoolManager</a> *bpm, <a class="code hl_class" href="../../d4/d87/classbustub_1_1Page.html">Page</a> *page) : <a class="code hl_variable" href="../../d8/d80/classbustub_1_1ReadPageGuard.html#aa1b4788e0dc2df68c1ed86c2f580221d">guard_</a>(bpm, page) {}</div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno"><a class="line" href="../../d8/d80/classbustub_1_1ReadPageGuard.html#a85fa784e752dc64aa011f2b056bd2385">  120</a></span>  <a class="code hl_function" href="../../d8/d80/classbustub_1_1ReadPageGuard.html#a85fa784e752dc64aa011f2b056bd2385">ReadPageGuard</a>(<span class="keyword">const</span> <a class="code hl_class" href="../../d8/d80/classbustub_1_1ReadPageGuard.html">ReadPageGuard</a> &amp;) = <span class="keyword">delete</span>;</div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno"><a class="line" href="../../d8/d80/classbustub_1_1ReadPageGuard.html#ad714c557b7a9f1d1fa1bddcf4ad202d8">  121</a></span>  <span class="keyword">auto</span> <a class="code hl_function" href="../../d8/d80/classbustub_1_1ReadPageGuard.html#ad714c557b7a9f1d1fa1bddcf4ad202d8">operator=</a>(<span class="keyword">const</span> <a class="code hl_class" href="../../d8/d80/classbustub_1_1ReadPageGuard.html">ReadPageGuard</a> &amp;) -&gt; <a class="code hl_class" href="../../d8/d80/classbustub_1_1ReadPageGuard.html">ReadPageGuard</a> &amp; = <span class="keyword">delete</span>;</div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span> </div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno"><a class="line" href="../../d8/d80/classbustub_1_1ReadPageGuard.html#ac7469839317d293bef0e8fa6b3537e18">  131</a></span>  <a class="code hl_function" href="../../d8/d80/classbustub_1_1ReadPageGuard.html#ac7469839317d293bef0e8fa6b3537e18">ReadPageGuard</a>(<a class="code hl_class" href="../../d8/d80/classbustub_1_1ReadPageGuard.html">ReadPageGuard</a> &amp;&amp;that) <span class="keyword">noexcept</span>;</div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span> </div>
+<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span>  <span class="keyword">auto</span> <a class="code hl_function" href="../../d8/d80/classbustub_1_1ReadPageGuard.html#ad714c557b7a9f1d1fa1bddcf4ad202d8">operator=</a>(<a class="code hl_class" href="../../d8/d80/classbustub_1_1ReadPageGuard.html">ReadPageGuard</a> &amp;&amp;that) <span class="keyword">noexcept</span> -&gt; <a class="code hl_class" href="../../d8/d80/classbustub_1_1ReadPageGuard.html">ReadPageGuard</a> &amp;;</div>
+<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span> </div>
+<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="../../d8/d80/classbustub_1_1ReadPageGuard.html#ac2895fff0ad5dcf9bbca52345e74599e">Drop</a>();</div>
+<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span> </div>
+<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span>  <a class="code hl_function" href="../../d8/d80/classbustub_1_1ReadPageGuard.html#a5adba3d6bd4d971f8ff6e41889fc9c82">~ReadPageGuard</a>();</div>
+<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span> </div>
+<div class="line"><a id="l00162" name="l00162"></a><span class="lineno"><a class="line" href="../../d8/d80/classbustub_1_1ReadPageGuard.html#a14abc220c5e7e60ff7de83f987cc36fe">  162</a></span>  <span class="keyword">auto</span> <a class="code hl_function" href="../../d8/d80/classbustub_1_1ReadPageGuard.html#a14abc220c5e7e60ff7de83f987cc36fe">PageId</a>() -&gt; <a class="code hl_typedef" href="../../de/dda/namespacebustub.html#a8de4ac099b23d712481109bb846decde">page_id_t</a> { <span class="keywordflow">return</span> <a class="code hl_variable" href="../../d8/d80/classbustub_1_1ReadPageGuard.html#aa1b4788e0dc2df68c1ed86c2f580221d">guard_</a>.<a class="code hl_function" href="../../db/d3a/classbustub_1_1BasicPageGuard.html#a9eeaf42ca7acef5c35dc1df8070884e1">PageId</a>(); }</div>
+<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span> </div>
+<div class="line"><a id="l00164" name="l00164"></a><span class="lineno"><a class="line" href="../../d8/d80/classbustub_1_1ReadPageGuard.html#a14ac4ee721ca777e1cec264458547b23">  164</a></span>  <span class="keyword">auto</span> <a class="code hl_function" href="../../d8/d80/classbustub_1_1ReadPageGuard.html#a14ac4ee721ca777e1cec264458547b23">GetData</a>() -&gt; <span class="keyword">const</span> <span class="keywordtype">char</span> * { <span class="keywordflow">return</span> <a class="code hl_variable" href="../../d8/d80/classbustub_1_1ReadPageGuard.html#aa1b4788e0dc2df68c1ed86c2f580221d">guard_</a>.<a class="code hl_function" href="../../db/d3a/classbustub_1_1BasicPageGuard.html#a5679a313928179a09f2d4c79b51bf337">GetData</a>(); }</div>
+<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span> </div>
+<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span>  <span class="keyword">template</span> &lt;<span class="keyword">class</span> T&gt;</div>
+<div class="foldopen" id="foldopen00167" data-start="{" data-end="}">
+<div class="line"><a id="l00167" name="l00167"></a><span class="lineno"><a class="line" href="../../d8/d80/classbustub_1_1ReadPageGuard.html#a2f472682ae99600bd82358c63fb06be1">  167</a></span>  <span class="keyword">auto</span> <a class="code hl_function" href="../../d8/d80/classbustub_1_1ReadPageGuard.html#a2f472682ae99600bd82358c63fb06be1">As</a>() -&gt; <span class="keyword">const</span> T * {</div>
+<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="../../d8/d80/classbustub_1_1ReadPageGuard.html#aa1b4788e0dc2df68c1ed86c2f580221d">guard_</a>.<a class="code hl_function" href="../../db/d3a/classbustub_1_1BasicPageGuard.html#a144687778880f84353cea2a7301674dc">As</a>&lt;T&gt;();</div>
+<div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span>  }</div>
+</div>
+<div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span> </div>
+<div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="../../d8/d80/classbustub_1_1ReadPageGuard.html#a583b57b172c7d65bdc622e0f07952dcc">Swap</a>(<a class="code hl_class" href="../../d8/d80/classbustub_1_1ReadPageGuard.html">ReadPageGuard</a> &amp;that);</div>
+<div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span> </div>
+<div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span> <span class="keyword">private</span>:</div>
+<div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span>  <span class="comment">// You may choose to get rid of this and add your own private variables.</span></div>
+<div class="line"><a id="l00175" name="l00175"></a><span class="lineno"><a class="line" href="../../d8/d80/classbustub_1_1ReadPageGuard.html#aa1b4788e0dc2df68c1ed86c2f580221d">  175</a></span>  <a class="code hl_class" href="../../db/d3a/classbustub_1_1BasicPageGuard.html">BasicPageGuard</a> <a class="code hl_variable" href="../../d8/d80/classbustub_1_1ReadPageGuard.html#aa1b4788e0dc2df68c1ed86c2f580221d">guard_</a>;</div>
+<div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span>};</div>
+</div>
+<div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span> </div>
+<div class="foldopen" id="foldopen00178" data-start="{" data-end="};">
+<div class="line"><a id="l00178" name="l00178"></a><span class="lineno"><a class="line" href="../../d8/dd6/classbustub_1_1WritePageGuard.html">  178</a></span><span class="keyword">class </span><a class="code hl_class" href="../../d8/dd6/classbustub_1_1WritePageGuard.html">WritePageGuard</a> {</div>
+<div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span> <span class="keyword">public</span>:</div>
+<div class="line"><a id="l00180" name="l00180"></a><span class="lineno"><a class="line" href="../../d8/dd6/classbustub_1_1WritePageGuard.html#a885b6709f5ba4a781d33ac9323f77df2">  180</a></span>  <a class="code hl_function" href="../../d8/dd6/classbustub_1_1WritePageGuard.html#a885b6709f5ba4a781d33ac9323f77df2">WritePageGuard</a>() = <span class="keywordflow">default</span>;</div>
+<div class="line"><a id="l00181" name="l00181"></a><span class="lineno"><a class="line" href="../../d8/dd6/classbustub_1_1WritePageGuard.html#af282f2a7e7b83121441af40bef730d89">  181</a></span>  <a class="code hl_function" href="../../d8/dd6/classbustub_1_1WritePageGuard.html#af282f2a7e7b83121441af40bef730d89">WritePageGuard</a>(<a class="code hl_class" href="../../d6/d5d/classbustub_1_1BufferPoolManager.html">BufferPoolManager</a> *bpm, <a class="code hl_class" href="../../d4/d87/classbustub_1_1Page.html">Page</a> *page) : <a class="code hl_variable" href="../../d8/dd6/classbustub_1_1WritePageGuard.html#af9e98150c74d8d68722744429ca907e0">guard_</a>(bpm, page) {}</div>
+<div class="line"><a id="l00182" name="l00182"></a><span class="lineno"><a class="line" href="../../d8/dd6/classbustub_1_1WritePageGuard.html#a294215ba7d957ad88cba33cff748142b">  182</a></span>  <a class="code hl_function" href="../../d8/dd6/classbustub_1_1WritePageGuard.html#a294215ba7d957ad88cba33cff748142b">WritePageGuard</a>(<span class="keyword">const</span> <a class="code hl_class" href="../../d8/dd6/classbustub_1_1WritePageGuard.html">WritePageGuard</a> &amp;) = <span class="keyword">delete</span>;</div>
+<div class="line"><a id="l00183" name="l00183"></a><span class="lineno"><a class="line" href="../../d8/dd6/classbustub_1_1WritePageGuard.html#aae42b4952f0e7aabc24e82f2950b33c7">  183</a></span>  <span class="keyword">auto</span> <a class="code hl_function" href="../../d8/dd6/classbustub_1_1WritePageGuard.html#aae42b4952f0e7aabc24e82f2950b33c7">operator=</a>(<span class="keyword">const</span> <a class="code hl_class" href="../../d8/dd6/classbustub_1_1WritePageGuard.html">WritePageGuard</a> &amp;) -&gt; <a class="code hl_class" href="../../d8/dd6/classbustub_1_1WritePageGuard.html">WritePageGuard</a> &amp; = <span class="keyword">delete</span>;</div>
+<div class="line"><a id="l00184" name="l00184"></a><span class="lineno">  184</span> </div>
+<div class="line"><a id="l00193" name="l00193"></a><span class="lineno"><a class="line" href="../../d8/dd6/classbustub_1_1WritePageGuard.html#a1fd42ae1ac36a9e226d30999fc880b4d">  193</a></span>  <a class="code hl_function" href="../../d8/dd6/classbustub_1_1WritePageGuard.html#a1fd42ae1ac36a9e226d30999fc880b4d">WritePageGuard</a>(<a class="code hl_class" href="../../d8/dd6/classbustub_1_1WritePageGuard.html">WritePageGuard</a> &amp;&amp;that) <span class="keyword">noexcept</span>;</div>
+<div class="line"><a id="l00194" name="l00194"></a><span class="lineno">  194</span> </div>
+<div class="line"><a id="l00202" name="l00202"></a><span class="lineno">  202</span>  <span class="keyword">auto</span> <a class="code hl_function" href="../../d8/dd6/classbustub_1_1WritePageGuard.html#aae42b4952f0e7aabc24e82f2950b33c7">operator=</a>(<a class="code hl_class" href="../../d8/dd6/classbustub_1_1WritePageGuard.html">WritePageGuard</a> &amp;&amp;that) <span class="keyword">noexcept</span> -&gt; <a class="code hl_class" href="../../d8/dd6/classbustub_1_1WritePageGuard.html">WritePageGuard</a> &amp;;</div>
+<div class="line"><a id="l00203" name="l00203"></a><span class="lineno">  203</span> </div>
+<div class="line"><a id="l00213" name="l00213"></a><span class="lineno">  213</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="../../d8/dd6/classbustub_1_1WritePageGuard.html#a4c946b040a922f2e257a10f7c3cce827">Drop</a>();</div>
+<div class="line"><a id="l00214" name="l00214"></a><span class="lineno">  214</span> </div>
+<div class="line"><a id="l00222" name="l00222"></a><span class="lineno">  222</span>  <a class="code hl_function" href="../../d8/dd6/classbustub_1_1WritePageGuard.html#a037f97ee39f5e805cd41422fa3c4029f">~WritePageGuard</a>();</div>
+<div class="line"><a id="l00223" name="l00223"></a><span class="lineno">  223</span> </div>
+<div class="line"><a id="l00224" name="l00224"></a><span class="lineno"><a class="line" href="../../d8/dd6/classbustub_1_1WritePageGuard.html#ab6765a02a208a61d6cf1a2236e1b2d5c">  224</a></span>  <span class="keyword">auto</span> <a class="code hl_function" href="../../d8/dd6/classbustub_1_1WritePageGuard.html#ab6765a02a208a61d6cf1a2236e1b2d5c">PageId</a>() -&gt; <a class="code hl_typedef" href="../../de/dda/namespacebustub.html#a8de4ac099b23d712481109bb846decde">page_id_t</a> { <span class="keywordflow">return</span> <a class="code hl_variable" href="../../d8/dd6/classbustub_1_1WritePageGuard.html#af9e98150c74d8d68722744429ca907e0">guard_</a>.<a class="code hl_function" href="../../db/d3a/classbustub_1_1BasicPageGuard.html#a9eeaf42ca7acef5c35dc1df8070884e1">PageId</a>(); }</div>
+<div class="line"><a id="l00225" name="l00225"></a><span class="lineno">  225</span> </div>
+<div class="line"><a id="l00226" name="l00226"></a><span class="lineno"><a class="line" href="../../d8/dd6/classbustub_1_1WritePageGuard.html#a9839b273d05cc1b97deb44736dc28c87">  226</a></span>  <span class="keyword">auto</span> <a class="code hl_function" href="../../d8/dd6/classbustub_1_1WritePageGuard.html#a9839b273d05cc1b97deb44736dc28c87">GetData</a>() -&gt; <span class="keyword">const</span> <span class="keywordtype">char</span> * { <span class="keywordflow">return</span> <a class="code hl_variable" href="../../d8/dd6/classbustub_1_1WritePageGuard.html#af9e98150c74d8d68722744429ca907e0">guard_</a>.<a class="code hl_function" href="../../db/d3a/classbustub_1_1BasicPageGuard.html#a5679a313928179a09f2d4c79b51bf337">GetData</a>(); }</div>
+<div class="line"><a id="l00227" name="l00227"></a><span class="lineno">  227</span> </div>
+<div class="line"><a id="l00228" name="l00228"></a><span class="lineno">  228</span>  <span class="keyword">template</span> &lt;<span class="keyword">class</span> T&gt;</div>
+<div class="foldopen" id="foldopen00229" data-start="{" data-end="}">
+<div class="line"><a id="l00229" name="l00229"></a><span class="lineno"><a class="line" href="../../d8/dd6/classbustub_1_1WritePageGuard.html#a60662196681c3ae463751cfd89f29eea">  229</a></span>  <span class="keyword">auto</span> <a class="code hl_function" href="../../d8/dd6/classbustub_1_1WritePageGuard.html#a60662196681c3ae463751cfd89f29eea">As</a>() -&gt; <span class="keyword">const</span> T * {</div>
+<div class="line"><a id="l00230" name="l00230"></a><span class="lineno">  230</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="../../d8/dd6/classbustub_1_1WritePageGuard.html#af9e98150c74d8d68722744429ca907e0">guard_</a>.<a class="code hl_function" href="../../db/d3a/classbustub_1_1BasicPageGuard.html#a144687778880f84353cea2a7301674dc">As</a>&lt;T&gt;();</div>
+<div class="line"><a id="l00231" name="l00231"></a><span class="lineno">  231</span>  }</div>
+</div>
+<div class="line"><a id="l00232" name="l00232"></a><span class="lineno">  232</span> </div>
+<div class="line"><a id="l00233" name="l00233"></a><span class="lineno"><a class="line" href="../../d8/dd6/classbustub_1_1WritePageGuard.html#abe985bbd90f484385f7670f7a1cf705d">  233</a></span>  <span class="keyword">auto</span> <a class="code hl_function" href="../../d8/dd6/classbustub_1_1WritePageGuard.html#abe985bbd90f484385f7670f7a1cf705d">GetDataMut</a>() -&gt; <span class="keywordtype">char</span> * { <span class="keywordflow">return</span> <a class="code hl_variable" href="../../d8/dd6/classbustub_1_1WritePageGuard.html#af9e98150c74d8d68722744429ca907e0">guard_</a>.<a class="code hl_function" href="../../db/d3a/classbustub_1_1BasicPageGuard.html#ab32fd3722723f1e3a87f9bbcba3d0a08">GetDataMut</a>(); }</div>
+<div class="line"><a id="l00234" name="l00234"></a><span class="lineno">  234</span> </div>
+<div class="line"><a id="l00235" name="l00235"></a><span class="lineno">  235</span>  <span class="keyword">template</span> &lt;<span class="keyword">class</span> T&gt;</div>
+<div class="foldopen" id="foldopen00236" data-start="{" data-end="}">
+<div class="line"><a id="l00236" name="l00236"></a><span class="lineno"><a class="line" href="../../d8/dd6/classbustub_1_1WritePageGuard.html#acdd13b3653e8de6b4a2505fbc30e23b9">  236</a></span>  <span class="keyword">auto</span> <a class="code hl_function" href="../../d8/dd6/classbustub_1_1WritePageGuard.html#acdd13b3653e8de6b4a2505fbc30e23b9">AsMut</a>() -&gt; T * {</div>
+<div class="line"><a id="l00237" name="l00237"></a><span class="lineno">  237</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="../../d8/dd6/classbustub_1_1WritePageGuard.html#af9e98150c74d8d68722744429ca907e0">guard_</a>.<a class="code hl_function" href="../../db/d3a/classbustub_1_1BasicPageGuard.html#a762d05dc05a9e3df0300e7a3e9400f27">AsMut</a>&lt;T&gt;();</div>
+<div class="line"><a id="l00238" name="l00238"></a><span class="lineno">  238</span>  }</div>
+</div>
+<div class="line"><a id="l00239" name="l00239"></a><span class="lineno">  239</span> </div>
+<div class="line"><a id="l00240" name="l00240"></a><span class="lineno">  240</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="../../d8/dd6/classbustub_1_1WritePageGuard.html#ac323cdf4043b30ade9e2d6b4968d8888">Swap</a>(<a class="code hl_class" href="../../d8/dd6/classbustub_1_1WritePageGuard.html">WritePageGuard</a> &amp;that);</div>
+<div class="line"><a id="l00241" name="l00241"></a><span class="lineno">  241</span> </div>
+<div class="line"><a id="l00242" name="l00242"></a><span class="lineno">  242</span> <span class="keyword">private</span>:</div>
+<div class="line"><a id="l00243" name="l00243"></a><span class="lineno">  243</span>  <span class="comment">// You may choose to get rid of this and add your own private variables.</span></div>
+<div class="line"><a id="l00244" name="l00244"></a><span class="lineno"><a class="line" href="../../d8/dd6/classbustub_1_1WritePageGuard.html#af9e98150c74d8d68722744429ca907e0">  244</a></span>  <a class="code hl_class" href="../../db/d3a/classbustub_1_1BasicPageGuard.html">BasicPageGuard</a> <a class="code hl_variable" href="../../d8/dd6/classbustub_1_1WritePageGuard.html#af9e98150c74d8d68722744429ca907e0">guard_</a>;</div>
+<div class="line"><a id="l00245" name="l00245"></a><span class="lineno">  245</span>};</div>
+</div>
+<div class="line"><a id="l00246" name="l00246"></a><span class="lineno">  246</span> </div>
+<div class="line"><a id="l00247" name="l00247"></a><span class="lineno">  247</span>}  <span class="comment">// namespace bustub</span></div>
+<div class="ttc" id="aclassbustub_1_1BasicPageGuard_html"><div class="ttname"><a href="../../db/d3a/classbustub_1_1BasicPageGuard.html">bustub::BasicPageGuard</a></div><div class="ttdef"><b>Definition</b> page_guard.h:11</div></div>
+<div class="ttc" id="aclassbustub_1_1BasicPageGuard_html_a045869dce2fd3e99ed93525da7104e63"><div class="ttname"><a href="../../db/d3a/classbustub_1_1BasicPageGuard.html#a045869dce2fd3e99ed93525da7104e63">bustub::BasicPageGuard::is_dirty_</a></div><div class="ttdeci">bool is_dirty_</div><div class="ttdef"><b>Definition</b> page_guard.h:113</div></div>
+<div class="ttc" id="aclassbustub_1_1BasicPageGuard_html_a051186c0c579ab088023ff141bc2c928"><div class="ttname"><a href="../../db/d3a/classbustub_1_1BasicPageGuard.html#a051186c0c579ab088023ff141bc2c928">bustub::BasicPageGuard::page_</a></div><div class="ttdeci">Page * page_</div><div class="ttdef"><b>Definition</b> page_guard.h:112</div></div>
+<div class="ttc" id="aclassbustub_1_1BasicPageGuard_html_a0c7f168136dd531e739be3b06031845a"><div class="ttname"><a href="../../db/d3a/classbustub_1_1BasicPageGuard.html#a0c7f168136dd531e739be3b06031845a">bustub::BasicPageGuard::BasicPageGuard</a></div><div class="ttdeci">BasicPageGuard()=default</div></div>
+<div class="ttc" id="aclassbustub_1_1BasicPageGuard_html_a11b4e8677c74e94eb4d431f14e69b9ed"><div class="ttname"><a href="../../db/d3a/classbustub_1_1BasicPageGuard.html#a11b4e8677c74e94eb4d431f14e69b9ed">bustub::BasicPageGuard::ReadPageGuard</a></div><div class="ttdeci">friend class ReadPageGuard</div><div class="ttdef"><b>Definition</b> page_guard.h:108</div></div>
+<div class="ttc" id="aclassbustub_1_1BasicPageGuard_html_a144687778880f84353cea2a7301674dc"><div class="ttname"><a href="../../db/d3a/classbustub_1_1BasicPageGuard.html#a144687778880f84353cea2a7301674dc">bustub::BasicPageGuard::As</a></div><div class="ttdeci">auto As() -&gt; const T *</div><div class="ttdef"><b>Definition</b> page_guard.h:91</div></div>
+<div class="ttc" id="aclassbustub_1_1BasicPageGuard_html_a1bdaa6e50a29a591f34aff8b62cae552"><div class="ttname"><a href="../../db/d3a/classbustub_1_1BasicPageGuard.html#a1bdaa6e50a29a591f34aff8b62cae552">bustub::BasicPageGuard::WritePageGuard</a></div><div class="ttdeci">friend class WritePageGuard</div><div class="ttdef"><b>Definition</b> page_guard.h:109</div></div>
+<div class="ttc" id="aclassbustub_1_1BasicPageGuard_html_a2760cfab0dc996dc2c6a6b654b276de1"><div class="ttname"><a href="../../db/d3a/classbustub_1_1BasicPageGuard.html#a2760cfab0dc996dc2c6a6b654b276de1">bustub::BasicPageGuard::BasicPageGuard</a></div><div class="ttdeci">BasicPageGuard(BufferPoolManager *bpm, Page *page)</div><div class="ttdef"><b>Definition</b> page_guard.h:15</div></div>
+<div class="ttc" id="aclassbustub_1_1BasicPageGuard_html_a3237a2310a087e9d69faf098d838b3e8"><div class="ttname"><a href="../../db/d3a/classbustub_1_1BasicPageGuard.html#a3237a2310a087e9d69faf098d838b3e8">bustub::BasicPageGuard::bpm_</a></div><div class="ttdeci">BufferPoolManager * bpm_</div><div class="ttdef"><b>Definition</b> page_guard.h:111</div></div>
+<div class="ttc" id="aclassbustub_1_1BasicPageGuard_html_a36f790075811859a4fc06c6f6fba4134"><div class="ttname"><a href="../../db/d3a/classbustub_1_1BasicPageGuard.html#a36f790075811859a4fc06c6f6fba4134">bustub::BasicPageGuard::~BasicPageGuard</a></div><div class="ttdeci">~BasicPageGuard()</div><div class="ttdoc">Destructor for BasicPageGuard</div><div class="ttdef"><b>Definition</b> page_guard.cpp:27</div></div>
+<div class="ttc" id="aclassbustub_1_1BasicPageGuard_html_a5679a313928179a09f2d4c79b51bf337"><div class="ttname"><a href="../../db/d3a/classbustub_1_1BasicPageGuard.html#a5679a313928179a09f2d4c79b51bf337">bustub::BasicPageGuard::GetData</a></div><div class="ttdeci">auto GetData() -&gt; const char *</div><div class="ttdef"><b>Definition</b> page_guard.h:88</div></div>
+<div class="ttc" id="aclassbustub_1_1BasicPageGuard_html_a5804f3626a563cf01ce5006cd5f1cfd2"><div class="ttname"><a href="../../db/d3a/classbustub_1_1BasicPageGuard.html#a5804f3626a563cf01ce5006cd5f1cfd2">bustub::BasicPageGuard::UpgradeWrite</a></div><div class="ttdeci">auto UpgradeWrite() -&gt; WritePageGuard</div><div class="ttdoc">Upgrade a BasicPageGuard to a WritePageGuard</div><div class="ttdef"><b>Definition</b> page_guard.cpp:39</div></div>
+<div class="ttc" id="aclassbustub_1_1BasicPageGuard_html_a5dcb7eb8fe3eec301248d24d6940e718"><div class="ttname"><a href="../../db/d3a/classbustub_1_1BasicPageGuard.html#a5dcb7eb8fe3eec301248d24d6940e718">bustub::BasicPageGuard::BasicPageGuard</a></div><div class="ttdeci">BasicPageGuard(const BasicPageGuard &amp;)=delete</div></div>
+<div class="ttc" id="aclassbustub_1_1BasicPageGuard_html_a762d05dc05a9e3df0300e7a3e9400f27"><div class="ttname"><a href="../../db/d3a/classbustub_1_1BasicPageGuard.html#a762d05dc05a9e3df0300e7a3e9400f27">bustub::BasicPageGuard::AsMut</a></div><div class="ttdeci">auto AsMut() -&gt; T *</div><div class="ttdef"><b>Definition</b> page_guard.h:101</div></div>
+<div class="ttc" id="aclassbustub_1_1BasicPageGuard_html_a76d1f4e1bf4a26c5ea83f997fe9c6f03"><div class="ttname"><a href="../../db/d3a/classbustub_1_1BasicPageGuard.html#a76d1f4e1bf4a26c5ea83f997fe9c6f03">bustub::BasicPageGuard::Swap</a></div><div class="ttdeci">void Swap(BasicPageGuard &amp;that)</div><div class="ttdef"><b>Definition</b> page_guard.cpp:49</div></div>
+<div class="ttc" id="aclassbustub_1_1BasicPageGuard_html_a8f3e6495d44b6c5b9b3e63f3fcf3d6dd"><div class="ttname"><a href="../../db/d3a/classbustub_1_1BasicPageGuard.html#a8f3e6495d44b6c5b9b3e63f3fcf3d6dd">bustub::BasicPageGuard::UpgradeRead</a></div><div class="ttdeci">auto UpgradeRead() -&gt; ReadPageGuard</div><div class="ttdoc">Upgrade a BasicPageGuard to a ReadPageGuard</div><div class="ttdef"><b>Definition</b> page_guard.cpp:29</div></div>
+<div class="ttc" id="aclassbustub_1_1BasicPageGuard_html_a9e70fa4b918f206c8ba8fd61c22bea07"><div class="ttname"><a href="../../db/d3a/classbustub_1_1BasicPageGuard.html#a9e70fa4b918f206c8ba8fd61c22bea07">bustub::BasicPageGuard::Drop</a></div><div class="ttdeci">void Drop()</div><div class="ttdoc">Drop a page guard</div><div class="ttdef"><b>Definition</b> page_guard.cpp:14</div></div>
+<div class="ttc" id="aclassbustub_1_1BasicPageGuard_html_a9eeaf42ca7acef5c35dc1df8070884e1"><div class="ttname"><a href="../../db/d3a/classbustub_1_1BasicPageGuard.html#a9eeaf42ca7acef5c35dc1df8070884e1">bustub::BasicPageGuard::PageId</a></div><div class="ttdeci">auto PageId() -&gt; page_id_t</div><div class="ttdef"><b>Definition</b> page_guard.h:86</div></div>
+<div class="ttc" id="aclassbustub_1_1BasicPageGuard_html_ab32fd3722723f1e3a87f9bbcba3d0a08"><div class="ttname"><a href="../../db/d3a/classbustub_1_1BasicPageGuard.html#ab32fd3722723f1e3a87f9bbcba3d0a08">bustub::BasicPageGuard::GetDataMut</a></div><div class="ttdeci">auto GetDataMut() -&gt; char *</div><div class="ttdef"><b>Definition</b> page_guard.h:95</div></div>
+<div class="ttc" id="aclassbustub_1_1BasicPageGuard_html_adc97c1218df3657177a3a7cac1ee967f"><div class="ttname"><a href="../../db/d3a/classbustub_1_1BasicPageGuard.html#adc97c1218df3657177a3a7cac1ee967f">bustub::BasicPageGuard::operator=</a></div><div class="ttdeci">auto operator=(const BasicPageGuard &amp;) -&gt; BasicPageGuard &amp;=delete</div></div>
+<div class="ttc" id="aclassbustub_1_1BufferPoolManager_html"><div class="ttname"><a href="../../d6/d5d/classbustub_1_1BufferPoolManager.html">bustub::BufferPoolManager</a></div><div class="ttdef"><b>Definition</b> buffer_pool_manager.h:34</div></div>
+<div class="ttc" id="aclassbustub_1_1Page_html"><div class="ttname"><a href="../../d4/d87/classbustub_1_1Page.html">bustub::Page</a></div><div class="ttdef"><b>Definition</b> page.h:27</div></div>
+<div class="ttc" id="aclassbustub_1_1Page_html_aadc3a3c718b6a2146c4e210f64e7d515"><div class="ttname"><a href="../../d4/d87/classbustub_1_1Page.html#aadc3a3c718b6a2146c4e210f64e7d515">bustub::Page::GetPageId</a></div><div class="ttdeci">auto GetPageId() -&gt; page_id_t</div><div class="ttdef"><b>Definition</b> page.h:45</div></div>
+<div class="ttc" id="aclassbustub_1_1Page_html_ab989a25fb06b004c7e659904375293df"><div class="ttname"><a href="../../d4/d87/classbustub_1_1Page.html#ab989a25fb06b004c7e659904375293df">bustub::Page::GetData</a></div><div class="ttdeci">auto GetData() -&gt; char *</div><div class="ttdef"><b>Definition</b> page.h:42</div></div>
+<div class="ttc" id="aclassbustub_1_1ReadPageGuard_html"><div class="ttname"><a href="../../d8/d80/classbustub_1_1ReadPageGuard.html">bustub::ReadPageGuard</a></div><div class="ttdef"><b>Definition</b> page_guard.h:116</div></div>
+<div class="ttc" id="aclassbustub_1_1ReadPageGuard_html_a14abc220c5e7e60ff7de83f987cc36fe"><div class="ttname"><a href="../../d8/d80/classbustub_1_1ReadPageGuard.html#a14abc220c5e7e60ff7de83f987cc36fe">bustub::ReadPageGuard::PageId</a></div><div class="ttdeci">auto PageId() -&gt; page_id_t</div><div class="ttdef"><b>Definition</b> page_guard.h:162</div></div>
+<div class="ttc" id="aclassbustub_1_1ReadPageGuard_html_a14ac4ee721ca777e1cec264458547b23"><div class="ttname"><a href="../../d8/d80/classbustub_1_1ReadPageGuard.html#a14ac4ee721ca777e1cec264458547b23">bustub::ReadPageGuard::GetData</a></div><div class="ttdeci">auto GetData() -&gt; const char *</div><div class="ttdef"><b>Definition</b> page_guard.h:164</div></div>
+<div class="ttc" id="aclassbustub_1_1ReadPageGuard_html_a2f472682ae99600bd82358c63fb06be1"><div class="ttname"><a href="../../d8/d80/classbustub_1_1ReadPageGuard.html#a2f472682ae99600bd82358c63fb06be1">bustub::ReadPageGuard::As</a></div><div class="ttdeci">auto As() -&gt; const T *</div><div class="ttdef"><b>Definition</b> page_guard.h:167</div></div>
+<div class="ttc" id="aclassbustub_1_1ReadPageGuard_html_a4c0be5e02c42a19c58d02c0a863f578d"><div class="ttname"><a href="../../d8/d80/classbustub_1_1ReadPageGuard.html#a4c0be5e02c42a19c58d02c0a863f578d">bustub::ReadPageGuard::ReadPageGuard</a></div><div class="ttdeci">ReadPageGuard()=default</div></div>
+<div class="ttc" id="aclassbustub_1_1ReadPageGuard_html_a583b57b172c7d65bdc622e0f07952dcc"><div class="ttname"><a href="../../d8/d80/classbustub_1_1ReadPageGuard.html#a583b57b172c7d65bdc622e0f07952dcc">bustub::ReadPageGuard::Swap</a></div><div class="ttdeci">void Swap(ReadPageGuard &amp;that)</div><div class="ttdef"><b>Definition</b> page_guard.cpp:71</div></div>
+<div class="ttc" id="aclassbustub_1_1ReadPageGuard_html_a5adba3d6bd4d971f8ff6e41889fc9c82"><div class="ttname"><a href="../../d8/d80/classbustub_1_1ReadPageGuard.html#a5adba3d6bd4d971f8ff6e41889fc9c82">bustub::ReadPageGuard::~ReadPageGuard</a></div><div class="ttdeci">~ReadPageGuard()</div><div class="ttdoc">Destructor for ReadPageGuard</div><div class="ttdef"><b>Definition</b> page_guard.cpp:69</div></div>
+<div class="ttc" id="aclassbustub_1_1ReadPageGuard_html_a85fa784e752dc64aa011f2b056bd2385"><div class="ttname"><a href="../../d8/d80/classbustub_1_1ReadPageGuard.html#a85fa784e752dc64aa011f2b056bd2385">bustub::ReadPageGuard::ReadPageGuard</a></div><div class="ttdeci">ReadPageGuard(const ReadPageGuard &amp;)=delete</div></div>
+<div class="ttc" id="aclassbustub_1_1ReadPageGuard_html_aa04d58b0931074ace49112a5f849538b"><div class="ttname"><a href="../../d8/d80/classbustub_1_1ReadPageGuard.html#aa04d58b0931074ace49112a5f849538b">bustub::ReadPageGuard::ReadPageGuard</a></div><div class="ttdeci">ReadPageGuard(BufferPoolManager *bpm, Page *page)</div><div class="ttdef"><b>Definition</b> page_guard.h:119</div></div>
+<div class="ttc" id="aclassbustub_1_1ReadPageGuard_html_aa1b4788e0dc2df68c1ed86c2f580221d"><div class="ttname"><a href="../../d8/d80/classbustub_1_1ReadPageGuard.html#aa1b4788e0dc2df68c1ed86c2f580221d">bustub::ReadPageGuard::guard_</a></div><div class="ttdeci">BasicPageGuard guard_</div><div class="ttdef"><b>Definition</b> page_guard.h:175</div></div>
+<div class="ttc" id="aclassbustub_1_1ReadPageGuard_html_ac2895fff0ad5dcf9bbca52345e74599e"><div class="ttname"><a href="../../d8/d80/classbustub_1_1ReadPageGuard.html#ac2895fff0ad5dcf9bbca52345e74599e">bustub::ReadPageGuard::Drop</a></div><div class="ttdeci">void Drop()</div><div class="ttdoc">Drop a ReadPageGuard</div><div class="ttdef"><b>Definition</b> page_guard.cpp:62</div></div>
+<div class="ttc" id="aclassbustub_1_1ReadPageGuard_html_ac7469839317d293bef0e8fa6b3537e18"><div class="ttname"><a href="../../d8/d80/classbustub_1_1ReadPageGuard.html#ac7469839317d293bef0e8fa6b3537e18">bustub::ReadPageGuard::ReadPageGuard</a></div><div class="ttdeci">ReadPageGuard(ReadPageGuard &amp;&amp;that) noexcept</div><div class="ttdoc">Move constructor for ReadPageGuard</div></div>
+<div class="ttc" id="aclassbustub_1_1ReadPageGuard_html_ad714c557b7a9f1d1fa1bddcf4ad202d8"><div class="ttname"><a href="../../d8/d80/classbustub_1_1ReadPageGuard.html#ad714c557b7a9f1d1fa1bddcf4ad202d8">bustub::ReadPageGuard::operator=</a></div><div class="ttdeci">auto operator=(const ReadPageGuard &amp;) -&gt; ReadPageGuard &amp;=delete</div></div>
+<div class="ttc" id="aclassbustub_1_1WritePageGuard_html"><div class="ttname"><a href="../../d8/dd6/classbustub_1_1WritePageGuard.html">bustub::WritePageGuard</a></div><div class="ttdef"><b>Definition</b> page_guard.h:178</div></div>
+<div class="ttc" id="aclassbustub_1_1WritePageGuard_html_a037f97ee39f5e805cd41422fa3c4029f"><div class="ttname"><a href="../../d8/dd6/classbustub_1_1WritePageGuard.html#a037f97ee39f5e805cd41422fa3c4029f">bustub::WritePageGuard::~WritePageGuard</a></div><div class="ttdeci">~WritePageGuard()</div><div class="ttdoc">Destructor for WritePageGuard</div><div class="ttdef"><b>Definition</b> page_guard.cpp:87</div></div>
+<div class="ttc" id="aclassbustub_1_1WritePageGuard_html_a1fd42ae1ac36a9e226d30999fc880b4d"><div class="ttname"><a href="../../d8/dd6/classbustub_1_1WritePageGuard.html#a1fd42ae1ac36a9e226d30999fc880b4d">bustub::WritePageGuard::WritePageGuard</a></div><div class="ttdeci">WritePageGuard(WritePageGuard &amp;&amp;that) noexcept</div><div class="ttdoc">Move constructor for WritePageGuard</div></div>
+<div class="ttc" id="aclassbustub_1_1WritePageGuard_html_a294215ba7d957ad88cba33cff748142b"><div class="ttname"><a href="../../d8/dd6/classbustub_1_1WritePageGuard.html#a294215ba7d957ad88cba33cff748142b">bustub::WritePageGuard::WritePageGuard</a></div><div class="ttdeci">WritePageGuard(const WritePageGuard &amp;)=delete</div></div>
+<div class="ttc" id="aclassbustub_1_1WritePageGuard_html_a4c946b040a922f2e257a10f7c3cce827"><div class="ttname"><a href="../../d8/dd6/classbustub_1_1WritePageGuard.html#a4c946b040a922f2e257a10f7c3cce827">bustub::WritePageGuard::Drop</a></div><div class="ttdeci">void Drop()</div><div class="ttdoc">Drop a WritePageGuard</div><div class="ttdef"><b>Definition</b> page_guard.cpp:80</div></div>
+<div class="ttc" id="aclassbustub_1_1WritePageGuard_html_a60662196681c3ae463751cfd89f29eea"><div class="ttname"><a href="../../d8/dd6/classbustub_1_1WritePageGuard.html#a60662196681c3ae463751cfd89f29eea">bustub::WritePageGuard::As</a></div><div class="ttdeci">auto As() -&gt; const T *</div><div class="ttdef"><b>Definition</b> page_guard.h:229</div></div>
+<div class="ttc" id="aclassbustub_1_1WritePageGuard_html_a885b6709f5ba4a781d33ac9323f77df2"><div class="ttname"><a href="../../d8/dd6/classbustub_1_1WritePageGuard.html#a885b6709f5ba4a781d33ac9323f77df2">bustub::WritePageGuard::WritePageGuard</a></div><div class="ttdeci">WritePageGuard()=default</div></div>
+<div class="ttc" id="aclassbustub_1_1WritePageGuard_html_a9839b273d05cc1b97deb44736dc28c87"><div class="ttname"><a href="../../d8/dd6/classbustub_1_1WritePageGuard.html#a9839b273d05cc1b97deb44736dc28c87">bustub::WritePageGuard::GetData</a></div><div class="ttdeci">auto GetData() -&gt; const char *</div><div class="ttdef"><b>Definition</b> page_guard.h:226</div></div>
+<div class="ttc" id="aclassbustub_1_1WritePageGuard_html_aae42b4952f0e7aabc24e82f2950b33c7"><div class="ttname"><a href="../../d8/dd6/classbustub_1_1WritePageGuard.html#aae42b4952f0e7aabc24e82f2950b33c7">bustub::WritePageGuard::operator=</a></div><div class="ttdeci">auto operator=(const WritePageGuard &amp;) -&gt; WritePageGuard &amp;=delete</div></div>
+<div class="ttc" id="aclassbustub_1_1WritePageGuard_html_ab6765a02a208a61d6cf1a2236e1b2d5c"><div class="ttname"><a href="../../d8/dd6/classbustub_1_1WritePageGuard.html#ab6765a02a208a61d6cf1a2236e1b2d5c">bustub::WritePageGuard::PageId</a></div><div class="ttdeci">auto PageId() -&gt; page_id_t</div><div class="ttdef"><b>Definition</b> page_guard.h:224</div></div>
+<div class="ttc" id="aclassbustub_1_1WritePageGuard_html_abe985bbd90f484385f7670f7a1cf705d"><div class="ttname"><a href="../../d8/dd6/classbustub_1_1WritePageGuard.html#abe985bbd90f484385f7670f7a1cf705d">bustub::WritePageGuard::GetDataMut</a></div><div class="ttdeci">auto GetDataMut() -&gt; char *</div><div class="ttdef"><b>Definition</b> page_guard.h:233</div></div>
+<div class="ttc" id="aclassbustub_1_1WritePageGuard_html_ac323cdf4043b30ade9e2d6b4968d8888"><div class="ttname"><a href="../../d8/dd6/classbustub_1_1WritePageGuard.html#ac323cdf4043b30ade9e2d6b4968d8888">bustub::WritePageGuard::Swap</a></div><div class="ttdeci">void Swap(WritePageGuard &amp;that)</div><div class="ttdef"><b>Definition</b> page_guard.cpp:89</div></div>
+<div class="ttc" id="aclassbustub_1_1WritePageGuard_html_acdd13b3653e8de6b4a2505fbc30e23b9"><div class="ttname"><a href="../../d8/dd6/classbustub_1_1WritePageGuard.html#acdd13b3653e8de6b4a2505fbc30e23b9">bustub::WritePageGuard::AsMut</a></div><div class="ttdeci">auto AsMut() -&gt; T *</div><div class="ttdef"><b>Definition</b> page_guard.h:236</div></div>
+<div class="ttc" id="aclassbustub_1_1WritePageGuard_html_af282f2a7e7b83121441af40bef730d89"><div class="ttname"><a href="../../d8/dd6/classbustub_1_1WritePageGuard.html#af282f2a7e7b83121441af40bef730d89">bustub::WritePageGuard::WritePageGuard</a></div><div class="ttdeci">WritePageGuard(BufferPoolManager *bpm, Page *page)</div><div class="ttdef"><b>Definition</b> page_guard.h:181</div></div>
+<div class="ttc" id="aclassbustub_1_1WritePageGuard_html_af9e98150c74d8d68722744429ca907e0"><div class="ttname"><a href="../../d8/dd6/classbustub_1_1WritePageGuard.html#af9e98150c74d8d68722744429ca907e0">bustub::WritePageGuard::guard_</a></div><div class="ttdeci">BasicPageGuard guard_</div><div class="ttdef"><b>Definition</b> page_guard.h:244</div></div>
+<div class="ttc" id="anamespacebustub_html"><div class="ttname"><a href="../../de/dda/namespacebustub.html">bustub</a></div><div class="ttdef"><b>Definition</b> bind_create.cpp:53</div></div>
+<div class="ttc" id="anamespacebustub_html_a8de4ac099b23d712481109bb846decde"><div class="ttname"><a href="../../de/dda/namespacebustub.html#a8de4ac099b23d712481109bb846decde">bustub::page_id_t</a></div><div class="ttdeci">int32_t page_id_t</div><div class="ttdef"><b>Definition</b> config.h:44</div></div>
+<div class="ttc" id="apage_8h_html"><div class="ttname"><a href="../../de/dad/page_8h.html">page.h</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
+</small></address>
+</body>
+</html>

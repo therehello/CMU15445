@@ -1,0 +1,217 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>数据库系统 CMU15-445/645: src/include/storage/page/hash_table_page_defs.h 文件参考</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/searchdata.js"></script>
+<script type="text/javascript" src="../../search/search.js"></script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">数据库系统 CMU15-445/645<span id="projectnumber">&#160;1.0.0</span>
+   </div>
+   <div id="projectbrief">CMU15-445/645 是基于现代 C++ 开发的支持并发操作的简单 SQL 操作的单机数据库</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.9.8 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "../../search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('../../',true,false,'search.php','搜索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="../../dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="../../dir_b0856f6b0d80ccb263b2f415c91f9e17.html">include</a></li><li class="navelem"><a class="el" href="../../dir_0a30ac4aed38d1936bbd6d702d96fbd8.html">storage</a></li><li class="navelem"><a class="el" href="../../dir_aa62e7e4f393bdf63f8ca74ad42976cf.html">page</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#define-members">宏定义</a>  </div>
+  <div class="headertitle"><div class="title">hash_table_page_defs.h 文件参考</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><div class="dynheader">
+此图展示该文件直接或间接的被哪些文件引用了:</div>
+<div class="dyncontent">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../df/d80/hash__table__page__defs_8h__dep__incl.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+</div>
+<p><a href="../../d6/d3b/hash__table__page__defs_8h_source.html">浏览源代码.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
+宏定义</h2></td></tr>
+<tr class="memitem:a139704601c819af8cdce06a6c1080a85" id="r_a139704601c819af8cdce06a6c1080a85"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d3b/hash__table__page__defs_8h.html#a139704601c819af8cdce06a6c1080a85">MappingType</a>&#160;&#160;&#160;std::pair&lt;KeyType, ValueType&gt;</td></tr>
+<tr class="separator:a139704601c819af8cdce06a6c1080a85"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4c3acf10c136a6a89b0805e36e535847" id="r_a4c3acf10c136a6a89b0805e36e535847"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d3b/hash__table__page__defs_8h.html#a4c3acf10c136a6a89b0805e36e535847">INDEX_TEMPLATE_ARGUMENTS</a>&#160;&#160;&#160;template &lt;typename KeyType, typename ValueType, typename KeyComparator&gt;</td></tr>
+<tr class="separator:a4c3acf10c136a6a89b0805e36e535847"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6ba069a365137103d5c207c9b72fd54f" id="r_a6ba069a365137103d5c207c9b72fd54f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d3b/hash__table__page__defs_8h.html#a6ba069a365137103d5c207c9b72fd54f">HASH_TABLE_BLOCK_TYPE</a>&#160;&#160;&#160;HashTableBlockPage&lt;KeyType, ValueType, KeyComparator&gt;</td></tr>
+<tr class="separator:a6ba069a365137103d5c207c9b72fd54f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa248adf6523ba18254eca1aef1a12670" id="r_aa248adf6523ba18254eca1aef1a12670"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d3b/hash__table__page__defs_8h.html#aa248adf6523ba18254eca1aef1a12670">BLOCK_ARRAY_SIZE</a>&#160;&#160;&#160;(4 * BUSTUB_PAGE_SIZE / (4 * sizeof(<a class="el" href="../../d1/d36/b__plus__tree__page_8h.html#a139704601c819af8cdce06a6c1080a85">MappingType</a>) + 1))</td></tr>
+<tr class="separator:aa248adf6523ba18254eca1aef1a12670"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6100d50b66f0da5c241d2aba0f71305f" id="r_a6100d50b66f0da5c241d2aba0f71305f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d3b/hash__table__page__defs_8h.html#a6100d50b66f0da5c241d2aba0f71305f">HASH_TABLE_BUCKET_TYPE</a>&#160;&#160;&#160;HashTableBucketPage&lt;KeyType, ValueType, KeyComparator&gt;</td></tr>
+<tr class="separator:a6100d50b66f0da5c241d2aba0f71305f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a621d10a678ff99f5854a9833fb02e610" id="r_a621d10a678ff99f5854a9833fb02e610"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d3b/hash__table__page__defs_8h.html#a621d10a678ff99f5854a9833fb02e610">BUCKET_ARRAY_SIZE</a>&#160;&#160;&#160;(4 * BUSTUB_PAGE_SIZE / (4 * sizeof(<a class="el" href="../../d1/d36/b__plus__tree__page_8h.html#a139704601c819af8cdce06a6c1080a85">MappingType</a>) + 1))</td></tr>
+<tr class="separator:a621d10a678ff99f5854a9833fb02e610"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a33263f2fd1edcc681ea3692a02901e16" id="r_a33263f2fd1edcc681ea3692a02901e16"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d3b/hash__table__page__defs_8h.html#a33263f2fd1edcc681ea3692a02901e16">DIRECTORY_ARRAY_SIZE</a>&#160;&#160;&#160;512</td></tr>
+<tr class="separator:a33263f2fd1edcc681ea3692a02901e16"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">宏定义说明</h2>
+<a id="aa248adf6523ba18254eca1aef1a12670" name="aa248adf6523ba18254eca1aef1a12670"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa248adf6523ba18254eca1aef1a12670">&#9670;&#160;</a></span>BLOCK_ARRAY_SIZE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BLOCK_ARRAY_SIZE&#160;&#160;&#160;(4 * BUSTUB_PAGE_SIZE / (4 * sizeof(<a class="el" href="../../d1/d36/b__plus__tree__page_8h.html#a139704601c819af8cdce06a6c1080a85">MappingType</a>) + 1))</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>BLOCK_ARRAY_SIZE is the number of (key, value) pairs that can be stored in a linear probe hash block page. It is an approximate calculation based on the size of MappingType (which is a std::pair of KeyType and ValueType). For each key/value pair, we need two additional bits for occupied_ and readable_. 4 * BUSTUB_PAGE_SIZE / (4 * sizeof (MappingType) + 1) = BUSTUB_PAGE_SIZE/(sizeof (MappingType) + 0.25) because 0.25 bytes = 2 bits is the space required to maintain the occupied and readable flags for a key value pair. </p>
+
+</div>
+</div>
+<a id="a621d10a678ff99f5854a9833fb02e610" name="a621d10a678ff99f5854a9833fb02e610"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a621d10a678ff99f5854a9833fb02e610">&#9670;&#160;</a></span>BUCKET_ARRAY_SIZE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BUCKET_ARRAY_SIZE&#160;&#160;&#160;(4 * BUSTUB_PAGE_SIZE / (4 * sizeof(<a class="el" href="../../d1/d36/b__plus__tree__page_8h.html#a139704601c819af8cdce06a6c1080a85">MappingType</a>) + 1))</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>BUCKET_ARRAY_SIZE is the number of (key, value) pairs that can be stored in an extendible hash index bucket page. The computation is the same as the above BLOCK_ARRAY_SIZE, but blocks and buckets have different implementations of search, insertion, removal, and helper methods. </p>
+
+</div>
+</div>
+<a id="a33263f2fd1edcc681ea3692a02901e16" name="a33263f2fd1edcc681ea3692a02901e16"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a33263f2fd1edcc681ea3692a02901e16">&#9670;&#160;</a></span>DIRECTORY_ARRAY_SIZE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define DIRECTORY_ARRAY_SIZE&#160;&#160;&#160;512</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>DIRECTORY_ARRAY_SIZE is the number of page_ids that can fit in the directory page of an extendible hash index. This is 512 because the directory array must grow in powers of 2, and 1024 page_ids leaves zero room for storage of the other member variables: page_id_, lsn_, global_depth_, and the array local_depths_. Extending the directory implementation to span multiple pages would be a meaningful improvement to the implementation. </p>
+
+</div>
+</div>
+<a id="a6ba069a365137103d5c207c9b72fd54f" name="a6ba069a365137103d5c207c9b72fd54f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6ba069a365137103d5c207c9b72fd54f">&#9670;&#160;</a></span>HASH_TABLE_BLOCK_TYPE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define HASH_TABLE_BLOCK_TYPE&#160;&#160;&#160;HashTableBlockPage&lt;KeyType, ValueType, KeyComparator&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Linear Probe Hashing Definitions </p>
+
+</div>
+</div>
+<a id="a6100d50b66f0da5c241d2aba0f71305f" name="a6100d50b66f0da5c241d2aba0f71305f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6100d50b66f0da5c241d2aba0f71305f">&#9670;&#160;</a></span>HASH_TABLE_BUCKET_TYPE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define HASH_TABLE_BUCKET_TYPE&#160;&#160;&#160;HashTableBucketPage&lt;KeyType, ValueType, KeyComparator&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Extendible Hashing Definitions </p>
+
+</div>
+</div>
+<a id="a4c3acf10c136a6a89b0805e36e535847" name="a4c3acf10c136a6a89b0805e36e535847"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4c3acf10c136a6a89b0805e36e535847">&#9670;&#160;</a></span>INDEX_TEMPLATE_ARGUMENTS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define INDEX_TEMPLATE_ARGUMENTS&#160;&#160;&#160;template &lt;typename KeyType, typename ValueType, typename KeyComparator&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a139704601c819af8cdce06a6c1080a85" name="a139704601c819af8cdce06a6c1080a85"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a139704601c819af8cdce06a6c1080a85">&#9670;&#160;</a></span>MappingType</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MappingType&#160;&#160;&#160;std::pair&lt;KeyType, ValueType&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
+</small></address>
+</body>
+</html>

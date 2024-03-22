@@ -1,0 +1,960 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>数据库系统 CMU15-445/645: bustub::Planner类 参考</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/searchdata.js"></script>
+<script type="text/javascript" src="../../search/search.js"></script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">数据库系统 CMU15-445/645<span id="projectnumber">&#160;1.0.0</span>
+   </div>
+   <div id="projectbrief">CMU15-445/645 是基于现代 C++ 开发的支持并发操作的简单 SQL 操作的单机数据库</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.9.8 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "../../search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('../../',true,false,'search.php','搜索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="../../de/dda/namespacebustub.html">bustub</a></li><li class="navelem"><a class="el" href="../../dd/d81/classbustub_1_1Planner.html">Planner</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#nested-classes">类</a> &#124;
+<a href="#pub-methods">Public 成员函数</a> &#124;
+<a href="#pub-attribs">Public 属性</a> &#124;
+<a href="#pri-methods">Private 成员函数</a> &#124;
+<a href="#pri-attribs">Private 属性</a> &#124;
+<a href="../../dc/deb/classbustub_1_1Planner-members.html">所有成员列表</a>  </div>
+  <div class="headertitle"><div class="title">bustub::Planner类 参考</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p><code>#include &lt;<a class="el" href="../../d7/d8c/planner_8h_source.html">planner.h</a>&gt;</code></p>
+<div class="dynheader">
+bustub::Planner 的协作图:</div>
+<div class="dyncontent">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../da/d25/classbustub_1_1Planner__coll__graph.svg" width="100%" height="458"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<center><span class="legend">[<a href="../../graph_legend.html">图例</a>]</span></center></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+类</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/dd4/classbustub_1_1Planner_1_1ContextGuard.html">ContextGuard</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Public 成员函数</h2></td></tr>
+<tr class="memitem:a5f4887aaab1220c0359276600f62ca60" id="r_a5f4887aaab1220c0359276600f62ca60"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d81/classbustub_1_1Planner.html#a5f4887aaab1220c0359276600f62ca60">Planner</a> (const <a class="el" href="../../d7/ddd/classbustub_1_1Catalog.html">Catalog</a> &amp;catalog)</td></tr>
+<tr class="separator:a5f4887aaab1220c0359276600f62ca60"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2df394d7a176e5992bc9c8761d777808" id="r_a2df394d7a176e5992bc9c8761d777808"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d81/classbustub_1_1Planner.html#a2df394d7a176e5992bc9c8761d777808">PlanQuery</a> (const <a class="el" href="../../d2/d74/classbustub_1_1BoundStatement.html">BoundStatement</a> &amp;statement)</td></tr>
+<tr class="separator:a2df394d7a176e5992bc9c8761d777808"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a268ccf2837c4a53cef88ff4d2355e2b2" id="r_a268ccf2837c4a53cef88ff4d2355e2b2"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d81/classbustub_1_1Planner.html#a268ccf2837c4a53cef88ff4d2355e2b2">PlanSelect</a> (const <a class="el" href="../../dd/db4/classbustub_1_1SelectStatement.html">SelectStatement</a> &amp;statement) -&gt; <a class="el" href="../../de/dda/namespacebustub.html#a354095e050bd1915a499a31c062c7303">AbstractPlanNodeRef</a></td></tr>
+<tr class="separator:a268ccf2837c4a53cef88ff4d2355e2b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a269325c00b83382019b44b187fd96cbb" id="r_a269325c00b83382019b44b187fd96cbb"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d81/classbustub_1_1Planner.html#a269325c00b83382019b44b187fd96cbb">PlanTableRef</a> (const <a class="el" href="../../d3/da8/classbustub_1_1BoundTableRef.html">BoundTableRef</a> &amp;table_ref) -&gt; <a class="el" href="../../de/dda/namespacebustub.html#a354095e050bd1915a499a31c062c7303">AbstractPlanNodeRef</a></td></tr>
+<tr class="memdesc:a269325c00b83382019b44b187fd96cbb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Plan a <code><a class="el" href="../../d3/da8/classbustub_1_1BoundTableRef.html">BoundTableRef</a></code>  <br /></td></tr>
+<tr class="separator:a269325c00b83382019b44b187fd96cbb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aff69d68cf7fac3cdd13f6d7a0183b720" id="r_aff69d68cf7fac3cdd13f6d7a0183b720"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d81/classbustub_1_1Planner.html#aff69d68cf7fac3cdd13f6d7a0183b720">PlanSubquery</a> (const <a class="el" href="../../d2/d8e/classbustub_1_1BoundSubqueryRef.html">BoundSubqueryRef</a> &amp;table_ref, const std::string &amp;alias) -&gt; <a class="el" href="../../de/dda/namespacebustub.html#a354095e050bd1915a499a31c062c7303">AbstractPlanNodeRef</a></td></tr>
+<tr class="separator:aff69d68cf7fac3cdd13f6d7a0183b720"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a37d38cf5f51846538d0fcb401417630b" id="r_a37d38cf5f51846538d0fcb401417630b"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d81/classbustub_1_1Planner.html#a37d38cf5f51846538d0fcb401417630b">PlanBaseTableRef</a> (const <a class="el" href="../../d1/d86/classbustub_1_1BoundBaseTableRef.html">BoundBaseTableRef</a> &amp;table_ref) -&gt; <a class="el" href="../../de/dda/namespacebustub.html#a354095e050bd1915a499a31c062c7303">AbstractPlanNodeRef</a></td></tr>
+<tr class="separator:a37d38cf5f51846538d0fcb401417630b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a46356587fa2f14a31a725928f031e7f2" id="r_a46356587fa2f14a31a725928f031e7f2"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d81/classbustub_1_1Planner.html#a46356587fa2f14a31a725928f031e7f2">PlanCrossProductRef</a> (const <a class="el" href="../../d7/d4a/classbustub_1_1BoundCrossProductRef.html">BoundCrossProductRef</a> &amp;table_ref) -&gt; <a class="el" href="../../de/dda/namespacebustub.html#a354095e050bd1915a499a31c062c7303">AbstractPlanNodeRef</a></td></tr>
+<tr class="separator:a46356587fa2f14a31a725928f031e7f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3de72cf63789c91564fed9c3b69fab09" id="r_a3de72cf63789c91564fed9c3b69fab09"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d81/classbustub_1_1Planner.html#a3de72cf63789c91564fed9c3b69fab09">PlanJoinRef</a> (const <a class="el" href="../../df/d50/classbustub_1_1BoundJoinRef.html">BoundJoinRef</a> &amp;table_ref) -&gt; <a class="el" href="../../de/dda/namespacebustub.html#a354095e050bd1915a499a31c062c7303">AbstractPlanNodeRef</a></td></tr>
+<tr class="separator:a3de72cf63789c91564fed9c3b69fab09"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae4d4c19f75ce633220450fc3690f9acd" id="r_ae4d4c19f75ce633220450fc3690f9acd"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d81/classbustub_1_1Planner.html#ae4d4c19f75ce633220450fc3690f9acd">PlanCTERef</a> (const <a class="el" href="../../d3/dbf/classbustub_1_1BoundCTERef.html">BoundCTERef</a> &amp;table_ref) -&gt; <a class="el" href="../../de/dda/namespacebustub.html#a354095e050bd1915a499a31c062c7303">AbstractPlanNodeRef</a></td></tr>
+<tr class="separator:ae4d4c19f75ce633220450fc3690f9acd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0ac0f30226c9a14431e7831861614399" id="r_a0ac0f30226c9a14431e7831861614399"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d81/classbustub_1_1Planner.html#a0ac0f30226c9a14431e7831861614399">PlanExpressionListRef</a> (const <a class="el" href="../../d0/d86/classbustub_1_1BoundExpressionListRef.html">BoundExpressionListRef</a> &amp;table_ref) -&gt; <a class="el" href="../../de/dda/namespacebustub.html#a354095e050bd1915a499a31c062c7303">AbstractPlanNodeRef</a></td></tr>
+<tr class="separator:a0ac0f30226c9a14431e7831861614399"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ade607bc5b749f874362c23854e0a1af0" id="r_ade607bc5b749f874362c23854e0a1af0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d81/classbustub_1_1Planner.html#ade607bc5b749f874362c23854e0a1af0">AddAggCallToContext</a> (<a class="el" href="../../de/d78/classbustub_1_1BoundExpression.html">BoundExpression</a> &amp;expr)</td></tr>
+<tr class="separator:ade607bc5b749f874362c23854e0a1af0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab5f523b7ffb00f8f44d8a4dcf9f7c8a4" id="r_ab5f523b7ffb00f8f44d8a4dcf9f7c8a4"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d81/classbustub_1_1Planner.html#ab5f523b7ffb00f8f44d8a4dcf9f7c8a4">PlanExpression</a> (const <a class="el" href="../../de/d78/classbustub_1_1BoundExpression.html">BoundExpression</a> &amp;expr, const std::vector&lt; <a class="el" href="../../de/dda/namespacebustub.html#a354095e050bd1915a499a31c062c7303">AbstractPlanNodeRef</a> &gt; &amp;children) -&gt; std::tuple&lt; std::string, <a class="el" href="../../de/dda/namespacebustub.html#af0cfd2fbbabe21e0e95790ff99273105">AbstractExpressionRef</a> &gt;</td></tr>
+<tr class="separator:ab5f523b7ffb00f8f44d8a4dcf9f7c8a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae882fa2fd166a0f9003ba2f8e6f440ca" id="r_ae882fa2fd166a0f9003ba2f8e6f440ca"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d81/classbustub_1_1Planner.html#ae882fa2fd166a0f9003ba2f8e6f440ca">PlanBinaryOp</a> (const <a class="el" href="../../d4/dbb/classbustub_1_1BoundBinaryOp.html">BoundBinaryOp</a> &amp;expr, const std::vector&lt; <a class="el" href="../../de/dda/namespacebustub.html#a354095e050bd1915a499a31c062c7303">AbstractPlanNodeRef</a> &gt; &amp;children) -&gt; <a class="el" href="../../de/dda/namespacebustub.html#af0cfd2fbbabe21e0e95790ff99273105">AbstractExpressionRef</a></td></tr>
+<tr class="separator:ae882fa2fd166a0f9003ba2f8e6f440ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a96d837ee7fd6535318688b78d4ea1a2e" id="r_a96d837ee7fd6535318688b78d4ea1a2e"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d81/classbustub_1_1Planner.html#a96d837ee7fd6535318688b78d4ea1a2e">PlanFuncCall</a> (const <a class="el" href="../../d1/dbc/classbustub_1_1BoundFuncCall.html">BoundFuncCall</a> &amp;expr, const std::vector&lt; <a class="el" href="../../de/dda/namespacebustub.html#a354095e050bd1915a499a31c062c7303">AbstractPlanNodeRef</a> &gt; &amp;children) -&gt; <a class="el" href="../../de/dda/namespacebustub.html#af0cfd2fbbabe21e0e95790ff99273105">AbstractExpressionRef</a></td></tr>
+<tr class="separator:a96d837ee7fd6535318688b78d4ea1a2e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aad2406d26be69d1e2b3cfbd6cfbed3d9" id="r_aad2406d26be69d1e2b3cfbd6cfbed3d9"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d81/classbustub_1_1Planner.html#aad2406d26be69d1e2b3cfbd6cfbed3d9">PlanColumnRef</a> (const <a class="el" href="../../d1/dd0/classbustub_1_1BoundColumnRef.html">BoundColumnRef</a> &amp;expr, const std::vector&lt; <a class="el" href="../../de/dda/namespacebustub.html#a354095e050bd1915a499a31c062c7303">AbstractPlanNodeRef</a> &gt; &amp;children) -&gt; std::tuple&lt; std::string, std::shared_ptr&lt; <a class="el" href="../../df/d38/classbustub_1_1ColumnValueExpression.html">ColumnValueExpression</a> &gt; &gt;</td></tr>
+<tr class="separator:aad2406d26be69d1e2b3cfbd6cfbed3d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afc571cd311bf924a101da49b881a4c4c" id="r_afc571cd311bf924a101da49b881a4c4c"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d81/classbustub_1_1Planner.html#afc571cd311bf924a101da49b881a4c4c">PlanConstant</a> (const <a class="el" href="../../d0/de2/classbustub_1_1BoundConstant.html">BoundConstant</a> &amp;expr, const std::vector&lt; <a class="el" href="../../de/dda/namespacebustub.html#a354095e050bd1915a499a31c062c7303">AbstractPlanNodeRef</a> &gt; &amp;children) -&gt; <a class="el" href="../../de/dda/namespacebustub.html#af0cfd2fbbabe21e0e95790ff99273105">AbstractExpressionRef</a></td></tr>
+<tr class="separator:afc571cd311bf924a101da49b881a4c4c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afacca2e31cf0c5400d48fb399f6da1ca" id="r_afacca2e31cf0c5400d48fb399f6da1ca"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d81/classbustub_1_1Planner.html#afacca2e31cf0c5400d48fb399f6da1ca">PlanSelectAgg</a> (const <a class="el" href="../../dd/db4/classbustub_1_1SelectStatement.html">SelectStatement</a> &amp;statement, <a class="el" href="../../de/dda/namespacebustub.html#a354095e050bd1915a499a31c062c7303">AbstractPlanNodeRef</a> child) -&gt; <a class="el" href="../../de/dda/namespacebustub.html#a354095e050bd1915a499a31c062c7303">AbstractPlanNodeRef</a></td></tr>
+<tr class="separator:afacca2e31cf0c5400d48fb399f6da1ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a77b2167acbf334f20297bb6d3bd623bd" id="r_a77b2167acbf334f20297bb6d3bd623bd"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d81/classbustub_1_1Planner.html#a77b2167acbf334f20297bb6d3bd623bd">PlanSelectWindow</a> (const <a class="el" href="../../dd/db4/classbustub_1_1SelectStatement.html">SelectStatement</a> &amp;statement, <a class="el" href="../../de/dda/namespacebustub.html#a354095e050bd1915a499a31c062c7303">AbstractPlanNodeRef</a> child) -&gt; <a class="el" href="../../de/dda/namespacebustub.html#a354095e050bd1915a499a31c062c7303">AbstractPlanNodeRef</a></td></tr>
+<tr class="separator:a77b2167acbf334f20297bb6d3bd623bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aedb0007a016e003364a28df732fdb701" id="r_aedb0007a016e003364a28df732fdb701"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d81/classbustub_1_1Planner.html#aedb0007a016e003364a28df732fdb701">PlanAggCall</a> (const <a class="el" href="../../db/d7e/classbustub_1_1BoundAggCall.html">BoundAggCall</a> &amp;agg_call, const std::vector&lt; <a class="el" href="../../de/dda/namespacebustub.html#a354095e050bd1915a499a31c062c7303">AbstractPlanNodeRef</a> &gt; &amp;children) -&gt; std::tuple&lt; <a class="el" href="../../de/dda/namespacebustub.html#a00cf530eb8a8c97e85e5030651b64fff">AggregationType</a>, std::vector&lt; <a class="el" href="../../de/dda/namespacebustub.html#af0cfd2fbbabe21e0e95790ff99273105">AbstractExpressionRef</a> &gt; &gt;</td></tr>
+<tr class="separator:aedb0007a016e003364a28df732fdb701"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a25db994f1c1ab51c727781f4312a0662" id="r_a25db994f1c1ab51c727781f4312a0662"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d81/classbustub_1_1Planner.html#a25db994f1c1ab51c727781f4312a0662">GetAggCallFromFactory</a> (const std::string &amp;func_name, std::vector&lt; <a class="el" href="../../de/dda/namespacebustub.html#af0cfd2fbbabe21e0e95790ff99273105">AbstractExpressionRef</a> &gt; args) -&gt; std::tuple&lt; <a class="el" href="../../de/dda/namespacebustub.html#a00cf530eb8a8c97e85e5030651b64fff">AggregationType</a>, std::vector&lt; <a class="el" href="../../de/dda/namespacebustub.html#af0cfd2fbbabe21e0e95790ff99273105">AbstractExpressionRef</a> &gt; &gt;</td></tr>
+<tr class="separator:a25db994f1c1ab51c727781f4312a0662"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac064e75758d9f77149ec9e9d00ae4630" id="r_ac064e75758d9f77149ec9e9d00ae4630"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d81/classbustub_1_1Planner.html#ac064e75758d9f77149ec9e9d00ae4630">GetWindowAggCallFromFactory</a> (const std::string &amp;func_name, std::vector&lt; <a class="el" href="../../de/dda/namespacebustub.html#af0cfd2fbbabe21e0e95790ff99273105">AbstractExpressionRef</a> &gt; args) -&gt; std::tuple&lt; <a class="el" href="../../de/dda/namespacebustub.html#a9ae3921998c2e878c715a3fc8d5b33df">WindowFunctionType</a>, std::vector&lt; <a class="el" href="../../de/dda/namespacebustub.html#af0cfd2fbbabe21e0e95790ff99273105">AbstractExpressionRef</a> &gt; &gt;</td></tr>
+<tr class="separator:ac064e75758d9f77149ec9e9d00ae4630"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7b988265c5e57942a28e822a9193c5f2" id="r_a7b988265c5e57942a28e822a9193c5f2"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d81/classbustub_1_1Planner.html#a7b988265c5e57942a28e822a9193c5f2">GetBinaryExpressionFromFactory</a> (const std::string &amp;op_name, <a class="el" href="../../de/dda/namespacebustub.html#af0cfd2fbbabe21e0e95790ff99273105">AbstractExpressionRef</a> left, <a class="el" href="../../de/dda/namespacebustub.html#af0cfd2fbbabe21e0e95790ff99273105">AbstractExpressionRef</a> right) -&gt; <a class="el" href="../../de/dda/namespacebustub.html#af0cfd2fbbabe21e0e95790ff99273105">AbstractExpressionRef</a></td></tr>
+<tr class="separator:a7b988265c5e57942a28e822a9193c5f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad49a042438e0efe4ce88d0f976ca182d" id="r_ad49a042438e0efe4ce88d0f976ca182d"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d81/classbustub_1_1Planner.html#ad49a042438e0efe4ce88d0f976ca182d">GetFuncCallFromFactory</a> (const std::string &amp;func_name, std::vector&lt; <a class="el" href="../../de/dda/namespacebustub.html#af0cfd2fbbabe21e0e95790ff99273105">AbstractExpressionRef</a> &gt; args) -&gt; <a class="el" href="../../de/dda/namespacebustub.html#af0cfd2fbbabe21e0e95790ff99273105">AbstractExpressionRef</a></td></tr>
+<tr class="separator:ad49a042438e0efe4ce88d0f976ca182d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9740b0f2f411f9e1b7ea619f3275c58b" id="r_a9740b0f2f411f9e1b7ea619f3275c58b"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d81/classbustub_1_1Planner.html#a9740b0f2f411f9e1b7ea619f3275c58b">PlanInsert</a> (const <a class="el" href="../../d3/de6/classbustub_1_1InsertStatement.html">InsertStatement</a> &amp;statement) -&gt; <a class="el" href="../../de/dda/namespacebustub.html#a354095e050bd1915a499a31c062c7303">AbstractPlanNodeRef</a></td></tr>
+<tr class="separator:a9740b0f2f411f9e1b7ea619f3275c58b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3d29fd48b884eb5cd5d3afd885a14c16" id="r_a3d29fd48b884eb5cd5d3afd885a14c16"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d81/classbustub_1_1Planner.html#a3d29fd48b884eb5cd5d3afd885a14c16">PlanDelete</a> (const <a class="el" href="../../da/dc8/classbustub_1_1DeleteStatement.html">DeleteStatement</a> &amp;statement) -&gt; <a class="el" href="../../de/dda/namespacebustub.html#a354095e050bd1915a499a31c062c7303">AbstractPlanNodeRef</a></td></tr>
+<tr class="separator:a3d29fd48b884eb5cd5d3afd885a14c16"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3f5be2cf09646186c6ecbe3c350b94a1" id="r_a3f5be2cf09646186c6ecbe3c350b94a1"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d81/classbustub_1_1Planner.html#a3f5be2cf09646186c6ecbe3c350b94a1">PlanUpdate</a> (const <a class="el" href="../../d7/d51/classbustub_1_1UpdateStatement.html">UpdateStatement</a> &amp;statement) -&gt; <a class="el" href="../../de/dda/namespacebustub.html#a354095e050bd1915a499a31c062c7303">AbstractPlanNodeRef</a></td></tr>
+<tr class="separator:a3f5be2cf09646186c6ecbe3c350b94a1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
+Public 属性</h2></td></tr>
+<tr class="memitem:ac4070b1016506086261af9b8f6971d90" id="r_ac4070b1016506086261af9b8f6971d90"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../de/dda/namespacebustub.html#a354095e050bd1915a499a31c062c7303">AbstractPlanNodeRef</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d81/classbustub_1_1Planner.html#ac4070b1016506086261af9b8f6971d90">plan_</a></td></tr>
+<tr class="separator:ac4070b1016506086261af9b8f6971d90"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-methods" name="pri-methods"></a>
+Private 成员函数</h2></td></tr>
+<tr class="memitem:ac1ef0da41247abbe942d61eae2894c6e" id="r_ac1ef0da41247abbe942d61eae2894c6e"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d81/classbustub_1_1Planner.html#ac1ef0da41247abbe942d61eae2894c6e">NewContext</a> () -&gt; <a class="el" href="../../d3/dd4/classbustub_1_1Planner_1_1ContextGuard.html">ContextGuard</a></td></tr>
+<tr class="separator:ac1ef0da41247abbe942d61eae2894c6e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2b2c52f11c3656e6b457562ccec63fe8" id="r_a2b2c52f11c3656e6b457562ccec63fe8"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d81/classbustub_1_1Planner.html#a2b2c52f11c3656e6b457562ccec63fe8">MakeOutputSchema</a> (const std::vector&lt; std::pair&lt; std::string, <a class="el" href="../../de/dda/namespacebustub.html#a49735e6748963f5515394bbb228f1fc8">TypeId</a> &gt; &gt; &amp;exprs) -&gt; <a class="el" href="../../de/dda/namespacebustub.html#a55b0598dc53e990803d5fd093fc6a59f">SchemaRef</a></td></tr>
+<tr class="separator:a2b2c52f11c3656e6b457562ccec63fe8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
+Private 属性</h2></td></tr>
+<tr class="memitem:aff530bda6a4f1b21a781c4916394fbd9" id="r_aff530bda6a4f1b21a781c4916394fbd9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d1/d1b/classbustub_1_1PlannerContext.html">PlannerContext</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d81/classbustub_1_1Planner.html#aff530bda6a4f1b21a781c4916394fbd9">ctx_</a></td></tr>
+<tr class="separator:aff530bda6a4f1b21a781c4916394fbd9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5fed97093274c4af5bf613b8ec18b217" id="r_a5fed97093274c4af5bf613b8ec18b217"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="../../d7/ddd/classbustub_1_1Catalog.html">Catalog</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d81/classbustub_1_1Planner.html#a5fed97093274c4af5bf613b8ec18b217">catalog_</a></td></tr>
+<tr class="separator:a5fed97093274c4af5bf613b8ec18b217"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4368defd94fb504ef566d25dd7a8f31f" id="r_a4368defd94fb504ef566d25dd7a8f31f"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d81/classbustub_1_1Planner.html#a4368defd94fb504ef566d25dd7a8f31f">universal_id_</a> {0}</td></tr>
+<tr class="separator:a4368defd94fb504ef566d25dd7a8f31f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
+<div class="textblock"><p>The planner takes a bound statement, and transforms it into the BusTub plan tree. The plan tree will be taken by the execution engine to execute the statement. </p>
+</div><h2 class="groupheader">构造及析构函数说明</h2>
+<a id="a5f4887aaab1220c0359276600f62ca60" name="a5f4887aaab1220c0359276600f62ca60"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5f4887aaab1220c0359276600f62ca60">&#9670;&#160;</a></span>Planner()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bustub::Planner::Planner </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="../../d7/ddd/classbustub_1_1Catalog.html">Catalog</a> &amp;&#160;</td>
+          <td class="paramname"><em>catalog</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">explicit</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">成员函数说明</h2>
+<a id="ade607bc5b749f874362c23854e0a1af0" name="ade607bc5b749f874362c23854e0a1af0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ade607bc5b749f874362c23854e0a1af0">&#9670;&#160;</a></span>AddAggCallToContext()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void bustub::Planner::AddAggCallToContext </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../de/d78/classbustub_1_1BoundExpression.html">BoundExpression</a> &amp;&#160;</td>
+          <td class="paramname"><em>expr</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a25db994f1c1ab51c727781f4312a0662" name="a25db994f1c1ab51c727781f4312a0662"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a25db994f1c1ab51c727781f4312a0662">&#9670;&#160;</a></span>GetAggCallFromFactory()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto bustub::Planner::GetAggCallFromFactory </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>func_name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::vector&lt; <a class="el" href="../../de/dda/namespacebustub.html#af0cfd2fbbabe21e0e95790ff99273105">AbstractExpressionRef</a> &gt;&#160;</td>
+          <td class="paramname"><em>args</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> -&gt; std::tuple&lt;<a class="el" href="../../de/dda/namespacebustub.html#a00cf530eb8a8c97e85e5030651b64fff">AggregationType</a>, std::vector&lt;<a class="el" href="../../de/dda/namespacebustub.html#af0cfd2fbbabe21e0e95790ff99273105">AbstractExpressionRef</a>&gt;&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a7b988265c5e57942a28e822a9193c5f2" name="a7b988265c5e57942a28e822a9193c5f2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7b988265c5e57942a28e822a9193c5f2">&#9670;&#160;</a></span>GetBinaryExpressionFromFactory()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto bustub::Planner::GetBinaryExpressionFromFactory </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>op_name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="../../de/dda/namespacebustub.html#af0cfd2fbbabe21e0e95790ff99273105">AbstractExpressionRef</a>&#160;</td>
+          <td class="paramname"><em>left</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="../../de/dda/namespacebustub.html#af0cfd2fbbabe21e0e95790ff99273105">AbstractExpressionRef</a>&#160;</td>
+          <td class="paramname"><em>right</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> -&gt; <a class="el" href="../../de/dda/namespacebustub.html#af0cfd2fbbabe21e0e95790ff99273105">AbstractExpressionRef</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ad49a042438e0efe4ce88d0f976ca182d" name="ad49a042438e0efe4ce88d0f976ca182d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad49a042438e0efe4ce88d0f976ca182d">&#9670;&#160;</a></span>GetFuncCallFromFactory()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto bustub::Planner::GetFuncCallFromFactory </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>func_name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::vector&lt; <a class="el" href="../../de/dda/namespacebustub.html#af0cfd2fbbabe21e0e95790ff99273105">AbstractExpressionRef</a> &gt;&#160;</td>
+          <td class="paramname"><em>args</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> -&gt; <a class="el" href="../../de/dda/namespacebustub.html#af0cfd2fbbabe21e0e95790ff99273105">AbstractExpressionRef</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ac064e75758d9f77149ec9e9d00ae4630" name="ac064e75758d9f77149ec9e9d00ae4630"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac064e75758d9f77149ec9e9d00ae4630">&#9670;&#160;</a></span>GetWindowAggCallFromFactory()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto bustub::Planner::GetWindowAggCallFromFactory </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>func_name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::vector&lt; <a class="el" href="../../de/dda/namespacebustub.html#af0cfd2fbbabe21e0e95790ff99273105">AbstractExpressionRef</a> &gt;&#160;</td>
+          <td class="paramname"><em>args</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> -&gt; std::tuple&lt;<a class="el" href="../../de/dda/namespacebustub.html#a9ae3921998c2e878c715a3fc8d5b33df">WindowFunctionType</a>, std::vector&lt;<a class="el" href="../../de/dda/namespacebustub.html#af0cfd2fbbabe21e0e95790ff99273105">AbstractExpressionRef</a>&gt;&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a2b2c52f11c3656e6b457562ccec63fe8" name="a2b2c52f11c3656e6b457562ccec63fe8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2b2c52f11c3656e6b457562ccec63fe8">&#9670;&#160;</a></span>MakeOutputSchema()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto bustub::Planner::MakeOutputSchema </td>
+          <td>(</td>
+          <td class="paramtype">const std::vector&lt; std::pair&lt; std::string, <a class="el" href="../../de/dda/namespacebustub.html#a49735e6748963f5515394bbb228f1fc8">TypeId</a> &gt; &gt; &amp;&#160;</td>
+          <td class="paramname"><em>exprs</em></td><td>)</td>
+          <td> -&gt; <a class="el" href="../../de/dda/namespacebustub.html#a55b0598dc53e990803d5fd093fc6a59f">SchemaRef</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ac1ef0da41247abbe942d61eae2894c6e" name="ac1ef0da41247abbe942d61eae2894c6e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac1ef0da41247abbe942d61eae2894c6e">&#9670;&#160;</a></span>NewContext()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto bustub::Planner::NewContext </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> -&gt; <a class="el" href="../../d3/dd4/classbustub_1_1Planner_1_1ContextGuard.html">ContextGuard</a> </td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>If any function needs to modify the scope, it MUST hold the context guard, so that the context will be recovered after the function returns. Currently, it's used in <code>BindFrom</code> and <code>BindJoin</code>. </p>
+
+</div>
+</div>
+<a id="aedb0007a016e003364a28df732fdb701" name="aedb0007a016e003364a28df732fdb701"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aedb0007a016e003364a28df732fdb701">&#9670;&#160;</a></span>PlanAggCall()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto bustub::Planner::PlanAggCall </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="../../db/d7e/classbustub_1_1BoundAggCall.html">BoundAggCall</a> &amp;&#160;</td>
+          <td class="paramname"><em>agg_call</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::vector&lt; <a class="el" href="../../de/dda/namespacebustub.html#a354095e050bd1915a499a31c062c7303">AbstractPlanNodeRef</a> &gt; &amp;&#160;</td>
+          <td class="paramname"><em>children</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> -&gt; std::tuple&lt;<a class="el" href="../../de/dda/namespacebustub.html#a00cf530eb8a8c97e85e5030651b64fff">AggregationType</a>, std::vector&lt;<a class="el" href="../../de/dda/namespacebustub.html#af0cfd2fbbabe21e0e95790ff99273105">AbstractExpressionRef</a>&gt;&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a37d38cf5f51846538d0fcb401417630b" name="a37d38cf5f51846538d0fcb401417630b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a37d38cf5f51846538d0fcb401417630b">&#9670;&#160;</a></span>PlanBaseTableRef()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto bustub::Planner::PlanBaseTableRef </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="../../d1/d86/classbustub_1_1BoundBaseTableRef.html">BoundBaseTableRef</a> &amp;&#160;</td>
+          <td class="paramname"><em>table_ref</em></td><td>)</td>
+          <td> -&gt; <a class="el" href="../../de/dda/namespacebustub.html#a354095e050bd1915a499a31c062c7303">AbstractPlanNodeRef</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ae882fa2fd166a0f9003ba2f8e6f440ca" name="ae882fa2fd166a0f9003ba2f8e6f440ca"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae882fa2fd166a0f9003ba2f8e6f440ca">&#9670;&#160;</a></span>PlanBinaryOp()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto bustub::Planner::PlanBinaryOp </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="../../d4/dbb/classbustub_1_1BoundBinaryOp.html">BoundBinaryOp</a> &amp;&#160;</td>
+          <td class="paramname"><em>expr</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::vector&lt; <a class="el" href="../../de/dda/namespacebustub.html#a354095e050bd1915a499a31c062c7303">AbstractPlanNodeRef</a> &gt; &amp;&#160;</td>
+          <td class="paramname"><em>children</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> -&gt; <a class="el" href="../../de/dda/namespacebustub.html#af0cfd2fbbabe21e0e95790ff99273105">AbstractExpressionRef</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aad2406d26be69d1e2b3cfbd6cfbed3d9" name="aad2406d26be69d1e2b3cfbd6cfbed3d9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aad2406d26be69d1e2b3cfbd6cfbed3d9">&#9670;&#160;</a></span>PlanColumnRef()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto bustub::Planner::PlanColumnRef </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="../../d1/dd0/classbustub_1_1BoundColumnRef.html">BoundColumnRef</a> &amp;&#160;</td>
+          <td class="paramname"><em>expr</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::vector&lt; <a class="el" href="../../de/dda/namespacebustub.html#a354095e050bd1915a499a31c062c7303">AbstractPlanNodeRef</a> &gt; &amp;&#160;</td>
+          <td class="paramname"><em>children</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> -&gt; std::tuple&lt;std::string, std::shared_ptr&lt;<a class="el" href="../../df/d38/classbustub_1_1ColumnValueExpression.html">ColumnValueExpression</a>&gt;&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="afc571cd311bf924a101da49b881a4c4c" name="afc571cd311bf924a101da49b881a4c4c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afc571cd311bf924a101da49b881a4c4c">&#9670;&#160;</a></span>PlanConstant()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto bustub::Planner::PlanConstant </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="../../d0/de2/classbustub_1_1BoundConstant.html">BoundConstant</a> &amp;&#160;</td>
+          <td class="paramname"><em>expr</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::vector&lt; <a class="el" href="../../de/dda/namespacebustub.html#a354095e050bd1915a499a31c062c7303">AbstractPlanNodeRef</a> &gt; &amp;&#160;</td>
+          <td class="paramname"><em>children</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> -&gt; <a class="el" href="../../de/dda/namespacebustub.html#af0cfd2fbbabe21e0e95790ff99273105">AbstractExpressionRef</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a46356587fa2f14a31a725928f031e7f2" name="a46356587fa2f14a31a725928f031e7f2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a46356587fa2f14a31a725928f031e7f2">&#9670;&#160;</a></span>PlanCrossProductRef()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto bustub::Planner::PlanCrossProductRef </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="../../d7/d4a/classbustub_1_1BoundCrossProductRef.html">BoundCrossProductRef</a> &amp;&#160;</td>
+          <td class="paramname"><em>table_ref</em></td><td>)</td>
+          <td> -&gt; <a class="el" href="../../de/dda/namespacebustub.html#a354095e050bd1915a499a31c062c7303">AbstractPlanNodeRef</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ae4d4c19f75ce633220450fc3690f9acd" name="ae4d4c19f75ce633220450fc3690f9acd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae4d4c19f75ce633220450fc3690f9acd">&#9670;&#160;</a></span>PlanCTERef()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto bustub::Planner::PlanCTERef </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="../../d3/dbf/classbustub_1_1BoundCTERef.html">BoundCTERef</a> &amp;&#160;</td>
+          <td class="paramname"><em>table_ref</em></td><td>)</td>
+          <td> -&gt; <a class="el" href="../../de/dda/namespacebustub.html#a354095e050bd1915a499a31c062c7303">AbstractPlanNodeRef</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a3d29fd48b884eb5cd5d3afd885a14c16" name="a3d29fd48b884eb5cd5d3afd885a14c16"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3d29fd48b884eb5cd5d3afd885a14c16">&#9670;&#160;</a></span>PlanDelete()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto bustub::Planner::PlanDelete </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="../../da/dc8/classbustub_1_1DeleteStatement.html">DeleteStatement</a> &amp;&#160;</td>
+          <td class="paramname"><em>statement</em></td><td>)</td>
+          <td> -&gt; <a class="el" href="../../de/dda/namespacebustub.html#a354095e050bd1915a499a31c062c7303">AbstractPlanNodeRef</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ab5f523b7ffb00f8f44d8a4dcf9f7c8a4" name="ab5f523b7ffb00f8f44d8a4dcf9f7c8a4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab5f523b7ffb00f8f44d8a4dcf9f7c8a4">&#9670;&#160;</a></span>PlanExpression()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto bustub::Planner::PlanExpression </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="../../de/d78/classbustub_1_1BoundExpression.html">BoundExpression</a> &amp;&#160;</td>
+          <td class="paramname"><em>expr</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::vector&lt; <a class="el" href="../../de/dda/namespacebustub.html#a354095e050bd1915a499a31c062c7303">AbstractPlanNodeRef</a> &gt; &amp;&#160;</td>
+          <td class="paramname"><em>children</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> -&gt; std::tuple&lt;std::string, <a class="el" href="../../de/dda/namespacebustub.html#af0cfd2fbbabe21e0e95790ff99273105">AbstractExpressionRef</a>&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a0ac0f30226c9a14431e7831861614399" name="a0ac0f30226c9a14431e7831861614399"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0ac0f30226c9a14431e7831861614399">&#9670;&#160;</a></span>PlanExpressionListRef()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto bustub::Planner::PlanExpressionListRef </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="../../d0/d86/classbustub_1_1BoundExpressionListRef.html">BoundExpressionListRef</a> &amp;&#160;</td>
+          <td class="paramname"><em>table_ref</em></td><td>)</td>
+          <td> -&gt; <a class="el" href="../../de/dda/namespacebustub.html#a354095e050bd1915a499a31c062c7303">AbstractPlanNodeRef</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a96d837ee7fd6535318688b78d4ea1a2e" name="a96d837ee7fd6535318688b78d4ea1a2e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a96d837ee7fd6535318688b78d4ea1a2e">&#9670;&#160;</a></span>PlanFuncCall()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto bustub::Planner::PlanFuncCall </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="../../d1/dbc/classbustub_1_1BoundFuncCall.html">BoundFuncCall</a> &amp;&#160;</td>
+          <td class="paramname"><em>expr</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::vector&lt; <a class="el" href="../../de/dda/namespacebustub.html#a354095e050bd1915a499a31c062c7303">AbstractPlanNodeRef</a> &gt; &amp;&#160;</td>
+          <td class="paramname"><em>children</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> -&gt; <a class="el" href="../../de/dda/namespacebustub.html#af0cfd2fbbabe21e0e95790ff99273105">AbstractExpressionRef</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a9740b0f2f411f9e1b7ea619f3275c58b" name="a9740b0f2f411f9e1b7ea619f3275c58b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9740b0f2f411f9e1b7ea619f3275c58b">&#9670;&#160;</a></span>PlanInsert()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto bustub::Planner::PlanInsert </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="../../d3/de6/classbustub_1_1InsertStatement.html">InsertStatement</a> &amp;&#160;</td>
+          <td class="paramname"><em>statement</em></td><td>)</td>
+          <td> -&gt; <a class="el" href="../../de/dda/namespacebustub.html#a354095e050bd1915a499a31c062c7303">AbstractPlanNodeRef</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a3de72cf63789c91564fed9c3b69fab09" name="a3de72cf63789c91564fed9c3b69fab09"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3de72cf63789c91564fed9c3b69fab09">&#9670;&#160;</a></span>PlanJoinRef()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto bustub::Planner::PlanJoinRef </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="../../df/d50/classbustub_1_1BoundJoinRef.html">BoundJoinRef</a> &amp;&#160;</td>
+          <td class="paramname"><em>table_ref</em></td><td>)</td>
+          <td> -&gt; <a class="el" href="../../de/dda/namespacebustub.html#a354095e050bd1915a499a31c062c7303">AbstractPlanNodeRef</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a2df394d7a176e5992bc9c8761d777808" name="a2df394d7a176e5992bc9c8761d777808"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2df394d7a176e5992bc9c8761d777808">&#9670;&#160;</a></span>PlanQuery()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void bustub::Planner::PlanQuery </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="../../d2/d74/classbustub_1_1BoundStatement.html">BoundStatement</a> &amp;&#160;</td>
+          <td class="paramname"><em>statement</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a268ccf2837c4a53cef88ff4d2355e2b2" name="a268ccf2837c4a53cef88ff4d2355e2b2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a268ccf2837c4a53cef88ff4d2355e2b2">&#9670;&#160;</a></span>PlanSelect()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto bustub::Planner::PlanSelect </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="../../dd/db4/classbustub_1_1SelectStatement.html">SelectStatement</a> &amp;&#160;</td>
+          <td class="paramname"><em>statement</em></td><td>)</td>
+          <td> -&gt; <a class="el" href="../../de/dda/namespacebustub.html#a354095e050bd1915a499a31c062c7303">AbstractPlanNodeRef</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="afacca2e31cf0c5400d48fb399f6da1ca" name="afacca2e31cf0c5400d48fb399f6da1ca"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afacca2e31cf0c5400d48fb399f6da1ca">&#9670;&#160;</a></span>PlanSelectAgg()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto bustub::Planner::PlanSelectAgg </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="../../dd/db4/classbustub_1_1SelectStatement.html">SelectStatement</a> &amp;&#160;</td>
+          <td class="paramname"><em>statement</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="../../de/dda/namespacebustub.html#a354095e050bd1915a499a31c062c7303">AbstractPlanNodeRef</a>&#160;</td>
+          <td class="paramname"><em>child</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> -&gt; <a class="el" href="../../de/dda/namespacebustub.html#a354095e050bd1915a499a31c062c7303">AbstractPlanNodeRef</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a77b2167acbf334f20297bb6d3bd623bd" name="a77b2167acbf334f20297bb6d3bd623bd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a77b2167acbf334f20297bb6d3bd623bd">&#9670;&#160;</a></span>PlanSelectWindow()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto bustub::Planner::PlanSelectWindow </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="../../dd/db4/classbustub_1_1SelectStatement.html">SelectStatement</a> &amp;&#160;</td>
+          <td class="paramname"><em>statement</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="../../de/dda/namespacebustub.html#a354095e050bd1915a499a31c062c7303">AbstractPlanNodeRef</a>&#160;</td>
+          <td class="paramname"><em>child</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> -&gt; <a class="el" href="../../de/dda/namespacebustub.html#a354095e050bd1915a499a31c062c7303">AbstractPlanNodeRef</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aff69d68cf7fac3cdd13f6d7a0183b720" name="aff69d68cf7fac3cdd13f6d7a0183b720"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aff69d68cf7fac3cdd13f6d7a0183b720">&#9670;&#160;</a></span>PlanSubquery()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto bustub::Planner::PlanSubquery </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="../../d2/d8e/classbustub_1_1BoundSubqueryRef.html">BoundSubqueryRef</a> &amp;&#160;</td>
+          <td class="paramname"><em>table_ref</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>alias</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> -&gt; <a class="el" href="../../de/dda/namespacebustub.html#a354095e050bd1915a499a31c062c7303">AbstractPlanNodeRef</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a269325c00b83382019b44b187fd96cbb" name="a269325c00b83382019b44b187fd96cbb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a269325c00b83382019b44b187fd96cbb">&#9670;&#160;</a></span>PlanTableRef()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto bustub::Planner::PlanTableRef </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="../../d3/da8/classbustub_1_1BoundTableRef.html">BoundTableRef</a> &amp;&#160;</td>
+          <td class="paramname"><em>table_ref</em></td><td>)</td>
+          <td> -&gt; <a class="el" href="../../de/dda/namespacebustub.html#a354095e050bd1915a499a31c062c7303">AbstractPlanNodeRef</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Plan a <code><a class="el" href="../../d3/da8/classbustub_1_1BoundTableRef.html">BoundTableRef</a></code> </p>
+<ul>
+<li>For a BaseTableRef, this function will return a <code><a class="el" href="../../db/d74/classbustub_1_1SeqScanPlanNode.html">SeqScanPlanNode</a></code>. Note that all tables with names beginning with <code>__</code> will be planned as <code><a class="el" href="../../de/d42/classbustub_1_1MockScanPlanNode.html">MockScanPlanNode</a></code>.</li>
+<li>For a <code>JoinRef</code> or <code>CrossProductRef</code>, this function will return a <code>NestedLoopJoinNode</code>. <dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">table_ref</td><td>the bound table ref from binder. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>the plan node of this bound table ref. </dd></dl>
+</li>
+</ul>
+
+</div>
+</div>
+<a id="a3f5be2cf09646186c6ecbe3c350b94a1" name="a3f5be2cf09646186c6ecbe3c350b94a1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3f5be2cf09646186c6ecbe3c350b94a1">&#9670;&#160;</a></span>PlanUpdate()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto bustub::Planner::PlanUpdate </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="../../d7/d51/classbustub_1_1UpdateStatement.html">UpdateStatement</a> &amp;&#160;</td>
+          <td class="paramname"><em>statement</em></td><td>)</td>
+          <td> -&gt; <a class="el" href="../../de/dda/namespacebustub.html#a354095e050bd1915a499a31c062c7303">AbstractPlanNodeRef</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">类成员变量说明</h2>
+<a id="a5fed97093274c4af5bf613b8ec18b217" name="a5fed97093274c4af5bf613b8ec18b217"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5fed97093274c4af5bf613b8ec18b217">&#9670;&#160;</a></span>catalog_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="../../d7/ddd/classbustub_1_1Catalog.html">Catalog</a>&amp; bustub::Planner::catalog_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p><a class="el" href="../../d7/ddd/classbustub_1_1Catalog.html">Catalog</a> will be used during the planning process. SHOULD ONLY BE USED IN CODE PATH OF <code>PlanQuery</code>, otherwise it's a dangling reference. </p>
+
+</div>
+</div>
+<a id="aff530bda6a4f1b21a781c4916394fbd9" name="aff530bda6a4f1b21a781c4916394fbd9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aff530bda6a4f1b21a781c4916394fbd9">&#9670;&#160;</a></span>ctx_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d1/d1b/classbustub_1_1PlannerContext.html">PlannerContext</a> bustub::Planner::ctx_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ac4070b1016506086261af9b8f6971d90" name="ac4070b1016506086261af9b8f6971d90"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac4070b1016506086261af9b8f6971d90">&#9670;&#160;</a></span>plan_</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../de/dda/namespacebustub.html#a354095e050bd1915a499a31c062c7303">AbstractPlanNodeRef</a> bustub::Planner::plan_</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>the root plan node of the plan tree </p>
+
+</div>
+</div>
+<a id="a4368defd94fb504ef566d25dd7a8f31f" name="a4368defd94fb504ef566d25dd7a8f31f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4368defd94fb504ef566d25dd7a8f31f">&#9670;&#160;</a></span>universal_id_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">size_t bustub::Planner::universal_id_ {0}</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>An id for all unnamed things </p>
+
+</div>
+</div>
+<hr/>该类的文档由以下文件生成:<ul>
+<li>src/include/planner/<a class="el" href="../../d7/d8c/planner_8h_source.html">planner.h</a></li>
+<li>src/planner/<a class="el" href="../../df/dfb/expression__factory_8cpp.html">expression_factory.cpp</a></li>
+<li>src/planner/<a class="el" href="../../da/de4/plan__aggregation_8cpp.html">plan_aggregation.cpp</a></li>
+<li>src/planner/<a class="el" href="../../d0/d29/plan__expression_8cpp.html">plan_expression.cpp</a></li>
+<li>src/planner/<a class="el" href="../../d6/da3/plan__func__call_8cpp.html">plan_func_call.cpp</a></li>
+<li>src/planner/<a class="el" href="../../d2/dbb/plan__insert_8cpp.html">plan_insert.cpp</a></li>
+<li>src/planner/<a class="el" href="../../d9/df0/plan__select_8cpp.html">plan_select.cpp</a></li>
+<li>src/planner/<a class="el" href="../../d8/d40/plan__table__ref_8cpp.html">plan_table_ref.cpp</a></li>
+<li>src/planner/<a class="el" href="../../d4/d79/plan__window__function_8cpp.html">plan_window_function.cpp</a></li>
+<li>src/planner/<a class="el" href="../../de/d3d/planner_8cpp.html">planner.cpp</a></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
+</small></address>
+</body>
+</html>

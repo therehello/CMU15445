@@ -1,0 +1,13 @@
+<map id="bustub::IndexScanPlanNode" name="bustub::IndexScanPlanNode">
+<area shape="rect" id="Node000001" title=" " alt="" coords="70,269,273,295"/>
+<area shape="rect" id="Node000002" href="$d6/d8c/classbustub_1_1AbstractPlanNode.html" title=" " alt="" coords="5,181,196,207"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="121,215,164,267,159,270,117,219"/>
+<area shape="rect" id="Node000003" href="$d2/dd8/classbustub_1_1ConstantValueExpression.html" title=" " alt="" coords="220,181,459,207"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="306,215,195,271,193,267,303,211"/>
+<area shape="rect" id="Node000004" href="$da/dd5/classbustub_1_1AbstractExpression.html" title=" " alt="" coords="184,93,383,119"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="301,129,334,179,329,182,296,132"/>
+<area shape="rect" id="Node000005" href="$d4/df7/classbustub_1_1Value.html" title=" " alt="" coords="407,93,517,119"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="435,129,358,183,354,179,432,125"/>
+<area shape="rect" id="Node000006" href="$d7/db9/unionbustub_1_1Value_1_1Val.html" title=" " alt="" coords="393,5,531,31"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="465,45,465,93,459,93,459,45"/>
+</map>

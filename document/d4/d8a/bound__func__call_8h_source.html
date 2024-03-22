@@ -1,0 +1,135 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>数据库系统 CMU15-445/645: src/include/binder/expressions/bound_func_call.h 源文件</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/searchdata.js"></script>
+<script type="text/javascript" src="../../search/search.js"></script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">数据库系统 CMU15-445/645<span id="projectnumber">&#160;1.0.0</span>
+   </div>
+   <div id="projectbrief">CMU15-445/645 是基于现代 C++ 开发的支持并发操作的简单 SQL 操作的单机数据库</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.9.8 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "../../search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('../../',true,false,'search.php','搜索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function() { init_codefold(1); });
+/* @license-end */
+</script>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="../../dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="../../dir_b0856f6b0d80ccb263b2f415c91f9e17.html">include</a></li><li class="navelem"><a class="el" href="../../dir_2e0f860ba5ab93b304ae8e341906fe46.html">binder</a></li><li class="navelem"><a class="el" href="../../dir_d5e23e06757c608612918fbbc353c268.html">expressions</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle"><div class="title">bound_func_call.h</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="../../d4/d8a/bound__func__call_8h.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#pragma once</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span> </div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &lt;memory&gt;</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &lt;optional&gt;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &lt;string&gt;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &lt;utility&gt;</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &lt;vector&gt;</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &quot;<a class="code" href="../../dc/d8b/bound__expression_8h.html">binder/bound_expression.h</a>&quot;</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &quot;<a class="code" href="../../db/d2b/bound__window_8h.html">binder/expressions/bound_window.h</a>&quot;</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span> </div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="keyword">namespace </span><a class="code hl_namespace" href="../../de/dda/namespacebustub.html">bustub</a> {</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span> </div>
+<div class="foldopen" id="foldopen00017" data-start="{" data-end="};">
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno"><a class="line" href="../../d1/dbc/classbustub_1_1BoundFuncCall.html">   17</a></span><span class="keyword">class </span><a class="code hl_class" href="../../d1/dbc/classbustub_1_1BoundFuncCall.html">BoundFuncCall</a> : <span class="keyword">public</span> <a class="code hl_class" href="../../de/d78/classbustub_1_1BoundExpression.html">BoundExpression</a> {</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> <span class="keyword">public</span>:</div>
+<div class="foldopen" id="foldopen00019" data-start="{" data-end="}">
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno"><a class="line" href="../../d1/dbc/classbustub_1_1BoundFuncCall.html#a7a402ec9738be477652c5f905cbcbeda">   19</a></span>  <span class="keyword">explicit</span> <a class="code hl_function" href="../../d1/dbc/classbustub_1_1BoundFuncCall.html#a7a402ec9738be477652c5f905cbcbeda">BoundFuncCall</a>(std::string func_name, std::vector&lt;std::unique_ptr&lt;BoundExpression&gt;&gt; args)</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>      : <a class="code hl_class" href="../../de/d78/classbustub_1_1BoundExpression.html">BoundExpression</a>(<a class="code hl_enumeration" href="../../de/dda/namespacebustub.html#ad966f68740f50281536bcc3db49e3854">ExpressionType</a>::<a class="code hl_enumvalue" href="../../de/dda/namespacebustub.html#ad966f68740f50281536bcc3db49e3854ab06c3953f8a5bf7626d39cc1dd967598">FUNC_CALL</a>), <a class="code hl_variable" href="../../d1/dbc/classbustub_1_1BoundFuncCall.html#abeec466b201fca357843974d10fa348a">func_name_</a>(<a class="code hl_namespace" href="../../d8/dcc/namespacestd.html">std</a>::move(func_name)), <a class="code hl_variable" href="../../d1/dbc/classbustub_1_1BoundFuncCall.html#a2ea44f8281028390019e5cb5b1ad92a8">args_</a>(<a class="code hl_namespace" href="../../d8/dcc/namespacestd.html">std</a>::move(args)) {}</div>
+</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> </div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>  <span class="keyword">auto</span> <a class="code hl_function" href="../../d1/dbc/classbustub_1_1BoundFuncCall.html#a33159fdba0e64f5da6ecec0adaf75529">ToString</a>() const -&gt; <a class="code hl_namespace" href="../../d8/dcc/namespacestd.html">std</a>::<span class="keywordtype">string</span> override;</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span> </div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno"><a class="line" href="../../d1/dbc/classbustub_1_1BoundFuncCall.html#aa239e7260436917b4a9dd005e678aa96">   24</a></span>  auto <a class="code hl_function" href="../../d1/dbc/classbustub_1_1BoundFuncCall.html#aa239e7260436917b4a9dd005e678aa96">HasAggregation</a>() const -&gt; <span class="keywordtype">bool</span><span class="keyword"> override </span>{ <span class="keywordflow">return</span> <span class="keyword">false</span>; }</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span> </div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno"><a class="line" href="../../d1/dbc/classbustub_1_1BoundFuncCall.html#abeec466b201fca357843974d10fa348a">   27</a></span>  std::string <a class="code hl_variable" href="../../d1/dbc/classbustub_1_1BoundFuncCall.html#abeec466b201fca357843974d10fa348a">func_name_</a>;</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span> </div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno"><a class="line" href="../../d1/dbc/classbustub_1_1BoundFuncCall.html#a2ea44f8281028390019e5cb5b1ad92a8">   30</a></span>  std::vector&lt;std::unique_ptr&lt;BoundExpression&gt;&gt; <a class="code hl_variable" href="../../d1/dbc/classbustub_1_1BoundFuncCall.html#a2ea44f8281028390019e5cb5b1ad92a8">args_</a>;</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>};</div>
+</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>}  <span class="comment">// namespace bustub</span></div>
+<div class="ttc" id="abound__expression_8h_html"><div class="ttname"><a href="../../dc/d8b/bound__expression_8h.html">bound_expression.h</a></div></div>
+<div class="ttc" id="abound__window_8h_html"><div class="ttname"><a href="../../db/d2b/bound__window_8h.html">bound_window.h</a></div></div>
+<div class="ttc" id="aclassbustub_1_1BoundExpression_html"><div class="ttname"><a href="../../de/d78/classbustub_1_1BoundExpression.html">bustub::BoundExpression</a></div><div class="ttdef"><b>Definition</b> bound_expression.h:31</div></div>
+<div class="ttc" id="aclassbustub_1_1BoundFuncCall_html"><div class="ttname"><a href="../../d1/dbc/classbustub_1_1BoundFuncCall.html">bustub::BoundFuncCall</a></div><div class="ttdef"><b>Definition</b> bound_func_call.h:17</div></div>
+<div class="ttc" id="aclassbustub_1_1BoundFuncCall_html_a2ea44f8281028390019e5cb5b1ad92a8"><div class="ttname"><a href="../../d1/dbc/classbustub_1_1BoundFuncCall.html#a2ea44f8281028390019e5cb5b1ad92a8">bustub::BoundFuncCall::args_</a></div><div class="ttdeci">std::vector&lt; std::unique_ptr&lt; BoundExpression &gt; &gt; args_</div><div class="ttdef"><b>Definition</b> bound_func_call.h:30</div></div>
+<div class="ttc" id="aclassbustub_1_1BoundFuncCall_html_a33159fdba0e64f5da6ecec0adaf75529"><div class="ttname"><a href="../../d1/dbc/classbustub_1_1BoundFuncCall.html#a33159fdba0e64f5da6ecec0adaf75529">bustub::BoundFuncCall::ToString</a></div><div class="ttdeci">auto ToString() const -&gt; std::string override</div><div class="ttdef"><b>Definition</b> fmt_impl.cpp:18</div></div>
+<div class="ttc" id="aclassbustub_1_1BoundFuncCall_html_a7a402ec9738be477652c5f905cbcbeda"><div class="ttname"><a href="../../d1/dbc/classbustub_1_1BoundFuncCall.html#a7a402ec9738be477652c5f905cbcbeda">bustub::BoundFuncCall::BoundFuncCall</a></div><div class="ttdeci">BoundFuncCall(std::string func_name, std::vector&lt; std::unique_ptr&lt; BoundExpression &gt; &gt; args)</div><div class="ttdef"><b>Definition</b> bound_func_call.h:19</div></div>
+<div class="ttc" id="aclassbustub_1_1BoundFuncCall_html_aa239e7260436917b4a9dd005e678aa96"><div class="ttname"><a href="../../d1/dbc/classbustub_1_1BoundFuncCall.html#aa239e7260436917b4a9dd005e678aa96">bustub::BoundFuncCall::HasAggregation</a></div><div class="ttdeci">auto HasAggregation() const -&gt; bool override</div><div class="ttdef"><b>Definition</b> bound_func_call.h:24</div></div>
+<div class="ttc" id="aclassbustub_1_1BoundFuncCall_html_abeec466b201fca357843974d10fa348a"><div class="ttname"><a href="../../d1/dbc/classbustub_1_1BoundFuncCall.html#abeec466b201fca357843974d10fa348a">bustub::BoundFuncCall::func_name_</a></div><div class="ttdeci">std::string func_name_</div><div class="ttdef"><b>Definition</b> bound_func_call.h:27</div></div>
+<div class="ttc" id="anamespacebustub_html"><div class="ttname"><a href="../../de/dda/namespacebustub.html">bustub</a></div><div class="ttdef"><b>Definition</b> bind_create.cpp:53</div></div>
+<div class="ttc" id="anamespacebustub_html_ad966f68740f50281536bcc3db49e3854"><div class="ttname"><a href="../../de/dda/namespacebustub.html#ad966f68740f50281536bcc3db49e3854">bustub::ExpressionType</a></div><div class="ttdeci">ExpressionType</div><div class="ttdef"><b>Definition</b> bound_expression.h:13</div></div>
+<div class="ttc" id="anamespacebustub_html_ad966f68740f50281536bcc3db49e3854ab06c3953f8a5bf7626d39cc1dd967598"><div class="ttname"><a href="../../de/dda/namespacebustub.html#ad966f68740f50281536bcc3db49e3854ab06c3953f8a5bf7626d39cc1dd967598">bustub::ExpressionType::FUNC_CALL</a></div><div class="ttdeci">@ FUNC_CALL</div></div>
+<div class="ttc" id="anamespacestd_html"><div class="ttname"><a href="../../d8/dcc/namespacestd.html">std</a></div><div class="ttdef"><b>Definition</b> rid.h:70</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
+</small></address>
+</body>
+</html>
