@@ -2,6 +2,10 @@
 
 ## 内存管理
 
+![Bupperpool](logo/bufferpool.jpg)
+
+![Page Layout](logo/page_layout.png)
+
 底层基于 LRU-K 替换设计了 BufferPool，所有 Page 操作在 BufferPool 上进行。
 
 LRU-K会淘汰第K次访问时间距当前时间最大的数据。
@@ -10,6 +14,8 @@ LRU-K会淘汰第K次访问时间距当前时间最大的数据。
 
 每个缓冲页面都有条件变量和状态值来表示页面是否读写完成，可以使缓冲池管理器同时处理多个获取页面的请求。
 
+如果没有磁盘瓶颈，QPS达到35797.58。
+
 ### 相关类
 
 - BufferPoolManager
@@ -17,6 +23,12 @@ LRU-K会淘汰第K次访问时间距当前时间最大的数据。
 - DiskScheduler
 
 ## 索引设计
+
+插入 $Key$ 的过程，这里为了简化，令 $Hash(x) = x$。
+
+![Extendible Hash](logo/extendible_hash.png)
+
+![Extendible Hash](logo/extendible_hash-2.png)
 
 采用了可扩展哈希表实现，基于了 RAII 来管理释放 Page，采用多索引结构，蟹行协议控制并发，利用每个节点独立的读写锁兼顾了多线程并发访问的安全性和效率。
 
@@ -37,6 +49,10 @@ LRU-K会淘汰第K次访问时间距当前时间最大的数据。
 - DiskExtendibleHashTable
 
 ## 执行器
+
+![](logo/catalog.png)
+
+![](logo/iterator_model.png)
 
 语句执行采用火山模型，支持 SELECT，INSERT，DELETE，UPDATE，JOIN 等操作。
 
