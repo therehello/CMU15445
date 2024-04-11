@@ -53,7 +53,7 @@ class ThreadPool {
     };
     auto task = std::make_shared<std::packaged_task<return_t()>>(std::move(func));
     {
-      std::unique_lock<std::mutex> lock(queue_mutex_);
+      std::unique_lock lock(queue_mutex_);
       tasks_.emplace([task]() { (*task)(); });
     }
     condition_.notify_one();
@@ -87,6 +87,10 @@ class ThreadPool {
  * @brief Represents a Write or Read request for the DiskManager to execute.
  */
 struct DiskRequest {
+  DiskRequest(bool is_write, char *data, page_id_t page_id) : is_write_(is_write), data_(data), page_id_(page_id) {}
+  DiskRequest(bool is_write, char *data, page_id_t page_id, std::promise<bool> &&callback)
+      : is_write_(is_write), data_(data), page_id_(page_id), callback_(std::move(callback)) {}
+
   /** Flag indicating whether the request is a write or a read. */
   bool is_write_;
 
@@ -122,7 +126,7 @@ class DiskScheduler {
    *
    * @param r The request to be scheduled.
    */
-  void Schedule(DiskRequest r);
+  auto Schedule(DiskRequest r) -> std::future<void>;
 
   using DiskSchedulerPromise = std::promise<bool>;
 

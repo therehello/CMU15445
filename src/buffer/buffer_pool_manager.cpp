@@ -11,15 +11,78 @@
 //===----------------------------------------------------------------------===//
 
 #include "buffer/buffer_pool_manager.h"
+#include <emmintrin.h>
+#include <unistd.h>
+#include <cassert>
 #include <cstddef>
 #include <cstring>
+#include <future>
 #include <memory>
 #include <mutex>
+#include <thread>
+#include <vector>
 #include "common/config.h"
 #include "storage/page/page.h"
 #include "storage/page/page_guard.h"
 
 namespace bustub {
+
+//! Class that implements exponential backoff.
+class AtomicBackoff {
+  //! Time delay, in units of "pause" instructions.
+  /** Should be equal to approximately the number of "pause" instructions
+    that take the same time as an context switch. Must be a power of two.*/
+  static constexpr std::int32_t LOOPS_BEFORE_YIELD = 16;
+  std::int32_t count_;
+
+ public:
+  // In many cases, an object of this type is initialized eagerly on hot path,
+  // as in for(atomic_backoff b; ; b.pause()) { /*loop body*/ }
+  // For this reason, the construction cost must be very small!
+  AtomicBackoff() : count_(1) {}
+  // This constructor pauses immediately; do not use on hot paths!
+  explicit AtomicBackoff(bool /*unused*/) : count_(1) { Pause(); }
+
+  //! No Copy
+  AtomicBackoff(const AtomicBackoff &) = delete;
+  auto operator=(const AtomicBackoff &) -> AtomicBackoff & = delete;
+
+  //! Pause for a while.
+  void Pause() {
+    if (count_ <= LOOPS_BEFORE_YIELD) {
+      for (int delay = 0; delay < count_; delay++) {
+        _mm_pause();
+      }
+      // Pause twice as long the next time.
+      count_ *= 2;
+    } else {
+      // Pause is so long that we might as well yield CPU to scheduler.
+      std::this_thread::yield();
+    }
+  }
+};
+
+//! Spin WHILE the condition is true.
+/** T and U should be comparable types. */
+template <typename T, typename C>
+auto SpinWaitWhile(const std::atomic<T> &location, C comp, std::memory_order order) -> T {
+  AtomicBackoff backoff;
+  T snapshot = location.load(order);
+  while (comp(snapshot)) {
+    backoff.Pause();
+    snapshot = location.load(order);
+  }
+  return snapshot;
+}
+
+//! Spin WHILE the value of the variable is equal to a given value
+/** T and U should be comparable types. */
+template <typename T, typename U>
+auto SpinWaitWhileEq(const std::atomic<T> &location, const U value, std::memory_order order = std::memory_order_acquire)
+    -> T {
+  return SpinWaitWhile(
+      location, [&value](T t) { return t == value; }, order);
+}
 
 BufferPoolManager::BufferPoolManager(size_t pool_size, DiskManager *disk_manager, size_t replacer_k,
                                      LogManager *log_manager)
@@ -28,8 +91,7 @@ BufferPoolManager::BufferPoolManager(size_t pool_size, DiskManager *disk_manager
       disk_scheduler_(std::make_unique<DiskScheduler>(disk_manager)),
       log_manager_(log_manager),
       replacer_(std::make_unique<LRUKReplacer>(pool_size, replacer_k)),
-      avaliable_(pool_size, true),
-      cond_(pool_size) {
+      avaliable_(pool_size) {
   // Initially, every page is in the free list.
   for (size_t i = 0; i < pool_size_; ++i) {
     free_list_.emplace_back(static_cast<int>(i));
@@ -39,89 +101,106 @@ BufferPoolManager::BufferPoolManager(size_t pool_size, DiskManager *disk_manager
 BufferPoolManager::~BufferPoolManager() { delete[] pages_; }
 
 auto BufferPoolManager::NewPage(page_id_t *page_id) -> Page * {
-  std::unique_lock lock_latch(latch_);
+  frame_id_t frame_id;
+  Page *page;
 
-  frame_id_t frame_id = -1;
-  if (free_list_.empty()) {
-    if (!replacer_->Evict(&frame_id)) {
-      return nullptr;
+  {
+    std::lock_guard lock(latch_);
+
+    if (free_list_.empty()) [[likely]] {
+      if (!replacer_->Evict(&frame_id)) {
+        return nullptr;
+      }
+    } else {
+      frame_id = free_list_.front();
+      free_list_.pop_front();
     }
-  } else {
-    frame_id = free_list_.front();
-    free_list_.pop_front();
+
+    page = pages_ + frame_id;
+    page_table_.erase(page->GetPageId());
+
+    *page_id = AllocatePage();
+    page_table_[*page_id] = frame_id;
+    avaliable_[frame_id].store(false, std::memory_order_release);
   }
 
-  auto page = pages_ + frame_id;
-  page->pin_count_ = 0;
-  page_table_.erase(page->GetPageId());
+  std::future<void> future_write;
+  if (page->IsDirty()) {
+    future_write = disk_scheduler_->Schedule({true, page->GetData(), page->GetPageId()});
+  }
 
   replacer_->RecordAccess(frame_id);
   replacer_->SetEvictable(frame_id, false);
 
-  *page_id = AllocatePage();
-  page->pin_count_++;
-  page_table_[*page_id] = frame_id;
-
-  if (page->IsDirty()) {
-    WritePage(frame_id);
+  page->pin_count_ = 1;
+  page->is_dirty_ = false;
+  page->page_id_ = *page_id;
+  if (future_write.valid()) {
+    future_write.get();
   }
   page->ResetMemory();
-
-  page->page_id_ = *page_id;
+  avaliable_[frame_id].store(true, std::memory_order_release);
 
   return page;
 }
 
 auto BufferPoolManager::FetchPage(page_id_t page_id, AccessType access_type) -> Page * {
-  std::unique_lock lock_latch(latch_);
+  frame_id_t frame_id;
+  Page *page;
 
-  if (auto iter = page_table_.find(page_id); iter != page_table_.end()) {
-    auto frame_id = iter->second;
-    auto page = pages_ + frame_id;
-    page->pin_count_++;
-    replacer_->RecordAccess(frame_id, access_type);
-    replacer_->SetEvictable(frame_id, false);
-    if (!avaliable_[frame_id]) {
-      cond_[frame_id].wait(lock_latch, [this, frame_id] { return avaliable_[frame_id]; });
+  {
+    std::unique_lock lock(latch_);
+
+    if (auto iter = page_table_.find(page_id); iter != page_table_.end()) {
+      frame_id = iter->second;
+      page = pages_ + frame_id;
+      page->pin_count_++;
+      replacer_->RecordAccess(frame_id, access_type);
+      replacer_->SetEvictable(frame_id, false);
+      lock.unlock();
+      if (!avaliable_[frame_id].load(std::memory_order_acquire)) [[unlikely]] {
+        SpinWaitWhileEq(avaliable_[frame_id], false);
+      }
+      return page;
     }
-    return page;
+
+    if (free_list_.empty()) [[likely]] {
+      if (!replacer_->Evict(&frame_id)) {
+        return nullptr;
+      }
+    } else {
+      frame_id = free_list_.front();
+      free_list_.pop_front();
+    }
+
+    page = pages_ + frame_id;
+    page_table_.erase(page->GetPageId());
+    avaliable_[frame_id].store(false, std::memory_order_release);
+    /** 在写脏页之前提前设置好是为了阻塞请求相同页的其他线程  */
+    page_table_[page_id] = frame_id;
+    page->pin_count_ = 1;
   }
 
-  frame_id_t frame_id = -1;
-  if (free_list_.empty()) {
-    if (!replacer_->Evict(&frame_id)) {
-      return nullptr;
-    }
-  } else {
-    frame_id = free_list_.front();
-    free_list_.pop_front();
+  std::future<void> future_write;
+  if (page->IsDirty()) {
+    future_write = disk_scheduler_->Schedule({true, page->GetData(), page->GetPageId()});
   }
-
-  auto page = pages_ + frame_id;
-  page->pin_count_ = 0;
-  page_table_.erase(page->GetPageId());
-
-  page->pin_count_++;
-  /** 在写脏页之前提前设置好是为了阻塞请求相同页的其他线程  */
-  page_table_[page_id] = frame_id;
-
   replacer_->RecordAccess(frame_id, access_type);
   replacer_->SetEvictable(frame_id, false);
-
   if (page->IsDirty()) {
-    /** 这里就先设置好，避免释放锁的时候，请求相同页的其他线程获取到 page */
-    avaliable_[frame_id] = false;
-    WritePage(frame_id);
+    future_write.get();
+    page->is_dirty_ = false;
   }
-
   page->page_id_ = page_id;
-  ReadPage(frame_id);
+  auto future_read = disk_scheduler_->Schedule({false, page->GetData(), page->GetPageId()});
+  future_read.get();
+  avaliable_[frame_id].store(true, std::memory_order_release);
 
   return page;
 }
 
 auto BufferPoolManager::UnpinPage(page_id_t page_id, bool is_dirty, [[maybe_unused]] AccessType access_type) -> bool {
-  std::lock_guard lock_latch(latch_);
+  std::lock_guard lock(latch_);
 
   auto iter = page_table_.find(page_id);
   if (iter == page_table_.end()) {
@@ -149,7 +228,7 @@ auto BufferPoolManager::FlushPage(page_id_t page_id) -> bool {
     return false;
   }
 
-  std::lock_guard lock_latch(latch_);
+  std::lock_guard lock(latch_);
 
   auto iter = page_table_.find(page_id);
   if (iter == page_table_.end()) {
@@ -159,20 +238,26 @@ auto BufferPoolManager::FlushPage(page_id_t page_id) -> bool {
   auto frame_id = iter->second;
   auto page = pages_ + frame_id;
   if (page->IsDirty()) {
-    WritePage(frame_id);
+    disk_scheduler_->Schedule({true, page->GetData(), page->GetPageId()}).get();
+    page->is_dirty_ = false;
   }
 
   return true;
 }
 
 void BufferPoolManager::FlushAllPages() {
-  std::lock_guard lock_latch(latch_);
+  std::lock_guard lock(latch_);
 
+  std::vector<std::future<void>> futures;
   for (auto &[page_id, frame_id] : page_table_) {
     auto page = pages_ + frame_id;
     if (page->IsDirty()) {
-      WritePage(frame_id);
+      futures.push_back(disk_scheduler_->Schedule({true, page->GetData(), page->GetPageId()}));
+      page->is_dirty_ = false;
     }
+  }
+  for (auto &future : futures) {
+    future.get();
   }
 }
 
@@ -197,36 +282,13 @@ auto BufferPoolManager::DeletePage(page_id_t page_id) -> bool {
   replacer_->Remove(frame_id);
 
   if (page->IsDirty()) {
-    WritePage(frame_id);
+    disk_scheduler_->Schedule({true, page->GetData(), page->GetPageId()}).get();
+    page->is_dirty_ = false;
   }
 
   DeallocatePage(page_id);
 
   return true;
-}
-
-void BufferPoolManager::WritePage(frame_id_t frame_id) {
-  auto promise = disk_scheduler_->CreatePromise();
-  auto future = promise.get_future();
-  auto page = pages_ + frame_id;
-  disk_scheduler_->Schedule({true, page->GetData(), page->GetPageId(), std::move(promise)});
-  latch_.unlock();
-  future.get();
-  latch_.lock();
-  page->is_dirty_ = false;
-}
-
-void BufferPoolManager::ReadPage(frame_id_t frame_id) {
-  auto promise = disk_scheduler_->CreatePromise();
-  auto future = promise.get_future();
-  auto page = pages_ + frame_id;
-  disk_scheduler_->Schedule({false, page->GetData(), page->GetPageId(), std::move(promise)});
-  avaliable_[frame_id] = false;
-  latch_.unlock();
-  future.get();
-  latch_.lock();
-  avaliable_[frame_id] = true;
-  cond_[frame_id].notify_all();
 }
 
 auto BufferPoolManager::AllocatePage() -> page_id_t { return next_page_id_++; }

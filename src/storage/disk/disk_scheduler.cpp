@@ -16,12 +16,10 @@
 
 namespace bustub {
 
-DiskScheduler::DiskScheduler(DiskManager *disk_manager) : disk_manager_(disk_manager) {
-  // TODO(P1): remove this line after you have implemented the disk scheduler API
-}
+DiskScheduler::DiskScheduler(DiskManager *disk_manager) : disk_manager_(disk_manager) {}
 
-void DiskScheduler::Schedule(DiskRequest r) {
-  threadpool_.Submit([this, r = std::move(r)]() mutable {
+auto DiskScheduler::Schedule(DiskRequest r) -> std::future<void> {
+  return threadpool_.Submit([this, r = std::move(r)]() mutable {
     if (r.is_write_) {
       disk_manager_->WritePage(r.page_id_, r.data_);
     } else {

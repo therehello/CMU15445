@@ -35,7 +35,7 @@ auto InsertExecutor::Next(Tuple *tuple, RID *rid) -> bool {
     return false;
   }
 
-  int  inserted_count = 0;
+  int inserted_count = 0;
   for (; child_executor_->Next(tuple, rid); inserted_count++) {
     *rid = table_info_->table_->InsertTuple(TupleMeta{}, *tuple).value();
     UpdateIndexes(*tuple, *rid);

@@ -12,7 +12,6 @@
 
 #pragma once
 
-#include <condition_variable>
 #include <list>
 #include <memory>
 #include <mutex>  // NOLINT
@@ -162,7 +161,7 @@ class BufferPoolManager {
   /** Number of pages in the buffer pool. */
   const size_t pool_size_;
   /** The next page id to be allocated  */
-  std::atomic<page_id_t> next_page_id_ = 0;
+  page_id_t next_page_id_ = 0;
 
   /** Array of buffer pool pages. */
   Page *pages_;
@@ -180,12 +179,8 @@ class BufferPoolManager {
   std::mutex latch_;
 
   /** 控制是否已经读取好数据 */
-  std::vector<bool> avaliable_;
-  std::vector<std::condition_variable> cond_;
+  std::vector<std::atomic<bool>> avaliable_;
 
-  void WritePage(frame_id_t frame_id);
-
-  void ReadPage(frame_id_t frame_id);
   /**
    * @brief Allocate a page on disk. Caller should acquire the latch before calling this function.
    * @return the id of the allocated page
