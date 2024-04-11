@@ -101,8 +101,7 @@ class ExtendibleHTableDirectoryPage {
    *
    * @return mask of global_depth 1's and the rest 0's (with 1's from LSB upwards)
    */
-  auto GetGlobalDepthMask() const -> uint32_t;
-
+  auto GetGlobalDepthMask() const -> uint32_t { return (1 << global_depth_) - 1; }
   /**
    * GetLocalDepthMask - same as global depth mask, except it
    * uses the local depth of the bucket located at bucket_idx
