@@ -1,9 +1,0 @@
-<map id="src/include/binder/table_ref/bound_cross_product_ref.h" name="src/include/binder/table_ref/bound_cross_product_ref.h">
-<area shape="rect" id="Node000001" title=" " alt="" coords="233,5,403,60"/>
-<area shape="rect" id="Node000002" href="$db/d4b/bind__create_8cpp.html" title=" " alt="" coords="5,115,199,141"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="246,68,129,118,127,113,243,63"/>
-<area shape="rect" id="Node000003" href="$d7/d35/bind__select_8cpp.html" title=" " alt="" coords="223,115,413,141"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="321,74,321,115,315,115,315,74"/>
-<area shape="rect" id="Node000004" href="$d8/d40/plan__table__ref_8cpp.html" title=" " alt="" coords="437,108,604,148"/>
-<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="388,63,481,105,478,110,386,68"/>
-</map>

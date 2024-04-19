@@ -1,9 +1,0 @@
-<map id="bustub::BufferPoolManager" name="bustub::BufferPoolManager">
-<area shape="rect" id="Node000001" title=" " alt="" coords="115,181,314,207"/>
-<area shape="rect" id="Node000002" href="$d4/d87/classbustub_1_1Page.html" title=" " alt="" coords="50,93,155,119"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="131,125,201,179,198,183,127,129"/>
-<area shape="rect" id="Node000003" href="$d8/dbd/classbustub_1_1ReaderWriterLatch.html" title=" " alt="" coords="5,5,200,31"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="105,45,105,93,100,93,100,45"/>
-<area shape="rect" id="Node000004" href="$d7/d4e/classbustub_1_1LogManager.html" title=" " alt="" coords="179,93,333,119"/>
-<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="247,132,223,182,218,180,242,130"/>
-</map>
