@@ -2,25 +2,19 @@
 
 ## 内存管理
 
-![Bupperpool](logo/bufferpool.jpg)
-
-![Page Layout](logo/page_layout.png)
-
 底层基于 LRU-K 替换设计了 BufferPool，所有 Page 操作在 BufferPool 上进行。
 
 LRU-K会淘汰第K次访问时间距当前时间最大的数据。
 
 在磁盘I/O方面设计了线程池以更好地利用磁盘带宽。
 
-每个缓冲页面都有条件变量和状态值来表示页面是否读写完成，可以使缓冲池管理器同时处理多个获取页面的请求。
+每个缓冲页面都有状态值来表示页面是否读写完成，可以使缓冲池管理器同时处理多个获取页面的请求。
 
-如果没有磁盘瓶颈，QPS达到35797.58。
+### QPS
 
-### 相关类
+**29221**
 
-- BufferPoolManager
-- LRUKReplacer
-- DiskScheduler
+![Qps Rank](logo/bufferpool_rank.png)
 
 ## 索引设计
 
@@ -38,15 +32,12 @@ LRU-K会淘汰第K次访问时间距当前时间最大的数据。
 
 在获取目录锁后，会把头锁释放掉，在获取桶锁之后，会把目录锁释放掉。并发性能进一步提升。
 
-### 相关类
 
-- BasicPageGuard
-- ReadPageGuard
-- WritePageGuard
-- ExtendibleHTableHeaderPage
-- ExtendibleHTableDirectoryPage
-- ExtendibleHTableBucketPage
-- DiskExtendibleHashTable
+### QPS
+
+68104
+
+![QPS Rank](logo/extendible_hash_rank.png)
 
 ## 执行器
 
@@ -57,9 +48,3 @@ LRU-K会淘汰第K次访问时间距当前时间最大的数据。
 语句执行采用火山模型，支持 SELECT，INSERT，DELETE，UPDATE，JOIN 等操作。
 
 火山模型是数据库界已经很成熟的解释计算模型，该计算模型将关系代数中每一种操作抽象为一个 Operator，将整个 SQL 构建成一个 Operator 树，从根节点到叶子结点自上而下地递归调用 next() 函数。
-
-<!-- ### 相关类 -->
-
-<!-- - SeqScanExecutor
-- InsertExecutor
-- WritePageGuard -->
