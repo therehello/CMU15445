@@ -20,9 +20,9 @@ LRU-K会淘汰第K次访问时间距当前时间最大的数据。
 
 插入 $Key$ 的过程，这里为了简化，令 $Hash(x) = x$。
 
-![Extendible Hash](logo/extendible_hash.png)
+<img src="https://raw.githubusercontent.com/therehello/CMU15445/master/logo/extendible_hash.png" width="75%">
 
-![Extendible Hash](logo/extendible_hash-2.png)
+<img src="https://raw.githubusercontent.com/therehello/CMU15445/master/logo/extendible_hash-2.png" width="75%">
 
 采用了可扩展哈希表实现，基于了 RAII 来管理释放 Page，采用多索引结构，蟹行协议控制并发，利用每个节点独立的读写锁兼顾了多线程并发访问的安全性和效率。
 
@@ -41,10 +41,10 @@ LRU-K会淘汰第K次访问时间距当前时间最大的数据。
 
 ## 执行器
 
-![](logo/catalog.png)
-
-![](logo/iterator_model.png)
+<img src="https://raw.githubusercontent.com/therehello/CMU15445/master/logo/iterator_model.png" width="75%">
 
 语句执行采用火山模型，支持 SELECT，INSERT，DELETE，UPDATE，JOIN 等操作。
 
 火山模型是数据库界已经很成熟的解释计算模型，该计算模型将关系代数中每一种操作抽象为一个 Operator，将整个 SQL 构建成一个 Operator 树，从根节点到叶子结点自上而下地递归调用 next() 函数。
+
+<img src="https://raw.githubusercontent.com/therehello/CMU15445/master/logo/catalog.png" width="75%">
