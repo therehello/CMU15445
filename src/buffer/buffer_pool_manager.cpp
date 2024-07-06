@@ -11,12 +11,9 @@
 //===----------------------------------------------------------------------===//
 
 #include "buffer/buffer_pool_manager.h"
-#include <algorithm>
 #include <cstddef>
 #include <mutex>
 #include "common/config.h"
-#include "common/exception.h"
-#include "common/macros.h"
 #include "storage/page/page.h"
 #include "storage/page/page_guard.h"
 

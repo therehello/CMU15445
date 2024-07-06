@@ -15,10 +15,9 @@
 #include <algorithm>
 #include <cassert>
 #include <cstddef>
-#include <unordered_map>
+#include <cstdint>
 
 #include "common/config.h"
-#include "common/logger.h"
 
 namespace bustub {
 
@@ -42,10 +41,18 @@ void ExtendibleHTableDirectoryPage::SetBucketPageId(uint32_t bucket_idx, page_id
 }
 
 auto ExtendibleHTableDirectoryPage::GetSplitImageIndex(uint32_t bucket_idx) const -> uint32_t {
-  return bucket_idx ^ (1 << (GetLocalDepth(bucket_idx) - 1));
+  return (bucket_idx & GetLocalDepthMask(bucket_idx)) ^ (1 << (GetLocalDepth(bucket_idx) - 1));
+}
+
+auto ExtendibleHTableDirectoryPage::GetGlobalDepthMask() const -> uint32_t { return (1 << global_depth_) - 1; }
+
+auto ExtendibleHTableDirectoryPage::GetLocalDepthMask(uint32_t bucket_idx) const -> uint32_t {
+  return (1 << GetLocalDepth(bucket_idx)) - 1;
 }
 
 auto ExtendibleHTableDirectoryPage::GetGlobalDepth() const -> uint32_t { return global_depth_; }
+
+auto ExtendibleHTableDirectoryPage::GetMaxDepth() const -> uint32_t { return max_depth_; }
 
 void ExtendibleHTableDirectoryPage::IncrGlobalDepth() {
   for (std::size_t i = 0; i < Size(); i++) {
@@ -58,13 +65,21 @@ void ExtendibleHTableDirectoryPage::IncrGlobalDepth() {
 void ExtendibleHTableDirectoryPage::DecrGlobalDepth() { global_depth_--; }
 
 auto ExtendibleHTableDirectoryPage::CanShrink() -> bool {
-  return std::all_of(local_depths_, local_depths_ + Size(), [&](auto depth) { return depth < global_depth_; });
+  return std::all_of(local_depths_, local_depths_ + Size(), [&](uint8_t depth) { return depth < global_depth_; });
 }
+
+void ExtendibleHTableDirectoryPage::Shrink() { global_depth_ = GetMaxLocalDepth(); }
 
 auto ExtendibleHTableDirectoryPage::Size() const -> uint32_t { return 1 << global_depth_; }
 
+auto ExtendibleHTableDirectoryPage::MaxSize() const -> uint32_t { return 1 << max_depth_; }
+
 auto ExtendibleHTableDirectoryPage::GetLocalDepth(uint32_t bucket_idx) const -> uint32_t {
   return local_depths_[bucket_idx];
+}
+
+auto ExtendibleHTableDirectoryPage::GetMaxLocalDepth() const -> uint32_t {
+  return *std::max_element(local_depths_, local_depths_ + Size());
 }
 
 void ExtendibleHTableDirectoryPage::SetLocalDepth(uint32_t bucket_idx, uint8_t local_depth) {
@@ -74,7 +89,5 @@ void ExtendibleHTableDirectoryPage::SetLocalDepth(uint32_t bucket_idx, uint8_t l
 void ExtendibleHTableDirectoryPage::IncrLocalDepth(uint32_t bucket_idx) { local_depths_[bucket_idx]++; }
 
 void ExtendibleHTableDirectoryPage::DecrLocalDepth(uint32_t bucket_idx) { local_depths_[bucket_idx]--; }
-
-auto ExtendibleHTableDirectoryPage::MaxSize() const -> uint32_t { return 1 << max_depth_; }
 
 }  // namespace bustub

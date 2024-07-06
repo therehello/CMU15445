@@ -23,15 +23,12 @@
  */
 #pragma once
 
-#include <optional>
 #include <utility>
 #include <vector>
-
 #include "common/config.h"
 #include "common/macros.h"
 #include "storage/index/int_comparator.h"
 #include "storage/page/b_plus_tree_page.h"
-#include "type/value.h"
 
 namespace bustub {
 
@@ -68,7 +65,6 @@ class ExtendibleHTableBucketPage {
    */
   auto Lookup(const KeyType &key, ValueType &value, const KeyComparator &cmp) const -> bool;
 
-  auto KeyIndex(const KeyType &key, const KeyComparator &cmp) const -> uint32_t;
   /**
    * Attempts to insert a key and value in the bucket.
    *
@@ -86,31 +82,39 @@ class ExtendibleHTableBucketPage {
    */
   auto Remove(const KeyType &key, const KeyComparator &cmp) -> bool;
 
-  void RemoveAt(uint32_t bucket_idx);
+  /**
+   * @brief 移除数组中指定下标的元素。
+   *
+   * 该函数接收一个需要移除的下标数组，并删除数组中对应下标的元素。
+   * 请确保下标唯一且在数组的有效范围内。
+   */
+  void Remove(const std::vector<uint32_t> &remove_idx);
+
+  void RemoveAt(uint32_t idx);
 
   /**
    * @brief Gets the key at an index in the bucket.
    *
-   * @param bucket_idx the index in the bucket to get the key at
-   * @return key at index bucket_idx of the bucket
+   * @param idx the index in the bucket to get the key at
+   * @return key at index idx of the bucket
    */
-  auto KeyAt(uint32_t bucket_idx) const -> KeyType;
+  auto KeyAt(uint32_t idx) const -> KeyType;
 
   /**
    * Gets the value at an index in the bucket.
    *
-   * @param bucket_idx the index in the bucket to get the value at
-   * @return value at index bucket_idx of the bucket
+   * @param idx the index in the bucket to get the value at
+   * @return value at index idx of the bucket
    */
-  auto ValueAt(uint32_t bucket_idx) const -> ValueType;
+  auto ValueAt(uint32_t idx) const -> ValueType;
 
   /**
    * Gets the entry at an index in the bucket.
    *
-   * @param bucket_idx the index in the bucket to get the entry at
-   * @return entry at index bucket_idx of the bucket
+   * @param idx the index in the bucket to get the entry at
+   * @return entry at index idx of the bucket
    */
-  auto EntryAt(uint32_t bucket_idx) const -> const std::pair<KeyType, ValueType> &;
+  auto EntryAt(uint32_t idx) const -> const std::pair<KeyType, ValueType> &;
 
   /**
    * @return number of entries in the bucket
@@ -133,6 +137,8 @@ class ExtendibleHTableBucketPage {
   void PrintBucket() const;
 
  private:
+  auto KeyIndex(const KeyType &key, const KeyComparator &cmp) const -> uint32_t;
+
   uint32_t size_{};
   uint32_t max_size_;
   MappingType array_[HTableBucketArraySize(sizeof(MappingType))];

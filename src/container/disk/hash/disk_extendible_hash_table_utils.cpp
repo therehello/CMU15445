@@ -13,6 +13,7 @@
 #include <iostream>
 
 #include "container/disk/hash/disk_extendible_hash_table.h"
+#include "storage/index/int_comparator.h"
 
 namespace bustub {
 

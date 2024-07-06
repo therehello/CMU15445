@@ -101,7 +101,7 @@ class ExtendibleHTableDirectoryPage {
    *
    * @return mask of global_depth 1's and the rest 0's (with 1's from LSB upwards)
    */
-  auto GetGlobalDepthMask() const -> uint32_t { return (1 << global_depth_) - 1; }
+  auto GetGlobalDepthMask() const -> uint32_t;
   /**
    * GetLocalDepthMask - same as global depth mask, except it
    * uses the local depth of the bucket located at bucket_idx
@@ -134,6 +134,8 @@ class ExtendibleHTableDirectoryPage {
    * @return true if the directory can be shrunk
    */
   auto CanShrink() -> bool;
+
+  void Shrink();
 
   /**
    * @return the current directory size
@@ -189,6 +191,8 @@ class ExtendibleHTableDirectoryPage {
   void PrintDirectory() const;
 
  private:
+  auto GetMaxLocalDepth() const -> uint32_t;
+
   uint32_t max_depth_;
   uint32_t global_depth_;
   uint8_t local_depths_[HTABLE_DIRECTORY_ARRAY_SIZE];

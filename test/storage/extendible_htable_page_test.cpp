@@ -11,15 +11,11 @@
 //===----------------------------------------------------------------------===//
 
 #include <memory>
-#include <thread>  // NOLINT
-#include <vector>
 
 #include "buffer/buffer_pool_manager.h"
-#include "common/logger.h"
 #include "gtest/gtest.h"
 #include "storage/disk/disk_manager_memory.h"
 #include "storage/index/generic_key.h"
-#include "storage/index/int_comparator.h"
 #include "storage/page/extendible_htable_bucket_page.h"
 #include "storage/page/extendible_htable_directory_page.h"
 #include "storage/page/extendible_htable_header_page.h"

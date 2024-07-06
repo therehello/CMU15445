@@ -14,8 +14,6 @@
 #include <optional>
 #include <thread>
 #include <utility>
-#include <vector>
-#include "common/exception.h"
 #include "storage/disk/disk_manager.h"
 
 namespace bustub {

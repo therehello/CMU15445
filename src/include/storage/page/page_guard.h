@@ -102,6 +102,8 @@ class BasicPageGuard {
     return reinterpret_cast<T *>(GetDataMut());
   }
 
+  void Swap(BasicPageGuard &that);
+
  private:
   friend class ReadPageGuard;
   friend class WritePageGuard;
@@ -165,6 +167,8 @@ class ReadPageGuard {
   auto As() -> const T * {
     return guard_.As<T>();
   }
+
+  void Swap(ReadPageGuard &that);
 
  private:
   // You may choose to get rid of this and add your own private variables.
@@ -232,6 +236,8 @@ class WritePageGuard {
   auto AsMut() -> T * {
     return guard_.AsMut<T>();
   }
+
+  void Swap(WritePageGuard &that);
 
  private:
   // You may choose to get rid of this and add your own private variables.

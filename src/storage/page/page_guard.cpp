@@ -20,15 +20,7 @@ void BasicPageGuard::Drop() {
 }
 
 auto BasicPageGuard::operator=(BasicPageGuard &&that) noexcept -> BasicPageGuard & {
-  if (this == &that) {
-    return *this;
-  }
-  Drop();
-  bpm_ = that.bpm_;
-  page_ = that.page_;
-  is_dirty_ = that.is_dirty_;
-  that.bpm_ = nullptr;
-  that.page_ = nullptr;
+  BasicPageGuard(std::move(that)).Swap(*this);
   return *this;
 }
 
@@ -54,16 +46,16 @@ auto BasicPageGuard::UpgradeWrite() -> WritePageGuard {
   return write_page_guard;
 }
 
+void BasicPageGuard::Swap(BasicPageGuard &that) {
+  std::swap(bpm_, that.bpm_);
+  std::swap(page_, that.page_);
+  std::swap(is_dirty_, that.is_dirty_);
+}
+
 ReadPageGuard::ReadPageGuard(ReadPageGuard &&that) noexcept = default;
 
 auto ReadPageGuard::operator=(ReadPageGuard &&that) noexcept -> ReadPageGuard & {
-  if (this == &that) {
-    return *this;
-  }
-  if (guard_.page_ != nullptr) {
-    guard_.page_->RUnlatch();
-  }
-  guard_ = std::move(that.guard_);
+  ReadPageGuard(std::move(that)).Swap(*this);
   return *this;
 }
 
@@ -76,16 +68,12 @@ void ReadPageGuard::Drop() {
 
 ReadPageGuard::~ReadPageGuard() { Drop(); }
 
+void ReadPageGuard::Swap(ReadPageGuard &that) { std::swap(guard_, that.guard_); }
+
 WritePageGuard::WritePageGuard(WritePageGuard &&that) noexcept = default;
 
 auto WritePageGuard::operator=(WritePageGuard &&that) noexcept -> WritePageGuard & {
-  if (this == &that) {
-    return *this;
-  }
-  if (guard_.page_ != nullptr) {
-    guard_.page_->WUnlatch();
-  }
-  guard_ = std::move(that.guard_);
+  WritePageGuard(std::move(that)).Swap(*this);
   return *this;
 }
 
@@ -97,5 +85,7 @@ void WritePageGuard::Drop() {
 }
 
 WritePageGuard::~WritePageGuard() { Drop(); }
+
+void WritePageGuard::Swap(WritePageGuard &that) { std::swap(guard_, that.guard_); }
 
 }  // namespace bustub
