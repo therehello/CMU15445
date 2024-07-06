@@ -12,20 +12,15 @@
 #include <array>
 #include <chrono>  // NOLINT
 #include <cstring>
-#include <fstream>
-#include <future>  // NOLINT
 #include <memory>
 #include <mutex>  // NOLINT
 #include <optional>
 #include <shared_mutex>
-#include <string>
 #include <thread>  // NOLINT
 #include <utility>
 #include <vector>
 
 #include "common/config.h"
-#include "common/exception.h"
-#include "common/logger.h"
 #include "fmt/core.h"
 #include "storage/disk/disk_manager.h"
 

@@ -12,7 +12,6 @@
 
 #pragma once
 
-#include <atomic>
 #include <fstream>
 #include <future>  // NOLINT
 #include <mutex>   // NOLINT

@@ -64,13 +64,13 @@ auto BufferPoolManager::NewPage(page_id_t *page_id) -> Page * {
   return page;
 }
 
-auto BufferPoolManager::FetchPage(page_id_t page_id, [[maybe_unused]] AccessType access_type) -> Page * {
+auto BufferPoolManager::FetchPage(page_id_t page_id, AccessType access_type) -> Page * {
   std::lock_guard lock_latch(latch_);
   auto p = page_table_.find(page_id);
   if (p != page_table_.end()) {
     auto frame_id = p->second;
     auto page = pages_ + frame_id;
-    replacer_->RecordAccess(frame_id);
+    replacer_->RecordAccess(frame_id, access_type);
     replacer_->SetEvictable(frame_id, false);
     page->pin_count_++;
     return page;
@@ -172,16 +172,10 @@ auto BufferPoolManager::DeletePage(page_id_t page_id) -> bool {
   if (page->GetPinCount() > 0) {
     return false;
   }
-  if (page->IsDirty()) {
-    auto promise = disk_scheduler_->CreatePromise();
-    auto future = promise.get_future();
-    disk_scheduler_->Schedule({true, page->GetData(), page->GetPageId(), std::move(promise)});
-    future.get();
-    page->is_dirty_ = false;
-  }
   page_table_.erase(p);
   free_list_.push_back(frame_id);
   replacer_->Remove(frame_id);
+  page->is_dirty_ = false;
   page->ResetMemory();
   page->page_id_ = INVALID_PAGE_ID;
   DeallocatePage(page_id);
