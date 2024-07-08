@@ -14,7 +14,6 @@
 #include <future>  // NOLINT
 #include <memory>
 
-#include "common/exception.h"
 #include "gtest/gtest.h"
 #include "storage/disk/disk_manager_memory.h"
 #include "storage/disk/disk_scheduler.h"
@@ -48,5 +47,4 @@ TEST(DiskSchedulerTest, ScheduleWriteReadPageTest) {
   disk_scheduler = nullptr;  // Call the DiskScheduler destructor to finish all scheduled jobs.
   dm->ShutDown();
 }
-
 }  // namespace bustub

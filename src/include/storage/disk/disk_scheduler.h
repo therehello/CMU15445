@@ -12,6 +12,7 @@
 
 #pragma once
 
+#include <array>
 #include <future>  // NOLINT
 #include <optional>
 #include <thread>  // NOLINT
@@ -71,9 +72,7 @@ class DiskScheduler {
    * The background thread needs to process requests while the DiskScheduler exists, i.e., this function should not
    * return until ~DiskScheduler() is called. At that point you need to make sure that the function does return.
    */
-  void StartWorkerThread();
-
-  void ProcessDiskRequest(DiskRequest r);
+  void StartWorkerThread(Channel<std::optional<DiskRequest>> &request_queue);
 
   using DiskSchedulerPromise = std::promise<bool>;
 
@@ -90,8 +89,8 @@ class DiskScheduler {
   DiskManager *disk_manager_ __attribute__((__unused__));
   /** A shared queue to concurrently schedule and process requests. When the DiskScheduler's destructor is called,
    * `std::nullopt` is put into the queue to signal to the background thread to stop execution. */
-  Channel<std::optional<DiskRequest>> request_queue_;
+  std::array<Channel<std::optional<DiskRequest>>, 16> request_queues_{};
   /** The background thread responsible for issuing scheduled requests to the disk manager. */
-  std::optional<std::thread> background_thread_;
+  std::array<std::thread, 16> background_threads_;
 };
 }  // namespace bustub
