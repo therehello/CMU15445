@@ -12,15 +12,76 @@
 
 #pragma once
 
-#include <array>
+#include <algorithm>
+#include <functional>
 #include <future>  // NOLINT
-#include <optional>
+#include <queue>
 #include <thread>  // NOLINT
+#include <tuple>
+#include <vector>
 
-#include "common/channel.h"
 #include "storage/disk/disk_manager.h"
 
 namespace bustub {
+
+class ThreadPool {
+ public:
+  explicit ThreadPool(size_t threads) {
+    for (size_t i = 0; i < threads; ++i) {
+      workers_.emplace_back([this] {
+        for (;;) {
+          std::function<void()> task;
+          {
+            std::unique_lock<std::mutex> lock(this->queue_mutex_);
+            this->condition_.wait(lock, [this] { return this->stop_ || !this->tasks_.empty(); });
+            if (this->stop_ && this->tasks_.empty()) {
+              return;
+            }
+            task = std::move(this->tasks_.front());
+            this->tasks_.pop();
+          }
+          task();
+        }
+      });
+    }
+  }
+
+  template <typename F, typename... Args, typename return_t = std::invoke_result_t<F, Args...>>
+  auto Submit(F &&f, Args &&...args) -> std::future<return_t> {
+    auto func = [f = std::forward<F>(f), args = std::forward_as_tuple(args...)]() mutable {
+      return std::apply(f, std::move(args));
+    };
+    auto task = std::make_shared<std::packaged_task<return_t()>>(std::move(func));
+    {
+      std::unique_lock<std::mutex> lock(queue_mutex_);
+      tasks_.emplace([task]() { (*task)(); });
+    }
+    condition_.notify_one();
+    return task->get_future();
+  }
+
+  ~ThreadPool() {
+    {
+      std::unique_lock<std::mutex> lock(queue_mutex_);
+      stop_ = true;
+    }
+    condition_.notify_all();
+    for (std::thread &worker : workers_) {
+      worker.join();
+    }
+  }
+
+ private:
+  // need to keep track of threads so we can join them
+  std::vector<std::thread> workers_;
+  // the task queue
+  std::queue<std::function<void()>> tasks_;
+
+  // synchronization
+  std::mutex queue_mutex_;
+  std::condition_variable condition_;
+  bool stop_{};
+};
 
 /**
  * @brief Represents a Write or Read request for the DiskManager to execute.
@@ -53,7 +114,6 @@ struct DiskRequest {
 class DiskScheduler {
  public:
   explicit DiskScheduler(DiskManager *disk_manager);
-  ~DiskScheduler();
 
   /**
    * TODO(P1): Add implementation
@@ -63,16 +123,6 @@ class DiskScheduler {
    * @param r The request to be scheduled.
    */
   void Schedule(DiskRequest r);
-
-  /**
-   * TODO(P1): Add implementation
-   *
-   * @brief Background worker thread function that processes scheduled requests.
-   *
-   * The background thread needs to process requests while the DiskScheduler exists, i.e., this function should not
-   * return until ~DiskScheduler() is called. At that point you need to make sure that the function does return.
-   */
-  void StartWorkerThread(Channel<std::optional<DiskRequest>> &request_queue);
 
   using DiskSchedulerPromise = std::promise<bool>;
 
@@ -86,11 +136,8 @@ class DiskScheduler {
 
  private:
   /** Pointer to the disk manager. */
-  DiskManager *disk_manager_ __attribute__((__unused__));
-  /** A shared queue to concurrently schedule and process requests. When the DiskScheduler's destructor is called,
-   * `std::nullopt` is put into the queue to signal to the background thread to stop execution. */
-  std::array<Channel<std::optional<DiskRequest>>, 16> request_queues_{};
-  /** The background thread responsible for issuing scheduled requests to the disk manager. */
-  std::array<std::thread, 16> background_threads_;
+  DiskManager *disk_manager_;
+
+  ThreadPool threadpool_{16};
 };
 }  // namespace bustub
