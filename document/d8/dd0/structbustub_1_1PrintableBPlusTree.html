@@ -1,0 +1,194 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>数据库系统 CMU15-445/645: bustub::PrintableBPlusTree结构体 参考</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/searchdata.js"></script>
+<script type="text/javascript" src="../../search/search.js"></script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">数据库系统 CMU15-445/645<span id="projectnumber">&#160;1.0.0</span>
+   </div>
+   <div id="projectbrief">CMU15-445/645 是基于现代 C++ 开发的支持并发操作的简单 SQL 操作的单机数据库</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.9.8 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "../../search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('../../',true,false,'search.php','搜索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="../../de/dda/namespacebustub.html">bustub</a></li><li class="navelem"><a class="el" href="../../d8/dd0/structbustub_1_1PrintableBPlusTree.html">PrintableBPlusTree</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Public 成员函数</a> &#124;
+<a href="#pub-attribs">Public 属性</a> &#124;
+<a href="../../dd/d8d/structbustub_1_1PrintableBPlusTree-members.html">所有成员列表</a>  </div>
+  <div class="headertitle"><div class="title">bustub::PrintableBPlusTree结构体 参考</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>for test only. <a class="el" href="../../d8/dd0/structbustub_1_1PrintableBPlusTree.html" title="for test only. PrintableBPlusTree is a printable B+ tree. We first convert B+ tree into a printable B...">PrintableBPlusTree</a> is a printable B+ tree. We first convert B+ tree into a printable B+ tree and the print it.  
+ <a href="../../d8/dd0/structbustub_1_1PrintableBPlusTree.html#details">更多...</a></p>
+
+<p><code>#include &lt;<a class="el" href="../../d8/da5/b__plus__tree_8h_source.html">b_plus_tree.h</a>&gt;</code></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Public 成员函数</h2></td></tr>
+<tr class="memitem:a15a68c2255f45c2ee3578dc14a890d6b" id="r_a15a68c2255f45c2ee3578dc14a890d6b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/dd0/structbustub_1_1PrintableBPlusTree.html#a15a68c2255f45c2ee3578dc14a890d6b">Print</a> (std::ostream &amp;out_buf)</td></tr>
+<tr class="memdesc:a15a68c2255f45c2ee3578dc14a890d6b"><td class="mdescLeft">&#160;</td><td class="mdescRight">BFS traverse a printable B+ tree and print it into into out_buf  <br /></td></tr>
+<tr class="separator:a15a68c2255f45c2ee3578dc14a890d6b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
+Public 属性</h2></td></tr>
+<tr class="memitem:ac6d51d33312d6a6d7b0be1059c8aa07a" id="r_ac6d51d33312d6a6d7b0be1059c8aa07a"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/dd0/structbustub_1_1PrintableBPlusTree.html#ac6d51d33312d6a6d7b0be1059c8aa07a">size_</a></td></tr>
+<tr class="separator:ac6d51d33312d6a6d7b0be1059c8aa07a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a955837d7ab99888f6d87a32e6ea64365" id="r_a955837d7ab99888f6d87a32e6ea64365"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/dd0/structbustub_1_1PrintableBPlusTree.html#a955837d7ab99888f6d87a32e6ea64365">keys_</a></td></tr>
+<tr class="separator:a955837d7ab99888f6d87a32e6ea64365"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa156f10aa388bfb3cc06e0808b1ee050" id="r_aa156f10aa388bfb3cc06e0808b1ee050"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="../../d8/dd0/structbustub_1_1PrintableBPlusTree.html">PrintableBPlusTree</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/dd0/structbustub_1_1PrintableBPlusTree.html#aa156f10aa388bfb3cc06e0808b1ee050">children_</a></td></tr>
+<tr class="separator:aa156f10aa388bfb3cc06e0808b1ee050"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
+<div class="textblock"><p>for test only. <a class="el" href="../../d8/dd0/structbustub_1_1PrintableBPlusTree.html" title="for test only. PrintableBPlusTree is a printable B+ tree. We first convert B+ tree into a printable B...">PrintableBPlusTree</a> is a printable B+ tree. We first convert B+ tree into a printable B+ tree and the print it. </p>
+</div><h2 class="groupheader">成员函数说明</h2>
+<a id="a15a68c2255f45c2ee3578dc14a890d6b" name="a15a68c2255f45c2ee3578dc14a890d6b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a15a68c2255f45c2ee3578dc14a890d6b">&#9670;&#160;</a></span>Print()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void bustub::PrintableBPlusTree::Print </td>
+          <td>(</td>
+          <td class="paramtype">std::ostream &amp;&#160;</td>
+          <td class="paramname"><em>out_buf</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>BFS traverse a printable B+ tree and print it into into out_buf </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">out_buf</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<h2 class="groupheader">类成员变量说明</h2>
+<a id="aa156f10aa388bfb3cc06e0808b1ee050" name="aa156f10aa388bfb3cc06e0808b1ee050"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa156f10aa388bfb3cc06e0808b1ee050">&#9670;&#160;</a></span>children_</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt;<a class="el" href="../../d8/dd0/structbustub_1_1PrintableBPlusTree.html">PrintableBPlusTree</a>&gt; bustub::PrintableBPlusTree::children_</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a955837d7ab99888f6d87a32e6ea64365" name="a955837d7ab99888f6d87a32e6ea64365"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a955837d7ab99888f6d87a32e6ea64365">&#9670;&#160;</a></span>keys_</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string bustub::PrintableBPlusTree::keys_</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ac6d51d33312d6a6d7b0be1059c8aa07a" name="ac6d51d33312d6a6d7b0be1059c8aa07a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac6d51d33312d6a6d7b0be1059c8aa07a">&#9670;&#160;</a></span>size_</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int bustub::PrintableBPlusTree::size_</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<hr/>该结构体的文档由以下文件生成:<ul>
+<li>src/include/storage/index/<a class="el" href="../../d8/da5/b__plus__tree_8h_source.html">b_plus_tree.h</a></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
+</small></address>
+</body>
+</html>

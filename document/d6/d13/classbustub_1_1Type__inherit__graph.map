@@ -1,0 +1,23 @@
+<map id="bustub::Type" name="bustub::Type">
+<area shape="rect" id="Node000001" title=" " alt="" coords="311,5,415,31"/>
+<area shape="rect" id="Node000002" href="$da/d83/classbustub_1_1BooleanType.html" title=" " alt="" coords="5,79,163,104"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="305,37,130,81,128,76,304,31"/>
+<area shape="rect" id="Node000003" href="$de/def/classbustub_1_1NumericType.html" title=" " alt="" coords="187,79,346,104"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="338,41,284,81,281,76,335,37"/>
+<area shape="rect" id="Node000010" href="$dc/da4/classbustub_1_1TimestampType.html" title=" " alt="" coords="371,79,549,104"/>
+<area shape="poly" id="edge9_Node000001_Node000010" title=" " alt="" coords="391,37,446,76,443,81,388,41"/>
+<area shape="rect" id="Node000011" href="$d4/d2c/classbustub_1_1VarlenType.html" title=" " alt="" coords="574,79,719,104"/>
+<area shape="poly" id="edge10_Node000001_Node000011" title=" " alt="" coords="422,31,601,76,600,81,421,37"/>
+<area shape="rect" id="Node000004" href="$de/d8f/classbustub_1_1DecimalType.html" title=" " alt="" coords="89,152,247,177"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="242,114,186,154,183,150,238,110"/>
+<area shape="rect" id="Node000005" href="$db/d01/classbustub_1_1IntegerParentType.html" title=" " alt="" coords="271,152,462,177"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="295,110,352,150,349,154,292,114"/>
+<area shape="rect" id="Node000006" href="$d9/d45/classbustub_1_1BigintType.html" title=" " alt="" coords="35,225,178,251"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="312,183,149,228,148,223,311,178"/>
+<area shape="rect" id="Node000007" href="$d7/d0d/classbustub_1_1IntegerType.html" title=" " alt="" coords="202,225,353,251"/>
+<area shape="poly" id="edge6_Node000005_Node000007" title=" " alt="" coords="343,188,294,227,290,223,340,184"/>
+<area shape="rect" id="Node000008" href="$dd/dc2/classbustub_1_1SmallintType.html" title=" " alt="" coords="377,225,535,251"/>
+<area shape="poly" id="edge7_Node000005_Node000008" title=" " alt="" coords="393,184,443,223,440,227,390,188"/>
+<area shape="rect" id="Node000009" href="$d2/d1b/classbustub_1_1TinyintType.html" title=" " alt="" coords="560,225,709,251"/>
+<area shape="poly" id="edge8_Node000005_Node000009" title=" " alt="" coords="424,178,592,223,591,228,423,183"/>
+</map>

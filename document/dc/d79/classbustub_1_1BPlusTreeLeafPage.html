@@ -1,0 +1,367 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>数据库系统 CMU15-445/645: bustub::BPlusTreeLeafPage类 参考</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/searchdata.js"></script>
+<script type="text/javascript" src="../../search/search.js"></script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">数据库系统 CMU15-445/645<span id="projectnumber">&#160;1.0.0</span>
+   </div>
+   <div id="projectbrief">CMU15-445/645 是基于现代 C++ 开发的支持并发操作的简单 SQL 操作的单机数据库</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.9.8 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "../../search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('../../',true,false,'search.php','搜索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="../../de/dda/namespacebustub.html">bustub</a></li><li class="navelem"><a class="el" href="../../dc/d79/classbustub_1_1BPlusTreeLeafPage.html">BPlusTreeLeafPage</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Public 成员函数</a> &#124;
+<a href="#pri-attribs">Private 属性</a> &#124;
+<a href="../../d0/d63/classbustub_1_1BPlusTreeLeafPage-members.html">所有成员列表</a>  </div>
+  <div class="headertitle"><div class="title">bustub::BPlusTreeLeafPage类 参考</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p><code>#include &lt;<a class="el" href="../../d5/d76/b__plus__tree__leaf__page_8h_source.html">b_plus_tree_leaf_page.h</a>&gt;</code></p>
+<div class="dynheader">
+类 bustub::BPlusTreeLeafPage 继承关系图:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../d9/dc5/classbustub_1_1BPlusTreeLeafPage__inherit__graph.svg" width="207" height="110"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<center><span class="legend">[<a href="../../graph_legend.html">图例</a>]</span></center></div>
+<div class="dynheader">
+bustub::BPlusTreeLeafPage 的协作图:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../da/d6a/classbustub_1_1BPlusTreeLeafPage__coll__graph.svg" width="207" height="110"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<center><span class="legend">[<a href="../../graph_legend.html">图例</a>]</span></center></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Public 成员函数</h2></td></tr>
+<tr class="memitem:a56654982bbff785092ea53f0d9f15979" id="r_a56654982bbff785092ea53f0d9f15979"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d79/classbustub_1_1BPlusTreeLeafPage.html#a56654982bbff785092ea53f0d9f15979">BPlusTreeLeafPage</a> ()=delete</td></tr>
+<tr class="separator:a56654982bbff785092ea53f0d9f15979"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a01859fde7432531101f9ad31d25c4fe7" id="r_a01859fde7432531101f9ad31d25c4fe7"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d79/classbustub_1_1BPlusTreeLeafPage.html#a01859fde7432531101f9ad31d25c4fe7">BPlusTreeLeafPage</a> (const <a class="el" href="../../dc/d79/classbustub_1_1BPlusTreeLeafPage.html">BPlusTreeLeafPage</a> &amp;other)=delete</td></tr>
+<tr class="separator:a01859fde7432531101f9ad31d25c4fe7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a99a5258a27404438b655679570b1e4fa" id="r_a99a5258a27404438b655679570b1e4fa"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d79/classbustub_1_1BPlusTreeLeafPage.html#a99a5258a27404438b655679570b1e4fa">Init</a> (int max_size=<a class="el" href="../../d5/d76/b__plus__tree__leaf__page_8h.html#a1bf27d964f8ae5ad340eb82a7bd5fee7">LEAF_PAGE_SIZE</a>)</td></tr>
+<tr class="separator:a99a5258a27404438b655679570b1e4fa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad0bf5ff7acd31a2e923a27e23a71bd45" id="r_ad0bf5ff7acd31a2e923a27e23a71bd45"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d79/classbustub_1_1BPlusTreeLeafPage.html#ad0bf5ff7acd31a2e923a27e23a71bd45">GetNextPageId</a> () const -&gt; <a class="el" href="../../de/dda/namespacebustub.html#a8de4ac099b23d712481109bb846decde">page_id_t</a></td></tr>
+<tr class="separator:ad0bf5ff7acd31a2e923a27e23a71bd45"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2b305b5f6e5a846537ed72c33836597c" id="r_a2b305b5f6e5a846537ed72c33836597c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d79/classbustub_1_1BPlusTreeLeafPage.html#a2b305b5f6e5a846537ed72c33836597c">SetNextPageId</a> (<a class="el" href="../../de/dda/namespacebustub.html#a8de4ac099b23d712481109bb846decde">page_id_t</a> next_page_id)</td></tr>
+<tr class="separator:a2b305b5f6e5a846537ed72c33836597c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaf9d976e52a9fc32815be79c308ca3fb" id="r_aaf9d976e52a9fc32815be79c308ca3fb"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d79/classbustub_1_1BPlusTreeLeafPage.html#aaf9d976e52a9fc32815be79c308ca3fb">KeyAt</a> (int index) const -&gt; KeyType</td></tr>
+<tr class="separator:aaf9d976e52a9fc32815be79c308ca3fb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa67589b44cc38a08a48ece8d2b619943" id="r_aa67589b44cc38a08a48ece8d2b619943"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d79/classbustub_1_1BPlusTreeLeafPage.html#aa67589b44cc38a08a48ece8d2b619943">ToString</a> () const -&gt; std::string</td></tr>
+<tr class="memdesc:aa67589b44cc38a08a48ece8d2b619943"><td class="mdescLeft">&#160;</td><td class="mdescRight">For test only return a string representing all keys in this leaf page formatted as "(key1,key2,key3,...)"  <br /></td></tr>
+<tr class="separator:aa67589b44cc38a08a48ece8d2b619943"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_methods_classbustub_1_1BPlusTreePage"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classbustub_1_1BPlusTreePage')"><img src="../../closed.png" alt="-"/>&#160;Public 成员函数 继承自 <a class="el" href="../../d6/d48/classbustub_1_1BPlusTreePage.html">bustub::BPlusTreePage</a></td></tr>
+<tr class="memitem:adaf9384d3040cc7fed55668c1cb22219 inherit pub_methods_classbustub_1_1BPlusTreePage" id="r_adaf9384d3040cc7fed55668c1cb22219"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d48/classbustub_1_1BPlusTreePage.html#adaf9384d3040cc7fed55668c1cb22219">BPlusTreePage</a> ()=delete</td></tr>
+<tr class="separator:adaf9384d3040cc7fed55668c1cb22219 inherit pub_methods_classbustub_1_1BPlusTreePage"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5dc819c2fd81426ce7c0143a307f90ac inherit pub_methods_classbustub_1_1BPlusTreePage" id="r_a5dc819c2fd81426ce7c0143a307f90ac"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d48/classbustub_1_1BPlusTreePage.html#a5dc819c2fd81426ce7c0143a307f90ac">BPlusTreePage</a> (const <a class="el" href="../../d6/d48/classbustub_1_1BPlusTreePage.html">BPlusTreePage</a> &amp;other)=delete</td></tr>
+<tr class="separator:a5dc819c2fd81426ce7c0143a307f90ac inherit pub_methods_classbustub_1_1BPlusTreePage"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2fd46e8c76b5285060894be93300f42a inherit pub_methods_classbustub_1_1BPlusTreePage" id="r_a2fd46e8c76b5285060894be93300f42a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d48/classbustub_1_1BPlusTreePage.html#a2fd46e8c76b5285060894be93300f42a">~BPlusTreePage</a> ()=delete</td></tr>
+<tr class="separator:a2fd46e8c76b5285060894be93300f42a inherit pub_methods_classbustub_1_1BPlusTreePage"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6f47f7d6d7351f353468099d55330c2a inherit pub_methods_classbustub_1_1BPlusTreePage" id="r_a6f47f7d6d7351f353468099d55330c2a"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d48/classbustub_1_1BPlusTreePage.html#a6f47f7d6d7351f353468099d55330c2a">IsLeafPage</a> () const -&gt; bool</td></tr>
+<tr class="separator:a6f47f7d6d7351f353468099d55330c2a inherit pub_methods_classbustub_1_1BPlusTreePage"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abd41e488b49c43aba310e23b54efa4d8 inherit pub_methods_classbustub_1_1BPlusTreePage" id="r_abd41e488b49c43aba310e23b54efa4d8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d48/classbustub_1_1BPlusTreePage.html#abd41e488b49c43aba310e23b54efa4d8">SetPageType</a> (<a class="el" href="../../de/dda/namespacebustub.html#aa22b843a31f36c3abba2ac5410480497">IndexPageType</a> page_type)</td></tr>
+<tr class="separator:abd41e488b49c43aba310e23b54efa4d8 inherit pub_methods_classbustub_1_1BPlusTreePage"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac14c9a021e6f9c4a83dffaa81c6b41e7 inherit pub_methods_classbustub_1_1BPlusTreePage" id="r_ac14c9a021e6f9c4a83dffaa81c6b41e7"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d48/classbustub_1_1BPlusTreePage.html#ac14c9a021e6f9c4a83dffaa81c6b41e7">GetSize</a> () const -&gt; int</td></tr>
+<tr class="separator:ac14c9a021e6f9c4a83dffaa81c6b41e7 inherit pub_methods_classbustub_1_1BPlusTreePage"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a56166803db1e1191762a0926eb30d15e inherit pub_methods_classbustub_1_1BPlusTreePage" id="r_a56166803db1e1191762a0926eb30d15e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d48/classbustub_1_1BPlusTreePage.html#a56166803db1e1191762a0926eb30d15e">SetSize</a> (int size)</td></tr>
+<tr class="separator:a56166803db1e1191762a0926eb30d15e inherit pub_methods_classbustub_1_1BPlusTreePage"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8ae64d1ba6391c486d085d9fabb91bba inherit pub_methods_classbustub_1_1BPlusTreePage" id="r_a8ae64d1ba6391c486d085d9fabb91bba"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d48/classbustub_1_1BPlusTreePage.html#a8ae64d1ba6391c486d085d9fabb91bba">IncreaseSize</a> (int amount)</td></tr>
+<tr class="separator:a8ae64d1ba6391c486d085d9fabb91bba inherit pub_methods_classbustub_1_1BPlusTreePage"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a95547fdcfe0b47e80324e15af4091f3f inherit pub_methods_classbustub_1_1BPlusTreePage" id="r_a95547fdcfe0b47e80324e15af4091f3f"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d48/classbustub_1_1BPlusTreePage.html#a95547fdcfe0b47e80324e15af4091f3f">GetMaxSize</a> () const -&gt; int</td></tr>
+<tr class="separator:a95547fdcfe0b47e80324e15af4091f3f inherit pub_methods_classbustub_1_1BPlusTreePage"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac76f8f14d792d36de9c32ef6e1f407d0 inherit pub_methods_classbustub_1_1BPlusTreePage" id="r_ac76f8f14d792d36de9c32ef6e1f407d0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d48/classbustub_1_1BPlusTreePage.html#ac76f8f14d792d36de9c32ef6e1f407d0">SetMaxSize</a> (int max_size)</td></tr>
+<tr class="separator:ac76f8f14d792d36de9c32ef6e1f407d0 inherit pub_methods_classbustub_1_1BPlusTreePage"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0158785c88299536a14b9ea78bd082ac inherit pub_methods_classbustub_1_1BPlusTreePage" id="r_a0158785c88299536a14b9ea78bd082ac"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d48/classbustub_1_1BPlusTreePage.html#a0158785c88299536a14b9ea78bd082ac">GetMinSize</a> () const -&gt; int</td></tr>
+<tr class="separator:a0158785c88299536a14b9ea78bd082ac inherit pub_methods_classbustub_1_1BPlusTreePage"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
+Private 属性</h2></td></tr>
+<tr class="memitem:a7025490b6dc9dcbf1bd508ea44897a6a" id="r_a7025490b6dc9dcbf1bd508ea44897a6a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../de/dda/namespacebustub.html#a8de4ac099b23d712481109bb846decde">page_id_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d79/classbustub_1_1BPlusTreeLeafPage.html#a7025490b6dc9dcbf1bd508ea44897a6a">next_page_id_</a></td></tr>
+<tr class="separator:a7025490b6dc9dcbf1bd508ea44897a6a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0100af8d0aea29620dced05f9eb09d3d" id="r_a0100af8d0aea29620dced05f9eb09d3d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d1/d36/b__plus__tree__page_8h.html#a139704601c819af8cdce06a6c1080a85">MappingType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d79/classbustub_1_1BPlusTreeLeafPage.html#a0100af8d0aea29620dced05f9eb09d3d">array_</a> [0]</td></tr>
+<tr class="separator:a0100af8d0aea29620dced05f9eb09d3d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
+<div class="textblock"><p>Store indexed key and record id (record id = page id combined with slot id, see <code><a class="el" href="../../d8/d5f/rid_8h.html">include/common/rid.h</a></code> for detailed implementation) together within leaf page. Only support unique key.</p>
+<h2><a class="anchor" id="autotoc_md12"></a>
+Leaf page format (keys are stored in order):</h2>
+<h2><a class="anchor" id="autotoc_md13"></a>
+| HEADER | KEY(1) + RID(1) | KEY(2) + RID(2) | ... | KEY(n) + RID(n)  |</h2>
+<h2><a class="anchor" id="autotoc_md14"></a>
+Header format (size in byte, 16 bytes in total):</h2>
+<h2><a class="anchor" id="autotoc_md15"></a>
+| PageType (4) | CurrentSize (4) | MaxSize (4) | NextPageId (4) | ... |</h2>
+</div><h2 class="groupheader">构造及析构函数说明</h2>
+<a id="a56654982bbff785092ea53f0d9f15979" name="a56654982bbff785092ea53f0d9f15979"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a56654982bbff785092ea53f0d9f15979">&#9670;&#160;</a></span>BPlusTreeLeafPage() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bustub::BPlusTreeLeafPage::BPlusTreeLeafPage </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">delete</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a01859fde7432531101f9ad31d25c4fe7" name="a01859fde7432531101f9ad31d25c4fe7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a01859fde7432531101f9ad31d25c4fe7">&#9670;&#160;</a></span>BPlusTreeLeafPage() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bustub::BPlusTreeLeafPage::BPlusTreeLeafPage </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="../../dc/d79/classbustub_1_1BPlusTreeLeafPage.html">BPlusTreeLeafPage</a> &amp;&#160;</td>
+          <td class="paramname"><em>other</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">delete</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">成员函数说明</h2>
+<a id="ad0bf5ff7acd31a2e923a27e23a71bd45" name="ad0bf5ff7acd31a2e923a27e23a71bd45"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad0bf5ff7acd31a2e923a27e23a71bd45">&#9670;&#160;</a></span>GetNextPageId()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto bustub::BPlusTreeLeafPage::GetNextPageId </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const -&gt;  <a class="el" href="../../de/dda/namespacebustub.html#a8de4ac099b23d712481109bb846decde">page_id_t</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a99a5258a27404438b655679570b1e4fa" name="a99a5258a27404438b655679570b1e4fa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a99a5258a27404438b655679570b1e4fa">&#9670;&#160;</a></span>Init()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void bustub::BPlusTreeLeafPage::Init </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>max_size</em> = <code><a class="el" href="../../d5/d76/b__plus__tree__leaf__page_8h.html#a1bf27d964f8ae5ad340eb82a7bd5fee7">LEAF_PAGE_SIZE</a></code></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>After creating a new leaf page from buffer pool, must call initialize method to set default values </p><dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">max_size</td><td>Max size of the leaf node </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="aaf9d976e52a9fc32815be79c308ca3fb" name="aaf9d976e52a9fc32815be79c308ca3fb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaf9d976e52a9fc32815be79c308ca3fb">&#9670;&#160;</a></span>KeyAt()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto bustub::BPlusTreeLeafPage::KeyAt </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>index</em></td><td>)</td>
+          <td> const -&gt;  KeyType</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a2b305b5f6e5a846537ed72c33836597c" name="a2b305b5f6e5a846537ed72c33836597c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2b305b5f6e5a846537ed72c33836597c">&#9670;&#160;</a></span>SetNextPageId()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void bustub::BPlusTreeLeafPage::SetNextPageId </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../de/dda/namespacebustub.html#a8de4ac099b23d712481109bb846decde">page_id_t</a>&#160;</td>
+          <td class="paramname"><em>next_page_id</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aa67589b44cc38a08a48ece8d2b619943" name="aa67589b44cc38a08a48ece8d2b619943"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa67589b44cc38a08a48ece8d2b619943">&#9670;&#160;</a></span>ToString()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto bustub::BPlusTreeLeafPage::ToString </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const -&gt; std::string </td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>For test only return a string representing all keys in this leaf page formatted as "(key1,key2,key3,...)" </p>
+<dl class="section return"><dt>返回</dt><dd>The string representation of all keys in the current internal page </dd></dl>
+
+</div>
+</div>
+<h2 class="groupheader">类成员变量说明</h2>
+<a id="a0100af8d0aea29620dced05f9eb09d3d" name="a0100af8d0aea29620dced05f9eb09d3d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0100af8d0aea29620dced05f9eb09d3d">&#9670;&#160;</a></span>array_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d1/d36/b__plus__tree__page_8h.html#a139704601c819af8cdce06a6c1080a85">MappingType</a> bustub::BPlusTreeLeafPage::array_[0]</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a7025490b6dc9dcbf1bd508ea44897a6a" name="a7025490b6dc9dcbf1bd508ea44897a6a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7025490b6dc9dcbf1bd508ea44897a6a">&#9670;&#160;</a></span>next_page_id_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../de/dda/namespacebustub.html#a8de4ac099b23d712481109bb846decde">page_id_t</a> bustub::BPlusTreeLeafPage::next_page_id_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<hr/>该类的文档由以下文件生成:<ul>
+<li>src/include/storage/page/<a class="el" href="../../d5/d76/b__plus__tree__leaf__page_8h_source.html">b_plus_tree_leaf_page.h</a></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
+</small></address>
+</body>
+</html>

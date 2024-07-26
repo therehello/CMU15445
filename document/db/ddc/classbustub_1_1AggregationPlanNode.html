@@ -1,0 +1,562 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>数据库系统 CMU15-445/645: bustub::AggregationPlanNode类 参考</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/searchdata.js"></script>
+<script type="text/javascript" src="../../search/search.js"></script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">数据库系统 CMU15-445/645<span id="projectnumber">&#160;1.0.0</span>
+   </div>
+   <div id="projectbrief">CMU15-445/645 是基于现代 C++ 开发的支持并发操作的简单 SQL 操作的单机数据库</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.9.8 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "../../search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('../../',true,false,'search.php','搜索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="../../de/dda/namespacebustub.html">bustub</a></li><li class="navelem"><a class="el" href="../../db/ddc/classbustub_1_1AggregationPlanNode.html">AggregationPlanNode</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Public 成员函数</a> &#124;
+<a href="#pub-static-methods">静态 Public 成员函数</a> &#124;
+<a href="#pub-attribs">Public 属性</a> &#124;
+<a href="#pro-methods">Protected 成员函数</a> &#124;
+<a href="../../da/d20/classbustub_1_1AggregationPlanNode-members.html">所有成员列表</a>  </div>
+  <div class="headertitle"><div class="title">bustub::AggregationPlanNode类 参考</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p><code>#include &lt;<a class="el" href="../../d1/d59/aggregation__plan_8h_source.html">aggregation_plan.h</a>&gt;</code></p>
+<div class="dynheader">
+类 bustub::AggregationPlanNode 继承关系图:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../d3/d6a/classbustub_1_1AggregationPlanNode__inherit__graph.svg" width="226" height="110"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<center><span class="legend">[<a href="../../graph_legend.html">图例</a>]</span></center></div>
+<div class="dynheader">
+bustub::AggregationPlanNode 的协作图:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../d7/d4d/classbustub_1_1AggregationPlanNode__coll__graph.svg" width="226" height="110"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<center><span class="legend">[<a href="../../graph_legend.html">图例</a>]</span></center></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Public 成员函数</h2></td></tr>
+<tr class="memitem:ae4bc793475b91c838b4bff591b8c45ac" id="r_ae4bc793475b91c838b4bff591b8c45ac"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/ddc/classbustub_1_1AggregationPlanNode.html#ae4bc793475b91c838b4bff591b8c45ac">AggregationPlanNode</a> (<a class="el" href="../../de/dda/namespacebustub.html#a55b0598dc53e990803d5fd093fc6a59f">SchemaRef</a> output_schema, <a class="el" href="../../de/dda/namespacebustub.html#a354095e050bd1915a499a31c062c7303">AbstractPlanNodeRef</a> child, std::vector&lt; <a class="el" href="../../de/dda/namespacebustub.html#af0cfd2fbbabe21e0e95790ff99273105">AbstractExpressionRef</a> &gt; group_bys, std::vector&lt; <a class="el" href="../../de/dda/namespacebustub.html#af0cfd2fbbabe21e0e95790ff99273105">AbstractExpressionRef</a> &gt; aggregates, std::vector&lt; <a class="el" href="../../de/dda/namespacebustub.html#a00cf530eb8a8c97e85e5030651b64fff">AggregationType</a> &gt; agg_types)</td></tr>
+<tr class="separator:ae4bc793475b91c838b4bff591b8c45ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7293d1c279f0152b065d7d478a73c989" id="r_a7293d1c279f0152b065d7d478a73c989"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/ddc/classbustub_1_1AggregationPlanNode.html#a7293d1c279f0152b065d7d478a73c989">GetType</a> () const -&gt; <a class="el" href="../../de/dda/namespacebustub.html#ad7d821859993f0ecb02cde3b7a9f2ccf">PlanType</a> override</td></tr>
+<tr class="separator:a7293d1c279f0152b065d7d478a73c989"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acb80e0e1b27da390a9e5a803a0740f86" id="r_acb80e0e1b27da390a9e5a803a0740f86"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/ddc/classbustub_1_1AggregationPlanNode.html#acb80e0e1b27da390a9e5a803a0740f86">GetChildPlan</a> () const -&gt; <a class="el" href="../../de/dda/namespacebustub.html#a354095e050bd1915a499a31c062c7303">AbstractPlanNodeRef</a></td></tr>
+<tr class="separator:acb80e0e1b27da390a9e5a803a0740f86"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a49248d9df72dbdeb9ee9df04b378b61a" id="r_a49248d9df72dbdeb9ee9df04b378b61a"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/ddc/classbustub_1_1AggregationPlanNode.html#a49248d9df72dbdeb9ee9df04b378b61a">GetGroupByAt</a> (uint32_t idx) const -&gt; const <a class="el" href="../../de/dda/namespacebustub.html#af0cfd2fbbabe21e0e95790ff99273105">AbstractExpressionRef</a> &amp;</td></tr>
+<tr class="separator:a49248d9df72dbdeb9ee9df04b378b61a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abbbd4f2a1c981272131c39ca970d63ae" id="r_abbbd4f2a1c981272131c39ca970d63ae"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/ddc/classbustub_1_1AggregationPlanNode.html#abbbd4f2a1c981272131c39ca970d63ae">GetGroupBys</a> () const -&gt; const std::vector&lt; <a class="el" href="../../de/dda/namespacebustub.html#af0cfd2fbbabe21e0e95790ff99273105">AbstractExpressionRef</a> &gt; &amp;</td></tr>
+<tr class="separator:abbbd4f2a1c981272131c39ca970d63ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab8367b96057b84445c37d0d849716f8a" id="r_ab8367b96057b84445c37d0d849716f8a"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/ddc/classbustub_1_1AggregationPlanNode.html#ab8367b96057b84445c37d0d849716f8a">GetAggregateAt</a> (uint32_t idx) const -&gt; const <a class="el" href="../../de/dda/namespacebustub.html#af0cfd2fbbabe21e0e95790ff99273105">AbstractExpressionRef</a> &amp;</td></tr>
+<tr class="separator:ab8367b96057b84445c37d0d849716f8a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4e2092cc926d3f94db7438e1d13db09b" id="r_a4e2092cc926d3f94db7438e1d13db09b"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/ddc/classbustub_1_1AggregationPlanNode.html#a4e2092cc926d3f94db7438e1d13db09b">GetAggregates</a> () const -&gt; const std::vector&lt; <a class="el" href="../../de/dda/namespacebustub.html#af0cfd2fbbabe21e0e95790ff99273105">AbstractExpressionRef</a> &gt; &amp;</td></tr>
+<tr class="separator:a4e2092cc926d3f94db7438e1d13db09b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeade2c4bb904123f07d5bf9ee54f2f09" id="r_aeade2c4bb904123f07d5bf9ee54f2f09"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/ddc/classbustub_1_1AggregationPlanNode.html#aeade2c4bb904123f07d5bf9ee54f2f09">GetAggregateTypes</a> () const -&gt; const std::vector&lt; <a class="el" href="../../de/dda/namespacebustub.html#a00cf530eb8a8c97e85e5030651b64fff">AggregationType</a> &gt; &amp;</td></tr>
+<tr class="separator:aeade2c4bb904123f07d5bf9ee54f2f09"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6ee12df456655f5c11524616a5122bda" id="r_a6ee12df456655f5c11524616a5122bda"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/ddc/classbustub_1_1AggregationPlanNode.html#a6ee12df456655f5c11524616a5122bda">BUSTUB_PLAN_NODE_CLONE_WITH_CHILDREN</a> (<a class="el" href="../../db/ddc/classbustub_1_1AggregationPlanNode.html">AggregationPlanNode</a>)</td></tr>
+<tr class="separator:a6ee12df456655f5c11524616a5122bda"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_methods_classbustub_1_1AbstractPlanNode"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classbustub_1_1AbstractPlanNode')"><img src="../../closed.png" alt="-"/>&#160;Public 成员函数 继承自 <a class="el" href="../../d6/d8c/classbustub_1_1AbstractPlanNode.html">bustub::AbstractPlanNode</a></td></tr>
+<tr class="memitem:a1b6aa4666151cce66649517f51052733 inherit pub_methods_classbustub_1_1AbstractPlanNode" id="r_a1b6aa4666151cce66649517f51052733"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d8c/classbustub_1_1AbstractPlanNode.html#a1b6aa4666151cce66649517f51052733">AbstractPlanNode</a> (<a class="el" href="../../de/dda/namespacebustub.html#a55b0598dc53e990803d5fd093fc6a59f">SchemaRef</a> output_schema, std::vector&lt; <a class="el" href="../../de/dda/namespacebustub.html#a354095e050bd1915a499a31c062c7303">AbstractPlanNodeRef</a> &gt; children)</td></tr>
+<tr class="separator:a1b6aa4666151cce66649517f51052733 inherit pub_methods_classbustub_1_1AbstractPlanNode"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a336250e94ce6a76115d8dea2e9be8ba8 inherit pub_methods_classbustub_1_1AbstractPlanNode" id="r_a336250e94ce6a76115d8dea2e9be8ba8"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d8c/classbustub_1_1AbstractPlanNode.html#a336250e94ce6a76115d8dea2e9be8ba8">~AbstractPlanNode</a> ()=default</td></tr>
+<tr class="separator:a336250e94ce6a76115d8dea2e9be8ba8 inherit pub_methods_classbustub_1_1AbstractPlanNode"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa9cd965458e800c0242f3817a292d258 inherit pub_methods_classbustub_1_1AbstractPlanNode" id="r_aa9cd965458e800c0242f3817a292d258"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d8c/classbustub_1_1AbstractPlanNode.html#aa9cd965458e800c0242f3817a292d258">OutputSchema</a> () const -&gt; const <a class="el" href="../../da/d36/classbustub_1_1Schema.html">Schema</a> &amp;</td></tr>
+<tr class="separator:aa9cd965458e800c0242f3817a292d258 inherit pub_methods_classbustub_1_1AbstractPlanNode"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7d96d4434acb6bf335e08fc47eda5072 inherit pub_methods_classbustub_1_1AbstractPlanNode" id="r_a7d96d4434acb6bf335e08fc47eda5072"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d8c/classbustub_1_1AbstractPlanNode.html#a7d96d4434acb6bf335e08fc47eda5072">GetChildAt</a> (uint32_t child_idx) const -&gt; <a class="el" href="../../de/dda/namespacebustub.html#a354095e050bd1915a499a31c062c7303">AbstractPlanNodeRef</a></td></tr>
+<tr class="separator:a7d96d4434acb6bf335e08fc47eda5072 inherit pub_methods_classbustub_1_1AbstractPlanNode"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad2c3dd9b5718a2097bd37c9856a8441d inherit pub_methods_classbustub_1_1AbstractPlanNode" id="r_ad2c3dd9b5718a2097bd37c9856a8441d"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d8c/classbustub_1_1AbstractPlanNode.html#ad2c3dd9b5718a2097bd37c9856a8441d">GetChildren</a> () const -&gt; const std::vector&lt; <a class="el" href="../../de/dda/namespacebustub.html#a354095e050bd1915a499a31c062c7303">AbstractPlanNodeRef</a> &gt; &amp;</td></tr>
+<tr class="separator:ad2c3dd9b5718a2097bd37c9856a8441d inherit pub_methods_classbustub_1_1AbstractPlanNode"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af28eccd32fc387a23e0752fe4280e17f inherit pub_methods_classbustub_1_1AbstractPlanNode" id="r_af28eccd32fc387a23e0752fe4280e17f"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d8c/classbustub_1_1AbstractPlanNode.html#af28eccd32fc387a23e0752fe4280e17f">ToString</a> (bool with_schema=true) const -&gt; std::string</td></tr>
+<tr class="separator:af28eccd32fc387a23e0752fe4280e17f inherit pub_methods_classbustub_1_1AbstractPlanNode"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acd740db4fe3bb6329d3ad199fee6a88a inherit pub_methods_classbustub_1_1AbstractPlanNode" id="r_acd740db4fe3bb6329d3ad199fee6a88a"><td class="memItemLeft" align="right" valign="top">virtual auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d8c/classbustub_1_1AbstractPlanNode.html#acd740db4fe3bb6329d3ad199fee6a88a">CloneWithChildren</a> (std::vector&lt; <a class="el" href="../../de/dda/namespacebustub.html#a354095e050bd1915a499a31c062c7303">AbstractPlanNodeRef</a> &gt; children) const -&gt; std::unique_ptr&lt; <a class="el" href="../../d6/d8c/classbustub_1_1AbstractPlanNode.html">AbstractPlanNode</a> &gt;=0</td></tr>
+<tr class="separator:acd740db4fe3bb6329d3ad199fee6a88a inherit pub_methods_classbustub_1_1AbstractPlanNode"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
+静态 Public 成员函数</h2></td></tr>
+<tr class="memitem:a691644751c4a73b59999bc5368370948" id="r_a691644751c4a73b59999bc5368370948"><td class="memItemLeft" align="right" valign="top">static auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/ddc/classbustub_1_1AggregationPlanNode.html#a691644751c4a73b59999bc5368370948">InferAggSchema</a> (const std::vector&lt; <a class="el" href="../../de/dda/namespacebustub.html#af0cfd2fbbabe21e0e95790ff99273105">AbstractExpressionRef</a> &gt; &amp;group_bys, const std::vector&lt; <a class="el" href="../../de/dda/namespacebustub.html#af0cfd2fbbabe21e0e95790ff99273105">AbstractExpressionRef</a> &gt; &amp;aggregates, const std::vector&lt; <a class="el" href="../../de/dda/namespacebustub.html#a00cf530eb8a8c97e85e5030651b64fff">AggregationType</a> &gt; &amp;agg_types) -&gt; <a class="el" href="../../da/d36/classbustub_1_1Schema.html">Schema</a></td></tr>
+<tr class="separator:a691644751c4a73b59999bc5368370948"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
+Public 属性</h2></td></tr>
+<tr class="memitem:a88dd7059a7df9ac5da84f7fccb9d103f" id="r_a88dd7059a7df9ac5da84f7fccb9d103f"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="../../de/dda/namespacebustub.html#af0cfd2fbbabe21e0e95790ff99273105">AbstractExpressionRef</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/ddc/classbustub_1_1AggregationPlanNode.html#a88dd7059a7df9ac5da84f7fccb9d103f">group_bys_</a></td></tr>
+<tr class="separator:a88dd7059a7df9ac5da84f7fccb9d103f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a73aa6b9928f2decc8db2b2fa701eca85" id="r_a73aa6b9928f2decc8db2b2fa701eca85"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="../../de/dda/namespacebustub.html#af0cfd2fbbabe21e0e95790ff99273105">AbstractExpressionRef</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/ddc/classbustub_1_1AggregationPlanNode.html#a73aa6b9928f2decc8db2b2fa701eca85">aggregates_</a></td></tr>
+<tr class="separator:a73aa6b9928f2decc8db2b2fa701eca85"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aed8a9e56f6a5595f744a49af6ccf6058" id="r_aed8a9e56f6a5595f744a49af6ccf6058"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="../../de/dda/namespacebustub.html#a00cf530eb8a8c97e85e5030651b64fff">AggregationType</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/ddc/classbustub_1_1AggregationPlanNode.html#aed8a9e56f6a5595f744a49af6ccf6058">agg_types_</a></td></tr>
+<tr class="separator:aed8a9e56f6a5595f744a49af6ccf6058"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_attribs_classbustub_1_1AbstractPlanNode"><td colspan="2" onclick="javascript:toggleInherit('pub_attribs_classbustub_1_1AbstractPlanNode')"><img src="../../closed.png" alt="-"/>&#160;Public 属性 继承自 <a class="el" href="../../d6/d8c/classbustub_1_1AbstractPlanNode.html">bustub::AbstractPlanNode</a></td></tr>
+<tr class="memitem:af482ac981f85862235fad88872491ff5 inherit pub_attribs_classbustub_1_1AbstractPlanNode" id="r_af482ac981f85862235fad88872491ff5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../de/dda/namespacebustub.html#a55b0598dc53e990803d5fd093fc6a59f">SchemaRef</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d8c/classbustub_1_1AbstractPlanNode.html#af482ac981f85862235fad88872491ff5">output_schema_</a></td></tr>
+<tr class="separator:af482ac981f85862235fad88872491ff5 inherit pub_attribs_classbustub_1_1AbstractPlanNode"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adf3904a4ead8ab951be01232501d70a0 inherit pub_attribs_classbustub_1_1AbstractPlanNode" id="r_adf3904a4ead8ab951be01232501d70a0"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="../../de/dda/namespacebustub.html#a354095e050bd1915a499a31c062c7303">AbstractPlanNodeRef</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d8c/classbustub_1_1AbstractPlanNode.html#adf3904a4ead8ab951be01232501d70a0">children_</a></td></tr>
+<tr class="separator:adf3904a4ead8ab951be01232501d70a0 inherit pub_attribs_classbustub_1_1AbstractPlanNode"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-methods" name="pro-methods"></a>
+Protected 成员函数</h2></td></tr>
+<tr class="memitem:a7d6ed58abcac53baeda891243576ee7e" id="r_a7d6ed58abcac53baeda891243576ee7e"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/ddc/classbustub_1_1AggregationPlanNode.html#a7d6ed58abcac53baeda891243576ee7e">PlanNodeToString</a> () const -&gt; std::string override</td></tr>
+<tr class="separator:a7d6ed58abcac53baeda891243576ee7e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pro_methods_classbustub_1_1AbstractPlanNode"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_classbustub_1_1AbstractPlanNode')"><img src="../../closed.png" alt="-"/>&#160;Protected 成员函数 继承自 <a class="el" href="../../d6/d8c/classbustub_1_1AbstractPlanNode.html">bustub::AbstractPlanNode</a></td></tr>
+<tr class="memitem:a66485410b63fd7f677a49b7226c4b4ed inherit pro_methods_classbustub_1_1AbstractPlanNode" id="r_a66485410b63fd7f677a49b7226c4b4ed"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d8c/classbustub_1_1AbstractPlanNode.html#a66485410b63fd7f677a49b7226c4b4ed">ChildrenToString</a> (int indent, bool with_schema=true) const -&gt; std::string</td></tr>
+<tr class="separator:a66485410b63fd7f677a49b7226c4b4ed inherit pro_methods_classbustub_1_1AbstractPlanNode"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
+<div class="textblock"><p><a class="el" href="../../db/ddc/classbustub_1_1AggregationPlanNode.html">AggregationPlanNode</a> represents the various SQL aggregation functions. For example, COUNT(), SUM(), MIN() and MAX().</p>
+<p>NOTE: To simplify this project, <a class="el" href="../../db/ddc/classbustub_1_1AggregationPlanNode.html">AggregationPlanNode</a> must always have exactly one child. </p>
+</div><h2 class="groupheader">构造及析构函数说明</h2>
+<a id="ae4bc793475b91c838b4bff591b8c45ac" name="ae4bc793475b91c838b4bff591b8c45ac"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae4bc793475b91c838b4bff591b8c45ac">&#9670;&#160;</a></span>AggregationPlanNode()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bustub::AggregationPlanNode::AggregationPlanNode </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../de/dda/namespacebustub.html#a55b0598dc53e990803d5fd093fc6a59f">SchemaRef</a>&#160;</td>
+          <td class="paramname"><em>output_schema</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="../../de/dda/namespacebustub.html#a354095e050bd1915a499a31c062c7303">AbstractPlanNodeRef</a>&#160;</td>
+          <td class="paramname"><em>child</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::vector&lt; <a class="el" href="../../de/dda/namespacebustub.html#af0cfd2fbbabe21e0e95790ff99273105">AbstractExpressionRef</a> &gt;&#160;</td>
+          <td class="paramname"><em>group_bys</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::vector&lt; <a class="el" href="../../de/dda/namespacebustub.html#af0cfd2fbbabe21e0e95790ff99273105">AbstractExpressionRef</a> &gt;&#160;</td>
+          <td class="paramname"><em>aggregates</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::vector&lt; <a class="el" href="../../de/dda/namespacebustub.html#a00cf530eb8a8c97e85e5030651b64fff">AggregationType</a> &gt;&#160;</td>
+          <td class="paramname"><em>agg_types</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Construct a new <a class="el" href="../../db/ddc/classbustub_1_1AggregationPlanNode.html">AggregationPlanNode</a>. </p><dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">output_schema</td><td>The output format of this plan node </td></tr>
+    <tr><td class="paramname">child</td><td>The child plan to aggregate data over </td></tr>
+    <tr><td class="paramname">group_bys</td><td>The group by clause of the aggregation </td></tr>
+    <tr><td class="paramname">aggregates</td><td>The expressions that we are aggregating </td></tr>
+    <tr><td class="paramname">agg_types</td><td>The types that we are aggregating </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<h2 class="groupheader">成员函数说明</h2>
+<a id="a6ee12df456655f5c11524616a5122bda" name="a6ee12df456655f5c11524616a5122bda"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6ee12df456655f5c11524616a5122bda">&#9670;&#160;</a></span>BUSTUB_PLAN_NODE_CLONE_WITH_CHILDREN()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bustub::AggregationPlanNode::BUSTUB_PLAN_NODE_CLONE_WITH_CHILDREN </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../db/ddc/classbustub_1_1AggregationPlanNode.html">AggregationPlanNode</a>&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ab8367b96057b84445c37d0d849716f8a" name="ab8367b96057b84445c37d0d849716f8a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab8367b96057b84445c37d0d849716f8a">&#9670;&#160;</a></span>GetAggregateAt()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto bustub::AggregationPlanNode::GetAggregateAt </td>
+          <td>(</td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>idx</em></td><td>)</td>
+          <td> const -&gt; const <a class="el" href="../../de/dda/namespacebustub.html#af0cfd2fbbabe21e0e95790ff99273105">AbstractExpressionRef</a> &amp; </td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<dl class="section return"><dt>返回</dt><dd>The idx'th aggregate expression </dd></dl>
+
+</div>
+</div>
+<a id="a4e2092cc926d3f94db7438e1d13db09b" name="a4e2092cc926d3f94db7438e1d13db09b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4e2092cc926d3f94db7438e1d13db09b">&#9670;&#160;</a></span>GetAggregates()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto bustub::AggregationPlanNode::GetAggregates </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const -&gt; const std::vector&lt;<a class="el" href="../../de/dda/namespacebustub.html#af0cfd2fbbabe21e0e95790ff99273105">AbstractExpressionRef</a>&gt; &amp; </td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<dl class="section return"><dt>返回</dt><dd>The aggregate expressions </dd></dl>
+
+</div>
+</div>
+<a id="aeade2c4bb904123f07d5bf9ee54f2f09" name="aeade2c4bb904123f07d5bf9ee54f2f09"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aeade2c4bb904123f07d5bf9ee54f2f09">&#9670;&#160;</a></span>GetAggregateTypes()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto bustub::AggregationPlanNode::GetAggregateTypes </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const -&gt; const std::vector&lt;<a class="el" href="../../de/dda/namespacebustub.html#a00cf530eb8a8c97e85e5030651b64fff">AggregationType</a>&gt; &amp; </td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<dl class="section return"><dt>返回</dt><dd>The aggregate types </dd></dl>
+
+</div>
+</div>
+<a id="acb80e0e1b27da390a9e5a803a0740f86" name="acb80e0e1b27da390a9e5a803a0740f86"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acb80e0e1b27da390a9e5a803a0740f86">&#9670;&#160;</a></span>GetChildPlan()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto bustub::AggregationPlanNode::GetChildPlan </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const -&gt; <a class="el" href="../../de/dda/namespacebustub.html#a354095e050bd1915a499a31c062c7303">AbstractPlanNodeRef</a> </td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<dl class="section return"><dt>返回</dt><dd>the child of this aggregation plan node </dd></dl>
+
+</div>
+</div>
+<a id="a49248d9df72dbdeb9ee9df04b378b61a" name="a49248d9df72dbdeb9ee9df04b378b61a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a49248d9df72dbdeb9ee9df04b378b61a">&#9670;&#160;</a></span>GetGroupByAt()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto bustub::AggregationPlanNode::GetGroupByAt </td>
+          <td>(</td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>idx</em></td><td>)</td>
+          <td> const -&gt; const <a class="el" href="../../de/dda/namespacebustub.html#af0cfd2fbbabe21e0e95790ff99273105">AbstractExpressionRef</a> &amp; </td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<dl class="section return"><dt>返回</dt><dd>The idx'th group by expression </dd></dl>
+
+</div>
+</div>
+<a id="abbbd4f2a1c981272131c39ca970d63ae" name="abbbd4f2a1c981272131c39ca970d63ae"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abbbd4f2a1c981272131c39ca970d63ae">&#9670;&#160;</a></span>GetGroupBys()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto bustub::AggregationPlanNode::GetGroupBys </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const -&gt; const std::vector&lt;<a class="el" href="../../de/dda/namespacebustub.html#af0cfd2fbbabe21e0e95790ff99273105">AbstractExpressionRef</a>&gt; &amp; </td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<dl class="section return"><dt>返回</dt><dd>The group by expressions </dd></dl>
+
+</div>
+</div>
+<a id="a7293d1c279f0152b065d7d478a73c989" name="a7293d1c279f0152b065d7d478a73c989"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7293d1c279f0152b065d7d478a73c989">&#9670;&#160;</a></span>GetType()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto bustub::AggregationPlanNode::GetType </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const -&gt; <a class="el" href="../../de/dda/namespacebustub.html#ad7d821859993f0ecb02cde3b7a9f2ccf">PlanType</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<dl class="section return"><dt>返回</dt><dd>The type of the plan node </dd></dl>
+
+<p>实现了 <a class="el" href="../../d6/d8c/classbustub_1_1AbstractPlanNode.html#a39a11937cdd41a4f5ccf534d39307e5d">bustub::AbstractPlanNode</a>.</p>
+
+</div>
+</div>
+<a id="a691644751c4a73b59999bc5368370948" name="a691644751c4a73b59999bc5368370948"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a691644751c4a73b59999bc5368370948">&#9670;&#160;</a></span>InferAggSchema()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto bustub::AggregationPlanNode::InferAggSchema </td>
+          <td>(</td>
+          <td class="paramtype">const std::vector&lt; <a class="el" href="../../de/dda/namespacebustub.html#af0cfd2fbbabe21e0e95790ff99273105">AbstractExpressionRef</a> &gt; &amp;&#160;</td>
+          <td class="paramname"><em>group_bys</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::vector&lt; <a class="el" href="../../de/dda/namespacebustub.html#af0cfd2fbbabe21e0e95790ff99273105">AbstractExpressionRef</a> &gt; &amp;&#160;</td>
+          <td class="paramname"><em>aggregates</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::vector&lt; <a class="el" href="../../de/dda/namespacebustub.html#a00cf530eb8a8c97e85e5030651b64fff">AggregationType</a> &gt; &amp;&#160;</td>
+          <td class="paramname"><em>agg_types</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> -&gt; <a class="el" href="../../da/d36/classbustub_1_1Schema.html">Schema</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a7d6ed58abcac53baeda891243576ee7e" name="a7d6ed58abcac53baeda891243576ee7e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7d6ed58abcac53baeda891243576ee7e">&#9670;&#160;</a></span>PlanNodeToString()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto bustub::AggregationPlanNode::PlanNodeToString </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const -&gt; std::string</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">protected</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<dl class="section return"><dt>返回</dt><dd>the string representation of the plan node itself </dd></dl>
+
+<p>重载 <a class="el" href="../../d6/d8c/classbustub_1_1AbstractPlanNode.html#a580ea82a2a025985ced878f1d1b9fa1f">bustub::AbstractPlanNode</a> .</p>
+
+</div>
+</div>
+<h2 class="groupheader">类成员变量说明</h2>
+<a id="aed8a9e56f6a5595f744a49af6ccf6058" name="aed8a9e56f6a5595f744a49af6ccf6058"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aed8a9e56f6a5595f744a49af6ccf6058">&#9670;&#160;</a></span>agg_types_</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt;<a class="el" href="../../de/dda/namespacebustub.html#a00cf530eb8a8c97e85e5030651b64fff">AggregationType</a>&gt; bustub::AggregationPlanNode::agg_types_</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>The aggregation types </p>
+
+</div>
+</div>
+<a id="a73aa6b9928f2decc8db2b2fa701eca85" name="a73aa6b9928f2decc8db2b2fa701eca85"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a73aa6b9928f2decc8db2b2fa701eca85">&#9670;&#160;</a></span>aggregates_</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt;<a class="el" href="../../de/dda/namespacebustub.html#af0cfd2fbbabe21e0e95790ff99273105">AbstractExpressionRef</a>&gt; bustub::AggregationPlanNode::aggregates_</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>The aggregation expressions </p>
+
+</div>
+</div>
+<a id="a88dd7059a7df9ac5da84f7fccb9d103f" name="a88dd7059a7df9ac5da84f7fccb9d103f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a88dd7059a7df9ac5da84f7fccb9d103f">&#9670;&#160;</a></span>group_bys_</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt;<a class="el" href="../../de/dda/namespacebustub.html#af0cfd2fbbabe21e0e95790ff99273105">AbstractExpressionRef</a>&gt; bustub::AggregationPlanNode::group_bys_</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>The GROUP BY expressions </p>
+
+</div>
+</div>
+<hr/>该类的文档由以下文件生成:<ul>
+<li>src/include/execution/plans/<a class="el" href="../../d1/d59/aggregation__plan_8h_source.html">aggregation_plan.h</a></li>
+<li>src/execution/<a class="el" href="../../dd/def/execution_2fmt__impl_8cpp.html">fmt_impl.cpp</a></li>
+<li>src/execution/<a class="el" href="../../dc/dbe/plan__node_8cpp.html">plan_node.cpp</a></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
+</small></address>
+</body>
+</html>

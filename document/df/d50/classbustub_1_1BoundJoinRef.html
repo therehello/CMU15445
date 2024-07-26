@@ -1,0 +1,276 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>数据库系统 CMU15-445/645: bustub::BoundJoinRef类 参考</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/searchdata.js"></script>
+<script type="text/javascript" src="../../search/search.js"></script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">数据库系统 CMU15-445/645<span id="projectnumber">&#160;1.0.0</span>
+   </div>
+   <div id="projectbrief">CMU15-445/645 是基于现代 C++ 开发的支持并发操作的简单 SQL 操作的单机数据库</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.9.8 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "../../search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('../../',true,false,'search.php','搜索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="../../de/dda/namespacebustub.html">bustub</a></li><li class="navelem"><a class="el" href="../../df/d50/classbustub_1_1BoundJoinRef.html">BoundJoinRef</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Public 成员函数</a> &#124;
+<a href="#pub-attribs">Public 属性</a> &#124;
+<a href="../../d1/d95/classbustub_1_1BoundJoinRef-members.html">所有成员列表</a>  </div>
+  <div class="headertitle"><div class="title">bustub::BoundJoinRef类 参考</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p><code>#include &lt;<a class="el" href="../../db/d71/bound__join__ref_8h_source.html">bound_join_ref.h</a>&gt;</code></p>
+<div class="dynheader">
+类 bustub::BoundJoinRef 继承关系图:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../d4/dee/classbustub_1_1BoundJoinRef__inherit__graph.svg" width="182" height="110"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<center><span class="legend">[<a href="../../graph_legend.html">图例</a>]</span></center></div>
+<div class="dynheader">
+bustub::BoundJoinRef 的协作图:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../d4/df3/classbustub_1_1BoundJoinRef__coll__graph.svg" width="182" height="110"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<center><span class="legend">[<a href="../../graph_legend.html">图例</a>]</span></center></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Public 成员函数</h2></td></tr>
+<tr class="memitem:a18f43020ca03548a11baac9b51b3d011" id="r_a18f43020ca03548a11baac9b51b3d011"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d50/classbustub_1_1BoundJoinRef.html#a18f43020ca03548a11baac9b51b3d011">BoundJoinRef</a> (<a class="el" href="../../de/dda/namespacebustub.html#a1036e27c4d5644ae629bd2e5e703208a">JoinType</a> join_type, std::unique_ptr&lt; <a class="el" href="../../d3/da8/classbustub_1_1BoundTableRef.html">BoundTableRef</a> &gt; left, std::unique_ptr&lt; <a class="el" href="../../d3/da8/classbustub_1_1BoundTableRef.html">BoundTableRef</a> &gt; right, std::unique_ptr&lt; <a class="el" href="../../de/d78/classbustub_1_1BoundExpression.html">BoundExpression</a> &gt; condition)</td></tr>
+<tr class="separator:a18f43020ca03548a11baac9b51b3d011"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa3c449a93a447584147bef34e32b2006" id="r_aa3c449a93a447584147bef34e32b2006"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d50/classbustub_1_1BoundJoinRef.html#aa3c449a93a447584147bef34e32b2006">ToString</a> () const -&gt; std::string override</td></tr>
+<tr class="separator:aa3c449a93a447584147bef34e32b2006"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_methods_classbustub_1_1BoundTableRef"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classbustub_1_1BoundTableRef')"><img src="../../closed.png" alt="-"/>&#160;Public 成员函数 继承自 <a class="el" href="../../d3/da8/classbustub_1_1BoundTableRef.html">bustub::BoundTableRef</a></td></tr>
+<tr class="memitem:a4ddccb30a988074917bd0febd2d648f0 inherit pub_methods_classbustub_1_1BoundTableRef" id="r_a4ddccb30a988074917bd0febd2d648f0"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/da8/classbustub_1_1BoundTableRef.html#a4ddccb30a988074917bd0febd2d648f0">BoundTableRef</a> (<a class="el" href="../../de/dda/namespacebustub.html#a1678fec55643749da1f98dfa689dbea2">TableReferenceType</a> type)</td></tr>
+<tr class="separator:a4ddccb30a988074917bd0febd2d648f0 inherit pub_methods_classbustub_1_1BoundTableRef"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a19e856fa37d6768975befef5c3b33ee9 inherit pub_methods_classbustub_1_1BoundTableRef" id="r_a19e856fa37d6768975befef5c3b33ee9"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/da8/classbustub_1_1BoundTableRef.html#a19e856fa37d6768975befef5c3b33ee9">BoundTableRef</a> ()=default</td></tr>
+<tr class="separator:a19e856fa37d6768975befef5c3b33ee9 inherit pub_methods_classbustub_1_1BoundTableRef"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa909a4da60421ff5669fe542873f79c2 inherit pub_methods_classbustub_1_1BoundTableRef" id="r_aa909a4da60421ff5669fe542873f79c2"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/da8/classbustub_1_1BoundTableRef.html#aa909a4da60421ff5669fe542873f79c2">~BoundTableRef</a> ()=default</td></tr>
+<tr class="separator:aa909a4da60421ff5669fe542873f79c2 inherit pub_methods_classbustub_1_1BoundTableRef"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a34780eb04081144be9f6fc2ef8ec079e inherit pub_methods_classbustub_1_1BoundTableRef" id="r_a34780eb04081144be9f6fc2ef8ec079e"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/da8/classbustub_1_1BoundTableRef.html#a34780eb04081144be9f6fc2ef8ec079e">IsInvalid</a> () const -&gt; bool</td></tr>
+<tr class="separator:a34780eb04081144be9f6fc2ef8ec079e inherit pub_methods_classbustub_1_1BoundTableRef"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
+Public 属性</h2></td></tr>
+<tr class="memitem:a2375362dadc8bc780d42acd8739fbb81" id="r_a2375362dadc8bc780d42acd8739fbb81"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../de/dda/namespacebustub.html#a1036e27c4d5644ae629bd2e5e703208a">JoinType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d50/classbustub_1_1BoundJoinRef.html#a2375362dadc8bc780d42acd8739fbb81">join_type_</a></td></tr>
+<tr class="separator:a2375362dadc8bc780d42acd8739fbb81"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1402e89ccb5ecdf4be77839dd5d0ef7a" id="r_a1402e89ccb5ecdf4be77839dd5d0ef7a"><td class="memItemLeft" align="right" valign="top">std::unique_ptr&lt; <a class="el" href="../../d3/da8/classbustub_1_1BoundTableRef.html">BoundTableRef</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d50/classbustub_1_1BoundJoinRef.html#a1402e89ccb5ecdf4be77839dd5d0ef7a">left_</a></td></tr>
+<tr class="separator:a1402e89ccb5ecdf4be77839dd5d0ef7a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a941c043f58ce41a246ff192263dd9017" id="r_a941c043f58ce41a246ff192263dd9017"><td class="memItemLeft" align="right" valign="top">std::unique_ptr&lt; <a class="el" href="../../d3/da8/classbustub_1_1BoundTableRef.html">BoundTableRef</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d50/classbustub_1_1BoundJoinRef.html#a941c043f58ce41a246ff192263dd9017">right_</a></td></tr>
+<tr class="separator:a941c043f58ce41a246ff192263dd9017"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a009d2de1cf95ced3cfa1b14ee55e0a7b" id="r_a009d2de1cf95ced3cfa1b14ee55e0a7b"><td class="memItemLeft" align="right" valign="top">std::unique_ptr&lt; <a class="el" href="../../de/d78/classbustub_1_1BoundExpression.html">BoundExpression</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d50/classbustub_1_1BoundJoinRef.html#a009d2de1cf95ced3cfa1b14ee55e0a7b">condition_</a></td></tr>
+<tr class="separator:a009d2de1cf95ced3cfa1b14ee55e0a7b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_attribs_classbustub_1_1BoundTableRef"><td colspan="2" onclick="javascript:toggleInherit('pub_attribs_classbustub_1_1BoundTableRef')"><img src="../../closed.png" alt="-"/>&#160;Public 属性 继承自 <a class="el" href="../../d3/da8/classbustub_1_1BoundTableRef.html">bustub::BoundTableRef</a></td></tr>
+<tr class="memitem:a0c3b8dd1b212abb3d2725def894fa116 inherit pub_attribs_classbustub_1_1BoundTableRef" id="r_a0c3b8dd1b212abb3d2725def894fa116"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../de/dda/namespacebustub.html#a1678fec55643749da1f98dfa689dbea2">TableReferenceType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/da8/classbustub_1_1BoundTableRef.html#a0c3b8dd1b212abb3d2725def894fa116">type_</a> {<a class="el" href="../../de/dda/namespacebustub.html#a1678fec55643749da1f98dfa689dbea2accc0377a8afbf50e7094f5c23a8af223">TableReferenceType::INVALID</a>}</td></tr>
+<tr class="separator:a0c3b8dd1b212abb3d2725def894fa116 inherit pub_attribs_classbustub_1_1BoundTableRef"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
+<div class="textblock"><p>A join. e.g., <code>SELECT * FROM x INNER JOIN y ON ...</code>, where <code>x INNER JOIN y ON ...</code> is <code><a class="el" href="../../df/d50/classbustub_1_1BoundJoinRef.html">BoundJoinRef</a></code>. </p>
+</div><h2 class="groupheader">构造及析构函数说明</h2>
+<a id="a18f43020ca03548a11baac9b51b3d011" name="a18f43020ca03548a11baac9b51b3d011"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a18f43020ca03548a11baac9b51b3d011">&#9670;&#160;</a></span>BoundJoinRef()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bustub::BoundJoinRef::BoundJoinRef </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../de/dda/namespacebustub.html#a1036e27c4d5644ae629bd2e5e703208a">JoinType</a>&#160;</td>
+          <td class="paramname"><em>join_type</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::unique_ptr&lt; <a class="el" href="../../d3/da8/classbustub_1_1BoundTableRef.html">BoundTableRef</a> &gt;&#160;</td>
+          <td class="paramname"><em>left</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::unique_ptr&lt; <a class="el" href="../../d3/da8/classbustub_1_1BoundTableRef.html">BoundTableRef</a> &gt;&#160;</td>
+          <td class="paramname"><em>right</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::unique_ptr&lt; <a class="el" href="../../de/d78/classbustub_1_1BoundExpression.html">BoundExpression</a> &gt;&#160;</td>
+          <td class="paramname"><em>condition</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">explicit</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">成员函数说明</h2>
+<a id="aa3c449a93a447584147bef34e32b2006" name="aa3c449a93a447584147bef34e32b2006"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa3c449a93a447584147bef34e32b2006">&#9670;&#160;</a></span>ToString()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto bustub::BoundJoinRef::ToString </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const -&gt; std::string</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>重载 <a class="el" href="../../d3/da8/classbustub_1_1BoundTableRef.html#a0da1d68481e85f68cef6153ebd39c98a">bustub::BoundTableRef</a> .</p>
+
+</div>
+</div>
+<h2 class="groupheader">类成员变量说明</h2>
+<a id="a009d2de1cf95ced3cfa1b14ee55e0a7b" name="a009d2de1cf95ced3cfa1b14ee55e0a7b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a009d2de1cf95ced3cfa1b14ee55e0a7b">&#9670;&#160;</a></span>condition_</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::unique_ptr&lt;<a class="el" href="../../de/d78/classbustub_1_1BoundExpression.html">BoundExpression</a>&gt; bustub::BoundJoinRef::condition_</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Join condition. </p>
+
+</div>
+</div>
+<a id="a2375362dadc8bc780d42acd8739fbb81" name="a2375362dadc8bc780d42acd8739fbb81"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2375362dadc8bc780d42acd8739fbb81">&#9670;&#160;</a></span>join_type_</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../de/dda/namespacebustub.html#a1036e27c4d5644ae629bd2e5e703208a">JoinType</a> bustub::BoundJoinRef::join_type_</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p><a class="el" href="../../d9/df4/classbustub_1_1Type.html">Type</a> of join. </p>
+
+</div>
+</div>
+<a id="a1402e89ccb5ecdf4be77839dd5d0ef7a" name="a1402e89ccb5ecdf4be77839dd5d0ef7a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1402e89ccb5ecdf4be77839dd5d0ef7a">&#9670;&#160;</a></span>left_</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::unique_ptr&lt;<a class="el" href="../../d3/da8/classbustub_1_1BoundTableRef.html">BoundTableRef</a>&gt; bustub::BoundJoinRef::left_</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>The left side of the join. </p>
+
+</div>
+</div>
+<a id="a941c043f58ce41a246ff192263dd9017" name="a941c043f58ce41a246ff192263dd9017"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a941c043f58ce41a246ff192263dd9017">&#9670;&#160;</a></span>right_</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::unique_ptr&lt;<a class="el" href="../../d3/da8/classbustub_1_1BoundTableRef.html">BoundTableRef</a>&gt; bustub::BoundJoinRef::right_</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>The right side of the join. </p>
+
+</div>
+</div>
+<hr/>该类的文档由以下文件生成:<ul>
+<li>src/include/binder/table_ref/<a class="el" href="../../db/d71/bound__join__ref_8h_source.html">bound_join_ref.h</a></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
+</small></address>
+</body>
+</html>

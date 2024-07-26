@@ -1,0 +1,774 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>数据库系统 CMU15-445/645: bustub::TableHeap类 参考</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/searchdata.js"></script>
+<script type="text/javascript" src="../../search/search.js"></script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">数据库系统 CMU15-445/645<span id="projectnumber">&#160;1.0.0</span>
+   </div>
+   <div id="projectbrief">CMU15-445/645 是基于现代 C++ 开发的支持并发操作的简单 SQL 操作的单机数据库</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.9.8 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "../../search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('../../',true,false,'search.php','搜索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="../../de/dda/namespacebustub.html">bustub</a></li><li class="navelem"><a class="el" href="../../d7/de0/classbustub_1_1TableHeap.html">TableHeap</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Public 成员函数</a> &#124;
+<a href="#pub-static-methods">静态 Public 成员函数</a> &#124;
+<a href="#pri-methods">Private 成员函数</a> &#124;
+<a href="#pri-attribs">Private 属性</a> &#124;
+<a href="#friends">友元</a> &#124;
+<a href="../../d5/d1b/classbustub_1_1TableHeap-members.html">所有成员列表</a>  </div>
+  <div class="headertitle"><div class="title">bustub::TableHeap类 参考</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p><code>#include &lt;<a class="el" href="../../d1/d71/table__heap_8h_source.html">table_heap.h</a>&gt;</code></p>
+<div class="dynheader">
+bustub::TableHeap 的协作图:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../da/ddf/classbustub_1_1TableHeap__coll__graph.svg" width="340" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<center><span class="legend">[<a href="../../graph_legend.html">图例</a>]</span></center></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Public 成员函数</h2></td></tr>
+<tr class="memitem:ae2b0fde1845735fef6dccc26dc6011dc" id="r_ae2b0fde1845735fef6dccc26dc6011dc"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/de0/classbustub_1_1TableHeap.html#ae2b0fde1845735fef6dccc26dc6011dc">~TableHeap</a> ()=default</td></tr>
+<tr class="separator:ae2b0fde1845735fef6dccc26dc6011dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af0d6996dfc848d593e35d4f97d72cd2e" id="r_af0d6996dfc848d593e35d4f97d72cd2e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/de0/classbustub_1_1TableHeap.html#af0d6996dfc848d593e35d4f97d72cd2e">TableHeap</a> (<a class="el" href="../../d6/d5d/classbustub_1_1BufferPoolManager.html">BufferPoolManager</a> *bpm)</td></tr>
+<tr class="separator:af0d6996dfc848d593e35d4f97d72cd2e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a207bc8925d32bbf8404a02767da76445" id="r_a207bc8925d32bbf8404a02767da76445"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/de0/classbustub_1_1TableHeap.html#a207bc8925d32bbf8404a02767da76445">InsertTuple</a> (const <a class="el" href="../../dc/d90/structbustub_1_1TupleMeta.html">TupleMeta</a> &amp;meta, const <a class="el" href="../../d0/ded/classbustub_1_1Tuple.html">Tuple</a> &amp;tuple, <a class="el" href="../../df/d43/classbustub_1_1LockManager.html">LockManager</a> *lock_mgr=nullptr, <a class="el" href="../../db/d88/classbustub_1_1Transaction.html">Transaction</a> *txn=nullptr, <a class="el" href="../../de/dda/namespacebustub.html#a3571cdcf7aa43bd929669794e75cbc48">table_oid_t</a> oid=0) -&gt; std::optional&lt; <a class="el" href="../../d3/d22/classbustub_1_1RID.html">RID</a> &gt;</td></tr>
+<tr class="separator:a207bc8925d32bbf8404a02767da76445"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4a7af3a984952d58bd7900dc8b2274ea" id="r_a4a7af3a984952d58bd7900dc8b2274ea"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/de0/classbustub_1_1TableHeap.html#a4a7af3a984952d58bd7900dc8b2274ea">UpdateTupleMeta</a> (const <a class="el" href="../../dc/d90/structbustub_1_1TupleMeta.html">TupleMeta</a> &amp;meta, <a class="el" href="../../d3/d22/classbustub_1_1RID.html">RID</a> rid)</td></tr>
+<tr class="separator:a4a7af3a984952d58bd7900dc8b2274ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a42204ffaa7db3781d049164ddcb97371" id="r_a42204ffaa7db3781d049164ddcb97371"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/de0/classbustub_1_1TableHeap.html#a42204ffaa7db3781d049164ddcb97371">GetTuple</a> (<a class="el" href="../../d3/d22/classbustub_1_1RID.html">RID</a> rid) -&gt; std::pair&lt; <a class="el" href="../../dc/d90/structbustub_1_1TupleMeta.html">TupleMeta</a>, <a class="el" href="../../d0/ded/classbustub_1_1Tuple.html">Tuple</a> &gt;</td></tr>
+<tr class="separator:a42204ffaa7db3781d049164ddcb97371"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a838ebbd69fd57b92a0ead12c1726c927" id="r_a838ebbd69fd57b92a0ead12c1726c927"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/de0/classbustub_1_1TableHeap.html#a838ebbd69fd57b92a0ead12c1726c927">GetTupleMeta</a> (<a class="el" href="../../d3/d22/classbustub_1_1RID.html">RID</a> rid) -&gt; <a class="el" href="../../dc/d90/structbustub_1_1TupleMeta.html">TupleMeta</a></td></tr>
+<tr class="separator:a838ebbd69fd57b92a0ead12c1726c927"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8b31a99578ed61cec4be8df28806c5b8" id="r_a8b31a99578ed61cec4be8df28806c5b8"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/de0/classbustub_1_1TableHeap.html#a8b31a99578ed61cec4be8df28806c5b8">MakeIterator</a> () -&gt; <a class="el" href="../../dc/da6/classbustub_1_1TableIterator.html">TableIterator</a></td></tr>
+<tr class="separator:a8b31a99578ed61cec4be8df28806c5b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a09eb382e96a0d984de75a1ce8a9f15eb" id="r_a09eb382e96a0d984de75a1ce8a9f15eb"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/de0/classbustub_1_1TableHeap.html#a09eb382e96a0d984de75a1ce8a9f15eb">MakeEagerIterator</a> () -&gt; <a class="el" href="../../dc/da6/classbustub_1_1TableIterator.html">TableIterator</a></td></tr>
+<tr class="separator:a09eb382e96a0d984de75a1ce8a9f15eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a59eb36faae1b14b14899ff6934defba6" id="r_a59eb36faae1b14b14899ff6934defba6"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/de0/classbustub_1_1TableHeap.html#a59eb36faae1b14b14899ff6934defba6">GetFirstPageId</a> () const -&gt; <a class="el" href="../../de/dda/namespacebustub.html#a8de4ac099b23d712481109bb846decde">page_id_t</a></td></tr>
+<tr class="separator:a59eb36faae1b14b14899ff6934defba6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0e9e56f15eacaee8f6d5829bd2f368ef" id="r_a0e9e56f15eacaee8f6d5829bd2f368ef"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/de0/classbustub_1_1TableHeap.html#a0e9e56f15eacaee8f6d5829bd2f368ef">UpdateTupleInPlace</a> (const <a class="el" href="../../dc/d90/structbustub_1_1TupleMeta.html">TupleMeta</a> &amp;meta, const <a class="el" href="../../d0/ded/classbustub_1_1Tuple.html">Tuple</a> &amp;tuple, <a class="el" href="../../d3/d22/classbustub_1_1RID.html">RID</a> rid, std::function&lt; bool(const <a class="el" href="../../dc/d90/structbustub_1_1TupleMeta.html">TupleMeta</a> &amp;meta, const <a class="el" href="../../d0/ded/classbustub_1_1Tuple.html">Tuple</a> &amp;table, <a class="el" href="../../d3/d22/classbustub_1_1RID.html">RID</a> rid)&gt; &amp;&amp;check=nullptr) -&gt; bool</td></tr>
+<tr class="separator:a0e9e56f15eacaee8f6d5829bd2f368ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7c39f580bf2da8ecb5a3c61c38408963" id="r_a7c39f580bf2da8ecb5a3c61c38408963"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/de0/classbustub_1_1TableHeap.html#a7c39f580bf2da8ecb5a3c61c38408963">AcquireTablePageReadLock</a> (<a class="el" href="../../d3/d22/classbustub_1_1RID.html">RID</a> rid) -&gt; <a class="el" href="../../d8/d80/classbustub_1_1ReadPageGuard.html">ReadPageGuard</a></td></tr>
+<tr class="separator:a7c39f580bf2da8ecb5a3c61c38408963"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab5842732d5a463bbf635448456932a15" id="r_ab5842732d5a463bbf635448456932a15"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/de0/classbustub_1_1TableHeap.html#ab5842732d5a463bbf635448456932a15">AcquireTablePageWriteLock</a> (<a class="el" href="../../d3/d22/classbustub_1_1RID.html">RID</a> rid) -&gt; <a class="el" href="../../d8/dd6/classbustub_1_1WritePageGuard.html">WritePageGuard</a></td></tr>
+<tr class="separator:ab5842732d5a463bbf635448456932a15"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a17ae7cd7bf087a326ec94cf33875fe5d" id="r_a17ae7cd7bf087a326ec94cf33875fe5d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/de0/classbustub_1_1TableHeap.html#a17ae7cd7bf087a326ec94cf33875fe5d">UpdateTupleInPlaceWithLockAcquired</a> (const <a class="el" href="../../dc/d90/structbustub_1_1TupleMeta.html">TupleMeta</a> &amp;meta, const <a class="el" href="../../d0/ded/classbustub_1_1Tuple.html">Tuple</a> &amp;tuple, <a class="el" href="../../d3/d22/classbustub_1_1RID.html">RID</a> rid, <a class="el" href="../../d5/d1c/classbustub_1_1TablePage.html">TablePage</a> *page)</td></tr>
+<tr class="separator:a17ae7cd7bf087a326ec94cf33875fe5d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afa3662e6363b0bf647ca7b3cea73246e" id="r_afa3662e6363b0bf647ca7b3cea73246e"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/de0/classbustub_1_1TableHeap.html#afa3662e6363b0bf647ca7b3cea73246e">GetTupleWithLockAcquired</a> (<a class="el" href="../../d3/d22/classbustub_1_1RID.html">RID</a> rid, const <a class="el" href="../../d5/d1c/classbustub_1_1TablePage.html">TablePage</a> *page) -&gt; std::pair&lt; <a class="el" href="../../dc/d90/structbustub_1_1TupleMeta.html">TupleMeta</a>, <a class="el" href="../../d0/ded/classbustub_1_1Tuple.html">Tuple</a> &gt;</td></tr>
+<tr class="separator:afa3662e6363b0bf647ca7b3cea73246e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad386433b9945bf4d5ca0023fe8a6dc41" id="r_ad386433b9945bf4d5ca0023fe8a6dc41"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/de0/classbustub_1_1TableHeap.html#ad386433b9945bf4d5ca0023fe8a6dc41">GetTupleMetaWithLockAcquired</a> (<a class="el" href="../../d3/d22/classbustub_1_1RID.html">RID</a> rid, const <a class="el" href="../../d5/d1c/classbustub_1_1TablePage.html">TablePage</a> *page) -&gt; <a class="el" href="../../dc/d90/structbustub_1_1TupleMeta.html">TupleMeta</a></td></tr>
+<tr class="separator:ad386433b9945bf4d5ca0023fe8a6dc41"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
+静态 Public 成员函数</h2></td></tr>
+<tr class="memitem:a8df3ad804a8c5e899a1586034df895bb" id="r_a8df3ad804a8c5e899a1586034df895bb"><td class="memItemLeft" align="right" valign="top">static auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/de0/classbustub_1_1TableHeap.html#a8df3ad804a8c5e899a1586034df895bb">CreateEmptyHeap</a> (bool create_table_heap=false) -&gt; std::unique_ptr&lt; <a class="el" href="../../d7/de0/classbustub_1_1TableHeap.html">TableHeap</a> &gt;</td></tr>
+<tr class="separator:a8df3ad804a8c5e899a1586034df895bb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-methods" name="pri-methods"></a>
+Private 成员函数</h2></td></tr>
+<tr class="memitem:a9716611f72f938b3e22f2f95af4d2622" id="r_a9716611f72f938b3e22f2f95af4d2622"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/de0/classbustub_1_1TableHeap.html#a9716611f72f938b3e22f2f95af4d2622">TableHeap</a> (bool create_table_heap=false)</td></tr>
+<tr class="separator:a9716611f72f938b3e22f2f95af4d2622"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
+Private 属性</h2></td></tr>
+<tr class="memitem:a905e8988401ea13271587b48c13e2d80" id="r_a905e8988401ea13271587b48c13e2d80"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d6/d5d/classbustub_1_1BufferPoolManager.html">BufferPoolManager</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/de0/classbustub_1_1TableHeap.html#a905e8988401ea13271587b48c13e2d80">bpm_</a></td></tr>
+<tr class="separator:a905e8988401ea13271587b48c13e2d80"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab863ff80984fbec7e4431d9e4a6fbd20" id="r_ab863ff80984fbec7e4431d9e4a6fbd20"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../de/dda/namespacebustub.html#a8de4ac099b23d712481109bb846decde">page_id_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/de0/classbustub_1_1TableHeap.html#ab863ff80984fbec7e4431d9e4a6fbd20">first_page_id_</a> {<a class="el" href="../../de/dda/namespacebustub.html#ae9dd773eae7950183ebc60def880f499">INVALID_PAGE_ID</a>}</td></tr>
+<tr class="separator:ab863ff80984fbec7e4431d9e4a6fbd20"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a805d70fc898ecfcb539de7465cd0af3f" id="r_a805d70fc898ecfcb539de7465cd0af3f"><td class="memItemLeft" align="right" valign="top">std::mutex&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/de0/classbustub_1_1TableHeap.html#a805d70fc898ecfcb539de7465cd0af3f">latch_</a></td></tr>
+<tr class="separator:a805d70fc898ecfcb539de7465cd0af3f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ada996d1174689bb153b03eecaabd1878" id="r_ada996d1174689bb153b03eecaabd1878"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../de/dda/namespacebustub.html#a8de4ac099b23d712481109bb846decde">page_id_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/de0/classbustub_1_1TableHeap.html#ada996d1174689bb153b03eecaabd1878">last_page_id_</a> {<a class="el" href="../../de/dda/namespacebustub.html#ae9dd773eae7950183ebc60def880f499">INVALID_PAGE_ID</a>}</td></tr>
+<tr class="separator:ada996d1174689bb153b03eecaabd1878"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="friends" name="friends"></a>
+友元</h2></td></tr>
+<tr class="memitem:ab0165532e287d023758cc64c24e40fb7" id="r_ab0165532e287d023758cc64c24e40fb7"><td class="memItemLeft" align="right" valign="top">class&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/de0/classbustub_1_1TableHeap.html#ab0165532e287d023758cc64c24e40fb7">TableIterator</a></td></tr>
+<tr class="separator:ab0165532e287d023758cc64c24e40fb7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
+<div class="textblock"><p><a class="el" href="../../d7/de0/classbustub_1_1TableHeap.html">TableHeap</a> represents a physical table on disk. This is just a doubly-linked list of pages. </p>
+</div><h2 class="groupheader">构造及析构函数说明</h2>
+<a id="ae2b0fde1845735fef6dccc26dc6011dc" name="ae2b0fde1845735fef6dccc26dc6011dc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae2b0fde1845735fef6dccc26dc6011dc">&#9670;&#160;</a></span>~TableHeap()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bustub::TableHeap::~TableHeap </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">default</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="af0d6996dfc848d593e35d4f97d72cd2e" name="af0d6996dfc848d593e35d4f97d72cd2e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af0d6996dfc848d593e35d4f97d72cd2e">&#9670;&#160;</a></span>TableHeap() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bustub::TableHeap::TableHeap </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../d6/d5d/classbustub_1_1BufferPoolManager.html">BufferPoolManager</a> *&#160;</td>
+          <td class="paramname"><em>bpm</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">explicit</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Create a table heap without a transaction. (open table) </p><dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">buffer_pool_manager</td><td>the buffer pool manager </td></tr>
+    <tr><td class="paramname">first_page_id</td><td>the id of the first page </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a9716611f72f938b3e22f2f95af4d2622" name="a9716611f72f938b3e22f2f95af4d2622"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9716611f72f938b3e22f2f95af4d2622">&#9670;&#160;</a></span>TableHeap() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bustub::TableHeap::TableHeap </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>create_table_heap</em> = <code>false</code></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">explicit</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Used for binder tests </p>
+
+</div>
+</div>
+<h2 class="groupheader">成员函数说明</h2>
+<a id="a7c39f580bf2da8ecb5a3c61c38408963" name="a7c39f580bf2da8ecb5a3c61c38408963"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7c39f580bf2da8ecb5a3c61c38408963">&#9670;&#160;</a></span>AcquireTablePageReadLock()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto bustub::TableHeap::AcquireTablePageReadLock </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../d3/d22/classbustub_1_1RID.html">RID</a>&#160;</td>
+          <td class="paramname"><em>rid</em></td><td>)</td>
+          <td> -&gt; <a class="el" href="../../d8/d80/classbustub_1_1ReadPageGuard.html">ReadPageGuard</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ab5842732d5a463bbf635448456932a15" name="ab5842732d5a463bbf635448456932a15"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab5842732d5a463bbf635448456932a15">&#9670;&#160;</a></span>AcquireTablePageWriteLock()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto bustub::TableHeap::AcquireTablePageWriteLock </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../d3/d22/classbustub_1_1RID.html">RID</a>&#160;</td>
+          <td class="paramname"><em>rid</em></td><td>)</td>
+          <td> -&gt; <a class="el" href="../../d8/dd6/classbustub_1_1WritePageGuard.html">WritePageGuard</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a8df3ad804a8c5e899a1586034df895bb" name="a8df3ad804a8c5e899a1586034df895bb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8df3ad804a8c5e899a1586034df895bb">&#9670;&#160;</a></span>CreateEmptyHeap()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static auto bustub::TableHeap::CreateEmptyHeap </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>create_table_heap</em> = <code>false</code></td><td>)</td>
+          <td> -&gt; std::unique_ptr&lt;<a class="el" href="../../d7/de0/classbustub_1_1TableHeap.html">TableHeap</a>&gt; </td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>For binder tests </p>
+
+</div>
+</div>
+<a id="a59eb36faae1b14b14899ff6934defba6" name="a59eb36faae1b14b14899ff6934defba6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a59eb36faae1b14b14899ff6934defba6">&#9670;&#160;</a></span>GetFirstPageId()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto bustub::TableHeap::GetFirstPageId </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const -&gt; <a class="el" href="../../de/dda/namespacebustub.html#a8de4ac099b23d712481109bb846decde">page_id_t</a> </td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<dl class="section return"><dt>返回</dt><dd>the id of the first page of this table </dd></dl>
+
+</div>
+</div>
+<a id="a42204ffaa7db3781d049164ddcb97371" name="a42204ffaa7db3781d049164ddcb97371"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a42204ffaa7db3781d049164ddcb97371">&#9670;&#160;</a></span>GetTuple()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto bustub::TableHeap::GetTuple </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../d3/d22/classbustub_1_1RID.html">RID</a>&#160;</td>
+          <td class="paramname"><em>rid</em></td><td>)</td>
+          <td> -&gt; std::pair&lt;<a class="el" href="../../dc/d90/structbustub_1_1TupleMeta.html">TupleMeta</a>, <a class="el" href="../../d0/ded/classbustub_1_1Tuple.html">Tuple</a>&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Read a tuple from the table. </p><dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">rid</td><td>rid of the tuple to read </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>the meta and tuple </dd></dl>
+
+</div>
+</div>
+<a id="a838ebbd69fd57b92a0ead12c1726c927" name="a838ebbd69fd57b92a0ead12c1726c927"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a838ebbd69fd57b92a0ead12c1726c927">&#9670;&#160;</a></span>GetTupleMeta()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto bustub::TableHeap::GetTupleMeta </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../d3/d22/classbustub_1_1RID.html">RID</a>&#160;</td>
+          <td class="paramname"><em>rid</em></td><td>)</td>
+          <td> -&gt; <a class="el" href="../../dc/d90/structbustub_1_1TupleMeta.html">TupleMeta</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Read a tuple meta from the table. Note: if you want to get tuple and meta together, use <code>GetTuple</code> instead to ensure atomicity. </p><dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">rid</td><td>rid of the tuple to read </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>the meta </dd></dl>
+
+</div>
+</div>
+<a id="ad386433b9945bf4d5ca0023fe8a6dc41" name="ad386433b9945bf4d5ca0023fe8a6dc41"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad386433b9945bf4d5ca0023fe8a6dc41">&#9670;&#160;</a></span>GetTupleMetaWithLockAcquired()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto bustub::TableHeap::GetTupleMetaWithLockAcquired </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../d3/d22/classbustub_1_1RID.html">RID</a>&#160;</td>
+          <td class="paramname"><em>rid</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="../../d5/d1c/classbustub_1_1TablePage.html">TablePage</a> *&#160;</td>
+          <td class="paramname"><em>page</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> -&gt; <a class="el" href="../../dc/d90/structbustub_1_1TupleMeta.html">TupleMeta</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="afa3662e6363b0bf647ca7b3cea73246e" name="afa3662e6363b0bf647ca7b3cea73246e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afa3662e6363b0bf647ca7b3cea73246e">&#9670;&#160;</a></span>GetTupleWithLockAcquired()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto bustub::TableHeap::GetTupleWithLockAcquired </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../d3/d22/classbustub_1_1RID.html">RID</a>&#160;</td>
+          <td class="paramname"><em>rid</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="../../d5/d1c/classbustub_1_1TablePage.html">TablePage</a> *&#160;</td>
+          <td class="paramname"><em>page</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> -&gt; std::pair&lt;<a class="el" href="../../dc/d90/structbustub_1_1TupleMeta.html">TupleMeta</a>, <a class="el" href="../../d0/ded/classbustub_1_1Tuple.html">Tuple</a>&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a207bc8925d32bbf8404a02767da76445" name="a207bc8925d32bbf8404a02767da76445"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a207bc8925d32bbf8404a02767da76445">&#9670;&#160;</a></span>InsertTuple()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto bustub::TableHeap::InsertTuple </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="../../dc/d90/structbustub_1_1TupleMeta.html">TupleMeta</a> &amp;&#160;</td>
+          <td class="paramname"><em>meta</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="../../d0/ded/classbustub_1_1Tuple.html">Tuple</a> &amp;&#160;</td>
+          <td class="paramname"><em>tuple</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="../../df/d43/classbustub_1_1LockManager.html">LockManager</a> *&#160;</td>
+          <td class="paramname"><em>lock_mgr</em> = <code>nullptr</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="../../db/d88/classbustub_1_1Transaction.html">Transaction</a> *&#160;</td>
+          <td class="paramname"><em>txn</em> = <code>nullptr</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="../../de/dda/namespacebustub.html#a3571cdcf7aa43bd929669794e75cbc48">table_oid_t</a>&#160;</td>
+          <td class="paramname"><em>oid</em> = <code>0</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> -&gt; std::optional&lt;<a class="el" href="../../d3/d22/classbustub_1_1RID.html">RID</a>&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Insert a tuple into the table. If the tuple is too large (&gt;= page_size), return std::nullopt. </p><dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">meta</td><td>tuple meta </td></tr>
+    <tr><td class="paramname">tuple</td><td>tuple to insert </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>rid of the inserted tuple </dd></dl>
+
+</div>
+</div>
+<a id="a09eb382e96a0d984de75a1ce8a9f15eb" name="a09eb382e96a0d984de75a1ce8a9f15eb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a09eb382e96a0d984de75a1ce8a9f15eb">&#9670;&#160;</a></span>MakeEagerIterator()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto bustub::TableHeap::MakeEagerIterator </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> -&gt; <a class="el" href="../../dc/da6/classbustub_1_1TableIterator.html">TableIterator</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="section return"><dt>返回</dt><dd>the iterator of this table. The iterator will stop at the last tuple at the time of iterating. </dd></dl>
+
+</div>
+</div>
+<a id="a8b31a99578ed61cec4be8df28806c5b8" name="a8b31a99578ed61cec4be8df28806c5b8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8b31a99578ed61cec4be8df28806c5b8">&#9670;&#160;</a></span>MakeIterator()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto bustub::TableHeap::MakeIterator </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> -&gt; <a class="el" href="../../dc/da6/classbustub_1_1TableIterator.html">TableIterator</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="section return"><dt>返回</dt><dd>the iterator of this table. When this iterator is created, it will record the current last tuple in the table heap, and the iterator will stop at that point, in order to avoid halloween problem. You usually will need to use this function for project 3. Given that you have already implemented your project 4 update executor as a pipeline breaker, you may use <code>MakeEagerIterator</code> to test whether the update executor is implemented correctly. There should be no difference between this function and <code>MakeEagerIterator</code> in project 4 if everything is implemented correctly. </dd></dl>
+
+</div>
+</div>
+<a id="a0e9e56f15eacaee8f6d5829bd2f368ef" name="a0e9e56f15eacaee8f6d5829bd2f368ef"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0e9e56f15eacaee8f6d5829bd2f368ef">&#9670;&#160;</a></span>UpdateTupleInPlace()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto bustub::TableHeap::UpdateTupleInPlace </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="../../dc/d90/structbustub_1_1TupleMeta.html">TupleMeta</a> &amp;&#160;</td>
+          <td class="paramname"><em>meta</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="../../d0/ded/classbustub_1_1Tuple.html">Tuple</a> &amp;&#160;</td>
+          <td class="paramname"><em>tuple</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="../../d3/d22/classbustub_1_1RID.html">RID</a>&#160;</td>
+          <td class="paramname"><em>rid</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::function&lt; bool(const <a class="el" href="../../dc/d90/structbustub_1_1TupleMeta.html">TupleMeta</a> &amp;meta, const <a class="el" href="../../d0/ded/classbustub_1_1Tuple.html">Tuple</a> &amp;table, <a class="el" href="../../d3/d22/classbustub_1_1RID.html">RID</a> rid)&gt; &amp;&amp;&#160;</td>
+          <td class="paramname"><em>check</em> = <code>nullptr</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> -&gt; bool</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Update a tuple in place. Should NOT be used in project 3. Implement your project 3 update executor as delete and insert. You will need to use this function in project 4. </p><dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">meta</td><td>new tuple meta </td></tr>
+    <tr><td class="paramname">tuple</td><td>new tuple </td></tr>
+    <tr><td class="paramname">rid</td><td>the rid of the tuple to be updated </td></tr>
+    <tr><td class="paramname">check</td><td>the check to run before actually update. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a17ae7cd7bf087a326ec94cf33875fe5d" name="a17ae7cd7bf087a326ec94cf33875fe5d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a17ae7cd7bf087a326ec94cf33875fe5d">&#9670;&#160;</a></span>UpdateTupleInPlaceWithLockAcquired()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void bustub::TableHeap::UpdateTupleInPlaceWithLockAcquired </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="../../dc/d90/structbustub_1_1TupleMeta.html">TupleMeta</a> &amp;&#160;</td>
+          <td class="paramname"><em>meta</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="../../d0/ded/classbustub_1_1Tuple.html">Tuple</a> &amp;&#160;</td>
+          <td class="paramname"><em>tuple</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="../../d3/d22/classbustub_1_1RID.html">RID</a>&#160;</td>
+          <td class="paramname"><em>rid</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="../../d5/d1c/classbustub_1_1TablePage.html">TablePage</a> *&#160;</td>
+          <td class="paramname"><em>page</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a4a7af3a984952d58bd7900dc8b2274ea" name="a4a7af3a984952d58bd7900dc8b2274ea"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4a7af3a984952d58bd7900dc8b2274ea">&#9670;&#160;</a></span>UpdateTupleMeta()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void bustub::TableHeap::UpdateTupleMeta </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="../../dc/d90/structbustub_1_1TupleMeta.html">TupleMeta</a> &amp;&#160;</td>
+          <td class="paramname"><em>meta</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="../../d3/d22/classbustub_1_1RID.html">RID</a>&#160;</td>
+          <td class="paramname"><em>rid</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Update the meta of a tuple. </p><dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">meta</td><td>new tuple meta </td></tr>
+    <tr><td class="paramname">rid</td><td>the rid of the inserted tuple </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<h2 class="groupheader">友元及相关函数文档</h2>
+<a id="ab0165532e287d023758cc64c24e40fb7" name="ab0165532e287d023758cc64c24e40fb7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab0165532e287d023758cc64c24e40fb7">&#9670;&#160;</a></span>TableIterator</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">friend class <a class="el" href="../../dc/da6/classbustub_1_1TableIterator.html">TableIterator</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">friend</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">类成员变量说明</h2>
+<a id="a905e8988401ea13271587b48c13e2d80" name="a905e8988401ea13271587b48c13e2d80"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a905e8988401ea13271587b48c13e2d80">&#9670;&#160;</a></span>bpm_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d6/d5d/classbustub_1_1BufferPoolManager.html">BufferPoolManager</a>* bustub::TableHeap::bpm_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ab863ff80984fbec7e4431d9e4a6fbd20" name="ab863ff80984fbec7e4431d9e4a6fbd20"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab863ff80984fbec7e4431d9e4a6fbd20">&#9670;&#160;</a></span>first_page_id_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../de/dda/namespacebustub.html#a8de4ac099b23d712481109bb846decde">page_id_t</a> bustub::TableHeap::first_page_id_ {<a class="el" href="../../de/dda/namespacebustub.html#ae9dd773eae7950183ebc60def880f499">INVALID_PAGE_ID</a>}</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ada996d1174689bb153b03eecaabd1878" name="ada996d1174689bb153b03eecaabd1878"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ada996d1174689bb153b03eecaabd1878">&#9670;&#160;</a></span>last_page_id_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../de/dda/namespacebustub.html#a8de4ac099b23d712481109bb846decde">page_id_t</a> bustub::TableHeap::last_page_id_ {<a class="el" href="../../de/dda/namespacebustub.html#ae9dd773eae7950183ebc60def880f499">INVALID_PAGE_ID</a>}</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a805d70fc898ecfcb539de7465cd0af3f" name="a805d70fc898ecfcb539de7465cd0af3f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a805d70fc898ecfcb539de7465cd0af3f">&#9670;&#160;</a></span>latch_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::mutex bustub::TableHeap::latch_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<hr/>该类的文档由以下文件生成:<ul>
+<li>src/include/storage/table/<a class="el" href="../../d1/d71/table__heap_8h_source.html">table_heap.h</a></li>
+<li>src/storage/table/<a class="el" href="../../d9/def/table__heap_8cpp.html">table_heap.cpp</a></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
+</small></address>
+</body>
+</html>

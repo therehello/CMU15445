@@ -1,0 +1,530 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>数据库系统 CMU15-445/645: bustub::LRUKReplacer类 参考</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/searchdata.js"></script>
+<script type="text/javascript" src="../../search/search.js"></script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">数据库系统 CMU15-445/645<span id="projectnumber">&#160;1.0.0</span>
+   </div>
+   <div id="projectbrief">CMU15-445/645 是基于现代 C++ 开发的支持并发操作的简单 SQL 操作的单机数据库</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.9.8 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "../../search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('../../',true,false,'search.php','搜索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="../../de/dda/namespacebustub.html">bustub</a></li><li class="navelem"><a class="el" href="../../d9/dc3/classbustub_1_1LRUKReplacer.html">LRUKReplacer</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Public 成员函数</a> &#124;
+<a href="#pri-attribs">Private 属性</a> &#124;
+<a href="../../d3/d44/classbustub_1_1LRUKReplacer-members.html">所有成员列表</a>  </div>
+  <div class="headertitle"><div class="title">bustub::LRUKReplacer类 参考</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p><code>#include &lt;<a class="el" href="../../da/d1b/lru__k__replacer_8h_source.html">lru_k_replacer.h</a>&gt;</code></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Public 成员函数</h2></td></tr>
+<tr class="memitem:a73980c6b3de2380e664afe2f68d8e1d4" id="r_a73980c6b3de2380e664afe2f68d8e1d4"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/dc3/classbustub_1_1LRUKReplacer.html#a73980c6b3de2380e664afe2f68d8e1d4">LRUKReplacer</a> (size_t num_frames, size_t k)</td></tr>
+<tr class="memdesc:a73980c6b3de2380e664afe2f68d8e1d4"><td class="mdescLeft">&#160;</td><td class="mdescRight">a new <a class="el" href="../../d9/dc3/classbustub_1_1LRUKReplacer.html">LRUKReplacer</a>.  <br /></td></tr>
+<tr class="separator:a73980c6b3de2380e664afe2f68d8e1d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a96b681d4de93fbe16da8109d8342eed2" id="r_a96b681d4de93fbe16da8109d8342eed2"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/dc3/classbustub_1_1LRUKReplacer.html#a96b681d4de93fbe16da8109d8342eed2">DISALLOW_COPY_AND_MOVE</a> (<a class="el" href="../../d9/dc3/classbustub_1_1LRUKReplacer.html">LRUKReplacer</a>)</td></tr>
+<tr class="separator:a96b681d4de93fbe16da8109d8342eed2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5e7acd0c926c02fb46f7f9a0d434d227" id="r_a5e7acd0c926c02fb46f7f9a0d434d227"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/dc3/classbustub_1_1LRUKReplacer.html#a5e7acd0c926c02fb46f7f9a0d434d227">~LRUKReplacer</a> ()=default</td></tr>
+<tr class="memdesc:a5e7acd0c926c02fb46f7f9a0d434d227"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destroys the <a class="el" href="../../d1/d87/classbustub_1_1LRUReplacer.html">LRUReplacer</a>.  <br /></td></tr>
+<tr class="separator:a5e7acd0c926c02fb46f7f9a0d434d227"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac373b4b0e551c6420f1283b80f1fc1f5" id="r_ac373b4b0e551c6420f1283b80f1fc1f5"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/dc3/classbustub_1_1LRUKReplacer.html#ac373b4b0e551c6420f1283b80f1fc1f5">Evict</a> (<a class="el" href="../../de/dda/namespacebustub.html#a0f35ab53da3f49c3adf60f5174b16a4a">frame_id_t</a> *frame_id) -&gt; bool</td></tr>
+<tr class="memdesc:ac373b4b0e551c6420f1283b80f1fc1f5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Find the frame with largest backward k-distance and evict that frame. Only frames that are marked as 'evictable' are candidates for eviction.  <br /></td></tr>
+<tr class="separator:ac373b4b0e551c6420f1283b80f1fc1f5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afa7d452c1e3257ac7ab2d1b3d1eb9537" id="r_afa7d452c1e3257ac7ab2d1b3d1eb9537"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/dc3/classbustub_1_1LRUKReplacer.html#afa7d452c1e3257ac7ab2d1b3d1eb9537">RecordAccess</a> (<a class="el" href="../../de/dda/namespacebustub.html#a0f35ab53da3f49c3adf60f5174b16a4a">frame_id_t</a> frame_id, <a class="el" href="../../de/dda/namespacebustub.html#ab8a992a575f635e8e848ddfa23fc45b3">AccessType</a> access_type=<a class="el" href="../../de/dda/namespacebustub.html#ab8a992a575f635e8e848ddfa23fc45b3a88183b946cc5f0e8c96b2e66e1c74a7e">AccessType::Unknown</a>)</td></tr>
+<tr class="memdesc:afa7d452c1e3257ac7ab2d1b3d1eb9537"><td class="mdescLeft">&#160;</td><td class="mdescRight">Record the event that the given frame id is accessed at current timestamp. Create a new entry for access history if frame id has not been seen before.  <br /></td></tr>
+<tr class="separator:afa7d452c1e3257ac7ab2d1b3d1eb9537"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a24d5442656e935f8a52922bb101826e2" id="r_a24d5442656e935f8a52922bb101826e2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/dc3/classbustub_1_1LRUKReplacer.html#a24d5442656e935f8a52922bb101826e2">SetEvictable</a> (<a class="el" href="../../de/dda/namespacebustub.html#a0f35ab53da3f49c3adf60f5174b16a4a">frame_id_t</a> frame_id, bool set_evictable)</td></tr>
+<tr class="memdesc:a24d5442656e935f8a52922bb101826e2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Toggle whether a frame is evictable or non-evictable. This function also controls replacer's size. Note that size is equal to number of evictable entries.  <br /></td></tr>
+<tr class="separator:a24d5442656e935f8a52922bb101826e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a01758e4d1bf24c7ae3fb297c1c5d28ec" id="r_a01758e4d1bf24c7ae3fb297c1c5d28ec"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/dc3/classbustub_1_1LRUKReplacer.html#a01758e4d1bf24c7ae3fb297c1c5d28ec">Remove</a> (<a class="el" href="../../de/dda/namespacebustub.html#a0f35ab53da3f49c3adf60f5174b16a4a">frame_id_t</a> frame_id)</td></tr>
+<tr class="memdesc:a01758e4d1bf24c7ae3fb297c1c5d28ec"><td class="mdescLeft">&#160;</td><td class="mdescRight">Remove an evictable frame from replacer, along with its access history. This function should also decrement replacer's size if removal is successful.  <br /></td></tr>
+<tr class="separator:a01758e4d1bf24c7ae3fb297c1c5d28ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9f271aab1ca802bde41f1683221bca2f" id="r_a9f271aab1ca802bde41f1683221bca2f"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/dc3/classbustub_1_1LRUKReplacer.html#a9f271aab1ca802bde41f1683221bca2f">Size</a> () -&gt; size_t</td></tr>
+<tr class="memdesc:a9f271aab1ca802bde41f1683221bca2f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return replacer's size, which tracks the number of evictable frames.  <br /></td></tr>
+<tr class="separator:a9f271aab1ca802bde41f1683221bca2f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
+Private 属性</h2></td></tr>
+<tr class="memitem:a8534bc1ea32a5980cb8eddd4a4ed65fe" id="r_a8534bc1ea32a5980cb8eddd4a4ed65fe"><td class="memItemLeft" align="right" valign="top">std::unordered_map&lt; <a class="el" href="../../de/dda/namespacebustub.html#a0f35ab53da3f49c3adf60f5174b16a4a">frame_id_t</a>, <a class="el" href="../../db/d7c/classbustub_1_1LRUKNode.html">LRUKNode</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/dc3/classbustub_1_1LRUKReplacer.html#a8534bc1ea32a5980cb8eddd4a4ed65fe">node_store_</a></td></tr>
+<tr class="separator:a8534bc1ea32a5980cb8eddd4a4ed65fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a502824dc407430414e7c2bbffac4493f" id="r_a502824dc407430414e7c2bbffac4493f"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/dc3/classbustub_1_1LRUKReplacer.html#a502824dc407430414e7c2bbffac4493f">current_timestamp_</a> {0}</td></tr>
+<tr class="separator:a502824dc407430414e7c2bbffac4493f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a288d34ec31d025d53abd534b3ccf4051" id="r_a288d34ec31d025d53abd534b3ccf4051"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/dc3/classbustub_1_1LRUKReplacer.html#a288d34ec31d025d53abd534b3ccf4051">curr_size_</a> {0}</td></tr>
+<tr class="separator:a288d34ec31d025d53abd534b3ccf4051"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a80c596e5234a08dd8f9ee15663cfa0ae" id="r_a80c596e5234a08dd8f9ee15663cfa0ae"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/dc3/classbustub_1_1LRUKReplacer.html#a80c596e5234a08dd8f9ee15663cfa0ae">replacer_size_</a></td></tr>
+<tr class="separator:a80c596e5234a08dd8f9ee15663cfa0ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0140c39f7d0b8b2f90d2b579f6729e1a" id="r_a0140c39f7d0b8b2f90d2b579f6729e1a"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/dc3/classbustub_1_1LRUKReplacer.html#a0140c39f7d0b8b2f90d2b579f6729e1a">k_</a></td></tr>
+<tr class="separator:a0140c39f7d0b8b2f90d2b579f6729e1a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad1fe7be5702fed23eebcdfe0c3888a3b" id="r_ad1fe7be5702fed23eebcdfe0c3888a3b"><td class="memItemLeft" align="right" valign="top">std::mutex&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/dc3/classbustub_1_1LRUKReplacer.html#ad1fe7be5702fed23eebcdfe0c3888a3b">latch_</a></td></tr>
+<tr class="separator:ad1fe7be5702fed23eebcdfe0c3888a3b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
+<div class="textblock"><p><a class="el" href="../../d9/dc3/classbustub_1_1LRUKReplacer.html">LRUKReplacer</a> implements the LRU-k replacement policy.</p>
+<p>The LRU-k algorithm evicts a frame whose backward k-distance is maximum of all frames. Backward k-distance is computed as the difference in time between current timestamp and the timestamp of kth previous access.</p>
+<p>A frame with less than k historical references is given +inf as its backward k-distance. When multiple frames have +inf backward k-distance, classical LRU algorithm is used to choose victim. </p>
+</div><h2 class="groupheader">构造及析构函数说明</h2>
+<a id="a73980c6b3de2380e664afe2f68d8e1d4" name="a73980c6b3de2380e664afe2f68d8e1d4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a73980c6b3de2380e664afe2f68d8e1d4">&#9670;&#160;</a></span>LRUKReplacer()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bustub::LRUKReplacer::LRUKReplacer </td>
+          <td>(</td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>num_frames</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>k</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">explicit</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>a new <a class="el" href="../../d9/dc3/classbustub_1_1LRUKReplacer.html">LRUKReplacer</a>. </p>
+<p>TODO(P1): Add implementation</p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">num_frames</td><td>the maximum number of frames the <a class="el" href="../../d1/d87/classbustub_1_1LRUReplacer.html">LRUReplacer</a> will be required to store </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a5e7acd0c926c02fb46f7f9a0d434d227" name="a5e7acd0c926c02fb46f7f9a0d434d227"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5e7acd0c926c02fb46f7f9a0d434d227">&#9670;&#160;</a></span>~LRUKReplacer()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bustub::LRUKReplacer::~LRUKReplacer </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">default</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Destroys the <a class="el" href="../../d1/d87/classbustub_1_1LRUReplacer.html">LRUReplacer</a>. </p>
+<p>TODO(P1): Add implementation </p>
+
+</div>
+</div>
+<h2 class="groupheader">成员函数说明</h2>
+<a id="a96b681d4de93fbe16da8109d8342eed2" name="a96b681d4de93fbe16da8109d8342eed2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a96b681d4de93fbe16da8109d8342eed2">&#9670;&#160;</a></span>DISALLOW_COPY_AND_MOVE()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bustub::LRUKReplacer::DISALLOW_COPY_AND_MOVE </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../d9/dc3/classbustub_1_1LRUKReplacer.html">LRUKReplacer</a>&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ac373b4b0e551c6420f1283b80f1fc1f5" name="ac373b4b0e551c6420f1283b80f1fc1f5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac373b4b0e551c6420f1283b80f1fc1f5">&#9670;&#160;</a></span>Evict()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto bustub::LRUKReplacer::Evict </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../de/dda/namespacebustub.html#a0f35ab53da3f49c3adf60f5174b16a4a">frame_id_t</a> *&#160;</td>
+          <td class="paramname"><em>frame_id</em></td><td>)</td>
+          <td> -&gt; bool</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Find the frame with largest backward k-distance and evict that frame. Only frames that are marked as 'evictable' are candidates for eviction. </p>
+<p>TODO(P1): Add implementation</p>
+<p>A frame with less than k historical references is given +inf as its backward k-distance. If multiple frames have inf backward k-distance, then evict frame with earliest timestamp based on LRU.</p>
+<p>Successful eviction of a frame should decrement the size of replacer and remove the frame's access history.</p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[out]</td><td class="paramname">frame_id</td><td>id of frame that is evicted. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>true if a frame is evicted successfully, false if no frames can be evicted. </dd></dl>
+<p>我发现有小于k次的页面</p>
+
+</div>
+</div>
+<a id="afa7d452c1e3257ac7ab2d1b3d1eb9537" name="afa7d452c1e3257ac7ab2d1b3d1eb9537"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afa7d452c1e3257ac7ab2d1b3d1eb9537">&#9670;&#160;</a></span>RecordAccess()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void bustub::LRUKReplacer::RecordAccess </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../de/dda/namespacebustub.html#a0f35ab53da3f49c3adf60f5174b16a4a">frame_id_t</a>&#160;</td>
+          <td class="paramname"><em>frame_id</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="../../de/dda/namespacebustub.html#ab8a992a575f635e8e848ddfa23fc45b3">AccessType</a>&#160;</td>
+          <td class="paramname"><em>access_type</em> = <code><a class="el" href="../../de/dda/namespacebustub.html#ab8a992a575f635e8e848ddfa23fc45b3a88183b946cc5f0e8c96b2e66e1c74a7e">AccessType::Unknown</a></code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Record the event that the given frame id is accessed at current timestamp. Create a new entry for access history if frame id has not been seen before. </p>
+<p>TODO(P1): Add implementation</p>
+<p>If frame id is invalid (ie. larger than replacer_size_), throw an exception. You can also use BUSTUB_ASSERT to abort the process if frame id is invalid.</p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">frame_id</td><td>id of frame that received a new access. </td></tr>
+    <tr><td class="paramname">access_type</td><td>type of access that was received. This parameter is only needed for leaderboard tests. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a01758e4d1bf24c7ae3fb297c1c5d28ec" name="a01758e4d1bf24c7ae3fb297c1c5d28ec"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a01758e4d1bf24c7ae3fb297c1c5d28ec">&#9670;&#160;</a></span>Remove()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void bustub::LRUKReplacer::Remove </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../de/dda/namespacebustub.html#a0f35ab53da3f49c3adf60f5174b16a4a">frame_id_t</a>&#160;</td>
+          <td class="paramname"><em>frame_id</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Remove an evictable frame from replacer, along with its access history. This function should also decrement replacer's size if removal is successful. </p>
+<p>TODO(P1): Add implementation</p>
+<p>Note that this is different from evicting a frame, which always remove the frame with largest backward k-distance. This function removes specified frame id, no matter what its backward k-distance is.</p>
+<p>If Remove is called on a non-evictable frame, throw an exception or abort the process.</p>
+<p>If specified frame is not found, directly return from this function.</p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">frame_id</td><td>id of frame to be removed </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a24d5442656e935f8a52922bb101826e2" name="a24d5442656e935f8a52922bb101826e2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a24d5442656e935f8a52922bb101826e2">&#9670;&#160;</a></span>SetEvictable()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void bustub::LRUKReplacer::SetEvictable </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../de/dda/namespacebustub.html#a0f35ab53da3f49c3adf60f5174b16a4a">frame_id_t</a>&#160;</td>
+          <td class="paramname"><em>frame_id</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>set_evictable</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Toggle whether a frame is evictable or non-evictable. This function also controls replacer's size. Note that size is equal to number of evictable entries. </p>
+<p>TODO(P1): Add implementation</p>
+<p>If a frame was previously evictable and is to be set to non-evictable, then size should decrement. If a frame was previously non-evictable and is to be set to evictable, then size should increment.</p>
+<p>If frame id is invalid, throw an exception or abort the process.</p>
+<p>For other scenarios, this function should terminate without modifying anything.</p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">frame_id</td><td>id of frame whose 'evictable' status will be modified </td></tr>
+    <tr><td class="paramname">set_evictable</td><td>whether the given frame is evictable or not </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a9f271aab1ca802bde41f1683221bca2f" name="a9f271aab1ca802bde41f1683221bca2f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9f271aab1ca802bde41f1683221bca2f">&#9670;&#160;</a></span>Size()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto bustub::LRUKReplacer::Size </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> -&gt; size_t</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Return replacer's size, which tracks the number of evictable frames. </p>
+<p>TODO(P1): Add implementation</p>
+<dl class="section return"><dt>返回</dt><dd>size_t </dd></dl>
+
+</div>
+</div>
+<h2 class="groupheader">类成员变量说明</h2>
+<a id="a288d34ec31d025d53abd534b3ccf4051" name="a288d34ec31d025d53abd534b3ccf4051"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a288d34ec31d025d53abd534b3ccf4051">&#9670;&#160;</a></span>curr_size_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">size_t bustub::LRUKReplacer::curr_size_ {0}</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a502824dc407430414e7c2bbffac4493f" name="a502824dc407430414e7c2bbffac4493f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a502824dc407430414e7c2bbffac4493f">&#9670;&#160;</a></span>current_timestamp_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">size_t bustub::LRUKReplacer::current_timestamp_ {0}</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a0140c39f7d0b8b2f90d2b579f6729e1a" name="a0140c39f7d0b8b2f90d2b579f6729e1a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0140c39f7d0b8b2f90d2b579f6729e1a">&#9670;&#160;</a></span>k_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">size_t bustub::LRUKReplacer::k_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ad1fe7be5702fed23eebcdfe0c3888a3b" name="ad1fe7be5702fed23eebcdfe0c3888a3b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad1fe7be5702fed23eebcdfe0c3888a3b">&#9670;&#160;</a></span>latch_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::mutex bustub::LRUKReplacer::latch_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a8534bc1ea32a5980cb8eddd4a4ed65fe" name="a8534bc1ea32a5980cb8eddd4a4ed65fe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8534bc1ea32a5980cb8eddd4a4ed65fe">&#9670;&#160;</a></span>node_store_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::unordered_map&lt;<a class="el" href="../../de/dda/namespacebustub.html#a0f35ab53da3f49c3adf60f5174b16a4a">frame_id_t</a>, <a class="el" href="../../db/d7c/classbustub_1_1LRUKNode.html">LRUKNode</a>&gt; bustub::LRUKReplacer::node_store_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a80c596e5234a08dd8f9ee15663cfa0ae" name="a80c596e5234a08dd8f9ee15663cfa0ae"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a80c596e5234a08dd8f9ee15663cfa0ae">&#9670;&#160;</a></span>replacer_size_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">size_t bustub::LRUKReplacer::replacer_size_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<hr/>该类的文档由以下文件生成:<ul>
+<li>src/include/buffer/<a class="el" href="../../da/d1b/lru__k__replacer_8h_source.html">lru_k_replacer.h</a></li>
+<li>src/buffer/<a class="el" href="../../d2/d0b/lru__k__replacer_8cpp.html">lru_k_replacer.cpp</a></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
+</small></address>
+</body>
+</html>

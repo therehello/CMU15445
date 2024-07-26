@@ -1,0 +1,300 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>数据库系统 CMU15-445/645: bustub::GenericKey&lt; KeySize &gt; 模板类 参考</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/searchdata.js"></script>
+<script type="text/javascript" src="../../search/search.js"></script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">数据库系统 CMU15-445/645<span id="projectnumber">&#160;1.0.0</span>
+   </div>
+   <div id="projectbrief">CMU15-445/645 是基于现代 C++ 开发的支持并发操作的简单 SQL 操作的单机数据库</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.9.8 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "../../search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('../../',true,false,'search.php','搜索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="../../de/dda/namespacebustub.html">bustub</a></li><li class="navelem"><a class="el" href="../../de/da1/classbustub_1_1GenericKey.html">GenericKey</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Public 成员函数</a> &#124;
+<a href="#pub-attribs">Public 属性</a> &#124;
+<a href="#friends">友元</a> &#124;
+<a href="../../d5/d31/classbustub_1_1GenericKey-members.html">所有成员列表</a>  </div>
+  <div class="headertitle"><div class="title">bustub::GenericKey&lt; KeySize &gt; 模板类 参考</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p><code>#include &lt;<a class="el" href="../../da/d28/generic__key_8h_source.html">generic_key.h</a>&gt;</code></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Public 成员函数</h2></td></tr>
+<tr class="memitem:a1673f86b5bce161d3dd556c09e7cd572" id="r_a1673f86b5bce161d3dd556c09e7cd572"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/da1/classbustub_1_1GenericKey.html#a1673f86b5bce161d3dd556c09e7cd572">SetFromKey</a> (const <a class="el" href="../../d0/ded/classbustub_1_1Tuple.html">Tuple</a> &amp;tuple)</td></tr>
+<tr class="separator:a1673f86b5bce161d3dd556c09e7cd572"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3cdd6f68405050a6059ad62232d3ecee" id="r_a3cdd6f68405050a6059ad62232d3ecee"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/da1/classbustub_1_1GenericKey.html#a3cdd6f68405050a6059ad62232d3ecee">SetFromInteger</a> (int64_t key)</td></tr>
+<tr class="separator:a3cdd6f68405050a6059ad62232d3ecee"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afc791d18fddc487140f43d7ec635fdcf" id="r_afc791d18fddc487140f43d7ec635fdcf"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/da1/classbustub_1_1GenericKey.html#afc791d18fddc487140f43d7ec635fdcf">ToValue</a> (<a class="el" href="../../da/d36/classbustub_1_1Schema.html">Schema</a> *schema, uint32_t column_idx) const -&gt; <a class="el" href="../../d4/df7/classbustub_1_1Value.html">Value</a></td></tr>
+<tr class="separator:afc791d18fddc487140f43d7ec635fdcf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1d0c9eb4a8bca07961263ef5e01b1116" id="r_a1d0c9eb4a8bca07961263ef5e01b1116"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/da1/classbustub_1_1GenericKey.html#a1d0c9eb4a8bca07961263ef5e01b1116">ToString</a> () const -&gt; int64_t</td></tr>
+<tr class="separator:a1d0c9eb4a8bca07961263ef5e01b1116"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
+Public 属性</h2></td></tr>
+<tr class="memitem:a0c55198d7686c3b411a549455f9a8b6d" id="r_a0c55198d7686c3b411a549455f9a8b6d"><td class="memItemLeft" align="right" valign="top">char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/da1/classbustub_1_1GenericKey.html#a0c55198d7686c3b411a549455f9a8b6d">data_</a> [KeySize]</td></tr>
+<tr class="separator:a0c55198d7686c3b411a549455f9a8b6d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="friends" name="friends"></a>
+友元</h2></td></tr>
+<tr class="memitem:a30c12ee3b4eb55607ec71f16fa63dbe5" id="r_a30c12ee3b4eb55607ec71f16fa63dbe5"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/da1/classbustub_1_1GenericKey.html#a30c12ee3b4eb55607ec71f16fa63dbe5">operator&lt;&lt;</a> (std::ostream &amp;os, const <a class="el" href="../../de/da1/classbustub_1_1GenericKey.html">GenericKey</a> &amp;key) -&gt; std::ostream &amp;</td></tr>
+<tr class="separator:a30c12ee3b4eb55607ec71f16fa63dbe5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
+<div class="textblock"><div class="compoundTemplParams">template&lt;size_t KeySize&gt;<br />
+class bustub::GenericKey&lt; KeySize &gt;</div><p>Generic key is used for indexing with opaque data.</p>
+<p>This key type uses an fixed length array to hold data for indexing purposes, the actual size of which is specified and instantiated with a template argument. </p>
+</div><h2 class="groupheader">成员函数说明</h2>
+<a id="a3cdd6f68405050a6059ad62232d3ecee" name="a3cdd6f68405050a6059ad62232d3ecee"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3cdd6f68405050a6059ad62232d3ecee">&#9670;&#160;</a></span>SetFromInteger()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;size_t KeySize&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="../../de/da1/classbustub_1_1GenericKey.html">bustub::GenericKey</a>&lt; KeySize &gt;::SetFromInteger </td>
+          <td>(</td>
+          <td class="paramtype">int64_t&#160;</td>
+          <td class="paramname"><em>key</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a1673f86b5bce161d3dd556c09e7cd572" name="a1673f86b5bce161d3dd556c09e7cd572"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1673f86b5bce161d3dd556c09e7cd572">&#9670;&#160;</a></span>SetFromKey()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;size_t KeySize&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="../../de/da1/classbustub_1_1GenericKey.html">bustub::GenericKey</a>&lt; KeySize &gt;::SetFromKey </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="../../d0/ded/classbustub_1_1Tuple.html">Tuple</a> &amp;&#160;</td>
+          <td class="paramname"><em>tuple</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a1d0c9eb4a8bca07961263ef5e01b1116" name="a1d0c9eb4a8bca07961263ef5e01b1116"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1d0c9eb4a8bca07961263ef5e01b1116">&#9670;&#160;</a></span>ToString()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;size_t KeySize&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto <a class="el" href="../../de/da1/classbustub_1_1GenericKey.html">bustub::GenericKey</a>&lt; KeySize &gt;::ToString </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const -&gt; int64_t </td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="afc791d18fddc487140f43d7ec635fdcf" name="afc791d18fddc487140f43d7ec635fdcf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afc791d18fddc487140f43d7ec635fdcf">&#9670;&#160;</a></span>ToValue()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;size_t KeySize&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto <a class="el" href="../../de/da1/classbustub_1_1GenericKey.html">bustub::GenericKey</a>&lt; KeySize &gt;::ToValue </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../da/d36/classbustub_1_1Schema.html">Schema</a> *&#160;</td>
+          <td class="paramname"><em>schema</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>column_idx</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const -&gt; <a class="el" href="../../d4/df7/classbustub_1_1Value.html">Value</a> </td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">友元及相关函数文档</h2>
+<a id="a30c12ee3b4eb55607ec71f16fa63dbe5" name="a30c12ee3b4eb55607ec71f16fa63dbe5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a30c12ee3b4eb55607ec71f16fa63dbe5">&#9670;&#160;</a></span>operator&lt;&lt;</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;size_t KeySize&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto operator&lt;&lt; </td>
+          <td>(</td>
+          <td class="paramtype">std::ostream &amp;&#160;</td>
+          <td class="paramname"><em>os</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="../../de/da1/classbustub_1_1GenericKey.html">GenericKey</a>&lt; KeySize &gt; &amp;&#160;</td>
+          <td class="paramname"><em>key</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> -&gt; std::ostream &amp; </td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">friend</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">类成员变量说明</h2>
+<a id="a0c55198d7686c3b411a549455f9a8b6d" name="a0c55198d7686c3b411a549455f9a8b6d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0c55198d7686c3b411a549455f9a8b6d">&#9670;&#160;</a></span>data_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;size_t KeySize&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">char <a class="el" href="../../de/da1/classbustub_1_1GenericKey.html">bustub::GenericKey</a>&lt; KeySize &gt;::data_[KeySize]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<hr/>该类的文档由以下文件生成:<ul>
+<li>src/include/storage/index/<a class="el" href="../../da/d28/generic__key_8h_source.html">generic_key.h</a></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
+</small></address>
+</body>
+</html>

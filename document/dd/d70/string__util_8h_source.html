@@ -1,0 +1,197 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>数据库系统 CMU15-445/645: src/include/common/util/string_util.h 源文件</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/searchdata.js"></script>
+<script type="text/javascript" src="../../search/search.js"></script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">数据库系统 CMU15-445/645<span id="projectnumber">&#160;1.0.0</span>
+   </div>
+   <div id="projectbrief">CMU15-445/645 是基于现代 C++ 开发的支持并发操作的简单 SQL 操作的单机数据库</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.9.8 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "../../search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('../../',true,false,'search.php','搜索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function() { init_codefold(1); });
+/* @license-end */
+</script>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="../../dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="../../dir_b0856f6b0d80ccb263b2f415c91f9e17.html">include</a></li><li class="navelem"><a class="el" href="../../dir_e73942be4139c49ff686e607a1824de2.html">common</a></li><li class="navelem"><a class="el" href="../../dir_4292dc3eeaf87181d86f8d935ed792a9.html">util</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle"><div class="title">string_util.h</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="../../dd/d70/string__util_8h.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">//===----------------------------------------------------------------------===//</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="comment">//</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="comment">//                         BusTub</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment">//</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="comment">// string_util.h</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="comment">//</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="comment">// Identification: src/include/common/util/string_util.h</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="comment">//</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="comment">// Copyright (c) 2015-2019, Carnegie Mellon University Database Group</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="comment">//</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="comment">//===----------------------------------------------------------------------===//</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#pragma once</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="preprocessor">#include &lt;string&gt;</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="preprocessor">#include &lt;vector&gt;</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span> </div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="keyword">namespace </span><a class="code hl_namespace" href="../../de/dda/namespacebustub.html">bustub</a> {</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span> </div>
+<div class="foldopen" id="foldopen00023" data-start="{" data-end="};">
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno"><a class="line" href="../../d6/d44/classbustub_1_1StringUtil.html">   23</a></span><span class="keyword">class </span><a class="code hl_class" href="../../d6/d44/classbustub_1_1StringUtil.html">StringUtil</a> {</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span> <span class="keyword">public</span>:</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>  <span class="keyword">static</span> <span class="keyword">auto</span> <a class="code hl_function" href="../../d6/d44/classbustub_1_1StringUtil.html#a3f52bb2debedbf12779df4da5d42920d">Contains</a>(<span class="keyword">const</span> std::string &amp;haystack, <span class="keyword">const</span> std::string &amp;needle) -&gt; bool;</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span> </div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>  <span class="keyword">static</span> <span class="keyword">auto</span> <a class="code hl_function" href="../../d6/d44/classbustub_1_1StringUtil.html#a12ee146759f4456825e5a3d32022ea0d">ContainsAfter</a>(<span class="keyword">const</span> std::string &amp;keyword, <span class="keyword">const</span> std::string &amp;haystack, <span class="keyword">const</span> std::string &amp;needle) -&gt; bool;</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span> </div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>  <span class="keyword">static</span> <span class="keyword">auto</span> <a class="code hl_function" href="../../d6/d44/classbustub_1_1StringUtil.html#aabc994a92561881ef039336abbb9d76e">StartsWith</a>(<span class="keyword">const</span> std::string &amp;str, <span class="keyword">const</span> std::string &amp;prefix) -&gt; bool;</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span> </div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>  <span class="keyword">static</span> <span class="keyword">auto</span> <a class="code hl_function" href="../../d6/d44/classbustub_1_1StringUtil.html#a79ab8858bf06c2a4b753974f4d4a5046">EndsWith</a>(<span class="keyword">const</span> std::string &amp;str, <span class="keyword">const</span> std::string &amp;suffix) -&gt; bool;</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span> </div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>  <span class="keyword">static</span> <span class="keyword">auto</span> <a class="code hl_function" href="../../d6/d44/classbustub_1_1StringUtil.html#a00fa0721753b4ada8f3d937a78feebff">Repeat</a>(<span class="keyword">const</span> std::string &amp;str, std::size_t n) -&gt; std::string;</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span> </div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>  <span class="keyword">static</span> <span class="keyword">auto</span> <a class="code hl_function" href="../../d6/d44/classbustub_1_1StringUtil.html#a68880450718e5d742654913f53681b9c">Split</a>(<span class="keyword">const</span> std::string &amp;str, <span class="keywordtype">char</span> delimiter) -&gt; std::vector&lt;std::string&gt;;</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span> </div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>  <span class="keyword">static</span> <span class="keyword">auto</span> <a class="code hl_function" href="../../d6/d44/classbustub_1_1StringUtil.html#adce7c03010034c46f2f54d6800762b88">Join</a>(<span class="keyword">const</span> std::vector&lt;std::string&gt; &amp;input, <span class="keyword">const</span> std::string &amp;separator) -&gt; std::string;</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span> </div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>  <span class="keyword">template</span> &lt;<span class="keyword">typename</span> C, <span class="keyword">typename</span> S, <span class="keyword">typename</span> Func&gt;</div>
+<div class="foldopen" id="foldopen00049" data-start="{" data-end="}">
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno"><a class="line" href="../../d6/d44/classbustub_1_1StringUtil.html#a69582f54f68916ee418c583d19cfb3b5">   49</a></span>  <span class="keyword">static</span> <span class="keyword">auto</span> <a class="code hl_function" href="../../d6/d44/classbustub_1_1StringUtil.html#a69582f54f68916ee418c583d19cfb3b5">Join</a>(<span class="keyword">const</span> C &amp;input, S count, <span class="keyword">const</span> std::string &amp;separator, Func f) -&gt; std::string {</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>    <span class="comment">// The result</span></div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>    std::string result;</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span> </div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>    <span class="comment">// If the input isn&#39;t empty, append the first element. We do this so we</span></div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>    <span class="comment">// don&#39;t need to introduce an if into the loop.</span></div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>    <span class="keywordflow">if</span> (count &gt; 0) {</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>      result += f(input[0]);</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>    }</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span> </div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>    <span class="comment">// Append the remaining input components, after the first</span></div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>    <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 1; i &lt; count; i++) {</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>      result += separator + f(input[i]);</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>    }</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span> </div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>    <span class="keywordflow">return</span> result;</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>  }</div>
+</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span> </div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>  <span class="keyword">static</span> <span class="keyword">auto</span> <a class="code hl_function" href="../../d6/d44/classbustub_1_1StringUtil.html#a0854c84b0aebd44cc31e05121fb716a3">Prefix</a>(<span class="keyword">const</span> std::string &amp;str, <span class="keyword">const</span> std::string &amp;prefix) -&gt; std::string;</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span> </div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>  <span class="keyword">static</span> <span class="keyword">auto</span> <a class="code hl_function" href="../../d6/d44/classbustub_1_1StringUtil.html#ab9a69118332cab12eb4e7959d82496c5">FormatSize</a>(uint64_t bytes) -&gt; std::string;</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span> </div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>  <span class="keyword">static</span> <span class="keyword">auto</span> <a class="code hl_function" href="../../d6/d44/classbustub_1_1StringUtil.html#a7379002ee651282cf56e412fbdf2846e">Bold</a>(<span class="keyword">const</span> std::string &amp;str) -&gt; std::string;</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span> </div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>  <span class="keyword">static</span> <span class="keyword">auto</span> <a class="code hl_enumvalue" href="../../de/dda/namespacebustub.html#aa150eea15c2ffb3f2f1c530c61fc319ca19de5b94f7b83900d4b296d9fa491aec">Upper</a>(<span class="keyword">const</span> std::string &amp;str) -&gt; std::string;</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span> </div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>  <span class="keyword">static</span> <span class="keyword">auto</span> <a class="code hl_enumvalue" href="../../de/dda/namespacebustub.html#aa150eea15c2ffb3f2f1c530c61fc319cab75fcdd2d72d9e000beab48622402d93">Lower</a>(<span class="keyword">const</span> std::string &amp;str) -&gt; std::string;</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span> </div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>  <span class="keyword">static</span> <span class="keyword">auto</span> <a class="code hl_function" href="../../d6/d44/classbustub_1_1StringUtil.html#aea0cd3d039162c6062126d2c735ce4ab">Format</a>(std::string fmt_str, ...) -&gt; std::string;</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span> </div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>  <span class="keyword">static</span> <span class="keyword">auto</span> <a class="code hl_function" href="../../d6/d44/classbustub_1_1StringUtil.html#a68880450718e5d742654913f53681b9c">Split</a>(<span class="keyword">const</span> std::string &amp;input, <span class="keyword">const</span> std::string &amp;split) -&gt; std::vector&lt;std::string&gt;;</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span> </div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>  <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code hl_function" href="../../d6/d44/classbustub_1_1StringUtil.html#a0a3c468de57e97a5c1632d9b3e07dfba">RTrim</a>(std::string *str);</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span> </div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>  <span class="keyword">static</span> <span class="keyword">auto</span> <a class="code hl_function" href="../../d6/d44/classbustub_1_1StringUtil.html#a486131eb846706324977e8bd44ed837b">Indent</a>(<span class="keywordtype">int</span> num_indent) -&gt; std::string;</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span> </div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>  <span class="keyword">static</span> <span class="keyword">auto</span> <a class="code hl_function" href="../../d6/d44/classbustub_1_1StringUtil.html#a5f9631b5a7d6b8c0f145bffa58b618e5">Strip</a>(<span class="keyword">const</span> std::string &amp;str, <span class="keywordtype">char</span> c) -&gt; std::string;</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span> </div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>  <span class="keyword">static</span> <span class="keyword">auto</span> <a class="code hl_function" href="../../d6/d44/classbustub_1_1StringUtil.html#a29ad587bc23b0d56443513a448398347">Replace</a>(std::string source, <span class="keyword">const</span> std::string &amp;from, <span class="keyword">const</span> std::string &amp;to) -&gt; std::string;</div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span> </div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>  <span class="keyword">static</span> <span class="keyword">auto</span> <a class="code hl_function" href="../../d6/d44/classbustub_1_1StringUtil.html#a490e21c95a98a1c24fd9eb4495b2f9cc">IndentAllLines</a>(<span class="keyword">const</span> std::string &amp;lines, <span class="keywordtype">size_t</span> num_indent, <span class="keywordtype">bool</span> except_first_line = <span class="keyword">false</span>)</div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>      -&gt; std::string;</div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>};</div>
+</div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span> </div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>}  <span class="comment">// namespace bustub</span></div>
+<div class="ttc" id="aclassbustub_1_1StringUtil_html"><div class="ttname"><a href="../../d6/d44/classbustub_1_1StringUtil.html">bustub::StringUtil</a></div><div class="ttdef"><b>Definition</b> string_util.h:23</div></div>
+<div class="ttc" id="aclassbustub_1_1StringUtil_html_a00fa0721753b4ada8f3d937a78feebff"><div class="ttname"><a href="../../d6/d44/classbustub_1_1StringUtil.html#a00fa0721753b4ada8f3d937a78feebff">bustub::StringUtil::Repeat</a></div><div class="ttdeci">static auto Repeat(const std::string &amp;str, std::size_t n) -&gt; std::string</div><div class="ttdef"><b>Definition</b> string_util.cpp:59</div></div>
+<div class="ttc" id="aclassbustub_1_1StringUtil_html_a0854c84b0aebd44cc31e05121fb716a3"><div class="ttname"><a href="../../d6/d44/classbustub_1_1StringUtil.html#a0854c84b0aebd44cc31e05121fb716a3">bustub::StringUtil::Prefix</a></div><div class="ttdeci">static auto Prefix(const std::string &amp;str, const std::string &amp;prefix) -&gt; std::string</div><div class="ttdef"><b>Definition</b> string_util.cpp:96</div></div>
+<div class="ttc" id="aclassbustub_1_1StringUtil_html_a0a3c468de57e97a5c1632d9b3e07dfba"><div class="ttname"><a href="../../d6/d44/classbustub_1_1StringUtil.html#a0a3c468de57e97a5c1632d9b3e07dfba">bustub::StringUtil::RTrim</a></div><div class="ttdeci">static void RTrim(std::string *str)</div><div class="ttdef"><b>Definition</b> string_util.cpp:40</div></div>
+<div class="ttc" id="aclassbustub_1_1StringUtil_html_a12ee146759f4456825e5a3d32022ea0d"><div class="ttname"><a href="../../d6/d44/classbustub_1_1StringUtil.html#a12ee146759f4456825e5a3d32022ea0d">bustub::StringUtil::ContainsAfter</a></div><div class="ttdeci">static auto ContainsAfter(const std::string &amp;keyword, const std::string &amp;haystack, const std::string &amp;needle) -&gt; bool</div><div class="ttdef"><b>Definition</b> string_util.cpp:31</div></div>
+<div class="ttc" id="aclassbustub_1_1StringUtil_html_a29ad587bc23b0d56443513a448398347"><div class="ttname"><a href="../../d6/d44/classbustub_1_1StringUtil.html#a29ad587bc23b0d56443513a448398347">bustub::StringUtil::Replace</a></div><div class="ttdeci">static auto Replace(std::string source, const std::string &amp;from, const std::string &amp;to) -&gt; std::string</div><div class="ttdef"><b>Definition</b> string_util.cpp:210</div></div>
+<div class="ttc" id="aclassbustub_1_1StringUtil_html_a3f52bb2debedbf12779df4da5d42920d"><div class="ttname"><a href="../../d6/d44/classbustub_1_1StringUtil.html#a3f52bb2debedbf12779df4da5d42920d">bustub::StringUtil::Contains</a></div><div class="ttdeci">static auto Contains(const std::string &amp;haystack, const std::string &amp;needle) -&gt; bool</div><div class="ttdef"><b>Definition</b> string_util.cpp:27</div></div>
+<div class="ttc" id="aclassbustub_1_1StringUtil_html_a486131eb846706324977e8bd44ed837b"><div class="ttname"><a href="../../d6/d44/classbustub_1_1StringUtil.html#a486131eb846706324977e8bd44ed837b">bustub::StringUtil::Indent</a></div><div class="ttdeci">static auto Indent(int num_indent) -&gt; std::string</div><div class="ttdef"><b>Definition</b> string_util.cpp:45</div></div>
+<div class="ttc" id="aclassbustub_1_1StringUtil_html_a490e21c95a98a1c24fd9eb4495b2f9cc"><div class="ttname"><a href="../../d6/d44/classbustub_1_1StringUtil.html#a490e21c95a98a1c24fd9eb4495b2f9cc">bustub::StringUtil::IndentAllLines</a></div><div class="ttdeci">static auto IndentAllLines(const std::string &amp;lines, size_t num_indent, bool except_first_line=false) -&gt; std::string</div><div class="ttdef"><b>Definition</b> string_util.cpp:220</div></div>
+<div class="ttc" id="aclassbustub_1_1StringUtil_html_a5f9631b5a7d6b8c0f145bffa58b618e5"><div class="ttname"><a href="../../d6/d44/classbustub_1_1StringUtil.html#a5f9631b5a7d6b8c0f145bffa58b618e5">bustub::StringUtil::Strip</a></div><div class="ttdeci">static auto Strip(const std::string &amp;str, char c) -&gt; std::string</div><div class="ttdef"><b>Definition</b> string_util.cpp:203</div></div>
+<div class="ttc" id="aclassbustub_1_1StringUtil_html_a68880450718e5d742654913f53681b9c"><div class="ttname"><a href="../../d6/d44/classbustub_1_1StringUtil.html#a68880450718e5d742654913f53681b9c">bustub::StringUtil::Split</a></div><div class="ttdeci">static auto Split(const std::string &amp;str, char delimiter) -&gt; std::vector&lt; std::string &gt;</div><div class="ttdef"><b>Definition</b> string_util.cpp:70</div></div>
+<div class="ttc" id="aclassbustub_1_1StringUtil_html_a69582f54f68916ee418c583d19cfb3b5"><div class="ttname"><a href="../../d6/d44/classbustub_1_1StringUtil.html#a69582f54f68916ee418c583d19cfb3b5">bustub::StringUtil::Join</a></div><div class="ttdeci">static auto Join(const C &amp;input, S count, const std::string &amp;separator, Func f) -&gt; std::string</div><div class="ttdef"><b>Definition</b> string_util.h:49</div></div>
+<div class="ttc" id="aclassbustub_1_1StringUtil_html_a7379002ee651282cf56e412fbdf2846e"><div class="ttname"><a href="../../d6/d44/classbustub_1_1StringUtil.html#a7379002ee651282cf56e412fbdf2846e">bustub::StringUtil::Bold</a></div><div class="ttdeci">static auto Bold(const std::string &amp;str) -&gt; std::string</div><div class="ttdef"><b>Definition</b> string_util.cpp:134</div></div>
+<div class="ttc" id="aclassbustub_1_1StringUtil_html_a79ab8858bf06c2a4b753974f4d4a5046"><div class="ttname"><a href="../../d6/d44/classbustub_1_1StringUtil.html#a79ab8858bf06c2a4b753974f4d4a5046">bustub::StringUtil::EndsWith</a></div><div class="ttdeci">static auto EndsWith(const std::string &amp;str, const std::string &amp;suffix) -&gt; bool</div><div class="ttdef"><b>Definition</b> string_util.cpp:51</div></div>
+<div class="ttc" id="aclassbustub_1_1StringUtil_html_aabc994a92561881ef039336abbb9d76e"><div class="ttname"><a href="../../d6/d44/classbustub_1_1StringUtil.html#aabc994a92561881ef039336abbb9d76e">bustub::StringUtil::StartsWith</a></div><div class="ttdeci">static auto StartsWith(const std::string &amp;str, const std::string &amp;prefix) -&gt; bool</div><div class="ttdef"><b>Definition</b> string_util.cpp:47</div></div>
+<div class="ttc" id="aclassbustub_1_1StringUtil_html_ab9a69118332cab12eb4e7959d82496c5"><div class="ttname"><a href="../../d6/d44/classbustub_1_1StringUtil.html#ab9a69118332cab12eb4e7959d82496c5">bustub::StringUtil::FormatSize</a></div><div class="ttdeci">static auto FormatSize(uint64_t bytes) -&gt; std::string</div><div class="ttdef"><b>Definition</b> string_util.cpp:113</div></div>
+<div class="ttc" id="aclassbustub_1_1StringUtil_html_adce7c03010034c46f2f54d6800762b88"><div class="ttname"><a href="../../d6/d44/classbustub_1_1StringUtil.html#adce7c03010034c46f2f54d6800762b88">bustub::StringUtil::Join</a></div><div class="ttdeci">static auto Join(const std::vector&lt; std::string &gt; &amp;input, const std::string &amp;separator) -&gt; std::string</div><div class="ttdef"><b>Definition</b> string_util.cpp:80</div></div>
+<div class="ttc" id="aclassbustub_1_1StringUtil_html_aea0cd3d039162c6062126d2c735ce4ab"><div class="ttname"><a href="../../d6/d44/classbustub_1_1StringUtil.html#aea0cd3d039162c6062126d2c735ce4ab">bustub::StringUtil::Format</a></div><div class="ttdeci">static auto Format(std::string fmt_str,...) -&gt; std::string</div><div class="ttdef"><b>Definition</b> string_util.cpp:156</div></div>
+<div class="ttc" id="anamespacebustub_html"><div class="ttname"><a href="../../de/dda/namespacebustub.html">bustub</a></div><div class="ttdef"><b>Definition</b> bind_create.cpp:53</div></div>
+<div class="ttc" id="anamespacebustub_html_aa150eea15c2ffb3f2f1c530c61fc319ca19de5b94f7b83900d4b296d9fa491aec"><div class="ttname"><a href="../../de/dda/namespacebustub.html#aa150eea15c2ffb3f2f1c530c61fc319ca19de5b94f7b83900d4b296d9fa491aec">bustub::StringExpressionType::Upper</a></div><div class="ttdeci">@ Upper</div></div>
+<div class="ttc" id="anamespacebustub_html_aa150eea15c2ffb3f2f1c530c61fc319cab75fcdd2d72d9e000beab48622402d93"><div class="ttname"><a href="../../de/dda/namespacebustub.html#aa150eea15c2ffb3f2f1c530c61fc319cab75fcdd2d72d9e000beab48622402d93">bustub::StringExpressionType::Lower</a></div><div class="ttdeci">@ Lower</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
+</small></address>
+</body>
+</html>

@@ -1,0 +1,244 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>数据库系统 CMU15-445/645: src/include/binder/bound_expression.h 源文件</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/searchdata.js"></script>
+<script type="text/javascript" src="../../search/search.js"></script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">数据库系统 CMU15-445/645<span id="projectnumber">&#160;1.0.0</span>
+   </div>
+   <div id="projectbrief">CMU15-445/645 是基于现代 C++ 开发的支持并发操作的简单 SQL 操作的单机数据库</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.9.8 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "../../search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('../../',true,false,'search.php','搜索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function() { init_codefold(1); });
+/* @license-end */
+</script>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="../../dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="../../dir_b0856f6b0d80ccb263b2f415c91f9e17.html">include</a></li><li class="navelem"><a class="el" href="../../dir_2e0f860ba5ab93b304ae8e341906fe46.html">binder</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle"><div class="title">bound_expression.h</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="../../dc/d8b/bound__expression_8h.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#pragma once</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span> </div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &lt;memory&gt;</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &lt;string&gt;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &quot;<a class="code" href="../../de/d3c/macros_8h.html">common/macros.h</a>&quot;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &quot;fmt/format.h&quot;</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span> </div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="keyword">namespace </span><a class="code hl_namespace" href="../../de/dda/namespacebustub.html">bustub</a> {</div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span> </div>
+<div class="foldopen" id="foldopen00013" data-start="{" data-end="};">
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno"><a class="line" href="../../de/dda/namespacebustub.html#ad966f68740f50281536bcc3db49e3854">   13</a></span><span class="keyword">enum class</span> <a class="code hl_enumeration" href="../../de/dda/namespacebustub.html#ad966f68740f50281536bcc3db49e3854">ExpressionType</a> : uint8_t {</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>  <a class="code hl_enumvalue" href="../../de/dda/namespacebustub.html#a49735e6748963f5515394bbb228f1fc8a3e1271c17ff094d1820c69fbcc4c19eb">INVALID</a> = 0,    </div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>  <a class="code hl_enumvalue" href="../../de/dda/namespacebustub.html#ad966f68740f50281536bcc3db49e3854a8d6b5cada83510220f59e00ce86d4d92">CONSTANT</a> = 1,   </div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>  <a class="code hl_enumvalue" href="../../de/dda/namespacebustub.html#ad966f68740f50281536bcc3db49e3854ac8b01296b2ca946ec0de3397573179e9">COLUMN_REF</a> = 3, </div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>  <a class="code hl_enumvalue" href="../../de/dda/namespacebustub.html#ad966f68740f50281536bcc3db49e3854a6a9a1f58caa6c5ec50ca5f4003e53fb3">TYPE_CAST</a> = 4,  </div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>  <a class="code hl_enumvalue" href="../../de/dda/namespacebustub.html#ad966f68740f50281536bcc3db49e3854a6a72a6a776662a244f82d31e9274a07b">FUNCTION</a> = 5,   </div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>  <a class="code hl_enumvalue" href="../../de/dda/namespacebustub.html#ad966f68740f50281536bcc3db49e3854a5e86ef217bec121d0f6ace1be8d5cdd9">AGG_CALL</a> = 6,   </div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>  <a class="code hl_enumvalue" href="../../de/dda/namespacebustub.html#ad966f68740f50281536bcc3db49e3854a8ab2630ada18b94a005a0c5399d9d483">STAR</a> = 7,       </div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>  <a class="code hl_enumvalue" href="../../de/dda/namespacebustub.html#ad966f68740f50281536bcc3db49e3854a87a14f7e8cd5c34a8383e16a5ae8bac3">UNARY_OP</a> = 8,   </div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>  <a class="code hl_enumvalue" href="../../de/dda/namespacebustub.html#ad966f68740f50281536bcc3db49e3854a079d434771f5c57c40bd937d618fea40">BINARY_OP</a> = 9,  </div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>  <a class="code hl_enumvalue" href="../../de/dda/namespacebustub.html#ad966f68740f50281536bcc3db49e3854adc6effcb98019a63f6d5ee5624a29058">ALIAS</a> = 10,     </div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>  <a class="code hl_enumvalue" href="../../de/dda/namespacebustub.html#ad966f68740f50281536bcc3db49e3854ab06c3953f8a5bf7626d39cc1dd967598">FUNC_CALL</a> = 11, </div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>  <a class="code hl_enumvalue" href="../../de/dda/namespacebustub.html#ad966f68740f50281536bcc3db49e3854a70e2a9fa5d5ec49dc67453eab551251d">WINDOW</a> = 12,    </div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>};</div>
+</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span> </div>
+<div class="foldopen" id="foldopen00031" data-start="{" data-end="};">
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno"><a class="line" href="../../de/d78/classbustub_1_1BoundExpression.html">   31</a></span><span class="keyword">class </span><a class="code hl_class" href="../../de/d78/classbustub_1_1BoundExpression.html">BoundExpression</a> {</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span> <span class="keyword">public</span>:</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno"><a class="line" href="../../de/d78/classbustub_1_1BoundExpression.html#a6453827c6cb55c35cb2108425287e702">   33</a></span>  <span class="keyword">explicit</span> <a class="code hl_function" href="../../de/d78/classbustub_1_1BoundExpression.html#a6453827c6cb55c35cb2108425287e702">BoundExpression</a>(<a class="code hl_enumeration" href="../../de/dda/namespacebustub.html#ad966f68740f50281536bcc3db49e3854">ExpressionType</a> type) : <a class="code hl_variable" href="../../de/d78/classbustub_1_1BoundExpression.html#a50f9da1b6525b75f203fff61778b4867">type_</a>(type) {}</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno"><a class="line" href="../../de/d78/classbustub_1_1BoundExpression.html#ad97fdc602d10872f1729c2d725acc384">   34</a></span>  <a class="code hl_function" href="../../de/d78/classbustub_1_1BoundExpression.html#ad97fdc602d10872f1729c2d725acc384">BoundExpression</a>() = <span class="keywordflow">default</span>;</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno"><a class="line" href="../../de/d78/classbustub_1_1BoundExpression.html#acd273986f821727a7ec1a591f6dabbf6">   35</a></span>  <span class="keyword">virtual</span> <a class="code hl_function" href="../../de/d78/classbustub_1_1BoundExpression.html#acd273986f821727a7ec1a591f6dabbf6">~BoundExpression</a>() = <span class="keywordflow">default</span>;</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span> </div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno"><a class="line" href="../../de/d78/classbustub_1_1BoundExpression.html#a6afb85f759fa02abe4b726ae86c1ee5e">   37</a></span>  <span class="keyword">virtual</span> <span class="keyword">auto</span> <a class="code hl_function" href="../../de/d78/classbustub_1_1BoundExpression.html#a6afb85f759fa02abe4b726ae86c1ee5e">ToString</a>() const -&gt; <a class="code hl_namespace" href="../../d8/dcc/namespacestd.html">std</a>::<span class="keywordtype">string</span> { <span class="keywordflow">return</span> <span class="stringliteral">&quot;&quot;</span>; };</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span> </div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno"><a class="line" href="../../de/d78/classbustub_1_1BoundExpression.html#a95ab26622b4dd006cbdab23ac8b6a546">   39</a></span>  <span class="keyword">auto</span> <a class="code hl_function" href="../../de/d78/classbustub_1_1BoundExpression.html#a95ab26622b4dd006cbdab23ac8b6a546">IsInvalid</a>() const -&gt; <span class="keywordtype">bool</span> { <span class="keywordflow">return</span> <a class="code hl_variable" href="../../de/d78/classbustub_1_1BoundExpression.html#a50f9da1b6525b75f203fff61778b4867">type_</a> == <a class="code hl_enumvalue" href="../../de/dda/namespacebustub.html#ad966f68740f50281536bcc3db49e3854accc0377a8afbf50e7094f5c23a8af223">ExpressionType::INVALID</a>; }</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span> </div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno"><a class="line" href="../../de/d78/classbustub_1_1BoundExpression.html#a514252ea47e97dd0c421116c5ab77067">   41</a></span>  <span class="keyword">virtual</span> <span class="keyword">auto</span> <a class="code hl_function" href="../../de/d78/classbustub_1_1BoundExpression.html#a514252ea47e97dd0c421116c5ab77067">HasAggregation</a>() const -&gt; <span class="keywordtype">bool</span> { <a class="code hl_define" href="../../de/d3c/macros_8h.html#ab1282cb3b18636534805bfc9448e889f">UNREACHABLE</a>(<span class="stringliteral">&quot;has aggregation should have been implemented!&quot;</span>); }</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span> </div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno"><a class="line" href="../../de/d78/classbustub_1_1BoundExpression.html#a14553d84df560b6e3dedc07e1872755f">   43</a></span>  <span class="keyword">virtual</span> <span class="keyword">auto</span> <a class="code hl_function" href="../../de/d78/classbustub_1_1BoundExpression.html#a14553d84df560b6e3dedc07e1872755f">HasWindowFunction</a>() const -&gt; <span class="keywordtype">bool</span> { <span class="keywordflow">return</span> <span class="keyword">false</span>; }</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span> </div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno"><a class="line" href="../../de/d78/classbustub_1_1BoundExpression.html#a50f9da1b6525b75f203fff61778b4867">   46</a></span>  <a class="code hl_enumeration" href="../../de/dda/namespacebustub.html#ad966f68740f50281536bcc3db49e3854">ExpressionType</a> <a class="code hl_variable" href="../../de/d78/classbustub_1_1BoundExpression.html#a50f9da1b6525b75f203fff61778b4867">type_</a>{<a class="code hl_enumvalue" href="../../de/dda/namespacebustub.html#ad966f68740f50281536bcc3db49e3854accc0377a8afbf50e7094f5c23a8af223">ExpressionType::INVALID</a>};</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>};</div>
+</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span> </div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>}  <span class="comment">// namespace bustub</span></div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span> </div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="foldopen" id="foldopen00052" data-start="{" data-end="};">
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno"><a class="line" href="../../d9/d8e/structfmt_1_1formatter_3_01T_00_01std_1_1enable__if__t_3_01std_1_1is__base__of_3_01bustub_1_1Bouc1d62e550ac0324b4b9187256464c9eb.html">   52</a></span><span class="keyword">struct </span>fmt::formatter&lt;T, <a class="code hl_namespace" href="../../d8/dcc/namespacestd.html">std</a>::enable_if_t&lt;std::is_base_of&lt;bustub::BoundExpression, T&gt;::value, char&gt;&gt;</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>    : fmt::formatter&lt;std::string&gt; {</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>  <span class="keyword">template</span> &lt;<span class="keyword">typename</span> FormatCtx&gt;</div>
+<div class="foldopen" id="foldopen00055" data-start="{" data-end="}">
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno"><a class="line" href="../../d9/d8e/structfmt_1_1formatter_3_01T_00_01std_1_1enable__if__t_3_01std_1_1is__base__of_3_01bustub_1_1Bouc1d62e550ac0324b4b9187256464c9eb.html#a47e9fe121ac8f2221a44302afba2f5fb">   55</a></span>  <span class="keyword">auto</span> <a class="code hl_function" href="../../d9/d8e/structfmt_1_1formatter_3_01T_00_01std_1_1enable__if__t_3_01std_1_1is__base__of_3_01bustub_1_1Bouc1d62e550ac0324b4b9187256464c9eb.html#a47e9fe121ac8f2221a44302afba2f5fb">format</a>(<span class="keyword">const</span> T &amp;x, FormatCtx &amp;ctx)<span class="keyword"> const </span>{</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>    <span class="keywordflow">return</span> fmt::formatter&lt;std::string&gt;::format(x.ToString(), ctx);</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>  }</div>
+</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>};</div>
+</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span> </div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="foldopen" id="foldopen00061" data-start="{" data-end="};">
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno"><a class="line" href="../../d1/d9d/structfmt_1_1formatter_3_01std_1_1unique__ptr_3_01T_01_4_00_01std_1_1enable__if__t_3_01std_1_1is33298db1cd19343f8e4279616d13ed8c.html">   61</a></span><span class="keyword">struct </span>fmt::formatter&lt;<a class="code hl_namespace" href="../../d8/dcc/namespacestd.html">std</a>::unique_ptr&lt;T&gt;, std::enable_if_t&lt;std::is_base_of&lt;bustub::BoundExpression, T&gt;::value, char&gt;&gt;</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>    : fmt::formatter&lt;std::string&gt; {</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>  <span class="keyword">template</span> &lt;<span class="keyword">typename</span> FormatCtx&gt;</div>
+<div class="foldopen" id="foldopen00064" data-start="{" data-end="}">
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno"><a class="line" href="../../d1/d9d/structfmt_1_1formatter_3_01std_1_1unique__ptr_3_01T_01_4_00_01std_1_1enable__if__t_3_01std_1_1is33298db1cd19343f8e4279616d13ed8c.html#a43221edc0817a49d0d6e00d15f428a83">   64</a></span>  <span class="keyword">auto</span> <a class="code hl_function" href="../../d1/d9d/structfmt_1_1formatter_3_01std_1_1unique__ptr_3_01T_01_4_00_01std_1_1enable__if__t_3_01std_1_1is33298db1cd19343f8e4279616d13ed8c.html#a43221edc0817a49d0d6e00d15f428a83">format</a>(<span class="keyword">const</span> std::unique_ptr&lt;T&gt; &amp;x, FormatCtx &amp;ctx)<span class="keyword"> const </span>{</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>    <span class="keywordflow">return</span> fmt::formatter&lt;std::string&gt;::format(x-&gt;ToString(), ctx);</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>  }</div>
+</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>};</div>
+</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span> </div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span><span class="keyword">template</span> &lt;&gt;</div>
+<div class="foldopen" id="foldopen00070" data-start="{" data-end="};">
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno"><a class="line" href="../../df/d46/structfmt_1_1formatter_3_01bustub_1_1ExpressionType_01_4.html">   70</a></span><span class="keyword">struct </span>fmt::formatter&lt;<a class="code hl_namespace" href="../../de/dda/namespacebustub.html">bustub</a>::ExpressionType&gt; : formatter&lt;string_view&gt; {</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>  <span class="keyword">template</span> &lt;<span class="keyword">typename</span> FormatContext&gt;</div>
+<div class="foldopen" id="foldopen00072" data-start="{" data-end="}">
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno"><a class="line" href="../../df/d46/structfmt_1_1formatter_3_01bustub_1_1ExpressionType_01_4.html#a08a3be4a5e1081e024e3771e36619594">   72</a></span>  <span class="keyword">auto</span> <a class="code hl_function" href="../../df/d46/structfmt_1_1formatter_3_01bustub_1_1ExpressionType_01_4.html#a08a3be4a5e1081e024e3771e36619594">format</a>(<a class="code hl_enumeration" href="../../de/dda/namespacebustub.html#ad966f68740f50281536bcc3db49e3854">bustub::ExpressionType</a> c, FormatContext &amp;ctx)<span class="keyword"> const </span>{</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>    string_view name;</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>    <span class="keywordflow">switch</span> (c) {</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>      <span class="keywordflow">case</span> <a class="code hl_enumvalue" href="../../de/dda/namespacebustub.html#ad966f68740f50281536bcc3db49e3854accc0377a8afbf50e7094f5c23a8af223">bustub::ExpressionType::INVALID</a>:</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>        name = <span class="stringliteral">&quot;Invalid&quot;</span>;</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>        <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>      <span class="keywordflow">case</span> <a class="code hl_enumvalue" href="../../de/dda/namespacebustub.html#ad966f68740f50281536bcc3db49e3854a8d6b5cada83510220f59e00ce86d4d92">bustub::ExpressionType::CONSTANT</a>:</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>        name = <span class="stringliteral">&quot;Constant&quot;</span>;</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>        <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>      <span class="keywordflow">case</span> <a class="code hl_enumvalue" href="../../de/dda/namespacebustub.html#ad966f68740f50281536bcc3db49e3854ac8b01296b2ca946ec0de3397573179e9">bustub::ExpressionType::COLUMN_REF</a>:</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>        name = <span class="stringliteral">&quot;ColumnRef&quot;</span>;</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>        <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>      <span class="keywordflow">case</span> <a class="code hl_enumvalue" href="../../de/dda/namespacebustub.html#ad966f68740f50281536bcc3db49e3854a6a9a1f58caa6c5ec50ca5f4003e53fb3">bustub::ExpressionType::TYPE_CAST</a>:</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>        name = <span class="stringliteral">&quot;TypeCast&quot;</span>;</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>        <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>      <span class="keywordflow">case</span> <a class="code hl_enumvalue" href="../../de/dda/namespacebustub.html#ad966f68740f50281536bcc3db49e3854a6a72a6a776662a244f82d31e9274a07b">bustub::ExpressionType::FUNCTION</a>:</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>        name = <span class="stringliteral">&quot;Function&quot;</span>;</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>        <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>      <span class="keywordflow">case</span> <a class="code hl_enumvalue" href="../../de/dda/namespacebustub.html#ad966f68740f50281536bcc3db49e3854a5e86ef217bec121d0f6ace1be8d5cdd9">bustub::ExpressionType::AGG_CALL</a>:</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>        name = <span class="stringliteral">&quot;AggregationCall&quot;</span>;</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>        <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>      <span class="keywordflow">case</span> <a class="code hl_enumvalue" href="../../de/dda/namespacebustub.html#ad966f68740f50281536bcc3db49e3854a8ab2630ada18b94a005a0c5399d9d483">bustub::ExpressionType::STAR</a>:</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>        name = <span class="stringliteral">&quot;Star&quot;</span>;</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>        <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>      <span class="keywordflow">case</span> <a class="code hl_enumvalue" href="../../de/dda/namespacebustub.html#ad966f68740f50281536bcc3db49e3854a87a14f7e8cd5c34a8383e16a5ae8bac3">bustub::ExpressionType::UNARY_OP</a>:</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>        name = <span class="stringliteral">&quot;UnaryOperation&quot;</span>;</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>        <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>      <span class="keywordflow">case</span> <a class="code hl_enumvalue" href="../../de/dda/namespacebustub.html#ad966f68740f50281536bcc3db49e3854a079d434771f5c57c40bd937d618fea40">bustub::ExpressionType::BINARY_OP</a>:</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>        name = <span class="stringliteral">&quot;BinaryOperation&quot;</span>;</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>        <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>      <span class="keywordflow">case</span> <a class="code hl_enumvalue" href="../../de/dda/namespacebustub.html#ad966f68740f50281536bcc3db49e3854adc6effcb98019a63f6d5ee5624a29058">bustub::ExpressionType::ALIAS</a>:</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>        name = <span class="stringliteral">&quot;Alias&quot;</span>;</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>        <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>      <span class="keywordflow">case</span> <a class="code hl_enumvalue" href="../../de/dda/namespacebustub.html#ad966f68740f50281536bcc3db49e3854ab06c3953f8a5bf7626d39cc1dd967598">bustub::ExpressionType::FUNC_CALL</a>:</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>        name = <span class="stringliteral">&quot;FuncCall&quot;</span>;</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>        <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>      <span class="keywordflow">case</span> <a class="code hl_enumvalue" href="../../de/dda/namespacebustub.html#ad966f68740f50281536bcc3db49e3854a70e2a9fa5d5ec49dc67453eab551251d">bustub::ExpressionType::WINDOW</a>:</div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>        name = <span class="stringliteral">&quot;Window&quot;</span>;</div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>        <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>    }</div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>    <span class="keywordflow">return</span> formatter&lt;string_view&gt;::format(name, ctx);</div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>  }</div>
+</div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>};</div>
+</div>
+<div class="ttc" id="aclassbustub_1_1BoundExpression_html"><div class="ttname"><a href="../../de/d78/classbustub_1_1BoundExpression.html">bustub::BoundExpression</a></div><div class="ttdef"><b>Definition</b> bound_expression.h:31</div></div>
+<div class="ttc" id="aclassbustub_1_1BoundExpression_html_a14553d84df560b6e3dedc07e1872755f"><div class="ttname"><a href="../../de/d78/classbustub_1_1BoundExpression.html#a14553d84df560b6e3dedc07e1872755f">bustub::BoundExpression::HasWindowFunction</a></div><div class="ttdeci">virtual auto HasWindowFunction() const -&gt; bool</div><div class="ttdef"><b>Definition</b> bound_expression.h:43</div></div>
+<div class="ttc" id="aclassbustub_1_1BoundExpression_html_a50f9da1b6525b75f203fff61778b4867"><div class="ttname"><a href="../../de/d78/classbustub_1_1BoundExpression.html#a50f9da1b6525b75f203fff61778b4867">bustub::BoundExpression::type_</a></div><div class="ttdeci">ExpressionType type_</div><div class="ttdef"><b>Definition</b> bound_expression.h:46</div></div>
+<div class="ttc" id="aclassbustub_1_1BoundExpression_html_a514252ea47e97dd0c421116c5ab77067"><div class="ttname"><a href="../../de/d78/classbustub_1_1BoundExpression.html#a514252ea47e97dd0c421116c5ab77067">bustub::BoundExpression::HasAggregation</a></div><div class="ttdeci">virtual auto HasAggregation() const -&gt; bool</div><div class="ttdef"><b>Definition</b> bound_expression.h:41</div></div>
+<div class="ttc" id="aclassbustub_1_1BoundExpression_html_a6453827c6cb55c35cb2108425287e702"><div class="ttname"><a href="../../de/d78/classbustub_1_1BoundExpression.html#a6453827c6cb55c35cb2108425287e702">bustub::BoundExpression::BoundExpression</a></div><div class="ttdeci">BoundExpression(ExpressionType type)</div><div class="ttdef"><b>Definition</b> bound_expression.h:33</div></div>
+<div class="ttc" id="aclassbustub_1_1BoundExpression_html_a6afb85f759fa02abe4b726ae86c1ee5e"><div class="ttname"><a href="../../de/d78/classbustub_1_1BoundExpression.html#a6afb85f759fa02abe4b726ae86c1ee5e">bustub::BoundExpression::ToString</a></div><div class="ttdeci">virtual auto ToString() const -&gt; std::string</div><div class="ttdef"><b>Definition</b> bound_expression.h:37</div></div>
+<div class="ttc" id="aclassbustub_1_1BoundExpression_html_a95ab26622b4dd006cbdab23ac8b6a546"><div class="ttname"><a href="../../de/d78/classbustub_1_1BoundExpression.html#a95ab26622b4dd006cbdab23ac8b6a546">bustub::BoundExpression::IsInvalid</a></div><div class="ttdeci">auto IsInvalid() const -&gt; bool</div><div class="ttdef"><b>Definition</b> bound_expression.h:39</div></div>
+<div class="ttc" id="aclassbustub_1_1BoundExpression_html_acd273986f821727a7ec1a591f6dabbf6"><div class="ttname"><a href="../../de/d78/classbustub_1_1BoundExpression.html#acd273986f821727a7ec1a591f6dabbf6">bustub::BoundExpression::~BoundExpression</a></div><div class="ttdeci">virtual ~BoundExpression()=default</div></div>
+<div class="ttc" id="aclassbustub_1_1BoundExpression_html_ad97fdc602d10872f1729c2d725acc384"><div class="ttname"><a href="../../de/d78/classbustub_1_1BoundExpression.html#ad97fdc602d10872f1729c2d725acc384">bustub::BoundExpression::BoundExpression</a></div><div class="ttdeci">BoundExpression()=default</div></div>
+<div class="ttc" id="amacros_8h_html"><div class="ttname"><a href="../../de/d3c/macros_8h.html">macros.h</a></div></div>
+<div class="ttc" id="amacros_8h_html_ab1282cb3b18636534805bfc9448e889f"><div class="ttname"><a href="../../de/d3c/macros_8h.html#ab1282cb3b18636534805bfc9448e889f">UNREACHABLE</a></div><div class="ttdeci">#define UNREACHABLE(message)</div><div class="ttdef"><b>Definition</b> macros.h:31</div></div>
+<div class="ttc" id="anamespacebustub_html"><div class="ttname"><a href="../../de/dda/namespacebustub.html">bustub</a></div><div class="ttdef"><b>Definition</b> bind_create.cpp:53</div></div>
+<div class="ttc" id="anamespacebustub_html_a49735e6748963f5515394bbb228f1fc8a3e1271c17ff094d1820c69fbcc4c19eb"><div class="ttname"><a href="../../de/dda/namespacebustub.html#a49735e6748963f5515394bbb228f1fc8a3e1271c17ff094d1820c69fbcc4c19eb">bustub::INVALID</a></div><div class="ttdeci">@ INVALID</div><div class="ttdef"><b>Definition</b> type_id.h:17</div></div>
+<div class="ttc" id="anamespacebustub_html_ad966f68740f50281536bcc3db49e3854"><div class="ttname"><a href="../../de/dda/namespacebustub.html#ad966f68740f50281536bcc3db49e3854">bustub::ExpressionType</a></div><div class="ttdeci">ExpressionType</div><div class="ttdef"><b>Definition</b> bound_expression.h:13</div></div>
+<div class="ttc" id="anamespacebustub_html_ad966f68740f50281536bcc3db49e3854a079d434771f5c57c40bd937d618fea40"><div class="ttname"><a href="../../de/dda/namespacebustub.html#ad966f68740f50281536bcc3db49e3854a079d434771f5c57c40bd937d618fea40">bustub::ExpressionType::BINARY_OP</a></div><div class="ttdeci">@ BINARY_OP</div></div>
+<div class="ttc" id="anamespacebustub_html_ad966f68740f50281536bcc3db49e3854a5e86ef217bec121d0f6ace1be8d5cdd9"><div class="ttname"><a href="../../de/dda/namespacebustub.html#ad966f68740f50281536bcc3db49e3854a5e86ef217bec121d0f6ace1be8d5cdd9">bustub::ExpressionType::AGG_CALL</a></div><div class="ttdeci">@ AGG_CALL</div></div>
+<div class="ttc" id="anamespacebustub_html_ad966f68740f50281536bcc3db49e3854a6a72a6a776662a244f82d31e9274a07b"><div class="ttname"><a href="../../de/dda/namespacebustub.html#ad966f68740f50281536bcc3db49e3854a6a72a6a776662a244f82d31e9274a07b">bustub::ExpressionType::FUNCTION</a></div><div class="ttdeci">@ FUNCTION</div></div>
+<div class="ttc" id="anamespacebustub_html_ad966f68740f50281536bcc3db49e3854a6a9a1f58caa6c5ec50ca5f4003e53fb3"><div class="ttname"><a href="../../de/dda/namespacebustub.html#ad966f68740f50281536bcc3db49e3854a6a9a1f58caa6c5ec50ca5f4003e53fb3">bustub::ExpressionType::TYPE_CAST</a></div><div class="ttdeci">@ TYPE_CAST</div></div>
+<div class="ttc" id="anamespacebustub_html_ad966f68740f50281536bcc3db49e3854a70e2a9fa5d5ec49dc67453eab551251d"><div class="ttname"><a href="../../de/dda/namespacebustub.html#ad966f68740f50281536bcc3db49e3854a70e2a9fa5d5ec49dc67453eab551251d">bustub::ExpressionType::WINDOW</a></div><div class="ttdeci">@ WINDOW</div></div>
+<div class="ttc" id="anamespacebustub_html_ad966f68740f50281536bcc3db49e3854a87a14f7e8cd5c34a8383e16a5ae8bac3"><div class="ttname"><a href="../../de/dda/namespacebustub.html#ad966f68740f50281536bcc3db49e3854a87a14f7e8cd5c34a8383e16a5ae8bac3">bustub::ExpressionType::UNARY_OP</a></div><div class="ttdeci">@ UNARY_OP</div></div>
+<div class="ttc" id="anamespacebustub_html_ad966f68740f50281536bcc3db49e3854a8ab2630ada18b94a005a0c5399d9d483"><div class="ttname"><a href="../../de/dda/namespacebustub.html#ad966f68740f50281536bcc3db49e3854a8ab2630ada18b94a005a0c5399d9d483">bustub::ExpressionType::STAR</a></div><div class="ttdeci">@ STAR</div></div>
+<div class="ttc" id="anamespacebustub_html_ad966f68740f50281536bcc3db49e3854a8d6b5cada83510220f59e00ce86d4d92"><div class="ttname"><a href="../../de/dda/namespacebustub.html#ad966f68740f50281536bcc3db49e3854a8d6b5cada83510220f59e00ce86d4d92">bustub::ExpressionType::CONSTANT</a></div><div class="ttdeci">@ CONSTANT</div></div>
+<div class="ttc" id="anamespacebustub_html_ad966f68740f50281536bcc3db49e3854ab06c3953f8a5bf7626d39cc1dd967598"><div class="ttname"><a href="../../de/dda/namespacebustub.html#ad966f68740f50281536bcc3db49e3854ab06c3953f8a5bf7626d39cc1dd967598">bustub::ExpressionType::FUNC_CALL</a></div><div class="ttdeci">@ FUNC_CALL</div></div>
+<div class="ttc" id="anamespacebustub_html_ad966f68740f50281536bcc3db49e3854ac8b01296b2ca946ec0de3397573179e9"><div class="ttname"><a href="../../de/dda/namespacebustub.html#ad966f68740f50281536bcc3db49e3854ac8b01296b2ca946ec0de3397573179e9">bustub::ExpressionType::COLUMN_REF</a></div><div class="ttdeci">@ COLUMN_REF</div></div>
+<div class="ttc" id="anamespacebustub_html_ad966f68740f50281536bcc3db49e3854accc0377a8afbf50e7094f5c23a8af223"><div class="ttname"><a href="../../de/dda/namespacebustub.html#ad966f68740f50281536bcc3db49e3854accc0377a8afbf50e7094f5c23a8af223">bustub::ExpressionType::INVALID</a></div><div class="ttdeci">@ INVALID</div></div>
+<div class="ttc" id="anamespacebustub_html_ad966f68740f50281536bcc3db49e3854adc6effcb98019a63f6d5ee5624a29058"><div class="ttname"><a href="../../de/dda/namespacebustub.html#ad966f68740f50281536bcc3db49e3854adc6effcb98019a63f6d5ee5624a29058">bustub::ExpressionType::ALIAS</a></div><div class="ttdeci">@ ALIAS</div></div>
+<div class="ttc" id="anamespacestd_html"><div class="ttname"><a href="../../d8/dcc/namespacestd.html">std</a></div><div class="ttdef"><b>Definition</b> rid.h:70</div></div>
+<div class="ttc" id="astructfmt_1_1formatter_3_01T_00_01std_1_1enable__if__t_3_01std_1_1is__base__of_3_01bustub_1_1Bouc1d62e550ac0324b4b9187256464c9eb_html_a47e9fe121ac8f2221a44302afba2f5fb"><div class="ttname"><a href="../../d9/d8e/structfmt_1_1formatter_3_01T_00_01std_1_1enable__if__t_3_01std_1_1is__base__of_3_01bustub_1_1Bouc1d62e550ac0324b4b9187256464c9eb.html#a47e9fe121ac8f2221a44302afba2f5fb">fmt::formatter&lt; T, std::enable_if_t&lt; std::is_base_of&lt; bustub::BoundExpression, T &gt;::value, char &gt; &gt;::format</a></div><div class="ttdeci">auto format(const T &amp;x, FormatCtx &amp;ctx) const</div><div class="ttdef"><b>Definition</b> bound_expression.h:55</div></div>
+<div class="ttc" id="astructfmt_1_1formatter_3_01bustub_1_1ExpressionType_01_4_html_a08a3be4a5e1081e024e3771e36619594"><div class="ttname"><a href="../../df/d46/structfmt_1_1formatter_3_01bustub_1_1ExpressionType_01_4.html#a08a3be4a5e1081e024e3771e36619594">fmt::formatter&lt; bustub::ExpressionType &gt;::format</a></div><div class="ttdeci">auto format(bustub::ExpressionType c, FormatContext &amp;ctx) const</div><div class="ttdef"><b>Definition</b> bound_expression.h:72</div></div>
+<div class="ttc" id="astructfmt_1_1formatter_3_01std_1_1unique__ptr_3_01T_01_4_00_01std_1_1enable__if__t_3_01std_1_1is33298db1cd19343f8e4279616d13ed8c_html_a43221edc0817a49d0d6e00d15f428a83"><div class="ttname"><a href="../../d1/d9d/structfmt_1_1formatter_3_01std_1_1unique__ptr_3_01T_01_4_00_01std_1_1enable__if__t_3_01std_1_1is33298db1cd19343f8e4279616d13ed8c.html#a43221edc0817a49d0d6e00d15f428a83">fmt::formatter&lt; std::unique_ptr&lt; T &gt;, std::enable_if_t&lt; std::is_base_of&lt; bustub::BoundExpression, T &gt;::value, char &gt; &gt;::format</a></div><div class="ttdeci">auto format(const std::unique_ptr&lt; T &gt; &amp;x, FormatCtx &amp;ctx) const</div><div class="ttdef"><b>Definition</b> bound_expression.h:64</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
+</small></address>
+</body>
+</html>

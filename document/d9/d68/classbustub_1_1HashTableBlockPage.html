@@ -1,0 +1,631 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>数据库系统 CMU15-445/645: bustub::HashTableBlockPage&lt; KeyType, ValueType, KeyComparator &gt; 模板类 参考</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/searchdata.js"></script>
+<script type="text/javascript" src="../../search/search.js"></script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">数据库系统 CMU15-445/645<span id="projectnumber">&#160;1.0.0</span>
+   </div>
+   <div id="projectbrief">CMU15-445/645 是基于现代 C++ 开发的支持并发操作的简单 SQL 操作的单机数据库</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.9.8 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "../../search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('../../',true,false,'search.php','搜索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="../../de/dda/namespacebustub.html">bustub</a></li><li class="navelem"><a class="el" href="../../d9/d68/classbustub_1_1HashTableBlockPage.html">HashTableBlockPage</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Public 成员函数</a> &#124;
+<a href="#pri-attribs">Private 属性</a> &#124;
+<a href="../../d7/dee/classbustub_1_1HashTableBlockPage-members.html">所有成员列表</a>  </div>
+  <div class="headertitle"><div class="title">bustub::HashTableBlockPage&lt; KeyType, ValueType, KeyComparator &gt; 模板类 参考</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p><code>#include &lt;<a class="el" href="../../d4/dfd/hash__table__block__page_8h_source.html">hash_table_block_page.h</a>&gt;</code></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Public 成员函数</h2></td></tr>
+<tr class="memitem:a1979c63cee9d2485f5d3546f4a2a48c1" id="r_a1979c63cee9d2485f5d3546f4a2a48c1"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d68/classbustub_1_1HashTableBlockPage.html#a1979c63cee9d2485f5d3546f4a2a48c1">HashTableBlockPage</a> ()=delete</td></tr>
+<tr class="separator:a1979c63cee9d2485f5d3546f4a2a48c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afc17eb091d01b0f5fb9d1104803e217a" id="r_afc17eb091d01b0f5fb9d1104803e217a"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d68/classbustub_1_1HashTableBlockPage.html#afc17eb091d01b0f5fb9d1104803e217a">KeyAt</a> (<a class="el" href="../../de/dda/namespacebustub.html#af654f3e6b0049833791de7ee61bf5bca">slot_offset_t</a> bucket_ind) const -&gt; KeyType</td></tr>
+<tr class="separator:afc17eb091d01b0f5fb9d1104803e217a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a06a2176fdb218bb46ae850233f33d8fb" id="r_a06a2176fdb218bb46ae850233f33d8fb"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d68/classbustub_1_1HashTableBlockPage.html#a06a2176fdb218bb46ae850233f33d8fb">ValueAt</a> (<a class="el" href="../../de/dda/namespacebustub.html#af654f3e6b0049833791de7ee61bf5bca">slot_offset_t</a> bucket_ind) const -&gt; ValueType</td></tr>
+<tr class="separator:a06a2176fdb218bb46ae850233f33d8fb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a99b2f04e1b8dc12a8776c16ff2a9e560" id="r_a99b2f04e1b8dc12a8776c16ff2a9e560"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d68/classbustub_1_1HashTableBlockPage.html#a99b2f04e1b8dc12a8776c16ff2a9e560">Insert</a> (<a class="el" href="../../de/dda/namespacebustub.html#af654f3e6b0049833791de7ee61bf5bca">slot_offset_t</a> bucket_ind, const KeyType &amp;key, const ValueType &amp;value) -&gt; bool</td></tr>
+<tr class="separator:a99b2f04e1b8dc12a8776c16ff2a9e560"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aed18afda3bfffcb51dfdb98854cea353" id="r_aed18afda3bfffcb51dfdb98854cea353"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d68/classbustub_1_1HashTableBlockPage.html#aed18afda3bfffcb51dfdb98854cea353">Remove</a> (<a class="el" href="../../de/dda/namespacebustub.html#af654f3e6b0049833791de7ee61bf5bca">slot_offset_t</a> bucket_ind)</td></tr>
+<tr class="separator:aed18afda3bfffcb51dfdb98854cea353"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adcd9949d2e9a572e8bb3c7298431bcc7" id="r_adcd9949d2e9a572e8bb3c7298431bcc7"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d68/classbustub_1_1HashTableBlockPage.html#adcd9949d2e9a572e8bb3c7298431bcc7">IsOccupied</a> (<a class="el" href="../../de/dda/namespacebustub.html#af654f3e6b0049833791de7ee61bf5bca">slot_offset_t</a> bucket_ind) const -&gt; bool</td></tr>
+<tr class="separator:adcd9949d2e9a572e8bb3c7298431bcc7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae9e856013c5b3d2c6691c55dea321cc9" id="r_ae9e856013c5b3d2c6691c55dea321cc9"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d68/classbustub_1_1HashTableBlockPage.html#ae9e856013c5b3d2c6691c55dea321cc9">IsReadable</a> (<a class="el" href="../../de/dda/namespacebustub.html#af654f3e6b0049833791de7ee61bf5bca">slot_offset_t</a> bucket_ind) const -&gt; bool</td></tr>
+<tr class="separator:ae9e856013c5b3d2c6691c55dea321cc9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a39e7df86376ca46b9124d2c08d64cc1c" id="r_a39e7df86376ca46b9124d2c08d64cc1c"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d68/classbustub_1_1HashTableBlockPage.html#a39e7df86376ca46b9124d2c08d64cc1c">GetValue</a> (KeyType key, KeyComparator cmp, std::vector&lt; ValueType &gt; *result) -&gt; bool</td></tr>
+<tr class="separator:a39e7df86376ca46b9124d2c08d64cc1c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a817f73895500a1556533ad67c93abd92" id="r_a817f73895500a1556533ad67c93abd92"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d68/classbustub_1_1HashTableBlockPage.html#a817f73895500a1556533ad67c93abd92">Insert</a> (KeyType key, ValueType value, KeyComparator cmp) -&gt; bool</td></tr>
+<tr class="separator:a817f73895500a1556533ad67c93abd92"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a98e184334f5f3c3d05b88b09c680a070" id="r_a98e184334f5f3c3d05b88b09c680a070"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d68/classbustub_1_1HashTableBlockPage.html#a98e184334f5f3c3d05b88b09c680a070">Remove</a> (KeyType key, ValueType value, KeyComparator cmp) -&gt; bool</td></tr>
+<tr class="separator:a98e184334f5f3c3d05b88b09c680a070"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad7b715c7981caa6b6a3272d7f96185c9" id="r_ad7b715c7981caa6b6a3272d7f96185c9"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d68/classbustub_1_1HashTableBlockPage.html#ad7b715c7981caa6b6a3272d7f96185c9">NumReadable</a> () -&gt; uint32_t</td></tr>
+<tr class="separator:ad7b715c7981caa6b6a3272d7f96185c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3b3bd99dee0cc8b17854e7c3c2bf6ab6" id="r_a3b3bd99dee0cc8b17854e7c3c2bf6ab6"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d68/classbustub_1_1HashTableBlockPage.html#a3b3bd99dee0cc8b17854e7c3c2bf6ab6">IsFull</a> () -&gt; bool</td></tr>
+<tr class="separator:a3b3bd99dee0cc8b17854e7c3c2bf6ab6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa0cc2c9468904a32f317c771e2877413" id="r_aa0cc2c9468904a32f317c771e2877413"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d68/classbustub_1_1HashTableBlockPage.html#aa0cc2c9468904a32f317c771e2877413">IsEmpty</a> () -&gt; bool</td></tr>
+<tr class="separator:aa0cc2c9468904a32f317c771e2877413"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3a0d146d53148dc87205de890028b2bb" id="r_a3a0d146d53148dc87205de890028b2bb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d68/classbustub_1_1HashTableBlockPage.html#a3a0d146d53148dc87205de890028b2bb">PrintBucket</a> ()</td></tr>
+<tr class="separator:a3a0d146d53148dc87205de890028b2bb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
+Private 属性</h2></td></tr>
+<tr class="memitem:ac09d8d238d477e2a9ac6accece870559" id="r_ac09d8d238d477e2a9ac6accece870559"><td class="memItemLeft" align="right" valign="top">std::atomic_char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d68/classbustub_1_1HashTableBlockPage.html#ac09d8d238d477e2a9ac6accece870559">occupied_</a> [(<a class="el" href="../../d6/d3b/hash__table__page__defs_8h.html#aa248adf6523ba18254eca1aef1a12670">BLOCK_ARRAY_SIZE</a> - 1)/8+1]</td></tr>
+<tr class="separator:ac09d8d238d477e2a9ac6accece870559"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a01edcd837e0cee77b963fd286e44e67e" id="r_a01edcd837e0cee77b963fd286e44e67e"><td class="memItemLeft" align="right" valign="top">std::atomic_char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d68/classbustub_1_1HashTableBlockPage.html#a01edcd837e0cee77b963fd286e44e67e">readable_</a> [(<a class="el" href="../../d6/d3b/hash__table__page__defs_8h.html#aa248adf6523ba18254eca1aef1a12670">BLOCK_ARRAY_SIZE</a> - 1)/8+1]</td></tr>
+<tr class="separator:a01edcd837e0cee77b963fd286e44e67e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0f1340dd69562c07e1c980d7df4de283" id="r_a0f1340dd69562c07e1c980d7df4de283"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d1/d36/b__plus__tree__page_8h.html#a139704601c819af8cdce06a6c1080a85">MappingType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d68/classbustub_1_1HashTableBlockPage.html#a0f1340dd69562c07e1c980d7df4de283">array_</a> [1]</td></tr>
+<tr class="separator:a0f1340dd69562c07e1c980d7df4de283"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
+<div class="textblock"><div class="compoundTemplParams">template&lt;typename KeyType, typename ValueType, typename KeyComparator&gt;<br />
+class bustub::HashTableBlockPage&lt; KeyType, ValueType, KeyComparator &gt;</div><p>Store indexed key and and value together within block page. Supports non-unique keys.</p>
+<h2><a class="anchor" id="autotoc_md26"></a>
+Block page format (keys are stored in order):</h2>
+<h2><a class="anchor" id="autotoc_md27"></a>
+| KEY(1) + VALUE(1) | KEY(2) + VALUE(2) | ... | KEY(n) + VALUE(n)</h2>
+<p>Here '+' means concatenation. </p>
+</div><h2 class="groupheader">构造及析构函数说明</h2>
+<a id="a1979c63cee9d2485f5d3546f4a2a48c1" name="a1979c63cee9d2485f5d3546f4a2a48c1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1979c63cee9d2485f5d3546f4a2a48c1">&#9670;&#160;</a></span>HashTableBlockPage()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename KeyType , typename ValueType , typename KeyComparator &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d9/d68/classbustub_1_1HashTableBlockPage.html">bustub::HashTableBlockPage</a>&lt; KeyType, ValueType, KeyComparator &gt;::HashTableBlockPage </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">delete</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">成员函数说明</h2>
+<a id="a39e7df86376ca46b9124d2c08d64cc1c" name="a39e7df86376ca46b9124d2c08d64cc1c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a39e7df86376ca46b9124d2c08d64cc1c">&#9670;&#160;</a></span>GetValue()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename KeyType , typename ValueType , typename KeyComparator &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">auto <a class="el" href="../../d9/d68/classbustub_1_1HashTableBlockPage.html">bustub::HashTableBlockPage</a>&lt; KeyType, ValueType, KeyComparator &gt;::GetValue </td>
+          <td>(</td>
+          <td class="paramtype">KeyType&#160;</td>
+          <td class="paramname"><em>key</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">KeyComparator&#160;</td>
+          <td class="paramname"><em>cmp</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::vector&lt; ValueType &gt; *&#160;</td>
+          <td class="paramname"><em>result</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> -&gt;  bool</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Scan the bucket and collect values that have the matching key</p>
+<dl class="section return"><dt>返回</dt><dd>true if at least one key matched </dd></dl>
+
+</div>
+</div>
+<a id="a817f73895500a1556533ad67c93abd92" name="a817f73895500a1556533ad67c93abd92"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a817f73895500a1556533ad67c93abd92">&#9670;&#160;</a></span>Insert() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename KeyType , typename ValueType , typename KeyComparator &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">auto <a class="el" href="../../d9/d68/classbustub_1_1HashTableBlockPage.html">bustub::HashTableBlockPage</a>&lt; KeyType, ValueType, KeyComparator &gt;::Insert </td>
+          <td>(</td>
+          <td class="paramtype">KeyType&#160;</td>
+          <td class="paramname"><em>key</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">ValueType&#160;</td>
+          <td class="paramname"><em>value</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">KeyComparator&#160;</td>
+          <td class="paramname"><em>cmp</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> -&gt;  bool</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Attempts to insert a key and value in the bucket. The insert is thread safe. It uses compare and swap to claim the index, and then writes the key and value into the index, and then marks the index as readable.</p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">key</td><td>key to insert </td></tr>
+    <tr><td class="paramname">value</td><td>value to insert </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>true if inserted, false if duplicate KV pair or bucket is full </dd></dl>
+
+</div>
+</div>
+<a id="a99b2f04e1b8dc12a8776c16ff2a9e560" name="a99b2f04e1b8dc12a8776c16ff2a9e560"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a99b2f04e1b8dc12a8776c16ff2a9e560">&#9670;&#160;</a></span>Insert() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename KeyType , typename ValueType , typename KeyComparator &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">auto <a class="el" href="../../d9/d68/classbustub_1_1HashTableBlockPage.html">bustub::HashTableBlockPage</a>&lt; KeyType, ValueType, KeyComparator &gt;::Insert </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../de/dda/namespacebustub.html#af654f3e6b0049833791de7ee61bf5bca">slot_offset_t</a>&#160;</td>
+          <td class="paramname"><em>bucket_ind</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const KeyType &amp;&#160;</td>
+          <td class="paramname"><em>key</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const ValueType &amp;&#160;</td>
+          <td class="paramname"><em>value</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> -&gt;  bool</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Attempts to insert a key and value into an index in the block. The insert is thread safe. It uses compare and swap to claim the index, and then writes the key and value into the index, and then marks the index as readable.</p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">bucket_ind</td><td>index to write the key and value to </td></tr>
+    <tr><td class="paramname">key</td><td>key to insert </td></tr>
+    <tr><td class="paramname">value</td><td>value to insert </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>If the value is inserted successfully, it returns true. If the index is marked as occupied before the key and value can be inserted, Insert returns false. </dd></dl>
+
+</div>
+</div>
+<a id="aa0cc2c9468904a32f317c771e2877413" name="aa0cc2c9468904a32f317c771e2877413"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa0cc2c9468904a32f317c771e2877413">&#9670;&#160;</a></span>IsEmpty()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename KeyType , typename ValueType , typename KeyComparator &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">auto <a class="el" href="../../d9/d68/classbustub_1_1HashTableBlockPage.html">bustub::HashTableBlockPage</a>&lt; KeyType, ValueType, KeyComparator &gt;::IsEmpty </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> -&gt;  bool</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="section return"><dt>返回</dt><dd>whether the bucket is empty </dd></dl>
+
+</div>
+</div>
+<a id="a3b3bd99dee0cc8b17854e7c3c2bf6ab6" name="a3b3bd99dee0cc8b17854e7c3c2bf6ab6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3b3bd99dee0cc8b17854e7c3c2bf6ab6">&#9670;&#160;</a></span>IsFull()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename KeyType , typename ValueType , typename KeyComparator &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">auto <a class="el" href="../../d9/d68/classbustub_1_1HashTableBlockPage.html">bustub::HashTableBlockPage</a>&lt; KeyType, ValueType, KeyComparator &gt;::IsFull </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> -&gt;  bool</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="section return"><dt>返回</dt><dd>whether the bucket is full </dd></dl>
+
+</div>
+</div>
+<a id="adcd9949d2e9a572e8bb3c7298431bcc7" name="adcd9949d2e9a572e8bb3c7298431bcc7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adcd9949d2e9a572e8bb3c7298431bcc7">&#9670;&#160;</a></span>IsOccupied()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename KeyType , typename ValueType , typename KeyComparator &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">auto <a class="el" href="../../d9/d68/classbustub_1_1HashTableBlockPage.html">bustub::HashTableBlockPage</a>&lt; KeyType, ValueType, KeyComparator &gt;::IsOccupied </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../de/dda/namespacebustub.html#af654f3e6b0049833791de7ee61bf5bca">slot_offset_t</a>&#160;</td>
+          <td class="paramname"><em>bucket_ind</em></td><td>)</td>
+          <td> const -&gt;  bool</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Returns whether or not an index is occupied (key/value pair or tombstone)</p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">bucket_ind</td><td>index to look at </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>true if the index is occupied, false otherwise </dd></dl>
+
+</div>
+</div>
+<a id="ae9e856013c5b3d2c6691c55dea321cc9" name="ae9e856013c5b3d2c6691c55dea321cc9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae9e856013c5b3d2c6691c55dea321cc9">&#9670;&#160;</a></span>IsReadable()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename KeyType , typename ValueType , typename KeyComparator &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">auto <a class="el" href="../../d9/d68/classbustub_1_1HashTableBlockPage.html">bustub::HashTableBlockPage</a>&lt; KeyType, ValueType, KeyComparator &gt;::IsReadable </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../de/dda/namespacebustub.html#af654f3e6b0049833791de7ee61bf5bca">slot_offset_t</a>&#160;</td>
+          <td class="paramname"><em>bucket_ind</em></td><td>)</td>
+          <td> const -&gt;  bool</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Returns whether or not an index is readable (valid key/value pair)</p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">bucket_ind</td><td>index to look at </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>true if the index is readable, false otherwise </dd></dl>
+
+</div>
+</div>
+<a id="afc17eb091d01b0f5fb9d1104803e217a" name="afc17eb091d01b0f5fb9d1104803e217a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afc17eb091d01b0f5fb9d1104803e217a">&#9670;&#160;</a></span>KeyAt()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename KeyType , typename ValueType , typename KeyComparator &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">auto <a class="el" href="../../d9/d68/classbustub_1_1HashTableBlockPage.html">bustub::HashTableBlockPage</a>&lt; KeyType, ValueType, KeyComparator &gt;::KeyAt </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../de/dda/namespacebustub.html#af654f3e6b0049833791de7ee61bf5bca">slot_offset_t</a>&#160;</td>
+          <td class="paramname"><em>bucket_ind</em></td><td>)</td>
+          <td> const -&gt;  KeyType</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Gets the key at an index in the block.</p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">bucket_ind</td><td>the index in the block to get the key at </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>key at index bucket_ind of the block </dd></dl>
+
+</div>
+</div>
+<a id="ad7b715c7981caa6b6a3272d7f96185c9" name="ad7b715c7981caa6b6a3272d7f96185c9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad7b715c7981caa6b6a3272d7f96185c9">&#9670;&#160;</a></span>NumReadable()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename KeyType , typename ValueType , typename KeyComparator &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">auto <a class="el" href="../../d9/d68/classbustub_1_1HashTableBlockPage.html">bustub::HashTableBlockPage</a>&lt; KeyType, ValueType, KeyComparator &gt;::NumReadable </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> -&gt;  uint32_t</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="section return"><dt>返回</dt><dd>the number of readable elements, i.e. current size </dd></dl>
+
+</div>
+</div>
+<a id="a3a0d146d53148dc87205de890028b2bb" name="a3a0d146d53148dc87205de890028b2bb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3a0d146d53148dc87205de890028b2bb">&#9670;&#160;</a></span>PrintBucket()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename KeyType , typename ValueType , typename KeyComparator &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="../../d9/d68/classbustub_1_1HashTableBlockPage.html">bustub::HashTableBlockPage</a>&lt; KeyType, ValueType, KeyComparator &gt;::PrintBucket </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Prints the bucket's occupancy information </p>
+
+</div>
+</div>
+<a id="a98e184334f5f3c3d05b88b09c680a070" name="a98e184334f5f3c3d05b88b09c680a070"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a98e184334f5f3c3d05b88b09c680a070">&#9670;&#160;</a></span>Remove() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename KeyType , typename ValueType , typename KeyComparator &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">auto <a class="el" href="../../d9/d68/classbustub_1_1HashTableBlockPage.html">bustub::HashTableBlockPage</a>&lt; KeyType, ValueType, KeyComparator &gt;::Remove </td>
+          <td>(</td>
+          <td class="paramtype">KeyType&#160;</td>
+          <td class="paramname"><em>key</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">ValueType&#160;</td>
+          <td class="paramname"><em>value</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">KeyComparator&#160;</td>
+          <td class="paramname"><em>cmp</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> -&gt;  bool</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Removes a key and value. </p><dl class="section return"><dt>返回</dt><dd>true if removed, false if not found </dd></dl>
+
+</div>
+</div>
+<a id="aed18afda3bfffcb51dfdb98854cea353" name="aed18afda3bfffcb51dfdb98854cea353"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aed18afda3bfffcb51dfdb98854cea353">&#9670;&#160;</a></span>Remove() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename KeyType , typename ValueType , typename KeyComparator &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="../../d9/d68/classbustub_1_1HashTableBlockPage.html">bustub::HashTableBlockPage</a>&lt; KeyType, ValueType, KeyComparator &gt;::Remove </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../de/dda/namespacebustub.html#af654f3e6b0049833791de7ee61bf5bca">slot_offset_t</a>&#160;</td>
+          <td class="paramname"><em>bucket_ind</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Removes a key and value at index.</p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">bucket_ind</td><td>ind to remove the value </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a06a2176fdb218bb46ae850233f33d8fb" name="a06a2176fdb218bb46ae850233f33d8fb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a06a2176fdb218bb46ae850233f33d8fb">&#9670;&#160;</a></span>ValueAt()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename KeyType , typename ValueType , typename KeyComparator &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">auto <a class="el" href="../../d9/d68/classbustub_1_1HashTableBlockPage.html">bustub::HashTableBlockPage</a>&lt; KeyType, ValueType, KeyComparator &gt;::ValueAt </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../de/dda/namespacebustub.html#af654f3e6b0049833791de7ee61bf5bca">slot_offset_t</a>&#160;</td>
+          <td class="paramname"><em>bucket_ind</em></td><td>)</td>
+          <td> const -&gt;  ValueType</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Gets the value at an index in the block.</p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">bucket_ind</td><td>the index in the block to get the value at </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>value at index bucket_ind of the block </dd></dl>
+
+</div>
+</div>
+<h2 class="groupheader">类成员变量说明</h2>
+<a id="a0f1340dd69562c07e1c980d7df4de283" name="a0f1340dd69562c07e1c980d7df4de283"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0f1340dd69562c07e1c980d7df4de283">&#9670;&#160;</a></span>array_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename KeyType , typename ValueType , typename KeyComparator &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d1/d36/b__plus__tree__page_8h.html#a139704601c819af8cdce06a6c1080a85">MappingType</a> <a class="el" href="../../d9/d68/classbustub_1_1HashTableBlockPage.html">bustub::HashTableBlockPage</a>&lt; KeyType, ValueType, KeyComparator &gt;::array_[1]</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ac09d8d238d477e2a9ac6accece870559" name="ac09d8d238d477e2a9ac6accece870559"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac09d8d238d477e2a9ac6accece870559">&#9670;&#160;</a></span>occupied_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename KeyType , typename ValueType , typename KeyComparator &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::atomic_char <a class="el" href="../../d9/d68/classbustub_1_1HashTableBlockPage.html">bustub::HashTableBlockPage</a>&lt; KeyType, ValueType, KeyComparator &gt;::occupied_[(<a class="el" href="../../d6/d3b/hash__table__page__defs_8h.html#aa248adf6523ba18254eca1aef1a12670">BLOCK_ARRAY_SIZE</a> - 1)/8+1]</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a01edcd837e0cee77b963fd286e44e67e" name="a01edcd837e0cee77b963fd286e44e67e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a01edcd837e0cee77b963fd286e44e67e">&#9670;&#160;</a></span>readable_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename KeyType , typename ValueType , typename KeyComparator &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::atomic_char <a class="el" href="../../d9/d68/classbustub_1_1HashTableBlockPage.html">bustub::HashTableBlockPage</a>&lt; KeyType, ValueType, KeyComparator &gt;::readable_[(<a class="el" href="../../d6/d3b/hash__table__page__defs_8h.html#aa248adf6523ba18254eca1aef1a12670">BLOCK_ARRAY_SIZE</a> - 1)/8+1]</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<hr/>该类的文档由以下文件生成:<ul>
+<li>src/include/storage/page/<a class="el" href="../../d4/dfd/hash__table__block__page_8h_source.html">hash_table_block_page.h</a></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
+</small></address>
+</body>
+</html>

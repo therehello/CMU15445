@@ -1,0 +1,579 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>数据库系统 CMU15-445/645: bustub::TablePage类 参考</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/searchdata.js"></script>
+<script type="text/javascript" src="../../search/search.js"></script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">数据库系统 CMU15-445/645<span id="projectnumber">&#160;1.0.0</span>
+   </div>
+   <div id="projectbrief">CMU15-445/645 是基于现代 C++ 开发的支持并发操作的简单 SQL 操作的单机数据库</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.9.8 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "../../search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('../../',true,false,'search.php','搜索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="../../de/dda/namespacebustub.html">bustub</a></li><li class="navelem"><a class="el" href="../../d5/d1c/classbustub_1_1TablePage.html">TablePage</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Public 成员函数</a> &#124;
+<a href="#pri-types">Private 类型</a> &#124;
+<a href="#pri-attribs">Private 属性</a> &#124;
+<a href="#pri-static-attribs">静态 Private 属性</a> &#124;
+<a href="../../de/d49/classbustub_1_1TablePage-members.html">所有成员列表</a>  </div>
+  <div class="headertitle"><div class="title">bustub::TablePage类 参考</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p><code>#include &lt;<a class="el" href="../../da/d17/table__page_8h_source.html">table_page.h</a>&gt;</code></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Public 成员函数</h2></td></tr>
+<tr class="memitem:ac010b4a48135d340e2b23ddce27f76f9" id="r_ac010b4a48135d340e2b23ddce27f76f9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d1c/classbustub_1_1TablePage.html#ac010b4a48135d340e2b23ddce27f76f9">Init</a> ()</td></tr>
+<tr class="separator:ac010b4a48135d340e2b23ddce27f76f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af27c455113bee275e1dc185ceb9d0459" id="r_af27c455113bee275e1dc185ceb9d0459"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d1c/classbustub_1_1TablePage.html#af27c455113bee275e1dc185ceb9d0459">GetNumTuples</a> () const -&gt; uint32_t</td></tr>
+<tr class="separator:af27c455113bee275e1dc185ceb9d0459"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a92785ef4f240ca9573a6f9a4e0b5cdf4" id="r_a92785ef4f240ca9573a6f9a4e0b5cdf4"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d1c/classbustub_1_1TablePage.html#a92785ef4f240ca9573a6f9a4e0b5cdf4">GetNextPageId</a> () const -&gt; <a class="el" href="../../de/dda/namespacebustub.html#a8de4ac099b23d712481109bb846decde">page_id_t</a></td></tr>
+<tr class="separator:a92785ef4f240ca9573a6f9a4e0b5cdf4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae76444e2eb46f9030af404be81b72075" id="r_ae76444e2eb46f9030af404be81b72075"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d1c/classbustub_1_1TablePage.html#ae76444e2eb46f9030af404be81b72075">SetNextPageId</a> (<a class="el" href="../../de/dda/namespacebustub.html#a8de4ac099b23d712481109bb846decde">page_id_t</a> next_page_id)</td></tr>
+<tr class="separator:ae76444e2eb46f9030af404be81b72075"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2bb642400ce8acf73348abd986162c56" id="r_a2bb642400ce8acf73348abd986162c56"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d1c/classbustub_1_1TablePage.html#a2bb642400ce8acf73348abd986162c56">GetNextTupleOffset</a> (const <a class="el" href="../../dc/d90/structbustub_1_1TupleMeta.html">TupleMeta</a> &amp;meta, const <a class="el" href="../../d0/ded/classbustub_1_1Tuple.html">Tuple</a> &amp;tuple) const -&gt; std::optional&lt; uint16_t &gt;</td></tr>
+<tr class="separator:a2bb642400ce8acf73348abd986162c56"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1a02ad13356caadff4f45386ba770deb" id="r_a1a02ad13356caadff4f45386ba770deb"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d1c/classbustub_1_1TablePage.html#a1a02ad13356caadff4f45386ba770deb">InsertTuple</a> (const <a class="el" href="../../dc/d90/structbustub_1_1TupleMeta.html">TupleMeta</a> &amp;meta, const <a class="el" href="../../d0/ded/classbustub_1_1Tuple.html">Tuple</a> &amp;tuple) -&gt; std::optional&lt; uint16_t &gt;</td></tr>
+<tr class="separator:a1a02ad13356caadff4f45386ba770deb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3e8dbff9e8a24be444352d540163f220" id="r_a3e8dbff9e8a24be444352d540163f220"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d1c/classbustub_1_1TablePage.html#a3e8dbff9e8a24be444352d540163f220">UpdateTupleMeta</a> (const <a class="el" href="../../dc/d90/structbustub_1_1TupleMeta.html">TupleMeta</a> &amp;meta, const <a class="el" href="../../d3/d22/classbustub_1_1RID.html">RID</a> &amp;rid)</td></tr>
+<tr class="separator:a3e8dbff9e8a24be444352d540163f220"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad7b96bb62841a3f4e5445289f6424ac0" id="r_ad7b96bb62841a3f4e5445289f6424ac0"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d1c/classbustub_1_1TablePage.html#ad7b96bb62841a3f4e5445289f6424ac0">GetTuple</a> (const <a class="el" href="../../d3/d22/classbustub_1_1RID.html">RID</a> &amp;rid) const -&gt; std::pair&lt; <a class="el" href="../../dc/d90/structbustub_1_1TupleMeta.html">TupleMeta</a>, <a class="el" href="../../d0/ded/classbustub_1_1Tuple.html">Tuple</a> &gt;</td></tr>
+<tr class="separator:ad7b96bb62841a3f4e5445289f6424ac0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa7d593f2131484c4d86d0adb910a401a" id="r_aa7d593f2131484c4d86d0adb910a401a"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d1c/classbustub_1_1TablePage.html#aa7d593f2131484c4d86d0adb910a401a">GetTupleMeta</a> (const <a class="el" href="../../d3/d22/classbustub_1_1RID.html">RID</a> &amp;rid) const -&gt; <a class="el" href="../../dc/d90/structbustub_1_1TupleMeta.html">TupleMeta</a></td></tr>
+<tr class="separator:aa7d593f2131484c4d86d0adb910a401a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac0533723243708cf0a10778c82c17877" id="r_ac0533723243708cf0a10778c82c17877"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d1c/classbustub_1_1TablePage.html#ac0533723243708cf0a10778c82c17877">UpdateTupleInPlaceUnsafe</a> (const <a class="el" href="../../dc/d90/structbustub_1_1TupleMeta.html">TupleMeta</a> &amp;meta, const <a class="el" href="../../d0/ded/classbustub_1_1Tuple.html">Tuple</a> &amp;tuple, <a class="el" href="../../d3/d22/classbustub_1_1RID.html">RID</a> rid)</td></tr>
+<tr class="separator:ac0533723243708cf0a10778c82c17877"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-types" name="pri-types"></a>
+Private 类型</h2></td></tr>
+<tr class="memitem:a19a50678a1db828cd41aae1d187fdaf2" id="r_a19a50678a1db828cd41aae1d187fdaf2"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d1c/classbustub_1_1TablePage.html#a19a50678a1db828cd41aae1d187fdaf2">TupleInfo</a> = std::tuple&lt; uint16_t, uint16_t, <a class="el" href="../../dc/d90/structbustub_1_1TupleMeta.html">TupleMeta</a> &gt;</td></tr>
+<tr class="separator:a19a50678a1db828cd41aae1d187fdaf2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
+Private 属性</h2></td></tr>
+<tr class="memitem:af6caa6b239f5056774294c28250dfe1e" id="r_af6caa6b239f5056774294c28250dfe1e"><td class="memItemLeft" align="right" valign="top">char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d1c/classbustub_1_1TablePage.html#af6caa6b239f5056774294c28250dfe1e">page_start_</a> [0]</td></tr>
+<tr class="separator:af6caa6b239f5056774294c28250dfe1e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8bdad11467aa5652546ef53a605c1446" id="r_a8bdad11467aa5652546ef53a605c1446"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../de/dda/namespacebustub.html#a8de4ac099b23d712481109bb846decde">page_id_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d1c/classbustub_1_1TablePage.html#a8bdad11467aa5652546ef53a605c1446">next_page_id_</a></td></tr>
+<tr class="separator:a8bdad11467aa5652546ef53a605c1446"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a90a0d6cbe86f213bd1db2b93ad5215d3" id="r_a90a0d6cbe86f213bd1db2b93ad5215d3"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d1c/classbustub_1_1TablePage.html#a90a0d6cbe86f213bd1db2b93ad5215d3">num_tuples_</a></td></tr>
+<tr class="separator:a90a0d6cbe86f213bd1db2b93ad5215d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a43d3e0ea13885bc366bff9b34dc6fe3e" id="r_a43d3e0ea13885bc366bff9b34dc6fe3e"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d1c/classbustub_1_1TablePage.html#a43d3e0ea13885bc366bff9b34dc6fe3e">num_deleted_tuples_</a></td></tr>
+<tr class="separator:a43d3e0ea13885bc366bff9b34dc6fe3e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a61cee9fb92539b3c968849b419a15693" id="r_a61cee9fb92539b3c968849b419a15693"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d5/d1c/classbustub_1_1TablePage.html#a19a50678a1db828cd41aae1d187fdaf2">TupleInfo</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d1c/classbustub_1_1TablePage.html#a61cee9fb92539b3c968849b419a15693">tuple_info_</a> [0]</td></tr>
+<tr class="separator:a61cee9fb92539b3c968849b419a15693"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-static-attribs" name="pri-static-attribs"></a>
+静态 Private 属性</h2></td></tr>
+<tr class="memitem:af662c652342e1e62abac7b52a955ccbe" id="r_af662c652342e1e62abac7b52a955ccbe"><td class="memItemLeft" align="right" valign="top">static constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d1c/classbustub_1_1TablePage.html#af662c652342e1e62abac7b52a955ccbe">TUPLE_INFO_SIZE</a> = 24</td></tr>
+<tr class="separator:af662c652342e1e62abac7b52a955ccbe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
+<div class="textblock"><h2><a class="anchor" id="autotoc_md34"></a>
+Slotted page format:</h2>
+<h2><a class="anchor" id="autotoc_md35"></a>
+| HEADER | ... FREE SPACE ... | ... INSERTED TUPLES ... |</h2>
+<p>^ free space pointer</p>
+<h2><a class="anchor" id="autotoc_md36"></a>
+Header format (size in bytes):</h2>
+<h2><a class="anchor" id="autotoc_md37"></a>
+| NextPageId (4)| NumTuples(2) | NumDeletedTuples(2) |</h2>
+<hr  />
+ <h2><a class="anchor" id="autotoc_md38"></a>
+| Tuple_1 offset+size (4) | Tuple_2 offset+size (4) | ... |</h2>
+<p><a class="el" href="../../d0/ded/classbustub_1_1Tuple.html">Tuple</a> format: | meta | data | </p>
+</div><h2 class="groupheader">成员类型定义说明</h2>
+<a id="a19a50678a1db828cd41aae1d187fdaf2" name="a19a50678a1db828cd41aae1d187fdaf2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a19a50678a1db828cd41aae1d187fdaf2">&#9670;&#160;</a></span>TupleInfo</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="../../d5/d1c/classbustub_1_1TablePage.html#a19a50678a1db828cd41aae1d187fdaf2">bustub::TablePage::TupleInfo</a> =  std::tuple&lt;uint16_t, uint16_t, <a class="el" href="../../dc/d90/structbustub_1_1TupleMeta.html">TupleMeta</a>&gt;</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">成员函数说明</h2>
+<a id="a92785ef4f240ca9573a6f9a4e0b5cdf4" name="a92785ef4f240ca9573a6f9a4e0b5cdf4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a92785ef4f240ca9573a6f9a4e0b5cdf4">&#9670;&#160;</a></span>GetNextPageId()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto bustub::TablePage::GetNextPageId </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const -&gt; <a class="el" href="../../de/dda/namespacebustub.html#a8de4ac099b23d712481109bb846decde">page_id_t</a> </td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<dl class="section return"><dt>返回</dt><dd>the page ID of the next table page </dd></dl>
+
+</div>
+</div>
+<a id="a2bb642400ce8acf73348abd986162c56" name="a2bb642400ce8acf73348abd986162c56"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2bb642400ce8acf73348abd986162c56">&#9670;&#160;</a></span>GetNextTupleOffset()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto bustub::TablePage::GetNextTupleOffset </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="../../dc/d90/structbustub_1_1TupleMeta.html">TupleMeta</a> &amp;&#160;</td>
+          <td class="paramname"><em>meta</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="../../d0/ded/classbustub_1_1Tuple.html">Tuple</a> &amp;&#160;</td>
+          <td class="paramname"><em>tuple</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const -&gt; std::optional&lt;uint16_t&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Get the next offset to insert, return nullopt if this tuple cannot fit in this page </p>
+
+</div>
+</div>
+<a id="af27c455113bee275e1dc185ceb9d0459" name="af27c455113bee275e1dc185ceb9d0459"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af27c455113bee275e1dc185ceb9d0459">&#9670;&#160;</a></span>GetNumTuples()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto bustub::TablePage::GetNumTuples </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const -&gt; uint32_t </td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<dl class="section return"><dt>返回</dt><dd>number of tuples in this page </dd></dl>
+
+</div>
+</div>
+<a id="ad7b96bb62841a3f4e5445289f6424ac0" name="ad7b96bb62841a3f4e5445289f6424ac0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad7b96bb62841a3f4e5445289f6424ac0">&#9670;&#160;</a></span>GetTuple()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto bustub::TablePage::GetTuple </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="../../d3/d22/classbustub_1_1RID.html">RID</a> &amp;&#160;</td>
+          <td class="paramname"><em>rid</em></td><td>)</td>
+          <td> const -&gt; std::pair&lt;<a class="el" href="../../dc/d90/structbustub_1_1TupleMeta.html">TupleMeta</a>, <a class="el" href="../../d0/ded/classbustub_1_1Tuple.html">Tuple</a>&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Read a tuple from a table. </p>
+
+</div>
+</div>
+<a id="aa7d593f2131484c4d86d0adb910a401a" name="aa7d593f2131484c4d86d0adb910a401a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa7d593f2131484c4d86d0adb910a401a">&#9670;&#160;</a></span>GetTupleMeta()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto bustub::TablePage::GetTupleMeta </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="../../d3/d22/classbustub_1_1RID.html">RID</a> &amp;&#160;</td>
+          <td class="paramname"><em>rid</em></td><td>)</td>
+          <td> const -&gt; <a class="el" href="../../dc/d90/structbustub_1_1TupleMeta.html">TupleMeta</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Read a tuple meta from a table. </p>
+
+</div>
+</div>
+<a id="ac010b4a48135d340e2b23ddce27f76f9" name="ac010b4a48135d340e2b23ddce27f76f9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac010b4a48135d340e2b23ddce27f76f9">&#9670;&#160;</a></span>Init()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void bustub::TablePage::Init </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Initialize the <a class="el" href="../../d5/d1c/classbustub_1_1TablePage.html">TablePage</a> header. </p>
+
+</div>
+</div>
+<a id="a1a02ad13356caadff4f45386ba770deb" name="a1a02ad13356caadff4f45386ba770deb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1a02ad13356caadff4f45386ba770deb">&#9670;&#160;</a></span>InsertTuple()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto bustub::TablePage::InsertTuple </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="../../dc/d90/structbustub_1_1TupleMeta.html">TupleMeta</a> &amp;&#160;</td>
+          <td class="paramname"><em>meta</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="../../d0/ded/classbustub_1_1Tuple.html">Tuple</a> &amp;&#160;</td>
+          <td class="paramname"><em>tuple</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> -&gt; std::optional&lt;uint16_t&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Insert a tuple into the table. </p><dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">tuple</td><td>tuple to insert </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>true if the insert is successful (i.e. there is enough space) </dd></dl>
+
+</div>
+</div>
+<a id="ae76444e2eb46f9030af404be81b72075" name="ae76444e2eb46f9030af404be81b72075"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae76444e2eb46f9030af404be81b72075">&#9670;&#160;</a></span>SetNextPageId()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void bustub::TablePage::SetNextPageId </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../de/dda/namespacebustub.html#a8de4ac099b23d712481109bb846decde">page_id_t</a>&#160;</td>
+          <td class="paramname"><em>next_page_id</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Set the page id of the next page in the table. </p>
+
+</div>
+</div>
+<a id="ac0533723243708cf0a10778c82c17877" name="ac0533723243708cf0a10778c82c17877"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac0533723243708cf0a10778c82c17877">&#9670;&#160;</a></span>UpdateTupleInPlaceUnsafe()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void bustub::TablePage::UpdateTupleInPlaceUnsafe </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="../../dc/d90/structbustub_1_1TupleMeta.html">TupleMeta</a> &amp;&#160;</td>
+          <td class="paramname"><em>meta</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="../../d0/ded/classbustub_1_1Tuple.html">Tuple</a> &amp;&#160;</td>
+          <td class="paramname"><em>tuple</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="../../d3/d22/classbustub_1_1RID.html">RID</a>&#160;</td>
+          <td class="paramname"><em>rid</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Update a tuple in place. </p>
+
+</div>
+</div>
+<a id="a3e8dbff9e8a24be444352d540163f220" name="a3e8dbff9e8a24be444352d540163f220"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3e8dbff9e8a24be444352d540163f220">&#9670;&#160;</a></span>UpdateTupleMeta()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void bustub::TablePage::UpdateTupleMeta </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="../../dc/d90/structbustub_1_1TupleMeta.html">TupleMeta</a> &amp;&#160;</td>
+          <td class="paramname"><em>meta</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="../../d3/d22/classbustub_1_1RID.html">RID</a> &amp;&#160;</td>
+          <td class="paramname"><em>rid</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Update a tuple. </p>
+
+</div>
+</div>
+<h2 class="groupheader">类成员变量说明</h2>
+<a id="a8bdad11467aa5652546ef53a605c1446" name="a8bdad11467aa5652546ef53a605c1446"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8bdad11467aa5652546ef53a605c1446">&#9670;&#160;</a></span>next_page_id_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../de/dda/namespacebustub.html#a8de4ac099b23d712481109bb846decde">page_id_t</a> bustub::TablePage::next_page_id_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a43d3e0ea13885bc366bff9b34dc6fe3e" name="a43d3e0ea13885bc366bff9b34dc6fe3e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a43d3e0ea13885bc366bff9b34dc6fe3e">&#9670;&#160;</a></span>num_deleted_tuples_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint16_t bustub::TablePage::num_deleted_tuples_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a90a0d6cbe86f213bd1db2b93ad5215d3" name="a90a0d6cbe86f213bd1db2b93ad5215d3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a90a0d6cbe86f213bd1db2b93ad5215d3">&#9670;&#160;</a></span>num_tuples_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint16_t bustub::TablePage::num_tuples_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="af6caa6b239f5056774294c28250dfe1e" name="af6caa6b239f5056774294c28250dfe1e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af6caa6b239f5056774294c28250dfe1e">&#9670;&#160;</a></span>page_start_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">char bustub::TablePage::page_start_[0]</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a61cee9fb92539b3c968849b419a15693" name="a61cee9fb92539b3c968849b419a15693"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a61cee9fb92539b3c968849b419a15693">&#9670;&#160;</a></span>tuple_info_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d5/d1c/classbustub_1_1TablePage.html#a19a50678a1db828cd41aae1d187fdaf2">TupleInfo</a> bustub::TablePage::tuple_info_[0]</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="af662c652342e1e62abac7b52a955ccbe" name="af662c652342e1e62abac7b52a955ccbe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af662c652342e1e62abac7b52a955ccbe">&#9670;&#160;</a></span>TUPLE_INFO_SIZE</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr size_t bustub::TablePage::TUPLE_INFO_SIZE = 24</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">constexpr</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<hr/>该类的文档由以下文件生成:<ul>
+<li>src/include/storage/page/<a class="el" href="../../da/d17/table__page_8h_source.html">table_page.h</a></li>
+<li>src/storage/page/<a class="el" href="../../dd/d3a/table__page_8cpp.html">table_page.cpp</a></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
+</small></address>
+</body>
+</html>

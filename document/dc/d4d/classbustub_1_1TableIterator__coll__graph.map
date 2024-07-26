@@ -1,0 +1,15 @@
+<map id="bustub::TableIterator" name="bustub::TableIterator">
+<area shape="rect" id="Node000001" title=" " alt="" coords="187,372,343,397"/>
+<area shape="rect" id="Node000002" href="$d7/de0/classbustub_1_1TableHeap.html" title=" " alt="" coords="107,269,250,295"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="184,308,189,328,199,346,214,360,232,370,230,374,211,364,195,350,184,330,179,309"/>
+<area shape="rect" id="Node000003" href="$d6/d5d/classbustub_1_1BufferPoolManager.html" title=" " alt="" coords="79,181,278,207"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="181,221,181,269,176,269,176,221"/>
+<area shape="rect" id="Node000004" href="$d4/d87/classbustub_1_1Page.html" title=" " alt="" coords="50,93,155,119"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="124,127,170,179,166,183,120,131"/>
+<area shape="rect" id="Node000005" href="$d8/dbd/classbustub_1_1ReaderWriterLatch.html" title=" " alt="" coords="5,5,200,31"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="105,45,105,93,100,93,100,45"/>
+<area shape="rect" id="Node000006" href="$d7/d4e/classbustub_1_1LogManager.html" title=" " alt="" coords="179,93,333,119"/>
+<area shape="poly" id="edge5_Node000003_Node000006" title=" " alt="" coords="238,131,191,183,187,179,234,127"/>
+<area shape="rect" id="Node000007" href="$d3/d22/classbustub_1_1RID.html" title=" " alt="" coords="274,269,371,295"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="311,308,274,373,270,371,307,306"/>
+</map>

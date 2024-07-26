@@ -1,0 +1,9 @@
+<map id="bustub::Exception" name="bustub::Exception">
+<area shape="rect" id="Node000001" title=" " alt="" coords="161,79,299,104"/>
+<area shape="rect" id="Node000003" href="$d2/d07/classbustub_1_1ExecutionException.html" title=" " alt="" coords="5,152,207,177"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="200,113,128,154,125,149,197,108"/>
+<area shape="rect" id="Node000004" href="$d9/df6/classbustub_1_1NotImplementedException.html" title=" " alt="" coords="231,152,479,177"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="263,108,336,149,334,154,261,113"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="161,5,299,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="233,44,233,79,227,79,227,44"/>
+</map>

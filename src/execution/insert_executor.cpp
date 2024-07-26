@@ -25,7 +25,7 @@ InsertExecutor::InsertExecutor(ExecutorContext *exec_ctx, const InsertPlanNode *
     : AbstractExecutor(exec_ctx),
       plan_(plan),
       table_info_(exec_ctx->GetCatalog()->GetTable(plan->GetTableOid())),
-      index_infos(exec_ctx->GetCatalog()->GetTableIndexes(table_info_->name_)),
+      index_infos_(exec_ctx->GetCatalog()->GetTableIndexes(table_info_->name_)),
       child_executor_(std::move(child_executor)) {}
 
 void InsertExecutor::Init() { child_executor_->Init(); }
@@ -48,7 +48,7 @@ auto InsertExecutor::Next(Tuple *tuple, RID *rid) -> bool {
 }
 
 void InsertExecutor::UpdateIndexes(Tuple &tuple, RID &rid) const {
-  for (auto &index_info : index_infos) {
+  for (auto &index_info : index_infos_) {
     std::vector<Value> index;
     for (const auto &col : index_info->key_schema_.GetColumns()) {
       auto idx = table_info_->schema_.GetColIdx(col.GetName());

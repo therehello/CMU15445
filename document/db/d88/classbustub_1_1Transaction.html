@@ -1,0 +1,999 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>数据库系统 CMU15-445/645: bustub::Transaction类 参考</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/searchdata.js"></script>
+<script type="text/javascript" src="../../search/search.js"></script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">数据库系统 CMU15-445/645<span id="projectnumber">&#160;1.0.0</span>
+   </div>
+   <div id="projectbrief">CMU15-445/645 是基于现代 C++ 开发的支持并发操作的简单 SQL 操作的单机数据库</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.9.8 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "../../search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('../../',true,false,'search.php','搜索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="../../de/dda/namespacebustub.html">bustub</a></li><li class="navelem"><a class="el" href="../../db/d88/classbustub_1_1Transaction.html">Transaction</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Public 成员函数</a> &#124;
+<a href="#pri-attribs">Private 属性</a> &#124;
+<a href="#friends">友元</a> &#124;
+<a href="../../d8/d17/classbustub_1_1Transaction-members.html">所有成员列表</a>  </div>
+  <div class="headertitle"><div class="title">bustub::Transaction类 参考</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p><code>#include &lt;<a class="el" href="../../d0/db6/transaction_8h_source.html">transaction.h</a>&gt;</code></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Public 成员函数</h2></td></tr>
+<tr class="memitem:a0edaa5d6451d8f95d4d6c7d7c20f9644" id="r_a0edaa5d6451d8f95d4d6c7d7c20f9644"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d88/classbustub_1_1Transaction.html#a0edaa5d6451d8f95d4d6c7d7c20f9644">Transaction</a> (<a class="el" href="../../de/dda/namespacebustub.html#a6fc9c36dd76ed654983fc39f5fef1235">txn_id_t</a> txn_id, <a class="el" href="../../de/dda/namespacebustub.html#a57ce43470b186e0066e7f128390005b5">IsolationLevel</a> isolation_level=<a class="el" href="../../de/dda/namespacebustub.html#a57ce43470b186e0066e7f128390005b5a9eb39169b7db6ecee4ee0980284659bd">IsolationLevel::SNAPSHOT_ISOLATION</a>)</td></tr>
+<tr class="separator:a0edaa5d6451d8f95d4d6c7d7c20f9644"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2ab0d2d2b2af598c72444f877e589299" id="r_a2ab0d2d2b2af598c72444f877e589299"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d88/classbustub_1_1Transaction.html#a2ab0d2d2b2af598c72444f877e589299">~Transaction</a> ()=default</td></tr>
+<tr class="separator:a2ab0d2d2b2af598c72444f877e589299"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4bdedef75c39b7574b50291c7524ca11" id="r_a4bdedef75c39b7574b50291c7524ca11"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d88/classbustub_1_1Transaction.html#a4bdedef75c39b7574b50291c7524ca11">DISALLOW_COPY</a> (<a class="el" href="../../db/d88/classbustub_1_1Transaction.html">Transaction</a>)</td></tr>
+<tr class="separator:a4bdedef75c39b7574b50291c7524ca11"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7c60c7441fedd73af2eb8634cca1a3b5" id="r_a7c60c7441fedd73af2eb8634cca1a3b5"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d88/classbustub_1_1Transaction.html#a7c60c7441fedd73af2eb8634cca1a3b5">GetThreadId</a> () const -&gt; std::thread::id</td></tr>
+<tr class="separator:a7c60c7441fedd73af2eb8634cca1a3b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0cff1804d9a30080ec97cc0c2e4c16f1" id="r_a0cff1804d9a30080ec97cc0c2e4c16f1"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d88/classbustub_1_1Transaction.html#a0cff1804d9a30080ec97cc0c2e4c16f1">GetTransactionId</a> () const -&gt; <a class="el" href="../../de/dda/namespacebustub.html#a6fc9c36dd76ed654983fc39f5fef1235">txn_id_t</a></td></tr>
+<tr class="separator:a0cff1804d9a30080ec97cc0c2e4c16f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5be31ea6e513abaa781b0c4b91affcfd" id="r_a5be31ea6e513abaa781b0c4b91affcfd"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d88/classbustub_1_1Transaction.html#a5be31ea6e513abaa781b0c4b91affcfd">GetTransactionIdHumanReadable</a> () const -&gt; <a class="el" href="../../de/dda/namespacebustub.html#a6fc9c36dd76ed654983fc39f5fef1235">txn_id_t</a></td></tr>
+<tr class="separator:a5be31ea6e513abaa781b0c4b91affcfd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a30aa3f592f018ee7943ffc417b600edd" id="r_a30aa3f592f018ee7943ffc417b600edd"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d88/classbustub_1_1Transaction.html#a30aa3f592f018ee7943ffc417b600edd">GetTransactionTempTs</a> () const -&gt; <a class="el" href="../../de/dda/namespacebustub.html#a380c89b0eec72f60d52692852fa725cf">timestamp_t</a></td></tr>
+<tr class="separator:a30aa3f592f018ee7943ffc417b600edd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2b46ab2b6e37d0559e53db5e7a2fae8b" id="r_a2b46ab2b6e37d0559e53db5e7a2fae8b"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d88/classbustub_1_1Transaction.html#a2b46ab2b6e37d0559e53db5e7a2fae8b">GetIsolationLevel</a> () const -&gt; <a class="el" href="../../de/dda/namespacebustub.html#a57ce43470b186e0066e7f128390005b5">IsolationLevel</a></td></tr>
+<tr class="separator:a2b46ab2b6e37d0559e53db5e7a2fae8b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a14ee844d68c5926b2b333cfe65ada5aa" id="r_a14ee844d68c5926b2b333cfe65ada5aa"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d88/classbustub_1_1Transaction.html#a14ee844d68c5926b2b333cfe65ada5aa">GetTransactionState</a> () const -&gt; <a class="el" href="../../de/dda/namespacebustub.html#ae58cece0a05d5cfc7ec83fc4a9161e20">TransactionState</a></td></tr>
+<tr class="separator:a14ee844d68c5926b2b333cfe65ada5aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2e2cb4bc3c4cd7ca12edfee6c5f719ca" id="r_a2e2cb4bc3c4cd7ca12edfee6c5f719ca"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d88/classbustub_1_1Transaction.html#a2e2cb4bc3c4cd7ca12edfee6c5f719ca">GetReadTs</a> () const -&gt; <a class="el" href="../../de/dda/namespacebustub.html#a380c89b0eec72f60d52692852fa725cf">timestamp_t</a></td></tr>
+<tr class="separator:a2e2cb4bc3c4cd7ca12edfee6c5f719ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac41b22b1ee193001a6d626919d55eb9c" id="r_ac41b22b1ee193001a6d626919d55eb9c"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d88/classbustub_1_1Transaction.html#ac41b22b1ee193001a6d626919d55eb9c">GetCommitTs</a> () const -&gt; <a class="el" href="../../de/dda/namespacebustub.html#a380c89b0eec72f60d52692852fa725cf">timestamp_t</a></td></tr>
+<tr class="separator:ac41b22b1ee193001a6d626919d55eb9c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1ff4db80821c56dbdd41f6f4829a1ad1" id="r_a1ff4db80821c56dbdd41f6f4829a1ad1"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d88/classbustub_1_1Transaction.html#a1ff4db80821c56dbdd41f6f4829a1ad1">ModifyUndoLog</a> (int log_idx, <a class="el" href="../../d9/d97/structbustub_1_1UndoLog.html">UndoLog</a> new_log)</td></tr>
+<tr class="separator:a1ff4db80821c56dbdd41f6f4829a1ad1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab57d40edecbf7040820e9a674072252b" id="r_ab57d40edecbf7040820e9a674072252b"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d88/classbustub_1_1Transaction.html#ab57d40edecbf7040820e9a674072252b">AppendUndoLog</a> (<a class="el" href="../../d9/d97/structbustub_1_1UndoLog.html">UndoLog</a> log) -&gt; <a class="el" href="../../d7/daf/structbustub_1_1UndoLink.html">UndoLink</a></td></tr>
+<tr class="separator:ab57d40edecbf7040820e9a674072252b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abeb7e8293bb06abd6d236083c2db83f8" id="r_abeb7e8293bb06abd6d236083c2db83f8"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d88/classbustub_1_1Transaction.html#abeb7e8293bb06abd6d236083c2db83f8">AppendWriteSet</a> (<a class="el" href="../../de/dda/namespacebustub.html#a3571cdcf7aa43bd929669794e75cbc48">table_oid_t</a> t, <a class="el" href="../../d3/d22/classbustub_1_1RID.html">RID</a> rid)</td></tr>
+<tr class="separator:abeb7e8293bb06abd6d236083c2db83f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae91f20fefd436c6e0320cb7a9033ee27" id="r_ae91f20fefd436c6e0320cb7a9033ee27"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d88/classbustub_1_1Transaction.html#ae91f20fefd436c6e0320cb7a9033ee27">GetWriteSets</a> () -&gt; const std::unordered_map&lt; <a class="el" href="../../de/dda/namespacebustub.html#a3571cdcf7aa43bd929669794e75cbc48">table_oid_t</a>, std::unordered_set&lt; <a class="el" href="../../d3/d22/classbustub_1_1RID.html">RID</a> &gt; &gt; &amp;</td></tr>
+<tr class="separator:ae91f20fefd436c6e0320cb7a9033ee27"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae1889cc4379b2e16e8291de9ea892414" id="r_ae1889cc4379b2e16e8291de9ea892414"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d88/classbustub_1_1Transaction.html#ae1889cc4379b2e16e8291de9ea892414">AppendScanPredicate</a> (<a class="el" href="../../de/dda/namespacebustub.html#a3571cdcf7aa43bd929669794e75cbc48">table_oid_t</a> t, const <a class="el" href="../../de/dda/namespacebustub.html#af0cfd2fbbabe21e0e95790ff99273105">AbstractExpressionRef</a> &amp;predicate)</td></tr>
+<tr class="separator:ae1889cc4379b2e16e8291de9ea892414"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4db5efdbd58351bac2077a360e982f3a" id="r_a4db5efdbd58351bac2077a360e982f3a"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d88/classbustub_1_1Transaction.html#a4db5efdbd58351bac2077a360e982f3a">GetScanPredicates</a> () -&gt; const std::unordered_map&lt; <a class="el" href="../../de/dda/namespacebustub.html#a3571cdcf7aa43bd929669794e75cbc48">table_oid_t</a>, std::vector&lt; <a class="el" href="../../de/dda/namespacebustub.html#af0cfd2fbbabe21e0e95790ff99273105">AbstractExpressionRef</a> &gt; &gt; &amp;</td></tr>
+<tr class="separator:a4db5efdbd58351bac2077a360e982f3a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aed9cdd45ccd59cbeafe80e3d7c5c7a04" id="r_aed9cdd45ccd59cbeafe80e3d7c5c7a04"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d88/classbustub_1_1Transaction.html#aed9cdd45ccd59cbeafe80e3d7c5c7a04">GetUndoLog</a> (size_t log_id) -&gt; <a class="el" href="../../d9/d97/structbustub_1_1UndoLog.html">UndoLog</a></td></tr>
+<tr class="separator:aed9cdd45ccd59cbeafe80e3d7c5c7a04"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa4235adff075b66f4832c282b5ae93ee" id="r_aa4235adff075b66f4832c282b5ae93ee"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d88/classbustub_1_1Transaction.html#aa4235adff075b66f4832c282b5ae93ee">GetUndoLogNum</a> () -&gt; size_t</td></tr>
+<tr class="separator:aa4235adff075b66f4832c282b5ae93ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae79de6e706cf2d5e87ea1ad4cbe2340e" id="r_ae79de6e706cf2d5e87ea1ad4cbe2340e"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d88/classbustub_1_1Transaction.html#ae79de6e706cf2d5e87ea1ad4cbe2340e">ClearUndoLog</a> () -&gt; size_t</td></tr>
+<tr class="separator:ae79de6e706cf2d5e87ea1ad4cbe2340e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afbf7dfc30c0167c606092c1d4e98aed8" id="r_afbf7dfc30c0167c606092c1d4e98aed8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d88/classbustub_1_1Transaction.html#afbf7dfc30c0167c606092c1d4e98aed8">SetTainted</a> ()</td></tr>
+<tr class="separator:afbf7dfc30c0167c606092c1d4e98aed8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
+Private 属性</h2></td></tr>
+<tr class="memitem:abf85f9015498b2b31f72dece12fbfba1" id="r_abf85f9015498b2b31f72dece12fbfba1"><td class="memItemLeft" align="right" valign="top">std::atomic&lt; <a class="el" href="../../de/dda/namespacebustub.html#ae58cece0a05d5cfc7ec83fc4a9161e20">TransactionState</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d88/classbustub_1_1Transaction.html#abf85f9015498b2b31f72dece12fbfba1">state_</a> {<a class="el" href="../../de/dda/namespacebustub.html#ae58cece0a05d5cfc7ec83fc4a9161e20a43491564ebcfd38568918efbd6e840fd">TransactionState::RUNNING</a>}</td></tr>
+<tr class="separator:abf85f9015498b2b31f72dece12fbfba1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2b299b935eb8ce553c5ee98ea4e7b79a" id="r_a2b299b935eb8ce553c5ee98ea4e7b79a"><td class="memItemLeft" align="right" valign="top">std::atomic&lt; <a class="el" href="../../de/dda/namespacebustub.html#a380c89b0eec72f60d52692852fa725cf">timestamp_t</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d88/classbustub_1_1Transaction.html#a2b299b935eb8ce553c5ee98ea4e7b79a">read_ts_</a> {0}</td></tr>
+<tr class="separator:a2b299b935eb8ce553c5ee98ea4e7b79a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a70746f69763f1420f0db2705170d7390" id="r_a70746f69763f1420f0db2705170d7390"><td class="memItemLeft" align="right" valign="top">std::atomic&lt; <a class="el" href="../../de/dda/namespacebustub.html#a380c89b0eec72f60d52692852fa725cf">timestamp_t</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d88/classbustub_1_1Transaction.html#a70746f69763f1420f0db2705170d7390">commit_ts_</a> {<a class="el" href="../../de/dda/namespacebustub.html#a929ed9c4cf5eb15695e8dc9c58e01fe7">INVALID_TS</a>}</td></tr>
+<tr class="separator:a70746f69763f1420f0db2705170d7390"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7fef09268b179f6c7a84910dafcfc444" id="r_a7fef09268b179f6c7a84910dafcfc444"><td class="memItemLeft" align="right" valign="top">std::mutex&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d88/classbustub_1_1Transaction.html#a7fef09268b179f6c7a84910dafcfc444">latch_</a></td></tr>
+<tr class="separator:a7fef09268b179f6c7a84910dafcfc444"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab0c3157afc390041557cc9ece3dbba20" id="r_ab0c3157afc390041557cc9ece3dbba20"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="../../d9/d97/structbustub_1_1UndoLog.html">UndoLog</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d88/classbustub_1_1Transaction.html#ab0c3157afc390041557cc9ece3dbba20">undo_logs_</a></td></tr>
+<tr class="memdesc:ab0c3157afc390041557cc9ece3dbba20"><td class="mdescLeft">&#160;</td><td class="mdescRight">Store undo logs. Other undo logs / table heap will store (txn_id, index) pairs, and therefore you should only append to this vector or update things in-place without removing anything.  <br /></td></tr>
+<tr class="separator:ab0c3157afc390041557cc9ece3dbba20"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7ae8fddfa9fe8f2cfc76cd4c64016abb" id="r_a7ae8fddfa9fe8f2cfc76cd4c64016abb"><td class="memItemLeft" align="right" valign="top">std::unordered_map&lt; <a class="el" href="../../de/dda/namespacebustub.html#a3571cdcf7aa43bd929669794e75cbc48">table_oid_t</a>, std::unordered_set&lt; <a class="el" href="../../d3/d22/classbustub_1_1RID.html">RID</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d88/classbustub_1_1Transaction.html#a7ae8fddfa9fe8f2cfc76cd4c64016abb">write_set_</a></td></tr>
+<tr class="separator:a7ae8fddfa9fe8f2cfc76cd4c64016abb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a02d4c7b2e9a58c60c2124a10bf328c85" id="r_a02d4c7b2e9a58c60c2124a10bf328c85"><td class="memItemLeft" align="right" valign="top">std::unordered_map&lt; <a class="el" href="../../de/dda/namespacebustub.html#a3571cdcf7aa43bd929669794e75cbc48">table_oid_t</a>, std::vector&lt; <a class="el" href="../../de/dda/namespacebustub.html#af0cfd2fbbabe21e0e95790ff99273105">AbstractExpressionRef</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d88/classbustub_1_1Transaction.html#a02d4c7b2e9a58c60c2124a10bf328c85">scan_predicates_</a></td></tr>
+<tr class="separator:a02d4c7b2e9a58c60c2124a10bf328c85"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa50a4111e5debfadcf3c011e58519cb1" id="r_aa50a4111e5debfadcf3c011e58519cb1"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="../../de/dda/namespacebustub.html#a57ce43470b186e0066e7f128390005b5">IsolationLevel</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d88/classbustub_1_1Transaction.html#aa50a4111e5debfadcf3c011e58519cb1">isolation_level_</a></td></tr>
+<tr class="separator:aa50a4111e5debfadcf3c011e58519cb1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a90da1223998ba2e27dd00305c37650bc" id="r_a90da1223998ba2e27dd00305c37650bc"><td class="memItemLeft" align="right" valign="top">const std::thread::id&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d88/classbustub_1_1Transaction.html#a90da1223998ba2e27dd00305c37650bc">thread_id_</a></td></tr>
+<tr class="separator:a90da1223998ba2e27dd00305c37650bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae4c948a8bbe5d51792d56603e76bd67e" id="r_ae4c948a8bbe5d51792d56603e76bd67e"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="../../de/dda/namespacebustub.html#a6fc9c36dd76ed654983fc39f5fef1235">txn_id_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d88/classbustub_1_1Transaction.html#ae4c948a8bbe5d51792d56603e76bd67e">txn_id_</a></td></tr>
+<tr class="separator:ae4c948a8bbe5d51792d56603e76bd67e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="friends" name="friends"></a>
+友元</h2></td></tr>
+<tr class="memitem:adb936c8577cc481f904aee636498cfc0" id="r_adb936c8577cc481f904aee636498cfc0"><td class="memItemLeft" align="right" valign="top">class&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d88/classbustub_1_1Transaction.html#adb936c8577cc481f904aee636498cfc0">TransactionManager</a></td></tr>
+<tr class="separator:adb936c8577cc481f904aee636498cfc0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
+<div class="textblock"><p><a class="el" href="../../db/d88/classbustub_1_1Transaction.html">Transaction</a> tracks information related to a transaction. </p>
+</div><h2 class="groupheader">构造及析构函数说明</h2>
+<a id="a0edaa5d6451d8f95d4d6c7d7c20f9644" name="a0edaa5d6451d8f95d4d6c7d7c20f9644"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0edaa5d6451d8f95d4d6c7d7c20f9644">&#9670;&#160;</a></span>Transaction()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bustub::Transaction::Transaction </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../de/dda/namespacebustub.html#a6fc9c36dd76ed654983fc39f5fef1235">txn_id_t</a>&#160;</td>
+          <td class="paramname"><em>txn_id</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="../../de/dda/namespacebustub.html#a57ce43470b186e0066e7f128390005b5">IsolationLevel</a>&#160;</td>
+          <td class="paramname"><em>isolation_level</em> = <code><a class="el" href="../../de/dda/namespacebustub.html#a57ce43470b186e0066e7f128390005b5a9eb39169b7db6ecee4ee0980284659bd">IsolationLevel::SNAPSHOT_ISOLATION</a></code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">explicit</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a2ab0d2d2b2af598c72444f877e589299" name="a2ab0d2d2b2af598c72444f877e589299"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2ab0d2d2b2af598c72444f877e589299">&#9670;&#160;</a></span>~Transaction()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bustub::Transaction::~Transaction </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">default</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">成员函数说明</h2>
+<a id="ae1889cc4379b2e16e8291de9ea892414" name="ae1889cc4379b2e16e8291de9ea892414"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae1889cc4379b2e16e8291de9ea892414">&#9670;&#160;</a></span>AppendScanPredicate()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto bustub::Transaction::AppendScanPredicate </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../de/dda/namespacebustub.html#a3571cdcf7aa43bd929669794e75cbc48">table_oid_t</a>&#160;</td>
+          <td class="paramname"><em>t</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="../../de/dda/namespacebustub.html#af0cfd2fbbabe21e0e95790ff99273105">AbstractExpressionRef</a> &amp;&#160;</td>
+          <td class="paramname"><em>predicate</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ab57d40edecbf7040820e9a674072252b" name="ab57d40edecbf7040820e9a674072252b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab57d40edecbf7040820e9a674072252b">&#9670;&#160;</a></span>AppendUndoLog()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto bustub::Transaction::AppendUndoLog </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../d9/d97/structbustub_1_1UndoLog.html">UndoLog</a>&#160;</td>
+          <td class="paramname"><em>log</em></td><td>)</td>
+          <td> -&gt; <a class="el" href="../../d7/daf/structbustub_1_1UndoLink.html">UndoLink</a> </td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<dl class="section return"><dt>返回</dt><dd>the index of the undo log in this transaction </dd></dl>
+
+</div>
+</div>
+<a id="abeb7e8293bb06abd6d236083c2db83f8" name="abeb7e8293bb06abd6d236083c2db83f8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abeb7e8293bb06abd6d236083c2db83f8">&#9670;&#160;</a></span>AppendWriteSet()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto bustub::Transaction::AppendWriteSet </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../de/dda/namespacebustub.html#a3571cdcf7aa43bd929669794e75cbc48">table_oid_t</a>&#160;</td>
+          <td class="paramname"><em>t</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="../../d3/d22/classbustub_1_1RID.html">RID</a>&#160;</td>
+          <td class="paramname"><em>rid</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ae79de6e706cf2d5e87ea1ad4cbe2340e" name="ae79de6e706cf2d5e87ea1ad4cbe2340e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae79de6e706cf2d5e87ea1ad4cbe2340e">&#9670;&#160;</a></span>ClearUndoLog()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto bustub::Transaction::ClearUndoLog </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> -&gt; size_t </td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Use this function in leaderboard benchmarks for online garbage collection. For stop-the-world GC, simply remove the txn from the txn_map. </p>
+
+</div>
+</div>
+<a id="a4bdedef75c39b7574b50291c7524ca11" name="a4bdedef75c39b7574b50291c7524ca11"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4bdedef75c39b7574b50291c7524ca11">&#9670;&#160;</a></span>DISALLOW_COPY()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bustub::Transaction::DISALLOW_COPY </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../db/d88/classbustub_1_1Transaction.html">Transaction</a>&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ac41b22b1ee193001a6d626919d55eb9c" name="ac41b22b1ee193001a6d626919d55eb9c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac41b22b1ee193001a6d626919d55eb9c">&#9670;&#160;</a></span>GetCommitTs()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto bustub::Transaction::GetCommitTs </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const -&gt; <a class="el" href="../../de/dda/namespacebustub.html#a380c89b0eec72f60d52692852fa725cf">timestamp_t</a> </td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<dl class="section return"><dt>返回</dt><dd>the commit ts </dd></dl>
+
+</div>
+</div>
+<a id="a2b46ab2b6e37d0559e53db5e7a2fae8b" name="a2b46ab2b6e37d0559e53db5e7a2fae8b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2b46ab2b6e37d0559e53db5e7a2fae8b">&#9670;&#160;</a></span>GetIsolationLevel()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto bustub::Transaction::GetIsolationLevel </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const -&gt; <a class="el" href="../../de/dda/namespacebustub.html#a57ce43470b186e0066e7f128390005b5">IsolationLevel</a> </td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<dl class="section return"><dt>返回</dt><dd>the isolation level of this transaction </dd></dl>
+
+</div>
+</div>
+<a id="a2e2cb4bc3c4cd7ca12edfee6c5f719ca" name="a2e2cb4bc3c4cd7ca12edfee6c5f719ca"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2e2cb4bc3c4cd7ca12edfee6c5f719ca">&#9670;&#160;</a></span>GetReadTs()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto bustub::Transaction::GetReadTs </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const -&gt; <a class="el" href="../../de/dda/namespacebustub.html#a380c89b0eec72f60d52692852fa725cf">timestamp_t</a> </td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<dl class="section return"><dt>返回</dt><dd>the read ts </dd></dl>
+
+</div>
+</div>
+<a id="a4db5efdbd58351bac2077a360e982f3a" name="a4db5efdbd58351bac2077a360e982f3a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4db5efdbd58351bac2077a360e982f3a">&#9670;&#160;</a></span>GetScanPredicates()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto bustub::Transaction::GetScanPredicates </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> -&gt; const std::unordered_map&lt;<a class="el" href="../../de/dda/namespacebustub.html#a3571cdcf7aa43bd929669794e75cbc48">table_oid_t</a>, std::vector&lt;<a class="el" href="../../de/dda/namespacebustub.html#af0cfd2fbbabe21e0e95790ff99273105">AbstractExpressionRef</a>&gt;&gt; &amp; </td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a7c60c7441fedd73af2eb8634cca1a3b5" name="a7c60c7441fedd73af2eb8634cca1a3b5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7c60c7441fedd73af2eb8634cca1a3b5">&#9670;&#160;</a></span>GetThreadId()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto bustub::Transaction::GetThreadId </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const -&gt; std::thread::id </td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<dl class="section return"><dt>返回</dt><dd>the id of the thread running the transaction </dd></dl>
+
+</div>
+</div>
+<a id="a0cff1804d9a30080ec97cc0c2e4c16f1" name="a0cff1804d9a30080ec97cc0c2e4c16f1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0cff1804d9a30080ec97cc0c2e4c16f1">&#9670;&#160;</a></span>GetTransactionId()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto bustub::Transaction::GetTransactionId </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const -&gt; <a class="el" href="../../de/dda/namespacebustub.html#a6fc9c36dd76ed654983fc39f5fef1235">txn_id_t</a> </td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<dl class="section return"><dt>返回</dt><dd>the id of this transaction </dd></dl>
+
+</div>
+</div>
+<a id="a5be31ea6e513abaa781b0c4b91affcfd" name="a5be31ea6e513abaa781b0c4b91affcfd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5be31ea6e513abaa781b0c4b91affcfd">&#9670;&#160;</a></span>GetTransactionIdHumanReadable()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto bustub::Transaction::GetTransactionIdHumanReadable </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const -&gt; <a class="el" href="../../de/dda/namespacebustub.html#a6fc9c36dd76ed654983fc39f5fef1235">txn_id_t</a> </td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<dl class="section return"><dt>返回</dt><dd>the id of this transaction, stripping the highest bit. NEVER use/store this value unless for debugging. </dd></dl>
+
+</div>
+</div>
+<a id="a14ee844d68c5926b2b333cfe65ada5aa" name="a14ee844d68c5926b2b333cfe65ada5aa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a14ee844d68c5926b2b333cfe65ada5aa">&#9670;&#160;</a></span>GetTransactionState()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto bustub::Transaction::GetTransactionState </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const -&gt; <a class="el" href="../../de/dda/namespacebustub.html#ae58cece0a05d5cfc7ec83fc4a9161e20">TransactionState</a> </td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<dl class="section return"><dt>返回</dt><dd>the transaction state </dd></dl>
+
+</div>
+</div>
+<a id="a30aa3f592f018ee7943ffc417b600edd" name="a30aa3f592f018ee7943ffc417b600edd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a30aa3f592f018ee7943ffc417b600edd">&#9670;&#160;</a></span>GetTransactionTempTs()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto bustub::Transaction::GetTransactionTempTs </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const -&gt; <a class="el" href="../../de/dda/namespacebustub.html#a380c89b0eec72f60d52692852fa725cf">timestamp_t</a> </td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<dl class="section return"><dt>返回</dt><dd>the temporary timestamp of this transaction </dd></dl>
+
+</div>
+</div>
+<a id="aed9cdd45ccd59cbeafe80e3d7c5c7a04" name="aed9cdd45ccd59cbeafe80e3d7c5c7a04"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aed9cdd45ccd59cbeafe80e3d7c5c7a04">&#9670;&#160;</a></span>GetUndoLog()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto bustub::Transaction::GetUndoLog </td>
+          <td>(</td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>log_id</em></td><td>)</td>
+          <td> -&gt; <a class="el" href="../../d9/d97/structbustub_1_1UndoLog.html">UndoLog</a> </td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aa4235adff075b66f4832c282b5ae93ee" name="aa4235adff075b66f4832c282b5ae93ee"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa4235adff075b66f4832c282b5ae93ee">&#9670;&#160;</a></span>GetUndoLogNum()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto bustub::Transaction::GetUndoLogNum </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> -&gt; size_t </td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ae91f20fefd436c6e0320cb7a9033ee27" name="ae91f20fefd436c6e0320cb7a9033ee27"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae91f20fefd436c6e0320cb7a9033ee27">&#9670;&#160;</a></span>GetWriteSets()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto bustub::Transaction::GetWriteSets </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> -&gt; const std::unordered_map&lt;<a class="el" href="../../de/dda/namespacebustub.html#a3571cdcf7aa43bd929669794e75cbc48">table_oid_t</a>, std::unordered_set&lt;<a class="el" href="../../d3/d22/classbustub_1_1RID.html">RID</a>&gt;&gt; &amp; </td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a1ff4db80821c56dbdd41f6f4829a1ad1" name="a1ff4db80821c56dbdd41f6f4829a1ad1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1ff4db80821c56dbdd41f6f4829a1ad1">&#9670;&#160;</a></span>ModifyUndoLog()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto bustub::Transaction::ModifyUndoLog </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>log_idx</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="../../d9/d97/structbustub_1_1UndoLog.html">UndoLog</a>&#160;</td>
+          <td class="paramname"><em>new_log</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Modify an existing undo log. </p>
+
+</div>
+</div>
+<a id="afbf7dfc30c0167c606092c1d4e98aed8" name="afbf7dfc30c0167c606092c1d4e98aed8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afbf7dfc30c0167c606092c1d4e98aed8">&#9670;&#160;</a></span>SetTainted()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void bustub::Transaction::SetTainted </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">友元及相关函数文档</h2>
+<a id="adb936c8577cc481f904aee636498cfc0" name="adb936c8577cc481f904aee636498cfc0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adb936c8577cc481f904aee636498cfc0">&#9670;&#160;</a></span>TransactionManager</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">friend class <a class="el" href="../../dc/ddc/classbustub_1_1TransactionManager.html">TransactionManager</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">friend</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">类成员变量说明</h2>
+<a id="a70746f69763f1420f0db2705170d7390" name="a70746f69763f1420f0db2705170d7390"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a70746f69763f1420f0db2705170d7390">&#9670;&#160;</a></span>commit_ts_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::atomic&lt;<a class="el" href="../../de/dda/namespacebustub.html#a380c89b0eec72f60d52692852fa725cf">timestamp_t</a>&gt; bustub::Transaction::commit_ts_ {<a class="el" href="../../de/dda/namespacebustub.html#a929ed9c4cf5eb15695e8dc9c58e01fe7">INVALID_TS</a>}</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>The commit ts </p>
+
+</div>
+</div>
+<a id="aa50a4111e5debfadcf3c011e58519cb1" name="aa50a4111e5debfadcf3c011e58519cb1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa50a4111e5debfadcf3c011e58519cb1">&#9670;&#160;</a></span>isolation_level_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="../../de/dda/namespacebustub.html#a57ce43470b186e0066e7f128390005b5">IsolationLevel</a> bustub::Transaction::isolation_level_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>The isolation level of the transaction. </p>
+
+</div>
+</div>
+<a id="a7fef09268b179f6c7a84910dafcfc444" name="a7fef09268b179f6c7a84910dafcfc444"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7fef09268b179f6c7a84910dafcfc444">&#9670;&#160;</a></span>latch_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::mutex bustub::Transaction::latch_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>The latch for this transaction for accessing txn-level undo logs, protecting all fields below. </p>
+
+</div>
+</div>
+<a id="a2b299b935eb8ce553c5ee98ea4e7b79a" name="a2b299b935eb8ce553c5ee98ea4e7b79a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2b299b935eb8ce553c5ee98ea4e7b79a">&#9670;&#160;</a></span>read_ts_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::atomic&lt;<a class="el" href="../../de/dda/namespacebustub.html#a380c89b0eec72f60d52692852fa725cf">timestamp_t</a>&gt; bustub::Transaction::read_ts_ {0}</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>The read ts </p>
+
+</div>
+</div>
+<a id="a02d4c7b2e9a58c60c2124a10bf328c85" name="a02d4c7b2e9a58c60c2124a10bf328c85"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a02d4c7b2e9a58c60c2124a10bf328c85">&#9670;&#160;</a></span>scan_predicates_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::unordered_map&lt;<a class="el" href="../../de/dda/namespacebustub.html#a3571cdcf7aa43bd929669794e75cbc48">table_oid_t</a>, std::vector&lt;<a class="el" href="../../de/dda/namespacebustub.html#af0cfd2fbbabe21e0e95790ff99273105">AbstractExpressionRef</a>&gt; &gt; bustub::Transaction::scan_predicates_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>store all scan predicates </p>
+
+</div>
+</div>
+<a id="abf85f9015498b2b31f72dece12fbfba1" name="abf85f9015498b2b31f72dece12fbfba1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abf85f9015498b2b31f72dece12fbfba1">&#9670;&#160;</a></span>state_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::atomic&lt;<a class="el" href="../../de/dda/namespacebustub.html#ae58cece0a05d5cfc7ec83fc4a9161e20">TransactionState</a>&gt; bustub::Transaction::state_ {<a class="el" href="../../de/dda/namespacebustub.html#ae58cece0a05d5cfc7ec83fc4a9161e20a43491564ebcfd38568918efbd6e840fd">TransactionState::RUNNING</a>}</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>The state of this transaction. </p>
+
+</div>
+</div>
+<a id="a90da1223998ba2e27dd00305c37650bc" name="a90da1223998ba2e27dd00305c37650bc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a90da1223998ba2e27dd00305c37650bc">&#9670;&#160;</a></span>thread_id_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const std::thread::id bustub::Transaction::thread_id_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>The thread ID which the txn starts from. <br  />
+ </p>
+
+</div>
+</div>
+<a id="ae4c948a8bbe5d51792d56603e76bd67e" name="ae4c948a8bbe5d51792d56603e76bd67e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae4c948a8bbe5d51792d56603e76bd67e">&#9670;&#160;</a></span>txn_id_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="../../de/dda/namespacebustub.html#a6fc9c36dd76ed654983fc39f5fef1235">txn_id_t</a> bustub::Transaction::txn_id_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>The ID of this transaction. </p>
+
+</div>
+</div>
+<a id="ab0c3157afc390041557cc9ece3dbba20" name="ab0c3157afc390041557cc9ece3dbba20"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab0c3157afc390041557cc9ece3dbba20">&#9670;&#160;</a></span>undo_logs_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt;<a class="el" href="../../d9/d97/structbustub_1_1UndoLog.html">UndoLog</a>&gt; bustub::Transaction::undo_logs_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Store undo logs. Other undo logs / table heap will store (txn_id, index) pairs, and therefore you should only append to this vector or update things in-place without removing anything. </p>
+
+</div>
+</div>
+<a id="a7ae8fddfa9fe8f2cfc76cd4c64016abb" name="a7ae8fddfa9fe8f2cfc76cd4c64016abb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7ae8fddfa9fe8f2cfc76cd4c64016abb">&#9670;&#160;</a></span>write_set_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::unordered_map&lt;<a class="el" href="../../de/dda/namespacebustub.html#a3571cdcf7aa43bd929669794e75cbc48">table_oid_t</a>, std::unordered_set&lt;<a class="el" href="../../d3/d22/classbustub_1_1RID.html">RID</a>&gt; &gt; bustub::Transaction::write_set_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>stores the <a class="el" href="../../d3/d22/classbustub_1_1RID.html">RID</a> of write tuples </p>
+
+</div>
+</div>
+<hr/>该类的文档由以下文件生成:<ul>
+<li>src/include/concurrency/<a class="el" href="../../d0/db6/transaction_8h_source.html">transaction.h</a></li>
+<li>src/concurrency/<a class="el" href="../../d3/d72/transaction__manager__impl_8cpp.html">transaction_manager_impl.cpp</a></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
+</small></address>
+</body>
+</html>

@@ -1,0 +1,202 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>数据库系统 CMU15-445/645: bustub::Context类 参考</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/searchdata.js"></script>
+<script type="text/javascript" src="../../search/search.js"></script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">数据库系统 CMU15-445/645<span id="projectnumber">&#160;1.0.0</span>
+   </div>
+   <div id="projectbrief">CMU15-445/645 是基于现代 C++ 开发的支持并发操作的简单 SQL 操作的单机数据库</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.9.8 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "../../search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('../../',true,false,'search.php','搜索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="../../de/dda/namespacebustub.html">bustub</a></li><li class="navelem"><a class="el" href="../../d2/d21/classbustub_1_1Context.html">Context</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Public 成员函数</a> &#124;
+<a href="#pub-attribs">Public 属性</a> &#124;
+<a href="../../d3/d51/classbustub_1_1Context-members.html">所有成员列表</a>  </div>
+  <div class="headertitle"><div class="title">bustub::Context类 参考</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Definition of the <a class="el" href="../../d2/d21/classbustub_1_1Context.html" title="Definition of the Context class.">Context</a> class.  
+ <a href="../../d2/d21/classbustub_1_1Context.html#details">更多...</a></p>
+
+<p><code>#include &lt;<a class="el" href="../../d8/da5/b__plus__tree_8h_source.html">b_plus_tree.h</a>&gt;</code></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Public 成员函数</h2></td></tr>
+<tr class="memitem:ac684d0a45d9eb114571a7cc75b665471" id="r_ac684d0a45d9eb114571a7cc75b665471"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d21/classbustub_1_1Context.html#ac684d0a45d9eb114571a7cc75b665471">IsRootPage</a> (<a class="el" href="../../de/dda/namespacebustub.html#a8de4ac099b23d712481109bb846decde">page_id_t</a> page_id) -&gt; bool</td></tr>
+<tr class="separator:ac684d0a45d9eb114571a7cc75b665471"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
+Public 属性</h2></td></tr>
+<tr class="memitem:a879835d73e1db08c7b0bf75e4e055388" id="r_a879835d73e1db08c7b0bf75e4e055388"><td class="memItemLeft" align="right" valign="top">std::optional&lt; <a class="el" href="../../d8/dd6/classbustub_1_1WritePageGuard.html">WritePageGuard</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d21/classbustub_1_1Context.html#a879835d73e1db08c7b0bf75e4e055388">header_page_</a> {std::nullopt}</td></tr>
+<tr class="separator:a879835d73e1db08c7b0bf75e4e055388"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeace64a3329de9151dadb29416b65ceb" id="r_aeace64a3329de9151dadb29416b65ceb"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../de/dda/namespacebustub.html#a8de4ac099b23d712481109bb846decde">page_id_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d21/classbustub_1_1Context.html#aeace64a3329de9151dadb29416b65ceb">root_page_id_</a> {<a class="el" href="../../de/dda/namespacebustub.html#ae9dd773eae7950183ebc60def880f499">INVALID_PAGE_ID</a>}</td></tr>
+<tr class="separator:aeace64a3329de9151dadb29416b65ceb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5558ddb2e414aecb9b4e583f0a2a7aba" id="r_a5558ddb2e414aecb9b4e583f0a2a7aba"><td class="memItemLeft" align="right" valign="top">std::deque&lt; <a class="el" href="../../d8/dd6/classbustub_1_1WritePageGuard.html">WritePageGuard</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d21/classbustub_1_1Context.html#a5558ddb2e414aecb9b4e583f0a2a7aba">write_set_</a></td></tr>
+<tr class="separator:a5558ddb2e414aecb9b4e583f0a2a7aba"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a30665c45016d4bf6ddeab35c3e424b65" id="r_a30665c45016d4bf6ddeab35c3e424b65"><td class="memItemLeft" align="right" valign="top">std::deque&lt; <a class="el" href="../../d8/d80/classbustub_1_1ReadPageGuard.html">ReadPageGuard</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d21/classbustub_1_1Context.html#a30665c45016d4bf6ddeab35c3e424b65">read_set_</a></td></tr>
+<tr class="separator:a30665c45016d4bf6ddeab35c3e424b65"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
+<div class="textblock"><p>Definition of the <a class="el" href="../../d2/d21/classbustub_1_1Context.html" title="Definition of the Context class.">Context</a> class. </p>
+<p>Hint: This class is designed to help you keep track of the pages that you're modifying or accessing. </p>
+</div><h2 class="groupheader">成员函数说明</h2>
+<a id="ac684d0a45d9eb114571a7cc75b665471" name="ac684d0a45d9eb114571a7cc75b665471"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac684d0a45d9eb114571a7cc75b665471">&#9670;&#160;</a></span>IsRootPage()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto bustub::Context::IsRootPage </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../de/dda/namespacebustub.html#a8de4ac099b23d712481109bb846decde">page_id_t</a>&#160;</td>
+          <td class="paramname"><em>page_id</em></td><td>)</td>
+          <td> -&gt; bool </td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">类成员变量说明</h2>
+<a id="a879835d73e1db08c7b0bf75e4e055388" name="a879835d73e1db08c7b0bf75e4e055388"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a879835d73e1db08c7b0bf75e4e055388">&#9670;&#160;</a></span>header_page_</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::optional&lt;<a class="el" href="../../d8/dd6/classbustub_1_1WritePageGuard.html">WritePageGuard</a>&gt; bustub::Context::header_page_ {std::nullopt}</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a30665c45016d4bf6ddeab35c3e424b65" name="a30665c45016d4bf6ddeab35c3e424b65"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a30665c45016d4bf6ddeab35c3e424b65">&#9670;&#160;</a></span>read_set_</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::deque&lt;<a class="el" href="../../d8/d80/classbustub_1_1ReadPageGuard.html">ReadPageGuard</a>&gt; bustub::Context::read_set_</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aeace64a3329de9151dadb29416b65ceb" name="aeace64a3329de9151dadb29416b65ceb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aeace64a3329de9151dadb29416b65ceb">&#9670;&#160;</a></span>root_page_id_</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../de/dda/namespacebustub.html#a8de4ac099b23d712481109bb846decde">page_id_t</a> bustub::Context::root_page_id_ {<a class="el" href="../../de/dda/namespacebustub.html#ae9dd773eae7950183ebc60def880f499">INVALID_PAGE_ID</a>}</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a5558ddb2e414aecb9b4e583f0a2a7aba" name="a5558ddb2e414aecb9b4e583f0a2a7aba"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5558ddb2e414aecb9b4e583f0a2a7aba">&#9670;&#160;</a></span>write_set_</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::deque&lt;<a class="el" href="../../d8/dd6/classbustub_1_1WritePageGuard.html">WritePageGuard</a>&gt; bustub::Context::write_set_</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<hr/>该类的文档由以下文件生成:<ul>
+<li>src/include/storage/index/<a class="el" href="../../d8/da5/b__plus__tree_8h_source.html">b_plus_tree.h</a></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
+</small></address>
+</body>
+</html>

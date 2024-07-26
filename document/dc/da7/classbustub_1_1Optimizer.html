@@ -1,0 +1,699 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>数据库系统 CMU15-445/645: bustub::Optimizer类 参考</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/searchdata.js"></script>
+<script type="text/javascript" src="../../search/search.js"></script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">数据库系统 CMU15-445/645<span id="projectnumber">&#160;1.0.0</span>
+   </div>
+   <div id="projectbrief">CMU15-445/645 是基于现代 C++ 开发的支持并发操作的简单 SQL 操作的单机数据库</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.9.8 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "../../search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('../../',true,false,'search.php','搜索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="../../de/dda/namespacebustub.html">bustub</a></li><li class="navelem"><a class="el" href="../../dc/da7/classbustub_1_1Optimizer.html">Optimizer</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Public 成员函数</a> &#124;
+<a href="#pri-methods">Private 成员函数</a> &#124;
+<a href="#pri-attribs">Private 属性</a> &#124;
+<a href="../../d5/d5c/classbustub_1_1Optimizer-members.html">所有成员列表</a>  </div>
+  <div class="headertitle"><div class="title">bustub::Optimizer类 参考</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p><code>#include &lt;<a class="el" href="../../de/d77/optimizer_8h_source.html">optimizer.h</a>&gt;</code></p>
+<div class="dynheader">
+bustub::Optimizer 的协作图:</div>
+<div class="dyncontent">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../df/d24/classbustub_1_1Optimizer__coll__graph.svg" width="100%" height="459"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<center><span class="legend">[<a href="../../graph_legend.html">图例</a>]</span></center></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Public 成员函数</h2></td></tr>
+<tr class="memitem:a083001d3abb8147941903087bc8bdb86" id="r_a083001d3abb8147941903087bc8bdb86"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/da7/classbustub_1_1Optimizer.html#a083001d3abb8147941903087bc8bdb86">Optimizer</a> (const <a class="el" href="../../d7/ddd/classbustub_1_1Catalog.html">Catalog</a> &amp;catalog, bool force_starter_rule)</td></tr>
+<tr class="separator:a083001d3abb8147941903087bc8bdb86"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6888acafdf53f67e64da8e9bdf17ce4a" id="r_a6888acafdf53f67e64da8e9bdf17ce4a"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/da7/classbustub_1_1Optimizer.html#a6888acafdf53f67e64da8e9bdf17ce4a">Optimize</a> (const <a class="el" href="../../de/dda/namespacebustub.html#a354095e050bd1915a499a31c062c7303">AbstractPlanNodeRef</a> &amp;plan) -&gt; <a class="el" href="../../de/dda/namespacebustub.html#a354095e050bd1915a499a31c062c7303">AbstractPlanNodeRef</a></td></tr>
+<tr class="separator:a6888acafdf53f67e64da8e9bdf17ce4a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7b1129f8c9486cff221df72d1ddb63d0" id="r_a7b1129f8c9486cff221df72d1ddb63d0"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/da7/classbustub_1_1Optimizer.html#a7b1129f8c9486cff221df72d1ddb63d0">OptimizeCustom</a> (const <a class="el" href="../../de/dda/namespacebustub.html#a354095e050bd1915a499a31c062c7303">AbstractPlanNodeRef</a> &amp;plan) -&gt; <a class="el" href="../../de/dda/namespacebustub.html#a354095e050bd1915a499a31c062c7303">AbstractPlanNodeRef</a></td></tr>
+<tr class="separator:a7b1129f8c9486cff221df72d1ddb63d0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-methods" name="pri-methods"></a>
+Private 成员函数</h2></td></tr>
+<tr class="memitem:aaa4e4b1867218cec53ca1ebca4f3b6e0" id="r_aaa4e4b1867218cec53ca1ebca4f3b6e0"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/da7/classbustub_1_1Optimizer.html#aaa4e4b1867218cec53ca1ebca4f3b6e0">OptimizeMergeProjection</a> (const <a class="el" href="../../de/dda/namespacebustub.html#a354095e050bd1915a499a31c062c7303">AbstractPlanNodeRef</a> &amp;plan) -&gt; <a class="el" href="../../de/dda/namespacebustub.html#a354095e050bd1915a499a31c062c7303">AbstractPlanNodeRef</a></td></tr>
+<tr class="memdesc:aaa4e4b1867218cec53ca1ebca4f3b6e0"><td class="mdescLeft">&#160;</td><td class="mdescRight">merge projections that do identical project. Identical projection might be produced when there's <code>SELECT *</code>, aggregation, or when we need to rename the columns in the planner. We merge these projections so as to make execution faster.  <br /></td></tr>
+<tr class="separator:aaa4e4b1867218cec53ca1ebca4f3b6e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abc72295a0a5563cb2376b93e7f1d7736" id="r_abc72295a0a5563cb2376b93e7f1d7736"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/da7/classbustub_1_1Optimizer.html#abc72295a0a5563cb2376b93e7f1d7736">OptimizeMergeFilterNLJ</a> (const <a class="el" href="../../de/dda/namespacebustub.html#a354095e050bd1915a499a31c062c7303">AbstractPlanNodeRef</a> &amp;plan) -&gt; <a class="el" href="../../de/dda/namespacebustub.html#a354095e050bd1915a499a31c062c7303">AbstractPlanNodeRef</a></td></tr>
+<tr class="memdesc:abc72295a0a5563cb2376b93e7f1d7736"><td class="mdescLeft">&#160;</td><td class="mdescRight">merge filter condition into nested loop join. In planner, we plan cross join + filter with cross product (done with nested loop join) and a filter plan node. We can merge the filter condition into nested loop join to achieve better efficiency.  <br /></td></tr>
+<tr class="separator:abc72295a0a5563cb2376b93e7f1d7736"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abf07631588c8805755e56267071adac7" id="r_abf07631588c8805755e56267071adac7"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/da7/classbustub_1_1Optimizer.html#abf07631588c8805755e56267071adac7">OptimizeNLJAsHashJoin</a> (const <a class="el" href="../../de/dda/namespacebustub.html#a354095e050bd1915a499a31c062c7303">AbstractPlanNodeRef</a> &amp;plan) -&gt; <a class="el" href="../../de/dda/namespacebustub.html#a354095e050bd1915a499a31c062c7303">AbstractPlanNodeRef</a></td></tr>
+<tr class="memdesc:abf07631588c8805755e56267071adac7"><td class="mdescLeft">&#160;</td><td class="mdescRight">optimize nested loop join into hash join. In the starter code, we will check NLJs with exactly one equal condition. You can further support optimizing joins with multiple eq conditions.  <br /></td></tr>
+<tr class="separator:abf07631588c8805755e56267071adac7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae7a921320f06738a2ad2b11ab94ff075" id="r_ae7a921320f06738a2ad2b11ab94ff075"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/da7/classbustub_1_1Optimizer.html#ae7a921320f06738a2ad2b11ab94ff075">OptimizeNLJAsIndexJoin</a> (const <a class="el" href="../../de/dda/namespacebustub.html#a354095e050bd1915a499a31c062c7303">AbstractPlanNodeRef</a> &amp;plan) -&gt; <a class="el" href="../../de/dda/namespacebustub.html#a354095e050bd1915a499a31c062c7303">AbstractPlanNodeRef</a></td></tr>
+<tr class="memdesc:ae7a921320f06738a2ad2b11ab94ff075"><td class="mdescLeft">&#160;</td><td class="mdescRight">optimize nested loop join into index join.  <br /></td></tr>
+<tr class="separator:ae7a921320f06738a2ad2b11ab94ff075"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad6fa527a741e625e029914f10e97a8f9" id="r_ad6fa527a741e625e029914f10e97a8f9"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/da7/classbustub_1_1Optimizer.html#ad6fa527a741e625e029914f10e97a8f9">OptimizeEliminateTrueFilter</a> (const <a class="el" href="../../de/dda/namespacebustub.html#a354095e050bd1915a499a31c062c7303">AbstractPlanNodeRef</a> &amp;plan) -&gt; <a class="el" href="../../de/dda/namespacebustub.html#a354095e050bd1915a499a31c062c7303">AbstractPlanNodeRef</a></td></tr>
+<tr class="memdesc:ad6fa527a741e625e029914f10e97a8f9"><td class="mdescLeft">&#160;</td><td class="mdescRight">eliminate always true filter  <br /></td></tr>
+<tr class="separator:ad6fa527a741e625e029914f10e97a8f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9b225994423dde56dda93575bebc9465" id="r_a9b225994423dde56dda93575bebc9465"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/da7/classbustub_1_1Optimizer.html#a9b225994423dde56dda93575bebc9465">OptimizeMergeFilterScan</a> (const <a class="el" href="../../de/dda/namespacebustub.html#a354095e050bd1915a499a31c062c7303">AbstractPlanNodeRef</a> &amp;plan) -&gt; <a class="el" href="../../de/dda/namespacebustub.html#a354095e050bd1915a499a31c062c7303">AbstractPlanNodeRef</a></td></tr>
+<tr class="memdesc:a9b225994423dde56dda93575bebc9465"><td class="mdescLeft">&#160;</td><td class="mdescRight">merge filter into filter_predicate of seq scan plan node  <br /></td></tr>
+<tr class="separator:a9b225994423dde56dda93575bebc9465"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad993d59e3008b665ebb08ad3003c9e11" id="r_ad993d59e3008b665ebb08ad3003c9e11"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/da7/classbustub_1_1Optimizer.html#ad993d59e3008b665ebb08ad3003c9e11">RewriteExpressionForJoin</a> (const <a class="el" href="../../de/dda/namespacebustub.html#af0cfd2fbbabe21e0e95790ff99273105">AbstractExpressionRef</a> &amp;expr, size_t left_column_cnt, size_t right_column_cnt) -&gt; <a class="el" href="../../de/dda/namespacebustub.html#af0cfd2fbbabe21e0e95790ff99273105">AbstractExpressionRef</a></td></tr>
+<tr class="memdesc:ad993d59e3008b665ebb08ad3003c9e11"><td class="mdescLeft">&#160;</td><td class="mdescRight">rewrite expression to be used in nested loop joins. e.g., if we have <code>SELECT * FROM a, b WHERE a.x = b.y</code>, we will have <code>#0.x = #0.y</code> in the filter plan node. We will need to figure out where does <code>0.x</code> and <code>0.y</code> belong in NLJ (left table or right table?), and rewrite it as <code>#0.x = #1.y</code>.  <br /></td></tr>
+<tr class="separator:ad993d59e3008b665ebb08ad3003c9e11"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a04c3d3ae700dbc13147f0967f0e1fe2f" id="r_a04c3d3ae700dbc13147f0967f0e1fe2f"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/da7/classbustub_1_1Optimizer.html#a04c3d3ae700dbc13147f0967f0e1fe2f">IsPredicateTrue</a> (const <a class="el" href="../../de/dda/namespacebustub.html#af0cfd2fbbabe21e0e95790ff99273105">AbstractExpressionRef</a> &amp;expr) -&gt; bool</td></tr>
+<tr class="memdesc:a04c3d3ae700dbc13147f0967f0e1fe2f"><td class="mdescLeft">&#160;</td><td class="mdescRight">check if the predicate is true::boolean  <br /></td></tr>
+<tr class="separator:a04c3d3ae700dbc13147f0967f0e1fe2f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a298c5176d99709a305227dab944b8d47" id="r_a298c5176d99709a305227dab944b8d47"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/da7/classbustub_1_1Optimizer.html#a298c5176d99709a305227dab944b8d47">OptimizeOrderByAsIndexScan</a> (const <a class="el" href="../../de/dda/namespacebustub.html#a354095e050bd1915a499a31c062c7303">AbstractPlanNodeRef</a> &amp;plan) -&gt; <a class="el" href="../../de/dda/namespacebustub.html#a354095e050bd1915a499a31c062c7303">AbstractPlanNodeRef</a></td></tr>
+<tr class="memdesc:a298c5176d99709a305227dab944b8d47"><td class="mdescLeft">&#160;</td><td class="mdescRight">optimize order by as index scan if there's an index on a table  <br /></td></tr>
+<tr class="separator:a298c5176d99709a305227dab944b8d47"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a58f424791c076cbb493c6437853aef0a" id="r_a58f424791c076cbb493c6437853aef0a"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/da7/classbustub_1_1Optimizer.html#a58f424791c076cbb493c6437853aef0a">OptimizeSeqScanAsIndexScan</a> (const <a class="el" href="../../de/dda/namespacebustub.html#a354095e050bd1915a499a31c062c7303">AbstractPlanNodeRef</a> &amp;plan) -&gt; <a class="el" href="../../de/dda/namespacebustub.html#a354095e050bd1915a499a31c062c7303">AbstractPlanNodeRef</a></td></tr>
+<tr class="memdesc:a58f424791c076cbb493c6437853aef0a"><td class="mdescLeft">&#160;</td><td class="mdescRight">optimize seq scan as index scan if there's an index on a table  <br /></td></tr>
+<tr class="separator:a58f424791c076cbb493c6437853aef0a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6d83356646038c6be57955785f89e157" id="r_a6d83356646038c6be57955785f89e157"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/da7/classbustub_1_1Optimizer.html#a6d83356646038c6be57955785f89e157">MatchIndex</a> (const std::string &amp;table_name, uint32_t index_key_idx) -&gt; std::optional&lt; std::tuple&lt; <a class="el" href="../../de/dda/namespacebustub.html#a5ca00ce350a2fa387503e74218ae76c0">index_oid_t</a>, std::string &gt; &gt;</td></tr>
+<tr class="memdesc:a6d83356646038c6be57955785f89e157"><td class="mdescLeft">&#160;</td><td class="mdescRight">check if the index can be matched  <br /></td></tr>
+<tr class="separator:a6d83356646038c6be57955785f89e157"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:accba8dfe0afca45c8ee96ccbe564bb16" id="r_accba8dfe0afca45c8ee96ccbe564bb16"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/da7/classbustub_1_1Optimizer.html#accba8dfe0afca45c8ee96ccbe564bb16">OptimizeSortLimitAsTopN</a> (const <a class="el" href="../../de/dda/namespacebustub.html#a354095e050bd1915a499a31c062c7303">AbstractPlanNodeRef</a> &amp;plan) -&gt; <a class="el" href="../../de/dda/namespacebustub.html#a354095e050bd1915a499a31c062c7303">AbstractPlanNodeRef</a></td></tr>
+<tr class="memdesc:accba8dfe0afca45c8ee96ccbe564bb16"><td class="mdescLeft">&#160;</td><td class="mdescRight">optimize sort + limit as top N  <br /></td></tr>
+<tr class="separator:accba8dfe0afca45c8ee96ccbe564bb16"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adff8c66d19b01e0285c6b8107d1f7780" id="r_adff8c66d19b01e0285c6b8107d1f7780"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/da7/classbustub_1_1Optimizer.html#adff8c66d19b01e0285c6b8107d1f7780">EstimatedCardinality</a> (const std::string &amp;table_name) -&gt; std::optional&lt; size_t &gt;</td></tr>
+<tr class="memdesc:adff8c66d19b01e0285c6b8107d1f7780"><td class="mdescLeft">&#160;</td><td class="mdescRight">get the estimated cardinality for a table based on the table name. Useful when join reordering. BusTub doesn't support statistics for now, so it's the only way for you to get the table size :(  <br /></td></tr>
+<tr class="separator:adff8c66d19b01e0285c6b8107d1f7780"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
+Private 属性</h2></td></tr>
+<tr class="memitem:ac54044714b62ded6e4eb4166bd1a4b94" id="r_ac54044714b62ded6e4eb4166bd1a4b94"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="../../d7/ddd/classbustub_1_1Catalog.html">Catalog</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/da7/classbustub_1_1Optimizer.html#ac54044714b62ded6e4eb4166bd1a4b94">catalog_</a></td></tr>
+<tr class="separator:ac54044714b62ded6e4eb4166bd1a4b94"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a759b228301cdff9cfdb9c5642d9e290b" id="r_a759b228301cdff9cfdb9c5642d9e290b"><td class="memItemLeft" align="right" valign="top">const bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/da7/classbustub_1_1Optimizer.html#a759b228301cdff9cfdb9c5642d9e290b">force_starter_rule_</a></td></tr>
+<tr class="separator:a759b228301cdff9cfdb9c5642d9e290b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
+<div class="textblock"><p>The optimizer takes an <code><a class="el" href="../../d6/d8c/classbustub_1_1AbstractPlanNode.html">AbstractPlanNode</a></code> and outputs an optimized <code><a class="el" href="../../d6/d8c/classbustub_1_1AbstractPlanNode.html">AbstractPlanNode</a></code>. </p>
+</div><h2 class="groupheader">构造及析构函数说明</h2>
+<a id="a083001d3abb8147941903087bc8bdb86" name="a083001d3abb8147941903087bc8bdb86"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a083001d3abb8147941903087bc8bdb86">&#9670;&#160;</a></span>Optimizer()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bustub::Optimizer::Optimizer </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="../../d7/ddd/classbustub_1_1Catalog.html">Catalog</a> &amp;&#160;</td>
+          <td class="paramname"><em>catalog</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>force_starter_rule</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">explicit</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">成员函数说明</h2>
+<a id="adff8c66d19b01e0285c6b8107d1f7780" name="adff8c66d19b01e0285c6b8107d1f7780"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adff8c66d19b01e0285c6b8107d1f7780">&#9670;&#160;</a></span>EstimatedCardinality()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto bustub::Optimizer::EstimatedCardinality </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>table_name</em></td><td>)</td>
+          <td> -&gt; std::optional&lt;size_t&gt;</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>get the estimated cardinality for a table based on the table name. Useful when join reordering. BusTub doesn't support statistics for now, so it's the only way for you to get the table size :( </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">table_name</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>std::optional&lt;size_t&gt; </dd></dl>
+
+</div>
+</div>
+<a id="a04c3d3ae700dbc13147f0967f0e1fe2f" name="a04c3d3ae700dbc13147f0967f0e1fe2f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a04c3d3ae700dbc13147f0967f0e1fe2f">&#9670;&#160;</a></span>IsPredicateTrue()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto bustub::Optimizer::IsPredicateTrue </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="../../de/dda/namespacebustub.html#af0cfd2fbbabe21e0e95790ff99273105">AbstractExpressionRef</a> &amp;&#160;</td>
+          <td class="paramname"><em>expr</em></td><td>)</td>
+          <td> -&gt; bool</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>check if the predicate is true::boolean </p>
+
+</div>
+</div>
+<a id="a6d83356646038c6be57955785f89e157" name="a6d83356646038c6be57955785f89e157"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6d83356646038c6be57955785f89e157">&#9670;&#160;</a></span>MatchIndex()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto bustub::Optimizer::MatchIndex </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>table_name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>index_key_idx</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> -&gt; std::optional&lt;std::tuple&lt;<a class="el" href="../../de/dda/namespacebustub.html#a5ca00ce350a2fa387503e74218ae76c0">index_oid_t</a>, std::string&gt;&gt;</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>check if the index can be matched </p>
+
+</div>
+</div>
+<a id="a6888acafdf53f67e64da8e9bdf17ce4a" name="a6888acafdf53f67e64da8e9bdf17ce4a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6888acafdf53f67e64da8e9bdf17ce4a">&#9670;&#160;</a></span>Optimize()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto bustub::Optimizer::Optimize </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="../../de/dda/namespacebustub.html#a354095e050bd1915a499a31c062c7303">AbstractPlanNodeRef</a> &amp;&#160;</td>
+          <td class="paramname"><em>plan</em></td><td>)</td>
+          <td> -&gt; <a class="el" href="../../de/dda/namespacebustub.html#a354095e050bd1915a499a31c062c7303">AbstractPlanNodeRef</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a7b1129f8c9486cff221df72d1ddb63d0" name="a7b1129f8c9486cff221df72d1ddb63d0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7b1129f8c9486cff221df72d1ddb63d0">&#9670;&#160;</a></span>OptimizeCustom()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto bustub::Optimizer::OptimizeCustom </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="../../de/dda/namespacebustub.html#a354095e050bd1915a499a31c062c7303">AbstractPlanNodeRef</a> &amp;&#160;</td>
+          <td class="paramname"><em>plan</em></td><td>)</td>
+          <td> -&gt; <a class="el" href="../../de/dda/namespacebustub.html#a354095e050bd1915a499a31c062c7303">AbstractPlanNodeRef</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ad6fa527a741e625e029914f10e97a8f9" name="ad6fa527a741e625e029914f10e97a8f9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad6fa527a741e625e029914f10e97a8f9">&#9670;&#160;</a></span>OptimizeEliminateTrueFilter()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto bustub::Optimizer::OptimizeEliminateTrueFilter </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="../../de/dda/namespacebustub.html#a354095e050bd1915a499a31c062c7303">AbstractPlanNodeRef</a> &amp;&#160;</td>
+          <td class="paramname"><em>plan</em></td><td>)</td>
+          <td> -&gt; <a class="el" href="../../de/dda/namespacebustub.html#a354095e050bd1915a499a31c062c7303">AbstractPlanNodeRef</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>eliminate always true filter </p>
+
+</div>
+</div>
+<a id="abc72295a0a5563cb2376b93e7f1d7736" name="abc72295a0a5563cb2376b93e7f1d7736"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abc72295a0a5563cb2376b93e7f1d7736">&#9670;&#160;</a></span>OptimizeMergeFilterNLJ()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto bustub::Optimizer::OptimizeMergeFilterNLJ </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="../../de/dda/namespacebustub.html#a354095e050bd1915a499a31c062c7303">AbstractPlanNodeRef</a> &amp;&#160;</td>
+          <td class="paramname"><em>plan</em></td><td>)</td>
+          <td> -&gt; <a class="el" href="../../de/dda/namespacebustub.html#a354095e050bd1915a499a31c062c7303">AbstractPlanNodeRef</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>merge filter condition into nested loop join. In planner, we plan cross join + filter with cross product (done with nested loop join) and a filter plan node. We can merge the filter condition into nested loop join to achieve better efficiency. </p>
+
+</div>
+</div>
+<a id="a9b225994423dde56dda93575bebc9465" name="a9b225994423dde56dda93575bebc9465"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9b225994423dde56dda93575bebc9465">&#9670;&#160;</a></span>OptimizeMergeFilterScan()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto bustub::Optimizer::OptimizeMergeFilterScan </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="../../de/dda/namespacebustub.html#a354095e050bd1915a499a31c062c7303">AbstractPlanNodeRef</a> &amp;&#160;</td>
+          <td class="paramname"><em>plan</em></td><td>)</td>
+          <td> -&gt; <a class="el" href="../../de/dda/namespacebustub.html#a354095e050bd1915a499a31c062c7303">AbstractPlanNodeRef</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>merge filter into filter_predicate of seq scan plan node </p>
+
+</div>
+</div>
+<a id="aaa4e4b1867218cec53ca1ebca4f3b6e0" name="aaa4e4b1867218cec53ca1ebca4f3b6e0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaa4e4b1867218cec53ca1ebca4f3b6e0">&#9670;&#160;</a></span>OptimizeMergeProjection()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto bustub::Optimizer::OptimizeMergeProjection </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="../../de/dda/namespacebustub.html#a354095e050bd1915a499a31c062c7303">AbstractPlanNodeRef</a> &amp;&#160;</td>
+          <td class="paramname"><em>plan</em></td><td>)</td>
+          <td> -&gt; <a class="el" href="../../de/dda/namespacebustub.html#a354095e050bd1915a499a31c062c7303">AbstractPlanNodeRef</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>merge projections that do identical project. Identical projection might be produced when there's <code>SELECT *</code>, aggregation, or when we need to rename the columns in the planner. We merge these projections so as to make execution faster. </p>
+
+</div>
+</div>
+<a id="abf07631588c8805755e56267071adac7" name="abf07631588c8805755e56267071adac7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abf07631588c8805755e56267071adac7">&#9670;&#160;</a></span>OptimizeNLJAsHashJoin()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto bustub::Optimizer::OptimizeNLJAsHashJoin </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="../../de/dda/namespacebustub.html#a354095e050bd1915a499a31c062c7303">AbstractPlanNodeRef</a> &amp;&#160;</td>
+          <td class="paramname"><em>plan</em></td><td>)</td>
+          <td> -&gt; <a class="el" href="../../de/dda/namespacebustub.html#a354095e050bd1915a499a31c062c7303">AbstractPlanNodeRef</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>optimize nested loop join into hash join. In the starter code, we will check NLJs with exactly one equal condition. You can further support optimizing joins with multiple eq conditions. </p>
+
+</div>
+</div>
+<a id="ae7a921320f06738a2ad2b11ab94ff075" name="ae7a921320f06738a2ad2b11ab94ff075"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae7a921320f06738a2ad2b11ab94ff075">&#9670;&#160;</a></span>OptimizeNLJAsIndexJoin()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto bustub::Optimizer::OptimizeNLJAsIndexJoin </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="../../de/dda/namespacebustub.html#a354095e050bd1915a499a31c062c7303">AbstractPlanNodeRef</a> &amp;&#160;</td>
+          <td class="paramname"><em>plan</em></td><td>)</td>
+          <td> -&gt; <a class="el" href="../../de/dda/namespacebustub.html#a354095e050bd1915a499a31c062c7303">AbstractPlanNodeRef</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>optimize nested loop join into index join. </p>
+
+</div>
+</div>
+<a id="a298c5176d99709a305227dab944b8d47" name="a298c5176d99709a305227dab944b8d47"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a298c5176d99709a305227dab944b8d47">&#9670;&#160;</a></span>OptimizeOrderByAsIndexScan()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto bustub::Optimizer::OptimizeOrderByAsIndexScan </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="../../de/dda/namespacebustub.html#a354095e050bd1915a499a31c062c7303">AbstractPlanNodeRef</a> &amp;&#160;</td>
+          <td class="paramname"><em>plan</em></td><td>)</td>
+          <td> -&gt; <a class="el" href="../../de/dda/namespacebustub.html#a354095e050bd1915a499a31c062c7303">AbstractPlanNodeRef</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>optimize order by as index scan if there's an index on a table </p>
+
+</div>
+</div>
+<a id="a58f424791c076cbb493c6437853aef0a" name="a58f424791c076cbb493c6437853aef0a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a58f424791c076cbb493c6437853aef0a">&#9670;&#160;</a></span>OptimizeSeqScanAsIndexScan()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto bustub::Optimizer::OptimizeSeqScanAsIndexScan </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="../../de/dda/namespacebustub.html#a354095e050bd1915a499a31c062c7303">AbstractPlanNodeRef</a> &amp;&#160;</td>
+          <td class="paramname"><em>plan</em></td><td>)</td>
+          <td> -&gt; <a class="el" href="../../de/dda/namespacebustub.html#a354095e050bd1915a499a31c062c7303">AbstractPlanNodeRef</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>optimize seq scan as index scan if there's an index on a table </p>
+<dl class="section note"><dt>注解</dt><dd>Fall 2023 only: using hash index and only support point lookup </dd></dl>
+
+</div>
+</div>
+<a id="accba8dfe0afca45c8ee96ccbe564bb16" name="accba8dfe0afca45c8ee96ccbe564bb16"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#accba8dfe0afca45c8ee96ccbe564bb16">&#9670;&#160;</a></span>OptimizeSortLimitAsTopN()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto bustub::Optimizer::OptimizeSortLimitAsTopN </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="../../de/dda/namespacebustub.html#a354095e050bd1915a499a31c062c7303">AbstractPlanNodeRef</a> &amp;&#160;</td>
+          <td class="paramname"><em>plan</em></td><td>)</td>
+          <td> -&gt; <a class="el" href="../../de/dda/namespacebustub.html#a354095e050bd1915a499a31c062c7303">AbstractPlanNodeRef</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>optimize sort + limit as top N </p>
+
+</div>
+</div>
+<a id="ad993d59e3008b665ebb08ad3003c9e11" name="ad993d59e3008b665ebb08ad3003c9e11"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad993d59e3008b665ebb08ad3003c9e11">&#9670;&#160;</a></span>RewriteExpressionForJoin()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto bustub::Optimizer::RewriteExpressionForJoin </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="../../de/dda/namespacebustub.html#af0cfd2fbbabe21e0e95790ff99273105">AbstractExpressionRef</a> &amp;&#160;</td>
+          <td class="paramname"><em>expr</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>left_column_cnt</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>right_column_cnt</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> -&gt; <a class="el" href="../../de/dda/namespacebustub.html#af0cfd2fbbabe21e0e95790ff99273105">AbstractExpressionRef</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>rewrite expression to be used in nested loop joins. e.g., if we have <code>SELECT * FROM a, b WHERE a.x = b.y</code>, we will have <code>#0.x = #0.y</code> in the filter plan node. We will need to figure out where does <code>0.x</code> and <code>0.y</code> belong in NLJ (left table or right table?), and rewrite it as <code>#0.x = #1.y</code>. </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">expr</td><td>the filter expression </td></tr>
+    <tr><td class="paramname">left_column_cnt</td><td>number of columns in the left size of the NLJ </td></tr>
+    <tr><td class="paramname">right_column_cnt</td><td>number of columns in the left size of the NLJ </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<h2 class="groupheader">类成员变量说明</h2>
+<a id="ac54044714b62ded6e4eb4166bd1a4b94" name="ac54044714b62ded6e4eb4166bd1a4b94"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac54044714b62ded6e4eb4166bd1a4b94">&#9670;&#160;</a></span>catalog_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="../../d7/ddd/classbustub_1_1Catalog.html">Catalog</a>&amp; bustub::Optimizer::catalog_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p><a class="el" href="../../d7/ddd/classbustub_1_1Catalog.html">Catalog</a> will be used during the planning process. USERS SHOULD ENSURE IT OUTLIVES OPTIMIZER, otherwise it's a dangling reference. </p>
+
+</div>
+</div>
+<a id="a759b228301cdff9cfdb9c5642d9e290b" name="a759b228301cdff9cfdb9c5642d9e290b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a759b228301cdff9cfdb9c5642d9e290b">&#9670;&#160;</a></span>force_starter_rule_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const bool bustub::Optimizer::force_starter_rule_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<hr/>该类的文档由以下文件生成:<ul>
+<li>src/include/optimizer/<a class="el" href="../../de/d77/optimizer_8h_source.html">optimizer.h</a></li>
+<li>src/optimizer/<a class="el" href="../../d8/dd7/eliminate__true__filter_8cpp.html">eliminate_true_filter.cpp</a></li>
+<li>src/optimizer/<a class="el" href="../../dc/d4f/merge__filter__nlj_8cpp.html">merge_filter_nlj.cpp</a></li>
+<li>src/optimizer/<a class="el" href="../../d0/d46/merge__filter__scan_8cpp.html">merge_filter_scan.cpp</a></li>
+<li>src/optimizer/<a class="el" href="../../d1/db4/merge__projection_8cpp.html">merge_projection.cpp</a></li>
+<li>src/optimizer/<a class="el" href="../../d5/d99/nlj__as__hash__join_8cpp.html">nlj_as_hash_join.cpp</a></li>
+<li>src/optimizer/<a class="el" href="../../d0/de1/nlj__as__index__join_8cpp.html">nlj_as_index_join.cpp</a></li>
+<li>src/optimizer/<a class="el" href="../../df/d42/optimizer_8cpp.html">optimizer.cpp</a></li>
+<li>src/optimizer/<a class="el" href="../../d3/d94/optimizer__custom__rules_8cpp.html">optimizer_custom_rules.cpp</a></li>
+<li>src/optimizer/<a class="el" href="../../d9/db2/order__by__index__scan_8cpp.html">order_by_index_scan.cpp</a></li>
+<li>src/optimizer/<a class="el" href="../../db/de2/seqscan__as__indexscan_8cpp.html">seqscan_as_indexscan.cpp</a></li>
+<li>src/optimizer/<a class="el" href="../../d0/def/sort__limit__as__topn_8cpp.html">sort_limit_as_topn.cpp</a></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
+</small></address>
+</body>
+</html>

@@ -1,0 +1,416 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>数据库系统 CMU15-445/645: bustub::TopNCheckExecutor类 参考</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/searchdata.js"></script>
+<script type="text/javascript" src="../../search/search.js"></script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">数据库系统 CMU15-445/645<span id="projectnumber">&#160;1.0.0</span>
+   </div>
+   <div id="projectbrief">CMU15-445/645 是基于现代 C++ 开发的支持并发操作的简单 SQL 操作的单机数据库</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.9.8 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "../../search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('../../',true,false,'search.php','搜索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="../../de/dda/namespacebustub.html">bustub</a></li><li class="navelem"><a class="el" href="../../d8/df7/classbustub_1_1TopNCheckExecutor.html">TopNCheckExecutor</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Public 成员函数</a> &#124;
+<a href="#pri-attribs">Private 属性</a> &#124;
+<a href="#pri-static-attribs">静态 Private 属性</a> &#124;
+<a href="../../da/de8/classbustub_1_1TopNCheckExecutor-members.html">所有成员列表</a>  </div>
+  <div class="headertitle"><div class="title">bustub::TopNCheckExecutor类 参考</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p><code>#include &lt;<a class="el" href="../../dd/d1c/topn__check__executor_8h_source.html">topn_check_executor.h</a>&gt;</code></p>
+<div class="dynheader">
+类 bustub::TopNCheckExecutor 继承关系图:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../d7/de6/classbustub_1_1TopNCheckExecutor__inherit__graph.svg" width="214" height="110"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<center><span class="legend">[<a href="../../graph_legend.html">图例</a>]</span></center></div>
+<div class="dynheader">
+bustub::TopNCheckExecutor 的协作图:</div>
+<div class="dyncontent">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d1/da7/classbustub_1_1TopNCheckExecutor__coll__graph.svg" width="100%" height="505"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<center><span class="legend">[<a href="../../graph_legend.html">图例</a>]</span></center></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Public 成员函数</h2></td></tr>
+<tr class="memitem:a1cf4fc36ae285f67f3fc71076705b53d" id="r_a1cf4fc36ae285f67f3fc71076705b53d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/df7/classbustub_1_1TopNCheckExecutor.html#a1cf4fc36ae285f67f3fc71076705b53d">TopNCheckExecutor</a> (<a class="el" href="../../dd/d02/classbustub_1_1ExecutorContext.html">ExecutorContext</a> *exec_ctx, const <a class="el" href="../../dd/d79/classbustub_1_1TopNPlanNode.html">TopNPlanNode</a> *plan, std::unique_ptr&lt; <a class="el" href="../../d2/d28/classbustub_1_1AbstractExecutor.html">AbstractExecutor</a> &gt; &amp;&amp;child_executor, <a class="el" href="../../d6/d1c/classbustub_1_1TopNExecutor.html">TopNExecutor</a> *topn_executor)</td></tr>
+<tr class="separator:a1cf4fc36ae285f67f3fc71076705b53d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad9bd7a7479d9845eb3045303671325f0" id="r_ad9bd7a7479d9845eb3045303671325f0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/df7/classbustub_1_1TopNCheckExecutor.html#ad9bd7a7479d9845eb3045303671325f0">Init</a> () override</td></tr>
+<tr class="separator:ad9bd7a7479d9845eb3045303671325f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a96789914401ec4595232d71b3119d9af" id="r_a96789914401ec4595232d71b3119d9af"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/df7/classbustub_1_1TopNCheckExecutor.html#a96789914401ec4595232d71b3119d9af">Next</a> (<a class="el" href="../../d0/ded/classbustub_1_1Tuple.html">Tuple</a> *tuple, <a class="el" href="../../d3/d22/classbustub_1_1RID.html">RID</a> *rid) -&gt; bool override</td></tr>
+<tr class="separator:a96789914401ec4595232d71b3119d9af"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6a985aa7b0d1a2505ea5a29d02af6112" id="r_a6a985aa7b0d1a2505ea5a29d02af6112"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/df7/classbustub_1_1TopNCheckExecutor.html#a6a985aa7b0d1a2505ea5a29d02af6112">GetOutputSchema</a> () const -&gt; const <a class="el" href="../../da/d36/classbustub_1_1Schema.html">Schema</a> &amp;override</td></tr>
+<tr class="separator:a6a985aa7b0d1a2505ea5a29d02af6112"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_methods_classbustub_1_1AbstractExecutor"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classbustub_1_1AbstractExecutor')"><img src="../../closed.png" alt="-"/>&#160;Public 成员函数 继承自 <a class="el" href="../../d2/d28/classbustub_1_1AbstractExecutor.html">bustub::AbstractExecutor</a></td></tr>
+<tr class="memitem:a77aac90325e53499c7dc96fea4a0f6c9 inherit pub_methods_classbustub_1_1AbstractExecutor" id="r_a77aac90325e53499c7dc96fea4a0f6c9"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d28/classbustub_1_1AbstractExecutor.html#a77aac90325e53499c7dc96fea4a0f6c9">AbstractExecutor</a> (<a class="el" href="../../dd/d02/classbustub_1_1ExecutorContext.html">ExecutorContext</a> *exec_ctx)</td></tr>
+<tr class="separator:a77aac90325e53499c7dc96fea4a0f6c9 inherit pub_methods_classbustub_1_1AbstractExecutor"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab28201d3024a7b09e8c41af42a8def68 inherit pub_methods_classbustub_1_1AbstractExecutor" id="r_ab28201d3024a7b09e8c41af42a8def68"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d28/classbustub_1_1AbstractExecutor.html#ab28201d3024a7b09e8c41af42a8def68">~AbstractExecutor</a> ()=default</td></tr>
+<tr class="separator:ab28201d3024a7b09e8c41af42a8def68 inherit pub_methods_classbustub_1_1AbstractExecutor"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab9895b6c56048bdd668aebd506c7d444 inherit pub_methods_classbustub_1_1AbstractExecutor" id="r_ab9895b6c56048bdd668aebd506c7d444"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d28/classbustub_1_1AbstractExecutor.html#ab9895b6c56048bdd668aebd506c7d444">GetExecutorContext</a> () -&gt; <a class="el" href="../../dd/d02/classbustub_1_1ExecutorContext.html">ExecutorContext</a> *</td></tr>
+<tr class="separator:ab9895b6c56048bdd668aebd506c7d444 inherit pub_methods_classbustub_1_1AbstractExecutor"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
+Private 属性</h2></td></tr>
+<tr class="memitem:ab006518a2141d317f17fa36bf880bd1a" id="r_ab006518a2141d317f17fa36bf880bd1a"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="../../dd/d79/classbustub_1_1TopNPlanNode.html">TopNPlanNode</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/df7/classbustub_1_1TopNCheckExecutor.html#ab006518a2141d317f17fa36bf880bd1a">plan_</a></td></tr>
+<tr class="separator:ab006518a2141d317f17fa36bf880bd1a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1d1bc0928bd55168bcade45c9d111ae1" id="r_a1d1bc0928bd55168bcade45c9d111ae1"><td class="memItemLeft" align="right" valign="top">std::size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/df7/classbustub_1_1TopNCheckExecutor.html#a1d1bc0928bd55168bcade45c9d111ae1">prev_</a> {0}</td></tr>
+<tr class="separator:a1d1bc0928bd55168bcade45c9d111ae1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a187d77b048650843289c696da9ab3539" id="r_a187d77b048650843289c696da9ab3539"><td class="memItemLeft" align="right" valign="top">std::unique_ptr&lt; <a class="el" href="../../d2/d28/classbustub_1_1AbstractExecutor.html">AbstractExecutor</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/df7/classbustub_1_1TopNCheckExecutor.html#a187d77b048650843289c696da9ab3539">child_executor_</a></td></tr>
+<tr class="separator:a187d77b048650843289c696da9ab3539"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac45bca688e902b882a3f642392f172f4" id="r_ac45bca688e902b882a3f642392f172f4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d6/d1c/classbustub_1_1TopNExecutor.html">TopNExecutor</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/df7/classbustub_1_1TopNCheckExecutor.html#ac45bca688e902b882a3f642392f172f4">topn_executor_</a></td></tr>
+<tr class="separator:ac45bca688e902b882a3f642392f172f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-static-attribs" name="pri-static-attribs"></a>
+静态 Private 属性</h2></td></tr>
+<tr class="memitem:ad5d34b4df9a97109ba540e306de5a56f" id="r_ad5d34b4df9a97109ba540e306de5a56f"><td class="memItemLeft" align="right" valign="top">static constexpr const bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/df7/classbustub_1_1TopNCheckExecutor.html#ad5d34b4df9a97109ba540e306de5a56f">EXECUTOR_EXHAUSTED</a> {false}</td></tr>
+<tr class="separator:ad5d34b4df9a97109ba540e306de5a56f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="inherited" name="inherited"></a>
+额外继承的成员函数</h2></td></tr>
+<tr class="inherit_header pro_attribs_classbustub_1_1AbstractExecutor"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_classbustub_1_1AbstractExecutor')"><img src="../../closed.png" alt="-"/>&#160;Protected 属性 继承自 <a class="el" href="../../d2/d28/classbustub_1_1AbstractExecutor.html">bustub::AbstractExecutor</a></td></tr>
+<tr class="memitem:a5591a244cd884bbae01ebbc58b3b2769 inherit pro_attribs_classbustub_1_1AbstractExecutor" id="r_a5591a244cd884bbae01ebbc58b3b2769"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../dd/d02/classbustub_1_1ExecutorContext.html">ExecutorContext</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d28/classbustub_1_1AbstractExecutor.html#a5591a244cd884bbae01ebbc58b3b2769">exec_ctx_</a></td></tr>
+<tr class="separator:a5591a244cd884bbae01ebbc58b3b2769 inherit pro_attribs_classbustub_1_1AbstractExecutor"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
+<div class="textblock"><p><a class="el" href="../../d8/df7/classbustub_1_1TopNCheckExecutor.html">TopNCheckExecutor</a> checks the number of items in TopN executor container </p>
+</div><h2 class="groupheader">构造及析构函数说明</h2>
+<a id="a1cf4fc36ae285f67f3fc71076705b53d" name="a1cf4fc36ae285f67f3fc71076705b53d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1cf4fc36ae285f67f3fc71076705b53d">&#9670;&#160;</a></span>TopNCheckExecutor()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bustub::TopNCheckExecutor::TopNCheckExecutor </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../dd/d02/classbustub_1_1ExecutorContext.html">ExecutorContext</a> *&#160;</td>
+          <td class="paramname"><em>exec_ctx</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="../../dd/d79/classbustub_1_1TopNPlanNode.html">TopNPlanNode</a> *&#160;</td>
+          <td class="paramname"><em>plan</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::unique_ptr&lt; <a class="el" href="../../d2/d28/classbustub_1_1AbstractExecutor.html">AbstractExecutor</a> &gt; &amp;&amp;&#160;</td>
+          <td class="paramname"><em>child_executor</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="../../d6/d1c/classbustub_1_1TopNExecutor.html">TopNExecutor</a> *&#160;</td>
+          <td class="paramname"><em>topn_executor</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Construct a new <a class="el" href="../../d8/df7/classbustub_1_1TopNCheckExecutor.html">TopNCheckExecutor</a> instance. </p><dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">exec_ctx</td><td>The executor context </td></tr>
+    <tr><td class="paramname">plan</td><td>The TopN plan to be executed </td></tr>
+    <tr><td class="paramname">child_executor</td><td>The TopN child executor </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<h2 class="groupheader">成员函数说明</h2>
+<a id="a6a985aa7b0d1a2505ea5a29d02af6112" name="a6a985aa7b0d1a2505ea5a29d02af6112"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6a985aa7b0d1a2505ea5a29d02af6112">&#9670;&#160;</a></span>GetOutputSchema()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto bustub::TopNCheckExecutor::GetOutputSchema </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const -&gt; const <a class="el" href="../../da/d36/classbustub_1_1Schema.html">Schema</a> &amp;</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<dl class="section return"><dt>返回</dt><dd>The output schema for the child executor </dd></dl>
+
+<p>实现了 <a class="el" href="../../d2/d28/classbustub_1_1AbstractExecutor.html#ab72f75f9f8f5728a727609bd70070888">bustub::AbstractExecutor</a>.</p>
+
+</div>
+</div>
+<a id="ad9bd7a7479d9845eb3045303671325f0" name="ad9bd7a7479d9845eb3045303671325f0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad9bd7a7479d9845eb3045303671325f0">&#9670;&#160;</a></span>Init()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void bustub::TopNCheckExecutor::Init </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Initialize the TopNCheck </p>
+
+<p>实现了 <a class="el" href="../../d2/d28/classbustub_1_1AbstractExecutor.html#a8de18536ea3222d01514b14387082ec8">bustub::AbstractExecutor</a>.</p>
+
+</div>
+</div>
+<a id="a96789914401ec4595232d71b3119d9af" name="a96789914401ec4595232d71b3119d9af"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a96789914401ec4595232d71b3119d9af">&#9670;&#160;</a></span>Next()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto bustub::TopNCheckExecutor::Next </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../d0/ded/classbustub_1_1Tuple.html">Tuple</a> *&#160;</td>
+          <td class="paramname"><em>tuple</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="../../d3/d22/classbustub_1_1RID.html">RID</a> *&#160;</td>
+          <td class="paramname"><em>rid</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> -&gt; bool</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Yield the next tuple from the child executor. </p><dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[out]</td><td class="paramname">tuple</td><td>The next tuple produced by the child executor </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">rid</td><td>The next tuple <a class="el" href="../../d3/d22/classbustub_1_1RID.html">RID</a> produced by the child executor </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd><code>true</code> if a tuple was produced, <code>false</code> if there are no more tuples </dd></dl>
+
+<p>实现了 <a class="el" href="../../d2/d28/classbustub_1_1AbstractExecutor.html#aa0eeb57bf174ccd25466e2b137024b4d">bustub::AbstractExecutor</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">类成员变量说明</h2>
+<a id="a187d77b048650843289c696da9ab3539" name="a187d77b048650843289c696da9ab3539"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a187d77b048650843289c696da9ab3539">&#9670;&#160;</a></span>child_executor_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::unique_ptr&lt;<a class="el" href="../../d2/d28/classbustub_1_1AbstractExecutor.html">AbstractExecutor</a>&gt; bustub::TopNCheckExecutor::child_executor_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>The child executor from which tuples are obtained </p>
+
+</div>
+</div>
+<a id="ad5d34b4df9a97109ba540e306de5a56f" name="ad5d34b4df9a97109ba540e306de5a56f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad5d34b4df9a97109ba540e306de5a56f">&#9670;&#160;</a></span>EXECUTOR_EXHAUSTED</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr const bool bustub::TopNCheckExecutor::EXECUTOR_EXHAUSTED {false}</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">constexpr</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p><a class="el" href="../../d8/df7/classbustub_1_1TopNCheckExecutor.html">TopNCheckExecutor</a> returns <code>false</code> when child executor is exhausted </p>
+
+</div>
+</div>
+<a id="ab006518a2141d317f17fa36bf880bd1a" name="ab006518a2141d317f17fa36bf880bd1a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab006518a2141d317f17fa36bf880bd1a">&#9670;&#160;</a></span>plan_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="../../dd/d79/classbustub_1_1TopNPlanNode.html">TopNPlanNode</a>* bustub::TopNCheckExecutor::plan_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>The <a class="el" href="../../dd/d79/classbustub_1_1TopNPlanNode.html">TopNPlanNode</a> to be executed </p>
+
+</div>
+</div>
+<a id="a1d1bc0928bd55168bcade45c9d111ae1" name="a1d1bc0928bd55168bcade45c9d111ae1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1d1bc0928bd55168bcade45c9d111ae1">&#9670;&#160;</a></span>prev_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::size_t bustub::TopNCheckExecutor::prev_ {0}</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ac45bca688e902b882a3f642392f172f4" name="ac45bca688e902b882a3f642392f172f4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac45bca688e902b882a3f642392f172f4">&#9670;&#160;</a></span>topn_executor_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d6/d1c/classbustub_1_1TopNExecutor.html">TopNExecutor</a>* bustub::TopNCheckExecutor::topn_executor_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<hr/>该类的文档由以下文件生成:<ul>
+<li>src/include/execution/executors/<a class="el" href="../../dd/d1c/topn__check__executor_8h_source.html">topn_check_executor.h</a></li>
+<li>src/execution/<a class="el" href="../../d4/dc7/topn__check__executor_8cpp.html">topn_check_executor.cpp</a></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
+</small></address>
+</body>
+</html>

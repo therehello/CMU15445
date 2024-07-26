@@ -1,0 +1,279 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>数据库系统 CMU15-445/645: src/include/storage/disk/disk_manager_memory.h 源文件</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/searchdata.js"></script>
+<script type="text/javascript" src="../../search/search.js"></script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">数据库系统 CMU15-445/645<span id="projectnumber">&#160;1.0.0</span>
+   </div>
+   <div id="projectbrief">CMU15-445/645 是基于现代 C++ 开发的支持并发操作的简单 SQL 操作的单机数据库</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.9.8 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "../../search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('../../',true,false,'search.php','搜索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function() { init_codefold(1); });
+/* @license-end */
+</script>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="../../dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="../../dir_b0856f6b0d80ccb263b2f415c91f9e17.html">include</a></li><li class="navelem"><a class="el" href="../../dir_0a30ac4aed38d1936bbd6d702d96fbd8.html">storage</a></li><li class="navelem"><a class="el" href="../../dir_7dd98a27f787fef85ec9f0068acb088b.html">disk</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle"><div class="title">disk_manager_memory.h</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="../../d9/d9e/disk__manager__memory_8h.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">//===----------------------------------------------------------------------===//</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="comment">//</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="comment">//                         BusTub</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment">//</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="comment">// disk_manager_memory.h</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="comment">//</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="comment">// Identification: src/include/storage/disk/disk_manager_memory.h</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="comment">//</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="comment">// Copyright (c) 2015-2020, Carnegie Mellon University Database Group</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="comment">//</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="comment">//===----------------------------------------------------------------------===//</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#include &lt;array&gt;</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#include &lt;chrono&gt;</span>  <span class="comment">// NOLINT</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">#include &lt;cstring&gt;</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="preprocessor">#include &lt;memory&gt;</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="preprocessor">#include &lt;mutex&gt;</span>  <span class="comment">// NOLINT</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="preprocessor">#include &lt;optional&gt;</span></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="preprocessor">#include &lt;shared_mutex&gt;</span></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="preprocessor">#include &lt;thread&gt;</span>  <span class="comment">// NOLINT</span></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="preprocessor">#include &lt;utility&gt;</span></div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="preprocessor">#include &lt;vector&gt;</span></div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="preprocessor">#include &quot;<a class="code" href="../../db/d16/config_8h.html">common/config.h</a>&quot;</span></div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="preprocessor">#include &quot;fmt/core.h&quot;</span></div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="preprocessor">#include &quot;<a class="code" href="../../d6/d30/disk__manager_8h.html">storage/disk/disk_manager.h</a>&quot;</span></div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span> </div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span><span class="keyword">namespace </span><a class="code hl_namespace" href="../../de/dda/namespacebustub.html">bustub</a> {</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span> </div>
+<div class="foldopen" id="foldopen00033" data-start="{" data-end="};">
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno"><a class="line" href="../../d5/da4/classbustub_1_1DiskManagerMemory.html">   33</a></span><span class="keyword">class </span><a class="code hl_class" href="../../d5/da4/classbustub_1_1DiskManagerMemory.html">DiskManagerMemory</a> : <span class="keyword">public</span> <a class="code hl_class" href="../../da/dfe/classbustub_1_1DiskManager.html">DiskManager</a> {</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span> <span class="keyword">public</span>:</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>  <span class="keyword">explicit</span> <a class="code hl_class" href="../../d5/da4/classbustub_1_1DiskManagerMemory.html">DiskManagerMemory</a>(<span class="keywordtype">size_t</span> pages);</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span> </div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno"><a class="line" href="../../d5/da4/classbustub_1_1DiskManagerMemory.html#ad56c5135a264074281f9793576259784">   37</a></span>  <a class="code hl_function" href="../../d5/da4/classbustub_1_1DiskManagerMemory.html#ad56c5135a264074281f9793576259784">~DiskManagerMemory</a>()<span class="keyword"> override </span>{ <span class="keyword">delete</span>[] <a class="code hl_variable" href="../../d5/da4/classbustub_1_1DiskManagerMemory.html#a74bb0034fa950d040ce1bb8a4a15aac2">memory_</a>; }</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span> </div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="../../d5/da4/classbustub_1_1DiskManagerMemory.html#a8504fdeacf18e39a88107e4897003708">WritePage</a>(<a class="code hl_typedef" href="../../de/dda/namespacebustub.html#a8de4ac099b23d712481109bb846decde">page_id_t</a> page_id, <span class="keyword">const</span> <span class="keywordtype">char</span> *page_data) <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span> </div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="../../d5/da4/classbustub_1_1DiskManagerMemory.html#ac7b7c26dc8c1dd3b8d4154f0f9eabc26">ReadPage</a>(<a class="code hl_typedef" href="../../de/dda/namespacebustub.html#a8de4ac099b23d712481109bb846decde">page_id_t</a> page_id, <span class="keywordtype">char</span> *page_data) <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span> </div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span> <span class="keyword">private</span>:</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno"><a class="line" href="../../d5/da4/classbustub_1_1DiskManagerMemory.html#a74bb0034fa950d040ce1bb8a4a15aac2">   54</a></span>  <span class="keywordtype">char</span> *<a class="code hl_variable" href="../../d5/da4/classbustub_1_1DiskManagerMemory.html#a74bb0034fa950d040ce1bb8a4a15aac2">memory_</a>;</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>};</div>
+</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span> </div>
+<div class="foldopen" id="foldopen00061" data-start="{" data-end="};">
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno"><a class="line" href="../../d3/db8/classbustub_1_1DiskManagerUnlimitedMemory.html">   61</a></span><span class="keyword">class </span><a class="code hl_class" href="../../d3/db8/classbustub_1_1DiskManagerUnlimitedMemory.html">DiskManagerUnlimitedMemory</a> : <span class="keyword">public</span> <a class="code hl_class" href="../../da/dfe/classbustub_1_1DiskManager.html">DiskManager</a> {</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span> <span class="keyword">public</span>:</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno"><a class="line" href="../../d3/db8/classbustub_1_1DiskManagerUnlimitedMemory.html#a21ffbbf4589f4f52cc94a9b035b0a752">   63</a></span>  <a class="code hl_function" href="../../d3/db8/classbustub_1_1DiskManagerUnlimitedMemory.html#a21ffbbf4589f4f52cc94a9b035b0a752">DiskManagerUnlimitedMemory</a>() { std::fill(<a class="code hl_variable" href="../../d3/db8/classbustub_1_1DiskManagerUnlimitedMemory.html#ad27a40686099e3b17795dd3f870e87e3">recent_access_</a>.begin(), <a class="code hl_variable" href="../../d3/db8/classbustub_1_1DiskManagerUnlimitedMemory.html#ad27a40686099e3b17795dd3f870e87e3">recent_access_</a>.end(), -1); }</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span> </div>
+<div class="foldopen" id="foldopen00070" data-start="{" data-end="}">
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno"><a class="line" href="../../d3/db8/classbustub_1_1DiskManagerUnlimitedMemory.html#a49178f13725196cb4f57a259ba5ce4ed">   70</a></span>  <span class="keywordtype">void</span> <a class="code hl_function" href="../../d3/db8/classbustub_1_1DiskManagerUnlimitedMemory.html#a49178f13725196cb4f57a259ba5ce4ed">WritePage</a>(<a class="code hl_typedef" href="../../de/dda/namespacebustub.html#a8de4ac099b23d712481109bb846decde">page_id_t</a> page_id, <span class="keyword">const</span> <span class="keywordtype">char</span> *page_data)<span class="keyword"> override </span>{</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>    <a class="code hl_function" href="../../d3/db8/classbustub_1_1DiskManagerUnlimitedMemory.html#a31d5042abeabd1eb82b4f09f5e5fc382">ProcessLatency</a>(page_id);</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span> </div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>    std::unique_lock&lt;std::mutex&gt; l(<a class="code hl_variable" href="../../d3/db8/classbustub_1_1DiskManagerUnlimitedMemory.html#a4ec82b5a9e9cf83b13f97da2b9fe6d83">mutex_</a>);</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>    <span class="keywordflow">if</span> (!<a class="code hl_variable" href="../../d3/db8/classbustub_1_1DiskManagerUnlimitedMemory.html#ab266a3e70a06065cf5eace3bc29f94dd">thread_id_</a>.has_value()) {</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>      <a class="code hl_variable" href="../../d3/db8/classbustub_1_1DiskManagerUnlimitedMemory.html#ab266a3e70a06065cf5eace3bc29f94dd">thread_id_</a> = std::this_thread::get_id();</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>    }</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>    <span class="keywordflow">if</span> (page_id &gt;= <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(<a class="code hl_variable" href="../../d3/db8/classbustub_1_1DiskManagerUnlimitedMemory.html#aa3a84358429a1b578b65a24133b52ca1">data_</a>.size())) {</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>      <a class="code hl_variable" href="../../d3/db8/classbustub_1_1DiskManagerUnlimitedMemory.html#aa3a84358429a1b578b65a24133b52ca1">data_</a>.resize(page_id + 1);</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>    }</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="../../d3/db8/classbustub_1_1DiskManagerUnlimitedMemory.html#aa3a84358429a1b578b65a24133b52ca1">data_</a>[page_id] == <span class="keyword">nullptr</span>) {</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>      <a class="code hl_variable" href="../../d3/db8/classbustub_1_1DiskManagerUnlimitedMemory.html#aa3a84358429a1b578b65a24133b52ca1">data_</a>[page_id] = std::make_shared&lt;ProtectedPage&gt;();</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>    }</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>    std::shared_ptr&lt;ProtectedPage&gt; ptr = <a class="code hl_variable" href="../../d3/db8/classbustub_1_1DiskManagerUnlimitedMemory.html#aa3a84358429a1b578b65a24133b52ca1">data_</a>[page_id];</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>    std::unique_lock&lt;std::shared_mutex&gt; l_page(ptr-&gt;second);</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>    l.unlock();</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span> </div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>    memcpy(ptr-&gt;first.data(), page_data, <a class="code hl_variable" href="../../de/dda/namespacebustub.html#a07360ca59dac7e03b3d988f005057273">BUSTUB_PAGE_SIZE</a>);</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span> </div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>    <a class="code hl_function" href="../../d3/db8/classbustub_1_1DiskManagerUnlimitedMemory.html#aa3d69bf1f10da4d2384c47086966b2b3">PostProcessLatency</a>(page_id);</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>  }</div>
+</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span> </div>
+<div class="foldopen" id="foldopen00097" data-start="{" data-end="}">
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno"><a class="line" href="../../d3/db8/classbustub_1_1DiskManagerUnlimitedMemory.html#ac602ac7692498661e601297178533c40">   97</a></span>  <span class="keywordtype">void</span> <a class="code hl_function" href="../../d3/db8/classbustub_1_1DiskManagerUnlimitedMemory.html#ac602ac7692498661e601297178533c40">ReadPage</a>(<a class="code hl_typedef" href="../../de/dda/namespacebustub.html#a8de4ac099b23d712481109bb846decde">page_id_t</a> page_id, <span class="keywordtype">char</span> *page_data)<span class="keyword"> override </span>{</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>    <a class="code hl_function" href="../../d3/db8/classbustub_1_1DiskManagerUnlimitedMemory.html#a31d5042abeabd1eb82b4f09f5e5fc382">ProcessLatency</a>(page_id);</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span> </div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>    std::unique_lock&lt;std::mutex&gt; l(<a class="code hl_variable" href="../../d3/db8/classbustub_1_1DiskManagerUnlimitedMemory.html#a4ec82b5a9e9cf83b13f97da2b9fe6d83">mutex_</a>);</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>    <span class="keywordflow">if</span> (!<a class="code hl_variable" href="../../d3/db8/classbustub_1_1DiskManagerUnlimitedMemory.html#ab266a3e70a06065cf5eace3bc29f94dd">thread_id_</a>.has_value()) {</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>      <a class="code hl_variable" href="../../d3/db8/classbustub_1_1DiskManagerUnlimitedMemory.html#ab266a3e70a06065cf5eace3bc29f94dd">thread_id_</a> = std::this_thread::get_id();</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>    }</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>    <span class="keywordflow">if</span> (page_id &gt;= <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(<a class="code hl_variable" href="../../d3/db8/classbustub_1_1DiskManagerUnlimitedMemory.html#aa3a84358429a1b578b65a24133b52ca1">data_</a>.size()) || page_id &lt; 0) {</div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>      fmt::println(stderr, <span class="stringliteral">&quot;page {} not in range&quot;</span>, page_id);</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>      std::terminate();</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>      <span class="keywordflow">return</span>;</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>    }</div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="../../d3/db8/classbustub_1_1DiskManagerUnlimitedMemory.html#aa3a84358429a1b578b65a24133b52ca1">data_</a>[page_id] == <span class="keyword">nullptr</span>) {</div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>      fmt::println(stderr, <span class="stringliteral">&quot;page {} not exist&quot;</span>, page_id);</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>      std::terminate();</div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>      <span class="keywordflow">return</span>;</div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>    }</div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>    std::shared_ptr&lt;ProtectedPage&gt; ptr = <a class="code hl_variable" href="../../d3/db8/classbustub_1_1DiskManagerUnlimitedMemory.html#aa3a84358429a1b578b65a24133b52ca1">data_</a>[page_id];</div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>    std::shared_lock&lt;std::shared_mutex&gt; l_page(ptr-&gt;second);</div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>    l.unlock();</div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span> </div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>    memcpy(page_data, ptr-&gt;first.data(), <a class="code hl_variable" href="../../de/dda/namespacebustub.html#a07360ca59dac7e03b3d988f005057273">BUSTUB_PAGE_SIZE</a>);</div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span> </div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>    <a class="code hl_function" href="../../d3/db8/classbustub_1_1DiskManagerUnlimitedMemory.html#aa3d69bf1f10da4d2384c47086966b2b3">PostProcessLatency</a>(page_id);</div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>  }</div>
+</div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span> </div>
+<div class="foldopen" id="foldopen00123" data-start="{" data-end="}">
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno"><a class="line" href="../../d3/db8/classbustub_1_1DiskManagerUnlimitedMemory.html#a31d5042abeabd1eb82b4f09f5e5fc382">  123</a></span>  <span class="keywordtype">void</span> <a class="code hl_function" href="../../d3/db8/classbustub_1_1DiskManagerUnlimitedMemory.html#a31d5042abeabd1eb82b4f09f5e5fc382">ProcessLatency</a>(<a class="code hl_typedef" href="../../de/dda/namespacebustub.html#a8de4ac099b23d712481109bb846decde">page_id_t</a> page_id) {</div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>    uint64_t sleep_micro_sec = 1000;  <span class="comment">// for random access, 1ms latency</span></div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="../../d3/db8/classbustub_1_1DiskManagerUnlimitedMemory.html#af5adb30c037ccf8b2983917998be2dc3">latency_simulator_enabled_</a>) {</div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>      std::unique_lock&lt;std::mutex&gt; lck(<a class="code hl_variable" href="../../d3/db8/classbustub_1_1DiskManagerUnlimitedMemory.html#a73f9388115ba36712d6a97d108dcc7cc">latency_processor_mutex_</a>);</div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>      <span class="keywordflow">for</span> (<span class="keyword">auto</span> &amp;recent_page_id : <a class="code hl_variable" href="../../d3/db8/classbustub_1_1DiskManagerUnlimitedMemory.html#ad27a40686099e3b17795dd3f870e87e3">recent_access_</a>) {</div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>        <span class="keywordflow">if</span> ((recent_page_id &amp; (~0x3)) == (page_id &amp; (~0x3))) {</div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>          sleep_micro_sec = 100;  <span class="comment">// for access in the same &quot;block&quot;, 0.1ms latency</span></div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>          <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>        }</div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>        <span class="keywordflow">if</span> (page_id &gt;= recent_page_id &amp;&amp; page_id &lt;= recent_page_id + 3) {</div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>          sleep_micro_sec = 100;  <span class="comment">// for sequential access, 0.1ms latency</span></div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span>          <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span>        }</div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span>      }</div>
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span>      lck.unlock();</div>
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span>      std::this_thread::sleep_for(std::chrono::microseconds(sleep_micro_sec));</div>
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span>    }</div>
+<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span>  }</div>
+</div>
+<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span> </div>
+<div class="foldopen" id="foldopen00142" data-start="{" data-end="}">
+<div class="line"><a id="l00142" name="l00142"></a><span class="lineno"><a class="line" href="../../d3/db8/classbustub_1_1DiskManagerUnlimitedMemory.html#aa3d69bf1f10da4d2384c47086966b2b3">  142</a></span>  <span class="keywordtype">void</span> <a class="code hl_function" href="../../d3/db8/classbustub_1_1DiskManagerUnlimitedMemory.html#aa3d69bf1f10da4d2384c47086966b2b3">PostProcessLatency</a>(<a class="code hl_typedef" href="../../de/dda/namespacebustub.html#a8de4ac099b23d712481109bb846decde">page_id_t</a> page_id) {</div>
+<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="../../d3/db8/classbustub_1_1DiskManagerUnlimitedMemory.html#af5adb30c037ccf8b2983917998be2dc3">latency_simulator_enabled_</a>) {</div>
+<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span>      std::scoped_lock&lt;std::mutex&gt; lck(<a class="code hl_variable" href="../../d3/db8/classbustub_1_1DiskManagerUnlimitedMemory.html#a73f9388115ba36712d6a97d108dcc7cc">latency_processor_mutex_</a>);</div>
+<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span>      <a class="code hl_variable" href="../../d3/db8/classbustub_1_1DiskManagerUnlimitedMemory.html#ad27a40686099e3b17795dd3f870e87e3">recent_access_</a>[<a class="code hl_variable" href="../../d3/db8/classbustub_1_1DiskManagerUnlimitedMemory.html#af937dd4ea034cb0dc38b79d76f2c7724">access_ptr_</a>] = page_id;</div>
+<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span>      <a class="code hl_variable" href="../../d3/db8/classbustub_1_1DiskManagerUnlimitedMemory.html#af937dd4ea034cb0dc38b79d76f2c7724">access_ptr_</a> = (<a class="code hl_variable" href="../../d3/db8/classbustub_1_1DiskManagerUnlimitedMemory.html#af937dd4ea034cb0dc38b79d76f2c7724">access_ptr_</a> + 1) % <a class="code hl_variable" href="../../d3/db8/classbustub_1_1DiskManagerUnlimitedMemory.html#ad27a40686099e3b17795dd3f870e87e3">recent_access_</a>.size();</div>
+<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span>    }</div>
+<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span>  }</div>
+</div>
+<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span> </div>
+<div class="line"><a id="l00150" name="l00150"></a><span class="lineno"><a class="line" href="../../d3/db8/classbustub_1_1DiskManagerUnlimitedMemory.html#a17dfb815a0dd0d229361834ef8bded18">  150</a></span>  <span class="keywordtype">void</span> <a class="code hl_function" href="../../d3/db8/classbustub_1_1DiskManagerUnlimitedMemory.html#a17dfb815a0dd0d229361834ef8bded18">EnableLatencySimulator</a>(<span class="keywordtype">bool</span> enabled) { <a class="code hl_variable" href="../../d3/db8/classbustub_1_1DiskManagerUnlimitedMemory.html#af5adb30c037ccf8b2983917998be2dc3">latency_simulator_enabled_</a> = enabled; }</div>
+<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span> </div>
+<div class="foldopen" id="foldopen00152" data-start="{" data-end="}">
+<div class="line"><a id="l00152" name="l00152"></a><span class="lineno"><a class="line" href="../../d3/db8/classbustub_1_1DiskManagerUnlimitedMemory.html#a52ac39a17a415d83fec9c10b91d37793">  152</a></span>  <span class="keyword">auto</span> <a class="code hl_function" href="../../d3/db8/classbustub_1_1DiskManagerUnlimitedMemory.html#a52ac39a17a415d83fec9c10b91d37793">GetLastReadThreadAndClear</a>() -&gt; std::optional&lt;std::thread::id&gt; {</div>
+<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span>    std::unique_lock&lt;std::mutex&gt; lck(<a class="code hl_variable" href="../../d3/db8/classbustub_1_1DiskManagerUnlimitedMemory.html#a4ec82b5a9e9cf83b13f97da2b9fe6d83">mutex_</a>);</div>
+<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span>    <span class="keyword">auto</span> t = <a class="code hl_variable" href="../../d3/db8/classbustub_1_1DiskManagerUnlimitedMemory.html#ab266a3e70a06065cf5eace3bc29f94dd">thread_id_</a>;</div>
+<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span>    <a class="code hl_variable" href="../../d3/db8/classbustub_1_1DiskManagerUnlimitedMemory.html#ab266a3e70a06065cf5eace3bc29f94dd">thread_id_</a> = std::nullopt;</div>
+<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span>    <span class="keywordflow">return</span> t;</div>
+<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span>  }</div>
+</div>
+<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span> </div>
+<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span> <span class="keyword">private</span>:</div>
+<div class="line"><a id="l00160" name="l00160"></a><span class="lineno"><a class="line" href="../../d3/db8/classbustub_1_1DiskManagerUnlimitedMemory.html#af5adb30c037ccf8b2983917998be2dc3">  160</a></span>  <span class="keywordtype">bool</span> <a class="code hl_variable" href="../../d3/db8/classbustub_1_1DiskManagerUnlimitedMemory.html#af5adb30c037ccf8b2983917998be2dc3">latency_simulator_enabled_</a>{<span class="keyword">false</span>};</div>
+<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span> </div>
+<div class="line"><a id="l00162" name="l00162"></a><span class="lineno"><a class="line" href="../../d3/db8/classbustub_1_1DiskManagerUnlimitedMemory.html#a73f9388115ba36712d6a97d108dcc7cc">  162</a></span>  std::mutex <a class="code hl_variable" href="../../d3/db8/classbustub_1_1DiskManagerUnlimitedMemory.html#a73f9388115ba36712d6a97d108dcc7cc">latency_processor_mutex_</a>;</div>
+<div class="line"><a id="l00163" name="l00163"></a><span class="lineno"><a class="line" href="../../d3/db8/classbustub_1_1DiskManagerUnlimitedMemory.html#ad27a40686099e3b17795dd3f870e87e3">  163</a></span>  std::array&lt;page_id_t, 4&gt; <a class="code hl_variable" href="../../d3/db8/classbustub_1_1DiskManagerUnlimitedMemory.html#ad27a40686099e3b17795dd3f870e87e3">recent_access_</a>;</div>
+<div class="line"><a id="l00164" name="l00164"></a><span class="lineno"><a class="line" href="../../d3/db8/classbustub_1_1DiskManagerUnlimitedMemory.html#af937dd4ea034cb0dc38b79d76f2c7724">  164</a></span>  uint64_t <a class="code hl_variable" href="../../d3/db8/classbustub_1_1DiskManagerUnlimitedMemory.html#af937dd4ea034cb0dc38b79d76f2c7724">access_ptr_</a>{0};</div>
+<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span> </div>
+<div class="line"><a id="l00166" name="l00166"></a><span class="lineno"><a class="line" href="../../d3/db8/classbustub_1_1DiskManagerUnlimitedMemory.html#aa324f83f706e3214484627c183becdd1">  166</a></span>  <span class="keyword">using </span><a class="code hl_typedef" href="../../d3/db8/classbustub_1_1DiskManagerUnlimitedMemory.html#aa324f83f706e3214484627c183becdd1">Page</a> = std::array&lt;char, BUSTUB_PAGE_SIZE&gt;;</div>
+<div class="line"><a id="l00167" name="l00167"></a><span class="lineno"><a class="line" href="../../d3/db8/classbustub_1_1DiskManagerUnlimitedMemory.html#a4e60edc294cfcc193e7f6b057f8872c1">  167</a></span>  <span class="keyword">using </span><a class="code hl_typedef" href="../../d3/db8/classbustub_1_1DiskManagerUnlimitedMemory.html#a4e60edc294cfcc193e7f6b057f8872c1">ProtectedPage</a> = std::pair&lt;Page, std::shared_mutex&gt;;</div>
+<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span> </div>
+<div class="line"><a id="l00169" name="l00169"></a><span class="lineno"><a class="line" href="../../d3/db8/classbustub_1_1DiskManagerUnlimitedMemory.html#a4ec82b5a9e9cf83b13f97da2b9fe6d83">  169</a></span>  std::mutex <a class="code hl_variable" href="../../d3/db8/classbustub_1_1DiskManagerUnlimitedMemory.html#a4ec82b5a9e9cf83b13f97da2b9fe6d83">mutex_</a>;</div>
+<div class="line"><a id="l00170" name="l00170"></a><span class="lineno"><a class="line" href="../../d3/db8/classbustub_1_1DiskManagerUnlimitedMemory.html#ab266a3e70a06065cf5eace3bc29f94dd">  170</a></span>  std::optional&lt;std::thread::id&gt; <a class="code hl_variable" href="../../d3/db8/classbustub_1_1DiskManagerUnlimitedMemory.html#ab266a3e70a06065cf5eace3bc29f94dd">thread_id_</a>;</div>
+<div class="line"><a id="l00171" name="l00171"></a><span class="lineno"><a class="line" href="../../d3/db8/classbustub_1_1DiskManagerUnlimitedMemory.html#aa3a84358429a1b578b65a24133b52ca1">  171</a></span>  std::vector&lt;std::shared_ptr&lt;ProtectedPage&gt;&gt; <a class="code hl_variable" href="../../d3/db8/classbustub_1_1DiskManagerUnlimitedMemory.html#aa3a84358429a1b578b65a24133b52ca1">data_</a>;</div>
+<div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span>};</div>
+</div>
+<div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span> </div>
+<div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span>}  <span class="comment">// namespace bustub</span></div>
+<div class="ttc" id="aclassbustub_1_1DiskManagerMemory_html"><div class="ttname"><a href="../../d5/da4/classbustub_1_1DiskManagerMemory.html">bustub::DiskManagerMemory</a></div><div class="ttdef"><b>Definition</b> disk_manager_memory.h:33</div></div>
+<div class="ttc" id="aclassbustub_1_1DiskManagerMemory_html_a74bb0034fa950d040ce1bb8a4a15aac2"><div class="ttname"><a href="../../d5/da4/classbustub_1_1DiskManagerMemory.html#a74bb0034fa950d040ce1bb8a4a15aac2">bustub::DiskManagerMemory::memory_</a></div><div class="ttdeci">char * memory_</div><div class="ttdef"><b>Definition</b> disk_manager_memory.h:54</div></div>
+<div class="ttc" id="aclassbustub_1_1DiskManagerMemory_html_a8504fdeacf18e39a88107e4897003708"><div class="ttname"><a href="../../d5/da4/classbustub_1_1DiskManagerMemory.html#a8504fdeacf18e39a88107e4897003708">bustub::DiskManagerMemory::WritePage</a></div><div class="ttdeci">void WritePage(page_id_t page_id, const char *page_data) override</div><div class="ttdef"><b>Definition</b> disk_manager_memory.cpp:35</div></div>
+<div class="ttc" id="aclassbustub_1_1DiskManagerMemory_html_ac7b7c26dc8c1dd3b8d4154f0f9eabc26"><div class="ttname"><a href="../../d5/da4/classbustub_1_1DiskManagerMemory.html#ac7b7c26dc8c1dd3b8d4154f0f9eabc26">bustub::DiskManagerMemory::ReadPage</a></div><div class="ttdeci">void ReadPage(page_id_t page_id, char *page_data) override</div><div class="ttdef"><b>Definition</b> disk_manager_memory.cpp:45</div></div>
+<div class="ttc" id="aclassbustub_1_1DiskManagerMemory_html_ad56c5135a264074281f9793576259784"><div class="ttname"><a href="../../d5/da4/classbustub_1_1DiskManagerMemory.html#ad56c5135a264074281f9793576259784">bustub::DiskManagerMemory::~DiskManagerMemory</a></div><div class="ttdeci">~DiskManagerMemory() override</div><div class="ttdef"><b>Definition</b> disk_manager_memory.h:37</div></div>
+<div class="ttc" id="aclassbustub_1_1DiskManagerUnlimitedMemory_html"><div class="ttname"><a href="../../d3/db8/classbustub_1_1DiskManagerUnlimitedMemory.html">bustub::DiskManagerUnlimitedMemory</a></div><div class="ttdef"><b>Definition</b> disk_manager_memory.h:61</div></div>
+<div class="ttc" id="aclassbustub_1_1DiskManagerUnlimitedMemory_html_a17dfb815a0dd0d229361834ef8bded18"><div class="ttname"><a href="../../d3/db8/classbustub_1_1DiskManagerUnlimitedMemory.html#a17dfb815a0dd0d229361834ef8bded18">bustub::DiskManagerUnlimitedMemory::EnableLatencySimulator</a></div><div class="ttdeci">void EnableLatencySimulator(bool enabled)</div><div class="ttdef"><b>Definition</b> disk_manager_memory.h:150</div></div>
+<div class="ttc" id="aclassbustub_1_1DiskManagerUnlimitedMemory_html_a21ffbbf4589f4f52cc94a9b035b0a752"><div class="ttname"><a href="../../d3/db8/classbustub_1_1DiskManagerUnlimitedMemory.html#a21ffbbf4589f4f52cc94a9b035b0a752">bustub::DiskManagerUnlimitedMemory::DiskManagerUnlimitedMemory</a></div><div class="ttdeci">DiskManagerUnlimitedMemory()</div><div class="ttdef"><b>Definition</b> disk_manager_memory.h:63</div></div>
+<div class="ttc" id="aclassbustub_1_1DiskManagerUnlimitedMemory_html_a31d5042abeabd1eb82b4f09f5e5fc382"><div class="ttname"><a href="../../d3/db8/classbustub_1_1DiskManagerUnlimitedMemory.html#a31d5042abeabd1eb82b4f09f5e5fc382">bustub::DiskManagerUnlimitedMemory::ProcessLatency</a></div><div class="ttdeci">void ProcessLatency(page_id_t page_id)</div><div class="ttdef"><b>Definition</b> disk_manager_memory.h:123</div></div>
+<div class="ttc" id="aclassbustub_1_1DiskManagerUnlimitedMemory_html_a49178f13725196cb4f57a259ba5ce4ed"><div class="ttname"><a href="../../d3/db8/classbustub_1_1DiskManagerUnlimitedMemory.html#a49178f13725196cb4f57a259ba5ce4ed">bustub::DiskManagerUnlimitedMemory::WritePage</a></div><div class="ttdeci">void WritePage(page_id_t page_id, const char *page_data) override</div><div class="ttdef"><b>Definition</b> disk_manager_memory.h:70</div></div>
+<div class="ttc" id="aclassbustub_1_1DiskManagerUnlimitedMemory_html_a4e60edc294cfcc193e7f6b057f8872c1"><div class="ttname"><a href="../../d3/db8/classbustub_1_1DiskManagerUnlimitedMemory.html#a4e60edc294cfcc193e7f6b057f8872c1">bustub::DiskManagerUnlimitedMemory::ProtectedPage</a></div><div class="ttdeci">std::pair&lt; Page, std::shared_mutex &gt; ProtectedPage</div><div class="ttdef"><b>Definition</b> disk_manager_memory.h:167</div></div>
+<div class="ttc" id="aclassbustub_1_1DiskManagerUnlimitedMemory_html_a4ec82b5a9e9cf83b13f97da2b9fe6d83"><div class="ttname"><a href="../../d3/db8/classbustub_1_1DiskManagerUnlimitedMemory.html#a4ec82b5a9e9cf83b13f97da2b9fe6d83">bustub::DiskManagerUnlimitedMemory::mutex_</a></div><div class="ttdeci">std::mutex mutex_</div><div class="ttdef"><b>Definition</b> disk_manager_memory.h:169</div></div>
+<div class="ttc" id="aclassbustub_1_1DiskManagerUnlimitedMemory_html_a52ac39a17a415d83fec9c10b91d37793"><div class="ttname"><a href="../../d3/db8/classbustub_1_1DiskManagerUnlimitedMemory.html#a52ac39a17a415d83fec9c10b91d37793">bustub::DiskManagerUnlimitedMemory::GetLastReadThreadAndClear</a></div><div class="ttdeci">auto GetLastReadThreadAndClear() -&gt; std::optional&lt; std::thread::id &gt;</div><div class="ttdef"><b>Definition</b> disk_manager_memory.h:152</div></div>
+<div class="ttc" id="aclassbustub_1_1DiskManagerUnlimitedMemory_html_a73f9388115ba36712d6a97d108dcc7cc"><div class="ttname"><a href="../../d3/db8/classbustub_1_1DiskManagerUnlimitedMemory.html#a73f9388115ba36712d6a97d108dcc7cc">bustub::DiskManagerUnlimitedMemory::latency_processor_mutex_</a></div><div class="ttdeci">std::mutex latency_processor_mutex_</div><div class="ttdef"><b>Definition</b> disk_manager_memory.h:162</div></div>
+<div class="ttc" id="aclassbustub_1_1DiskManagerUnlimitedMemory_html_aa324f83f706e3214484627c183becdd1"><div class="ttname"><a href="../../d3/db8/classbustub_1_1DiskManagerUnlimitedMemory.html#aa324f83f706e3214484627c183becdd1">bustub::DiskManagerUnlimitedMemory::Page</a></div><div class="ttdeci">std::array&lt; char, BUSTUB_PAGE_SIZE &gt; Page</div><div class="ttdef"><b>Definition</b> disk_manager_memory.h:166</div></div>
+<div class="ttc" id="aclassbustub_1_1DiskManagerUnlimitedMemory_html_aa3a84358429a1b578b65a24133b52ca1"><div class="ttname"><a href="../../d3/db8/classbustub_1_1DiskManagerUnlimitedMemory.html#aa3a84358429a1b578b65a24133b52ca1">bustub::DiskManagerUnlimitedMemory::data_</a></div><div class="ttdeci">std::vector&lt; std::shared_ptr&lt; ProtectedPage &gt; &gt; data_</div><div class="ttdef"><b>Definition</b> disk_manager_memory.h:171</div></div>
+<div class="ttc" id="aclassbustub_1_1DiskManagerUnlimitedMemory_html_aa3d69bf1f10da4d2384c47086966b2b3"><div class="ttname"><a href="../../d3/db8/classbustub_1_1DiskManagerUnlimitedMemory.html#aa3d69bf1f10da4d2384c47086966b2b3">bustub::DiskManagerUnlimitedMemory::PostProcessLatency</a></div><div class="ttdeci">void PostProcessLatency(page_id_t page_id)</div><div class="ttdef"><b>Definition</b> disk_manager_memory.h:142</div></div>
+<div class="ttc" id="aclassbustub_1_1DiskManagerUnlimitedMemory_html_ab266a3e70a06065cf5eace3bc29f94dd"><div class="ttname"><a href="../../d3/db8/classbustub_1_1DiskManagerUnlimitedMemory.html#ab266a3e70a06065cf5eace3bc29f94dd">bustub::DiskManagerUnlimitedMemory::thread_id_</a></div><div class="ttdeci">std::optional&lt; std::thread::id &gt; thread_id_</div><div class="ttdef"><b>Definition</b> disk_manager_memory.h:170</div></div>
+<div class="ttc" id="aclassbustub_1_1DiskManagerUnlimitedMemory_html_ac602ac7692498661e601297178533c40"><div class="ttname"><a href="../../d3/db8/classbustub_1_1DiskManagerUnlimitedMemory.html#ac602ac7692498661e601297178533c40">bustub::DiskManagerUnlimitedMemory::ReadPage</a></div><div class="ttdeci">void ReadPage(page_id_t page_id, char *page_data) override</div><div class="ttdef"><b>Definition</b> disk_manager_memory.h:97</div></div>
+<div class="ttc" id="aclassbustub_1_1DiskManagerUnlimitedMemory_html_ad27a40686099e3b17795dd3f870e87e3"><div class="ttname"><a href="../../d3/db8/classbustub_1_1DiskManagerUnlimitedMemory.html#ad27a40686099e3b17795dd3f870e87e3">bustub::DiskManagerUnlimitedMemory::recent_access_</a></div><div class="ttdeci">std::array&lt; page_id_t, 4 &gt; recent_access_</div><div class="ttdef"><b>Definition</b> disk_manager_memory.h:163</div></div>
+<div class="ttc" id="aclassbustub_1_1DiskManagerUnlimitedMemory_html_af5adb30c037ccf8b2983917998be2dc3"><div class="ttname"><a href="../../d3/db8/classbustub_1_1DiskManagerUnlimitedMemory.html#af5adb30c037ccf8b2983917998be2dc3">bustub::DiskManagerUnlimitedMemory::latency_simulator_enabled_</a></div><div class="ttdeci">bool latency_simulator_enabled_</div><div class="ttdef"><b>Definition</b> disk_manager_memory.h:160</div></div>
+<div class="ttc" id="aclassbustub_1_1DiskManagerUnlimitedMemory_html_af937dd4ea034cb0dc38b79d76f2c7724"><div class="ttname"><a href="../../d3/db8/classbustub_1_1DiskManagerUnlimitedMemory.html#af937dd4ea034cb0dc38b79d76f2c7724">bustub::DiskManagerUnlimitedMemory::access_ptr_</a></div><div class="ttdeci">uint64_t access_ptr_</div><div class="ttdef"><b>Definition</b> disk_manager_memory.h:164</div></div>
+<div class="ttc" id="aclassbustub_1_1DiskManager_html"><div class="ttname"><a href="../../da/dfe/classbustub_1_1DiskManager.html">bustub::DiskManager</a></div><div class="ttdef"><b>Definition</b> disk_manager.h:28</div></div>
+<div class="ttc" id="aconfig_8h_html"><div class="ttname"><a href="../../db/d16/config_8h.html">config.h</a></div></div>
+<div class="ttc" id="adisk__manager_8h_html"><div class="ttname"><a href="../../d6/d30/disk__manager_8h.html">disk_manager.h</a></div></div>
+<div class="ttc" id="anamespacebustub_html"><div class="ttname"><a href="../../de/dda/namespacebustub.html">bustub</a></div><div class="ttdef"><b>Definition</b> bind_create.cpp:53</div></div>
+<div class="ttc" id="anamespacebustub_html_a07360ca59dac7e03b3d988f005057273"><div class="ttname"><a href="../../de/dda/namespacebustub.html#a07360ca59dac7e03b3d988f005057273">bustub::BUSTUB_PAGE_SIZE</a></div><div class="ttdeci">static constexpr int BUSTUB_PAGE_SIZE</div><div class="ttdef"><b>Definition</b> config.h:37</div></div>
+<div class="ttc" id="anamespacebustub_html_a8de4ac099b23d712481109bb846decde"><div class="ttname"><a href="../../de/dda/namespacebustub.html#a8de4ac099b23d712481109bb846decde">bustub::page_id_t</a></div><div class="ttdeci">int32_t page_id_t</div><div class="ttdef"><b>Definition</b> config.h:44</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
+</small></address>
+</body>
+</html>

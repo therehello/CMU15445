@@ -1,0 +1,285 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>数据库系统 CMU15-445/645: bustub::BoundAggCall类 参考</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/searchdata.js"></script>
+<script type="text/javascript" src="../../search/search.js"></script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">数据库系统 CMU15-445/645<span id="projectnumber">&#160;1.0.0</span>
+   </div>
+   <div id="projectbrief">CMU15-445/645 是基于现代 C++ 开发的支持并发操作的简单 SQL 操作的单机数据库</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.9.8 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "../../search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('../../',true,false,'search.php','搜索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="../../de/dda/namespacebustub.html">bustub</a></li><li class="navelem"><a class="el" href="../../db/d7e/classbustub_1_1BoundAggCall.html">BoundAggCall</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Public 成员函数</a> &#124;
+<a href="#pub-attribs">Public 属性</a> &#124;
+<a href="../../de/dc5/classbustub_1_1BoundAggCall-members.html">所有成员列表</a>  </div>
+  <div class="headertitle"><div class="title">bustub::BoundAggCall类 参考</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p><code>#include &lt;<a class="el" href="../../d2/d08/bound__agg__call_8h_source.html">bound_agg_call.h</a>&gt;</code></p>
+<div class="dynheader">
+类 bustub::BoundAggCall 继承关系图:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../db/dc9/classbustub_1_1BoundAggCall__inherit__graph.svg" width="198" height="110"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<center><span class="legend">[<a href="../../graph_legend.html">图例</a>]</span></center></div>
+<div class="dynheader">
+bustub::BoundAggCall 的协作图:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../d8/d95/classbustub_1_1BoundAggCall__coll__graph.svg" width="198" height="110"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<center><span class="legend">[<a href="../../graph_legend.html">图例</a>]</span></center></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Public 成员函数</h2></td></tr>
+<tr class="memitem:ab406dc55f27df5c15488ceb0b19ee6db" id="r_ab406dc55f27df5c15488ceb0b19ee6db"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d7e/classbustub_1_1BoundAggCall.html#ab406dc55f27df5c15488ceb0b19ee6db">BoundAggCall</a> (std::string func_name, bool is_distinct, std::vector&lt; std::unique_ptr&lt; <a class="el" href="../../de/d78/classbustub_1_1BoundExpression.html">BoundExpression</a> &gt; &gt; args)</td></tr>
+<tr class="separator:ab406dc55f27df5c15488ceb0b19ee6db"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a79095be5c57c4e0a0f236705968af2b7" id="r_a79095be5c57c4e0a0f236705968af2b7"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d7e/classbustub_1_1BoundAggCall.html#a79095be5c57c4e0a0f236705968af2b7">ToString</a> () const -&gt; std::string override</td></tr>
+<tr class="separator:a79095be5c57c4e0a0f236705968af2b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2a470e200d62b172e9adf7bfbf7d4868" id="r_a2a470e200d62b172e9adf7bfbf7d4868"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d7e/classbustub_1_1BoundAggCall.html#a2a470e200d62b172e9adf7bfbf7d4868">HasAggregation</a> () const -&gt; bool override</td></tr>
+<tr class="separator:a2a470e200d62b172e9adf7bfbf7d4868"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_methods_classbustub_1_1BoundExpression"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classbustub_1_1BoundExpression')"><img src="../../closed.png" alt="-"/>&#160;Public 成员函数 继承自 <a class="el" href="../../de/d78/classbustub_1_1BoundExpression.html">bustub::BoundExpression</a></td></tr>
+<tr class="memitem:a6453827c6cb55c35cb2108425287e702 inherit pub_methods_classbustub_1_1BoundExpression" id="r_a6453827c6cb55c35cb2108425287e702"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d78/classbustub_1_1BoundExpression.html#a6453827c6cb55c35cb2108425287e702">BoundExpression</a> (<a class="el" href="../../de/dda/namespacebustub.html#ad966f68740f50281536bcc3db49e3854">ExpressionType</a> type)</td></tr>
+<tr class="separator:a6453827c6cb55c35cb2108425287e702 inherit pub_methods_classbustub_1_1BoundExpression"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad97fdc602d10872f1729c2d725acc384 inherit pub_methods_classbustub_1_1BoundExpression" id="r_ad97fdc602d10872f1729c2d725acc384"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d78/classbustub_1_1BoundExpression.html#ad97fdc602d10872f1729c2d725acc384">BoundExpression</a> ()=default</td></tr>
+<tr class="separator:ad97fdc602d10872f1729c2d725acc384 inherit pub_methods_classbustub_1_1BoundExpression"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acd273986f821727a7ec1a591f6dabbf6 inherit pub_methods_classbustub_1_1BoundExpression" id="r_acd273986f821727a7ec1a591f6dabbf6"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d78/classbustub_1_1BoundExpression.html#acd273986f821727a7ec1a591f6dabbf6">~BoundExpression</a> ()=default</td></tr>
+<tr class="separator:acd273986f821727a7ec1a591f6dabbf6 inherit pub_methods_classbustub_1_1BoundExpression"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a95ab26622b4dd006cbdab23ac8b6a546 inherit pub_methods_classbustub_1_1BoundExpression" id="r_a95ab26622b4dd006cbdab23ac8b6a546"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d78/classbustub_1_1BoundExpression.html#a95ab26622b4dd006cbdab23ac8b6a546">IsInvalid</a> () const -&gt; bool</td></tr>
+<tr class="separator:a95ab26622b4dd006cbdab23ac8b6a546 inherit pub_methods_classbustub_1_1BoundExpression"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a14553d84df560b6e3dedc07e1872755f inherit pub_methods_classbustub_1_1BoundExpression" id="r_a14553d84df560b6e3dedc07e1872755f"><td class="memItemLeft" align="right" valign="top">virtual auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d78/classbustub_1_1BoundExpression.html#a14553d84df560b6e3dedc07e1872755f">HasWindowFunction</a> () const -&gt; bool</td></tr>
+<tr class="separator:a14553d84df560b6e3dedc07e1872755f inherit pub_methods_classbustub_1_1BoundExpression"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
+Public 属性</h2></td></tr>
+<tr class="memitem:a495a9442c2f209fd03034549e0f88c19" id="r_a495a9442c2f209fd03034549e0f88c19"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d7e/classbustub_1_1BoundAggCall.html#a495a9442c2f209fd03034549e0f88c19">func_name_</a></td></tr>
+<tr class="separator:a495a9442c2f209fd03034549e0f88c19"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4573f178540377005e726d28c4113068" id="r_a4573f178540377005e726d28c4113068"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d7e/classbustub_1_1BoundAggCall.html#a4573f178540377005e726d28c4113068">is_distinct_</a></td></tr>
+<tr class="separator:a4573f178540377005e726d28c4113068"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1aa7ee179671b1771c77c75b2bf6df4e" id="r_a1aa7ee179671b1771c77c75b2bf6df4e"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::unique_ptr&lt; <a class="el" href="../../de/d78/classbustub_1_1BoundExpression.html">BoundExpression</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d7e/classbustub_1_1BoundAggCall.html#a1aa7ee179671b1771c77c75b2bf6df4e">args_</a></td></tr>
+<tr class="separator:a1aa7ee179671b1771c77c75b2bf6df4e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_attribs_classbustub_1_1BoundExpression"><td colspan="2" onclick="javascript:toggleInherit('pub_attribs_classbustub_1_1BoundExpression')"><img src="../../closed.png" alt="-"/>&#160;Public 属性 继承自 <a class="el" href="../../de/d78/classbustub_1_1BoundExpression.html">bustub::BoundExpression</a></td></tr>
+<tr class="memitem:a50f9da1b6525b75f203fff61778b4867 inherit pub_attribs_classbustub_1_1BoundExpression" id="r_a50f9da1b6525b75f203fff61778b4867"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../de/dda/namespacebustub.html#ad966f68740f50281536bcc3db49e3854">ExpressionType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d78/classbustub_1_1BoundExpression.html#a50f9da1b6525b75f203fff61778b4867">type_</a> {<a class="el" href="../../de/dda/namespacebustub.html#ad966f68740f50281536bcc3db49e3854accc0377a8afbf50e7094f5c23a8af223">ExpressionType::INVALID</a>}</td></tr>
+<tr class="separator:a50f9da1b6525b75f203fff61778b4867 inherit pub_attribs_classbustub_1_1BoundExpression"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
+<div class="textblock"><p>A bound aggregate call, e.g., <code>sum(x)</code>. </p>
+</div><h2 class="groupheader">构造及析构函数说明</h2>
+<a id="ab406dc55f27df5c15488ceb0b19ee6db" name="ab406dc55f27df5c15488ceb0b19ee6db"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab406dc55f27df5c15488ceb0b19ee6db">&#9670;&#160;</a></span>BoundAggCall()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bustub::BoundAggCall::BoundAggCall </td>
+          <td>(</td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>func_name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>is_distinct</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::vector&lt; std::unique_ptr&lt; <a class="el" href="../../de/d78/classbustub_1_1BoundExpression.html">BoundExpression</a> &gt; &gt;&#160;</td>
+          <td class="paramname"><em>args</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">explicit</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">成员函数说明</h2>
+<a id="a2a470e200d62b172e9adf7bfbf7d4868" name="a2a470e200d62b172e9adf7bfbf7d4868"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2a470e200d62b172e9adf7bfbf7d4868">&#9670;&#160;</a></span>HasAggregation()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto bustub::BoundAggCall::HasAggregation </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const -&gt; bool</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>重载 <a class="el" href="../../de/d78/classbustub_1_1BoundExpression.html#a514252ea47e97dd0c421116c5ab77067">bustub::BoundExpression</a> .</p>
+
+</div>
+</div>
+<a id="a79095be5c57c4e0a0f236705968af2b7" name="a79095be5c57c4e0a0f236705968af2b7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a79095be5c57c4e0a0f236705968af2b7">&#9670;&#160;</a></span>ToString()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto bustub::BoundAggCall::ToString </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const -&gt; std::string</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>重载 <a class="el" href="../../de/d78/classbustub_1_1BoundExpression.html#a6afb85f759fa02abe4b726ae86c1ee5e">bustub::BoundExpression</a> .</p>
+
+</div>
+</div>
+<h2 class="groupheader">类成员变量说明</h2>
+<a id="a1aa7ee179671b1771c77c75b2bf6df4e" name="a1aa7ee179671b1771c77c75b2bf6df4e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1aa7ee179671b1771c77c75b2bf6df4e">&#9670;&#160;</a></span>args_</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt;std::unique_ptr&lt;<a class="el" href="../../de/d78/classbustub_1_1BoundExpression.html">BoundExpression</a>&gt; &gt; bustub::BoundAggCall::args_</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Arguments of the agg call. </p>
+
+</div>
+</div>
+<a id="a495a9442c2f209fd03034549e0f88c19" name="a495a9442c2f209fd03034549e0f88c19"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a495a9442c2f209fd03034549e0f88c19">&#9670;&#160;</a></span>func_name_</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string bustub::BoundAggCall::func_name_</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Function name. </p>
+
+</div>
+</div>
+<a id="a4573f178540377005e726d28c4113068" name="a4573f178540377005e726d28c4113068"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4573f178540377005e726d28c4113068">&#9670;&#160;</a></span>is_distinct_</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool bustub::BoundAggCall::is_distinct_</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Is distinct aggregation </p>
+
+</div>
+</div>
+<hr/>该类的文档由以下文件生成:<ul>
+<li>src/include/binder/expressions/<a class="el" href="../../d2/d08/bound__agg__call_8h_source.html">bound_agg_call.h</a></li>
+<li>src/binder/<a class="el" href="../../d9/d02/binder_2fmt__impl_8cpp.html">fmt_impl.cpp</a></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
+</small></address>
+</body>
+</html>

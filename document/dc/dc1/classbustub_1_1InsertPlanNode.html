@@ -1,0 +1,349 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>数据库系统 CMU15-445/645: bustub::InsertPlanNode类 参考</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/searchdata.js"></script>
+<script type="text/javascript" src="../../search/search.js"></script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">数据库系统 CMU15-445/645<span id="projectnumber">&#160;1.0.0</span>
+   </div>
+   <div id="projectbrief">CMU15-445/645 是基于现代 C++ 开发的支持并发操作的简单 SQL 操作的单机数据库</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.9.8 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "../../search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('../../',true,false,'search.php','搜索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="../../de/dda/namespacebustub.html">bustub</a></li><li class="navelem"><a class="el" href="../../dc/dc1/classbustub_1_1InsertPlanNode.html">InsertPlanNode</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Public 成员函数</a> &#124;
+<a href="#pub-attribs">Public 属性</a> &#124;
+<a href="#pro-methods">Protected 成员函数</a> &#124;
+<a href="../../d1/dba/classbustub_1_1InsertPlanNode-members.html">所有成员列表</a>  </div>
+  <div class="headertitle"><div class="title">bustub::InsertPlanNode类 参考</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p><code>#include &lt;<a class="el" href="../../d7/dcd/insert__plan_8h_source.html">insert_plan.h</a>&gt;</code></p>
+<div class="dynheader">
+类 bustub::InsertPlanNode 继承关系图:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../d4/d9d/classbustub_1_1InsertPlanNode__inherit__graph.svg" width="202" height="110"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<center><span class="legend">[<a href="../../graph_legend.html">图例</a>]</span></center></div>
+<div class="dynheader">
+bustub::InsertPlanNode 的协作图:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../de/d52/classbustub_1_1InsertPlanNode__coll__graph.svg" width="202" height="110"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<center><span class="legend">[<a href="../../graph_legend.html">图例</a>]</span></center></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Public 成员函数</h2></td></tr>
+<tr class="memitem:a8065005c52751ee2f33adea48e97c28e" id="r_a8065005c52751ee2f33adea48e97c28e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/dc1/classbustub_1_1InsertPlanNode.html#a8065005c52751ee2f33adea48e97c28e">InsertPlanNode</a> (<a class="el" href="../../de/dda/namespacebustub.html#a55b0598dc53e990803d5fd093fc6a59f">SchemaRef</a> output, <a class="el" href="../../de/dda/namespacebustub.html#a354095e050bd1915a499a31c062c7303">AbstractPlanNodeRef</a> child, <a class="el" href="../../de/dda/namespacebustub.html#a3571cdcf7aa43bd929669794e75cbc48">table_oid_t</a> table_oid)</td></tr>
+<tr class="separator:a8065005c52751ee2f33adea48e97c28e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1e55c5b23bb823ae20269df873443635" id="r_a1e55c5b23bb823ae20269df873443635"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/dc1/classbustub_1_1InsertPlanNode.html#a1e55c5b23bb823ae20269df873443635">GetType</a> () const -&gt; <a class="el" href="../../de/dda/namespacebustub.html#ad7d821859993f0ecb02cde3b7a9f2ccf">PlanType</a> override</td></tr>
+<tr class="separator:a1e55c5b23bb823ae20269df873443635"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a07feab74e93fea0343425d14da08ffb1" id="r_a07feab74e93fea0343425d14da08ffb1"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/dc1/classbustub_1_1InsertPlanNode.html#a07feab74e93fea0343425d14da08ffb1">GetTableOid</a> () const -&gt; <a class="el" href="../../de/dda/namespacebustub.html#a3571cdcf7aa43bd929669794e75cbc48">table_oid_t</a></td></tr>
+<tr class="separator:a07feab74e93fea0343425d14da08ffb1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1ca3e4cc3a5e81ed75d0ffd52555a5d4" id="r_a1ca3e4cc3a5e81ed75d0ffd52555a5d4"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/dc1/classbustub_1_1InsertPlanNode.html#a1ca3e4cc3a5e81ed75d0ffd52555a5d4">GetChildPlan</a> () const -&gt; <a class="el" href="../../de/dda/namespacebustub.html#a354095e050bd1915a499a31c062c7303">AbstractPlanNodeRef</a></td></tr>
+<tr class="separator:a1ca3e4cc3a5e81ed75d0ffd52555a5d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0b5fb28230b0e63b5a0a95753dd6568c" id="r_a0b5fb28230b0e63b5a0a95753dd6568c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/dc1/classbustub_1_1InsertPlanNode.html#a0b5fb28230b0e63b5a0a95753dd6568c">BUSTUB_PLAN_NODE_CLONE_WITH_CHILDREN</a> (<a class="el" href="../../dc/dc1/classbustub_1_1InsertPlanNode.html">InsertPlanNode</a>)</td></tr>
+<tr class="separator:a0b5fb28230b0e63b5a0a95753dd6568c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_methods_classbustub_1_1AbstractPlanNode"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classbustub_1_1AbstractPlanNode')"><img src="../../closed.png" alt="-"/>&#160;Public 成员函数 继承自 <a class="el" href="../../d6/d8c/classbustub_1_1AbstractPlanNode.html">bustub::AbstractPlanNode</a></td></tr>
+<tr class="memitem:a1b6aa4666151cce66649517f51052733 inherit pub_methods_classbustub_1_1AbstractPlanNode" id="r_a1b6aa4666151cce66649517f51052733"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d8c/classbustub_1_1AbstractPlanNode.html#a1b6aa4666151cce66649517f51052733">AbstractPlanNode</a> (<a class="el" href="../../de/dda/namespacebustub.html#a55b0598dc53e990803d5fd093fc6a59f">SchemaRef</a> output_schema, std::vector&lt; <a class="el" href="../../de/dda/namespacebustub.html#a354095e050bd1915a499a31c062c7303">AbstractPlanNodeRef</a> &gt; children)</td></tr>
+<tr class="separator:a1b6aa4666151cce66649517f51052733 inherit pub_methods_classbustub_1_1AbstractPlanNode"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a336250e94ce6a76115d8dea2e9be8ba8 inherit pub_methods_classbustub_1_1AbstractPlanNode" id="r_a336250e94ce6a76115d8dea2e9be8ba8"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d8c/classbustub_1_1AbstractPlanNode.html#a336250e94ce6a76115d8dea2e9be8ba8">~AbstractPlanNode</a> ()=default</td></tr>
+<tr class="separator:a336250e94ce6a76115d8dea2e9be8ba8 inherit pub_methods_classbustub_1_1AbstractPlanNode"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa9cd965458e800c0242f3817a292d258 inherit pub_methods_classbustub_1_1AbstractPlanNode" id="r_aa9cd965458e800c0242f3817a292d258"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d8c/classbustub_1_1AbstractPlanNode.html#aa9cd965458e800c0242f3817a292d258">OutputSchema</a> () const -&gt; const <a class="el" href="../../da/d36/classbustub_1_1Schema.html">Schema</a> &amp;</td></tr>
+<tr class="separator:aa9cd965458e800c0242f3817a292d258 inherit pub_methods_classbustub_1_1AbstractPlanNode"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7d96d4434acb6bf335e08fc47eda5072 inherit pub_methods_classbustub_1_1AbstractPlanNode" id="r_a7d96d4434acb6bf335e08fc47eda5072"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d8c/classbustub_1_1AbstractPlanNode.html#a7d96d4434acb6bf335e08fc47eda5072">GetChildAt</a> (uint32_t child_idx) const -&gt; <a class="el" href="../../de/dda/namespacebustub.html#a354095e050bd1915a499a31c062c7303">AbstractPlanNodeRef</a></td></tr>
+<tr class="separator:a7d96d4434acb6bf335e08fc47eda5072 inherit pub_methods_classbustub_1_1AbstractPlanNode"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad2c3dd9b5718a2097bd37c9856a8441d inherit pub_methods_classbustub_1_1AbstractPlanNode" id="r_ad2c3dd9b5718a2097bd37c9856a8441d"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d8c/classbustub_1_1AbstractPlanNode.html#ad2c3dd9b5718a2097bd37c9856a8441d">GetChildren</a> () const -&gt; const std::vector&lt; <a class="el" href="../../de/dda/namespacebustub.html#a354095e050bd1915a499a31c062c7303">AbstractPlanNodeRef</a> &gt; &amp;</td></tr>
+<tr class="separator:ad2c3dd9b5718a2097bd37c9856a8441d inherit pub_methods_classbustub_1_1AbstractPlanNode"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af28eccd32fc387a23e0752fe4280e17f inherit pub_methods_classbustub_1_1AbstractPlanNode" id="r_af28eccd32fc387a23e0752fe4280e17f"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d8c/classbustub_1_1AbstractPlanNode.html#af28eccd32fc387a23e0752fe4280e17f">ToString</a> (bool with_schema=true) const -&gt; std::string</td></tr>
+<tr class="separator:af28eccd32fc387a23e0752fe4280e17f inherit pub_methods_classbustub_1_1AbstractPlanNode"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acd740db4fe3bb6329d3ad199fee6a88a inherit pub_methods_classbustub_1_1AbstractPlanNode" id="r_acd740db4fe3bb6329d3ad199fee6a88a"><td class="memItemLeft" align="right" valign="top">virtual auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d8c/classbustub_1_1AbstractPlanNode.html#acd740db4fe3bb6329d3ad199fee6a88a">CloneWithChildren</a> (std::vector&lt; <a class="el" href="../../de/dda/namespacebustub.html#a354095e050bd1915a499a31c062c7303">AbstractPlanNodeRef</a> &gt; children) const -&gt; std::unique_ptr&lt; <a class="el" href="../../d6/d8c/classbustub_1_1AbstractPlanNode.html">AbstractPlanNode</a> &gt;=0</td></tr>
+<tr class="separator:acd740db4fe3bb6329d3ad199fee6a88a inherit pub_methods_classbustub_1_1AbstractPlanNode"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
+Public 属性</h2></td></tr>
+<tr class="memitem:a18a22528bb8a22a93874034195ac08b2" id="r_a18a22528bb8a22a93874034195ac08b2"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../de/dda/namespacebustub.html#a3571cdcf7aa43bd929669794e75cbc48">table_oid_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/dc1/classbustub_1_1InsertPlanNode.html#a18a22528bb8a22a93874034195ac08b2">table_oid_</a></td></tr>
+<tr class="separator:a18a22528bb8a22a93874034195ac08b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_attribs_classbustub_1_1AbstractPlanNode"><td colspan="2" onclick="javascript:toggleInherit('pub_attribs_classbustub_1_1AbstractPlanNode')"><img src="../../closed.png" alt="-"/>&#160;Public 属性 继承自 <a class="el" href="../../d6/d8c/classbustub_1_1AbstractPlanNode.html">bustub::AbstractPlanNode</a></td></tr>
+<tr class="memitem:af482ac981f85862235fad88872491ff5 inherit pub_attribs_classbustub_1_1AbstractPlanNode" id="r_af482ac981f85862235fad88872491ff5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../de/dda/namespacebustub.html#a55b0598dc53e990803d5fd093fc6a59f">SchemaRef</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d8c/classbustub_1_1AbstractPlanNode.html#af482ac981f85862235fad88872491ff5">output_schema_</a></td></tr>
+<tr class="separator:af482ac981f85862235fad88872491ff5 inherit pub_attribs_classbustub_1_1AbstractPlanNode"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adf3904a4ead8ab951be01232501d70a0 inherit pub_attribs_classbustub_1_1AbstractPlanNode" id="r_adf3904a4ead8ab951be01232501d70a0"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="../../de/dda/namespacebustub.html#a354095e050bd1915a499a31c062c7303">AbstractPlanNodeRef</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d8c/classbustub_1_1AbstractPlanNode.html#adf3904a4ead8ab951be01232501d70a0">children_</a></td></tr>
+<tr class="separator:adf3904a4ead8ab951be01232501d70a0 inherit pub_attribs_classbustub_1_1AbstractPlanNode"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-methods" name="pro-methods"></a>
+Protected 成员函数</h2></td></tr>
+<tr class="memitem:a5bbabdc27199c2a9e7dbf8906ff2c608" id="r_a5bbabdc27199c2a9e7dbf8906ff2c608"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/dc1/classbustub_1_1InsertPlanNode.html#a5bbabdc27199c2a9e7dbf8906ff2c608">PlanNodeToString</a> () const -&gt; std::string override</td></tr>
+<tr class="separator:a5bbabdc27199c2a9e7dbf8906ff2c608"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pro_methods_classbustub_1_1AbstractPlanNode"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_classbustub_1_1AbstractPlanNode')"><img src="../../closed.png" alt="-"/>&#160;Protected 成员函数 继承自 <a class="el" href="../../d6/d8c/classbustub_1_1AbstractPlanNode.html">bustub::AbstractPlanNode</a></td></tr>
+<tr class="memitem:a66485410b63fd7f677a49b7226c4b4ed inherit pro_methods_classbustub_1_1AbstractPlanNode" id="r_a66485410b63fd7f677a49b7226c4b4ed"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d8c/classbustub_1_1AbstractPlanNode.html#a66485410b63fd7f677a49b7226c4b4ed">ChildrenToString</a> (int indent, bool with_schema=true) const -&gt; std::string</td></tr>
+<tr class="separator:a66485410b63fd7f677a49b7226c4b4ed inherit pro_methods_classbustub_1_1AbstractPlanNode"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
+<div class="textblock"><p>The <a class="el" href="../../dc/dc1/classbustub_1_1InsertPlanNode.html">InsertPlanNode</a> identifies a table into which tuples are inserted.</p>
+<p>The values to be inserted will come from the child of the node. </p>
+</div><h2 class="groupheader">构造及析构函数说明</h2>
+<a id="a8065005c52751ee2f33adea48e97c28e" name="a8065005c52751ee2f33adea48e97c28e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8065005c52751ee2f33adea48e97c28e">&#9670;&#160;</a></span>InsertPlanNode()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bustub::InsertPlanNode::InsertPlanNode </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../de/dda/namespacebustub.html#a55b0598dc53e990803d5fd093fc6a59f">SchemaRef</a>&#160;</td>
+          <td class="paramname"><em>output</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="../../de/dda/namespacebustub.html#a354095e050bd1915a499a31c062c7303">AbstractPlanNodeRef</a>&#160;</td>
+          <td class="paramname"><em>child</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="../../de/dda/namespacebustub.html#a3571cdcf7aa43bd929669794e75cbc48">table_oid_t</a>&#160;</td>
+          <td class="paramname"><em>table_oid</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Creates a new insert plan node for inserting values from a child plan. </p><dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">child</td><td>The child plan to obtain values from </td></tr>
+    <tr><td class="paramname">table_oid</td><td>The identifier of the table that should be inserted into </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<h2 class="groupheader">成员函数说明</h2>
+<a id="a0b5fb28230b0e63b5a0a95753dd6568c" name="a0b5fb28230b0e63b5a0a95753dd6568c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0b5fb28230b0e63b5a0a95753dd6568c">&#9670;&#160;</a></span>BUSTUB_PLAN_NODE_CLONE_WITH_CHILDREN()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bustub::InsertPlanNode::BUSTUB_PLAN_NODE_CLONE_WITH_CHILDREN </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../dc/dc1/classbustub_1_1InsertPlanNode.html">InsertPlanNode</a>&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a1ca3e4cc3a5e81ed75d0ffd52555a5d4" name="a1ca3e4cc3a5e81ed75d0ffd52555a5d4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1ca3e4cc3a5e81ed75d0ffd52555a5d4">&#9670;&#160;</a></span>GetChildPlan()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto bustub::InsertPlanNode::GetChildPlan </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const -&gt; <a class="el" href="../../de/dda/namespacebustub.html#a354095e050bd1915a499a31c062c7303">AbstractPlanNodeRef</a> </td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<dl class="section return"><dt>返回</dt><dd>the child plan providing tuples to be inserted </dd></dl>
+
+</div>
+</div>
+<a id="a07feab74e93fea0343425d14da08ffb1" name="a07feab74e93fea0343425d14da08ffb1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a07feab74e93fea0343425d14da08ffb1">&#9670;&#160;</a></span>GetTableOid()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto bustub::InsertPlanNode::GetTableOid </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const -&gt; <a class="el" href="../../de/dda/namespacebustub.html#a3571cdcf7aa43bd929669794e75cbc48">table_oid_t</a> </td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<dl class="section return"><dt>返回</dt><dd>The identifier of the table into which tuples are inserted </dd></dl>
+
+</div>
+</div>
+<a id="a1e55c5b23bb823ae20269df873443635" name="a1e55c5b23bb823ae20269df873443635"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1e55c5b23bb823ae20269df873443635">&#9670;&#160;</a></span>GetType()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto bustub::InsertPlanNode::GetType </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const -&gt; <a class="el" href="../../de/dda/namespacebustub.html#ad7d821859993f0ecb02cde3b7a9f2ccf">PlanType</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<dl class="section return"><dt>返回</dt><dd>The type of the plan node </dd></dl>
+
+<p>实现了 <a class="el" href="../../d6/d8c/classbustub_1_1AbstractPlanNode.html#a39a11937cdd41a4f5ccf534d39307e5d">bustub::AbstractPlanNode</a>.</p>
+
+</div>
+</div>
+<a id="a5bbabdc27199c2a9e7dbf8906ff2c608" name="a5bbabdc27199c2a9e7dbf8906ff2c608"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5bbabdc27199c2a9e7dbf8906ff2c608">&#9670;&#160;</a></span>PlanNodeToString()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto bustub::InsertPlanNode::PlanNodeToString </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const -&gt; std::string</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">override</span><span class="mlabel">protected</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<dl class="section return"><dt>返回</dt><dd>the string representation of the plan node itself </dd></dl>
+
+<p>重载 <a class="el" href="../../d6/d8c/classbustub_1_1AbstractPlanNode.html#a580ea82a2a025985ced878f1d1b9fa1f">bustub::AbstractPlanNode</a> .</p>
+
+</div>
+</div>
+<h2 class="groupheader">类成员变量说明</h2>
+<a id="a18a22528bb8a22a93874034195ac08b2" name="a18a22528bb8a22a93874034195ac08b2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a18a22528bb8a22a93874034195ac08b2">&#9670;&#160;</a></span>table_oid_</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../de/dda/namespacebustub.html#a3571cdcf7aa43bd929669794e75cbc48">table_oid_t</a> bustub::InsertPlanNode::table_oid_</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>The table to be inserted into. </p>
+
+</div>
+</div>
+<hr/>该类的文档由以下文件生成:<ul>
+<li>src/include/execution/plans/<a class="el" href="../../d7/dcd/insert__plan_8h_source.html">insert_plan.h</a></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
+</small></address>
+</body>
+</html>

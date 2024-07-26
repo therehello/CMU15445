@@ -1,0 +1,23 @@
+var searchData=
+[
+  ['scan_0',['Scan',['../de/dda/namespacebustub.html#ab8a992a575f635e8e848ddfa23fc45b3a22efdbe132eabc102306bd7a334fb434',1,'bustub']]],
+  ['schema_1',['SCHEMA',['../d5/dcc/explain__statement_8h.html#a32d52e91e3d25ff561c35a97ea4fdaa2a5db56c34e2b8380acfa2cf1e6104583c',1,'explain_statement.h']]],
+  ['select_5fstatement_2',['SELECT_STATEMENT',['../de/dda/namespacebustub.html#a74c138fe25d08379e5e9f90f4e5820baafb2acda2340e0b3d40279fde4a549438',1,'bustub']]],
+  ['seqscan_3',['SeqScan',['../de/dda/namespacebustub.html#ad7d821859993f0ecb02cde3b7a9f2ccfa3f18bd6473be45124c858db37d6b9495',1,'bustub']]],
+  ['serial_4',['Serial',['../d6/df8/classbustub_1_1TableGenerator.html#ad79524601636f35597efab81db0994c8a5255d3daaa0a6276b844d61401e6f493',1,'bustub::TableGenerator']]],
+  ['serializable_5',['SERIALIZABLE',['../de/dda/namespacebustub.html#a57ce43470b186e0066e7f128390005b5aadfafde622c8622bb72e4ff73e295cdb',1,'bustub']]],
+  ['shared_6',['SHARED',['../df/d43/classbustub_1_1LockManager.html#ae9072590d90b9b3861d415052c4872d3a049518eb4dc1859c7cebbe15876cfd63',1,'bustub::LockManager']]],
+  ['shared_5fintention_5fexclusive_7',['SHARED_INTENTION_EXCLUSIVE',['../df/d43/classbustub_1_1LockManager.html#ae9072590d90b9b3861d415052c4872d3aa749f2cb8ae6821b5ac743924558b12b',1,'bustub::LockManager']]],
+  ['simplified_5ftoken_5fcomment_8',['SIMPLIFIED_TOKEN_COMMENT',['../de/dda/namespacebustub.html#af908a8810f067f4eda919967c3503d6aa9ef514be2b49367494010ac6bf72b5ad',1,'bustub']]],
+  ['simplified_5ftoken_5fidentifier_9',['SIMPLIFIED_TOKEN_IDENTIFIER',['../de/dda/namespacebustub.html#af908a8810f067f4eda919967c3503d6aa0e16b89c9b6aa1d8afcf97dfa6e3b705',1,'bustub']]],
+  ['simplified_5ftoken_5fkeyword_10',['SIMPLIFIED_TOKEN_KEYWORD',['../de/dda/namespacebustub.html#af908a8810f067f4eda919967c3503d6aa991ab63f281b83aaab89c0e54c9749ad',1,'bustub']]],
+  ['simplified_5ftoken_5fnumeric_5fconstant_11',['SIMPLIFIED_TOKEN_NUMERIC_CONSTANT',['../de/dda/namespacebustub.html#af908a8810f067f4eda919967c3503d6aa3f325617e6d62947f151e14ced4e656c',1,'bustub']]],
+  ['simplified_5ftoken_5foperator_12',['SIMPLIFIED_TOKEN_OPERATOR',['../de/dda/namespacebustub.html#af908a8810f067f4eda919967c3503d6aa3e37f5886e86942fe3e5f904fb6cff0d',1,'bustub']]],
+  ['simplified_5ftoken_5fstring_5fconstant_13',['SIMPLIFIED_TOKEN_STRING_CONSTANT',['../de/dda/namespacebustub.html#af908a8810f067f4eda919967c3503d6aa474b2e0a61de0127256f43a4549eb580',1,'bustub']]],
+  ['smallint_14',['SMALLINT',['../de/dda/namespacebustub.html#a49735e6748963f5515394bbb228f1fc8af1d5de83e0968b9f5b97390946216ae6',1,'bustub']]],
+  ['snapshot_5fisolation_15',['SNAPSHOT_ISOLATION',['../de/dda/namespacebustub.html#a57ce43470b186e0066e7f128390005b5a9eb39169b7db6ecee4ee0980284659bd',1,'bustub']]],
+  ['sort_16',['Sort',['../de/dda/namespacebustub.html#ad7d821859993f0ecb02cde3b7a9f2ccfa6b46ae48421828d9973deec5fa9aa0c3',1,'bustub']]],
+  ['star_17',['STAR',['../de/dda/namespacebustub.html#ad966f68740f50281536bcc3db49e3854a8ab2630ada18b94a005a0c5399d9d483',1,'bustub']]],
+  ['subquery_18',['SUBQUERY',['../de/dda/namespacebustub.html#a1678fec55643749da1f98dfa689dbea2aece5b631ea0b2cdd22da5287e7b1213e',1,'bustub']]],
+  ['sumaggregate_19',['sumaggregate',['../de/dda/namespacebustub.html#a00cf530eb8a8c97e85e5030651b64fffad1debde475bd10120fc7c9bec94c2b8e',1,'bustub::SumAggregate'],['../de/dda/namespacebustub.html#a9ae3921998c2e878c715a3fc8d5b33dfad1debde475bd10120fc7c9bec94c2b8e',1,'bustub::SumAggregate']]]
+];

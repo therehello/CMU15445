@@ -1,0 +1,184 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>数据库系统 CMU15-445/645: bustub::UndoLog结构体 参考</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/searchdata.js"></script>
+<script type="text/javascript" src="../../search/search.js"></script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">数据库系统 CMU15-445/645<span id="projectnumber">&#160;1.0.0</span>
+   </div>
+   <div id="projectbrief">CMU15-445/645 是基于现代 C++ 开发的支持并发操作的简单 SQL 操作的单机数据库</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.9.8 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "../../search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('../../',true,false,'search.php','搜索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="../../de/dda/namespacebustub.html">bustub</a></li><li class="navelem"><a class="el" href="../../d9/d97/structbustub_1_1UndoLog.html">UndoLog</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-attribs">Public 属性</a> &#124;
+<a href="../../db/d0c/structbustub_1_1UndoLog-members.html">所有成员列表</a>  </div>
+  <div class="headertitle"><div class="title">bustub::UndoLog结构体 参考</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p><code>#include &lt;<a class="el" href="../../d0/db6/transaction_8h_source.html">transaction.h</a>&gt;</code></p>
+<div class="dynheader">
+bustub::UndoLog 的协作图:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../dd/dae/structbustub_1_1UndoLog__coll__graph.svg" width="290" height="212"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<center><span class="legend">[<a href="../../graph_legend.html">图例</a>]</span></center></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
+Public 属性</h2></td></tr>
+<tr class="memitem:a5b09a28519ae40a551b7a884fa31c133" id="r_a5b09a28519ae40a551b7a884fa31c133"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d97/structbustub_1_1UndoLog.html#a5b09a28519ae40a551b7a884fa31c133">is_deleted_</a></td></tr>
+<tr class="separator:a5b09a28519ae40a551b7a884fa31c133"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aea17cea4e8197ecbfdcab29e02fcc4a7" id="r_aea17cea4e8197ecbfdcab29e02fcc4a7"><td class="memItemLeft" align="right" valign="top">std::vector&lt; bool &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d97/structbustub_1_1UndoLog.html#aea17cea4e8197ecbfdcab29e02fcc4a7">modified_fields_</a></td></tr>
+<tr class="separator:aea17cea4e8197ecbfdcab29e02fcc4a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa5c87f29f685eeb0ecde4deb9970648e" id="r_aa5c87f29f685eeb0ecde4deb9970648e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d0/ded/classbustub_1_1Tuple.html">Tuple</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d97/structbustub_1_1UndoLog.html#aa5c87f29f685eeb0ecde4deb9970648e">tuple_</a></td></tr>
+<tr class="separator:aa5c87f29f685eeb0ecde4deb9970648e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa99e5ce85949478a0e7e9b32656e9a9a" id="r_aa99e5ce85949478a0e7e9b32656e9a9a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../de/dda/namespacebustub.html#a380c89b0eec72f60d52692852fa725cf">timestamp_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d97/structbustub_1_1UndoLog.html#aa99e5ce85949478a0e7e9b32656e9a9a">ts_</a> {<a class="el" href="../../de/dda/namespacebustub.html#a929ed9c4cf5eb15695e8dc9c58e01fe7">INVALID_TS</a>}</td></tr>
+<tr class="separator:aa99e5ce85949478a0e7e9b32656e9a9a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8aa74c3b803e1ea7db0368020547baa1" id="r_a8aa74c3b803e1ea7db0368020547baa1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d7/daf/structbustub_1_1UndoLink.html">UndoLink</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d97/structbustub_1_1UndoLog.html#a8aa74c3b803e1ea7db0368020547baa1">prev_version_</a> {}</td></tr>
+<tr class="separator:a8aa74c3b803e1ea7db0368020547baa1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">类成员变量说明</h2>
+<a id="a5b09a28519ae40a551b7a884fa31c133" name="a5b09a28519ae40a551b7a884fa31c133"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5b09a28519ae40a551b7a884fa31c133">&#9670;&#160;</a></span>is_deleted_</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool bustub::UndoLog::is_deleted_</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aea17cea4e8197ecbfdcab29e02fcc4a7" name="aea17cea4e8197ecbfdcab29e02fcc4a7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aea17cea4e8197ecbfdcab29e02fcc4a7">&#9670;&#160;</a></span>modified_fields_</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt;bool&gt; bustub::UndoLog::modified_fields_</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a8aa74c3b803e1ea7db0368020547baa1" name="a8aa74c3b803e1ea7db0368020547baa1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8aa74c3b803e1ea7db0368020547baa1">&#9670;&#160;</a></span>prev_version_</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d7/daf/structbustub_1_1UndoLink.html">UndoLink</a> bustub::UndoLog::prev_version_ {}</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aa99e5ce85949478a0e7e9b32656e9a9a" name="aa99e5ce85949478a0e7e9b32656e9a9a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa99e5ce85949478a0e7e9b32656e9a9a">&#9670;&#160;</a></span>ts_</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../de/dda/namespacebustub.html#a380c89b0eec72f60d52692852fa725cf">timestamp_t</a> bustub::UndoLog::ts_ {<a class="el" href="../../de/dda/namespacebustub.html#a929ed9c4cf5eb15695e8dc9c58e01fe7">INVALID_TS</a>}</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aa5c87f29f685eeb0ecde4deb9970648e" name="aa5c87f29f685eeb0ecde4deb9970648e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa5c87f29f685eeb0ecde4deb9970648e">&#9670;&#160;</a></span>tuple_</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d0/ded/classbustub_1_1Tuple.html">Tuple</a> bustub::UndoLog::tuple_</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<hr/>该结构体的文档由以下文件生成:<ul>
+<li>src/include/concurrency/<a class="el" href="../../d0/db6/transaction_8h_source.html">transaction.h</a></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
+</small></address>
+</body>
+</html>

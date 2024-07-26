@@ -1,0 +1,214 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>数据库系统 CMU15-445/645: bustub::TupleMeta结构体 参考</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/searchdata.js"></script>
+<script type="text/javascript" src="../../search/search.js"></script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">数据库系统 CMU15-445/645<span id="projectnumber">&#160;1.0.0</span>
+   </div>
+   <div id="projectbrief">CMU15-445/645 是基于现代 C++ 开发的支持并发操作的简单 SQL 操作的单机数据库</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.9.8 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "../../search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('../../',true,false,'search.php','搜索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="../../de/dda/namespacebustub.html">bustub</a></li><li class="navelem"><a class="el" href="../../dc/d90/structbustub_1_1TupleMeta.html">TupleMeta</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-attribs">Public 属性</a> &#124;
+<a href="#friends">友元</a> &#124;
+<a href="../../d2/dc0/structbustub_1_1TupleMeta-members.html">所有成员列表</a>  </div>
+  <div class="headertitle"><div class="title">bustub::TupleMeta结构体 参考</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p><code>#include &lt;<a class="el" href="../../d2/d20/tuple_8h_source.html">tuple.h</a>&gt;</code></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
+Public 属性</h2></td></tr>
+<tr class="memitem:a02540fd9d076af7bdfa6c799c8df0fde" id="r_a02540fd9d076af7bdfa6c799c8df0fde"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../de/dda/namespacebustub.html#a380c89b0eec72f60d52692852fa725cf">timestamp_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d90/structbustub_1_1TupleMeta.html#a02540fd9d076af7bdfa6c799c8df0fde">ts_</a></td></tr>
+<tr class="separator:a02540fd9d076af7bdfa6c799c8df0fde"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab3b12f92731a2deccb5aed925a02a921" id="r_ab3b12f92731a2deccb5aed925a02a921"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d90/structbustub_1_1TupleMeta.html#ab3b12f92731a2deccb5aed925a02a921">is_deleted_</a></td></tr>
+<tr class="separator:ab3b12f92731a2deccb5aed925a02a921"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="friends" name="friends"></a>
+友元</h2></td></tr>
+<tr class="memitem:ab665e64107af4635f29fbda701cf636b" id="r_ab665e64107af4635f29fbda701cf636b"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d90/structbustub_1_1TupleMeta.html#ab665e64107af4635f29fbda701cf636b">operator==</a> (const <a class="el" href="../../dc/d90/structbustub_1_1TupleMeta.html">TupleMeta</a> &amp;a, const <a class="el" href="../../dc/d90/structbustub_1_1TupleMeta.html">TupleMeta</a> &amp;b)</td></tr>
+<tr class="separator:ab665e64107af4635f29fbda701cf636b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9cc443ca63fbe9d492d91ac39c98e158" id="r_a9cc443ca63fbe9d492d91ac39c98e158"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d90/structbustub_1_1TupleMeta.html#a9cc443ca63fbe9d492d91ac39c98e158">operator!=</a> (const <a class="el" href="../../dc/d90/structbustub_1_1TupleMeta.html">TupleMeta</a> &amp;a, const <a class="el" href="../../dc/d90/structbustub_1_1TupleMeta.html">TupleMeta</a> &amp;b)</td></tr>
+<tr class="separator:a9cc443ca63fbe9d492d91ac39c98e158"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">友元及相关函数文档</h2>
+<a id="a9cc443ca63fbe9d492d91ac39c98e158" name="a9cc443ca63fbe9d492d91ac39c98e158"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9cc443ca63fbe9d492d91ac39c98e158">&#9670;&#160;</a></span>operator!=</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto operator!= </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="../../dc/d90/structbustub_1_1TupleMeta.html">TupleMeta</a> &amp;&#160;</td>
+          <td class="paramname"><em>a</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="../../dc/d90/structbustub_1_1TupleMeta.html">TupleMeta</a> &amp;&#160;</td>
+          <td class="paramname"><em>b</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">friend</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ab665e64107af4635f29fbda701cf636b" name="ab665e64107af4635f29fbda701cf636b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab665e64107af4635f29fbda701cf636b">&#9670;&#160;</a></span>operator==</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto operator== </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="../../dc/d90/structbustub_1_1TupleMeta.html">TupleMeta</a> &amp;&#160;</td>
+          <td class="paramname"><em>a</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="../../dc/d90/structbustub_1_1TupleMeta.html">TupleMeta</a> &amp;&#160;</td>
+          <td class="paramname"><em>b</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">friend</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">类成员变量说明</h2>
+<a id="ab3b12f92731a2deccb5aed925a02a921" name="ab3b12f92731a2deccb5aed925a02a921"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab3b12f92731a2deccb5aed925a02a921">&#9670;&#160;</a></span>is_deleted_</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool bustub::TupleMeta::is_deleted_</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>marks whether this tuple is marked removed from table heap. </p>
+
+</div>
+</div>
+<a id="a02540fd9d076af7bdfa6c799c8df0fde" name="a02540fd9d076af7bdfa6c799c8df0fde"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a02540fd9d076af7bdfa6c799c8df0fde">&#9670;&#160;</a></span>ts_</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../de/dda/namespacebustub.html#a380c89b0eec72f60d52692852fa725cf">timestamp_t</a> bustub::TupleMeta::ts_</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>the ts / txn_id of this tuple. In project 3, simply set it to 0. </p>
+
+</div>
+</div>
+<hr/>该结构体的文档由以下文件生成:<ul>
+<li>src/include/storage/table/<a class="el" href="../../d2/d20/tuple_8h_source.html">tuple.h</a></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
+</small></address>
+</body>
+</html>

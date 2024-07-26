@@ -1,0 +1,326 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>数据库系统 CMU15-445/645: bustub::IndexInfo结构体 参考</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/searchdata.js"></script>
+<script type="text/javascript" src="../../search/search.js"></script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">数据库系统 CMU15-445/645<span id="projectnumber">&#160;1.0.0</span>
+   </div>
+   <div id="projectbrief">CMU15-445/645 是基于现代 C++ 开发的支持并发操作的简单 SQL 操作的单机数据库</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.9.8 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "../../search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('../../',true,false,'search.php','搜索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="../../de/dda/namespacebustub.html">bustub</a></li><li class="navelem"><a class="el" href="../../d4/d5c/structbustub_1_1IndexInfo.html">IndexInfo</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Public 成员函数</a> &#124;
+<a href="#pub-attribs">Public 属性</a> &#124;
+<a href="../../d1/d5c/structbustub_1_1IndexInfo-members.html">所有成员列表</a>  </div>
+  <div class="headertitle"><div class="title">bustub::IndexInfo结构体 参考</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p><code>#include &lt;<a class="el" href="../../d1/d1e/catalog_8h_source.html">catalog.h</a>&gt;</code></p>
+<div class="dynheader">
+bustub::IndexInfo 的协作图:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../d5/d05/structbustub_1_1IndexInfo__coll__graph.svg" width="172" height="124"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<center><span class="legend">[<a href="../../graph_legend.html">图例</a>]</span></center></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Public 成员函数</h2></td></tr>
+<tr class="memitem:ade498901b93477d71a18bfd496d1f70e" id="r_ade498901b93477d71a18bfd496d1f70e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d5c/structbustub_1_1IndexInfo.html#ade498901b93477d71a18bfd496d1f70e">IndexInfo</a> (<a class="el" href="../../da/d36/classbustub_1_1Schema.html">Schema</a> key_schema, std::string name, std::unique_ptr&lt; <a class="el" href="../../d5/def/classbustub_1_1Index.html">Index</a> &gt; &amp;&amp;index, <a class="el" href="../../de/dda/namespacebustub.html#a5ca00ce350a2fa387503e74218ae76c0">index_oid_t</a> index_oid, std::string table_name, size_t key_size, bool is_primary_key)</td></tr>
+<tr class="separator:ade498901b93477d71a18bfd496d1f70e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
+Public 属性</h2></td></tr>
+<tr class="memitem:aabc5117a84247be05ee2dde57b1dbec2" id="r_aabc5117a84247be05ee2dde57b1dbec2"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../da/d36/classbustub_1_1Schema.html">Schema</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d5c/structbustub_1_1IndexInfo.html#aabc5117a84247be05ee2dde57b1dbec2">key_schema_</a></td></tr>
+<tr class="separator:aabc5117a84247be05ee2dde57b1dbec2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a68d4dd98fe1d34f97306220138b12c26" id="r_a68d4dd98fe1d34f97306220138b12c26"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d5c/structbustub_1_1IndexInfo.html#a68d4dd98fe1d34f97306220138b12c26">name_</a></td></tr>
+<tr class="separator:a68d4dd98fe1d34f97306220138b12c26"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad40a53fd447351b1c3ae2c229336f1d3" id="r_ad40a53fd447351b1c3ae2c229336f1d3"><td class="memItemLeft" align="right" valign="top">std::unique_ptr&lt; <a class="el" href="../../d5/def/classbustub_1_1Index.html">Index</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d5c/structbustub_1_1IndexInfo.html#ad40a53fd447351b1c3ae2c229336f1d3">index_</a></td></tr>
+<tr class="separator:ad40a53fd447351b1c3ae2c229336f1d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a801ec95a91bc556e0498129834bfe710" id="r_a801ec95a91bc556e0498129834bfe710"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../de/dda/namespacebustub.html#a5ca00ce350a2fa387503e74218ae76c0">index_oid_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d5c/structbustub_1_1IndexInfo.html#a801ec95a91bc556e0498129834bfe710">index_oid_</a></td></tr>
+<tr class="separator:a801ec95a91bc556e0498129834bfe710"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a03c487397cc5874074ac5c28af1c1992" id="r_a03c487397cc5874074ac5c28af1c1992"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d5c/structbustub_1_1IndexInfo.html#a03c487397cc5874074ac5c28af1c1992">table_name_</a></td></tr>
+<tr class="separator:a03c487397cc5874074ac5c28af1c1992"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a62e839084f6d64bfa64433e23a3f58fc" id="r_a62e839084f6d64bfa64433e23a3f58fc"><td class="memItemLeft" align="right" valign="top">const size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d5c/structbustub_1_1IndexInfo.html#a62e839084f6d64bfa64433e23a3f58fc">key_size_</a></td></tr>
+<tr class="separator:a62e839084f6d64bfa64433e23a3f58fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac31e1f9fe26c3044621f0228e5866ac3" id="r_ac31e1f9fe26c3044621f0228e5866ac3"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d5c/structbustub_1_1IndexInfo.html#ac31e1f9fe26c3044621f0228e5866ac3">is_primary_key_</a></td></tr>
+<tr class="separator:ac31e1f9fe26c3044621f0228e5866ac3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afc4ea361a494c90f4c47784c55f7c214" id="r_afc4ea361a494c90f4c47784c55f7c214"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../de/dda/namespacebustub.html#aa040edd2e7d13616d0473a42827db9eb">IndexType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d5c/structbustub_1_1IndexInfo.html#afc4ea361a494c90f4c47784c55f7c214">index_type_</a> {<a class="el" href="../../de/dda/namespacebustub.html#aa040edd2e7d13616d0473a42827db9eba81aef175bcd545b24d0f830b182f190c">IndexType::BPlusTreeIndex</a>}</td></tr>
+<tr class="separator:afc4ea361a494c90f4c47784c55f7c214"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
+<div class="textblock"><p>The <a class="el" href="../../d4/d5c/structbustub_1_1IndexInfo.html">IndexInfo</a> class maintains metadata about a index. </p>
+</div><h2 class="groupheader">构造及析构函数说明</h2>
+<a id="ade498901b93477d71a18bfd496d1f70e" name="ade498901b93477d71a18bfd496d1f70e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ade498901b93477d71a18bfd496d1f70e">&#9670;&#160;</a></span>IndexInfo()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bustub::IndexInfo::IndexInfo </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../da/d36/classbustub_1_1Schema.html">Schema</a>&#160;</td>
+          <td class="paramname"><em>key_schema</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::unique_ptr&lt; <a class="el" href="../../d5/def/classbustub_1_1Index.html">Index</a> &gt; &amp;&amp;&#160;</td>
+          <td class="paramname"><em>index</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="../../de/dda/namespacebustub.html#a5ca00ce350a2fa387503e74218ae76c0">index_oid_t</a>&#160;</td>
+          <td class="paramname"><em>index_oid</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>table_name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>key_size</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>is_primary_key</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Construct a new <a class="el" href="../../d4/d5c/structbustub_1_1IndexInfo.html">IndexInfo</a> instance. </p><dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">key_schema</td><td>The schema for the index key </td></tr>
+    <tr><td class="paramname">name</td><td>The name of the index </td></tr>
+    <tr><td class="paramname">index</td><td>An owning pointer to the index </td></tr>
+    <tr><td class="paramname">index_oid</td><td>The unique OID for the index </td></tr>
+    <tr><td class="paramname">table_name</td><td>The name of the table on which the index is created </td></tr>
+    <tr><td class="paramname">key_size</td><td>The size of the index key, in bytes </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<h2 class="groupheader">类成员变量说明</h2>
+<a id="ad40a53fd447351b1c3ae2c229336f1d3" name="ad40a53fd447351b1c3ae2c229336f1d3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad40a53fd447351b1c3ae2c229336f1d3">&#9670;&#160;</a></span>index_</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::unique_ptr&lt;<a class="el" href="../../d5/def/classbustub_1_1Index.html">Index</a>&gt; bustub::IndexInfo::index_</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>An owning pointer to the index </p>
+
+</div>
+</div>
+<a id="a801ec95a91bc556e0498129834bfe710" name="a801ec95a91bc556e0498129834bfe710"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a801ec95a91bc556e0498129834bfe710">&#9670;&#160;</a></span>index_oid_</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../de/dda/namespacebustub.html#a5ca00ce350a2fa387503e74218ae76c0">index_oid_t</a> bustub::IndexInfo::index_oid_</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>The unique OID for the index </p>
+
+</div>
+</div>
+<a id="afc4ea361a494c90f4c47784c55f7c214" name="afc4ea361a494c90f4c47784c55f7c214"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afc4ea361a494c90f4c47784c55f7c214">&#9670;&#160;</a></span>index_type_</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../de/dda/namespacebustub.html#aa040edd2e7d13616d0473a42827db9eb">IndexType</a> bustub::IndexInfo::index_type_ {<a class="el" href="../../de/dda/namespacebustub.html#aa040edd2e7d13616d0473a42827db9eba81aef175bcd545b24d0f830b182f190c">IndexType::BPlusTreeIndex</a>}</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>The index type </p>
+
+</div>
+</div>
+<a id="ac31e1f9fe26c3044621f0228e5866ac3" name="ac31e1f9fe26c3044621f0228e5866ac3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac31e1f9fe26c3044621f0228e5866ac3">&#9670;&#160;</a></span>is_primary_key_</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool bustub::IndexInfo::is_primary_key_</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Is primary key index? </p>
+
+</div>
+</div>
+<a id="aabc5117a84247be05ee2dde57b1dbec2" name="aabc5117a84247be05ee2dde57b1dbec2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aabc5117a84247be05ee2dde57b1dbec2">&#9670;&#160;</a></span>key_schema_</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../da/d36/classbustub_1_1Schema.html">Schema</a> bustub::IndexInfo::key_schema_</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>The schema for the index key </p>
+
+</div>
+</div>
+<a id="a62e839084f6d64bfa64433e23a3f58fc" name="a62e839084f6d64bfa64433e23a3f58fc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a62e839084f6d64bfa64433e23a3f58fc">&#9670;&#160;</a></span>key_size_</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const size_t bustub::IndexInfo::key_size_</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>The size of the index key, in bytes </p>
+
+</div>
+</div>
+<a id="a68d4dd98fe1d34f97306220138b12c26" name="a68d4dd98fe1d34f97306220138b12c26"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a68d4dd98fe1d34f97306220138b12c26">&#9670;&#160;</a></span>name_</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string bustub::IndexInfo::name_</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>The name of the index </p>
+
+</div>
+</div>
+<a id="a03c487397cc5874074ac5c28af1c1992" name="a03c487397cc5874074ac5c28af1c1992"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a03c487397cc5874074ac5c28af1c1992">&#9670;&#160;</a></span>table_name_</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string bustub::IndexInfo::table_name_</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>The name of the table on which the index is created </p>
+
+</div>
+</div>
+<hr/>该结构体的文档由以下文件生成:<ul>
+<li>src/include/catalog/<a class="el" href="../../d1/d1e/catalog_8h_source.html">catalog.h</a></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
+</small></address>
+</body>
+</html>

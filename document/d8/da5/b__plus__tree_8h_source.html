@@ -1,0 +1,295 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>数据库系统 CMU15-445/645: src/include/storage/index/b_plus_tree.h 源文件</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/searchdata.js"></script>
+<script type="text/javascript" src="../../search/search.js"></script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">数据库系统 CMU15-445/645<span id="projectnumber">&#160;1.0.0</span>
+   </div>
+   <div id="projectbrief">CMU15-445/645 是基于现代 C++ 开发的支持并发操作的简单 SQL 操作的单机数据库</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.9.8 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "../../search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('../../',true,false,'search.php','搜索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function() { init_codefold(1); });
+/* @license-end */
+</script>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="../../dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="../../dir_b0856f6b0d80ccb263b2f415c91f9e17.html">include</a></li><li class="navelem"><a class="el" href="../../dir_0a30ac4aed38d1936bbd6d702d96fbd8.html">storage</a></li><li class="navelem"><a class="el" href="../../dir_68b285a99db82172e89ff1958533507d.html">index</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle"><div class="title">b_plus_tree.h</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="../../d8/da5/b__plus__tree_8h.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span> </div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#pragma once</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#include &lt;algorithm&gt;</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">#include &lt;deque&gt;</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="preprocessor">#include &lt;iostream&gt;</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="preprocessor">#include &lt;optional&gt;</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="preprocessor">#include &lt;queue&gt;</span></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="preprocessor">#include &lt;shared_mutex&gt;</span></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="preprocessor">#include &lt;string&gt;</span></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="preprocessor">#include &lt;vector&gt;</span></div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> </div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="preprocessor">#include &quot;<a class="code" href="../../db/d16/config_8h.html">common/config.h</a>&quot;</span></div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="preprocessor">#include &quot;<a class="code" href="../../de/d3c/macros_8h.html">common/macros.h</a>&quot;</span></div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="preprocessor">#include &quot;<a class="code" href="../../d0/db6/transaction_8h.html">concurrency/transaction.h</a>&quot;</span></div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="preprocessor">#include &quot;<a class="code" href="../../d4/df2/index__iterator_8h.html">storage/index/index_iterator.h</a>&quot;</span></div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="preprocessor">#include &quot;<a class="code" href="../../da/df2/b__plus__tree__header__page_8h.html">storage/page/b_plus_tree_header_page.h</a>&quot;</span></div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span><span class="preprocessor">#include &quot;<a class="code" href="../../da/d30/b__plus__tree__internal__page_8h.html">storage/page/b_plus_tree_internal_page.h</a>&quot;</span></div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="preprocessor">#include &quot;<a class="code" href="../../d5/d76/b__plus__tree__leaf__page_8h.html">storage/page/b_plus_tree_leaf_page.h</a>&quot;</span></div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span><span class="preprocessor">#include &quot;<a class="code" href="../../d7/d9b/page__guard_8h.html">storage/page/page_guard.h</a>&quot;</span></div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span> </div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span><span class="keyword">namespace </span><a class="code hl_namespace" href="../../de/dda/namespacebustub.html">bustub</a> {</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span> </div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span><span class="keyword">struct </span>PrintableBPlusTree;</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span> </div>
+<div class="foldopen" id="foldopen00041" data-start="{" data-end="};">
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno"><a class="line" href="../../d2/d21/classbustub_1_1Context.html">   41</a></span><span class="keyword">class </span><a class="code hl_class" href="../../d2/d21/classbustub_1_1Context.html">Context</a> {</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span> <span class="keyword">public</span>:</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>  <span class="comment">// When you insert into / remove from the B+ tree, store the write guard of header page here.</span></div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>  <span class="comment">// Remember to drop the header page guard and set it to nullopt when you want to unlock all.</span></div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno"><a class="line" href="../../d2/d21/classbustub_1_1Context.html#a879835d73e1db08c7b0bf75e4e055388">   45</a></span>  std::optional&lt;WritePageGuard&gt; <a class="code hl_variable" href="../../d2/d21/classbustub_1_1Context.html#a879835d73e1db08c7b0bf75e4e055388">header_page_</a>{std::nullopt};</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span> </div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>  <span class="comment">// Save the root page id here so that it&#39;s easier to know if the current page is the root page.</span></div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno"><a class="line" href="../../d2/d21/classbustub_1_1Context.html#aeace64a3329de9151dadb29416b65ceb">   48</a></span>  <a class="code hl_typedef" href="../../de/dda/namespacebustub.html#a8de4ac099b23d712481109bb846decde">page_id_t</a> <a class="code hl_variable" href="../../d2/d21/classbustub_1_1Context.html#aeace64a3329de9151dadb29416b65ceb">root_page_id_</a>{<a class="code hl_variable" href="../../de/dda/namespacebustub.html#ae9dd773eae7950183ebc60def880f499">INVALID_PAGE_ID</a>};</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span> </div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>  <span class="comment">// Store the write guards of the pages that you&#39;re modifying here.</span></div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno"><a class="line" href="../../d2/d21/classbustub_1_1Context.html#a5558ddb2e414aecb9b4e583f0a2a7aba">   51</a></span>  std::deque&lt;WritePageGuard&gt; <a class="code hl_variable" href="../../d2/d21/classbustub_1_1Context.html#a5558ddb2e414aecb9b4e583f0a2a7aba">write_set_</a>;</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span> </div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>  <span class="comment">// You may want to use this when getting value, but not necessary.</span></div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno"><a class="line" href="../../d2/d21/classbustub_1_1Context.html#a30665c45016d4bf6ddeab35c3e424b65">   54</a></span>  std::deque&lt;ReadPageGuard&gt; <a class="code hl_variable" href="../../d2/d21/classbustub_1_1Context.html#a30665c45016d4bf6ddeab35c3e424b65">read_set_</a>;</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span> </div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno"><a class="line" href="../../d2/d21/classbustub_1_1Context.html#ac684d0a45d9eb114571a7cc75b665471">   56</a></span>  <span class="keyword">auto</span> <a class="code hl_function" href="../../d2/d21/classbustub_1_1Context.html#ac684d0a45d9eb114571a7cc75b665471">IsRootPage</a>(<a class="code hl_typedef" href="../../de/dda/namespacebustub.html#a8de4ac099b23d712481109bb846decde">page_id_t</a> page_id) -&gt; <span class="keywordtype">bool</span> { <span class="keywordflow">return</span> page_id == <a class="code hl_variable" href="../../d2/d21/classbustub_1_1Context.html#aeace64a3329de9151dadb29416b65ceb">root_page_id_</a>; }</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>};</div>
+</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span> </div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno"><a class="line" href="../../d8/da5/b__plus__tree_8h.html#aeb119166d4afe672803cf281133ddb69">   59</a></span><span class="preprocessor">#define BPLUSTREE_TYPE BPlusTree&lt;KeyType, ValueType, KeyComparator&gt;</span></div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span> </div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span><span class="comment">// Main class providing the API for the Interactive B+ Tree.</span></div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span><a class="code hl_define" href="../../d1/d36/b__plus__tree__page_8h.html#a4c3acf10c136a6a89b0805e36e535847">INDEX_TEMPLATE_ARGUMENTS</a></div>
+<div class="foldopen" id="foldopen00063" data-start="{" data-end="};">
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno"><a class="line" href="../../d8/dab/classbustub_1_1BPlusTree.html">   63</a></span><span class="keyword">class </span><a class="code hl_class" href="../../d8/dab/classbustub_1_1BPlusTree.html">BPlusTree</a> {</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno"><a class="line" href="../../d8/dab/classbustub_1_1BPlusTree.html#ada414ac6e2d51ebf6618248911a126cf">   64</a></span>  <span class="keyword">using </span><a class="code hl_class" href="../../da/d05/classbustub_1_1BPlusTreeInternalPage.html">InternalPage</a> = <a class="code hl_class" href="../../da/d05/classbustub_1_1BPlusTreeInternalPage.html">BPlusTreeInternalPage&lt;KeyType, page_id_t, KeyComparator&gt;</a>;</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno"><a class="line" href="../../d8/dab/classbustub_1_1BPlusTree.html#abceb280ed5a6196a4611f926e4367c91">   65</a></span>  <span class="keyword">using </span><a class="code hl_class" href="../../dc/d79/classbustub_1_1BPlusTreeLeafPage.html">LeafPage</a> = <a class="code hl_class" href="../../dc/d79/classbustub_1_1BPlusTreeLeafPage.html">BPlusTreeLeafPage&lt;KeyType, ValueType, KeyComparator&gt;</a>;</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span> </div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span> <span class="keyword">public</span>:</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno"><a class="line" href="../../d8/dab/classbustub_1_1BPlusTree.html#a31aea3857ea307e861e34b6ba1b53dcf">   68</a></span>  <span class="keyword">explicit</span> <a class="code hl_function" href="../../d8/dab/classbustub_1_1BPlusTree.html#a31aea3857ea307e861e34b6ba1b53dcf">BPlusTree</a>(std::string name, <a class="code hl_typedef" href="../../de/dda/namespacebustub.html#a8de4ac099b23d712481109bb846decde">page_id_t</a> header_page_id, <a class="code hl_class" href="../../d6/d5d/classbustub_1_1BufferPoolManager.html">BufferPoolManager</a> *buffer_pool_manager,</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>                     <span class="keyword">const</span> KeyComparator &amp;comparator, <span class="keywordtype">int</span> leaf_max_size = <a class="code hl_define" href="../../d5/d76/b__plus__tree__leaf__page_8h.html#a1bf27d964f8ae5ad340eb82a7bd5fee7">LEAF_PAGE_SIZE</a>,</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>                     <span class="keywordtype">int</span> internal_max_size = <a class="code hl_define" href="../../da/d30/b__plus__tree__internal__page_8h.html#a04db3f924b29e986d8b3e94dbbbb9d55">INTERNAL_PAGE_SIZE</a>);</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span> </div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>  <span class="comment">// Returns true if this B+ tree has no keys and values.</span></div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno"><a class="line" href="../../d8/dab/classbustub_1_1BPlusTree.html#a298d9aa806c90a9ddb3eacff9f9aedcc">   73</a></span>  <span class="keyword">auto</span> <a class="code hl_function" href="../../d8/dab/classbustub_1_1BPlusTree.html#a298d9aa806c90a9ddb3eacff9f9aedcc">IsEmpty</a>() const -&gt; <span class="keywordtype">bool</span>;</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span> </div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>  <span class="comment">// Insert a key-value pair into this B+ tree.</span></div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno"><a class="line" href="../../d8/dab/classbustub_1_1BPlusTree.html#a9a4f500948c6802a3ebd9ea7b905f3a4">   76</a></span>  auto <a class="code hl_enumvalue" href="../../de/dda/namespacebustub.html#ad7d821859993f0ecb02cde3b7a9f2ccfaa458be0f08b7e4ff3c0f633c100176c0">Insert</a>(const KeyType &amp;key, const ValueType &amp;value, <a class="code hl_class" href="../../db/d88/classbustub_1_1Transaction.html">Transaction</a> *txn = <span class="keywordtype">nullptr</span>) -&gt; <span class="keywordtype">bool</span>;</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span> </div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>  <span class="comment">// Remove a key and its value from this B+ tree.</span></div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno"><a class="line" href="../../d8/dab/classbustub_1_1BPlusTree.html#a2a46d875b8c9231d63cf481831d2e00d">   79</a></span>  <span class="keywordtype">void</span> <a class="code hl_function" href="../../d8/dab/classbustub_1_1BPlusTree.html#a2a46d875b8c9231d63cf481831d2e00d">Remove</a>(const KeyType &amp;key, <a class="code hl_class" href="../../db/d88/classbustub_1_1Transaction.html">Transaction</a> *txn);</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span> </div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>  <span class="comment">// Return the value associated with a given key</span></div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno"><a class="line" href="../../d8/dab/classbustub_1_1BPlusTree.html#a60dd6e9db3db5d0b78aa668a00a37ca3">   82</a></span>  auto <a class="code hl_function" href="../../d8/dab/classbustub_1_1BPlusTree.html#a60dd6e9db3db5d0b78aa668a00a37ca3">GetValue</a>(const KeyType &amp;key, <a class="code hl_namespace" href="../../d8/dcc/namespacestd.html">std</a>::vector&lt;ValueType&gt; *result, <a class="code hl_class" href="../../db/d88/classbustub_1_1Transaction.html">Transaction</a> *txn = <span class="keywordtype">nullptr</span>) -&gt; <span class="keywordtype">bool</span>;</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span> </div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>  <span class="comment">// Return the page id of the root node</span></div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno"><a class="line" href="../../d8/dab/classbustub_1_1BPlusTree.html#a77383b07f1019140cbc6b56976861b27">   85</a></span>  auto <a class="code hl_function" href="../../d8/dab/classbustub_1_1BPlusTree.html#a77383b07f1019140cbc6b56976861b27">GetRootPageId</a>() -&gt; <a class="code hl_typedef" href="../../de/dda/namespacebustub.html#a8de4ac099b23d712481109bb846decde">page_id_t</a>;</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span> </div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>  <span class="comment">// Index iterator</span></div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno"><a class="line" href="../../d8/dab/classbustub_1_1BPlusTree.html#a50c8f5975530bd16c748306403bb5623">   88</a></span>  auto <a class="code hl_function" href="../../d8/dab/classbustub_1_1BPlusTree.html#a50c8f5975530bd16c748306403bb5623">Begin</a>() -&gt; <a class="code hl_define" href="../../d4/df2/index__iterator_8h.html#af44bbf16ed06a9a1165c4d6e74335f31">INDEXITERATOR_TYPE</a>;</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span> </div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno"><a class="line" href="../../d8/dab/classbustub_1_1BPlusTree.html#aa4b76c620aac827d0de3385943779369">   90</a></span>  auto <a class="code hl_function" href="../../d8/dab/classbustub_1_1BPlusTree.html#aa4b76c620aac827d0de3385943779369">End</a>() -&gt; <a class="code hl_define" href="../../d4/df2/index__iterator_8h.html#af44bbf16ed06a9a1165c4d6e74335f31">INDEXITERATOR_TYPE</a>;</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span> </div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno"><a class="line" href="../../d8/dab/classbustub_1_1BPlusTree.html#a0084b3b682c8797a66d4683d73141e83">   92</a></span>  auto <a class="code hl_function" href="../../d8/dab/classbustub_1_1BPlusTree.html#a50c8f5975530bd16c748306403bb5623">Begin</a>(const KeyType &amp;key) -&gt; <a class="code hl_define" href="../../d4/df2/index__iterator_8h.html#af44bbf16ed06a9a1165c4d6e74335f31">INDEXITERATOR_TYPE</a>;</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span> </div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>  <span class="comment">// Print the B+ tree</span></div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno"><a class="line" href="../../d8/dab/classbustub_1_1BPlusTree.html#a21c9225f6334233dab4adbfdcc02e67c">   95</a></span>  <span class="keywordtype">void</span> <a class="code hl_function" href="../../d8/dab/classbustub_1_1BPlusTree.html#a21c9225f6334233dab4adbfdcc02e67c">Print</a>(<a class="code hl_class" href="../../d6/d5d/classbustub_1_1BufferPoolManager.html">BufferPoolManager</a> *bpm);</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span> </div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>  <span class="comment">// Draw the B+ tree</span></div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno"><a class="line" href="../../d8/dab/classbustub_1_1BPlusTree.html#a1b2017f5d001c8afaca49cf15686e634">   98</a></span>  <span class="keywordtype">void</span> <a class="code hl_function" href="../../d8/dab/classbustub_1_1BPlusTree.html#a1b2017f5d001c8afaca49cf15686e634">Draw</a>(<a class="code hl_class" href="../../d6/d5d/classbustub_1_1BufferPoolManager.html">BufferPoolManager</a> *bpm, const <a class="code hl_namespace" href="../../d8/dcc/namespacestd.html">std</a>::<span class="keywordtype">string</span> &amp;outf);</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span> </div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno"><a class="line" href="../../d8/dab/classbustub_1_1BPlusTree.html#a537628992fff268a9ca5a84e33231616">  111</a></span>  auto <a class="code hl_function" href="../../d8/dab/classbustub_1_1BPlusTree.html#a537628992fff268a9ca5a84e33231616">DrawBPlusTree</a>() -&gt; <a class="code hl_namespace" href="../../d8/dcc/namespacestd.html">std</a>::<span class="keywordtype">string</span>;</div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span> </div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>  <span class="comment">// read data from file and insert one by one</span></div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno"><a class="line" href="../../d8/dab/classbustub_1_1BPlusTree.html#ac9289cc7ef6a0aae28757bba1f0c855e">  114</a></span>  <span class="keywordtype">void</span> <a class="code hl_function" href="../../d8/dab/classbustub_1_1BPlusTree.html#ac9289cc7ef6a0aae28757bba1f0c855e">InsertFromFile</a>(const <a class="code hl_namespace" href="../../d8/dcc/namespacestd.html">std</a>::<span class="keywordtype">string</span> &amp;file_name, <a class="code hl_class" href="../../db/d88/classbustub_1_1Transaction.html">Transaction</a> *txn = <span class="keywordtype">nullptr</span>);</div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span> </div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>  <span class="comment">// read data from file and remove one by one</span></div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno"><a class="line" href="../../d8/dab/classbustub_1_1BPlusTree.html#a20507c58a6e689f7f4e5f42b5164bed4">  117</a></span>  <span class="keywordtype">void</span> <a class="code hl_function" href="../../d8/dab/classbustub_1_1BPlusTree.html#a20507c58a6e689f7f4e5f42b5164bed4">RemoveFromFile</a>(const <a class="code hl_namespace" href="../../d8/dcc/namespacestd.html">std</a>::<span class="keywordtype">string</span> &amp;file_name, <a class="code hl_class" href="../../db/d88/classbustub_1_1Transaction.html">Transaction</a> *txn = <span class="keywordtype">nullptr</span>);</div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span> </div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno"><a class="line" href="../../d8/dab/classbustub_1_1BPlusTree.html#a7be96b4f81ada2c412789371cfd0da35">  128</a></span>  <span class="keywordtype">void</span> <a class="code hl_function" href="../../d8/dab/classbustub_1_1BPlusTree.html#a7be96b4f81ada2c412789371cfd0da35">BatchOpsFromFile</a>(const <a class="code hl_namespace" href="../../d8/dcc/namespacestd.html">std</a>::<span class="keywordtype">string</span> &amp;file_name, <a class="code hl_class" href="../../db/d88/classbustub_1_1Transaction.html">Transaction</a> *txn = <span class="keywordtype">nullptr</span>);</div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span> </div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span> private:</div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>  <span class="comment">/* Debug Routines for FREE!! */</span></div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno"><a class="line" href="../../d8/dab/classbustub_1_1BPlusTree.html#a25eea0149a2adbf261de142519a7193d">  132</a></span>  <span class="keywordtype">void</span> <a class="code hl_function" href="../../d8/dab/classbustub_1_1BPlusTree.html#a25eea0149a2adbf261de142519a7193d">ToGraph</a>(<a class="code hl_typedef" href="../../de/dda/namespacebustub.html#a8de4ac099b23d712481109bb846decde">page_id_t</a> page_id, const <a class="code hl_class" href="../../d6/d48/classbustub_1_1BPlusTreePage.html">BPlusTreePage</a> *page, <a class="code hl_namespace" href="../../d8/dcc/namespacestd.html">std</a>::ofstream &amp;out);</div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span> </div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno"><a class="line" href="../../d8/dab/classbustub_1_1BPlusTree.html#af499da8d94f18dd4e4f54cf43c95f9e1">  134</a></span>  <span class="keywordtype">void</span> <a class="code hl_function" href="../../d8/dab/classbustub_1_1BPlusTree.html#af499da8d94f18dd4e4f54cf43c95f9e1">PrintTree</a>(<a class="code hl_typedef" href="../../de/dda/namespacebustub.html#a8de4ac099b23d712481109bb846decde">page_id_t</a> page_id, const <a class="code hl_class" href="../../d6/d48/classbustub_1_1BPlusTreePage.html">BPlusTreePage</a> *page);</div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span> </div>
+<div class="line"><a id="l00142" name="l00142"></a><span class="lineno"><a class="line" href="../../d8/dab/classbustub_1_1BPlusTree.html#a1eef7e732958cbba0c1a36563aa7bc7e">  142</a></span>  auto <a class="code hl_function" href="../../d8/dab/classbustub_1_1BPlusTree.html#a1eef7e732958cbba0c1a36563aa7bc7e">ToPrintableBPlusTree</a>(<a class="code hl_typedef" href="../../de/dda/namespacebustub.html#a8de4ac099b23d712481109bb846decde">page_id_t</a> root_id) -&gt; <a class="code hl_struct" href="../../d8/dd0/structbustub_1_1PrintableBPlusTree.html">PrintableBPlusTree</a>;</div>
+<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span> </div>
+<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span>  <span class="comment">// member variable</span></div>
+<div class="line"><a id="l00145" name="l00145"></a><span class="lineno"><a class="line" href="../../d8/dab/classbustub_1_1BPlusTree.html#a72d57d6be0dedb9cf92ee31d06f5e435">  145</a></span>  <a class="code hl_namespace" href="../../d8/dcc/namespacestd.html">std</a>::<span class="keywordtype">string</span> <a class="code hl_variable" href="../../d8/dab/classbustub_1_1BPlusTree.html#a72d57d6be0dedb9cf92ee31d06f5e435">index_name_</a>;</div>
+<div class="line"><a id="l00146" name="l00146"></a><span class="lineno"><a class="line" href="../../d8/dab/classbustub_1_1BPlusTree.html#ac0d13779b26d4bac9f4cc2709fda0b06">  146</a></span>  <a class="code hl_class" href="../../d6/d5d/classbustub_1_1BufferPoolManager.html">BufferPoolManager</a> *<a class="code hl_variable" href="../../d8/dab/classbustub_1_1BPlusTree.html#ac0d13779b26d4bac9f4cc2709fda0b06">bpm_</a>;</div>
+<div class="line"><a id="l00147" name="l00147"></a><span class="lineno"><a class="line" href="../../d8/dab/classbustub_1_1BPlusTree.html#addd5ad54bbbc7e71b25c8d848a9ff6d1">  147</a></span>  KeyComparator <a class="code hl_variable" href="../../d8/dab/classbustub_1_1BPlusTree.html#addd5ad54bbbc7e71b25c8d848a9ff6d1">comparator_</a>;</div>
+<div class="line"><a id="l00148" name="l00148"></a><span class="lineno"><a class="line" href="../../d8/dab/classbustub_1_1BPlusTree.html#a9e4a8388d7249371d002141a84ffee18">  148</a></span>  <a class="code hl_namespace" href="../../d8/dcc/namespacestd.html">std</a>::vector&lt;<a class="code hl_namespace" href="../../d8/dcc/namespacestd.html">std</a>::<span class="keywordtype">string</span>&gt; <a class="code hl_variable" href="../../d8/dab/classbustub_1_1BPlusTree.html#a9e4a8388d7249371d002141a84ffee18">log</a>;  <span class="comment">// NOLINT</span></div>
+<div class="line"><a id="l00149" name="l00149"></a><span class="lineno"><a class="line" href="../../d8/dab/classbustub_1_1BPlusTree.html#a31f2e3e8a09bbc09b909e77c55b7e697">  149</a></span>  <span class="keywordtype">int</span> <a class="code hl_variable" href="../../d8/dab/classbustub_1_1BPlusTree.html#a31f2e3e8a09bbc09b909e77c55b7e697">leaf_max_size_</a>;</div>
+<div class="line"><a id="l00150" name="l00150"></a><span class="lineno"><a class="line" href="../../d8/dab/classbustub_1_1BPlusTree.html#a4760a70c2e82def976361b0ed26e1fe5">  150</a></span>  <span class="keywordtype">int</span> <a class="code hl_variable" href="../../d8/dab/classbustub_1_1BPlusTree.html#a4760a70c2e82def976361b0ed26e1fe5">internal_max_size_</a>;</div>
+<div class="line"><a id="l00151" name="l00151"></a><span class="lineno"><a class="line" href="../../d8/dab/classbustub_1_1BPlusTree.html#accd94b2a204b6fd131b905f505467af6">  151</a></span>  <a class="code hl_typedef" href="../../de/dda/namespacebustub.html#a8de4ac099b23d712481109bb846decde">page_id_t</a> <a class="code hl_variable" href="../../d8/dab/classbustub_1_1BPlusTree.html#accd94b2a204b6fd131b905f505467af6">header_page_id_</a>;</div>
+<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span>};</div>
+</div>
+<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span> </div>
+<div class="foldopen" id="foldopen00158" data-start="{" data-end="};">
+<div class="line"><a id="l00158" name="l00158"></a><span class="lineno"><a class="line" href="../../d8/dd0/structbustub_1_1PrintableBPlusTree.html">  158</a></span>struct <a class="code hl_struct" href="../../d8/dd0/structbustub_1_1PrintableBPlusTree.html">PrintableBPlusTree</a> {</div>
+<div class="line"><a id="l00159" name="l00159"></a><span class="lineno"><a class="line" href="../../d8/dd0/structbustub_1_1PrintableBPlusTree.html#ac6d51d33312d6a6d7b0be1059c8aa07a">  159</a></span>  <span class="keywordtype">int</span> <a class="code hl_variable" href="../../d8/dd0/structbustub_1_1PrintableBPlusTree.html#ac6d51d33312d6a6d7b0be1059c8aa07a">size_</a>;</div>
+<div class="line"><a id="l00160" name="l00160"></a><span class="lineno"><a class="line" href="../../d8/dd0/structbustub_1_1PrintableBPlusTree.html#a955837d7ab99888f6d87a32e6ea64365">  160</a></span>  std::string <a class="code hl_variable" href="../../d8/dd0/structbustub_1_1PrintableBPlusTree.html#a955837d7ab99888f6d87a32e6ea64365">keys_</a>;</div>
+<div class="line"><a id="l00161" name="l00161"></a><span class="lineno"><a class="line" href="../../d8/dd0/structbustub_1_1PrintableBPlusTree.html#aa156f10aa388bfb3cc06e0808b1ee050">  161</a></span>  std::vector&lt;PrintableBPlusTree&gt; <a class="code hl_variable" href="../../d8/dd0/structbustub_1_1PrintableBPlusTree.html#aa156f10aa388bfb3cc06e0808b1ee050">children_</a>;</div>
+<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span> </div>
+<div class="foldopen" id="foldopen00169" data-start="{" data-end="}">
+<div class="line"><a id="l00169" name="l00169"></a><span class="lineno"><a class="line" href="../../d8/dd0/structbustub_1_1PrintableBPlusTree.html#a15a68c2255f45c2ee3578dc14a890d6b">  169</a></span>  <span class="keywordtype">void</span> <a class="code hl_function" href="../../d8/dd0/structbustub_1_1PrintableBPlusTree.html#a15a68c2255f45c2ee3578dc14a890d6b">Print</a>(std::ostream &amp;out_buf) {</div>
+<div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span>    std::vector&lt;PrintableBPlusTree *&gt; que = {<span class="keyword">this</span>};</div>
+<div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span>    <span class="keywordflow">while</span> (!que.empty()) {</div>
+<div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span>      std::vector&lt;PrintableBPlusTree *&gt; new_que;</div>
+<div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span> </div>
+<div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span>      <span class="keywordflow">for</span> (<span class="keyword">auto</span> &amp;t : que) {</div>
+<div class="line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span>        <span class="keywordtype">int</span> padding = (t-&gt;size_ - t-&gt;keys_.size()) / 2;</div>
+<div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span>        out_buf &lt;&lt; std::string(padding, <span class="charliteral">&#39; &#39;</span>);</div>
+<div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span>        out_buf &lt;&lt; t-&gt;keys_;</div>
+<div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span>        out_buf &lt;&lt; std::string(padding, <span class="charliteral">&#39; &#39;</span>);</div>
+<div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span> </div>
+<div class="line"><a id="l00180" name="l00180"></a><span class="lineno">  180</span>        <span class="keywordflow">for</span> (<span class="keyword">auto</span> &amp;c : t-&gt;children_) {</div>
+<div class="line"><a id="l00181" name="l00181"></a><span class="lineno">  181</span>          new_que.push_back(&amp;c);</div>
+<div class="line"><a id="l00182" name="l00182"></a><span class="lineno">  182</span>        }</div>
+<div class="line"><a id="l00183" name="l00183"></a><span class="lineno">  183</span>      }</div>
+<div class="line"><a id="l00184" name="l00184"></a><span class="lineno">  184</span>      out_buf &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;</div>
+<div class="line"><a id="l00185" name="l00185"></a><span class="lineno">  185</span>      que = new_que;</div>
+<div class="line"><a id="l00186" name="l00186"></a><span class="lineno">  186</span>    }</div>
+<div class="line"><a id="l00187" name="l00187"></a><span class="lineno">  187</span>  }</div>
+</div>
+<div class="line"><a id="l00188" name="l00188"></a><span class="lineno">  188</span>};</div>
+</div>
+<div class="line"><a id="l00189" name="l00189"></a><span class="lineno">  189</span> </div>
+<div class="line"><a id="l00190" name="l00190"></a><span class="lineno">  190</span>}  <span class="comment">// namespace bustub</span></div>
+<div class="ttc" id="ab__plus__tree__header__page_8h_html"><div class="ttname"><a href="../../da/df2/b__plus__tree__header__page_8h.html">b_plus_tree_header_page.h</a></div></div>
+<div class="ttc" id="ab__plus__tree__internal__page_8h_html"><div class="ttname"><a href="../../da/d30/b__plus__tree__internal__page_8h.html">b_plus_tree_internal_page.h</a></div></div>
+<div class="ttc" id="ab__plus__tree__internal__page_8h_html_a04db3f924b29e986d8b3e94dbbbb9d55"><div class="ttname"><a href="../../da/d30/b__plus__tree__internal__page_8h.html#a04db3f924b29e986d8b3e94dbbbb9d55">INTERNAL_PAGE_SIZE</a></div><div class="ttdeci">#define INTERNAL_PAGE_SIZE</div><div class="ttdef"><b>Definition</b> b_plus_tree_internal_page.h:22</div></div>
+<div class="ttc" id="ab__plus__tree__leaf__page_8h_html"><div class="ttname"><a href="../../d5/d76/b__plus__tree__leaf__page_8h.html">b_plus_tree_leaf_page.h</a></div></div>
+<div class="ttc" id="ab__plus__tree__leaf__page_8h_html_a1bf27d964f8ae5ad340eb82a7bd5fee7"><div class="ttname"><a href="../../d5/d76/b__plus__tree__leaf__page_8h.html#a1bf27d964f8ae5ad340eb82a7bd5fee7">LEAF_PAGE_SIZE</a></div><div class="ttdeci">#define LEAF_PAGE_SIZE</div><div class="ttdef"><b>Definition</b> b_plus_tree_leaf_page.h:23</div></div>
+<div class="ttc" id="ab__plus__tree__page_8h_html_a4c3acf10c136a6a89b0805e36e535847"><div class="ttname"><a href="../../d1/d36/b__plus__tree__page_8h.html#a4c3acf10c136a6a89b0805e36e535847">INDEX_TEMPLATE_ARGUMENTS</a></div><div class="ttdeci">#define INDEX_TEMPLATE_ARGUMENTS</div><div class="ttdef"><b>Definition</b> b_plus_tree_page.h:25</div></div>
+<div class="ttc" id="aclassbustub_1_1BPlusTreeInternalPage_html"><div class="ttname"><a href="../../da/d05/classbustub_1_1BPlusTreeInternalPage.html">bustub::BPlusTreeInternalPage</a></div><div class="ttdef"><b>Definition</b> b_plus_tree_internal_page.h:38</div></div>
+<div class="ttc" id="aclassbustub_1_1BPlusTreeLeafPage_html"><div class="ttname"><a href="../../dc/d79/classbustub_1_1BPlusTreeLeafPage.html">bustub::BPlusTreeLeafPage</a></div><div class="ttdef"><b>Definition</b> b_plus_tree_leaf_page.h:41</div></div>
+<div class="ttc" id="aclassbustub_1_1BPlusTreePage_html"><div class="ttname"><a href="../../d6/d48/classbustub_1_1BPlusTreePage.html">bustub::BPlusTreePage</a></div><div class="ttdef"><b>Definition</b> b_plus_tree_page.h:41</div></div>
+<div class="ttc" id="aclassbustub_1_1BPlusTree_html"><div class="ttname"><a href="../../d8/dab/classbustub_1_1BPlusTree.html">bustub::BPlusTree</a></div><div class="ttdef"><b>Definition</b> b_plus_tree.h:63</div></div>
+<div class="ttc" id="aclassbustub_1_1BPlusTree_html_a1b2017f5d001c8afaca49cf15686e634"><div class="ttname"><a href="../../d8/dab/classbustub_1_1BPlusTree.html#a1b2017f5d001c8afaca49cf15686e634">bustub::BPlusTree::Draw</a></div><div class="ttdeci">void Draw(BufferPoolManager *bpm, const std::string &amp;outf)</div></div>
+<div class="ttc" id="aclassbustub_1_1BPlusTree_html_a1eef7e732958cbba0c1a36563aa7bc7e"><div class="ttname"><a href="../../d8/dab/classbustub_1_1BPlusTree.html#a1eef7e732958cbba0c1a36563aa7bc7e">bustub::BPlusTree::ToPrintableBPlusTree</a></div><div class="ttdeci">auto ToPrintableBPlusTree(page_id_t root_id) -&gt; PrintableBPlusTree</div><div class="ttdoc">Convert A B+ tree into a Printable B+ tree</div></div>
+<div class="ttc" id="aclassbustub_1_1BPlusTree_html_a20507c58a6e689f7f4e5f42b5164bed4"><div class="ttname"><a href="../../d8/dab/classbustub_1_1BPlusTree.html#a20507c58a6e689f7f4e5f42b5164bed4">bustub::BPlusTree::RemoveFromFile</a></div><div class="ttdeci">void RemoveFromFile(const std::string &amp;file_name, Transaction *txn=nullptr)</div></div>
+<div class="ttc" id="aclassbustub_1_1BPlusTree_html_a21c9225f6334233dab4adbfdcc02e67c"><div class="ttname"><a href="../../d8/dab/classbustub_1_1BPlusTree.html#a21c9225f6334233dab4adbfdcc02e67c">bustub::BPlusTree::Print</a></div><div class="ttdeci">void Print(BufferPoolManager *bpm)</div></div>
+<div class="ttc" id="aclassbustub_1_1BPlusTree_html_a25eea0149a2adbf261de142519a7193d"><div class="ttname"><a href="../../d8/dab/classbustub_1_1BPlusTree.html#a25eea0149a2adbf261de142519a7193d">bustub::BPlusTree::ToGraph</a></div><div class="ttdeci">void ToGraph(page_id_t page_id, const BPlusTreePage *page, std::ofstream &amp;out)</div></div>
+<div class="ttc" id="aclassbustub_1_1BPlusTree_html_a298d9aa806c90a9ddb3eacff9f9aedcc"><div class="ttname"><a href="../../d8/dab/classbustub_1_1BPlusTree.html#a298d9aa806c90a9ddb3eacff9f9aedcc">bustub::BPlusTree::IsEmpty</a></div><div class="ttdeci">auto IsEmpty() const -&gt; bool</div></div>
+<div class="ttc" id="aclassbustub_1_1BPlusTree_html_a2a46d875b8c9231d63cf481831d2e00d"><div class="ttname"><a href="../../d8/dab/classbustub_1_1BPlusTree.html#a2a46d875b8c9231d63cf481831d2e00d">bustub::BPlusTree::Remove</a></div><div class="ttdeci">void Remove(const KeyType &amp;key, Transaction *txn)</div></div>
+<div class="ttc" id="aclassbustub_1_1BPlusTree_html_a31aea3857ea307e861e34b6ba1b53dcf"><div class="ttname"><a href="../../d8/dab/classbustub_1_1BPlusTree.html#a31aea3857ea307e861e34b6ba1b53dcf">bustub::BPlusTree::BPlusTree</a></div><div class="ttdeci">BPlusTree(std::string name, page_id_t header_page_id, BufferPoolManager *buffer_pool_manager, const KeyComparator &amp;comparator, int leaf_max_size=LEAF_PAGE_SIZE, int internal_max_size=INTERNAL_PAGE_SIZE)</div></div>
+<div class="ttc" id="aclassbustub_1_1BPlusTree_html_a31f2e3e8a09bbc09b909e77c55b7e697"><div class="ttname"><a href="../../d8/dab/classbustub_1_1BPlusTree.html#a31f2e3e8a09bbc09b909e77c55b7e697">bustub::BPlusTree::leaf_max_size_</a></div><div class="ttdeci">int leaf_max_size_</div><div class="ttdef"><b>Definition</b> b_plus_tree.h:149</div></div>
+<div class="ttc" id="aclassbustub_1_1BPlusTree_html_a4760a70c2e82def976361b0ed26e1fe5"><div class="ttname"><a href="../../d8/dab/classbustub_1_1BPlusTree.html#a4760a70c2e82def976361b0ed26e1fe5">bustub::BPlusTree::internal_max_size_</a></div><div class="ttdeci">int internal_max_size_</div><div class="ttdef"><b>Definition</b> b_plus_tree.h:150</div></div>
+<div class="ttc" id="aclassbustub_1_1BPlusTree_html_a50c8f5975530bd16c748306403bb5623"><div class="ttname"><a href="../../d8/dab/classbustub_1_1BPlusTree.html#a50c8f5975530bd16c748306403bb5623">bustub::BPlusTree::Begin</a></div><div class="ttdeci">auto Begin() -&gt; INDEXITERATOR_TYPE</div></div>
+<div class="ttc" id="aclassbustub_1_1BPlusTree_html_a537628992fff268a9ca5a84e33231616"><div class="ttname"><a href="../../d8/dab/classbustub_1_1BPlusTree.html#a537628992fff268a9ca5a84e33231616">bustub::BPlusTree::DrawBPlusTree</a></div><div class="ttdeci">auto DrawBPlusTree() -&gt; std::string</div><div class="ttdoc">draw a B+ tree, below is a printed B+ tree(3 max leaf, 4 max internal) after inserting key: {1,...</div></div>
+<div class="ttc" id="aclassbustub_1_1BPlusTree_html_a60dd6e9db3db5d0b78aa668a00a37ca3"><div class="ttname"><a href="../../d8/dab/classbustub_1_1BPlusTree.html#a60dd6e9db3db5d0b78aa668a00a37ca3">bustub::BPlusTree::GetValue</a></div><div class="ttdeci">auto GetValue(const KeyType &amp;key, std::vector&lt; ValueType &gt; *result, Transaction *txn=nullptr) -&gt; bool</div></div>
+<div class="ttc" id="aclassbustub_1_1BPlusTree_html_a72d57d6be0dedb9cf92ee31d06f5e435"><div class="ttname"><a href="../../d8/dab/classbustub_1_1BPlusTree.html#a72d57d6be0dedb9cf92ee31d06f5e435">bustub::BPlusTree::index_name_</a></div><div class="ttdeci">std::string index_name_</div><div class="ttdef"><b>Definition</b> b_plus_tree.h:145</div></div>
+<div class="ttc" id="aclassbustub_1_1BPlusTree_html_a77383b07f1019140cbc6b56976861b27"><div class="ttname"><a href="../../d8/dab/classbustub_1_1BPlusTree.html#a77383b07f1019140cbc6b56976861b27">bustub::BPlusTree::GetRootPageId</a></div><div class="ttdeci">auto GetRootPageId() -&gt; page_id_t</div></div>
+<div class="ttc" id="aclassbustub_1_1BPlusTree_html_a7be96b4f81ada2c412789371cfd0da35"><div class="ttname"><a href="../../d8/dab/classbustub_1_1BPlusTree.html#a7be96b4f81ada2c412789371cfd0da35">bustub::BPlusTree::BatchOpsFromFile</a></div><div class="ttdeci">void BatchOpsFromFile(const std::string &amp;file_name, Transaction *txn=nullptr)</div><div class="ttdoc">Read batch operations from input file, below is a sample file format insert some keys and delete 8,...</div></div>
+<div class="ttc" id="aclassbustub_1_1BPlusTree_html_a9e4a8388d7249371d002141a84ffee18"><div class="ttname"><a href="../../d8/dab/classbustub_1_1BPlusTree.html#a9e4a8388d7249371d002141a84ffee18">bustub::BPlusTree::log</a></div><div class="ttdeci">std::vector&lt; std::string &gt; log</div><div class="ttdef"><b>Definition</b> b_plus_tree.h:148</div></div>
+<div class="ttc" id="aclassbustub_1_1BPlusTree_html_aa4b76c620aac827d0de3385943779369"><div class="ttname"><a href="../../d8/dab/classbustub_1_1BPlusTree.html#aa4b76c620aac827d0de3385943779369">bustub::BPlusTree::End</a></div><div class="ttdeci">auto End() -&gt; INDEXITERATOR_TYPE</div></div>
+<div class="ttc" id="aclassbustub_1_1BPlusTree_html_ac0d13779b26d4bac9f4cc2709fda0b06"><div class="ttname"><a href="../../d8/dab/classbustub_1_1BPlusTree.html#ac0d13779b26d4bac9f4cc2709fda0b06">bustub::BPlusTree::bpm_</a></div><div class="ttdeci">BufferPoolManager * bpm_</div><div class="ttdef"><b>Definition</b> b_plus_tree.h:146</div></div>
+<div class="ttc" id="aclassbustub_1_1BPlusTree_html_ac9289cc7ef6a0aae28757bba1f0c855e"><div class="ttname"><a href="../../d8/dab/classbustub_1_1BPlusTree.html#ac9289cc7ef6a0aae28757bba1f0c855e">bustub::BPlusTree::InsertFromFile</a></div><div class="ttdeci">void InsertFromFile(const std::string &amp;file_name, Transaction *txn=nullptr)</div></div>
+<div class="ttc" id="aclassbustub_1_1BPlusTree_html_accd94b2a204b6fd131b905f505467af6"><div class="ttname"><a href="../../d8/dab/classbustub_1_1BPlusTree.html#accd94b2a204b6fd131b905f505467af6">bustub::BPlusTree::header_page_id_</a></div><div class="ttdeci">page_id_t header_page_id_</div><div class="ttdef"><b>Definition</b> b_plus_tree.h:151</div></div>
+<div class="ttc" id="aclassbustub_1_1BPlusTree_html_addd5ad54bbbc7e71b25c8d848a9ff6d1"><div class="ttname"><a href="../../d8/dab/classbustub_1_1BPlusTree.html#addd5ad54bbbc7e71b25c8d848a9ff6d1">bustub::BPlusTree::comparator_</a></div><div class="ttdeci">KeyComparator comparator_</div><div class="ttdef"><b>Definition</b> b_plus_tree.h:147</div></div>
+<div class="ttc" id="aclassbustub_1_1BPlusTree_html_af499da8d94f18dd4e4f54cf43c95f9e1"><div class="ttname"><a href="../../d8/dab/classbustub_1_1BPlusTree.html#af499da8d94f18dd4e4f54cf43c95f9e1">bustub::BPlusTree::PrintTree</a></div><div class="ttdeci">void PrintTree(page_id_t page_id, const BPlusTreePage *page)</div></div>
+<div class="ttc" id="aclassbustub_1_1BufferPoolManager_html"><div class="ttname"><a href="../../d6/d5d/classbustub_1_1BufferPoolManager.html">bustub::BufferPoolManager</a></div><div class="ttdef"><b>Definition</b> buffer_pool_manager.h:34</div></div>
+<div class="ttc" id="aclassbustub_1_1Context_html"><div class="ttname"><a href="../../d2/d21/classbustub_1_1Context.html">bustub::Context</a></div><div class="ttdoc">Definition of the Context class.</div><div class="ttdef"><b>Definition</b> b_plus_tree.h:41</div></div>
+<div class="ttc" id="aclassbustub_1_1Context_html_a30665c45016d4bf6ddeab35c3e424b65"><div class="ttname"><a href="../../d2/d21/classbustub_1_1Context.html#a30665c45016d4bf6ddeab35c3e424b65">bustub::Context::read_set_</a></div><div class="ttdeci">std::deque&lt; ReadPageGuard &gt; read_set_</div><div class="ttdef"><b>Definition</b> b_plus_tree.h:54</div></div>
+<div class="ttc" id="aclassbustub_1_1Context_html_a5558ddb2e414aecb9b4e583f0a2a7aba"><div class="ttname"><a href="../../d2/d21/classbustub_1_1Context.html#a5558ddb2e414aecb9b4e583f0a2a7aba">bustub::Context::write_set_</a></div><div class="ttdeci">std::deque&lt; WritePageGuard &gt; write_set_</div><div class="ttdef"><b>Definition</b> b_plus_tree.h:51</div></div>
+<div class="ttc" id="aclassbustub_1_1Context_html_a879835d73e1db08c7b0bf75e4e055388"><div class="ttname"><a href="../../d2/d21/classbustub_1_1Context.html#a879835d73e1db08c7b0bf75e4e055388">bustub::Context::header_page_</a></div><div class="ttdeci">std::optional&lt; WritePageGuard &gt; header_page_</div><div class="ttdef"><b>Definition</b> b_plus_tree.h:45</div></div>
+<div class="ttc" id="aclassbustub_1_1Context_html_ac684d0a45d9eb114571a7cc75b665471"><div class="ttname"><a href="../../d2/d21/classbustub_1_1Context.html#ac684d0a45d9eb114571a7cc75b665471">bustub::Context::IsRootPage</a></div><div class="ttdeci">auto IsRootPage(page_id_t page_id) -&gt; bool</div><div class="ttdef"><b>Definition</b> b_plus_tree.h:56</div></div>
+<div class="ttc" id="aclassbustub_1_1Context_html_aeace64a3329de9151dadb29416b65ceb"><div class="ttname"><a href="../../d2/d21/classbustub_1_1Context.html#aeace64a3329de9151dadb29416b65ceb">bustub::Context::root_page_id_</a></div><div class="ttdeci">page_id_t root_page_id_</div><div class="ttdef"><b>Definition</b> b_plus_tree.h:48</div></div>
+<div class="ttc" id="aclassbustub_1_1Transaction_html"><div class="ttname"><a href="../../db/d88/classbustub_1_1Transaction.html">bustub::Transaction</a></div><div class="ttdef"><b>Definition</b> transaction.h:89</div></div>
+<div class="ttc" id="aconfig_8h_html"><div class="ttname"><a href="../../db/d16/config_8h.html">config.h</a></div></div>
+<div class="ttc" id="aindex__iterator_8h_html"><div class="ttname"><a href="../../d4/df2/index__iterator_8h.html">index_iterator.h</a></div></div>
+<div class="ttc" id="aindex__iterator_8h_html_af44bbf16ed06a9a1165c4d6e74335f31"><div class="ttname"><a href="../../d4/df2/index__iterator_8h.html#af44bbf16ed06a9a1165c4d6e74335f31">INDEXITERATOR_TYPE</a></div><div class="ttdeci">#define INDEXITERATOR_TYPE</div><div class="ttdef"><b>Definition</b> index_iterator.h:20</div></div>
+<div class="ttc" id="amacros_8h_html"><div class="ttname"><a href="../../de/d3c/macros_8h.html">macros.h</a></div></div>
+<div class="ttc" id="anamespacebustub_html"><div class="ttname"><a href="../../de/dda/namespacebustub.html">bustub</a></div><div class="ttdef"><b>Definition</b> bind_create.cpp:53</div></div>
+<div class="ttc" id="anamespacebustub_html_a8de4ac099b23d712481109bb846decde"><div class="ttname"><a href="../../de/dda/namespacebustub.html#a8de4ac099b23d712481109bb846decde">bustub::page_id_t</a></div><div class="ttdeci">int32_t page_id_t</div><div class="ttdef"><b>Definition</b> config.h:44</div></div>
+<div class="ttc" id="anamespacebustub_html_ad7d821859993f0ecb02cde3b7a9f2ccfaa458be0f08b7e4ff3c0f633c100176c0"><div class="ttname"><a href="../../de/dda/namespacebustub.html#ad7d821859993f0ecb02cde3b7a9f2ccfaa458be0f08b7e4ff3c0f633c100176c0">bustub::PlanType::Insert</a></div><div class="ttdeci">@ Insert</div></div>
+<div class="ttc" id="anamespacebustub_html_ae9dd773eae7950183ebc60def880f499"><div class="ttname"><a href="../../de/dda/namespacebustub.html#ae9dd773eae7950183ebc60def880f499">bustub::INVALID_PAGE_ID</a></div><div class="ttdeci">static constexpr int INVALID_PAGE_ID</div><div class="ttdef"><b>Definition</b> config.h:33</div></div>
+<div class="ttc" id="anamespacestd_html"><div class="ttname"><a href="../../d8/dcc/namespacestd.html">std</a></div><div class="ttdef"><b>Definition</b> rid.h:70</div></div>
+<div class="ttc" id="apage__guard_8h_html"><div class="ttname"><a href="../../d7/d9b/page__guard_8h.html">page_guard.h</a></div></div>
+<div class="ttc" id="astructbustub_1_1PrintableBPlusTree_html"><div class="ttname"><a href="../../d8/dd0/structbustub_1_1PrintableBPlusTree.html">bustub::PrintableBPlusTree</a></div><div class="ttdoc">for test only. PrintableBPlusTree is a printable B+ tree. We first convert B+ tree into a printable B...</div><div class="ttdef"><b>Definition</b> b_plus_tree.h:158</div></div>
+<div class="ttc" id="astructbustub_1_1PrintableBPlusTree_html_a15a68c2255f45c2ee3578dc14a890d6b"><div class="ttname"><a href="../../d8/dd0/structbustub_1_1PrintableBPlusTree.html#a15a68c2255f45c2ee3578dc14a890d6b">bustub::PrintableBPlusTree::Print</a></div><div class="ttdeci">void Print(std::ostream &amp;out_buf)</div><div class="ttdoc">BFS traverse a printable B+ tree and print it into into out_buf</div><div class="ttdef"><b>Definition</b> b_plus_tree.h:169</div></div>
+<div class="ttc" id="astructbustub_1_1PrintableBPlusTree_html_a955837d7ab99888f6d87a32e6ea64365"><div class="ttname"><a href="../../d8/dd0/structbustub_1_1PrintableBPlusTree.html#a955837d7ab99888f6d87a32e6ea64365">bustub::PrintableBPlusTree::keys_</a></div><div class="ttdeci">std::string keys_</div><div class="ttdef"><b>Definition</b> b_plus_tree.h:160</div></div>
+<div class="ttc" id="astructbustub_1_1PrintableBPlusTree_html_aa156f10aa388bfb3cc06e0808b1ee050"><div class="ttname"><a href="../../d8/dd0/structbustub_1_1PrintableBPlusTree.html#aa156f10aa388bfb3cc06e0808b1ee050">bustub::PrintableBPlusTree::children_</a></div><div class="ttdeci">std::vector&lt; PrintableBPlusTree &gt; children_</div><div class="ttdef"><b>Definition</b> b_plus_tree.h:161</div></div>
+<div class="ttc" id="astructbustub_1_1PrintableBPlusTree_html_ac6d51d33312d6a6d7b0be1059c8aa07a"><div class="ttname"><a href="../../d8/dd0/structbustub_1_1PrintableBPlusTree.html#ac6d51d33312d6a6d7b0be1059c8aa07a">bustub::PrintableBPlusTree::size_</a></div><div class="ttdeci">int size_</div><div class="ttdef"><b>Definition</b> b_plus_tree.h:159</div></div>
+<div class="ttc" id="atransaction_8h_html"><div class="ttname"><a href="../../d0/db6/transaction_8h.html">transaction.h</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
+</small></address>
+</body>
+</html>

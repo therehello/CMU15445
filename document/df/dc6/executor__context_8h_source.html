@@ -1,0 +1,226 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>数据库系统 CMU15-445/645: src/include/execution/executor_context.h 源文件</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/searchdata.js"></script>
+<script type="text/javascript" src="../../search/search.js"></script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">数据库系统 CMU15-445/645<span id="projectnumber">&#160;1.0.0</span>
+   </div>
+   <div id="projectbrief">CMU15-445/645 是基于现代 C++ 开发的支持并发操作的简单 SQL 操作的单机数据库</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.9.8 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "../../search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('../../',true,false,'search.php','搜索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function() { init_codefold(1); });
+/* @license-end */
+</script>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="../../dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="../../dir_b0856f6b0d80ccb263b2f415c91f9e17.html">include</a></li><li class="navelem"><a class="el" href="../../dir_b06aa2129a2c7a1df27e7eac52e5ce56.html">execution</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle"><div class="title">executor_context.h</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="../../df/dc6/executor__context_8h.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">//===----------------------------------------------------------------------===//</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="comment">//</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="comment">//                         BusTub</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment">//</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="comment">// executor_context.h</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="comment">//</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="comment">// Identification: src/include/execution/executor_context.h</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="comment">//</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="comment">// Copyright (c) 2015-2021, Carnegie Mellon University Database Group</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="comment">//</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="comment">//===----------------------------------------------------------------------===//</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#pragma once</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="preprocessor">#include &lt;deque&gt;</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="preprocessor">#include &lt;memory&gt;</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="preprocessor">#include &lt;unordered_set&gt;</span></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="preprocessor">#include &lt;utility&gt;</span></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="preprocessor">#include &lt;vector&gt;</span></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span> </div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="preprocessor">#include &quot;<a class="code" href="../../d1/d1e/catalog_8h.html">catalog/catalog.h</a>&quot;</span></div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="preprocessor">#include &quot;<a class="code" href="../../d0/db6/transaction_8h.html">concurrency/transaction.h</a>&quot;</span></div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="preprocessor">#include &quot;<a class="code" href="../../d8/d4c/check__options_8h.html">execution/check_options.h</a>&quot;</span></div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="preprocessor">#include &quot;<a class="code" href="../../dc/def/abstract__executor_8h.html">execution/executors/abstract_executor.h</a>&quot;</span></div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="preprocessor">#include &quot;<a class="code" href="../../dd/d70/tmp__tuple__page_8h.html">storage/page/tmp_tuple_page.h</a>&quot;</span></div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span> </div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span><span class="keyword">namespace </span><a class="code hl_namespace" href="../../de/dda/namespacebustub.html">bustub</a> {</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="keyword">class </span>AbstractExecutor;</div>
+<div class="foldopen" id="foldopen00032" data-start="{" data-end="};">
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno"><a class="line" href="../../dd/d02/classbustub_1_1ExecutorContext.html">   32</a></span><span class="keyword">class </span><a class="code hl_class" href="../../dd/d02/classbustub_1_1ExecutorContext.html">ExecutorContext</a> {</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span> <span class="keyword">public</span>:</div>
+<div class="foldopen" id="foldopen00042" data-start="{" data-end="}">
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno"><a class="line" href="../../dd/d02/classbustub_1_1ExecutorContext.html#ab46c8af32dc17d7379bb0c1092e4160a">   42</a></span>  <a class="code hl_function" href="../../dd/d02/classbustub_1_1ExecutorContext.html#ab46c8af32dc17d7379bb0c1092e4160a">ExecutorContext</a>(<a class="code hl_class" href="../../db/d88/classbustub_1_1Transaction.html">Transaction</a> *transaction, <a class="code hl_class" href="../../d7/ddd/classbustub_1_1Catalog.html">Catalog</a> *catalog, <a class="code hl_class" href="../../d6/d5d/classbustub_1_1BufferPoolManager.html">BufferPoolManager</a> *bpm, <a class="code hl_class" href="../../dc/ddc/classbustub_1_1TransactionManager.html">TransactionManager</a> *txn_mgr,</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>                  <a class="code hl_class" href="../../df/d43/classbustub_1_1LockManager.html">LockManager</a> *lock_mgr, <span class="keywordtype">bool</span> is_delete)</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>      : <a class="code hl_variable" href="../../dd/d02/classbustub_1_1ExecutorContext.html#a0bfa4974f7763855c0f2d4505dd61322">transaction_</a>(transaction),</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>        <a class="code hl_variable" href="../../dd/d02/classbustub_1_1ExecutorContext.html#a942bf98440f51e07bf58d56059dd843d">catalog_</a>{catalog},</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>        <a class="code hl_variable" href="../../dd/d02/classbustub_1_1ExecutorContext.html#a84807e48135980066363be40e792e3f0">bpm_</a>{bpm},</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>        <a class="code hl_variable" href="../../dd/d02/classbustub_1_1ExecutorContext.html#ac58a37f06b1e0337521c56b4630dec70">txn_mgr_</a>(txn_mgr),</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>        <a class="code hl_variable" href="../../dd/d02/classbustub_1_1ExecutorContext.html#af4803bf6079a54c6bb30a6c157205ee3">lock_mgr_</a>(lock_mgr),</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>        <a class="code hl_variable" href="../../dd/d02/classbustub_1_1ExecutorContext.html#a6403b9f8d33699af28d14f40f5241ea5">is_delete_</a>(is_delete) {</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>    <a class="code hl_variable" href="../../dd/d02/classbustub_1_1ExecutorContext.html#ab117da4559568ba05c2cf90406ec4047">nlj_check_exec_set_</a> = std::deque&lt;std::pair&lt;AbstractExecutor *, AbstractExecutor *&gt;&gt;(</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>        std::deque&lt;std::pair&lt;AbstractExecutor *, AbstractExecutor *&gt;&gt;{});</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>    <a class="code hl_variable" href="../../dd/d02/classbustub_1_1ExecutorContext.html#a105b7e5b1b7053a770a587abff2a135e">check_options_</a> = std::make_shared&lt;CheckOptions&gt;();</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>  }</div>
+</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span> </div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno"><a class="line" href="../../dd/d02/classbustub_1_1ExecutorContext.html#a906e1c53716668a43b8768b3bd155319">   55</a></span>  <a class="code hl_function" href="../../dd/d02/classbustub_1_1ExecutorContext.html#a906e1c53716668a43b8768b3bd155319">~ExecutorContext</a>() = <span class="keywordflow">default</span>;</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span> </div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno"><a class="line" href="../../dd/d02/classbustub_1_1ExecutorContext.html#afdd17636324cbed13a8fbe79b0af6004">   57</a></span>  <a class="code hl_function" href="../../dd/d02/classbustub_1_1ExecutorContext.html#afdd17636324cbed13a8fbe79b0af6004">DISALLOW_COPY_AND_MOVE</a>(<a class="code hl_class" href="../../dd/d02/classbustub_1_1ExecutorContext.html">ExecutorContext</a>);</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span> </div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno"><a class="line" href="../../dd/d02/classbustub_1_1ExecutorContext.html#a7076e7ad5472b657d1b6cf9df450d16a">   60</a></span>  <span class="keyword">auto</span> <a class="code hl_function" href="../../dd/d02/classbustub_1_1ExecutorContext.html#a7076e7ad5472b657d1b6cf9df450d16a">GetTransaction</a>() const -&gt; <a class="code hl_class" href="../../db/d88/classbustub_1_1Transaction.html">Transaction</a> * { <span class="keywordflow">return</span> <a class="code hl_variable" href="../../dd/d02/classbustub_1_1ExecutorContext.html#a0bfa4974f7763855c0f2d4505dd61322">transaction_</a>; }</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span> </div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno"><a class="line" href="../../dd/d02/classbustub_1_1ExecutorContext.html#aceeb20f9451caccd91a861fd99b2a606">   63</a></span>  <span class="keyword">auto</span> <a class="code hl_function" href="../../dd/d02/classbustub_1_1ExecutorContext.html#aceeb20f9451caccd91a861fd99b2a606">GetCatalog</a>() -&gt; <a class="code hl_class" href="../../d7/ddd/classbustub_1_1Catalog.html">Catalog</a> * { <span class="keywordflow">return</span> <a class="code hl_variable" href="../../dd/d02/classbustub_1_1ExecutorContext.html#a942bf98440f51e07bf58d56059dd843d">catalog_</a>; }</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span> </div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno"><a class="line" href="../../dd/d02/classbustub_1_1ExecutorContext.html#a82778c8e5a1a57d2d04bca8b179274e9">   66</a></span>  <span class="keyword">auto</span> <a class="code hl_function" href="../../dd/d02/classbustub_1_1ExecutorContext.html#a82778c8e5a1a57d2d04bca8b179274e9">GetBufferPoolManager</a>() -&gt; <a class="code hl_class" href="../../d6/d5d/classbustub_1_1BufferPoolManager.html">BufferPoolManager</a> * { <span class="keywordflow">return</span> <a class="code hl_variable" href="../../dd/d02/classbustub_1_1ExecutorContext.html#a84807e48135980066363be40e792e3f0">bpm_</a>; }</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span> </div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno"><a class="line" href="../../dd/d02/classbustub_1_1ExecutorContext.html#abc2851e1403046e7f61d419850d309c8">   69</a></span>  <span class="keyword">auto</span> <a class="code hl_function" href="../../dd/d02/classbustub_1_1ExecutorContext.html#abc2851e1403046e7f61d419850d309c8">GetLogManager</a>() -&gt; <a class="code hl_class" href="../../d7/d4e/classbustub_1_1LogManager.html">LogManager</a> * { <span class="keywordflow">return</span> <span class="keyword">nullptr</span>; }</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span> </div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno"><a class="line" href="../../dd/d02/classbustub_1_1ExecutorContext.html#ac9953a5f1a69a9e121349375b64267ca">   72</a></span>  <span class="keyword">auto</span> <a class="code hl_function" href="../../dd/d02/classbustub_1_1ExecutorContext.html#ac9953a5f1a69a9e121349375b64267ca">GetLockManager</a>() -&gt; <a class="code hl_class" href="../../df/d43/classbustub_1_1LockManager.html">LockManager</a> * { <span class="keywordflow">return</span> <a class="code hl_variable" href="../../dd/d02/classbustub_1_1ExecutorContext.html#af4803bf6079a54c6bb30a6c157205ee3">lock_mgr_</a>; }</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span> </div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno"><a class="line" href="../../dd/d02/classbustub_1_1ExecutorContext.html#a5eb03f046ef6ff211f855b82c3ad25cb">   75</a></span>  <span class="keyword">auto</span> <a class="code hl_function" href="../../dd/d02/classbustub_1_1ExecutorContext.html#a5eb03f046ef6ff211f855b82c3ad25cb">GetTransactionManager</a>() -&gt; <a class="code hl_class" href="../../dc/ddc/classbustub_1_1TransactionManager.html">TransactionManager</a> * { <span class="keywordflow">return</span> <a class="code hl_variable" href="../../dd/d02/classbustub_1_1ExecutorContext.html#ac58a37f06b1e0337521c56b4630dec70">txn_mgr_</a>; }</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span> </div>
+<div class="foldopen" id="foldopen00078" data-start="{" data-end="}">
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno"><a class="line" href="../../dd/d02/classbustub_1_1ExecutorContext.html#ac0bcbc9b44ff7987b4dd312e910612df">   78</a></span>  <span class="keyword">auto</span> <a class="code hl_function" href="../../dd/d02/classbustub_1_1ExecutorContext.html#ac0bcbc9b44ff7987b4dd312e910612df">GetNLJCheckExecutorSet</a>() -&gt; std::deque&lt;std::pair&lt;AbstractExecutor *, AbstractExecutor *&gt;&gt; &amp; {</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="../../dd/d02/classbustub_1_1ExecutorContext.html#ab117da4559568ba05c2cf90406ec4047">nlj_check_exec_set_</a>;</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>  }</div>
+</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span> </div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno"><a class="line" href="../../dd/d02/classbustub_1_1ExecutorContext.html#a79296c7331f709632527d4e23bdc5b5b">   83</a></span>  <span class="keyword">auto</span> <a class="code hl_function" href="../../dd/d02/classbustub_1_1ExecutorContext.html#a79296c7331f709632527d4e23bdc5b5b">GetCheckOptions</a>() -&gt; std::shared_ptr&lt;CheckOptions&gt; { <span class="keywordflow">return</span> <a class="code hl_variable" href="../../dd/d02/classbustub_1_1ExecutorContext.html#a105b7e5b1b7053a770a587abff2a135e">check_options_</a>; }</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span> </div>
+<div class="foldopen" id="foldopen00085" data-start="{" data-end="}">
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno"><a class="line" href="../../dd/d02/classbustub_1_1ExecutorContext.html#adb922e3b998f2f19b5759af5a3538003">   85</a></span>  <span class="keywordtype">void</span> <a class="code hl_function" href="../../dd/d02/classbustub_1_1ExecutorContext.html#adb922e3b998f2f19b5759af5a3538003">AddCheckExecutor</a>(<a class="code hl_class" href="../../d2/d28/classbustub_1_1AbstractExecutor.html">AbstractExecutor</a> *left_exec, <a class="code hl_class" href="../../d2/d28/classbustub_1_1AbstractExecutor.html">AbstractExecutor</a> *right_exec) {</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>    <a class="code hl_variable" href="../../dd/d02/classbustub_1_1ExecutorContext.html#ab117da4559568ba05c2cf90406ec4047">nlj_check_exec_set_</a>.emplace_back(left_exec, right_exec);</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>  }</div>
+</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span> </div>
+<div class="foldopen" id="foldopen00089" data-start="{" data-end="}">
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno"><a class="line" href="../../dd/d02/classbustub_1_1ExecutorContext.html#ae445c0d1b1dfecae8d2f9843925228b6">   89</a></span>  <span class="keywordtype">void</span> <a class="code hl_function" href="../../dd/d02/classbustub_1_1ExecutorContext.html#ae445c0d1b1dfecae8d2f9843925228b6">InitCheckOptions</a>(std::shared_ptr&lt;CheckOptions&gt; &amp;&amp;check_options) {</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>    <a class="code hl_define" href="../../de/d3c/macros_8h.html#a76a969385a538dabceb09997d3c06c31">BUSTUB_ASSERT</a>(check_options, <span class="stringliteral">&quot;nullptr&quot;</span>);</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>    <a class="code hl_variable" href="../../dd/d02/classbustub_1_1ExecutorContext.html#a105b7e5b1b7053a770a587abff2a135e">check_options_</a> = std::move(check_options);</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>  }</div>
+</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span> </div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno"><a class="line" href="../../dd/d02/classbustub_1_1ExecutorContext.html#ab164b2f63850ab6c4ceeb7a3a36b59b9">   95</a></span>  <span class="keyword">auto</span> <a class="code hl_function" href="../../dd/d02/classbustub_1_1ExecutorContext.html#ab164b2f63850ab6c4ceeb7a3a36b59b9">IsDelete</a>() const -&gt; <span class="keywordtype">bool</span> { <span class="keywordflow">return</span> <a class="code hl_variable" href="../../dd/d02/classbustub_1_1ExecutorContext.html#a6403b9f8d33699af28d14f40f5241ea5">is_delete_</a>; }</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span> </div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span> <span class="keyword">private</span>:</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno"><a class="line" href="../../dd/d02/classbustub_1_1ExecutorContext.html#a0bfa4974f7763855c0f2d4505dd61322">   99</a></span>  <a class="code hl_class" href="../../db/d88/classbustub_1_1Transaction.html">Transaction</a> *<a class="code hl_variable" href="../../dd/d02/classbustub_1_1ExecutorContext.html#a0bfa4974f7763855c0f2d4505dd61322">transaction_</a>;</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno"><a class="line" href="../../dd/d02/classbustub_1_1ExecutorContext.html#a942bf98440f51e07bf58d56059dd843d">  101</a></span>  <a class="code hl_class" href="../../d7/ddd/classbustub_1_1Catalog.html">Catalog</a> *<a class="code hl_variable" href="../../dd/d02/classbustub_1_1ExecutorContext.html#a942bf98440f51e07bf58d56059dd843d">catalog_</a>;</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno"><a class="line" href="../../dd/d02/classbustub_1_1ExecutorContext.html#a84807e48135980066363be40e792e3f0">  103</a></span>  <a class="code hl_class" href="../../d6/d5d/classbustub_1_1BufferPoolManager.html">BufferPoolManager</a> *<a class="code hl_variable" href="../../dd/d02/classbustub_1_1ExecutorContext.html#a84807e48135980066363be40e792e3f0">bpm_</a>;</div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno"><a class="line" href="../../dd/d02/classbustub_1_1ExecutorContext.html#ac58a37f06b1e0337521c56b4630dec70">  105</a></span>  <a class="code hl_class" href="../../dc/ddc/classbustub_1_1TransactionManager.html">TransactionManager</a> *<a class="code hl_variable" href="../../dd/d02/classbustub_1_1ExecutorContext.html#ac58a37f06b1e0337521c56b4630dec70">txn_mgr_</a>;</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno"><a class="line" href="../../dd/d02/classbustub_1_1ExecutorContext.html#af4803bf6079a54c6bb30a6c157205ee3">  107</a></span>  <a class="code hl_class" href="../../df/d43/classbustub_1_1LockManager.html">LockManager</a> *<a class="code hl_variable" href="../../dd/d02/classbustub_1_1ExecutorContext.html#af4803bf6079a54c6bb30a6c157205ee3">lock_mgr_</a>;</div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno"><a class="line" href="../../dd/d02/classbustub_1_1ExecutorContext.html#ab117da4559568ba05c2cf90406ec4047">  109</a></span>  std::deque&lt;std::pair&lt;AbstractExecutor *, AbstractExecutor *&gt;&gt; <a class="code hl_variable" href="../../dd/d02/classbustub_1_1ExecutorContext.html#ab117da4559568ba05c2cf90406ec4047">nlj_check_exec_set_</a>;</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno"><a class="line" href="../../dd/d02/classbustub_1_1ExecutorContext.html#a105b7e5b1b7053a770a587abff2a135e">  111</a></span>  std::shared_ptr&lt;CheckOptions&gt; <a class="code hl_variable" href="../../dd/d02/classbustub_1_1ExecutorContext.html#a105b7e5b1b7053a770a587abff2a135e">check_options_</a>;</div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno"><a class="line" href="../../dd/d02/classbustub_1_1ExecutorContext.html#a6403b9f8d33699af28d14f40f5241ea5">  112</a></span>  <span class="keywordtype">bool</span> <a class="code hl_variable" href="../../dd/d02/classbustub_1_1ExecutorContext.html#a6403b9f8d33699af28d14f40f5241ea5">is_delete_</a>;</div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>};</div>
+</div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span> </div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>}  <span class="comment">// namespace bustub</span></div>
+<div class="ttc" id="aabstract__executor_8h_html"><div class="ttname"><a href="../../dc/def/abstract__executor_8h.html">abstract_executor.h</a></div></div>
+<div class="ttc" id="acatalog_8h_html"><div class="ttname"><a href="../../d1/d1e/catalog_8h.html">catalog.h</a></div></div>
+<div class="ttc" id="acheck__options_8h_html"><div class="ttname"><a href="../../d8/d4c/check__options_8h.html">check_options.h</a></div></div>
+<div class="ttc" id="aclassbustub_1_1AbstractExecutor_html"><div class="ttname"><a href="../../d2/d28/classbustub_1_1AbstractExecutor.html">bustub::AbstractExecutor</a></div><div class="ttdef"><b>Definition</b> abstract_executor.h:25</div></div>
+<div class="ttc" id="aclassbustub_1_1BufferPoolManager_html"><div class="ttname"><a href="../../d6/d5d/classbustub_1_1BufferPoolManager.html">bustub::BufferPoolManager</a></div><div class="ttdef"><b>Definition</b> buffer_pool_manager.h:34</div></div>
+<div class="ttc" id="aclassbustub_1_1Catalog_html"><div class="ttname"><a href="../../d7/ddd/classbustub_1_1Catalog.html">bustub::Catalog</a></div><div class="ttdef"><b>Definition</b> catalog.h:109</div></div>
+<div class="ttc" id="aclassbustub_1_1ExecutorContext_html"><div class="ttname"><a href="../../dd/d02/classbustub_1_1ExecutorContext.html">bustub::ExecutorContext</a></div><div class="ttdef"><b>Definition</b> executor_context.h:32</div></div>
+<div class="ttc" id="aclassbustub_1_1ExecutorContext_html_a0bfa4974f7763855c0f2d4505dd61322"><div class="ttname"><a href="../../dd/d02/classbustub_1_1ExecutorContext.html#a0bfa4974f7763855c0f2d4505dd61322">bustub::ExecutorContext::transaction_</a></div><div class="ttdeci">Transaction * transaction_</div><div class="ttdef"><b>Definition</b> executor_context.h:99</div></div>
+<div class="ttc" id="aclassbustub_1_1ExecutorContext_html_a105b7e5b1b7053a770a587abff2a135e"><div class="ttname"><a href="../../dd/d02/classbustub_1_1ExecutorContext.html#a105b7e5b1b7053a770a587abff2a135e">bustub::ExecutorContext::check_options_</a></div><div class="ttdeci">std::shared_ptr&lt; CheckOptions &gt; check_options_</div><div class="ttdef"><b>Definition</b> executor_context.h:111</div></div>
+<div class="ttc" id="aclassbustub_1_1ExecutorContext_html_a5eb03f046ef6ff211f855b82c3ad25cb"><div class="ttname"><a href="../../dd/d02/classbustub_1_1ExecutorContext.html#a5eb03f046ef6ff211f855b82c3ad25cb">bustub::ExecutorContext::GetTransactionManager</a></div><div class="ttdeci">auto GetTransactionManager() -&gt; TransactionManager *</div><div class="ttdef"><b>Definition</b> executor_context.h:75</div></div>
+<div class="ttc" id="aclassbustub_1_1ExecutorContext_html_a6403b9f8d33699af28d14f40f5241ea5"><div class="ttname"><a href="../../dd/d02/classbustub_1_1ExecutorContext.html#a6403b9f8d33699af28d14f40f5241ea5">bustub::ExecutorContext::is_delete_</a></div><div class="ttdeci">bool is_delete_</div><div class="ttdef"><b>Definition</b> executor_context.h:112</div></div>
+<div class="ttc" id="aclassbustub_1_1ExecutorContext_html_a7076e7ad5472b657d1b6cf9df450d16a"><div class="ttname"><a href="../../dd/d02/classbustub_1_1ExecutorContext.html#a7076e7ad5472b657d1b6cf9df450d16a">bustub::ExecutorContext::GetTransaction</a></div><div class="ttdeci">auto GetTransaction() const -&gt; Transaction *</div><div class="ttdef"><b>Definition</b> executor_context.h:60</div></div>
+<div class="ttc" id="aclassbustub_1_1ExecutorContext_html_a79296c7331f709632527d4e23bdc5b5b"><div class="ttname"><a href="../../dd/d02/classbustub_1_1ExecutorContext.html#a79296c7331f709632527d4e23bdc5b5b">bustub::ExecutorContext::GetCheckOptions</a></div><div class="ttdeci">auto GetCheckOptions() -&gt; std::shared_ptr&lt; CheckOptions &gt;</div><div class="ttdef"><b>Definition</b> executor_context.h:83</div></div>
+<div class="ttc" id="aclassbustub_1_1ExecutorContext_html_a82778c8e5a1a57d2d04bca8b179274e9"><div class="ttname"><a href="../../dd/d02/classbustub_1_1ExecutorContext.html#a82778c8e5a1a57d2d04bca8b179274e9">bustub::ExecutorContext::GetBufferPoolManager</a></div><div class="ttdeci">auto GetBufferPoolManager() -&gt; BufferPoolManager *</div><div class="ttdef"><b>Definition</b> executor_context.h:66</div></div>
+<div class="ttc" id="aclassbustub_1_1ExecutorContext_html_a84807e48135980066363be40e792e3f0"><div class="ttname"><a href="../../dd/d02/classbustub_1_1ExecutorContext.html#a84807e48135980066363be40e792e3f0">bustub::ExecutorContext::bpm_</a></div><div class="ttdeci">BufferPoolManager * bpm_</div><div class="ttdef"><b>Definition</b> executor_context.h:103</div></div>
+<div class="ttc" id="aclassbustub_1_1ExecutorContext_html_a906e1c53716668a43b8768b3bd155319"><div class="ttname"><a href="../../dd/d02/classbustub_1_1ExecutorContext.html#a906e1c53716668a43b8768b3bd155319">bustub::ExecutorContext::~ExecutorContext</a></div><div class="ttdeci">~ExecutorContext()=default</div></div>
+<div class="ttc" id="aclassbustub_1_1ExecutorContext_html_a942bf98440f51e07bf58d56059dd843d"><div class="ttname"><a href="../../dd/d02/classbustub_1_1ExecutorContext.html#a942bf98440f51e07bf58d56059dd843d">bustub::ExecutorContext::catalog_</a></div><div class="ttdeci">Catalog * catalog_</div><div class="ttdef"><b>Definition</b> executor_context.h:101</div></div>
+<div class="ttc" id="aclassbustub_1_1ExecutorContext_html_ab117da4559568ba05c2cf90406ec4047"><div class="ttname"><a href="../../dd/d02/classbustub_1_1ExecutorContext.html#ab117da4559568ba05c2cf90406ec4047">bustub::ExecutorContext::nlj_check_exec_set_</a></div><div class="ttdeci">std::deque&lt; std::pair&lt; AbstractExecutor *, AbstractExecutor * &gt; &gt; nlj_check_exec_set_</div><div class="ttdef"><b>Definition</b> executor_context.h:109</div></div>
+<div class="ttc" id="aclassbustub_1_1ExecutorContext_html_ab164b2f63850ab6c4ceeb7a3a36b59b9"><div class="ttname"><a href="../../dd/d02/classbustub_1_1ExecutorContext.html#ab164b2f63850ab6c4ceeb7a3a36b59b9">bustub::ExecutorContext::IsDelete</a></div><div class="ttdeci">auto IsDelete() const -&gt; bool</div><div class="ttdef"><b>Definition</b> executor_context.h:95</div></div>
+<div class="ttc" id="aclassbustub_1_1ExecutorContext_html_ab46c8af32dc17d7379bb0c1092e4160a"><div class="ttname"><a href="../../dd/d02/classbustub_1_1ExecutorContext.html#ab46c8af32dc17d7379bb0c1092e4160a">bustub::ExecutorContext::ExecutorContext</a></div><div class="ttdeci">ExecutorContext(Transaction *transaction, Catalog *catalog, BufferPoolManager *bpm, TransactionManager *txn_mgr, LockManager *lock_mgr, bool is_delete)</div><div class="ttdef"><b>Definition</b> executor_context.h:42</div></div>
+<div class="ttc" id="aclassbustub_1_1ExecutorContext_html_abc2851e1403046e7f61d419850d309c8"><div class="ttname"><a href="../../dd/d02/classbustub_1_1ExecutorContext.html#abc2851e1403046e7f61d419850d309c8">bustub::ExecutorContext::GetLogManager</a></div><div class="ttdeci">auto GetLogManager() -&gt; LogManager *</div><div class="ttdef"><b>Definition</b> executor_context.h:69</div></div>
+<div class="ttc" id="aclassbustub_1_1ExecutorContext_html_ac0bcbc9b44ff7987b4dd312e910612df"><div class="ttname"><a href="../../dd/d02/classbustub_1_1ExecutorContext.html#ac0bcbc9b44ff7987b4dd312e910612df">bustub::ExecutorContext::GetNLJCheckExecutorSet</a></div><div class="ttdeci">auto GetNLJCheckExecutorSet() -&gt; std::deque&lt; std::pair&lt; AbstractExecutor *, AbstractExecutor * &gt; &gt; &amp;</div><div class="ttdef"><b>Definition</b> executor_context.h:78</div></div>
+<div class="ttc" id="aclassbustub_1_1ExecutorContext_html_ac58a37f06b1e0337521c56b4630dec70"><div class="ttname"><a href="../../dd/d02/classbustub_1_1ExecutorContext.html#ac58a37f06b1e0337521c56b4630dec70">bustub::ExecutorContext::txn_mgr_</a></div><div class="ttdeci">TransactionManager * txn_mgr_</div><div class="ttdef"><b>Definition</b> executor_context.h:105</div></div>
+<div class="ttc" id="aclassbustub_1_1ExecutorContext_html_ac9953a5f1a69a9e121349375b64267ca"><div class="ttname"><a href="../../dd/d02/classbustub_1_1ExecutorContext.html#ac9953a5f1a69a9e121349375b64267ca">bustub::ExecutorContext::GetLockManager</a></div><div class="ttdeci">auto GetLockManager() -&gt; LockManager *</div><div class="ttdef"><b>Definition</b> executor_context.h:72</div></div>
+<div class="ttc" id="aclassbustub_1_1ExecutorContext_html_aceeb20f9451caccd91a861fd99b2a606"><div class="ttname"><a href="../../dd/d02/classbustub_1_1ExecutorContext.html#aceeb20f9451caccd91a861fd99b2a606">bustub::ExecutorContext::GetCatalog</a></div><div class="ttdeci">auto GetCatalog() -&gt; Catalog *</div><div class="ttdef"><b>Definition</b> executor_context.h:63</div></div>
+<div class="ttc" id="aclassbustub_1_1ExecutorContext_html_adb922e3b998f2f19b5759af5a3538003"><div class="ttname"><a href="../../dd/d02/classbustub_1_1ExecutorContext.html#adb922e3b998f2f19b5759af5a3538003">bustub::ExecutorContext::AddCheckExecutor</a></div><div class="ttdeci">void AddCheckExecutor(AbstractExecutor *left_exec, AbstractExecutor *right_exec)</div><div class="ttdef"><b>Definition</b> executor_context.h:85</div></div>
+<div class="ttc" id="aclassbustub_1_1ExecutorContext_html_ae445c0d1b1dfecae8d2f9843925228b6"><div class="ttname"><a href="../../dd/d02/classbustub_1_1ExecutorContext.html#ae445c0d1b1dfecae8d2f9843925228b6">bustub::ExecutorContext::InitCheckOptions</a></div><div class="ttdeci">void InitCheckOptions(std::shared_ptr&lt; CheckOptions &gt; &amp;&amp;check_options)</div><div class="ttdef"><b>Definition</b> executor_context.h:89</div></div>
+<div class="ttc" id="aclassbustub_1_1ExecutorContext_html_af4803bf6079a54c6bb30a6c157205ee3"><div class="ttname"><a href="../../dd/d02/classbustub_1_1ExecutorContext.html#af4803bf6079a54c6bb30a6c157205ee3">bustub::ExecutorContext::lock_mgr_</a></div><div class="ttdeci">LockManager * lock_mgr_</div><div class="ttdef"><b>Definition</b> executor_context.h:107</div></div>
+<div class="ttc" id="aclassbustub_1_1ExecutorContext_html_afdd17636324cbed13a8fbe79b0af6004"><div class="ttname"><a href="../../dd/d02/classbustub_1_1ExecutorContext.html#afdd17636324cbed13a8fbe79b0af6004">bustub::ExecutorContext::DISALLOW_COPY_AND_MOVE</a></div><div class="ttdeci">DISALLOW_COPY_AND_MOVE(ExecutorContext)</div></div>
+<div class="ttc" id="aclassbustub_1_1LockManager_html"><div class="ttname"><a href="../../df/d43/classbustub_1_1LockManager.html">bustub::LockManager</a></div><div class="ttdef"><b>Definition</b> lock_manager.h:37</div></div>
+<div class="ttc" id="aclassbustub_1_1LogManager_html"><div class="ttname"><a href="../../d7/d4e/classbustub_1_1LogManager.html">bustub::LogManager</a></div><div class="ttdef"><b>Definition</b> log_manager.h:29</div></div>
+<div class="ttc" id="aclassbustub_1_1TransactionManager_html"><div class="ttname"><a href="../../dc/ddc/classbustub_1_1TransactionManager.html">bustub::TransactionManager</a></div><div class="ttdef"><b>Definition</b> transaction_manager.h:58</div></div>
+<div class="ttc" id="aclassbustub_1_1Transaction_html"><div class="ttname"><a href="../../db/d88/classbustub_1_1Transaction.html">bustub::Transaction</a></div><div class="ttdef"><b>Definition</b> transaction.h:89</div></div>
+<div class="ttc" id="amacros_8h_html_a76a969385a538dabceb09997d3c06c31"><div class="ttname"><a href="../../de/d3c/macros_8h.html#a76a969385a538dabceb09997d3c06c31">BUSTUB_ASSERT</a></div><div class="ttdeci">#define BUSTUB_ASSERT(expr, message)</div><div class="ttdef"><b>Definition</b> macros.h:21</div></div>
+<div class="ttc" id="anamespacebustub_html"><div class="ttname"><a href="../../de/dda/namespacebustub.html">bustub</a></div><div class="ttdef"><b>Definition</b> bind_create.cpp:53</div></div>
+<div class="ttc" id="atmp__tuple__page_8h_html"><div class="ttname"><a href="../../dd/d70/tmp__tuple__page_8h.html">tmp_tuple_page.h</a></div></div>
+<div class="ttc" id="atransaction_8h_html"><div class="ttname"><a href="../../d0/db6/transaction_8h.html">transaction.h</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
+</small></address>
+</body>
+</html>

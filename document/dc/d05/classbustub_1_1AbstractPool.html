@@ -1,0 +1,197 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>数据库系统 CMU15-445/645: bustub::AbstractPool类 参考</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/searchdata.js"></script>
+<script type="text/javascript" src="../../search/search.js"></script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">数据库系统 CMU15-445/645<span id="projectnumber">&#160;1.0.0</span>
+   </div>
+   <div id="projectbrief">CMU15-445/645 是基于现代 C++ 开发的支持并发操作的简单 SQL 操作的单机数据库</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.9.8 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "../../search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('../../',true,false,'search.php','搜索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="../../de/dda/namespacebustub.html">bustub</a></li><li class="navelem"><a class="el" href="../../dc/d05/classbustub_1_1AbstractPool.html">AbstractPool</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Public 成员函数</a> &#124;
+<a href="../../dd/d8c/classbustub_1_1AbstractPool-members.html">所有成员列表</a>  </div>
+  <div class="headertitle"><div class="title">bustub::AbstractPool类 参考<span class="mlabels"><span class="mlabel">abstract</span></span></div></div>
+</div><!--header-->
+<div class="contents">
+
+<p><code>#include &lt;<a class="el" href="../../d0/d9d/abstract__pool_8h_source.html">abstract_pool.h</a>&gt;</code></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Public 成员函数</h2></td></tr>
+<tr class="memitem:a38e9c29157b9aafe1922df62f51c78fe" id="r_a38e9c29157b9aafe1922df62f51c78fe"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d05/classbustub_1_1AbstractPool.html#a38e9c29157b9aafe1922df62f51c78fe">~AbstractPool</a> ()=default</td></tr>
+<tr class="separator:a38e9c29157b9aafe1922df62f51c78fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6e58bf97018b3942fd3feba0857fa0ee" id="r_a6e58bf97018b3942fd3feba0857fa0ee"><td class="memItemLeft" align="right" valign="top">virtual auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d05/classbustub_1_1AbstractPool.html#a6e58bf97018b3942fd3feba0857fa0ee">Allocate</a> (size_t size) -&gt; void *=0</td></tr>
+<tr class="memdesc:a6e58bf97018b3942fd3feba0857fa0ee"><td class="mdescLeft">&#160;</td><td class="mdescRight">Allocate a contiguous block of memory of the given size  <br /></td></tr>
+<tr class="separator:a6e58bf97018b3942fd3feba0857fa0ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acd20c45bdb3cb4dbf2c5f9058e50cfe1" id="r_acd20c45bdb3cb4dbf2c5f9058e50cfe1"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d05/classbustub_1_1AbstractPool.html#acd20c45bdb3cb4dbf2c5f9058e50cfe1">Free</a> (void *ptr)=0</td></tr>
+<tr class="memdesc:acd20c45bdb3cb4dbf2c5f9058e50cfe1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the provided chunk of memory back into the pool  <br /></td></tr>
+<tr class="separator:acd20c45bdb3cb4dbf2c5f9058e50cfe1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">构造及析构函数说明</h2>
+<a id="a38e9c29157b9aafe1922df62f51c78fe" name="a38e9c29157b9aafe1922df62f51c78fe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a38e9c29157b9aafe1922df62f51c78fe">&#9670;&#160;</a></span>~AbstractPool()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual bustub::AbstractPool::~AbstractPool </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span><span class="mlabel">default</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">成员函数说明</h2>
+<a id="a6e58bf97018b3942fd3feba0857fa0ee" name="a6e58bf97018b3942fd3feba0857fa0ee"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6e58bf97018b3942fd3feba0857fa0ee">&#9670;&#160;</a></span>Allocate()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual auto bustub::AbstractPool::Allocate </td>
+          <td>(</td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>size</em></td><td>)</td>
+          <td> -&gt;  void *</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Allocate a contiguous block of memory of the given size </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">size</td><td>The size (in bytes) of memory to allocate </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>A non-null pointer if allocation is successful. A null pointer if allocation fails.</dd></dl>
+<p>TODO: Provide good error codes for failure cases </p>
+
+</div>
+</div>
+<a id="acd20c45bdb3cb4dbf2c5f9058e50cfe1" name="acd20c45bdb3cb4dbf2c5f9058e50cfe1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acd20c45bdb3cb4dbf2c5f9058e50cfe1">&#9670;&#160;</a></span>Free()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void bustub::AbstractPool::Free </td>
+          <td>(</td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>ptr</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns the provided chunk of memory back into the pool </p>
+
+</div>
+</div>
+<hr/>该类的文档由以下文件生成:<ul>
+<li>src/include/type/<a class="el" href="../../d0/d9d/abstract__pool_8h_source.html">abstract_pool.h</a></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
+</small></address>
+</body>
+</html>

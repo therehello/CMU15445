@@ -1,0 +1,342 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>数据库系统 CMU15-445/645: bustub::DiskManagerMemory类 参考</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/searchdata.js"></script>
+<script type="text/javascript" src="../../search/search.js"></script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">数据库系统 CMU15-445/645<span id="projectnumber">&#160;1.0.0</span>
+   </div>
+   <div id="projectbrief">CMU15-445/645 是基于现代 C++ 开发的支持并发操作的简单 SQL 操作的单机数据库</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.9.8 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "../../search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('../../',true,false,'search.php','搜索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="../../de/dda/namespacebustub.html">bustub</a></li><li class="navelem"><a class="el" href="../../d5/da4/classbustub_1_1DiskManagerMemory.html">DiskManagerMemory</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Public 成员函数</a> &#124;
+<a href="#pri-attribs">Private 属性</a> &#124;
+<a href="../../d8/dee/classbustub_1_1DiskManagerMemory-members.html">所有成员列表</a>  </div>
+  <div class="headertitle"><div class="title">bustub::DiskManagerMemory类 参考</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p><code>#include &lt;<a class="el" href="../../d9/d9e/disk__manager__memory_8h_source.html">disk_manager_memory.h</a>&gt;</code></p>
+<div class="dynheader">
+类 bustub::DiskManagerMemory 继承关系图:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../de/de7/classbustub_1_1DiskManagerMemory__inherit__graph.svg" width="226" height="110"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<center><span class="legend">[<a href="../../graph_legend.html">图例</a>]</span></center></div>
+<div class="dynheader">
+bustub::DiskManagerMemory 的协作图:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../d7/dbf/classbustub_1_1DiskManagerMemory__coll__graph.svg" width="226" height="110"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<center><span class="legend">[<a href="../../graph_legend.html">图例</a>]</span></center></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Public 成员函数</h2></td></tr>
+<tr class="memitem:acd710c1550ffe1134cd2c3288c9e5b88" id="r_acd710c1550ffe1134cd2c3288c9e5b88"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/da4/classbustub_1_1DiskManagerMemory.html#acd710c1550ffe1134cd2c3288c9e5b88">DiskManagerMemory</a> (size_t pages)</td></tr>
+<tr class="separator:acd710c1550ffe1134cd2c3288c9e5b88"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad56c5135a264074281f9793576259784" id="r_ad56c5135a264074281f9793576259784"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/da4/classbustub_1_1DiskManagerMemory.html#ad56c5135a264074281f9793576259784">~DiskManagerMemory</a> () override</td></tr>
+<tr class="separator:ad56c5135a264074281f9793576259784"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8504fdeacf18e39a88107e4897003708" id="r_a8504fdeacf18e39a88107e4897003708"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/da4/classbustub_1_1DiskManagerMemory.html#a8504fdeacf18e39a88107e4897003708">WritePage</a> (<a class="el" href="../../de/dda/namespacebustub.html#a8de4ac099b23d712481109bb846decde">page_id_t</a> page_id, const char *page_data) override</td></tr>
+<tr class="separator:a8504fdeacf18e39a88107e4897003708"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac7b7c26dc8c1dd3b8d4154f0f9eabc26" id="r_ac7b7c26dc8c1dd3b8d4154f0f9eabc26"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/da4/classbustub_1_1DiskManagerMemory.html#ac7b7c26dc8c1dd3b8d4154f0f9eabc26">ReadPage</a> (<a class="el" href="../../de/dda/namespacebustub.html#a8de4ac099b23d712481109bb846decde">page_id_t</a> page_id, char *page_data) override</td></tr>
+<tr class="separator:ac7b7c26dc8c1dd3b8d4154f0f9eabc26"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_methods_classbustub_1_1DiskManager"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classbustub_1_1DiskManager')"><img src="../../closed.png" alt="-"/>&#160;Public 成员函数 继承自 <a class="el" href="../../da/dfe/classbustub_1_1DiskManager.html">bustub::DiskManager</a></td></tr>
+<tr class="memitem:aba194755344868fb657ee9fa9588b41c inherit pub_methods_classbustub_1_1DiskManager" id="r_aba194755344868fb657ee9fa9588b41c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/dfe/classbustub_1_1DiskManager.html#aba194755344868fb657ee9fa9588b41c">DiskManager</a> (const std::string &amp;db_file)</td></tr>
+<tr class="separator:aba194755344868fb657ee9fa9588b41c inherit pub_methods_classbustub_1_1DiskManager"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2317635875456e4ff539683405315c2a inherit pub_methods_classbustub_1_1DiskManager" id="r_a2317635875456e4ff539683405315c2a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/dfe/classbustub_1_1DiskManager.html#a2317635875456e4ff539683405315c2a">DiskManager</a> ()=default</td></tr>
+<tr class="separator:a2317635875456e4ff539683405315c2a inherit pub_methods_classbustub_1_1DiskManager"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a908abd3c04c69e1e8253b08705636961 inherit pub_methods_classbustub_1_1DiskManager" id="r_a908abd3c04c69e1e8253b08705636961"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/dfe/classbustub_1_1DiskManager.html#a908abd3c04c69e1e8253b08705636961">~DiskManager</a> ()=default</td></tr>
+<tr class="separator:a908abd3c04c69e1e8253b08705636961 inherit pub_methods_classbustub_1_1DiskManager"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a570857ef083e9f7410309850609db52b inherit pub_methods_classbustub_1_1DiskManager" id="r_a570857ef083e9f7410309850609db52b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/dfe/classbustub_1_1DiskManager.html#a570857ef083e9f7410309850609db52b">ShutDown</a> ()</td></tr>
+<tr class="separator:a570857ef083e9f7410309850609db52b inherit pub_methods_classbustub_1_1DiskManager"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae3764dd5b64c7cfed48d9ee3f8490171 inherit pub_methods_classbustub_1_1DiskManager" id="r_ae3764dd5b64c7cfed48d9ee3f8490171"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/dfe/classbustub_1_1DiskManager.html#ae3764dd5b64c7cfed48d9ee3f8490171">WriteLog</a> (char *log_data, int size)</td></tr>
+<tr class="separator:ae3764dd5b64c7cfed48d9ee3f8490171 inherit pub_methods_classbustub_1_1DiskManager"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abc4de13866f2af455f9d4cd8400921b8 inherit pub_methods_classbustub_1_1DiskManager" id="r_abc4de13866f2af455f9d4cd8400921b8"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/dfe/classbustub_1_1DiskManager.html#abc4de13866f2af455f9d4cd8400921b8">ReadLog</a> (char *log_data, int size, int offset) -&gt; bool</td></tr>
+<tr class="separator:abc4de13866f2af455f9d4cd8400921b8 inherit pub_methods_classbustub_1_1DiskManager"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a191b2770ba4ef62ad0a226241c1fcc40 inherit pub_methods_classbustub_1_1DiskManager" id="r_a191b2770ba4ef62ad0a226241c1fcc40"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/dfe/classbustub_1_1DiskManager.html#a191b2770ba4ef62ad0a226241c1fcc40">GetNumFlushes</a> () const -&gt; int</td></tr>
+<tr class="separator:a191b2770ba4ef62ad0a226241c1fcc40 inherit pub_methods_classbustub_1_1DiskManager"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a065b3a5a661fb1adb2aefbe11ab416fc inherit pub_methods_classbustub_1_1DiskManager" id="r_a065b3a5a661fb1adb2aefbe11ab416fc"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/dfe/classbustub_1_1DiskManager.html#a065b3a5a661fb1adb2aefbe11ab416fc">GetFlushState</a> () const -&gt; bool</td></tr>
+<tr class="separator:a065b3a5a661fb1adb2aefbe11ab416fc inherit pub_methods_classbustub_1_1DiskManager"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1c1c85719410ab479c43b36f355ab635 inherit pub_methods_classbustub_1_1DiskManager" id="r_a1c1c85719410ab479c43b36f355ab635"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/dfe/classbustub_1_1DiskManager.html#a1c1c85719410ab479c43b36f355ab635">GetNumWrites</a> () const -&gt; int</td></tr>
+<tr class="separator:a1c1c85719410ab479c43b36f355ab635 inherit pub_methods_classbustub_1_1DiskManager"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac26ad206410e4a792e0f095e3ba27f96 inherit pub_methods_classbustub_1_1DiskManager" id="r_ac26ad206410e4a792e0f095e3ba27f96"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/dfe/classbustub_1_1DiskManager.html#ac26ad206410e4a792e0f095e3ba27f96">SetFlushLogFuture</a> (std::future&lt; void &gt; *f)</td></tr>
+<tr class="separator:ac26ad206410e4a792e0f095e3ba27f96 inherit pub_methods_classbustub_1_1DiskManager"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad2415e36d53680b31a605a68bc0d85b4 inherit pub_methods_classbustub_1_1DiskManager" id="r_ad2415e36d53680b31a605a68bc0d85b4"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/dfe/classbustub_1_1DiskManager.html#ad2415e36d53680b31a605a68bc0d85b4">HasFlushLogFuture</a> () -&gt; bool</td></tr>
+<tr class="separator:ad2415e36d53680b31a605a68bc0d85b4 inherit pub_methods_classbustub_1_1DiskManager"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
+Private 属性</h2></td></tr>
+<tr class="memitem:a74bb0034fa950d040ce1bb8a4a15aac2" id="r_a74bb0034fa950d040ce1bb8a4a15aac2"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/da4/classbustub_1_1DiskManagerMemory.html#a74bb0034fa950d040ce1bb8a4a15aac2">memory_</a></td></tr>
+<tr class="separator:a74bb0034fa950d040ce1bb8a4a15aac2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="inherited" name="inherited"></a>
+额外继承的成员函数</h2></td></tr>
+<tr class="inherit_header pro_methods_classbustub_1_1DiskManager"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_classbustub_1_1DiskManager')"><img src="../../closed.png" alt="-"/>&#160;Protected 成员函数 继承自 <a class="el" href="../../da/dfe/classbustub_1_1DiskManager.html">bustub::DiskManager</a></td></tr>
+<tr class="memitem:ad592519c24c6543ec42b6c438d33a803 inherit pro_methods_classbustub_1_1DiskManager" id="r_ad592519c24c6543ec42b6c438d33a803"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/dfe/classbustub_1_1DiskManager.html#ad592519c24c6543ec42b6c438d33a803">GetFileSize</a> (const std::string &amp;file_name) -&gt; int</td></tr>
+<tr class="separator:ad592519c24c6543ec42b6c438d33a803 inherit pro_methods_classbustub_1_1DiskManager"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pro_attribs_classbustub_1_1DiskManager"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_classbustub_1_1DiskManager')"><img src="../../closed.png" alt="-"/>&#160;Protected 属性 继承自 <a class="el" href="../../da/dfe/classbustub_1_1DiskManager.html">bustub::DiskManager</a></td></tr>
+<tr class="memitem:a493e9240d61edf1db9cc8a4bea992424 inherit pro_attribs_classbustub_1_1DiskManager" id="r_a493e9240d61edf1db9cc8a4bea992424"><td class="memItemLeft" align="right" valign="top">std::fstream&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/dfe/classbustub_1_1DiskManager.html#a493e9240d61edf1db9cc8a4bea992424">log_io_</a></td></tr>
+<tr class="separator:a493e9240d61edf1db9cc8a4bea992424 inherit pro_attribs_classbustub_1_1DiskManager"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aedd66bf4c7da5a7f7e2ead6764f73453 inherit pro_attribs_classbustub_1_1DiskManager" id="r_aedd66bf4c7da5a7f7e2ead6764f73453"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/dfe/classbustub_1_1DiskManager.html#aedd66bf4c7da5a7f7e2ead6764f73453">log_name_</a></td></tr>
+<tr class="separator:aedd66bf4c7da5a7f7e2ead6764f73453 inherit pro_attribs_classbustub_1_1DiskManager"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2c6c98205be53d3d31ab5c49dd1368f5 inherit pro_attribs_classbustub_1_1DiskManager" id="r_a2c6c98205be53d3d31ab5c49dd1368f5"><td class="memItemLeft" align="right" valign="top">std::fstream&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/dfe/classbustub_1_1DiskManager.html#a2c6c98205be53d3d31ab5c49dd1368f5">db_io_</a></td></tr>
+<tr class="separator:a2c6c98205be53d3d31ab5c49dd1368f5 inherit pro_attribs_classbustub_1_1DiskManager"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a81e667f23aa033ea1617dc27df953579 inherit pro_attribs_classbustub_1_1DiskManager" id="r_a81e667f23aa033ea1617dc27df953579"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/dfe/classbustub_1_1DiskManager.html#a81e667f23aa033ea1617dc27df953579">file_name_</a></td></tr>
+<tr class="separator:a81e667f23aa033ea1617dc27df953579 inherit pro_attribs_classbustub_1_1DiskManager"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9b3276c9ce47bfd5ff32e3edb05201a9 inherit pro_attribs_classbustub_1_1DiskManager" id="r_a9b3276c9ce47bfd5ff32e3edb05201a9"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/dfe/classbustub_1_1DiskManager.html#a9b3276c9ce47bfd5ff32e3edb05201a9">num_flushes_</a> {0}</td></tr>
+<tr class="separator:a9b3276c9ce47bfd5ff32e3edb05201a9 inherit pro_attribs_classbustub_1_1DiskManager"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aea3a4e42c5ce7177358a38a179c2764d inherit pro_attribs_classbustub_1_1DiskManager" id="r_aea3a4e42c5ce7177358a38a179c2764d"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/dfe/classbustub_1_1DiskManager.html#aea3a4e42c5ce7177358a38a179c2764d">num_writes_</a> {0}</td></tr>
+<tr class="separator:aea3a4e42c5ce7177358a38a179c2764d inherit pro_attribs_classbustub_1_1DiskManager"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7588ef5f0aa8ef3dae0bf2c17ea0133e inherit pro_attribs_classbustub_1_1DiskManager" id="r_a7588ef5f0aa8ef3dae0bf2c17ea0133e"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/dfe/classbustub_1_1DiskManager.html#a7588ef5f0aa8ef3dae0bf2c17ea0133e">flush_log_</a> {false}</td></tr>
+<tr class="separator:a7588ef5f0aa8ef3dae0bf2c17ea0133e inherit pro_attribs_classbustub_1_1DiskManager"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8337d45616f9440ad5513788de7d6845 inherit pro_attribs_classbustub_1_1DiskManager" id="r_a8337d45616f9440ad5513788de7d6845"><td class="memItemLeft" align="right" valign="top">std::future&lt; void &gt; *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/dfe/classbustub_1_1DiskManager.html#a8337d45616f9440ad5513788de7d6845">flush_log_f_</a> {nullptr}</td></tr>
+<tr class="separator:a8337d45616f9440ad5513788de7d6845 inherit pro_attribs_classbustub_1_1DiskManager"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3d6535c2f881be1013f554eacdcb7de1 inherit pro_attribs_classbustub_1_1DiskManager" id="r_a3d6535c2f881be1013f554eacdcb7de1"><td class="memItemLeft" align="right" valign="top">std::mutex&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/dfe/classbustub_1_1DiskManager.html#a3d6535c2f881be1013f554eacdcb7de1">db_io_latch_</a></td></tr>
+<tr class="separator:a3d6535c2f881be1013f554eacdcb7de1 inherit pro_attribs_classbustub_1_1DiskManager"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
+<div class="textblock"><p><a class="el" href="../../d5/da4/classbustub_1_1DiskManagerMemory.html">DiskManagerMemory</a> replicates the utility of <a class="el" href="../../da/dfe/classbustub_1_1DiskManager.html">DiskManager</a> on memory. It is primarily used for data structure performance testing. </p>
+</div><h2 class="groupheader">构造及析构函数说明</h2>
+<a id="acd710c1550ffe1134cd2c3288c9e5b88" name="acd710c1550ffe1134cd2c3288c9e5b88"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acd710c1550ffe1134cd2c3288c9e5b88">&#9670;&#160;</a></span>DiskManagerMemory()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bustub::DiskManagerMemory::DiskManagerMemory </td>
+          <td>(</td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>pages</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">explicit</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Constructor: used for memory based manager </p>
+
+</div>
+</div>
+<a id="ad56c5135a264074281f9793576259784" name="ad56c5135a264074281f9793576259784"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad56c5135a264074281f9793576259784">&#9670;&#160;</a></span>~DiskManagerMemory()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bustub::DiskManagerMemory::~DiskManagerMemory </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">override</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">成员函数说明</h2>
+<a id="ac7b7c26dc8c1dd3b8d4154f0f9eabc26" name="ac7b7c26dc8c1dd3b8d4154f0f9eabc26"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac7b7c26dc8c1dd3b8d4154f0f9eabc26">&#9670;&#160;</a></span>ReadPage()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void bustub::DiskManagerMemory::ReadPage </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../de/dda/namespacebustub.html#a8de4ac099b23d712481109bb846decde">page_id_t</a>&#160;</td>
+          <td class="paramname"><em>page_id</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>page_data</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Read a page from the database file. </p><dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir"></td><td class="paramname">page_id</td><td>id of the page </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">page_data</td><td>output buffer</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>Read the contents of the specified page into the given memory area </p>
+
+<p>重载 <a class="el" href="../../da/dfe/classbustub_1_1DiskManager.html#aa6cc12345be1e07c2fdb70c50af5e2d8">bustub::DiskManager</a> .</p>
+
+</div>
+</div>
+<a id="a8504fdeacf18e39a88107e4897003708" name="a8504fdeacf18e39a88107e4897003708"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8504fdeacf18e39a88107e4897003708">&#9670;&#160;</a></span>WritePage()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void bustub::DiskManagerMemory::WritePage </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../de/dda/namespacebustub.html#a8de4ac099b23d712481109bb846decde">page_id_t</a>&#160;</td>
+          <td class="paramname"><em>page_id</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>page_data</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Write a page to the database file. </p><dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">page_id</td><td>id of the page </td></tr>
+    <tr><td class="paramname">page_data</td><td>raw page data</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>Write the contents of the specified page into disk file </p>
+
+<p>重载 <a class="el" href="../../da/dfe/classbustub_1_1DiskManager.html#ae89df7f59076403589c78c52482c4ceb">bustub::DiskManager</a> .</p>
+
+</div>
+</div>
+<h2 class="groupheader">类成员变量说明</h2>
+<a id="a74bb0034fa950d040ce1bb8a4a15aac2" name="a74bb0034fa950d040ce1bb8a4a15aac2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a74bb0034fa950d040ce1bb8a4a15aac2">&#9670;&#160;</a></span>memory_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">char* bustub::DiskManagerMemory::memory_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<hr/>该类的文档由以下文件生成:<ul>
+<li>src/include/storage/disk/<a class="el" href="../../d9/d9e/disk__manager__memory_8h_source.html">disk_manager_memory.h</a></li>
+<li>src/storage/disk/<a class="el" href="../../dd/d16/disk__manager__memory_8cpp.html">disk_manager_memory.cpp</a></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
+</small></address>
+</body>
+</html>

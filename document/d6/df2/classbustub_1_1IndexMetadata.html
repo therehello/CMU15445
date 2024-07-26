@@ -1,0 +1,549 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>数据库系统 CMU15-445/645: bustub::IndexMetadata类 参考</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/searchdata.js"></script>
+<script type="text/javascript" src="../../search/search.js"></script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">数据库系统 CMU15-445/645<span id="projectnumber">&#160;1.0.0</span>
+   </div>
+   <div id="projectbrief">CMU15-445/645 是基于现代 C++ 开发的支持并发操作的简单 SQL 操作的单机数据库</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.9.8 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "../../search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('../../',true,false,'search.php','搜索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="../../de/dda/namespacebustub.html">bustub</a></li><li class="navelem"><a class="el" href="../../d6/df2/classbustub_1_1IndexMetadata.html">IndexMetadata</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Public 成员函数</a> &#124;
+<a href="#pri-attribs">Private 属性</a> &#124;
+<a href="../../d3/dce/classbustub_1_1IndexMetadata-members.html">所有成员列表</a>  </div>
+  <div class="headertitle"><div class="title">bustub::IndexMetadata类 参考</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p><code>#include &lt;<a class="el" href="../../d1/db5/index_8h_source.html">index.h</a>&gt;</code></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Public 成员函数</h2></td></tr>
+<tr class="memitem:a28a8acdc162d750345d0fec0d8cca1ec" id="r_a28a8acdc162d750345d0fec0d8cca1ec"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/df2/classbustub_1_1IndexMetadata.html#a28a8acdc162d750345d0fec0d8cca1ec">IndexMetadata</a> ()=delete</td></tr>
+<tr class="separator:a28a8acdc162d750345d0fec0d8cca1ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae48eb0543a529ba7165de26891408b97" id="r_ae48eb0543a529ba7165de26891408b97"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/df2/classbustub_1_1IndexMetadata.html#ae48eb0543a529ba7165de26891408b97">IndexMetadata</a> (std::string index_name, std::string table_name, const <a class="el" href="../../da/d36/classbustub_1_1Schema.html">Schema</a> *tuple_schema, std::vector&lt; uint32_t &gt; key_attrs, bool is_primary_key)</td></tr>
+<tr class="separator:ae48eb0543a529ba7165de26891408b97"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa367b6a7af0ede6cd5e343a60bc5a220" id="r_aa367b6a7af0ede6cd5e343a60bc5a220"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/df2/classbustub_1_1IndexMetadata.html#aa367b6a7af0ede6cd5e343a60bc5a220">~IndexMetadata</a> ()=default</td></tr>
+<tr class="separator:aa367b6a7af0ede6cd5e343a60bc5a220"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa474d4c7601a4dc910e155998855391e" id="r_aa474d4c7601a4dc910e155998855391e"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/df2/classbustub_1_1IndexMetadata.html#aa474d4c7601a4dc910e155998855391e">GetName</a> () const -&gt; const std::string &amp;</td></tr>
+<tr class="separator:aa474d4c7601a4dc910e155998855391e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a344ed0a3a7e66f7e97ddb0f961299547" id="r_a344ed0a3a7e66f7e97ddb0f961299547"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/df2/classbustub_1_1IndexMetadata.html#a344ed0a3a7e66f7e97ddb0f961299547">GetTableName</a> () -&gt; const std::string &amp;</td></tr>
+<tr class="separator:a344ed0a3a7e66f7e97ddb0f961299547"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a250cc84708d9ed379d3ed46b7e35938b" id="r_a250cc84708d9ed379d3ed46b7e35938b"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/df2/classbustub_1_1IndexMetadata.html#a250cc84708d9ed379d3ed46b7e35938b">GetKeySchema</a> () const -&gt; <a class="el" href="../../da/d36/classbustub_1_1Schema.html">Schema</a> *</td></tr>
+<tr class="separator:a250cc84708d9ed379d3ed46b7e35938b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa786f183e60c9412e4575d0af2f1373e" id="r_aa786f183e60c9412e4575d0af2f1373e"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/df2/classbustub_1_1IndexMetadata.html#aa786f183e60c9412e4575d0af2f1373e">GetIndexColumnCount</a> () const -&gt; std::uint32_t</td></tr>
+<tr class="separator:aa786f183e60c9412e4575d0af2f1373e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a06141bf09d2cdf6b244dcce7a3630629" id="r_a06141bf09d2cdf6b244dcce7a3630629"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/df2/classbustub_1_1IndexMetadata.html#a06141bf09d2cdf6b244dcce7a3630629">GetKeyAttrs</a> () const -&gt; const std::vector&lt; uint32_t &gt; &amp;</td></tr>
+<tr class="separator:a06141bf09d2cdf6b244dcce7a3630629"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afebf2f5f0cdfc8ab5014ed5c9677dd0a" id="r_afebf2f5f0cdfc8ab5014ed5c9677dd0a"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/df2/classbustub_1_1IndexMetadata.html#afebf2f5f0cdfc8ab5014ed5c9677dd0a">IsPrimaryKey</a> () const -&gt; bool</td></tr>
+<tr class="separator:afebf2f5f0cdfc8ab5014ed5c9677dd0a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3457b44a0e089356f0e45f8ede083e33" id="r_a3457b44a0e089356f0e45f8ede083e33"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/df2/classbustub_1_1IndexMetadata.html#a3457b44a0e089356f0e45f8ede083e33">ToString</a> () const -&gt; std::string</td></tr>
+<tr class="separator:a3457b44a0e089356f0e45f8ede083e33"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
+Private 属性</h2></td></tr>
+<tr class="memitem:accd95a929c9b52eb45a59a6d9a716a0e" id="r_accd95a929c9b52eb45a59a6d9a716a0e"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/df2/classbustub_1_1IndexMetadata.html#accd95a929c9b52eb45a59a6d9a716a0e">name_</a></td></tr>
+<tr class="separator:accd95a929c9b52eb45a59a6d9a716a0e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad4911e7dc16db4a4112584c512ea9587" id="r_ad4911e7dc16db4a4112584c512ea9587"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/df2/classbustub_1_1IndexMetadata.html#ad4911e7dc16db4a4112584c512ea9587">table_name_</a></td></tr>
+<tr class="separator:ad4911e7dc16db4a4112584c512ea9587"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af7b47721377a4881d7619a9b3bf5105a" id="r_af7b47721377a4881d7619a9b3bf5105a"><td class="memItemLeft" align="right" valign="top">const std::vector&lt; uint32_t &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/df2/classbustub_1_1IndexMetadata.html#af7b47721377a4881d7619a9b3bf5105a">key_attrs_</a></td></tr>
+<tr class="separator:af7b47721377a4881d7619a9b3bf5105a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac747fa3383cb07136a9de1de48bc74ee" id="r_ac747fa3383cb07136a9de1de48bc74ee"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="../../da/d36/classbustub_1_1Schema.html">Schema</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/df2/classbustub_1_1IndexMetadata.html#ac747fa3383cb07136a9de1de48bc74ee">key_schema_</a></td></tr>
+<tr class="separator:ac747fa3383cb07136a9de1de48bc74ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aab85e4819de2065502734110072492c1" id="r_aab85e4819de2065502734110072492c1"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/df2/classbustub_1_1IndexMetadata.html#aab85e4819de2065502734110072492c1">is_primary_key_</a></td></tr>
+<tr class="separator:aab85e4819de2065502734110072492c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
+<div class="textblock"><p>class <a class="el" href="../../d6/df2/classbustub_1_1IndexMetadata.html">IndexMetadata</a> - Holds metadata of an index object.</p>
+<p>The metadata object maintains the tuple schema and key attribute of an index, since the external callers does not know the actual structure of the index key, so it is the index's responsibility to maintain such a mapping relation and does the conversion between tuple key and index key </p>
+</div><h2 class="groupheader">构造及析构函数说明</h2>
+<a id="a28a8acdc162d750345d0fec0d8cca1ec" name="a28a8acdc162d750345d0fec0d8cca1ec"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a28a8acdc162d750345d0fec0d8cca1ec">&#9670;&#160;</a></span>IndexMetadata() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bustub::IndexMetadata::IndexMetadata </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">delete</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ae48eb0543a529ba7165de26891408b97" name="ae48eb0543a529ba7165de26891408b97"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae48eb0543a529ba7165de26891408b97">&#9670;&#160;</a></span>IndexMetadata() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bustub::IndexMetadata::IndexMetadata </td>
+          <td>(</td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>index_name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>table_name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="../../da/d36/classbustub_1_1Schema.html">Schema</a> *&#160;</td>
+          <td class="paramname"><em>tuple_schema</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::vector&lt; uint32_t &gt;&#160;</td>
+          <td class="paramname"><em>key_attrs</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>is_primary_key</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Construct a new <a class="el" href="../../d6/df2/classbustub_1_1IndexMetadata.html">IndexMetadata</a> instance. </p><dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">index_name</td><td>The name of the index </td></tr>
+    <tr><td class="paramname">table_name</td><td>The name of the table on which the index is created </td></tr>
+    <tr><td class="paramname">tuple_schema</td><td>The schema of the indexed key </td></tr>
+    <tr><td class="paramname">key_attrs</td><td>The mapping from indexed columns to base table columns </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="aa367b6a7af0ede6cd5e343a60bc5a220" name="aa367b6a7af0ede6cd5e343a60bc5a220"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa367b6a7af0ede6cd5e343a60bc5a220">&#9670;&#160;</a></span>~IndexMetadata()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bustub::IndexMetadata::~IndexMetadata </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">default</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">成员函数说明</h2>
+<a id="aa786f183e60c9412e4575d0af2f1373e" name="aa786f183e60c9412e4575d0af2f1373e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa786f183e60c9412e4575d0af2f1373e">&#9670;&#160;</a></span>GetIndexColumnCount()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto bustub::IndexMetadata::GetIndexColumnCount </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const -&gt; std::uint32_t </td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<dl class="section return"><dt>返回</dt><dd>The number of columns inside index key (not in tuple key)</dd></dl>
+<p>NOTE: this must be defined inside the cpp source file because it uses the member of catalog::Schema which is not known here. </p>
+
+</div>
+</div>
+<a id="a06141bf09d2cdf6b244dcce7a3630629" name="a06141bf09d2cdf6b244dcce7a3630629"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a06141bf09d2cdf6b244dcce7a3630629">&#9670;&#160;</a></span>GetKeyAttrs()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto bustub::IndexMetadata::GetKeyAttrs </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const -&gt; const std::vector&lt;uint32_t&gt; &amp; </td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<dl class="section return"><dt>返回</dt><dd>The mapping relation between indexed columns and base table columns </dd></dl>
+
+</div>
+</div>
+<a id="a250cc84708d9ed379d3ed46b7e35938b" name="a250cc84708d9ed379d3ed46b7e35938b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a250cc84708d9ed379d3ed46b7e35938b">&#9670;&#160;</a></span>GetKeySchema()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto bustub::IndexMetadata::GetKeySchema </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const -&gt; <a class="el" href="../../da/d36/classbustub_1_1Schema.html">Schema</a> * </td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<dl class="section return"><dt>返回</dt><dd>A schema object pointer that represents the indexed key </dd></dl>
+
+</div>
+</div>
+<a id="aa474d4c7601a4dc910e155998855391e" name="aa474d4c7601a4dc910e155998855391e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa474d4c7601a4dc910e155998855391e">&#9670;&#160;</a></span>GetName()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto bustub::IndexMetadata::GetName </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const -&gt; const std::string &amp; </td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<dl class="section return"><dt>返回</dt><dd>The name of the index </dd></dl>
+
+</div>
+</div>
+<a id="a344ed0a3a7e66f7e97ddb0f961299547" name="a344ed0a3a7e66f7e97ddb0f961299547"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a344ed0a3a7e66f7e97ddb0f961299547">&#9670;&#160;</a></span>GetTableName()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto bustub::IndexMetadata::GetTableName </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> -&gt; const std::string &amp; </td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<dl class="section return"><dt>返回</dt><dd>The name of the table on which the index is created </dd></dl>
+
+</div>
+</div>
+<a id="afebf2f5f0cdfc8ab5014ed5c9677dd0a" name="afebf2f5f0cdfc8ab5014ed5c9677dd0a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afebf2f5f0cdfc8ab5014ed5c9677dd0a">&#9670;&#160;</a></span>IsPrimaryKey()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto bustub::IndexMetadata::IsPrimaryKey </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const -&gt; bool </td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<dl class="section return"><dt>返回</dt><dd>is primary key </dd></dl>
+
+</div>
+</div>
+<a id="a3457b44a0e089356f0e45f8ede083e33" name="a3457b44a0e089356f0e45f8ede083e33"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3457b44a0e089356f0e45f8ede083e33">&#9670;&#160;</a></span>ToString()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto bustub::IndexMetadata::ToString </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const -&gt; std::string </td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<dl class="section return"><dt>返回</dt><dd>A string representation for debugging </dd></dl>
+
+</div>
+</div>
+<h2 class="groupheader">类成员变量说明</h2>
+<a id="aab85e4819de2065502734110072492c1" name="aab85e4819de2065502734110072492c1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aab85e4819de2065502734110072492c1">&#9670;&#160;</a></span>is_primary_key_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool bustub::IndexMetadata::is_primary_key_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Is primary key? </p>
+
+</div>
+</div>
+<a id="af7b47721377a4881d7619a9b3bf5105a" name="af7b47721377a4881d7619a9b3bf5105a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af7b47721377a4881d7619a9b3bf5105a">&#9670;&#160;</a></span>key_attrs_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const std::vector&lt;uint32_t&gt; bustub::IndexMetadata::key_attrs_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>The mapping relation between key schema and tuple schema </p>
+
+</div>
+</div>
+<a id="ac747fa3383cb07136a9de1de48bc74ee" name="ac747fa3383cb07136a9de1de48bc74ee"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac747fa3383cb07136a9de1de48bc74ee">&#9670;&#160;</a></span>key_schema_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::shared_ptr&lt;<a class="el" href="../../da/d36/classbustub_1_1Schema.html">Schema</a>&gt; bustub::IndexMetadata::key_schema_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>The schema of the indexed key </p>
+
+</div>
+</div>
+<a id="accd95a929c9b52eb45a59a6d9a716a0e" name="accd95a929c9b52eb45a59a6d9a716a0e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#accd95a929c9b52eb45a59a6d9a716a0e">&#9670;&#160;</a></span>name_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string bustub::IndexMetadata::name_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>The name of the index </p>
+
+</div>
+</div>
+<a id="ad4911e7dc16db4a4112584c512ea9587" name="ad4911e7dc16db4a4112584c512ea9587"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad4911e7dc16db4a4112584c512ea9587">&#9670;&#160;</a></span>table_name_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string bustub::IndexMetadata::table_name_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>The name of the table on which the index is created </p>
+
+</div>
+</div>
+<hr/>该类的文档由以下文件生成:<ul>
+<li>src/include/storage/index/<a class="el" href="../../d1/db5/index_8h_source.html">index.h</a></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
+</small></address>
+</body>
+</html>

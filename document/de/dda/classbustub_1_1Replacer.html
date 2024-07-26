@@ -1,0 +1,300 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>数据库系统 CMU15-445/645: bustub::Replacer类 参考</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/searchdata.js"></script>
+<script type="text/javascript" src="../../search/search.js"></script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">数据库系统 CMU15-445/645<span id="projectnumber">&#160;1.0.0</span>
+   </div>
+   <div id="projectbrief">CMU15-445/645 是基于现代 C++ 开发的支持并发操作的简单 SQL 操作的单机数据库</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.9.8 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "../../search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('../../',true,false,'search.php','搜索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="../../de/dda/namespacebustub.html">bustub</a></li><li class="navelem"><a class="el" href="../../de/dda/classbustub_1_1Replacer.html">Replacer</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Public 成员函数</a> &#124;
+<a href="../../db/df8/classbustub_1_1Replacer-members.html">所有成员列表</a>  </div>
+  <div class="headertitle"><div class="title">bustub::Replacer类 参考<span class="mlabels"><span class="mlabel">abstract</span></span></div></div>
+</div><!--header-->
+<div class="contents">
+
+<p><code>#include &lt;<a class="el" href="../../db/d70/replacer_8h_source.html">replacer.h</a>&gt;</code></p>
+<div class="dynheader">
+类 bustub::Replacer 继承关系图:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../d7/d41/classbustub_1_1Replacer__inherit__graph.svg" width="360" height="110"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<center><span class="legend">[<a href="../../graph_legend.html">图例</a>]</span></center></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Public 成员函数</h2></td></tr>
+<tr class="memitem:a9e5a07149491afbbe9b763e41a8ae25e" id="r_a9e5a07149491afbbe9b763e41a8ae25e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/dda/classbustub_1_1Replacer.html#a9e5a07149491afbbe9b763e41a8ae25e">Replacer</a> ()=default</td></tr>
+<tr class="separator:a9e5a07149491afbbe9b763e41a8ae25e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a13ebb72831b64d24d7f91d10617b77ea" id="r_a13ebb72831b64d24d7f91d10617b77ea"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/dda/classbustub_1_1Replacer.html#a13ebb72831b64d24d7f91d10617b77ea">~Replacer</a> ()=default</td></tr>
+<tr class="separator:a13ebb72831b64d24d7f91d10617b77ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9b94be99bdb7b9aa4fcbd37b29b50b7e" id="r_a9b94be99bdb7b9aa4fcbd37b29b50b7e"><td class="memItemLeft" align="right" valign="top">virtual auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/dda/classbustub_1_1Replacer.html#a9b94be99bdb7b9aa4fcbd37b29b50b7e">Victim</a> (<a class="el" href="../../de/dda/namespacebustub.html#a0f35ab53da3f49c3adf60f5174b16a4a">frame_id_t</a> *frame_id) -&gt; bool=0</td></tr>
+<tr class="separator:a9b94be99bdb7b9aa4fcbd37b29b50b7e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac152854b5b80f90a6c914ad9859f1504" id="r_ac152854b5b80f90a6c914ad9859f1504"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/dda/classbustub_1_1Replacer.html#ac152854b5b80f90a6c914ad9859f1504">Pin</a> (<a class="el" href="../../de/dda/namespacebustub.html#a0f35ab53da3f49c3adf60f5174b16a4a">frame_id_t</a> frame_id)=0</td></tr>
+<tr class="separator:ac152854b5b80f90a6c914ad9859f1504"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afdd9f2f50f45ac89e3b5460bb81ce4cd" id="r_afdd9f2f50f45ac89e3b5460bb81ce4cd"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/dda/classbustub_1_1Replacer.html#afdd9f2f50f45ac89e3b5460bb81ce4cd">Unpin</a> (<a class="el" href="../../de/dda/namespacebustub.html#a0f35ab53da3f49c3adf60f5174b16a4a">frame_id_t</a> frame_id)=0</td></tr>
+<tr class="separator:afdd9f2f50f45ac89e3b5460bb81ce4cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad7be7527d1687821f8812e999ed08c6c" id="r_ad7be7527d1687821f8812e999ed08c6c"><td class="memItemLeft" align="right" valign="top">virtual auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/dda/classbustub_1_1Replacer.html#ad7be7527d1687821f8812e999ed08c6c">Size</a> () -&gt; size_t=0</td></tr>
+<tr class="separator:ad7be7527d1687821f8812e999ed08c6c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
+<div class="textblock"><p><a class="el" href="../../de/dda/classbustub_1_1Replacer.html">Replacer</a> is an abstract class that tracks page usage. </p>
+</div><h2 class="groupheader">构造及析构函数说明</h2>
+<a id="a9e5a07149491afbbe9b763e41a8ae25e" name="a9e5a07149491afbbe9b763e41a8ae25e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9e5a07149491afbbe9b763e41a8ae25e">&#9670;&#160;</a></span>Replacer()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bustub::Replacer::Replacer </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">default</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a13ebb72831b64d24d7f91d10617b77ea" name="a13ebb72831b64d24d7f91d10617b77ea"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a13ebb72831b64d24d7f91d10617b77ea">&#9670;&#160;</a></span>~Replacer()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual bustub::Replacer::~Replacer </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span><span class="mlabel">default</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">成员函数说明</h2>
+<a id="ac152854b5b80f90a6c914ad9859f1504" name="ac152854b5b80f90a6c914ad9859f1504"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac152854b5b80f90a6c914ad9859f1504">&#9670;&#160;</a></span>Pin()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void bustub::Replacer::Pin </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../de/dda/namespacebustub.html#a0f35ab53da3f49c3adf60f5174b16a4a">frame_id_t</a>&#160;</td>
+          <td class="paramname"><em>frame_id</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Pins a frame, indicating that it should not be victimized until it is unpinned. </p><dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">frame_id</td><td>the id of the frame to pin </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>在 <a class="el" href="../../df/d83/classbustub_1_1ClockReplacer.html#ab8e5a929f656e9c8d0410900089a2321">bustub::ClockReplacer</a> , 以及 <a class="el" href="../../d1/d87/classbustub_1_1LRUReplacer.html#aadd029af7df0d9e3a7e34db50809cb7a">bustub::LRUReplacer</a> 内被实现.</p>
+
+</div>
+</div>
+<a id="ad7be7527d1687821f8812e999ed08c6c" name="ad7be7527d1687821f8812e999ed08c6c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad7be7527d1687821f8812e999ed08c6c">&#9670;&#160;</a></span>Size()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual auto bustub::Replacer::Size </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> -&gt;  size_t</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<dl class="section return"><dt>返回</dt><dd>the number of elements in the replacer that can be victimized </dd></dl>
+
+<p>在 <a class="el" href="../../df/d83/classbustub_1_1ClockReplacer.html#ac734711803e4a94abd2511ee33799cfc">bustub::ClockReplacer</a> , 以及 <a class="el" href="../../d1/d87/classbustub_1_1LRUReplacer.html#a7aee3ccc39ea75babaf561f73a18330b">bustub::LRUReplacer</a> 内被实现.</p>
+
+</div>
+</div>
+<a id="afdd9f2f50f45ac89e3b5460bb81ce4cd" name="afdd9f2f50f45ac89e3b5460bb81ce4cd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afdd9f2f50f45ac89e3b5460bb81ce4cd">&#9670;&#160;</a></span>Unpin()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void bustub::Replacer::Unpin </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../de/dda/namespacebustub.html#a0f35ab53da3f49c3adf60f5174b16a4a">frame_id_t</a>&#160;</td>
+          <td class="paramname"><em>frame_id</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Unpins a frame, indicating that it can now be victimized. </p><dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">frame_id</td><td>the id of the frame to unpin </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>在 <a class="el" href="../../df/d83/classbustub_1_1ClockReplacer.html#a39bd3057946458831b46017455e790f6">bustub::ClockReplacer</a> , 以及 <a class="el" href="../../d1/d87/classbustub_1_1LRUReplacer.html#abc7c5e45551d242c08ac82ea3519d0bc">bustub::LRUReplacer</a> 内被实现.</p>
+
+</div>
+</div>
+<a id="a9b94be99bdb7b9aa4fcbd37b29b50b7e" name="a9b94be99bdb7b9aa4fcbd37b29b50b7e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9b94be99bdb7b9aa4fcbd37b29b50b7e">&#9670;&#160;</a></span>Victim()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual auto bustub::Replacer::Victim </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../de/dda/namespacebustub.html#a0f35ab53da3f49c3adf60f5174b16a4a">frame_id_t</a> *&#160;</td>
+          <td class="paramname"><em>frame_id</em></td><td>)</td>
+          <td> -&gt;  bool</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Remove the victim frame as defined by the replacement policy. </p><dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[out]</td><td class="paramname">frame_id</td><td>id of frame that was removed, nullptr if no victim was found </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>true if a victim frame was found, false otherwise </dd></dl>
+
+<p>在 <a class="el" href="../../df/d83/classbustub_1_1ClockReplacer.html#a5a5699558e43ab5f6786e0d68d7947d9">bustub::ClockReplacer</a> , 以及 <a class="el" href="../../d1/d87/classbustub_1_1LRUReplacer.html#ad0cb74ba0debfd52182e856fa5a1cc41">bustub::LRUReplacer</a> 内被实现.</p>
+
+</div>
+</div>
+<hr/>该类的文档由以下文件生成:<ul>
+<li>src/include/buffer/<a class="el" href="../../db/d70/replacer_8h_source.html">replacer.h</a></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
+</small></address>
+</body>
+</html>

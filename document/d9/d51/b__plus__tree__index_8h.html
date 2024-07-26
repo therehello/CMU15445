@@ -1,0 +1,162 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>数据库系统 CMU15-445/645: src/include/storage/index/b_plus_tree_index.h 文件参考</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/searchdata.js"></script>
+<script type="text/javascript" src="../../search/search.js"></script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">数据库系统 CMU15-445/645<span id="projectnumber">&#160;1.0.0</span>
+   </div>
+   <div id="projectbrief">CMU15-445/645 是基于现代 C++ 开发的支持并发操作的简单 SQL 操作的单机数据库</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.9.8 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "../../search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('../../',true,false,'search.php','搜索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="../../dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="../../dir_b0856f6b0d80ccb263b2f415c91f9e17.html">include</a></li><li class="navelem"><a class="el" href="../../dir_0a30ac4aed38d1936bbd6d702d96fbd8.html">storage</a></li><li class="navelem"><a class="el" href="../../dir_68b285a99db82172e89ff1958533507d.html">index</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#nested-classes">类</a> &#124;
+<a href="#namespaces">命名空间</a> &#124;
+<a href="#define-members">宏定义</a> &#124;
+<a href="#typedef-members">类型定义</a> &#124;
+<a href="#var-members">变量</a>  </div>
+  <div class="headertitle"><div class="title">b_plus_tree_index.h 文件参考</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &lt;map&gt;</code><br />
+<code>#include &lt;memory&gt;</code><br />
+<code>#include &lt;string&gt;</code><br />
+<code>#include &lt;vector&gt;</code><br />
+<code>#include &quot;<a class="el" href="../../d6/d6d/hash__function_8h_source.html">container/hash/hash_function.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="../../d8/da5/b__plus__tree_8h_source.html">storage/index/b_plus_tree.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="../../d1/db5/index_8h_source.html">storage/index/index.h</a>&quot;</code><br />
+</div><div class="textblock"><div class="dynheader">
+b_plus_tree_index.h 的引用(Include)关系图:</div>
+<div class="dyncontent">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d4/d7c/b__plus__tree__index_8h__incl.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+</div><div class="textblock"><div class="dynheader">
+此图展示该文件直接或间接的被哪些文件引用了:</div>
+<div class="dyncontent">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d3/d14/b__plus__tree__index_8h__dep__incl.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+</div>
+<p><a href="../../d9/d51/b__plus__tree__index_8h_source.html">浏览源代码.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+类</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d26/classbustub_1_1BPlusTreeIndex.html">bustub::BPlusTreeIndex</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="namespaces" name="namespaces"></a>
+命名空间</h2></td></tr>
+<tr class="memitem:de/dda/namespacebustub" id="r_de/dda/namespacebustub"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/dda/namespacebustub.html">bustub</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
+宏定义</h2></td></tr>
+<tr class="memitem:a2af61386c8c081a9837645ef71092c9d" id="r_a2af61386c8c081a9837645ef71092c9d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d51/b__plus__tree__index_8h.html#a2af61386c8c081a9837645ef71092c9d">BPLUSTREE_INDEX_TYPE</a>&#160;&#160;&#160;BPlusTreeIndex&lt;KeyType, ValueType, KeyComparator&gt;</td></tr>
+<tr class="separator:a2af61386c8c081a9837645ef71092c9d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="typedef-members" name="typedef-members"></a>
+类型定义</h2></td></tr>
+<tr class="memitem:a758d3e3ce52d0cadb3287da613229d3a" id="r_a758d3e3ce52d0cadb3287da613229d3a"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/dda/namespacebustub.html#a758d3e3ce52d0cadb3287da613229d3a">bustub::IntegerKeyType_BTree</a> = <a class="el" href="../../de/da1/classbustub_1_1GenericKey.html">GenericKey</a>&lt; <a class="el" href="../../de/dda/namespacebustub.html#aecbffa49b1ef6f191dc2db4b35d33c5a">TWO_INTEGER_SIZE_B_TREE</a> &gt;</td></tr>
+<tr class="separator:a758d3e3ce52d0cadb3287da613229d3a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acb63b9228595399b8c409c02f99a6a83" id="r_acb63b9228595399b8c409c02f99a6a83"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/dda/namespacebustub.html#acb63b9228595399b8c409c02f99a6a83">bustub::IntegerValueType_BTree</a> = <a class="el" href="../../d3/d22/classbustub_1_1RID.html">RID</a></td></tr>
+<tr class="separator:acb63b9228595399b8c409c02f99a6a83"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a38e0ced9d61e20e6edce4dbc613453a9" id="r_a38e0ced9d61e20e6edce4dbc613453a9"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/dda/namespacebustub.html#a38e0ced9d61e20e6edce4dbc613453a9">bustub::IntegerComparatorType_BTree</a> = <a class="el" href="../../d6/d13/classbustub_1_1GenericComparator.html">GenericComparator</a>&lt; <a class="el" href="../../de/dda/namespacebustub.html#aecbffa49b1ef6f191dc2db4b35d33c5a">TWO_INTEGER_SIZE_B_TREE</a> &gt;</td></tr>
+<tr class="separator:a38e0ced9d61e20e6edce4dbc613453a9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a525b365206e949e72d9e851cc46be699" id="r_a525b365206e949e72d9e851cc46be699"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/dda/namespacebustub.html#a525b365206e949e72d9e851cc46be699">bustub::BPlusTreeIndexForTwoIntegerColumn</a> = <a class="el" href="../../df/d26/classbustub_1_1BPlusTreeIndex.html">BPlusTreeIndex</a>&lt; <a class="el" href="../../de/dda/namespacebustub.html#a758d3e3ce52d0cadb3287da613229d3a">IntegerKeyType_BTree</a>, <a class="el" href="../../de/dda/namespacebustub.html#acb63b9228595399b8c409c02f99a6a83">IntegerValueType_BTree</a>, <a class="el" href="../../de/dda/namespacebustub.html#a38e0ced9d61e20e6edce4dbc613453a9">IntegerComparatorType_BTree</a> &gt;</td></tr>
+<tr class="separator:a525b365206e949e72d9e851cc46be699"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa499e2620acb0b5e26e975e11f141e6b" id="r_aa499e2620acb0b5e26e975e11f141e6b"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/dda/namespacebustub.html#aa499e2620acb0b5e26e975e11f141e6b">bustub::BPlusTreeIndexIteratorForTwoIntegerColumn</a> = <a class="el" href="../../d5/dee/classbustub_1_1IndexIterator.html">IndexIterator</a>&lt; <a class="el" href="../../de/dda/namespacebustub.html#a758d3e3ce52d0cadb3287da613229d3a">IntegerKeyType_BTree</a>, <a class="el" href="../../de/dda/namespacebustub.html#acb63b9228595399b8c409c02f99a6a83">IntegerValueType_BTree</a>, <a class="el" href="../../de/dda/namespacebustub.html#a38e0ced9d61e20e6edce4dbc613453a9">IntegerComparatorType_BTree</a> &gt;</td></tr>
+<tr class="separator:aa499e2620acb0b5e26e975e11f141e6b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7b27475fea2c3b32ba93625106ac424d" id="r_a7b27475fea2c3b32ba93625106ac424d"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/dda/namespacebustub.html#a7b27475fea2c3b32ba93625106ac424d">bustub::IntegerHashFunctionType</a> = <a class="el" href="../../dd/d14/classbustub_1_1HashFunction.html">HashFunction</a>&lt; <a class="el" href="../../de/dda/namespacebustub.html#a758d3e3ce52d0cadb3287da613229d3a">IntegerKeyType_BTree</a> &gt;</td></tr>
+<tr class="separator:a7b27475fea2c3b32ba93625106ac424d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
+变量</h2></td></tr>
+<tr class="memitem:aecbffa49b1ef6f191dc2db4b35d33c5a" id="r_aecbffa49b1ef6f191dc2db4b35d33c5a"><td class="memItemLeft" align="right" valign="top">static constexpr const auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/dda/namespacebustub.html#aecbffa49b1ef6f191dc2db4b35d33c5a">bustub::TWO_INTEGER_SIZE_B_TREE</a> = 8</td></tr>
+<tr class="separator:aecbffa49b1ef6f191dc2db4b35d33c5a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">宏定义说明</h2>
+<a id="a2af61386c8c081a9837645ef71092c9d" name="a2af61386c8c081a9837645ef71092c9d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2af61386c8c081a9837645ef71092c9d">&#9670;&#160;</a></span>BPLUSTREE_INDEX_TYPE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BPLUSTREE_INDEX_TYPE&#160;&#160;&#160;BPlusTreeIndex&lt;KeyType, ValueType, KeyComparator&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
+</small></address>
+</body>
+</html>

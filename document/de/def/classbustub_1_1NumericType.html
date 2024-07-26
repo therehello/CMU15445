@@ -1,0 +1,666 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>数据库系统 CMU15-445/645: bustub::NumericType类 参考</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/searchdata.js"></script>
+<script type="text/javascript" src="../../search/search.js"></script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">数据库系统 CMU15-445/645<span id="projectnumber">&#160;1.0.0</span>
+   </div>
+   <div id="projectbrief">CMU15-445/645 是基于现代 C++ 开发的支持并发操作的简单 SQL 操作的单机数据库</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.9.8 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "../../search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('../../',true,false,'search.php','搜索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="../../de/dda/namespacebustub.html">bustub</a></li><li class="navelem"><a class="el" href="../../de/def/classbustub_1_1NumericType.html">NumericType</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Public 成员函数</a> &#124;
+<a href="#pro-static-methods">静态 Protected 成员函数</a> &#124;
+<a href="../../d3/dac/classbustub_1_1NumericType-members.html">所有成员列表</a>  </div>
+  <div class="headertitle"><div class="title">bustub::NumericType类 参考<span class="mlabels"><span class="mlabel">abstract</span></span></div></div>
+</div><!--header-->
+<div class="contents">
+
+<p><code>#include &lt;<a class="el" href="../../d4/d5c/numeric__type_8h_source.html">numeric_type.h</a>&gt;</code></p>
+<div class="dynheader">
+类 bustub::NumericType 继承关系图:</div>
+<div class="dyncontent">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../dd/dc2/classbustub_1_1NumericType__inherit__graph.svg" width="100%" height="492"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<center><span class="legend">[<a href="../../graph_legend.html">图例</a>]</span></center></div>
+<div class="dynheader">
+bustub::NumericType 的协作图:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../d8/d49/classbustub_1_1NumericType__coll__graph.svg" width="223" height="111"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<center><span class="legend">[<a href="../../graph_legend.html">图例</a>]</span></center></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Public 成员函数</h2></td></tr>
+<tr class="memitem:a077d23741e2413110133ab71ef0328c1" id="r_a077d23741e2413110133ab71ef0328c1"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/def/classbustub_1_1NumericType.html#a077d23741e2413110133ab71ef0328c1">NumericType</a> (<a class="el" href="../../de/dda/namespacebustub.html#a49735e6748963f5515394bbb228f1fc8">TypeId</a> type)</td></tr>
+<tr class="separator:a077d23741e2413110133ab71ef0328c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7193775a473620e1804ac36edd73793e" id="r_a7193775a473620e1804ac36edd73793e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/def/classbustub_1_1NumericType.html#a7193775a473620e1804ac36edd73793e">~NumericType</a> () override=default</td></tr>
+<tr class="separator:a7193775a473620e1804ac36edd73793e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a626aa130fabc858bec8460e6e51c8a9c" id="r_a626aa130fabc858bec8460e6e51c8a9c"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/def/classbustub_1_1NumericType.html#a626aa130fabc858bec8460e6e51c8a9c">Add</a> (const <a class="el" href="../../d4/df7/classbustub_1_1Value.html">Value</a> &amp;left, const <a class="el" href="../../d4/df7/classbustub_1_1Value.html">Value</a> &amp;right) const -&gt; <a class="el" href="../../d4/df7/classbustub_1_1Value.html">Value</a> override=0</td></tr>
+<tr class="separator:a626aa130fabc858bec8460e6e51c8a9c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a439225c26d66749a33669846f566f092" id="r_a439225c26d66749a33669846f566f092"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/def/classbustub_1_1NumericType.html#a439225c26d66749a33669846f566f092">Subtract</a> (const <a class="el" href="../../d4/df7/classbustub_1_1Value.html">Value</a> &amp;left, const <a class="el" href="../../d4/df7/classbustub_1_1Value.html">Value</a> &amp;right) const -&gt; <a class="el" href="../../d4/df7/classbustub_1_1Value.html">Value</a> override=0</td></tr>
+<tr class="separator:a439225c26d66749a33669846f566f092"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a617b43379a500467819db99d89bf2d0d" id="r_a617b43379a500467819db99d89bf2d0d"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/def/classbustub_1_1NumericType.html#a617b43379a500467819db99d89bf2d0d">Multiply</a> (const <a class="el" href="../../d4/df7/classbustub_1_1Value.html">Value</a> &amp;left, const <a class="el" href="../../d4/df7/classbustub_1_1Value.html">Value</a> &amp;right) const -&gt; <a class="el" href="../../d4/df7/classbustub_1_1Value.html">Value</a> override=0</td></tr>
+<tr class="separator:a617b43379a500467819db99d89bf2d0d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8b7343f81637537cd5ea8fe4ad9f0433" id="r_a8b7343f81637537cd5ea8fe4ad9f0433"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/def/classbustub_1_1NumericType.html#a8b7343f81637537cd5ea8fe4ad9f0433">Divide</a> (const <a class="el" href="../../d4/df7/classbustub_1_1Value.html">Value</a> &amp;left, const <a class="el" href="../../d4/df7/classbustub_1_1Value.html">Value</a> &amp;right) const -&gt; <a class="el" href="../../d4/df7/classbustub_1_1Value.html">Value</a> override=0</td></tr>
+<tr class="separator:a8b7343f81637537cd5ea8fe4ad9f0433"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1597d4a2e302a64d5503e0b6d89770f1" id="r_a1597d4a2e302a64d5503e0b6d89770f1"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/def/classbustub_1_1NumericType.html#a1597d4a2e302a64d5503e0b6d89770f1">Modulo</a> (const <a class="el" href="../../d4/df7/classbustub_1_1Value.html">Value</a> &amp;left, const <a class="el" href="../../d4/df7/classbustub_1_1Value.html">Value</a> &amp;right) const -&gt; <a class="el" href="../../d4/df7/classbustub_1_1Value.html">Value</a> override=0</td></tr>
+<tr class="separator:a1597d4a2e302a64d5503e0b6d89770f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad6d31d318301ba9be8cb1cefffa5b14e" id="r_ad6d31d318301ba9be8cb1cefffa5b14e"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/def/classbustub_1_1NumericType.html#ad6d31d318301ba9be8cb1cefffa5b14e">Min</a> (const <a class="el" href="../../d4/df7/classbustub_1_1Value.html">Value</a> &amp;left, const <a class="el" href="../../d4/df7/classbustub_1_1Value.html">Value</a> &amp;right) const -&gt; <a class="el" href="../../d4/df7/classbustub_1_1Value.html">Value</a> override=0</td></tr>
+<tr class="separator:ad6d31d318301ba9be8cb1cefffa5b14e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab6fedd370f8ce376468cf07c9e576383" id="r_ab6fedd370f8ce376468cf07c9e576383"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/def/classbustub_1_1NumericType.html#ab6fedd370f8ce376468cf07c9e576383">Max</a> (const <a class="el" href="../../d4/df7/classbustub_1_1Value.html">Value</a> &amp;left, const <a class="el" href="../../d4/df7/classbustub_1_1Value.html">Value</a> &amp;right) const -&gt; <a class="el" href="../../d4/df7/classbustub_1_1Value.html">Value</a> override=0</td></tr>
+<tr class="separator:ab6fedd370f8ce376468cf07c9e576383"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4473eae69933b2d322321f713502e9ac" id="r_a4473eae69933b2d322321f713502e9ac"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/def/classbustub_1_1NumericType.html#a4473eae69933b2d322321f713502e9ac">Sqrt</a> (const <a class="el" href="../../d4/df7/classbustub_1_1Value.html">Value</a> &amp;val) const -&gt; <a class="el" href="../../d4/df7/classbustub_1_1Value.html">Value</a> override=0</td></tr>
+<tr class="separator:a4473eae69933b2d322321f713502e9ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3ff4e754a94741eb94a8252cceb7c106" id="r_a3ff4e754a94741eb94a8252cceb7c106"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/def/classbustub_1_1NumericType.html#a3ff4e754a94741eb94a8252cceb7c106">OperateNull</a> (const <a class="el" href="../../d4/df7/classbustub_1_1Value.html">Value</a> &amp;left, const <a class="el" href="../../d4/df7/classbustub_1_1Value.html">Value</a> &amp;right) const -&gt; <a class="el" href="../../d4/df7/classbustub_1_1Value.html">Value</a> override=0</td></tr>
+<tr class="separator:a3ff4e754a94741eb94a8252cceb7c106"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aba9158daf798c0150aa26f5a3d916ac5" id="r_aba9158daf798c0150aa26f5a3d916ac5"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/def/classbustub_1_1NumericType.html#aba9158daf798c0150aa26f5a3d916ac5">IsZero</a> (const <a class="el" href="../../d4/df7/classbustub_1_1Value.html">Value</a> &amp;val) const -&gt; bool override=0</td></tr>
+<tr class="separator:aba9158daf798c0150aa26f5a3d916ac5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_methods_classbustub_1_1Type"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classbustub_1_1Type')"><img src="../../closed.png" alt="-"/>&#160;Public 成员函数 继承自 <a class="el" href="../../d9/df4/classbustub_1_1Type.html">bustub::Type</a></td></tr>
+<tr class="memitem:acfb9b8cc3f3b3b1e10319ef80d4831eb inherit pub_methods_classbustub_1_1Type" id="r_acfb9b8cc3f3b3b1e10319ef80d4831eb"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/df4/classbustub_1_1Type.html#acfb9b8cc3f3b3b1e10319ef80d4831eb">Type</a> (<a class="el" href="../../de/dda/namespacebustub.html#a49735e6748963f5515394bbb228f1fc8">TypeId</a> type_id)</td></tr>
+<tr class="separator:acfb9b8cc3f3b3b1e10319ef80d4831eb inherit pub_methods_classbustub_1_1Type"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0e46948038b73176cc614e0844e9b530 inherit pub_methods_classbustub_1_1Type" id="r_a0e46948038b73176cc614e0844e9b530"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/df4/classbustub_1_1Type.html#a0e46948038b73176cc614e0844e9b530">~Type</a> ()=default</td></tr>
+<tr class="separator:a0e46948038b73176cc614e0844e9b530 inherit pub_methods_classbustub_1_1Type"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae47a22751c7f39ccdda708a11b96cc4e inherit pub_methods_classbustub_1_1Type" id="r_ae47a22751c7f39ccdda708a11b96cc4e"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/df4/classbustub_1_1Type.html#ae47a22751c7f39ccdda708a11b96cc4e">IsCoercableFrom</a> (<a class="el" href="../../de/dda/namespacebustub.html#a49735e6748963f5515394bbb228f1fc8">TypeId</a> type_id) const -&gt; bool</td></tr>
+<tr class="separator:ae47a22751c7f39ccdda708a11b96cc4e inherit pub_methods_classbustub_1_1Type"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab042a5d76c793fef5dcd50946f25d59b inherit pub_methods_classbustub_1_1Type" id="r_ab042a5d76c793fef5dcd50946f25d59b"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/df4/classbustub_1_1Type.html#ab042a5d76c793fef5dcd50946f25d59b">GetTypeId</a> () const -&gt; <a class="el" href="../../de/dda/namespacebustub.html#a49735e6748963f5515394bbb228f1fc8">TypeId</a></td></tr>
+<tr class="separator:ab042a5d76c793fef5dcd50946f25d59b inherit pub_methods_classbustub_1_1Type"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0cbc5dd62d881d7cca4756a6e703c5cc inherit pub_methods_classbustub_1_1Type" id="r_a0cbc5dd62d881d7cca4756a6e703c5cc"><td class="memItemLeft" align="right" valign="top">virtual auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/df4/classbustub_1_1Type.html#a0cbc5dd62d881d7cca4756a6e703c5cc">CompareEquals</a> (const <a class="el" href="../../d4/df7/classbustub_1_1Value.html">Value</a> &amp;left, const <a class="el" href="../../d4/df7/classbustub_1_1Value.html">Value</a> &amp;right) const -&gt; <a class="el" href="../../de/dda/namespacebustub.html#a0b4071db2dd630bdbf7a86b4f251f560">CmpBool</a></td></tr>
+<tr class="separator:a0cbc5dd62d881d7cca4756a6e703c5cc inherit pub_methods_classbustub_1_1Type"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aff0cfb04a1e6408b0e5a52a2bb74b5dc inherit pub_methods_classbustub_1_1Type" id="r_aff0cfb04a1e6408b0e5a52a2bb74b5dc"><td class="memItemLeft" align="right" valign="top">virtual auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/df4/classbustub_1_1Type.html#aff0cfb04a1e6408b0e5a52a2bb74b5dc">CompareNotEquals</a> (const <a class="el" href="../../d4/df7/classbustub_1_1Value.html">Value</a> &amp;left, const <a class="el" href="../../d4/df7/classbustub_1_1Value.html">Value</a> &amp;right) const -&gt; <a class="el" href="../../de/dda/namespacebustub.html#a0b4071db2dd630bdbf7a86b4f251f560">CmpBool</a></td></tr>
+<tr class="separator:aff0cfb04a1e6408b0e5a52a2bb74b5dc inherit pub_methods_classbustub_1_1Type"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afa360010e038ba2db98bfe7759d40e44 inherit pub_methods_classbustub_1_1Type" id="r_afa360010e038ba2db98bfe7759d40e44"><td class="memItemLeft" align="right" valign="top">virtual auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/df4/classbustub_1_1Type.html#afa360010e038ba2db98bfe7759d40e44">CompareLessThan</a> (const <a class="el" href="../../d4/df7/classbustub_1_1Value.html">Value</a> &amp;left, const <a class="el" href="../../d4/df7/classbustub_1_1Value.html">Value</a> &amp;right) const -&gt; <a class="el" href="../../de/dda/namespacebustub.html#a0b4071db2dd630bdbf7a86b4f251f560">CmpBool</a></td></tr>
+<tr class="separator:afa360010e038ba2db98bfe7759d40e44 inherit pub_methods_classbustub_1_1Type"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a898229740c8362bbc939b0e6520f2941 inherit pub_methods_classbustub_1_1Type" id="r_a898229740c8362bbc939b0e6520f2941"><td class="memItemLeft" align="right" valign="top">virtual auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/df4/classbustub_1_1Type.html#a898229740c8362bbc939b0e6520f2941">CompareLessThanEquals</a> (const <a class="el" href="../../d4/df7/classbustub_1_1Value.html">Value</a> &amp;left, const <a class="el" href="../../d4/df7/classbustub_1_1Value.html">Value</a> &amp;right) const -&gt; <a class="el" href="../../de/dda/namespacebustub.html#a0b4071db2dd630bdbf7a86b4f251f560">CmpBool</a></td></tr>
+<tr class="separator:a898229740c8362bbc939b0e6520f2941 inherit pub_methods_classbustub_1_1Type"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af1aeca0af065360c66a3679abe5e68af inherit pub_methods_classbustub_1_1Type" id="r_af1aeca0af065360c66a3679abe5e68af"><td class="memItemLeft" align="right" valign="top">virtual auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/df4/classbustub_1_1Type.html#af1aeca0af065360c66a3679abe5e68af">CompareGreaterThan</a> (const <a class="el" href="../../d4/df7/classbustub_1_1Value.html">Value</a> &amp;left, const <a class="el" href="../../d4/df7/classbustub_1_1Value.html">Value</a> &amp;right) const -&gt; <a class="el" href="../../de/dda/namespacebustub.html#a0b4071db2dd630bdbf7a86b4f251f560">CmpBool</a></td></tr>
+<tr class="separator:af1aeca0af065360c66a3679abe5e68af inherit pub_methods_classbustub_1_1Type"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0f4495907dc4e6bb4270cea4bd9c3299 inherit pub_methods_classbustub_1_1Type" id="r_a0f4495907dc4e6bb4270cea4bd9c3299"><td class="memItemLeft" align="right" valign="top">virtual auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/df4/classbustub_1_1Type.html#a0f4495907dc4e6bb4270cea4bd9c3299">CompareGreaterThanEquals</a> (const <a class="el" href="../../d4/df7/classbustub_1_1Value.html">Value</a> &amp;left, const <a class="el" href="../../d4/df7/classbustub_1_1Value.html">Value</a> &amp;right) const -&gt; <a class="el" href="../../de/dda/namespacebustub.html#a0b4071db2dd630bdbf7a86b4f251f560">CmpBool</a></td></tr>
+<tr class="separator:a0f4495907dc4e6bb4270cea4bd9c3299 inherit pub_methods_classbustub_1_1Type"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a957f8fdddf0cbe3eb5ebdb3fcc4b33ea inherit pub_methods_classbustub_1_1Type" id="r_a957f8fdddf0cbe3eb5ebdb3fcc4b33ea"><td class="memItemLeft" align="right" valign="top">virtual auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/df4/classbustub_1_1Type.html#a957f8fdddf0cbe3eb5ebdb3fcc4b33ea">IsInlined</a> (const <a class="el" href="../../d4/df7/classbustub_1_1Value.html">Value</a> &amp;val) const -&gt; bool</td></tr>
+<tr class="separator:a957f8fdddf0cbe3eb5ebdb3fcc4b33ea inherit pub_methods_classbustub_1_1Type"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0ed59d09410f235a917e476208a18f25 inherit pub_methods_classbustub_1_1Type" id="r_a0ed59d09410f235a917e476208a18f25"><td class="memItemLeft" align="right" valign="top">virtual auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/df4/classbustub_1_1Type.html#a0ed59d09410f235a917e476208a18f25">ToString</a> (const <a class="el" href="../../d4/df7/classbustub_1_1Value.html">Value</a> &amp;val) const -&gt; std::string</td></tr>
+<tr class="separator:a0ed59d09410f235a917e476208a18f25 inherit pub_methods_classbustub_1_1Type"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a935304a7710685bf3ad18a577821ab47 inherit pub_methods_classbustub_1_1Type" id="r_a935304a7710685bf3ad18a577821ab47"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/df4/classbustub_1_1Type.html#a935304a7710685bf3ad18a577821ab47">SerializeTo</a> (const <a class="el" href="../../d4/df7/classbustub_1_1Value.html">Value</a> &amp;val, char *storage) const</td></tr>
+<tr class="separator:a935304a7710685bf3ad18a577821ab47 inherit pub_methods_classbustub_1_1Type"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:add77b4a2080850609e4842c4ef669843 inherit pub_methods_classbustub_1_1Type" id="r_add77b4a2080850609e4842c4ef669843"><td class="memItemLeft" align="right" valign="top">virtual auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/df4/classbustub_1_1Type.html#add77b4a2080850609e4842c4ef669843">DeserializeFrom</a> (const char *storage) const -&gt; <a class="el" href="../../d4/df7/classbustub_1_1Value.html">Value</a></td></tr>
+<tr class="separator:add77b4a2080850609e4842c4ef669843 inherit pub_methods_classbustub_1_1Type"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeabc0adb22cc20346ad763c0de004978 inherit pub_methods_classbustub_1_1Type" id="r_aeabc0adb22cc20346ad763c0de004978"><td class="memItemLeft" align="right" valign="top">virtual auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/df4/classbustub_1_1Type.html#aeabc0adb22cc20346ad763c0de004978">Copy</a> (const <a class="el" href="../../d4/df7/classbustub_1_1Value.html">Value</a> &amp;val) const -&gt; <a class="el" href="../../d4/df7/classbustub_1_1Value.html">Value</a></td></tr>
+<tr class="separator:aeabc0adb22cc20346ad763c0de004978 inherit pub_methods_classbustub_1_1Type"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5d5439c6d8494960aa504356342da4a7 inherit pub_methods_classbustub_1_1Type" id="r_a5d5439c6d8494960aa504356342da4a7"><td class="memItemLeft" align="right" valign="top">virtual auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/df4/classbustub_1_1Type.html#a5d5439c6d8494960aa504356342da4a7">CastAs</a> (const <a class="el" href="../../d4/df7/classbustub_1_1Value.html">Value</a> &amp;val, <a class="el" href="../../de/dda/namespacebustub.html#a49735e6748963f5515394bbb228f1fc8">TypeId</a> type_id) const -&gt; <a class="el" href="../../d4/df7/classbustub_1_1Value.html">Value</a></td></tr>
+<tr class="separator:a5d5439c6d8494960aa504356342da4a7 inherit pub_methods_classbustub_1_1Type"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afdb19817ac1dc8b09232f81867d2b0f0 inherit pub_methods_classbustub_1_1Type" id="r_afdb19817ac1dc8b09232f81867d2b0f0"><td class="memItemLeft" align="right" valign="top">virtual auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/df4/classbustub_1_1Type.html#afdb19817ac1dc8b09232f81867d2b0f0">GetData</a> (const <a class="el" href="../../d4/df7/classbustub_1_1Value.html">Value</a> &amp;val) const -&gt; const char *</td></tr>
+<tr class="separator:afdb19817ac1dc8b09232f81867d2b0f0 inherit pub_methods_classbustub_1_1Type"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5bb89a7bd03176a296857c47b08e23f2 inherit pub_methods_classbustub_1_1Type" id="r_a5bb89a7bd03176a296857c47b08e23f2"><td class="memItemLeft" align="right" valign="top">virtual auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/df4/classbustub_1_1Type.html#a5bb89a7bd03176a296857c47b08e23f2">GetLength</a> (const <a class="el" href="../../d4/df7/classbustub_1_1Value.html">Value</a> &amp;val) const -&gt; uint32_t</td></tr>
+<tr class="separator:a5bb89a7bd03176a296857c47b08e23f2 inherit pub_methods_classbustub_1_1Type"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8509e88c621012319ed5f3facef4b432 inherit pub_methods_classbustub_1_1Type" id="r_a8509e88c621012319ed5f3facef4b432"><td class="memItemLeft" align="right" valign="top">virtual auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/df4/classbustub_1_1Type.html#a8509e88c621012319ed5f3facef4b432">GetData</a> (char *storage) -&gt; char *</td></tr>
+<tr class="separator:a8509e88c621012319ed5f3facef4b432 inherit pub_methods_classbustub_1_1Type"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-static-methods" name="pro-static-methods"></a>
+静态 Protected 成员函数</h2></td></tr>
+<tr class="memitem:ac834ed921fc0310c14b303b8efc24d72" id="r_ac834ed921fc0310c14b303b8efc24d72"><td class="memItemLeft" align="right" valign="top">static auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/def/classbustub_1_1NumericType.html#ac834ed921fc0310c14b303b8efc24d72">ValMod</a> (double x, double y) -&gt; double</td></tr>
+<tr class="separator:ac834ed921fc0310c14b303b8efc24d72"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="inherited" name="inherited"></a>
+额外继承的成员函数</h2></td></tr>
+<tr class="inherit_header pub_static_methods_classbustub_1_1Type"><td colspan="2" onclick="javascript:toggleInherit('pub_static_methods_classbustub_1_1Type')"><img src="../../closed.png" alt="-"/>&#160;静态 Public 成员函数 继承自 <a class="el" href="../../d9/df4/classbustub_1_1Type.html">bustub::Type</a></td></tr>
+<tr class="memitem:a028764f1e9904c114a4cd6cb870d432c inherit pub_static_methods_classbustub_1_1Type" id="r_a028764f1e9904c114a4cd6cb870d432c"><td class="memItemLeft" align="right" valign="top">static auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/df4/classbustub_1_1Type.html#a028764f1e9904c114a4cd6cb870d432c">GetTypeSize</a> (<a class="el" href="../../de/dda/namespacebustub.html#a49735e6748963f5515394bbb228f1fc8">TypeId</a> type_id) -&gt; uint64_t</td></tr>
+<tr class="separator:a028764f1e9904c114a4cd6cb870d432c inherit pub_static_methods_classbustub_1_1Type"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac03936a0881d6a4f790e4bc0ad330742 inherit pub_static_methods_classbustub_1_1Type" id="r_ac03936a0881d6a4f790e4bc0ad330742"><td class="memItemLeft" align="right" valign="top">static auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/df4/classbustub_1_1Type.html#ac03936a0881d6a4f790e4bc0ad330742">TypeIdToString</a> (<a class="el" href="../../de/dda/namespacebustub.html#a49735e6748963f5515394bbb228f1fc8">TypeId</a> type_id) -&gt; std::string</td></tr>
+<tr class="separator:ac03936a0881d6a4f790e4bc0ad330742 inherit pub_static_methods_classbustub_1_1Type"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a277bb540c2c7c04b5b00238627621a08 inherit pub_static_methods_classbustub_1_1Type" id="r_a277bb540c2c7c04b5b00238627621a08"><td class="memItemLeft" align="right" valign="top">static auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/df4/classbustub_1_1Type.html#a277bb540c2c7c04b5b00238627621a08">GetMinValue</a> (<a class="el" href="../../de/dda/namespacebustub.html#a49735e6748963f5515394bbb228f1fc8">TypeId</a> type_id) -&gt; <a class="el" href="../../d4/df7/classbustub_1_1Value.html">Value</a></td></tr>
+<tr class="separator:a277bb540c2c7c04b5b00238627621a08 inherit pub_static_methods_classbustub_1_1Type"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9cadc919b5ebe814ef6625aa24045061 inherit pub_static_methods_classbustub_1_1Type" id="r_a9cadc919b5ebe814ef6625aa24045061"><td class="memItemLeft" align="right" valign="top">static auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/df4/classbustub_1_1Type.html#a9cadc919b5ebe814ef6625aa24045061">GetMaxValue</a> (<a class="el" href="../../de/dda/namespacebustub.html#a49735e6748963f5515394bbb228f1fc8">TypeId</a> type_id) -&gt; <a class="el" href="../../d4/df7/classbustub_1_1Value.html">Value</a></td></tr>
+<tr class="separator:a9cadc919b5ebe814ef6625aa24045061 inherit pub_static_methods_classbustub_1_1Type"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a51560b36557014a6779849207f5bc3a8 inherit pub_static_methods_classbustub_1_1Type" id="r_a51560b36557014a6779849207f5bc3a8"><td class="memItemLeft" align="right" valign="top">static auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/df4/classbustub_1_1Type.html#a51560b36557014a6779849207f5bc3a8">GetInstance</a> (<a class="el" href="../../de/dda/namespacebustub.html#a49735e6748963f5515394bbb228f1fc8">TypeId</a> type_id) -&gt; <a class="el" href="../../d9/df4/classbustub_1_1Type.html">Type</a> *</td></tr>
+<tr class="separator:a51560b36557014a6779849207f5bc3a8 inherit pub_static_methods_classbustub_1_1Type"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pro_attribs_classbustub_1_1Type"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_classbustub_1_1Type')"><img src="../../closed.png" alt="-"/>&#160;Protected 属性 继承自 <a class="el" href="../../d9/df4/classbustub_1_1Type.html">bustub::Type</a></td></tr>
+<tr class="memitem:a5094c41dbedda64c3713f2ec4204e880 inherit pro_attribs_classbustub_1_1Type" id="r_a5094c41dbedda64c3713f2ec4204e880"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../de/dda/namespacebustub.html#a49735e6748963f5515394bbb228f1fc8">TypeId</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/df4/classbustub_1_1Type.html#a5094c41dbedda64c3713f2ec4204e880">type_id_</a></td></tr>
+<tr class="separator:a5094c41dbedda64c3713f2ec4204e880 inherit pro_attribs_classbustub_1_1Type"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pro_static_attribs_classbustub_1_1Type"><td colspan="2" onclick="javascript:toggleInherit('pro_static_attribs_classbustub_1_1Type')"><img src="../../closed.png" alt="-"/>&#160;静态 Protected 属性 继承自 <a class="el" href="../../d9/df4/classbustub_1_1Type.html">bustub::Type</a></td></tr>
+<tr class="memitem:a28390911dc0e55ff4a50653b8fbce6bf inherit pro_static_attribs_classbustub_1_1Type" id="r_a28390911dc0e55ff4a50653b8fbce6bf"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="../../d9/df4/classbustub_1_1Type.html">Type</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/df4/classbustub_1_1Type.html#a28390911dc0e55ff4a50653b8fbce6bf">k_types</a> [14]</td></tr>
+<tr class="separator:a28390911dc0e55ff4a50653b8fbce6bf inherit pro_static_attribs_classbustub_1_1Type"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">构造及析构函数说明</h2>
+<a id="a077d23741e2413110133ab71ef0328c1" name="a077d23741e2413110133ab71ef0328c1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a077d23741e2413110133ab71ef0328c1">&#9670;&#160;</a></span>NumericType()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bustub::NumericType::NumericType </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../de/dda/namespacebustub.html#a49735e6748963f5515394bbb228f1fc8">TypeId</a>&#160;</td>
+          <td class="paramname"><em>type</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">explicit</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a7193775a473620e1804ac36edd73793e" name="a7193775a473620e1804ac36edd73793e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7193775a473620e1804ac36edd73793e">&#9670;&#160;</a></span>~NumericType()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bustub::NumericType::~NumericType </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">default</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">成员函数说明</h2>
+<a id="a626aa130fabc858bec8460e6e51c8a9c" name="a626aa130fabc858bec8460e6e51c8a9c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a626aa130fabc858bec8460e6e51c8a9c">&#9670;&#160;</a></span>Add()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto bustub::NumericType::Add </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="../../d4/df7/classbustub_1_1Value.html">Value</a> &amp;&#160;</td>
+          <td class="paramname"><em>left</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="../../d4/df7/classbustub_1_1Value.html">Value</a> &amp;&#160;</td>
+          <td class="paramname"><em>right</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const -&gt;  <a class="el" href="../../d4/df7/classbustub_1_1Value.html">Value</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>重载 <a class="el" href="../../d9/df4/classbustub_1_1Type.html#aa6489b523874d775da9e4477ef3dbc09">bustub::Type</a> .</p>
+
+<p>在 <a class="el" href="../../d9/d45/classbustub_1_1BigintType.html#ac7f6ebec43b04c8ce426c78e0be3acf0">bustub::BigintType</a>, <a class="el" href="../../de/d8f/classbustub_1_1DecimalType.html#a01491f7cb7eace25d76e6af346b925be">bustub::DecimalType</a>, <a class="el" href="../../d7/d0d/classbustub_1_1IntegerType.html#ac62aa3073cc5609fabfa0fee6fe40c2e">bustub::IntegerType</a>, <a class="el" href="../../dd/dc2/classbustub_1_1SmallintType.html#a49cfa56a3560d531c048d8dcec39923b">bustub::SmallintType</a>, <a class="el" href="../../d2/d1b/classbustub_1_1TinyintType.html#af9eabc99596c7c4e0e4dff6c9afbda95">bustub::TinyintType</a> , 以及 <a class="el" href="../../db/d01/classbustub_1_1IntegerParentType.html#a817de5c4a5ff2f13a7d2cb958b3b6a96">bustub::IntegerParentType</a> 内被实现.</p>
+
+</div>
+</div>
+<a id="a8b7343f81637537cd5ea8fe4ad9f0433" name="a8b7343f81637537cd5ea8fe4ad9f0433"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8b7343f81637537cd5ea8fe4ad9f0433">&#9670;&#160;</a></span>Divide()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto bustub::NumericType::Divide </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="../../d4/df7/classbustub_1_1Value.html">Value</a> &amp;&#160;</td>
+          <td class="paramname"><em>left</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="../../d4/df7/classbustub_1_1Value.html">Value</a> &amp;&#160;</td>
+          <td class="paramname"><em>right</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const -&gt;  <a class="el" href="../../d4/df7/classbustub_1_1Value.html">Value</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>重载 <a class="el" href="../../d9/df4/classbustub_1_1Type.html#a49a435389c57d5d28e7631b643b2df48">bustub::Type</a> .</p>
+
+<p>在 <a class="el" href="../../d9/d45/classbustub_1_1BigintType.html#a2ee7a1d87019bc1fc52fe56a88e316bf">bustub::BigintType</a>, <a class="el" href="../../de/d8f/classbustub_1_1DecimalType.html#a1dedfec91024bd20b8cce6ea08a0c8d6">bustub::DecimalType</a>, <a class="el" href="../../d7/d0d/classbustub_1_1IntegerType.html#a0278dcb1fb308286ba0d4744b7cf5eb1">bustub::IntegerType</a>, <a class="el" href="../../dd/dc2/classbustub_1_1SmallintType.html#ab31cf6503e85965fcdaea175767f8ca8">bustub::SmallintType</a>, <a class="el" href="../../d2/d1b/classbustub_1_1TinyintType.html#a01485021b7bdb5feb903389eac944fae">bustub::TinyintType</a> , 以及 <a class="el" href="../../db/d01/classbustub_1_1IntegerParentType.html#aeb71cd76b099ae6cdfd767ef0817eacf">bustub::IntegerParentType</a> 内被实现.</p>
+
+</div>
+</div>
+<a id="aba9158daf798c0150aa26f5a3d916ac5" name="aba9158daf798c0150aa26f5a3d916ac5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aba9158daf798c0150aa26f5a3d916ac5">&#9670;&#160;</a></span>IsZero()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto bustub::NumericType::IsZero </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="../../d4/df7/classbustub_1_1Value.html">Value</a> &amp;&#160;</td>
+          <td class="paramname"><em>val</em></td><td>)</td>
+          <td> const -&gt;  bool</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>重载 <a class="el" href="../../d9/df4/classbustub_1_1Type.html#a60665236604e319174522fc5d2357c0d">bustub::Type</a> .</p>
+
+<p>在 <a class="el" href="../../d9/d45/classbustub_1_1BigintType.html#aeb5858f0df665f1ff9f93ae3448044c0">bustub::BigintType</a>, <a class="el" href="../../de/d8f/classbustub_1_1DecimalType.html#a3da42d1b6e42c4637d7698f30b63d76e">bustub::DecimalType</a>, <a class="el" href="../../d7/d0d/classbustub_1_1IntegerType.html#addccdd09c5f461622cbf09fb42c3618f">bustub::IntegerType</a>, <a class="el" href="../../dd/dc2/classbustub_1_1SmallintType.html#aada430be1a8e421203b3176618f42ebe">bustub::SmallintType</a>, <a class="el" href="../../d2/d1b/classbustub_1_1TinyintType.html#a7368d9fc3957778b2dbb710be20d5fdd">bustub::TinyintType</a> , 以及 <a class="el" href="../../db/d01/classbustub_1_1IntegerParentType.html#aa9f3155abb8cddadd57a406dc6c4c06a">bustub::IntegerParentType</a> 内被实现.</p>
+
+</div>
+</div>
+<a id="ab6fedd370f8ce376468cf07c9e576383" name="ab6fedd370f8ce376468cf07c9e576383"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab6fedd370f8ce376468cf07c9e576383">&#9670;&#160;</a></span>Max()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto bustub::NumericType::Max </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="../../d4/df7/classbustub_1_1Value.html">Value</a> &amp;&#160;</td>
+          <td class="paramname"><em>left</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="../../d4/df7/classbustub_1_1Value.html">Value</a> &amp;&#160;</td>
+          <td class="paramname"><em>right</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const -&gt;  <a class="el" href="../../d4/df7/classbustub_1_1Value.html">Value</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>重载 <a class="el" href="../../d9/df4/classbustub_1_1Type.html#afae7c9169d3fbc5e11640913f0a15abf">bustub::Type</a> .</p>
+
+<p>在 <a class="el" href="../../de/d8f/classbustub_1_1DecimalType.html#a47dbe470a110c1b28f3a8a802a1c2053">bustub::DecimalType</a> , 以及 <a class="el" href="../../db/d01/classbustub_1_1IntegerParentType.html#ae36954d5fe3a9fb33b56764aa719414e">bustub::IntegerParentType</a> 内被实现.</p>
+
+</div>
+</div>
+<a id="ad6d31d318301ba9be8cb1cefffa5b14e" name="ad6d31d318301ba9be8cb1cefffa5b14e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad6d31d318301ba9be8cb1cefffa5b14e">&#9670;&#160;</a></span>Min()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto bustub::NumericType::Min </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="../../d4/df7/classbustub_1_1Value.html">Value</a> &amp;&#160;</td>
+          <td class="paramname"><em>left</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="../../d4/df7/classbustub_1_1Value.html">Value</a> &amp;&#160;</td>
+          <td class="paramname"><em>right</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const -&gt;  <a class="el" href="../../d4/df7/classbustub_1_1Value.html">Value</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>重载 <a class="el" href="../../d9/df4/classbustub_1_1Type.html#a4f890e2b47da47e5acb2dec6b3b45ace">bustub::Type</a> .</p>
+
+<p>在 <a class="el" href="../../de/d8f/classbustub_1_1DecimalType.html#a4eda5ee11dcccb0263dfff8516be5279">bustub::DecimalType</a> , 以及 <a class="el" href="../../db/d01/classbustub_1_1IntegerParentType.html#a033860cdbc0cc7a336ddd0fb282f101e">bustub::IntegerParentType</a> 内被实现.</p>
+
+</div>
+</div>
+<a id="a1597d4a2e302a64d5503e0b6d89770f1" name="a1597d4a2e302a64d5503e0b6d89770f1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1597d4a2e302a64d5503e0b6d89770f1">&#9670;&#160;</a></span>Modulo()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto bustub::NumericType::Modulo </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="../../d4/df7/classbustub_1_1Value.html">Value</a> &amp;&#160;</td>
+          <td class="paramname"><em>left</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="../../d4/df7/classbustub_1_1Value.html">Value</a> &amp;&#160;</td>
+          <td class="paramname"><em>right</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const -&gt;  <a class="el" href="../../d4/df7/classbustub_1_1Value.html">Value</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>重载 <a class="el" href="../../d9/df4/classbustub_1_1Type.html#a96237e77ddc060834d8d25bacbd7ac01">bustub::Type</a> .</p>
+
+<p>在 <a class="el" href="../../d9/d45/classbustub_1_1BigintType.html#ac15d66d1c3da8a175f0df8aeda513b21">bustub::BigintType</a>, <a class="el" href="../../de/d8f/classbustub_1_1DecimalType.html#ac0dc98ab43da14ff366810a07ea5afb9">bustub::DecimalType</a>, <a class="el" href="../../d7/d0d/classbustub_1_1IntegerType.html#add010af3a3e98ce5e8fd419548d0cbf7">bustub::IntegerType</a>, <a class="el" href="../../dd/dc2/classbustub_1_1SmallintType.html#a4d3622e693021a3f4851fe4db064f08b">bustub::SmallintType</a>, <a class="el" href="../../d2/d1b/classbustub_1_1TinyintType.html#a0c3ec2fa30af321a738a3f51f31465dd">bustub::TinyintType</a> , 以及 <a class="el" href="../../db/d01/classbustub_1_1IntegerParentType.html#a6c5a087dc32896d3541666baa3e49bba">bustub::IntegerParentType</a> 内被实现.</p>
+
+</div>
+</div>
+<a id="a617b43379a500467819db99d89bf2d0d" name="a617b43379a500467819db99d89bf2d0d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a617b43379a500467819db99d89bf2d0d">&#9670;&#160;</a></span>Multiply()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto bustub::NumericType::Multiply </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="../../d4/df7/classbustub_1_1Value.html">Value</a> &amp;&#160;</td>
+          <td class="paramname"><em>left</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="../../d4/df7/classbustub_1_1Value.html">Value</a> &amp;&#160;</td>
+          <td class="paramname"><em>right</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const -&gt;  <a class="el" href="../../d4/df7/classbustub_1_1Value.html">Value</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>重载 <a class="el" href="../../d9/df4/classbustub_1_1Type.html#ad77b963bcb60c691cb89eb43ae3adb35">bustub::Type</a> .</p>
+
+<p>在 <a class="el" href="../../d9/d45/classbustub_1_1BigintType.html#ab0933bc4bc2afa877b21686a7c759758">bustub::BigintType</a>, <a class="el" href="../../de/d8f/classbustub_1_1DecimalType.html#a9b78e5e45a4a915d8c55713201475924">bustub::DecimalType</a>, <a class="el" href="../../d7/d0d/classbustub_1_1IntegerType.html#a026536632f52a04f568aed63f7b52fcf">bustub::IntegerType</a>, <a class="el" href="../../dd/dc2/classbustub_1_1SmallintType.html#a6b7ac7f0f6770d3583ef23aba5785caa">bustub::SmallintType</a>, <a class="el" href="../../d2/d1b/classbustub_1_1TinyintType.html#a7938fc503de4cc31fd40300aa8c43070">bustub::TinyintType</a> , 以及 <a class="el" href="../../db/d01/classbustub_1_1IntegerParentType.html#a2efa7739507d89e04706521a54734134">bustub::IntegerParentType</a> 内被实现.</p>
+
+</div>
+</div>
+<a id="a3ff4e754a94741eb94a8252cceb7c106" name="a3ff4e754a94741eb94a8252cceb7c106"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3ff4e754a94741eb94a8252cceb7c106">&#9670;&#160;</a></span>OperateNull()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto bustub::NumericType::OperateNull </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="../../d4/df7/classbustub_1_1Value.html">Value</a> &amp;&#160;</td>
+          <td class="paramname"><em>left</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="../../d4/df7/classbustub_1_1Value.html">Value</a> &amp;&#160;</td>
+          <td class="paramname"><em>right</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const -&gt;  <a class="el" href="../../d4/df7/classbustub_1_1Value.html">Value</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>重载 <a class="el" href="../../d9/df4/classbustub_1_1Type.html#acdbc8bf9cfb04c448a9481a751706482">bustub::Type</a> .</p>
+
+<p>在 <a class="el" href="../../d9/d45/classbustub_1_1BigintType.html#aea2acc215234a5b8dfbedf933287cd5a">bustub::BigintType</a>, <a class="el" href="../../de/d8f/classbustub_1_1DecimalType.html#a413d4a9bdcd8e447187b826c3a51d0b1">bustub::DecimalType</a>, <a class="el" href="../../d7/d0d/classbustub_1_1IntegerType.html#ae29c85d44002238ab91e355c8277677d">bustub::IntegerType</a>, <a class="el" href="../../dd/dc2/classbustub_1_1SmallintType.html#a74e4eca0ba2113b4fe326b8df6d686a9">bustub::SmallintType</a>, <a class="el" href="../../d2/d1b/classbustub_1_1TinyintType.html#a335e794f6c8abe5342f05bfe8d9a62e6">bustub::TinyintType</a> , 以及 <a class="el" href="../../db/d01/classbustub_1_1IntegerParentType.html#a593ca9adc223a3ce91f496b245e938cf">bustub::IntegerParentType</a> 内被实现.</p>
+
+</div>
+</div>
+<a id="a4473eae69933b2d322321f713502e9ac" name="a4473eae69933b2d322321f713502e9ac"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4473eae69933b2d322321f713502e9ac">&#9670;&#160;</a></span>Sqrt()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto bustub::NumericType::Sqrt </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="../../d4/df7/classbustub_1_1Value.html">Value</a> &amp;&#160;</td>
+          <td class="paramname"><em>val</em></td><td>)</td>
+          <td> const -&gt;  <a class="el" href="../../d4/df7/classbustub_1_1Value.html">Value</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>重载 <a class="el" href="../../d9/df4/classbustub_1_1Type.html#a94fca08f9cfd6fd9cc0f19eb75e84bff">bustub::Type</a> .</p>
+
+<p>在 <a class="el" href="../../d9/d45/classbustub_1_1BigintType.html#a1beb32e6692f0674bc00672bd01bbc82">bustub::BigintType</a>, <a class="el" href="../../de/d8f/classbustub_1_1DecimalType.html#aa6f37c5ba09c8991d67776dd02abd584">bustub::DecimalType</a>, <a class="el" href="../../d7/d0d/classbustub_1_1IntegerType.html#a759d3a0c2a33b205cc3058619d01eedd">bustub::IntegerType</a>, <a class="el" href="../../dd/dc2/classbustub_1_1SmallintType.html#afe123b6cff0b24b1b198584a8f78d6a3">bustub::SmallintType</a>, <a class="el" href="../../d2/d1b/classbustub_1_1TinyintType.html#a90bde48b7070eafa09b5d37469b185f5">bustub::TinyintType</a> , 以及 <a class="el" href="../../db/d01/classbustub_1_1IntegerParentType.html#afa9a12658c8a2c3773a83526538f045a">bustub::IntegerParentType</a> 内被实现.</p>
+
+</div>
+</div>
+<a id="a439225c26d66749a33669846f566f092" name="a439225c26d66749a33669846f566f092"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a439225c26d66749a33669846f566f092">&#9670;&#160;</a></span>Subtract()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto bustub::NumericType::Subtract </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="../../d4/df7/classbustub_1_1Value.html">Value</a> &amp;&#160;</td>
+          <td class="paramname"><em>left</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="../../d4/df7/classbustub_1_1Value.html">Value</a> &amp;&#160;</td>
+          <td class="paramname"><em>right</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const -&gt;  <a class="el" href="../../d4/df7/classbustub_1_1Value.html">Value</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>重载 <a class="el" href="../../d9/df4/classbustub_1_1Type.html#a1f49f60e3200aa7666423753b4a5ecbd">bustub::Type</a> .</p>
+
+<p>在 <a class="el" href="../../d9/d45/classbustub_1_1BigintType.html#a38314858debb3d0e18a0ef6a1aadd551">bustub::BigintType</a>, <a class="el" href="../../de/d8f/classbustub_1_1DecimalType.html#a30a476f82bf4b05e5e259cd6bd07f425">bustub::DecimalType</a>, <a class="el" href="../../d7/d0d/classbustub_1_1IntegerType.html#a582736cafd2189068772b70b4286e16d">bustub::IntegerType</a>, <a class="el" href="../../dd/dc2/classbustub_1_1SmallintType.html#a620e2e88621282f24749c75fa5378140">bustub::SmallintType</a>, <a class="el" href="../../d2/d1b/classbustub_1_1TinyintType.html#a167b0518bc515af8e849b2b3de9087e1">bustub::TinyintType</a> , 以及 <a class="el" href="../../db/d01/classbustub_1_1IntegerParentType.html#a0857d2000f99dd793afa6bed32a81134">bustub::IntegerParentType</a> 内被实现.</p>
+
+</div>
+</div>
+<a id="ac834ed921fc0310c14b303b8efc24d72" name="ac834ed921fc0310c14b303b8efc24d72"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac834ed921fc0310c14b303b8efc24d72">&#9670;&#160;</a></span>ValMod()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static auto bustub::NumericType::ValMod </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>y</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> -&gt; double </td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<hr/>该类的文档由以下文件生成:<ul>
+<li>src/include/type/<a class="el" href="../../d4/d5c/numeric__type_8h_source.html">numeric_type.h</a></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
+</small></address>
+</body>
+</html>

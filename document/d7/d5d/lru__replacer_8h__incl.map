@@ -1,0 +1,20 @@
+<map id="src/include/buffer/lru_replacer.h" name="src/include/buffer/lru_replacer.h">
+<area shape="rect" id="Node000001" title=" " alt="" coords="125,5,259,45"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,93,48,119"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="154,48,62,91,59,86,151,43"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="72,93,136,119"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="172,48,129,86,126,82,169,44"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="161,93,223,119"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="195,46,195,79,189,79,189,46"/>
+<area shape="rect" id="Node000005" href="$db/d70/replacer_8h.html" title=" " alt="" coords="248,93,376,119"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="223,43,284,84,281,88,220,48"/>
+<area shape="rect" id="Node000006" href="$db/d16/config_8h.html" title=" " alt="" coords="295,167,430,192"/>
+<area shape="poly" id="edge9_Node000001_Node000006" title=" " alt="" coords="260,28,295,35,331,47,364,65,390,92,396,108,395,125,382,156,377,154,390,124,391,109,386,95,360,69,329,51,294,40,259,33"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="323,117,349,154,344,157,318,121"/>
+<area shape="rect" id="Node000007" title=" " alt="" coords="239,240,305,265"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="350,194,299,233,296,229,346,190"/>
+<area shape="rect" id="Node000008" title=" " alt="" coords="329,240,396,265"/>
+<area shape="poly" id="edge7_Node000006_Node000008" title=" " alt="" coords="365,192,365,226,360,226,360,192"/>
+<area shape="rect" id="Node000009" title=" " alt="" coords="420,240,487,265"/>
+<area shape="poly" id="edge8_Node000006_Node000009" title=" " alt="" coords="379,190,429,229,426,233,376,194"/>
+</map>

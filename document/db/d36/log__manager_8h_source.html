@@ -1,0 +1,191 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>数据库系统 CMU15-445/645: src/include/recovery/log_manager.h 源文件</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/searchdata.js"></script>
+<script type="text/javascript" src="../../search/search.js"></script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">数据库系统 CMU15-445/645<span id="projectnumber">&#160;1.0.0</span>
+   </div>
+   <div id="projectbrief">CMU15-445/645 是基于现代 C++ 开发的支持并发操作的简单 SQL 操作的单机数据库</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.9.8 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "../../search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('../../',true,false,'search.php','搜索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function() { init_codefold(1); });
+/* @license-end */
+</script>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="../../dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="../../dir_b0856f6b0d80ccb263b2f415c91f9e17.html">include</a></li><li class="navelem"><a class="el" href="../../dir_babafc9c8e7694ca3856a36d011a673d.html">recovery</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle"><div class="title">log_manager.h</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="../../db/d36/log__manager_8h.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">//===----------------------------------------------------------------------===//</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="comment">//</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="comment">//                         BusTub</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment">//</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="comment">// log_manager.h</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="comment">//</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="comment">// Identification: src/include/recovery/log_manager.h</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="comment">//</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="comment">// Copyright (c) 2015-2019, Carnegie Mellon University Database Group</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="comment">//</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="comment">//===----------------------------------------------------------------------===//</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#pragma once</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="preprocessor">#include &lt;algorithm&gt;</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="preprocessor">#include &lt;condition_variable&gt;</span>  <span class="comment">// NOLINT</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="preprocessor">#include &lt;future&gt;</span>              <span class="comment">// NOLINT</span></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="preprocessor">#include &lt;mutex&gt;</span>               <span class="comment">// NOLINT</span></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span> </div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="preprocessor">#include &quot;<a class="code" href="../../db/d40/log__record_8h.html">recovery/log_record.h</a>&quot;</span></div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="preprocessor">#include &quot;<a class="code" href="../../d6/d30/disk__manager_8h.html">storage/disk/disk_manager.h</a>&quot;</span></div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="keyword">namespace </span><a class="code hl_namespace" href="../../de/dda/namespacebustub.html">bustub</a> {</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span> </div>
+<div class="foldopen" id="foldopen00029" data-start="{" data-end="};">
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno"><a class="line" href="../../d7/d4e/classbustub_1_1LogManager.html">   29</a></span><span class="keyword">class </span><a class="code hl_class" href="../../d7/d4e/classbustub_1_1LogManager.html">LogManager</a> {</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span> <span class="keyword">public</span>:</div>
+<div class="foldopen" id="foldopen00031" data-start="{" data-end="}">
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno"><a class="line" href="../../d7/d4e/classbustub_1_1LogManager.html#a977736471c8af225c05910c73c406d1a">   31</a></span>  <span class="keyword">explicit</span> <a class="code hl_function" href="../../d7/d4e/classbustub_1_1LogManager.html#a977736471c8af225c05910c73c406d1a">LogManager</a>(<a class="code hl_class" href="../../da/dfe/classbustub_1_1DiskManager.html">DiskManager</a> *disk_manager)</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>      : <a class="code hl_variable" href="../../d7/d4e/classbustub_1_1LogManager.html#a759ca3c82bff9fcedaf0b881e48b939c">next_lsn_</a>(0), <a class="code hl_variable" href="../../d7/d4e/classbustub_1_1LogManager.html#a61f6f2f521c3db1e99d54c23d6874a29">persistent_lsn_</a>(<a class="code hl_variable" href="../../de/dda/namespacebustub.html#a66748b38863ce1e7a8d7fcd374904def">INVALID_LSN</a>), disk_manager_(disk_manager) {</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    <a class="code hl_variable" href="../../d7/d4e/classbustub_1_1LogManager.html#aad02f1cfa00311a10f2346bb339aa77b">log_buffer_</a> = <span class="keyword">new</span> <span class="keywordtype">char</span>[<a class="code hl_variable" href="../../de/dda/namespacebustub.html#a17672d19626e716dd42fa2960b9b29be">LOG_BUFFER_SIZE</a>];</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    <a class="code hl_variable" href="../../d7/d4e/classbustub_1_1LogManager.html#a6a3255c0fab090a6ae88a3f7d43be7fa">flush_buffer_</a> = <span class="keyword">new</span> <span class="keywordtype">char</span>[<a class="code hl_variable" href="../../de/dda/namespacebustub.html#a17672d19626e716dd42fa2960b9b29be">LOG_BUFFER_SIZE</a>];</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>  }</div>
+</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span> </div>
+<div class="foldopen" id="foldopen00037" data-start="{" data-end="}">
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno"><a class="line" href="../../d7/d4e/classbustub_1_1LogManager.html#a458fb8788f0a56e48f8c119c54eab3a7">   37</a></span>  <a class="code hl_function" href="../../d7/d4e/classbustub_1_1LogManager.html#a458fb8788f0a56e48f8c119c54eab3a7">~LogManager</a>() {</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    <span class="keyword">delete</span>[] <a class="code hl_variable" href="../../d7/d4e/classbustub_1_1LogManager.html#aad02f1cfa00311a10f2346bb339aa77b">log_buffer_</a>;</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    <span class="keyword">delete</span>[] <a class="code hl_variable" href="../../d7/d4e/classbustub_1_1LogManager.html#a6a3255c0fab090a6ae88a3f7d43be7fa">flush_buffer_</a>;</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    <a class="code hl_variable" href="../../d7/d4e/classbustub_1_1LogManager.html#aad02f1cfa00311a10f2346bb339aa77b">log_buffer_</a> = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    <a class="code hl_variable" href="../../d7/d4e/classbustub_1_1LogManager.html#a6a3255c0fab090a6ae88a3f7d43be7fa">flush_buffer_</a> = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>  }</div>
+</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span> </div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="../../d7/d4e/classbustub_1_1LogManager.html#aed5cfe542a06ac552fa9af09df523456">RunFlushThread</a>();</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="../../d7/d4e/classbustub_1_1LogManager.html#a8662153d94b4c02b5993c5966cd5b8be">StopFlushThread</a>();</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span> </div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>  <span class="keyword">auto</span> <a class="code hl_function" href="../../d7/d4e/classbustub_1_1LogManager.html#a545e09c960cd9c2b29a771da1428e527">AppendLogRecord</a>(<a class="code hl_class" href="../../d8/de4/classbustub_1_1LogRecord.html">LogRecord</a> *log_record) -&gt; <a class="code hl_typedef" href="../../de/dda/namespacebustub.html#a8ceb3d9746c8621a11887b2754e385f2">lsn_t</a>;</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span> </div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno"><a class="line" href="../../d7/d4e/classbustub_1_1LogManager.html#a8b026c8d3aac1544f91f6a86ad1114b0">   49</a></span>  <span class="keyword">inline</span> <span class="keyword">auto</span> <a class="code hl_function" href="../../d7/d4e/classbustub_1_1LogManager.html#a8b026c8d3aac1544f91f6a86ad1114b0">GetNextLSN</a>() -&gt; <a class="code hl_typedef" href="../../de/dda/namespacebustub.html#a8ceb3d9746c8621a11887b2754e385f2">lsn_t</a> { <span class="keywordflow">return</span> <a class="code hl_variable" href="../../d7/d4e/classbustub_1_1LogManager.html#a759ca3c82bff9fcedaf0b881e48b939c">next_lsn_</a>; }</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno"><a class="line" href="../../d7/d4e/classbustub_1_1LogManager.html#a1791dc98b2a3a867727d45ef3993d131">   50</a></span>  <span class="keyword">inline</span> <span class="keyword">auto</span> <a class="code hl_function" href="../../d7/d4e/classbustub_1_1LogManager.html#a1791dc98b2a3a867727d45ef3993d131">GetPersistentLSN</a>() -&gt; <a class="code hl_typedef" href="../../de/dda/namespacebustub.html#a8ceb3d9746c8621a11887b2754e385f2">lsn_t</a> { <span class="keywordflow">return</span> <a class="code hl_variable" href="../../d7/d4e/classbustub_1_1LogManager.html#a61f6f2f521c3db1e99d54c23d6874a29">persistent_lsn_</a>; }</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno"><a class="line" href="../../d7/d4e/classbustub_1_1LogManager.html#a2895715933995bb794729404e4d60ac0">   51</a></span>  <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code hl_function" href="../../d7/d4e/classbustub_1_1LogManager.html#a2895715933995bb794729404e4d60ac0">SetPersistentLSN</a>(<a class="code hl_typedef" href="../../de/dda/namespacebustub.html#a8ceb3d9746c8621a11887b2754e385f2">lsn_t</a> lsn) { <a class="code hl_variable" href="../../d7/d4e/classbustub_1_1LogManager.html#a61f6f2f521c3db1e99d54c23d6874a29">persistent_lsn_</a> = lsn; }</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno"><a class="line" href="../../d7/d4e/classbustub_1_1LogManager.html#a7d3cad673419b2ef3f0edb645c79782a">   52</a></span>  <span class="keyword">inline</span> <span class="keyword">auto</span> <a class="code hl_function" href="../../d7/d4e/classbustub_1_1LogManager.html#a7d3cad673419b2ef3f0edb645c79782a">GetLogBuffer</a>() -&gt; <span class="keywordtype">char</span> * { <span class="keywordflow">return</span> <a class="code hl_variable" href="../../d7/d4e/classbustub_1_1LogManager.html#aad02f1cfa00311a10f2346bb339aa77b">log_buffer_</a>; }</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span> </div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span> <span class="keyword">private</span>:</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>  <span class="comment">// TODO(students): you may add your own member variables</span></div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span> </div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno"><a class="line" href="../../d7/d4e/classbustub_1_1LogManager.html#a759ca3c82bff9fcedaf0b881e48b939c">   58</a></span>  std::atomic&lt;lsn_t&gt; <a class="code hl_variable" href="../../d7/d4e/classbustub_1_1LogManager.html#a759ca3c82bff9fcedaf0b881e48b939c">next_lsn_</a>;</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno"><a class="line" href="../../d7/d4e/classbustub_1_1LogManager.html#a61f6f2f521c3db1e99d54c23d6874a29">   60</a></span>  std::atomic&lt;lsn_t&gt; <a class="code hl_variable" href="../../d7/d4e/classbustub_1_1LogManager.html#a61f6f2f521c3db1e99d54c23d6874a29">persistent_lsn_</a>;</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span> </div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno"><a class="line" href="../../d7/d4e/classbustub_1_1LogManager.html#aad02f1cfa00311a10f2346bb339aa77b">   62</a></span>  <span class="keywordtype">char</span> *<a class="code hl_variable" href="../../d7/d4e/classbustub_1_1LogManager.html#aad02f1cfa00311a10f2346bb339aa77b">log_buffer_</a>;</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno"><a class="line" href="../../d7/d4e/classbustub_1_1LogManager.html#a6a3255c0fab090a6ae88a3f7d43be7fa">   63</a></span>  <span class="keywordtype">char</span> *<a class="code hl_variable" href="../../d7/d4e/classbustub_1_1LogManager.html#a6a3255c0fab090a6ae88a3f7d43be7fa">flush_buffer_</a>;</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span> </div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno"><a class="line" href="../../d7/d4e/classbustub_1_1LogManager.html#ad8b1ddc101109a11b78649befcf32735">   65</a></span>  std::mutex <a class="code hl_variable" href="../../d7/d4e/classbustub_1_1LogManager.html#ad8b1ddc101109a11b78649befcf32735">latch_</a>;</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span> </div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno"><a class="line" href="../../d7/d4e/classbustub_1_1LogManager.html#a09ac4fd57a500360b598d62e99f84cb4">   67</a></span>  std::thread *flush_thread_ <a class="code hl_function" href="../../d7/d4e/classbustub_1_1LogManager.html#a09ac4fd57a500360b598d62e99f84cb4">__attribute__</a>((__unused__));</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span> </div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno"><a class="line" href="../../d7/d4e/classbustub_1_1LogManager.html#a4b64133b6fb4b9a6dc91bfc9a36cca7f">   69</a></span>  std::condition_variable <a class="code hl_variable" href="../../d7/d4e/classbustub_1_1LogManager.html#a4b64133b6fb4b9a6dc91bfc9a36cca7f">cv_</a>;</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span> </div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno"><a class="line" href="../../d7/d4e/classbustub_1_1LogManager.html#a3742b96eb2ff9d5fd044d8fe63504e85">   71</a></span>  <a class="code hl_class" href="../../da/dfe/classbustub_1_1DiskManager.html">DiskManager</a> *disk_manager_ <a class="code hl_function" href="../../d7/d4e/classbustub_1_1LogManager.html#a3742b96eb2ff9d5fd044d8fe63504e85">__attribute__</a>((__unused__));</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>};</div>
+</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span> </div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>}  <span class="comment">// namespace bustub</span></div>
+<div class="ttc" id="aclassbustub_1_1DiskManager_html"><div class="ttname"><a href="../../da/dfe/classbustub_1_1DiskManager.html">bustub::DiskManager</a></div><div class="ttdef"><b>Definition</b> disk_manager.h:28</div></div>
+<div class="ttc" id="aclassbustub_1_1LogManager_html"><div class="ttname"><a href="../../d7/d4e/classbustub_1_1LogManager.html">bustub::LogManager</a></div><div class="ttdef"><b>Definition</b> log_manager.h:29</div></div>
+<div class="ttc" id="aclassbustub_1_1LogManager_html_a09ac4fd57a500360b598d62e99f84cb4"><div class="ttname"><a href="../../d7/d4e/classbustub_1_1LogManager.html#a09ac4fd57a500360b598d62e99f84cb4">bustub::LogManager::__attribute__</a></div><div class="ttdeci">std::thread *flush_thread_ __attribute__((__unused__))</div></div>
+<div class="ttc" id="aclassbustub_1_1LogManager_html_a1791dc98b2a3a867727d45ef3993d131"><div class="ttname"><a href="../../d7/d4e/classbustub_1_1LogManager.html#a1791dc98b2a3a867727d45ef3993d131">bustub::LogManager::GetPersistentLSN</a></div><div class="ttdeci">auto GetPersistentLSN() -&gt; lsn_t</div><div class="ttdef"><b>Definition</b> log_manager.h:50</div></div>
+<div class="ttc" id="aclassbustub_1_1LogManager_html_a2895715933995bb794729404e4d60ac0"><div class="ttname"><a href="../../d7/d4e/classbustub_1_1LogManager.html#a2895715933995bb794729404e4d60ac0">bustub::LogManager::SetPersistentLSN</a></div><div class="ttdeci">void SetPersistentLSN(lsn_t lsn)</div><div class="ttdef"><b>Definition</b> log_manager.h:51</div></div>
+<div class="ttc" id="aclassbustub_1_1LogManager_html_a3742b96eb2ff9d5fd044d8fe63504e85"><div class="ttname"><a href="../../d7/d4e/classbustub_1_1LogManager.html#a3742b96eb2ff9d5fd044d8fe63504e85">bustub::LogManager::__attribute__</a></div><div class="ttdeci">DiskManager *disk_manager_ __attribute__((__unused__))</div></div>
+<div class="ttc" id="aclassbustub_1_1LogManager_html_a458fb8788f0a56e48f8c119c54eab3a7"><div class="ttname"><a href="../../d7/d4e/classbustub_1_1LogManager.html#a458fb8788f0a56e48f8c119c54eab3a7">bustub::LogManager::~LogManager</a></div><div class="ttdeci">~LogManager()</div><div class="ttdef"><b>Definition</b> log_manager.h:37</div></div>
+<div class="ttc" id="aclassbustub_1_1LogManager_html_a4b64133b6fb4b9a6dc91bfc9a36cca7f"><div class="ttname"><a href="../../d7/d4e/classbustub_1_1LogManager.html#a4b64133b6fb4b9a6dc91bfc9a36cca7f">bustub::LogManager::cv_</a></div><div class="ttdeci">std::condition_variable cv_</div><div class="ttdef"><b>Definition</b> log_manager.h:69</div></div>
+<div class="ttc" id="aclassbustub_1_1LogManager_html_a545e09c960cd9c2b29a771da1428e527"><div class="ttname"><a href="../../d7/d4e/classbustub_1_1LogManager.html#a545e09c960cd9c2b29a771da1428e527">bustub::LogManager::AppendLogRecord</a></div><div class="ttdeci">auto AppendLogRecord(LogRecord *log_record) -&gt; lsn_t</div><div class="ttdef"><b>Definition</b> log_manager.cpp:52</div></div>
+<div class="ttc" id="aclassbustub_1_1LogManager_html_a61f6f2f521c3db1e99d54c23d6874a29"><div class="ttname"><a href="../../d7/d4e/classbustub_1_1LogManager.html#a61f6f2f521c3db1e99d54c23d6874a29">bustub::LogManager::persistent_lsn_</a></div><div class="ttdeci">std::atomic&lt; lsn_t &gt; persistent_lsn_</div><div class="ttdef"><b>Definition</b> log_manager.h:60</div></div>
+<div class="ttc" id="aclassbustub_1_1LogManager_html_a6a3255c0fab090a6ae88a3f7d43be7fa"><div class="ttname"><a href="../../d7/d4e/classbustub_1_1LogManager.html#a6a3255c0fab090a6ae88a3f7d43be7fa">bustub::LogManager::flush_buffer_</a></div><div class="ttdeci">char * flush_buffer_</div><div class="ttdef"><b>Definition</b> log_manager.h:63</div></div>
+<div class="ttc" id="aclassbustub_1_1LogManager_html_a759ca3c82bff9fcedaf0b881e48b939c"><div class="ttname"><a href="../../d7/d4e/classbustub_1_1LogManager.html#a759ca3c82bff9fcedaf0b881e48b939c">bustub::LogManager::next_lsn_</a></div><div class="ttdeci">std::atomic&lt; lsn_t &gt; next_lsn_</div><div class="ttdef"><b>Definition</b> log_manager.h:58</div></div>
+<div class="ttc" id="aclassbustub_1_1LogManager_html_a7d3cad673419b2ef3f0edb645c79782a"><div class="ttname"><a href="../../d7/d4e/classbustub_1_1LogManager.html#a7d3cad673419b2ef3f0edb645c79782a">bustub::LogManager::GetLogBuffer</a></div><div class="ttdeci">auto GetLogBuffer() -&gt; char *</div><div class="ttdef"><b>Definition</b> log_manager.h:52</div></div>
+<div class="ttc" id="aclassbustub_1_1LogManager_html_a8662153d94b4c02b5993c5966cd5b8be"><div class="ttname"><a href="../../d7/d4e/classbustub_1_1LogManager.html#a8662153d94b4c02b5993c5966cd5b8be">bustub::LogManager::StopFlushThread</a></div><div class="ttdeci">void StopFlushThread()</div><div class="ttdef"><b>Definition</b> log_manager.cpp:30</div></div>
+<div class="ttc" id="aclassbustub_1_1LogManager_html_a8b026c8d3aac1544f91f6a86ad1114b0"><div class="ttname"><a href="../../d7/d4e/classbustub_1_1LogManager.html#a8b026c8d3aac1544f91f6a86ad1114b0">bustub::LogManager::GetNextLSN</a></div><div class="ttdeci">auto GetNextLSN() -&gt; lsn_t</div><div class="ttdef"><b>Definition</b> log_manager.h:49</div></div>
+<div class="ttc" id="aclassbustub_1_1LogManager_html_a977736471c8af225c05910c73c406d1a"><div class="ttname"><a href="../../d7/d4e/classbustub_1_1LogManager.html#a977736471c8af225c05910c73c406d1a">bustub::LogManager::LogManager</a></div><div class="ttdeci">LogManager(DiskManager *disk_manager)</div><div class="ttdef"><b>Definition</b> log_manager.h:31</div></div>
+<div class="ttc" id="aclassbustub_1_1LogManager_html_aad02f1cfa00311a10f2346bb339aa77b"><div class="ttname"><a href="../../d7/d4e/classbustub_1_1LogManager.html#aad02f1cfa00311a10f2346bb339aa77b">bustub::LogManager::log_buffer_</a></div><div class="ttdeci">char * log_buffer_</div><div class="ttdef"><b>Definition</b> log_manager.h:62</div></div>
+<div class="ttc" id="aclassbustub_1_1LogManager_html_ad8b1ddc101109a11b78649befcf32735"><div class="ttname"><a href="../../d7/d4e/classbustub_1_1LogManager.html#ad8b1ddc101109a11b78649befcf32735">bustub::LogManager::latch_</a></div><div class="ttdeci">std::mutex latch_</div><div class="ttdef"><b>Definition</b> log_manager.h:65</div></div>
+<div class="ttc" id="aclassbustub_1_1LogManager_html_aed5cfe542a06ac552fa9af09df523456"><div class="ttname"><a href="../../d7/d4e/classbustub_1_1LogManager.html#aed5cfe542a06ac552fa9af09df523456">bustub::LogManager::RunFlushThread</a></div><div class="ttdeci">void RunFlushThread()</div><div class="ttdef"><b>Definition</b> log_manager.cpp:25</div></div>
+<div class="ttc" id="aclassbustub_1_1LogRecord_html"><div class="ttname"><a href="../../d8/de4/classbustub_1_1LogRecord.html">bustub::LogRecord</a></div><div class="ttdef"><b>Definition</b> log_record.h:61</div></div>
+<div class="ttc" id="adisk__manager_8h_html"><div class="ttname"><a href="../../d6/d30/disk__manager_8h.html">disk_manager.h</a></div></div>
+<div class="ttc" id="alog__record_8h_html"><div class="ttname"><a href="../../db/d40/log__record_8h.html">log_record.h</a></div></div>
+<div class="ttc" id="anamespacebustub_html"><div class="ttname"><a href="../../de/dda/namespacebustub.html">bustub</a></div><div class="ttdef"><b>Definition</b> bind_create.cpp:53</div></div>
+<div class="ttc" id="anamespacebustub_html_a17672d19626e716dd42fa2960b9b29be"><div class="ttname"><a href="../../de/dda/namespacebustub.html#a17672d19626e716dd42fa2960b9b29be">bustub::LOG_BUFFER_SIZE</a></div><div class="ttdeci">static constexpr int LOG_BUFFER_SIZE</div><div class="ttdef"><b>Definition</b> config.h:39</div></div>
+<div class="ttc" id="anamespacebustub_html_a66748b38863ce1e7a8d7fcd374904def"><div class="ttname"><a href="../../de/dda/namespacebustub.html#a66748b38863ce1e7a8d7fcd374904def">bustub::INVALID_LSN</a></div><div class="ttdeci">static constexpr int INVALID_LSN</div><div class="ttdef"><b>Definition</b> config.h:35</div></div>
+<div class="ttc" id="anamespacebustub_html_a8ceb3d9746c8621a11887b2754e385f2"><div class="ttname"><a href="../../de/dda/namespacebustub.html#a8ceb3d9746c8621a11887b2754e385f2">bustub::lsn_t</a></div><div class="ttdeci">int32_t lsn_t</div><div class="ttdef"><b>Definition</b> config.h:46</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
+</small></address>
+</body>
+</html>

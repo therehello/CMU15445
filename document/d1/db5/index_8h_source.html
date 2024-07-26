@@ -1,0 +1,252 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>数据库系统 CMU15-445/645: src/include/storage/index/index.h 源文件</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/searchdata.js"></script>
+<script type="text/javascript" src="../../search/search.js"></script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">数据库系统 CMU15-445/645<span id="projectnumber">&#160;1.0.0</span>
+   </div>
+   <div id="projectbrief">CMU15-445/645 是基于现代 C++ 开发的支持并发操作的简单 SQL 操作的单机数据库</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.9.8 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "../../search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('../../',true,false,'search.php','搜索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function() { init_codefold(1); });
+/* @license-end */
+</script>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="../../dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="../../dir_b0856f6b0d80ccb263b2f415c91f9e17.html">include</a></li><li class="navelem"><a class="el" href="../../dir_0a30ac4aed38d1936bbd6d702d96fbd8.html">storage</a></li><li class="navelem"><a class="el" href="../../dir_68b285a99db82172e89ff1958533507d.html">index</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle"><div class="title">index.h</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="../../d1/db5/index_8h.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">//===----------------------------------------------------------------------===//</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="comment">//</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="comment">//                         BusTub</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment">//</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="comment">// index.h</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="comment">//</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="comment">// Identification: src/include/storage/index/index.h</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="comment">//</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="comment">// Copyright (c) 2015-2019, Carnegie Mellon University Database Group</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="comment">//</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="comment">//===----------------------------------------------------------------------===//</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#pragma once</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="preprocessor">#include &lt;memory&gt;</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="preprocessor">#include &lt;string&gt;</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="preprocessor">#include &lt;utility&gt;</span></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="preprocessor">#include &lt;vector&gt;</span></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span> </div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="preprocessor">#include &quot;<a class="code" href="../../d7/de3/schema_8h.html">catalog/schema.h</a>&quot;</span></div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="preprocessor">#include &quot;<a class="code" href="../../d2/d20/tuple_8h.html">storage/table/tuple.h</a>&quot;</span></div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="preprocessor">#include &quot;<a class="code" href="../../d4/d3f/value_8h.html">type/value.h</a>&quot;</span></div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span> </div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="keyword">namespace </span><a class="code hl_namespace" href="../../de/dda/namespacebustub.html">bustub</a> {</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span> </div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="keyword">class </span>Transaction;</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span> </div>
+<div class="foldopen" id="foldopen00036" data-start="{" data-end="};">
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno"><a class="line" href="../../d6/df2/classbustub_1_1IndexMetadata.html">   36</a></span><span class="keyword">class </span><a class="code hl_class" href="../../d6/df2/classbustub_1_1IndexMetadata.html">IndexMetadata</a> {</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span> <span class="keyword">public</span>:</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno"><a class="line" href="../../d6/df2/classbustub_1_1IndexMetadata.html#a28a8acdc162d750345d0fec0d8cca1ec">   38</a></span>  <a class="code hl_function" href="../../d6/df2/classbustub_1_1IndexMetadata.html#a28a8acdc162d750345d0fec0d8cca1ec">IndexMetadata</a>() = <span class="keyword">delete</span>;</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span> </div>
+<div class="foldopen" id="foldopen00047" data-start="{" data-end="}">
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno"><a class="line" href="../../d6/df2/classbustub_1_1IndexMetadata.html#ae48eb0543a529ba7165de26891408b97">   47</a></span>  <a class="code hl_function" href="../../d6/df2/classbustub_1_1IndexMetadata.html#ae48eb0543a529ba7165de26891408b97">IndexMetadata</a>(std::string index_name, std::string table_name, <span class="keyword">const</span> <a class="code hl_class" href="../../da/d36/classbustub_1_1Schema.html">Schema</a> *tuple_schema,</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>                std::vector&lt;uint32_t&gt; key_attrs, <span class="keywordtype">bool</span> is_primary_key)</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>      : <a class="code hl_variable" href="../../d6/df2/classbustub_1_1IndexMetadata.html#accd95a929c9b52eb45a59a6d9a716a0e">name_</a>(<a class="code hl_namespace" href="../../d8/dcc/namespacestd.html">std</a>::move(index_name)),</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>        <a class="code hl_variable" href="../../d6/df2/classbustub_1_1IndexMetadata.html#ad4911e7dc16db4a4112584c512ea9587">table_name_</a>(<a class="code hl_namespace" href="../../d8/dcc/namespacestd.html">std</a>::move(table_name)),</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>        <a class="code hl_variable" href="../../d6/df2/classbustub_1_1IndexMetadata.html#af7b47721377a4881d7619a9b3bf5105a">key_attrs_</a>(<a class="code hl_namespace" href="../../d8/dcc/namespacestd.html">std</a>::move(key_attrs)),</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>        <a class="code hl_variable" href="../../d6/df2/classbustub_1_1IndexMetadata.html#aab85e4819de2065502734110072492c1">is_primary_key_</a>(is_primary_key) {</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>    <a class="code hl_variable" href="../../d6/df2/classbustub_1_1IndexMetadata.html#ac747fa3383cb07136a9de1de48bc74ee">key_schema_</a> = std::make_shared&lt;Schema&gt;(<a class="code hl_function" href="../../da/d36/classbustub_1_1Schema.html#a6046d5871da1d03a3f6dd505180863d0">Schema::CopySchema</a>(tuple_schema, <a class="code hl_variable" href="../../d6/df2/classbustub_1_1IndexMetadata.html#af7b47721377a4881d7619a9b3bf5105a">key_attrs_</a>));</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>  }</div>
+</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span> </div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno"><a class="line" href="../../d6/df2/classbustub_1_1IndexMetadata.html#aa367b6a7af0ede6cd5e343a60bc5a220">   56</a></span>  <a class="code hl_function" href="../../d6/df2/classbustub_1_1IndexMetadata.html#aa367b6a7af0ede6cd5e343a60bc5a220">~IndexMetadata</a>() = <span class="keywordflow">default</span>;</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span> </div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno"><a class="line" href="../../d6/df2/classbustub_1_1IndexMetadata.html#aa474d4c7601a4dc910e155998855391e">   59</a></span>  <span class="keyword">inline</span> <span class="keyword">auto</span> <a class="code hl_function" href="../../d6/df2/classbustub_1_1IndexMetadata.html#aa474d4c7601a4dc910e155998855391e">GetName</a>() const -&gt; const <a class="code hl_namespace" href="../../d8/dcc/namespacestd.html">std</a>::<span class="keywordtype">string</span> &amp; { <span class="keywordflow">return</span> <a class="code hl_variable" href="../../d6/df2/classbustub_1_1IndexMetadata.html#accd95a929c9b52eb45a59a6d9a716a0e">name_</a>; }</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span> </div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno"><a class="line" href="../../d6/df2/classbustub_1_1IndexMetadata.html#a344ed0a3a7e66f7e97ddb0f961299547">   62</a></span>  <span class="keyword">inline</span> <span class="keyword">auto</span> <a class="code hl_function" href="../../d6/df2/classbustub_1_1IndexMetadata.html#a344ed0a3a7e66f7e97ddb0f961299547">GetTableName</a>() -&gt; <span class="keyword">const</span> std::string &amp; { <span class="keywordflow">return</span> <a class="code hl_variable" href="../../d6/df2/classbustub_1_1IndexMetadata.html#ad4911e7dc16db4a4112584c512ea9587">table_name_</a>; }</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span> </div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno"><a class="line" href="../../d6/df2/classbustub_1_1IndexMetadata.html#a250cc84708d9ed379d3ed46b7e35938b">   65</a></span>  <span class="keyword">inline</span> <span class="keyword">auto</span> <a class="code hl_function" href="../../d6/df2/classbustub_1_1IndexMetadata.html#a250cc84708d9ed379d3ed46b7e35938b">GetKeySchema</a>() const -&gt; <a class="code hl_class" href="../../da/d36/classbustub_1_1Schema.html">Schema</a> * { <span class="keywordflow">return</span> <a class="code hl_variable" href="../../d6/df2/classbustub_1_1IndexMetadata.html#ac747fa3383cb07136a9de1de48bc74ee">key_schema_</a>.get(); }</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span> </div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno"><a class="line" href="../../d6/df2/classbustub_1_1IndexMetadata.html#aa786f183e60c9412e4575d0af2f1373e">   73</a></span>  <span class="keyword">auto</span> <a class="code hl_function" href="../../d6/df2/classbustub_1_1IndexMetadata.html#aa786f183e60c9412e4575d0af2f1373e">GetIndexColumnCount</a>() const -&gt; <a class="code hl_namespace" href="../../d8/dcc/namespacestd.html">std</a>::uint32_t { <span class="keywordflow">return</span> <span class="keyword">static_cast&lt;</span>uint32_t<span class="keyword">&gt;</span>(<a class="code hl_variable" href="../../d6/df2/classbustub_1_1IndexMetadata.html#af7b47721377a4881d7619a9b3bf5105a">key_attrs_</a>.size()); }</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span> </div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno"><a class="line" href="../../d6/df2/classbustub_1_1IndexMetadata.html#a06141bf09d2cdf6b244dcce7a3630629">   76</a></span>  <span class="keyword">inline</span> <span class="keyword">auto</span> <a class="code hl_function" href="../../d6/df2/classbustub_1_1IndexMetadata.html#a06141bf09d2cdf6b244dcce7a3630629">GetKeyAttrs</a>() const -&gt; const <a class="code hl_namespace" href="../../d8/dcc/namespacestd.html">std</a>::vector&lt;uint32_t&gt; &amp; { <span class="keywordflow">return</span> <a class="code hl_variable" href="../../d6/df2/classbustub_1_1IndexMetadata.html#af7b47721377a4881d7619a9b3bf5105a">key_attrs_</a>; }</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span> </div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno"><a class="line" href="../../d6/df2/classbustub_1_1IndexMetadata.html#afebf2f5f0cdfc8ab5014ed5c9677dd0a">   79</a></span>  <span class="keyword">inline</span> <span class="keyword">auto</span> <a class="code hl_function" href="../../d6/df2/classbustub_1_1IndexMetadata.html#afebf2f5f0cdfc8ab5014ed5c9677dd0a">IsPrimaryKey</a>() const -&gt; <span class="keywordtype">bool</span> { <span class="keywordflow">return</span> <a class="code hl_variable" href="../../d6/df2/classbustub_1_1IndexMetadata.html#aab85e4819de2065502734110072492c1">is_primary_key_</a>; }</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span> </div>
+<div class="foldopen" id="foldopen00082" data-start="{" data-end="}">
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno"><a class="line" href="../../d6/df2/classbustub_1_1IndexMetadata.html#a3457b44a0e089356f0e45f8ede083e33">   82</a></span>  <span class="keyword">auto</span> <a class="code hl_function" href="../../d6/df2/classbustub_1_1IndexMetadata.html#a3457b44a0e089356f0e45f8ede083e33">ToString</a>() const -&gt; <a class="code hl_namespace" href="../../d8/dcc/namespacestd.html">std</a>::<span class="keywordtype">string</span> {</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>    std::stringstream os;</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span> </div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>    os &lt;&lt; <span class="stringliteral">&quot;IndexMetadata[&quot;</span></div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>       &lt;&lt; <span class="stringliteral">&quot;Name = &quot;</span> &lt;&lt; <a class="code hl_variable" href="../../d6/df2/classbustub_1_1IndexMetadata.html#accd95a929c9b52eb45a59a6d9a716a0e">name_</a> &lt;&lt; <span class="stringliteral">&quot;, &quot;</span></div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>       &lt;&lt; <span class="stringliteral">&quot;Type = B+Tree, &quot;</span></div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>       &lt;&lt; <span class="stringliteral">&quot;Table name = &quot;</span> &lt;&lt; <a class="code hl_variable" href="../../d6/df2/classbustub_1_1IndexMetadata.html#ad4911e7dc16db4a4112584c512ea9587">table_name_</a> &lt;&lt; <span class="stringliteral">&quot;] :: &quot;</span>;</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>    os &lt;&lt; <a class="code hl_variable" href="../../d6/df2/classbustub_1_1IndexMetadata.html#ac747fa3383cb07136a9de1de48bc74ee">key_schema_</a>-&gt;ToString();</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span> </div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>    <span class="keywordflow">return</span> os.str();</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>  }</div>
+</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span> </div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span> <span class="keyword">private</span>:</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno"><a class="line" href="../../d6/df2/classbustub_1_1IndexMetadata.html#accd95a929c9b52eb45a59a6d9a716a0e">   96</a></span>  std::string <a class="code hl_variable" href="../../d6/df2/classbustub_1_1IndexMetadata.html#accd95a929c9b52eb45a59a6d9a716a0e">name_</a>;</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno"><a class="line" href="../../d6/df2/classbustub_1_1IndexMetadata.html#ad4911e7dc16db4a4112584c512ea9587">   98</a></span>  std::string <a class="code hl_variable" href="../../d6/df2/classbustub_1_1IndexMetadata.html#ad4911e7dc16db4a4112584c512ea9587">table_name_</a>;</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno"><a class="line" href="../../d6/df2/classbustub_1_1IndexMetadata.html#af7b47721377a4881d7619a9b3bf5105a">  100</a></span>  <span class="keyword">const</span> std::vector&lt;uint32_t&gt; <a class="code hl_variable" href="../../d6/df2/classbustub_1_1IndexMetadata.html#af7b47721377a4881d7619a9b3bf5105a">key_attrs_</a>;</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno"><a class="line" href="../../d6/df2/classbustub_1_1IndexMetadata.html#ac747fa3383cb07136a9de1de48bc74ee">  102</a></span>  std::shared_ptr&lt;Schema&gt; <a class="code hl_variable" href="../../d6/df2/classbustub_1_1IndexMetadata.html#ac747fa3383cb07136a9de1de48bc74ee">key_schema_</a>;</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno"><a class="line" href="../../d6/df2/classbustub_1_1IndexMetadata.html#aab85e4819de2065502734110072492c1">  104</a></span>  <span class="keywordtype">bool</span> <a class="code hl_variable" href="../../d6/df2/classbustub_1_1IndexMetadata.html#aab85e4819de2065502734110072492c1">is_primary_key_</a>;</div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>};</div>
+</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span> </div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span><span class="comment">// Index class definition</span></div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span> </div>
+<div class="foldopen" id="foldopen00125" data-start="{" data-end="};">
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno"><a class="line" href="../../d5/def/classbustub_1_1Index.html">  125</a></span><span class="keyword">class </span><a class="code hl_class" href="../../d5/def/classbustub_1_1Index.html">Index</a> {</div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span> <span class="keyword">public</span>:</div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno"><a class="line" href="../../d5/def/classbustub_1_1Index.html#a598be92864fa8dc44840d1d3cf5f95da">  131</a></span>  <span class="keyword">explicit</span> <a class="code hl_function" href="../../d5/def/classbustub_1_1Index.html#a598be92864fa8dc44840d1d3cf5f95da">Index</a>(std::unique_ptr&lt;IndexMetadata&gt; &amp;&amp;metadata) : <a class="code hl_variable" href="../../d5/def/classbustub_1_1Index.html#a5d11d11b56b3d19b28c52c3673bcc7c0">metadata_</a>{<a class="code hl_namespace" href="../../d8/dcc/namespacestd.html">std</a>::move(metadata)} {}</div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span> </div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno"><a class="line" href="../../d5/def/classbustub_1_1Index.html#a7e97b3ee03404cf357eee0b4d60f703d">  133</a></span>  <span class="keyword">virtual</span> <a class="code hl_function" href="../../d5/def/classbustub_1_1Index.html#a7e97b3ee03404cf357eee0b4d60f703d">~Index</a>() = <span class="keywordflow">default</span>;</div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span> </div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno"><a class="line" href="../../d5/def/classbustub_1_1Index.html#a1363907796370059f694d56459b82078">  136</a></span>  <span class="keyword">auto</span> <a class="code hl_function" href="../../d5/def/classbustub_1_1Index.html#a1363907796370059f694d56459b82078">GetMetadata</a>() const -&gt; <a class="code hl_class" href="../../d6/df2/classbustub_1_1IndexMetadata.html">IndexMetadata</a> * { <span class="keywordflow">return</span> <a class="code hl_variable" href="../../d5/def/classbustub_1_1Index.html#a5d11d11b56b3d19b28c52c3673bcc7c0">metadata_</a>.get(); }</div>
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span> </div>
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno"><a class="line" href="../../d5/def/classbustub_1_1Index.html#ad2ecad0f83a16746b16eb329cebe7215">  139</a></span>  <span class="keyword">auto</span> <a class="code hl_function" href="../../d5/def/classbustub_1_1Index.html#ad2ecad0f83a16746b16eb329cebe7215">GetIndexColumnCount</a>() const -&gt; <a class="code hl_namespace" href="../../d8/dcc/namespacestd.html">std</a>::uint32_t { <span class="keywordflow">return</span> <a class="code hl_variable" href="../../d5/def/classbustub_1_1Index.html#a5d11d11b56b3d19b28c52c3673bcc7c0">metadata_</a>-&gt;GetIndexColumnCount(); }</div>
+<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span> </div>
+<div class="line"><a id="l00142" name="l00142"></a><span class="lineno"><a class="line" href="../../d5/def/classbustub_1_1Index.html#ac7d312ba1ceb46bf8943020d8fb20786">  142</a></span>  <span class="keyword">auto</span> <a class="code hl_function" href="../../d5/def/classbustub_1_1Index.html#ac7d312ba1ceb46bf8943020d8fb20786">GetName</a>() const -&gt; const <a class="code hl_namespace" href="../../d8/dcc/namespacestd.html">std</a>::<span class="keywordtype">string</span> &amp; { <span class="keywordflow">return</span> <a class="code hl_variable" href="../../d5/def/classbustub_1_1Index.html#a5d11d11b56b3d19b28c52c3673bcc7c0">metadata_</a>-&gt;GetName(); }</div>
+<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span> </div>
+<div class="line"><a id="l00145" name="l00145"></a><span class="lineno"><a class="line" href="../../d5/def/classbustub_1_1Index.html#afdeec9a975c46ccec922b9ddcc592305">  145</a></span>  <span class="keyword">auto</span> <a class="code hl_function" href="../../d5/def/classbustub_1_1Index.html#afdeec9a975c46ccec922b9ddcc592305">GetKeySchema</a>() const -&gt; <a class="code hl_class" href="../../da/d36/classbustub_1_1Schema.html">Schema</a> * { <span class="keywordflow">return</span> <a class="code hl_variable" href="../../d5/def/classbustub_1_1Index.html#a5d11d11b56b3d19b28c52c3673bcc7c0">metadata_</a>-&gt;GetKeySchema(); }</div>
+<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span> </div>
+<div class="line"><a id="l00148" name="l00148"></a><span class="lineno"><a class="line" href="../../d5/def/classbustub_1_1Index.html#a552e04ae247fee601e6efd21436ca11c">  148</a></span>  <span class="keyword">auto</span> <a class="code hl_function" href="../../d5/def/classbustub_1_1Index.html#a552e04ae247fee601e6efd21436ca11c">GetKeyAttrs</a>() const -&gt; const <a class="code hl_namespace" href="../../d8/dcc/namespacestd.html">std</a>::vector&lt;uint32_t&gt; &amp; { <span class="keywordflow">return</span> <a class="code hl_variable" href="../../d5/def/classbustub_1_1Index.html#a5d11d11b56b3d19b28c52c3673bcc7c0">metadata_</a>-&gt;GetKeyAttrs(); }</div>
+<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span> </div>
+<div class="foldopen" id="foldopen00151" data-start="{" data-end="}">
+<div class="line"><a id="l00151" name="l00151"></a><span class="lineno"><a class="line" href="../../d5/def/classbustub_1_1Index.html#a616572370797bd087f68e708e974a544">  151</a></span>  <span class="keyword">auto</span> <a class="code hl_function" href="../../d5/def/classbustub_1_1Index.html#a616572370797bd087f68e708e974a544">ToString</a>() const -&gt; <a class="code hl_namespace" href="../../d8/dcc/namespacestd.html">std</a>::<span class="keywordtype">string</span> {</div>
+<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span>    std::stringstream os;</div>
+<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span>    os &lt;&lt; <span class="stringliteral">&quot;INDEX: (&quot;</span> &lt;&lt; <a class="code hl_function" href="../../d5/def/classbustub_1_1Index.html#ac7d312ba1ceb46bf8943020d8fb20786">GetName</a>() &lt;&lt; <span class="stringliteral">&quot;)&quot;</span>;</div>
+<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span>    os &lt;&lt; <a class="code hl_variable" href="../../d5/def/classbustub_1_1Index.html#a5d11d11b56b3d19b28c52c3673bcc7c0">metadata_</a>-&gt;ToString();</div>
+<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span>    <span class="keywordflow">return</span> os.str();</div>
+<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span>  }</div>
+</div>
+<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span> </div>
+<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span>  <span class="comment">// Point Modification</span></div>
+<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span> </div>
+<div class="line"><a id="l00169" name="l00169"></a><span class="lineno"><a class="line" href="../../d5/def/classbustub_1_1Index.html#a68503eb10dbe00ac29b211636152b5ee">  169</a></span>  <span class="keyword">virtual</span> <span class="keyword">auto</span> <a class="code hl_function" href="../../d5/def/classbustub_1_1Index.html#a68503eb10dbe00ac29b211636152b5ee">InsertEntry</a>(<span class="keyword">const</span> <a class="code hl_class" href="../../d0/ded/classbustub_1_1Tuple.html">Tuple</a> &amp;key, <a class="code hl_class" href="../../d3/d22/classbustub_1_1RID.html">RID</a> rid, <a class="code hl_class" href="../../db/d88/classbustub_1_1Transaction.html">Transaction</a> *transaction) -&gt; <span class="keywordtype">bool</span> = 0;</div>
+<div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span> </div>
+<div class="line"><a id="l00177" name="l00177"></a><span class="lineno"><a class="line" href="../../d5/def/classbustub_1_1Index.html#a76ce812b2c134e64915329bbeedad0a8">  177</a></span>  <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="../../d5/def/classbustub_1_1Index.html#a76ce812b2c134e64915329bbeedad0a8">DeleteEntry</a>(<span class="keyword">const</span> <a class="code hl_class" href="../../d0/ded/classbustub_1_1Tuple.html">Tuple</a> &amp;key, <a class="code hl_class" href="../../d3/d22/classbustub_1_1RID.html">RID</a> rid, <a class="code hl_class" href="../../db/d88/classbustub_1_1Transaction.html">Transaction</a> *transaction) = 0;</div>
+<div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span> </div>
+<div class="line"><a id="l00185" name="l00185"></a><span class="lineno"><a class="line" href="../../d5/def/classbustub_1_1Index.html#ac1956eb188c14fe560025ba940cdb302">  185</a></span>  <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="../../d5/def/classbustub_1_1Index.html#ac1956eb188c14fe560025ba940cdb302">ScanKey</a>(<span class="keyword">const</span> <a class="code hl_class" href="../../d0/ded/classbustub_1_1Tuple.html">Tuple</a> &amp;key, std::vector&lt;RID&gt; *result, <a class="code hl_class" href="../../db/d88/classbustub_1_1Transaction.html">Transaction</a> *transaction) = 0;</div>
+<div class="line"><a id="l00186" name="l00186"></a><span class="lineno">  186</span> </div>
+<div class="line"><a id="l00187" name="l00187"></a><span class="lineno">  187</span> <span class="keyword">private</span>:</div>
+<div class="line"><a id="l00189" name="l00189"></a><span class="lineno"><a class="line" href="../../d5/def/classbustub_1_1Index.html#a5d11d11b56b3d19b28c52c3673bcc7c0">  189</a></span>  std::unique_ptr&lt;IndexMetadata&gt; <a class="code hl_variable" href="../../d5/def/classbustub_1_1Index.html#a5d11d11b56b3d19b28c52c3673bcc7c0">metadata_</a>;</div>
+<div class="line"><a id="l00190" name="l00190"></a><span class="lineno">  190</span>};</div>
+</div>
+<div class="line"><a id="l00191" name="l00191"></a><span class="lineno">  191</span> </div>
+<div class="line"><a id="l00192" name="l00192"></a><span class="lineno">  192</span>}  <span class="comment">// namespace bustub</span></div>
+<div class="ttc" id="aclassbustub_1_1IndexMetadata_html"><div class="ttname"><a href="../../d6/df2/classbustub_1_1IndexMetadata.html">bustub::IndexMetadata</a></div><div class="ttdef"><b>Definition</b> index.h:36</div></div>
+<div class="ttc" id="aclassbustub_1_1IndexMetadata_html_a06141bf09d2cdf6b244dcce7a3630629"><div class="ttname"><a href="../../d6/df2/classbustub_1_1IndexMetadata.html#a06141bf09d2cdf6b244dcce7a3630629">bustub::IndexMetadata::GetKeyAttrs</a></div><div class="ttdeci">auto GetKeyAttrs() const -&gt; const std::vector&lt; uint32_t &gt; &amp;</div><div class="ttdef"><b>Definition</b> index.h:76</div></div>
+<div class="ttc" id="aclassbustub_1_1IndexMetadata_html_a250cc84708d9ed379d3ed46b7e35938b"><div class="ttname"><a href="../../d6/df2/classbustub_1_1IndexMetadata.html#a250cc84708d9ed379d3ed46b7e35938b">bustub::IndexMetadata::GetKeySchema</a></div><div class="ttdeci">auto GetKeySchema() const -&gt; Schema *</div><div class="ttdef"><b>Definition</b> index.h:65</div></div>
+<div class="ttc" id="aclassbustub_1_1IndexMetadata_html_a28a8acdc162d750345d0fec0d8cca1ec"><div class="ttname"><a href="../../d6/df2/classbustub_1_1IndexMetadata.html#a28a8acdc162d750345d0fec0d8cca1ec">bustub::IndexMetadata::IndexMetadata</a></div><div class="ttdeci">IndexMetadata()=delete</div></div>
+<div class="ttc" id="aclassbustub_1_1IndexMetadata_html_a344ed0a3a7e66f7e97ddb0f961299547"><div class="ttname"><a href="../../d6/df2/classbustub_1_1IndexMetadata.html#a344ed0a3a7e66f7e97ddb0f961299547">bustub::IndexMetadata::GetTableName</a></div><div class="ttdeci">auto GetTableName() -&gt; const std::string &amp;</div><div class="ttdef"><b>Definition</b> index.h:62</div></div>
+<div class="ttc" id="aclassbustub_1_1IndexMetadata_html_a3457b44a0e089356f0e45f8ede083e33"><div class="ttname"><a href="../../d6/df2/classbustub_1_1IndexMetadata.html#a3457b44a0e089356f0e45f8ede083e33">bustub::IndexMetadata::ToString</a></div><div class="ttdeci">auto ToString() const -&gt; std::string</div><div class="ttdef"><b>Definition</b> index.h:82</div></div>
+<div class="ttc" id="aclassbustub_1_1IndexMetadata_html_aa367b6a7af0ede6cd5e343a60bc5a220"><div class="ttname"><a href="../../d6/df2/classbustub_1_1IndexMetadata.html#aa367b6a7af0ede6cd5e343a60bc5a220">bustub::IndexMetadata::~IndexMetadata</a></div><div class="ttdeci">~IndexMetadata()=default</div></div>
+<div class="ttc" id="aclassbustub_1_1IndexMetadata_html_aa474d4c7601a4dc910e155998855391e"><div class="ttname"><a href="../../d6/df2/classbustub_1_1IndexMetadata.html#aa474d4c7601a4dc910e155998855391e">bustub::IndexMetadata::GetName</a></div><div class="ttdeci">auto GetName() const -&gt; const std::string &amp;</div><div class="ttdef"><b>Definition</b> index.h:59</div></div>
+<div class="ttc" id="aclassbustub_1_1IndexMetadata_html_aa786f183e60c9412e4575d0af2f1373e"><div class="ttname"><a href="../../d6/df2/classbustub_1_1IndexMetadata.html#aa786f183e60c9412e4575d0af2f1373e">bustub::IndexMetadata::GetIndexColumnCount</a></div><div class="ttdeci">auto GetIndexColumnCount() const -&gt; std::uint32_t</div><div class="ttdef"><b>Definition</b> index.h:73</div></div>
+<div class="ttc" id="aclassbustub_1_1IndexMetadata_html_aab85e4819de2065502734110072492c1"><div class="ttname"><a href="../../d6/df2/classbustub_1_1IndexMetadata.html#aab85e4819de2065502734110072492c1">bustub::IndexMetadata::is_primary_key_</a></div><div class="ttdeci">bool is_primary_key_</div><div class="ttdef"><b>Definition</b> index.h:104</div></div>
+<div class="ttc" id="aclassbustub_1_1IndexMetadata_html_ac747fa3383cb07136a9de1de48bc74ee"><div class="ttname"><a href="../../d6/df2/classbustub_1_1IndexMetadata.html#ac747fa3383cb07136a9de1de48bc74ee">bustub::IndexMetadata::key_schema_</a></div><div class="ttdeci">std::shared_ptr&lt; Schema &gt; key_schema_</div><div class="ttdef"><b>Definition</b> index.h:102</div></div>
+<div class="ttc" id="aclassbustub_1_1IndexMetadata_html_accd95a929c9b52eb45a59a6d9a716a0e"><div class="ttname"><a href="../../d6/df2/classbustub_1_1IndexMetadata.html#accd95a929c9b52eb45a59a6d9a716a0e">bustub::IndexMetadata::name_</a></div><div class="ttdeci">std::string name_</div><div class="ttdef"><b>Definition</b> index.h:96</div></div>
+<div class="ttc" id="aclassbustub_1_1IndexMetadata_html_ad4911e7dc16db4a4112584c512ea9587"><div class="ttname"><a href="../../d6/df2/classbustub_1_1IndexMetadata.html#ad4911e7dc16db4a4112584c512ea9587">bustub::IndexMetadata::table_name_</a></div><div class="ttdeci">std::string table_name_</div><div class="ttdef"><b>Definition</b> index.h:98</div></div>
+<div class="ttc" id="aclassbustub_1_1IndexMetadata_html_ae48eb0543a529ba7165de26891408b97"><div class="ttname"><a href="../../d6/df2/classbustub_1_1IndexMetadata.html#ae48eb0543a529ba7165de26891408b97">bustub::IndexMetadata::IndexMetadata</a></div><div class="ttdeci">IndexMetadata(std::string index_name, std::string table_name, const Schema *tuple_schema, std::vector&lt; uint32_t &gt; key_attrs, bool is_primary_key)</div><div class="ttdef"><b>Definition</b> index.h:47</div></div>
+<div class="ttc" id="aclassbustub_1_1IndexMetadata_html_af7b47721377a4881d7619a9b3bf5105a"><div class="ttname"><a href="../../d6/df2/classbustub_1_1IndexMetadata.html#af7b47721377a4881d7619a9b3bf5105a">bustub::IndexMetadata::key_attrs_</a></div><div class="ttdeci">const std::vector&lt; uint32_t &gt; key_attrs_</div><div class="ttdef"><b>Definition</b> index.h:100</div></div>
+<div class="ttc" id="aclassbustub_1_1IndexMetadata_html_afebf2f5f0cdfc8ab5014ed5c9677dd0a"><div class="ttname"><a href="../../d6/df2/classbustub_1_1IndexMetadata.html#afebf2f5f0cdfc8ab5014ed5c9677dd0a">bustub::IndexMetadata::IsPrimaryKey</a></div><div class="ttdeci">auto IsPrimaryKey() const -&gt; bool</div><div class="ttdef"><b>Definition</b> index.h:79</div></div>
+<div class="ttc" id="aclassbustub_1_1Index_html"><div class="ttname"><a href="../../d5/def/classbustub_1_1Index.html">bustub::Index</a></div><div class="ttdef"><b>Definition</b> index.h:125</div></div>
+<div class="ttc" id="aclassbustub_1_1Index_html_a1363907796370059f694d56459b82078"><div class="ttname"><a href="../../d5/def/classbustub_1_1Index.html#a1363907796370059f694d56459b82078">bustub::Index::GetMetadata</a></div><div class="ttdeci">auto GetMetadata() const -&gt; IndexMetadata *</div><div class="ttdef"><b>Definition</b> index.h:136</div></div>
+<div class="ttc" id="aclassbustub_1_1Index_html_a552e04ae247fee601e6efd21436ca11c"><div class="ttname"><a href="../../d5/def/classbustub_1_1Index.html#a552e04ae247fee601e6efd21436ca11c">bustub::Index::GetKeyAttrs</a></div><div class="ttdeci">auto GetKeyAttrs() const -&gt; const std::vector&lt; uint32_t &gt; &amp;</div><div class="ttdef"><b>Definition</b> index.h:148</div></div>
+<div class="ttc" id="aclassbustub_1_1Index_html_a598be92864fa8dc44840d1d3cf5f95da"><div class="ttname"><a href="../../d5/def/classbustub_1_1Index.html#a598be92864fa8dc44840d1d3cf5f95da">bustub::Index::Index</a></div><div class="ttdeci">Index(std::unique_ptr&lt; IndexMetadata &gt; &amp;&amp;metadata)</div><div class="ttdef"><b>Definition</b> index.h:131</div></div>
+<div class="ttc" id="aclassbustub_1_1Index_html_a5d11d11b56b3d19b28c52c3673bcc7c0"><div class="ttname"><a href="../../d5/def/classbustub_1_1Index.html#a5d11d11b56b3d19b28c52c3673bcc7c0">bustub::Index::metadata_</a></div><div class="ttdeci">std::unique_ptr&lt; IndexMetadata &gt; metadata_</div><div class="ttdef"><b>Definition</b> index.h:189</div></div>
+<div class="ttc" id="aclassbustub_1_1Index_html_a616572370797bd087f68e708e974a544"><div class="ttname"><a href="../../d5/def/classbustub_1_1Index.html#a616572370797bd087f68e708e974a544">bustub::Index::ToString</a></div><div class="ttdeci">auto ToString() const -&gt; std::string</div><div class="ttdef"><b>Definition</b> index.h:151</div></div>
+<div class="ttc" id="aclassbustub_1_1Index_html_a68503eb10dbe00ac29b211636152b5ee"><div class="ttname"><a href="../../d5/def/classbustub_1_1Index.html#a68503eb10dbe00ac29b211636152b5ee">bustub::Index::InsertEntry</a></div><div class="ttdeci">virtual auto InsertEntry(const Tuple &amp;key, RID rid, Transaction *transaction) -&gt; bool=0</div></div>
+<div class="ttc" id="aclassbustub_1_1Index_html_a76ce812b2c134e64915329bbeedad0a8"><div class="ttname"><a href="../../d5/def/classbustub_1_1Index.html#a76ce812b2c134e64915329bbeedad0a8">bustub::Index::DeleteEntry</a></div><div class="ttdeci">virtual void DeleteEntry(const Tuple &amp;key, RID rid, Transaction *transaction)=0</div></div>
+<div class="ttc" id="aclassbustub_1_1Index_html_a7e97b3ee03404cf357eee0b4d60f703d"><div class="ttname"><a href="../../d5/def/classbustub_1_1Index.html#a7e97b3ee03404cf357eee0b4d60f703d">bustub::Index::~Index</a></div><div class="ttdeci">virtual ~Index()=default</div></div>
+<div class="ttc" id="aclassbustub_1_1Index_html_ac1956eb188c14fe560025ba940cdb302"><div class="ttname"><a href="../../d5/def/classbustub_1_1Index.html#ac1956eb188c14fe560025ba940cdb302">bustub::Index::ScanKey</a></div><div class="ttdeci">virtual void ScanKey(const Tuple &amp;key, std::vector&lt; RID &gt; *result, Transaction *transaction)=0</div></div>
+<div class="ttc" id="aclassbustub_1_1Index_html_ac7d312ba1ceb46bf8943020d8fb20786"><div class="ttname"><a href="../../d5/def/classbustub_1_1Index.html#ac7d312ba1ceb46bf8943020d8fb20786">bustub::Index::GetName</a></div><div class="ttdeci">auto GetName() const -&gt; const std::string &amp;</div><div class="ttdef"><b>Definition</b> index.h:142</div></div>
+<div class="ttc" id="aclassbustub_1_1Index_html_ad2ecad0f83a16746b16eb329cebe7215"><div class="ttname"><a href="../../d5/def/classbustub_1_1Index.html#ad2ecad0f83a16746b16eb329cebe7215">bustub::Index::GetIndexColumnCount</a></div><div class="ttdeci">auto GetIndexColumnCount() const -&gt; std::uint32_t</div><div class="ttdef"><b>Definition</b> index.h:139</div></div>
+<div class="ttc" id="aclassbustub_1_1Index_html_afdeec9a975c46ccec922b9ddcc592305"><div class="ttname"><a href="../../d5/def/classbustub_1_1Index.html#afdeec9a975c46ccec922b9ddcc592305">bustub::Index::GetKeySchema</a></div><div class="ttdeci">auto GetKeySchema() const -&gt; Schema *</div><div class="ttdef"><b>Definition</b> index.h:145</div></div>
+<div class="ttc" id="aclassbustub_1_1RID_html"><div class="ttname"><a href="../../d3/d22/classbustub_1_1RID.html">bustub::RID</a></div><div class="ttdef"><b>Definition</b> rid.h:23</div></div>
+<div class="ttc" id="aclassbustub_1_1Schema_html"><div class="ttname"><a href="../../da/d36/classbustub_1_1Schema.html">bustub::Schema</a></div><div class="ttdef"><b>Definition</b> schema.h:29</div></div>
+<div class="ttc" id="aclassbustub_1_1Schema_html_a6046d5871da1d03a3f6dd505180863d0"><div class="ttname"><a href="../../da/d36/classbustub_1_1Schema.html#a6046d5871da1d03a3f6dd505180863d0">bustub::Schema::CopySchema</a></div><div class="ttdeci">static auto CopySchema(const Schema *from, const std::vector&lt; uint32_t &gt; &amp;attrs) -&gt; Schema</div><div class="ttdef"><b>Definition</b> schema.h:37</div></div>
+<div class="ttc" id="aclassbustub_1_1Transaction_html"><div class="ttname"><a href="../../db/d88/classbustub_1_1Transaction.html">bustub::Transaction</a></div><div class="ttdef"><b>Definition</b> transaction.h:89</div></div>
+<div class="ttc" id="aclassbustub_1_1Tuple_html"><div class="ttname"><a href="../../d0/ded/classbustub_1_1Tuple.html">bustub::Tuple</a></div><div class="ttdef"><b>Definition</b> tuple.h:51</div></div>
+<div class="ttc" id="anamespacebustub_html"><div class="ttname"><a href="../../de/dda/namespacebustub.html">bustub</a></div><div class="ttdef"><b>Definition</b> bind_create.cpp:53</div></div>
+<div class="ttc" id="anamespacestd_html"><div class="ttname"><a href="../../d8/dcc/namespacestd.html">std</a></div><div class="ttdef"><b>Definition</b> rid.h:70</div></div>
+<div class="ttc" id="aschema_8h_html"><div class="ttname"><a href="../../d7/de3/schema_8h.html">schema.h</a></div></div>
+<div class="ttc" id="atuple_8h_html"><div class="ttname"><a href="../../d2/d20/tuple_8h.html">tuple.h</a></div></div>
+<div class="ttc" id="avalue_8h_html"><div class="ttname"><a href="../../d4/d3f/value_8h.html">value.h</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
+</small></address>
+</body>
+</html>

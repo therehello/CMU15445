@@ -1,0 +1,659 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>数据库系统 CMU15-445/645: bustub::Column类 参考</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/searchdata.js"></script>
+<script type="text/javascript" src="../../search/search.js"></script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">数据库系统 CMU15-445/645<span id="projectnumber">&#160;1.0.0</span>
+   </div>
+   <div id="projectbrief">CMU15-445/645 是基于现代 C++ 开发的支持并发操作的简单 SQL 操作的单机数据库</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.9.8 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "../../search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('../../',true,false,'search.php','搜索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="../../de/dda/namespacebustub.html">bustub</a></li><li class="navelem"><a class="el" href="../../db/d7f/classbustub_1_1Column.html">Column</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Public 成员函数</a> &#124;
+<a href="#pri-static-methods">静态 Private 成员函数</a> &#124;
+<a href="#pri-attribs">Private 属性</a> &#124;
+<a href="#friends">友元</a> &#124;
+<a href="../../d2/de9/classbustub_1_1Column-members.html">所有成员列表</a>  </div>
+  <div class="headertitle"><div class="title">bustub::Column类 参考</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p><code>#include &lt;<a class="el" href="../../dc/df8/column_8h_source.html">column.h</a>&gt;</code></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Public 成员函数</h2></td></tr>
+<tr class="memitem:a31da16e6be612dee1c27ddaa8c3611e3" id="r_a31da16e6be612dee1c27ddaa8c3611e3"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d7f/classbustub_1_1Column.html#a31da16e6be612dee1c27ddaa8c3611e3">Column</a> (std::string column_name, <a class="el" href="../../de/dda/namespacebustub.html#a49735e6748963f5515394bbb228f1fc8">TypeId</a> type)</td></tr>
+<tr class="separator:a31da16e6be612dee1c27ddaa8c3611e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac81f339aacc15621737d012f45fab800" id="r_ac81f339aacc15621737d012f45fab800"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d7f/classbustub_1_1Column.html#ac81f339aacc15621737d012f45fab800">Column</a> (std::string column_name, <a class="el" href="../../de/dda/namespacebustub.html#a49735e6748963f5515394bbb228f1fc8">TypeId</a> type, uint32_t length)</td></tr>
+<tr class="separator:ac81f339aacc15621737d012f45fab800"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae4c2ac3135c4e04be190ccae83841eda" id="r_ae4c2ac3135c4e04be190ccae83841eda"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d7f/classbustub_1_1Column.html#ae4c2ac3135c4e04be190ccae83841eda">Column</a> (std::string column_name, const <a class="el" href="../../db/d7f/classbustub_1_1Column.html">Column</a> &amp;column)</td></tr>
+<tr class="separator:ae4c2ac3135c4e04be190ccae83841eda"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7c9c1b9aac7c643c210dc9dfb553f175" id="r_a7c9c1b9aac7c643c210dc9dfb553f175"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d7f/classbustub_1_1Column.html#a7c9c1b9aac7c643c210dc9dfb553f175">GetName</a> () const -&gt; std::string</td></tr>
+<tr class="separator:a7c9c1b9aac7c643c210dc9dfb553f175"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a474d492e53a6ea638385bc828abebbe1" id="r_a474d492e53a6ea638385bc828abebbe1"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d7f/classbustub_1_1Column.html#a474d492e53a6ea638385bc828abebbe1">GetLength</a> () const -&gt; uint32_t</td></tr>
+<tr class="separator:a474d492e53a6ea638385bc828abebbe1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2dac0cb123502157423c291f0a160214" id="r_a2dac0cb123502157423c291f0a160214"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d7f/classbustub_1_1Column.html#a2dac0cb123502157423c291f0a160214">GetFixedLength</a> () const -&gt; uint32_t</td></tr>
+<tr class="separator:a2dac0cb123502157423c291f0a160214"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a84fff005913de43385b58f7e265cc3ff" id="r_a84fff005913de43385b58f7e265cc3ff"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d7f/classbustub_1_1Column.html#a84fff005913de43385b58f7e265cc3ff">GetVariableLength</a> () const -&gt; uint32_t</td></tr>
+<tr class="separator:a84fff005913de43385b58f7e265cc3ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8ac512d00b9e48a0227bca6030fadc7a" id="r_a8ac512d00b9e48a0227bca6030fadc7a"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d7f/classbustub_1_1Column.html#a8ac512d00b9e48a0227bca6030fadc7a">GetOffset</a> () const -&gt; uint32_t</td></tr>
+<tr class="separator:a8ac512d00b9e48a0227bca6030fadc7a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8813a0e7b39cd829b3eba49ce1c4c7fc" id="r_a8813a0e7b39cd829b3eba49ce1c4c7fc"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d7f/classbustub_1_1Column.html#a8813a0e7b39cd829b3eba49ce1c4c7fc">GetType</a> () const -&gt; <a class="el" href="../../de/dda/namespacebustub.html#a49735e6748963f5515394bbb228f1fc8">TypeId</a></td></tr>
+<tr class="separator:a8813a0e7b39cd829b3eba49ce1c4c7fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a37099047fb75c8c3d63d13857a0cb427" id="r_a37099047fb75c8c3d63d13857a0cb427"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d7f/classbustub_1_1Column.html#a37099047fb75c8c3d63d13857a0cb427">IsInlined</a> () const -&gt; bool</td></tr>
+<tr class="separator:a37099047fb75c8c3d63d13857a0cb427"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae3d99b6c948874feb266d40363af3857" id="r_ae3d99b6c948874feb266d40363af3857"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d7f/classbustub_1_1Column.html#ae3d99b6c948874feb266d40363af3857">ToString</a> (bool simplified=true) const -&gt; std::string</td></tr>
+<tr class="separator:ae3d99b6c948874feb266d40363af3857"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-static-methods" name="pri-static-methods"></a>
+静态 Private 成员函数</h2></td></tr>
+<tr class="memitem:a54d62e93935e377bdb2d76c60920dca4" id="r_a54d62e93935e377bdb2d76c60920dca4"><td class="memItemLeft" align="right" valign="top">static auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d7f/classbustub_1_1Column.html#a54d62e93935e377bdb2d76c60920dca4">TypeSize</a> (<a class="el" href="../../de/dda/namespacebustub.html#a49735e6748963f5515394bbb228f1fc8">TypeId</a> type) -&gt; uint8_t</td></tr>
+<tr class="separator:a54d62e93935e377bdb2d76c60920dca4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
+Private 属性</h2></td></tr>
+<tr class="memitem:a00f23bd5aeac2c0b5d693bc8aa861d88" id="r_a00f23bd5aeac2c0b5d693bc8aa861d88"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d7f/classbustub_1_1Column.html#a00f23bd5aeac2c0b5d693bc8aa861d88">column_name_</a></td></tr>
+<tr class="separator:a00f23bd5aeac2c0b5d693bc8aa861d88"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a651d350bcaa2745fb764284556c8a33e" id="r_a651d350bcaa2745fb764284556c8a33e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../de/dda/namespacebustub.html#a49735e6748963f5515394bbb228f1fc8">TypeId</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d7f/classbustub_1_1Column.html#a651d350bcaa2745fb764284556c8a33e">column_type_</a></td></tr>
+<tr class="separator:a651d350bcaa2745fb764284556c8a33e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad8c11893a94316366361a4f8cc9cfc6b" id="r_ad8c11893a94316366361a4f8cc9cfc6b"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d7f/classbustub_1_1Column.html#ad8c11893a94316366361a4f8cc9cfc6b">fixed_length_</a></td></tr>
+<tr class="separator:ad8c11893a94316366361a4f8cc9cfc6b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aacf9309358bc62aa6f51706b39f9643d" id="r_aacf9309358bc62aa6f51706b39f9643d"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d7f/classbustub_1_1Column.html#aacf9309358bc62aa6f51706b39f9643d">variable_length_</a> {0}</td></tr>
+<tr class="separator:aacf9309358bc62aa6f51706b39f9643d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a670c364c7a95808c080d0e0b90553dd2" id="r_a670c364c7a95808c080d0e0b90553dd2"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d7f/classbustub_1_1Column.html#a670c364c7a95808c080d0e0b90553dd2">column_offset_</a> {0}</td></tr>
+<tr class="separator:a670c364c7a95808c080d0e0b90553dd2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="friends" name="friends"></a>
+友元</h2></td></tr>
+<tr class="memitem:ab1b299e6f6af7a63eafdaf19e7facb93" id="r_ab1b299e6f6af7a63eafdaf19e7facb93"><td class="memItemLeft" align="right" valign="top">class&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d7f/classbustub_1_1Column.html#ab1b299e6f6af7a63eafdaf19e7facb93">Schema</a></td></tr>
+<tr class="separator:ab1b299e6f6af7a63eafdaf19e7facb93"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">构造及析构函数说明</h2>
+<a id="a31da16e6be612dee1c27ddaa8c3611e3" name="a31da16e6be612dee1c27ddaa8c3611e3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a31da16e6be612dee1c27ddaa8c3611e3">&#9670;&#160;</a></span>Column() <span class="overload">[1/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bustub::Column::Column </td>
+          <td>(</td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>column_name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="../../de/dda/namespacebustub.html#a49735e6748963f5515394bbb228f1fc8">TypeId</a>&#160;</td>
+          <td class="paramname"><em>type</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Non-variable-length constructor for creating a <a class="el" href="../../db/d7f/classbustub_1_1Column.html">Column</a>. </p><dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">column_name</td><td>name of the column </td></tr>
+    <tr><td class="paramname">type</td><td>type of the column </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ac81f339aacc15621737d012f45fab800" name="ac81f339aacc15621737d012f45fab800"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac81f339aacc15621737d012f45fab800">&#9670;&#160;</a></span>Column() <span class="overload">[2/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bustub::Column::Column </td>
+          <td>(</td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>column_name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="../../de/dda/namespacebustub.html#a49735e6748963f5515394bbb228f1fc8">TypeId</a>&#160;</td>
+          <td class="paramname"><em>type</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>length</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Variable-length constructor for creating a <a class="el" href="../../db/d7f/classbustub_1_1Column.html">Column</a>. </p><dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">column_name</td><td>name of the column </td></tr>
+    <tr><td class="paramname">type</td><td>type of column </td></tr>
+    <tr><td class="paramname">length</td><td>length of the varlen </td></tr>
+    <tr><td class="paramname">expr</td><td>expression used to create this column </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ae4c2ac3135c4e04be190ccae83841eda" name="ae4c2ac3135c4e04be190ccae83841eda"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae4c2ac3135c4e04be190ccae83841eda">&#9670;&#160;</a></span>Column() <span class="overload">[3/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bustub::Column::Column </td>
+          <td>(</td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>column_name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="../../db/d7f/classbustub_1_1Column.html">Column</a> &amp;&#160;</td>
+          <td class="paramname"><em>column</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Replicate a <a class="el" href="../../db/d7f/classbustub_1_1Column.html">Column</a> with a different name. </p><dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">column_name</td><td>name of the column </td></tr>
+    <tr><td class="paramname">column</td><td>the original column </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<h2 class="groupheader">成员函数说明</h2>
+<a id="a2dac0cb123502157423c291f0a160214" name="a2dac0cb123502157423c291f0a160214"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2dac0cb123502157423c291f0a160214">&#9670;&#160;</a></span>GetFixedLength()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto bustub::Column::GetFixedLength </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const -&gt; uint32_t </td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<dl class="section return"><dt>返回</dt><dd>column fixed length </dd></dl>
+
+</div>
+</div>
+<a id="a474d492e53a6ea638385bc828abebbe1" name="a474d492e53a6ea638385bc828abebbe1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a474d492e53a6ea638385bc828abebbe1">&#9670;&#160;</a></span>GetLength()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto bustub::Column::GetLength </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const -&gt; uint32_t </td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<dl class="section return"><dt>返回</dt><dd>column length </dd></dl>
+
+</div>
+</div>
+<a id="a7c9c1b9aac7c643c210dc9dfb553f175" name="a7c9c1b9aac7c643c210dc9dfb553f175"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7c9c1b9aac7c643c210dc9dfb553f175">&#9670;&#160;</a></span>GetName()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto bustub::Column::GetName </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const -&gt; std::string </td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<dl class="section return"><dt>返回</dt><dd>column name </dd></dl>
+
+</div>
+</div>
+<a id="a8ac512d00b9e48a0227bca6030fadc7a" name="a8ac512d00b9e48a0227bca6030fadc7a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8ac512d00b9e48a0227bca6030fadc7a">&#9670;&#160;</a></span>GetOffset()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto bustub::Column::GetOffset </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const -&gt; uint32_t </td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<dl class="section return"><dt>返回</dt><dd>column's offset in the tuple </dd></dl>
+
+</div>
+</div>
+<a id="a8813a0e7b39cd829b3eba49ce1c4c7fc" name="a8813a0e7b39cd829b3eba49ce1c4c7fc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8813a0e7b39cd829b3eba49ce1c4c7fc">&#9670;&#160;</a></span>GetType()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto bustub::Column::GetType </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const -&gt; <a class="el" href="../../de/dda/namespacebustub.html#a49735e6748963f5515394bbb228f1fc8">TypeId</a> </td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<dl class="section return"><dt>返回</dt><dd>column type </dd></dl>
+
+</div>
+</div>
+<a id="a84fff005913de43385b58f7e265cc3ff" name="a84fff005913de43385b58f7e265cc3ff"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a84fff005913de43385b58f7e265cc3ff">&#9670;&#160;</a></span>GetVariableLength()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto bustub::Column::GetVariableLength </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const -&gt; uint32_t </td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<dl class="section return"><dt>返回</dt><dd>column variable length </dd></dl>
+
+</div>
+</div>
+<a id="a37099047fb75c8c3d63d13857a0cb427" name="a37099047fb75c8c3d63d13857a0cb427"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a37099047fb75c8c3d63d13857a0cb427">&#9670;&#160;</a></span>IsInlined()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto bustub::Column::IsInlined </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const -&gt; bool </td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<dl class="section return"><dt>返回</dt><dd>true if column is inlined, false otherwise </dd></dl>
+
+</div>
+</div>
+<a id="ae3d99b6c948874feb266d40363af3857" name="ae3d99b6c948874feb266d40363af3857"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae3d99b6c948874feb266d40363af3857">&#9670;&#160;</a></span>ToString()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto bustub::Column::ToString </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>simplified</em> = <code>true</code></td><td>)</td>
+          <td> const -&gt; std::string</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="section return"><dt>返回</dt><dd>a string representation of this column </dd></dl>
+
+</div>
+</div>
+<a id="a54d62e93935e377bdb2d76c60920dca4" name="a54d62e93935e377bdb2d76c60920dca4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a54d62e93935e377bdb2d76c60920dca4">&#9670;&#160;</a></span>TypeSize()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static auto bustub::Column::TypeSize </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../de/dda/namespacebustub.html#a49735e6748963f5515394bbb228f1fc8">TypeId</a>&#160;</td>
+          <td class="paramname"><em>type</em></td><td>)</td>
+          <td> -&gt; uint8_t </td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Return the size in bytes of the type. </p><dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">type</td><td>type whose size is to be determined </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>size in bytes </dd></dl>
+
+</div>
+</div>
+<h2 class="groupheader">友元及相关函数文档</h2>
+<a id="ab1b299e6f6af7a63eafdaf19e7facb93" name="ab1b299e6f6af7a63eafdaf19e7facb93"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab1b299e6f6af7a63eafdaf19e7facb93">&#9670;&#160;</a></span>Schema</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">friend class <a class="el" href="../../da/d36/classbustub_1_1Schema.html">Schema</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">friend</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">类成员变量说明</h2>
+<a id="a00f23bd5aeac2c0b5d693bc8aa861d88" name="a00f23bd5aeac2c0b5d693bc8aa861d88"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a00f23bd5aeac2c0b5d693bc8aa861d88">&#9670;&#160;</a></span>column_name_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string bustub::Column::column_name_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p><a class="el" href="../../db/d7f/classbustub_1_1Column.html">Column</a> name. </p>
+
+</div>
+</div>
+<a id="a670c364c7a95808c080d0e0b90553dd2" name="a670c364c7a95808c080d0e0b90553dd2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a670c364c7a95808c080d0e0b90553dd2">&#9670;&#160;</a></span>column_offset_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32_t bustub::Column::column_offset_ {0}</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p><a class="el" href="../../db/d7f/classbustub_1_1Column.html">Column</a> offset in the tuple. </p>
+
+</div>
+</div>
+<a id="a651d350bcaa2745fb764284556c8a33e" name="a651d350bcaa2745fb764284556c8a33e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a651d350bcaa2745fb764284556c8a33e">&#9670;&#160;</a></span>column_type_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../de/dda/namespacebustub.html#a49735e6748963f5515394bbb228f1fc8">TypeId</a> bustub::Column::column_type_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p><a class="el" href="../../db/d7f/classbustub_1_1Column.html">Column</a> value's type. </p>
+
+</div>
+</div>
+<a id="ad8c11893a94316366361a4f8cc9cfc6b" name="ad8c11893a94316366361a4f8cc9cfc6b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad8c11893a94316366361a4f8cc9cfc6b">&#9670;&#160;</a></span>fixed_length_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32_t bustub::Column::fixed_length_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>For a non-inlined column, this is the size of a pointer. Otherwise, the size of the fixed length column. </p>
+
+</div>
+</div>
+<a id="aacf9309358bc62aa6f51706b39f9643d" name="aacf9309358bc62aa6f51706b39f9643d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aacf9309358bc62aa6f51706b39f9643d">&#9670;&#160;</a></span>variable_length_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32_t bustub::Column::variable_length_ {0}</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>For an inlined column, 0. Otherwise, the length of the variable length column. </p>
+
+</div>
+</div>
+<hr/>该类的文档由以下文件生成:<ul>
+<li>src/include/catalog/<a class="el" href="../../dc/df8/column_8h_source.html">column.h</a></li>
+<li>src/catalog/<a class="el" href="../../d3/dd4/column_8cpp.html">column.cpp</a></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
+</small></address>
+</body>
+</html>

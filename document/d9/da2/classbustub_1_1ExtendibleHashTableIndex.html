@@ -1,0 +1,420 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>数据库系统 CMU15-445/645: bustub::ExtendibleHashTableIndex&lt; KeyType, ValueType, KeyComparator &gt; 模板类 参考</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/searchdata.js"></script>
+<script type="text/javascript" src="../../search/search.js"></script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">数据库系统 CMU15-445/645<span id="projectnumber">&#160;1.0.0</span>
+   </div>
+   <div id="projectbrief">CMU15-445/645 是基于现代 C++ 开发的支持并发操作的简单 SQL 操作的单机数据库</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.9.8 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "../../search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('../../',true,false,'search.php','搜索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="../../de/dda/namespacebustub.html">bustub</a></li><li class="navelem"><a class="el" href="../../d9/da2/classbustub_1_1ExtendibleHashTableIndex.html">ExtendibleHashTableIndex</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Public 成员函数</a> &#124;
+<a href="#pro-attribs">Protected 属性</a> &#124;
+<a href="../../d0/d4a/classbustub_1_1ExtendibleHashTableIndex-members.html">所有成员列表</a>  </div>
+  <div class="headertitle"><div class="title">bustub::ExtendibleHashTableIndex&lt; KeyType, ValueType, KeyComparator &gt; 模板类 参考</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p><code>#include &lt;<a class="el" href="../../dd/dc7/extendible__hash__table__index_8h_source.html">extendible_hash_table_index.h</a>&gt;</code></p>
+<div class="dynheader">
+类 bustub::ExtendibleHashTableIndex&lt; KeyType, ValueType, KeyComparator &gt; 继承关系图:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../d7/dcc/classbustub_1_1ExtendibleHashTableIndex__inherit__graph.svg" width="222" height="139"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<center><span class="legend">[<a href="../../graph_legend.html">图例</a>]</span></center></div>
+<div class="dynheader">
+bustub::ExtendibleHashTableIndex&lt; KeyType, ValueType, KeyComparator &gt; 的协作图:</div>
+<div class="dyncontent">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d2/d61/classbustub_1_1ExtendibleHashTableIndex__coll__graph.svg" width="100%" height="392"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<center><span class="legend">[<a href="../../graph_legend.html">图例</a>]</span></center></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Public 成员函数</h2></td></tr>
+<tr class="memitem:aca5ad4a3264a03c01f9681ad4376a8e5" id="r_aca5ad4a3264a03c01f9681ad4376a8e5"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/da2/classbustub_1_1ExtendibleHashTableIndex.html#aca5ad4a3264a03c01f9681ad4376a8e5">ExtendibleHashTableIndex</a> (std::unique_ptr&lt; <a class="el" href="../../d6/df2/classbustub_1_1IndexMetadata.html">IndexMetadata</a> &gt; &amp;&amp;metadata, <a class="el" href="../../d6/d5d/classbustub_1_1BufferPoolManager.html">BufferPoolManager</a> *buffer_pool_manager, const <a class="el" href="../../dd/d14/classbustub_1_1HashFunction.html">HashFunction</a>&lt; KeyType &gt; &amp;hash_fn)</td></tr>
+<tr class="separator:aca5ad4a3264a03c01f9681ad4376a8e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a02f89d991d0df8ce011c0e7f774c5c68" id="r_a02f89d991d0df8ce011c0e7f774c5c68"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/da2/classbustub_1_1ExtendibleHashTableIndex.html#a02f89d991d0df8ce011c0e7f774c5c68">~ExtendibleHashTableIndex</a> () override=default</td></tr>
+<tr class="separator:a02f89d991d0df8ce011c0e7f774c5c68"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a018eb7a5780df5854b162789334745f3" id="r_a018eb7a5780df5854b162789334745f3"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/da2/classbustub_1_1ExtendibleHashTableIndex.html#a018eb7a5780df5854b162789334745f3">InsertEntry</a> (const <a class="el" href="../../d0/ded/classbustub_1_1Tuple.html">Tuple</a> &amp;key, <a class="el" href="../../d3/d22/classbustub_1_1RID.html">RID</a> rid, <a class="el" href="../../db/d88/classbustub_1_1Transaction.html">Transaction</a> *transaction) -&gt; bool override</td></tr>
+<tr class="separator:a018eb7a5780df5854b162789334745f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a904267f54beb8f837a07e4f56d70278f" id="r_a904267f54beb8f837a07e4f56d70278f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/da2/classbustub_1_1ExtendibleHashTableIndex.html#a904267f54beb8f837a07e4f56d70278f">DeleteEntry</a> (const <a class="el" href="../../d0/ded/classbustub_1_1Tuple.html">Tuple</a> &amp;key, <a class="el" href="../../d3/d22/classbustub_1_1RID.html">RID</a> rid, <a class="el" href="../../db/d88/classbustub_1_1Transaction.html">Transaction</a> *transaction) override</td></tr>
+<tr class="separator:a904267f54beb8f837a07e4f56d70278f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa4cbcf5289b10461790a27d4b894f72f" id="r_aa4cbcf5289b10461790a27d4b894f72f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/da2/classbustub_1_1ExtendibleHashTableIndex.html#aa4cbcf5289b10461790a27d4b894f72f">ScanKey</a> (const <a class="el" href="../../d0/ded/classbustub_1_1Tuple.html">Tuple</a> &amp;key, std::vector&lt; <a class="el" href="../../d3/d22/classbustub_1_1RID.html">RID</a> &gt; *result, <a class="el" href="../../db/d88/classbustub_1_1Transaction.html">Transaction</a> *transaction) override</td></tr>
+<tr class="separator:aa4cbcf5289b10461790a27d4b894f72f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_methods_classbustub_1_1Index"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classbustub_1_1Index')"><img src="../../closed.png" alt="-"/>&#160;Public 成员函数 继承自 <a class="el" href="../../d5/def/classbustub_1_1Index.html">bustub::Index</a></td></tr>
+<tr class="memitem:a598be92864fa8dc44840d1d3cf5f95da inherit pub_methods_classbustub_1_1Index" id="r_a598be92864fa8dc44840d1d3cf5f95da"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/def/classbustub_1_1Index.html#a598be92864fa8dc44840d1d3cf5f95da">Index</a> (std::unique_ptr&lt; <a class="el" href="../../d6/df2/classbustub_1_1IndexMetadata.html">IndexMetadata</a> &gt; &amp;&amp;metadata)</td></tr>
+<tr class="separator:a598be92864fa8dc44840d1d3cf5f95da inherit pub_methods_classbustub_1_1Index"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7e97b3ee03404cf357eee0b4d60f703d inherit pub_methods_classbustub_1_1Index" id="r_a7e97b3ee03404cf357eee0b4d60f703d"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/def/classbustub_1_1Index.html#a7e97b3ee03404cf357eee0b4d60f703d">~Index</a> ()=default</td></tr>
+<tr class="separator:a7e97b3ee03404cf357eee0b4d60f703d inherit pub_methods_classbustub_1_1Index"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1363907796370059f694d56459b82078 inherit pub_methods_classbustub_1_1Index" id="r_a1363907796370059f694d56459b82078"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/def/classbustub_1_1Index.html#a1363907796370059f694d56459b82078">GetMetadata</a> () const -&gt; <a class="el" href="../../d6/df2/classbustub_1_1IndexMetadata.html">IndexMetadata</a> *</td></tr>
+<tr class="separator:a1363907796370059f694d56459b82078 inherit pub_methods_classbustub_1_1Index"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad2ecad0f83a16746b16eb329cebe7215 inherit pub_methods_classbustub_1_1Index" id="r_ad2ecad0f83a16746b16eb329cebe7215"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/def/classbustub_1_1Index.html#ad2ecad0f83a16746b16eb329cebe7215">GetIndexColumnCount</a> () const -&gt; std::uint32_t</td></tr>
+<tr class="separator:ad2ecad0f83a16746b16eb329cebe7215 inherit pub_methods_classbustub_1_1Index"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac7d312ba1ceb46bf8943020d8fb20786 inherit pub_methods_classbustub_1_1Index" id="r_ac7d312ba1ceb46bf8943020d8fb20786"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/def/classbustub_1_1Index.html#ac7d312ba1ceb46bf8943020d8fb20786">GetName</a> () const -&gt; const std::string &amp;</td></tr>
+<tr class="separator:ac7d312ba1ceb46bf8943020d8fb20786 inherit pub_methods_classbustub_1_1Index"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afdeec9a975c46ccec922b9ddcc592305 inherit pub_methods_classbustub_1_1Index" id="r_afdeec9a975c46ccec922b9ddcc592305"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/def/classbustub_1_1Index.html#afdeec9a975c46ccec922b9ddcc592305">GetKeySchema</a> () const -&gt; <a class="el" href="../../da/d36/classbustub_1_1Schema.html">Schema</a> *</td></tr>
+<tr class="separator:afdeec9a975c46ccec922b9ddcc592305 inherit pub_methods_classbustub_1_1Index"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a552e04ae247fee601e6efd21436ca11c inherit pub_methods_classbustub_1_1Index" id="r_a552e04ae247fee601e6efd21436ca11c"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/def/classbustub_1_1Index.html#a552e04ae247fee601e6efd21436ca11c">GetKeyAttrs</a> () const -&gt; const std::vector&lt; uint32_t &gt; &amp;</td></tr>
+<tr class="separator:a552e04ae247fee601e6efd21436ca11c inherit pub_methods_classbustub_1_1Index"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a616572370797bd087f68e708e974a544 inherit pub_methods_classbustub_1_1Index" id="r_a616572370797bd087f68e708e974a544"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/def/classbustub_1_1Index.html#a616572370797bd087f68e708e974a544">ToString</a> () const -&gt; std::string</td></tr>
+<tr class="separator:a616572370797bd087f68e708e974a544 inherit pub_methods_classbustub_1_1Index"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-attribs" name="pro-attribs"></a>
+Protected 属性</h2></td></tr>
+<tr class="memitem:ab93a2f24df8feef80bc63b4a1b2401f9" id="r_ab93a2f24df8feef80bc63b4a1b2401f9"><td class="memItemLeft" align="right" valign="top">KeyComparator&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/da2/classbustub_1_1ExtendibleHashTableIndex.html#ab93a2f24df8feef80bc63b4a1b2401f9">comparator_</a></td></tr>
+<tr class="separator:ab93a2f24df8feef80bc63b4a1b2401f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa2b0d179149c144d195077b43bb6e401" id="r_aa2b0d179149c144d195077b43bb6e401"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../de/de8/classbustub_1_1DiskExtendibleHashTable.html">DiskExtendibleHashTable</a>&lt; KeyType, ValueType, KeyComparator &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/da2/classbustub_1_1ExtendibleHashTableIndex.html#aa2b0d179149c144d195077b43bb6e401">container_</a></td></tr>
+<tr class="separator:aa2b0d179149c144d195077b43bb6e401"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">构造及析构函数说明</h2>
+<a id="aca5ad4a3264a03c01f9681ad4376a8e5" name="aca5ad4a3264a03c01f9681ad4376a8e5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aca5ad4a3264a03c01f9681ad4376a8e5">&#9670;&#160;</a></span>ExtendibleHashTableIndex()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename KeyType , typename ValueType , typename KeyComparator &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d9/da2/classbustub_1_1ExtendibleHashTableIndex.html">bustub::ExtendibleHashTableIndex</a>&lt; KeyType, ValueType, KeyComparator &gt;::ExtendibleHashTableIndex </td>
+          <td>(</td>
+          <td class="paramtype">std::unique_ptr&lt; <a class="el" href="../../d6/df2/classbustub_1_1IndexMetadata.html">IndexMetadata</a> &gt; &amp;&amp;&#160;</td>
+          <td class="paramname"><em>metadata</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="../../d6/d5d/classbustub_1_1BufferPoolManager.html">BufferPoolManager</a> *&#160;</td>
+          <td class="paramname"><em>buffer_pool_manager</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="../../dd/d14/classbustub_1_1HashFunction.html">HashFunction</a>&lt; KeyType &gt; &amp;&#160;</td>
+          <td class="paramname"><em>hash_fn</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a02f89d991d0df8ce011c0e7f774c5c68" name="a02f89d991d0df8ce011c0e7f774c5c68"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a02f89d991d0df8ce011c0e7f774c5c68">&#9670;&#160;</a></span>~ExtendibleHashTableIndex()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename KeyType , typename ValueType , typename KeyComparator &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d9/da2/classbustub_1_1ExtendibleHashTableIndex.html">bustub::ExtendibleHashTableIndex</a>&lt; KeyType, ValueType, KeyComparator &gt;::~<a class="el" href="../../d9/da2/classbustub_1_1ExtendibleHashTableIndex.html">ExtendibleHashTableIndex</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">default</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">成员函数说明</h2>
+<a id="a904267f54beb8f837a07e4f56d70278f" name="a904267f54beb8f837a07e4f56d70278f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a904267f54beb8f837a07e4f56d70278f">&#9670;&#160;</a></span>DeleteEntry()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename KeyType , typename ValueType , typename KeyComparator &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="../../d9/da2/classbustub_1_1ExtendibleHashTableIndex.html">bustub::ExtendibleHashTableIndex</a>&lt; KeyType, ValueType, KeyComparator &gt;::DeleteEntry </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="../../d0/ded/classbustub_1_1Tuple.html">Tuple</a> &amp;&#160;</td>
+          <td class="paramname"><em>key</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="../../d3/d22/classbustub_1_1RID.html">RID</a>&#160;</td>
+          <td class="paramname"><em>rid</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="../../db/d88/classbustub_1_1Transaction.html">Transaction</a> *&#160;</td>
+          <td class="paramname"><em>transaction</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Delete an index entry by key. </p><dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">key</td><td>The index key </td></tr>
+    <tr><td class="paramname">rid</td><td>The <a class="el" href="../../d3/d22/classbustub_1_1RID.html">RID</a> associated with the key (unused) </td></tr>
+    <tr><td class="paramname">transaction</td><td>The transaction context </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>实现了 <a class="el" href="../../d5/def/classbustub_1_1Index.html#a76ce812b2c134e64915329bbeedad0a8">bustub::Index</a>.</p>
+
+</div>
+</div>
+<a id="a018eb7a5780df5854b162789334745f3" name="a018eb7a5780df5854b162789334745f3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a018eb7a5780df5854b162789334745f3">&#9670;&#160;</a></span>InsertEntry()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename KeyType , typename ValueType , typename KeyComparator &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto <a class="el" href="../../d9/da2/classbustub_1_1ExtendibleHashTableIndex.html">bustub::ExtendibleHashTableIndex</a>&lt; KeyType, ValueType, KeyComparator &gt;::InsertEntry </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="../../d0/ded/classbustub_1_1Tuple.html">Tuple</a> &amp;&#160;</td>
+          <td class="paramname"><em>key</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="../../d3/d22/classbustub_1_1RID.html">RID</a>&#160;</td>
+          <td class="paramname"><em>rid</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="../../db/d88/classbustub_1_1Transaction.html">Transaction</a> *&#160;</td>
+          <td class="paramname"><em>transaction</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> -&gt;  bool</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Insert an entry into the index. </p><dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">key</td><td>The index key </td></tr>
+    <tr><td class="paramname">rid</td><td>The <a class="el" href="../../d3/d22/classbustub_1_1RID.html">RID</a> associated with the key </td></tr>
+    <tr><td class="paramname">transaction</td><td>The transaction context </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>whether insertion is successful </dd></dl>
+
+<p>实现了 <a class="el" href="../../d5/def/classbustub_1_1Index.html#a68503eb10dbe00ac29b211636152b5ee">bustub::Index</a>.</p>
+
+</div>
+</div>
+<a id="aa4cbcf5289b10461790a27d4b894f72f" name="aa4cbcf5289b10461790a27d4b894f72f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa4cbcf5289b10461790a27d4b894f72f">&#9670;&#160;</a></span>ScanKey()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename KeyType , typename ValueType , typename KeyComparator &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="../../d9/da2/classbustub_1_1ExtendibleHashTableIndex.html">bustub::ExtendibleHashTableIndex</a>&lt; KeyType, ValueType, KeyComparator &gt;::ScanKey </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="../../d0/ded/classbustub_1_1Tuple.html">Tuple</a> &amp;&#160;</td>
+          <td class="paramname"><em>key</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::vector&lt; <a class="el" href="../../d3/d22/classbustub_1_1RID.html">RID</a> &gt; *&#160;</td>
+          <td class="paramname"><em>result</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="../../db/d88/classbustub_1_1Transaction.html">Transaction</a> *&#160;</td>
+          <td class="paramname"><em>transaction</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Search the index for the provided key. </p><dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">key</td><td>The index key </td></tr>
+    <tr><td class="paramname">result</td><td>The collection of RIDs that is populated with results of the search </td></tr>
+    <tr><td class="paramname">transaction</td><td>The transaction context </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>实现了 <a class="el" href="../../d5/def/classbustub_1_1Index.html#ac1956eb188c14fe560025ba940cdb302">bustub::Index</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">类成员变量说明</h2>
+<a id="ab93a2f24df8feef80bc63b4a1b2401f9" name="ab93a2f24df8feef80bc63b4a1b2401f9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab93a2f24df8feef80bc63b4a1b2401f9">&#9670;&#160;</a></span>comparator_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename KeyType , typename ValueType , typename KeyComparator &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">KeyComparator <a class="el" href="../../d9/da2/classbustub_1_1ExtendibleHashTableIndex.html">bustub::ExtendibleHashTableIndex</a>&lt; KeyType, ValueType, KeyComparator &gt;::comparator_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aa2b0d179149c144d195077b43bb6e401" name="aa2b0d179149c144d195077b43bb6e401"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa2b0d179149c144d195077b43bb6e401">&#9670;&#160;</a></span>container_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename KeyType , typename ValueType , typename KeyComparator &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../de/de8/classbustub_1_1DiskExtendibleHashTable.html">DiskExtendibleHashTable</a>&lt;KeyType, ValueType, KeyComparator&gt; <a class="el" href="../../d9/da2/classbustub_1_1ExtendibleHashTableIndex.html">bustub::ExtendibleHashTableIndex</a>&lt; KeyType, ValueType, KeyComparator &gt;::container_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<hr/>该类的文档由以下文件生成:<ul>
+<li>src/include/storage/index/<a class="el" href="../../dd/dc7/extendible__hash__table__index_8h_source.html">extendible_hash_table_index.h</a></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
+</small></address>
+</body>
+</html>

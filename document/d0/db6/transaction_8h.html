@@ -1,0 +1,155 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>数据库系统 CMU15-445/645: src/include/concurrency/transaction.h 文件参考</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/searchdata.js"></script>
+<script type="text/javascript" src="../../search/search.js"></script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">数据库系统 CMU15-445/645<span id="projectnumber">&#160;1.0.0</span>
+   </div>
+   <div id="projectbrief">CMU15-445/645 是基于现代 C++ 开发的支持并发操作的简单 SQL 操作的单机数据库</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.9.8 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "../../search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('../../',true,false,'search.php','搜索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="../../dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="../../dir_b0856f6b0d80ccb263b2f415c91f9e17.html">include</a></li><li class="navelem"><a class="el" href="../../dir_fe2aa8ace742259405f3fccf93b887e4.html">concurrency</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#nested-classes">类</a> &#124;
+<a href="#namespaces">命名空间</a> &#124;
+<a href="#enum-members">枚举</a>  </div>
+  <div class="headertitle"><div class="title">transaction.h 文件参考</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &lt;fmt/format.h&gt;</code><br />
+<code>#include &lt;atomic&gt;</code><br />
+<code>#include &lt;bitset&gt;</code><br />
+<code>#include &lt;cstddef&gt;</code><br />
+<code>#include &lt;deque&gt;</code><br />
+<code>#include &lt;limits&gt;</code><br />
+<code>#include &lt;list&gt;</code><br />
+<code>#include &lt;memory&gt;</code><br />
+<code>#include &lt;mutex&gt;</code><br />
+<code>#include &lt;string&gt;</code><br />
+<code>#include &lt;thread&gt;</code><br />
+<code>#include &lt;unordered_map&gt;</code><br />
+<code>#include &lt;unordered_set&gt;</code><br />
+<code>#include &lt;utility&gt;</code><br />
+<code>#include &lt;vector&gt;</code><br />
+<code>#include &quot;<a class="el" href="../../db/d16/config_8h_source.html">common/config.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="../../d1/d8c/logger_8h_source.html">common/logger.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="../../df/d86/abstract__expression_8h_source.html">execution/expressions/abstract_expression.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="../../de/dad/page_8h_source.html">storage/page/page.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="../../d2/d20/tuple_8h_source.html">storage/table/tuple.h</a>&quot;</code><br />
+</div><div class="textblock"><div class="dynheader">
+transaction.h 的引用(Include)关系图:</div>
+<div class="dyncontent">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../db/d24/transaction_8h__incl.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+</div><div class="textblock"><div class="dynheader">
+此图展示该文件直接或间接的被哪些文件引用了:</div>
+<div class="dyncontent">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d1/dad/transaction_8h__dep__incl.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+</div>
+<p><a href="../../d0/db6/transaction_8h_source.html">浏览源代码.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+类</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/daf/structbustub_1_1UndoLink.html">bustub::UndoLink</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d97/structbustub_1_1UndoLog.html">bustub::UndoLog</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d88/classbustub_1_1Transaction.html">bustub::Transaction</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d8c/structfmt_1_1formatter_3_01bustub_1_1IsolationLevel_01_4.html">fmt::formatter&lt; bustub::IsolationLevel &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d4a/structfmt_1_1formatter_3_01bustub_1_1TransactionState_01_4.html">fmt::formatter&lt; bustub::TransactionState &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="namespaces" name="namespaces"></a>
+命名空间</h2></td></tr>
+<tr class="memitem:de/dda/namespacebustub" id="r_de/dda/namespacebustub"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/dda/namespacebustub.html">bustub</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="enum-members" name="enum-members"></a>
+枚举</h2></td></tr>
+<tr class="memitem:ae58cece0a05d5cfc7ec83fc4a9161e20" id="r_ae58cece0a05d5cfc7ec83fc4a9161e20"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/dda/namespacebustub.html#ae58cece0a05d5cfc7ec83fc4a9161e20">bustub::TransactionState</a> { <a class="el" href="../../de/dda/namespacebustub.html#ae58cece0a05d5cfc7ec83fc4a9161e20a43491564ebcfd38568918efbd6e840fd">bustub::RUNNING</a> = 0
+, <a class="el" href="../../de/dda/namespacebustub.html#ae58cece0a05d5cfc7ec83fc4a9161e20aef1c3eb41e154de62456d6721f6e407c">bustub::TAINTED</a>
+, <a class="el" href="../../de/dda/namespacebustub.html#ae58cece0a05d5cfc7ec83fc4a9161e20a1c372d13f50af5ca9a935ebc78006e82">bustub::COMMITTED</a> = 100
+, <a class="el" href="../../de/dda/namespacebustub.html#ae58cece0a05d5cfc7ec83fc4a9161e20a4e6c860e5da10e31c5fd9cb76ddc2025">bustub::ABORTED</a>
+ }</td></tr>
+<tr class="separator:ae58cece0a05d5cfc7ec83fc4a9161e20"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a57ce43470b186e0066e7f128390005b5" id="r_a57ce43470b186e0066e7f128390005b5"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/dda/namespacebustub.html#a57ce43470b186e0066e7f128390005b5">bustub::IsolationLevel</a> { <a class="el" href="../../de/dda/namespacebustub.html#a57ce43470b186e0066e7f128390005b5a7b5722b7d02a9d8ff3a8bdfcb7d278c3">bustub::READ_UNCOMMITTED</a>
+, <a class="el" href="../../de/dda/namespacebustub.html#a57ce43470b186e0066e7f128390005b5a9eb39169b7db6ecee4ee0980284659bd">bustub::SNAPSHOT_ISOLATION</a>
+, <a class="el" href="../../de/dda/namespacebustub.html#a57ce43470b186e0066e7f128390005b5aadfafde622c8622bb72e4ff73e295cdb">bustub::SERIALIZABLE</a>
+ }</td></tr>
+<tr class="separator:a57ce43470b186e0066e7f128390005b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
+</small></address>
+</body>
+</html>

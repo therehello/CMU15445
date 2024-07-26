@@ -1,0 +1,884 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>数据库系统 CMU15-445/645: bustub::BPlusTree类 参考</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/searchdata.js"></script>
+<script type="text/javascript" src="../../search/search.js"></script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">数据库系统 CMU15-445/645<span id="projectnumber">&#160;1.0.0</span>
+   </div>
+   <div id="projectbrief">CMU15-445/645 是基于现代 C++ 开发的支持并发操作的简单 SQL 操作的单机数据库</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.9.8 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "../../search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('../../',true,false,'search.php','搜索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="../../de/dda/namespacebustub.html">bustub</a></li><li class="navelem"><a class="el" href="../../d8/dab/classbustub_1_1BPlusTree.html">BPlusTree</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Public 成员函数</a> &#124;
+<a href="#pri-types">Private 类型</a> &#124;
+<a href="#pri-methods">Private 成员函数</a> &#124;
+<a href="#pri-attribs">Private 属性</a> &#124;
+<a href="../../d9/d6d/classbustub_1_1BPlusTree-members.html">所有成员列表</a>  </div>
+  <div class="headertitle"><div class="title">bustub::BPlusTree类 参考</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p><code>#include &lt;<a class="el" href="../../d8/da5/b__plus__tree_8h_source.html">b_plus_tree.h</a>&gt;</code></p>
+<div class="dynheader">
+bustub::BPlusTree 的协作图:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../d0/d2e/classbustub_1_1BPlusTree__coll__graph.svg" width="340" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<center><span class="legend">[<a href="../../graph_legend.html">图例</a>]</span></center></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Public 成员函数</h2></td></tr>
+<tr class="memitem:a31aea3857ea307e861e34b6ba1b53dcf" id="r_a31aea3857ea307e861e34b6ba1b53dcf"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/dab/classbustub_1_1BPlusTree.html#a31aea3857ea307e861e34b6ba1b53dcf">BPlusTree</a> (std::string name, <a class="el" href="../../de/dda/namespacebustub.html#a8de4ac099b23d712481109bb846decde">page_id_t</a> header_page_id, <a class="el" href="../../d6/d5d/classbustub_1_1BufferPoolManager.html">BufferPoolManager</a> *buffer_pool_manager, const KeyComparator &amp;comparator, int leaf_max_size=<a class="el" href="../../d5/d76/b__plus__tree__leaf__page_8h.html#a1bf27d964f8ae5ad340eb82a7bd5fee7">LEAF_PAGE_SIZE</a>, int internal_max_size=<a class="el" href="../../da/d30/b__plus__tree__internal__page_8h.html#a04db3f924b29e986d8b3e94dbbbb9d55">INTERNAL_PAGE_SIZE</a>)</td></tr>
+<tr class="separator:a31aea3857ea307e861e34b6ba1b53dcf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a298d9aa806c90a9ddb3eacff9f9aedcc" id="r_a298d9aa806c90a9ddb3eacff9f9aedcc"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/dab/classbustub_1_1BPlusTree.html#a298d9aa806c90a9ddb3eacff9f9aedcc">IsEmpty</a> () const -&gt; bool</td></tr>
+<tr class="separator:a298d9aa806c90a9ddb3eacff9f9aedcc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9a4f500948c6802a3ebd9ea7b905f3a4" id="r_a9a4f500948c6802a3ebd9ea7b905f3a4"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/dab/classbustub_1_1BPlusTree.html#a9a4f500948c6802a3ebd9ea7b905f3a4">Insert</a> (const KeyType &amp;key, const ValueType &amp;value, <a class="el" href="../../db/d88/classbustub_1_1Transaction.html">Transaction</a> *txn=nullptr) -&gt; bool</td></tr>
+<tr class="separator:a9a4f500948c6802a3ebd9ea7b905f3a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2a46d875b8c9231d63cf481831d2e00d" id="r_a2a46d875b8c9231d63cf481831d2e00d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/dab/classbustub_1_1BPlusTree.html#a2a46d875b8c9231d63cf481831d2e00d">Remove</a> (const KeyType &amp;key, <a class="el" href="../../db/d88/classbustub_1_1Transaction.html">Transaction</a> *txn)</td></tr>
+<tr class="separator:a2a46d875b8c9231d63cf481831d2e00d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a60dd6e9db3db5d0b78aa668a00a37ca3" id="r_a60dd6e9db3db5d0b78aa668a00a37ca3"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/dab/classbustub_1_1BPlusTree.html#a60dd6e9db3db5d0b78aa668a00a37ca3">GetValue</a> (const KeyType &amp;key, std::vector&lt; ValueType &gt; *result, <a class="el" href="../../db/d88/classbustub_1_1Transaction.html">Transaction</a> *txn=nullptr) -&gt; bool</td></tr>
+<tr class="separator:a60dd6e9db3db5d0b78aa668a00a37ca3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a77383b07f1019140cbc6b56976861b27" id="r_a77383b07f1019140cbc6b56976861b27"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/dab/classbustub_1_1BPlusTree.html#a77383b07f1019140cbc6b56976861b27">GetRootPageId</a> () -&gt; <a class="el" href="../../de/dda/namespacebustub.html#a8de4ac099b23d712481109bb846decde">page_id_t</a></td></tr>
+<tr class="separator:a77383b07f1019140cbc6b56976861b27"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a50c8f5975530bd16c748306403bb5623" id="r_a50c8f5975530bd16c748306403bb5623"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/dab/classbustub_1_1BPlusTree.html#a50c8f5975530bd16c748306403bb5623">Begin</a> () -&gt; <a class="el" href="../../d4/df2/index__iterator_8h.html#af44bbf16ed06a9a1165c4d6e74335f31">INDEXITERATOR_TYPE</a></td></tr>
+<tr class="separator:a50c8f5975530bd16c748306403bb5623"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa4b76c620aac827d0de3385943779369" id="r_aa4b76c620aac827d0de3385943779369"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/dab/classbustub_1_1BPlusTree.html#aa4b76c620aac827d0de3385943779369">End</a> () -&gt; <a class="el" href="../../d4/df2/index__iterator_8h.html#af44bbf16ed06a9a1165c4d6e74335f31">INDEXITERATOR_TYPE</a></td></tr>
+<tr class="separator:aa4b76c620aac827d0de3385943779369"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0084b3b682c8797a66d4683d73141e83" id="r_a0084b3b682c8797a66d4683d73141e83"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/dab/classbustub_1_1BPlusTree.html#a0084b3b682c8797a66d4683d73141e83">Begin</a> (const KeyType &amp;key) -&gt; <a class="el" href="../../d4/df2/index__iterator_8h.html#af44bbf16ed06a9a1165c4d6e74335f31">INDEXITERATOR_TYPE</a></td></tr>
+<tr class="separator:a0084b3b682c8797a66d4683d73141e83"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a21c9225f6334233dab4adbfdcc02e67c" id="r_a21c9225f6334233dab4adbfdcc02e67c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/dab/classbustub_1_1BPlusTree.html#a21c9225f6334233dab4adbfdcc02e67c">Print</a> (<a class="el" href="../../d6/d5d/classbustub_1_1BufferPoolManager.html">BufferPoolManager</a> *bpm)</td></tr>
+<tr class="separator:a21c9225f6334233dab4adbfdcc02e67c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1b2017f5d001c8afaca49cf15686e634" id="r_a1b2017f5d001c8afaca49cf15686e634"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/dab/classbustub_1_1BPlusTree.html#a1b2017f5d001c8afaca49cf15686e634">Draw</a> (<a class="el" href="../../d6/d5d/classbustub_1_1BufferPoolManager.html">BufferPoolManager</a> *bpm, const std::string &amp;outf)</td></tr>
+<tr class="separator:a1b2017f5d001c8afaca49cf15686e634"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a537628992fff268a9ca5a84e33231616" id="r_a537628992fff268a9ca5a84e33231616"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/dab/classbustub_1_1BPlusTree.html#a537628992fff268a9ca5a84e33231616">DrawBPlusTree</a> () -&gt; std::string</td></tr>
+<tr class="memdesc:a537628992fff268a9ca5a84e33231616"><td class="mdescLeft">&#160;</td><td class="mdescRight">draw a B+ tree, below is a printed B+ tree(3 max leaf, 4 max internal) after inserting key: {1, 5, 9, 13, 17, 21, 25, 29, 33, 37, 18, 19, 20}  <br /></td></tr>
+<tr class="separator:a537628992fff268a9ca5a84e33231616"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac9289cc7ef6a0aae28757bba1f0c855e" id="r_ac9289cc7ef6a0aae28757bba1f0c855e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/dab/classbustub_1_1BPlusTree.html#ac9289cc7ef6a0aae28757bba1f0c855e">InsertFromFile</a> (const std::string &amp;file_name, <a class="el" href="../../db/d88/classbustub_1_1Transaction.html">Transaction</a> *txn=nullptr)</td></tr>
+<tr class="separator:ac9289cc7ef6a0aae28757bba1f0c855e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a20507c58a6e689f7f4e5f42b5164bed4" id="r_a20507c58a6e689f7f4e5f42b5164bed4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/dab/classbustub_1_1BPlusTree.html#a20507c58a6e689f7f4e5f42b5164bed4">RemoveFromFile</a> (const std::string &amp;file_name, <a class="el" href="../../db/d88/classbustub_1_1Transaction.html">Transaction</a> *txn=nullptr)</td></tr>
+<tr class="separator:a20507c58a6e689f7f4e5f42b5164bed4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7be96b4f81ada2c412789371cfd0da35" id="r_a7be96b4f81ada2c412789371cfd0da35"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/dab/classbustub_1_1BPlusTree.html#a7be96b4f81ada2c412789371cfd0da35">BatchOpsFromFile</a> (const std::string &amp;file_name, <a class="el" href="../../db/d88/classbustub_1_1Transaction.html">Transaction</a> *txn=nullptr)</td></tr>
+<tr class="memdesc:a7be96b4f81ada2c412789371cfd0da35"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read batch operations from input file, below is a sample file format insert some keys and delete 8, 9 from the tree with one step. { i1 i2 i3 i4 i5 i6 i7 i8 i9 i10 i30 d8 d9 } // batch.txt B+ Tree(4 max leaf, 4 max internal) after processing: (5) (3) (7) (1,2) (3,4) (5,6) (7,10,30) // The output tree example  <br /></td></tr>
+<tr class="separator:a7be96b4f81ada2c412789371cfd0da35"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-types" name="pri-types"></a>
+Private 类型</h2></td></tr>
+<tr class="memitem:ada414ac6e2d51ebf6618248911a126cf" id="r_ada414ac6e2d51ebf6618248911a126cf"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/dab/classbustub_1_1BPlusTree.html#ada414ac6e2d51ebf6618248911a126cf">InternalPage</a> = <a class="el" href="../../da/d05/classbustub_1_1BPlusTreeInternalPage.html">BPlusTreeInternalPage</a>&lt; KeyType, <a class="el" href="../../de/dda/namespacebustub.html#a8de4ac099b23d712481109bb846decde">page_id_t</a>, KeyComparator &gt;</td></tr>
+<tr class="separator:ada414ac6e2d51ebf6618248911a126cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abceb280ed5a6196a4611f926e4367c91" id="r_abceb280ed5a6196a4611f926e4367c91"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/dab/classbustub_1_1BPlusTree.html#abceb280ed5a6196a4611f926e4367c91">LeafPage</a> = <a class="el" href="../../dc/d79/classbustub_1_1BPlusTreeLeafPage.html">BPlusTreeLeafPage</a>&lt; KeyType, ValueType, KeyComparator &gt;</td></tr>
+<tr class="separator:abceb280ed5a6196a4611f926e4367c91"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-methods" name="pri-methods"></a>
+Private 成员函数</h2></td></tr>
+<tr class="memitem:a25eea0149a2adbf261de142519a7193d" id="r_a25eea0149a2adbf261de142519a7193d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/dab/classbustub_1_1BPlusTree.html#a25eea0149a2adbf261de142519a7193d">ToGraph</a> (<a class="el" href="../../de/dda/namespacebustub.html#a8de4ac099b23d712481109bb846decde">page_id_t</a> page_id, const <a class="el" href="../../d6/d48/classbustub_1_1BPlusTreePage.html">BPlusTreePage</a> *page, std::ofstream &amp;out)</td></tr>
+<tr class="separator:a25eea0149a2adbf261de142519a7193d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af499da8d94f18dd4e4f54cf43c95f9e1" id="r_af499da8d94f18dd4e4f54cf43c95f9e1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/dab/classbustub_1_1BPlusTree.html#af499da8d94f18dd4e4f54cf43c95f9e1">PrintTree</a> (<a class="el" href="../../de/dda/namespacebustub.html#a8de4ac099b23d712481109bb846decde">page_id_t</a> page_id, const <a class="el" href="../../d6/d48/classbustub_1_1BPlusTreePage.html">BPlusTreePage</a> *page)</td></tr>
+<tr class="separator:af499da8d94f18dd4e4f54cf43c95f9e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1eef7e732958cbba0c1a36563aa7bc7e" id="r_a1eef7e732958cbba0c1a36563aa7bc7e"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/dab/classbustub_1_1BPlusTree.html#a1eef7e732958cbba0c1a36563aa7bc7e">ToPrintableBPlusTree</a> (<a class="el" href="../../de/dda/namespacebustub.html#a8de4ac099b23d712481109bb846decde">page_id_t</a> root_id) -&gt; <a class="el" href="../../d8/dd0/structbustub_1_1PrintableBPlusTree.html">PrintableBPlusTree</a></td></tr>
+<tr class="memdesc:a1eef7e732958cbba0c1a36563aa7bc7e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert A B+ tree into a Printable B+ tree  <br /></td></tr>
+<tr class="separator:a1eef7e732958cbba0c1a36563aa7bc7e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
+Private 属性</h2></td></tr>
+<tr class="memitem:a72d57d6be0dedb9cf92ee31d06f5e435" id="r_a72d57d6be0dedb9cf92ee31d06f5e435"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/dab/classbustub_1_1BPlusTree.html#a72d57d6be0dedb9cf92ee31d06f5e435">index_name_</a></td></tr>
+<tr class="separator:a72d57d6be0dedb9cf92ee31d06f5e435"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac0d13779b26d4bac9f4cc2709fda0b06" id="r_ac0d13779b26d4bac9f4cc2709fda0b06"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d6/d5d/classbustub_1_1BufferPoolManager.html">BufferPoolManager</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/dab/classbustub_1_1BPlusTree.html#ac0d13779b26d4bac9f4cc2709fda0b06">bpm_</a></td></tr>
+<tr class="separator:ac0d13779b26d4bac9f4cc2709fda0b06"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:addd5ad54bbbc7e71b25c8d848a9ff6d1" id="r_addd5ad54bbbc7e71b25c8d848a9ff6d1"><td class="memItemLeft" align="right" valign="top">KeyComparator&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/dab/classbustub_1_1BPlusTree.html#addd5ad54bbbc7e71b25c8d848a9ff6d1">comparator_</a></td></tr>
+<tr class="separator:addd5ad54bbbc7e71b25c8d848a9ff6d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9e4a8388d7249371d002141a84ffee18" id="r_a9e4a8388d7249371d002141a84ffee18"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/dab/classbustub_1_1BPlusTree.html#a9e4a8388d7249371d002141a84ffee18">log</a></td></tr>
+<tr class="separator:a9e4a8388d7249371d002141a84ffee18"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a31f2e3e8a09bbc09b909e77c55b7e697" id="r_a31f2e3e8a09bbc09b909e77c55b7e697"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/dab/classbustub_1_1BPlusTree.html#a31f2e3e8a09bbc09b909e77c55b7e697">leaf_max_size_</a></td></tr>
+<tr class="separator:a31f2e3e8a09bbc09b909e77c55b7e697"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4760a70c2e82def976361b0ed26e1fe5" id="r_a4760a70c2e82def976361b0ed26e1fe5"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/dab/classbustub_1_1BPlusTree.html#a4760a70c2e82def976361b0ed26e1fe5">internal_max_size_</a></td></tr>
+<tr class="separator:a4760a70c2e82def976361b0ed26e1fe5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:accd94b2a204b6fd131b905f505467af6" id="r_accd94b2a204b6fd131b905f505467af6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../de/dda/namespacebustub.html#a8de4ac099b23d712481109bb846decde">page_id_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/dab/classbustub_1_1BPlusTree.html#accd94b2a204b6fd131b905f505467af6">header_page_id_</a></td></tr>
+<tr class="separator:accd94b2a204b6fd131b905f505467af6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">成员类型定义说明</h2>
+<a id="ada414ac6e2d51ebf6618248911a126cf" name="ada414ac6e2d51ebf6618248911a126cf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ada414ac6e2d51ebf6618248911a126cf">&#9670;&#160;</a></span>InternalPage</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="../../d8/dab/classbustub_1_1BPlusTree.html#ada414ac6e2d51ebf6618248911a126cf">bustub::BPlusTree::InternalPage</a> =  <a class="el" href="../../da/d05/classbustub_1_1BPlusTreeInternalPage.html">BPlusTreeInternalPage</a>&lt;KeyType, <a class="el" href="../../de/dda/namespacebustub.html#a8de4ac099b23d712481109bb846decde">page_id_t</a>, KeyComparator&gt;</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="abceb280ed5a6196a4611f926e4367c91" name="abceb280ed5a6196a4611f926e4367c91"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abceb280ed5a6196a4611f926e4367c91">&#9670;&#160;</a></span>LeafPage</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="../../d8/dab/classbustub_1_1BPlusTree.html#abceb280ed5a6196a4611f926e4367c91">bustub::BPlusTree::LeafPage</a> =  <a class="el" href="../../dc/d79/classbustub_1_1BPlusTreeLeafPage.html">BPlusTreeLeafPage</a>&lt;KeyType, ValueType, KeyComparator&gt;</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">构造及析构函数说明</h2>
+<a id="a31aea3857ea307e861e34b6ba1b53dcf" name="a31aea3857ea307e861e34b6ba1b53dcf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a31aea3857ea307e861e34b6ba1b53dcf">&#9670;&#160;</a></span>BPlusTree()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bustub::BPlusTree::BPlusTree </td>
+          <td>(</td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="../../de/dda/namespacebustub.html#a8de4ac099b23d712481109bb846decde">page_id_t</a>&#160;</td>
+          <td class="paramname"><em>header_page_id</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="../../d6/d5d/classbustub_1_1BufferPoolManager.html">BufferPoolManager</a> *&#160;</td>
+          <td class="paramname"><em>buffer_pool_manager</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const KeyComparator &amp;&#160;</td>
+          <td class="paramname"><em>comparator</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>leaf_max_size</em> = <code><a class="el" href="../../d5/d76/b__plus__tree__leaf__page_8h.html#a1bf27d964f8ae5ad340eb82a7bd5fee7">LEAF_PAGE_SIZE</a></code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>internal_max_size</em> = <code><a class="el" href="../../da/d30/b__plus__tree__internal__page_8h.html#a04db3f924b29e986d8b3e94dbbbb9d55">INTERNAL_PAGE_SIZE</a></code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">explicit</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">成员函数说明</h2>
+<a id="a7be96b4f81ada2c412789371cfd0da35" name="a7be96b4f81ada2c412789371cfd0da35"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7be96b4f81ada2c412789371cfd0da35">&#9670;&#160;</a></span>BatchOpsFromFile()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void bustub::BPlusTree::BatchOpsFromFile </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>file_name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="../../db/d88/classbustub_1_1Transaction.html">Transaction</a> *&#160;</td>
+          <td class="paramname"><em>txn</em> = <code>nullptr</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Read batch operations from input file, below is a sample file format insert some keys and delete 8, 9 from the tree with one step. { i1 i2 i3 i4 i5 i6 i7 i8 i9 i10 i30 d8 d9 } // batch.txt B+ Tree(4 max leaf, 4 max internal) after processing: (5) (3) (7) (1,2) (3,4) (5,6) (7,10,30) // The output tree example </p>
+
+</div>
+</div>
+<a id="a50c8f5975530bd16c748306403bb5623" name="a50c8f5975530bd16c748306403bb5623"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a50c8f5975530bd16c748306403bb5623">&#9670;&#160;</a></span>Begin() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto bustub::BPlusTree::Begin </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> -&gt;  <a class="el" href="../../d4/df2/index__iterator_8h.html#af44bbf16ed06a9a1165c4d6e74335f31">INDEXITERATOR_TYPE</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a0084b3b682c8797a66d4683d73141e83" name="a0084b3b682c8797a66d4683d73141e83"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0084b3b682c8797a66d4683d73141e83">&#9670;&#160;</a></span>Begin() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto bustub::BPlusTree::Begin </td>
+          <td>(</td>
+          <td class="paramtype">const KeyType &amp;&#160;</td>
+          <td class="paramname"><em>key</em></td><td>)</td>
+          <td> -&gt;  <a class="el" href="../../d4/df2/index__iterator_8h.html#af44bbf16ed06a9a1165c4d6e74335f31">INDEXITERATOR_TYPE</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a1b2017f5d001c8afaca49cf15686e634" name="a1b2017f5d001c8afaca49cf15686e634"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1b2017f5d001c8afaca49cf15686e634">&#9670;&#160;</a></span>Draw()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void bustub::BPlusTree::Draw </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../d6/d5d/classbustub_1_1BufferPoolManager.html">BufferPoolManager</a> *&#160;</td>
+          <td class="paramname"><em>bpm</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>outf</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a537628992fff268a9ca5a84e33231616" name="a537628992fff268a9ca5a84e33231616"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a537628992fff268a9ca5a84e33231616">&#9670;&#160;</a></span>DrawBPlusTree()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto bustub::BPlusTree::DrawBPlusTree </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> -&gt;  std::string</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>draw a B+ tree, below is a printed B+ tree(3 max leaf, 4 max internal) after inserting key: {1, 5, 9, 13, 17, 21, 25, 29, 33, 37, 18, 19, 20} </p>
+<pre class="fragment">                         (25)
+           (9,17,19)                          (33)
+</pre><p> (1,5) (9,13) (17,18) (19,20,21) (25,29) (33,37)</p>
+<dl class="section return"><dt>返回</dt><dd>std::string </dd></dl>
+
+</div>
+</div>
+<a id="aa4b76c620aac827d0de3385943779369" name="aa4b76c620aac827d0de3385943779369"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa4b76c620aac827d0de3385943779369">&#9670;&#160;</a></span>End()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto bustub::BPlusTree::End </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> -&gt;  <a class="el" href="../../d4/df2/index__iterator_8h.html#af44bbf16ed06a9a1165c4d6e74335f31">INDEXITERATOR_TYPE</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a77383b07f1019140cbc6b56976861b27" name="a77383b07f1019140cbc6b56976861b27"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a77383b07f1019140cbc6b56976861b27">&#9670;&#160;</a></span>GetRootPageId()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto bustub::BPlusTree::GetRootPageId </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> -&gt;  <a class="el" href="../../de/dda/namespacebustub.html#a8de4ac099b23d712481109bb846decde">page_id_t</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a60dd6e9db3db5d0b78aa668a00a37ca3" name="a60dd6e9db3db5d0b78aa668a00a37ca3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a60dd6e9db3db5d0b78aa668a00a37ca3">&#9670;&#160;</a></span>GetValue()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto bustub::BPlusTree::GetValue </td>
+          <td>(</td>
+          <td class="paramtype">const KeyType &amp;&#160;</td>
+          <td class="paramname"><em>key</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::vector&lt; ValueType &gt; *&#160;</td>
+          <td class="paramname"><em>result</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="../../db/d88/classbustub_1_1Transaction.html">Transaction</a> *&#160;</td>
+          <td class="paramname"><em>txn</em> = <code>nullptr</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> -&gt;  bool</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a9a4f500948c6802a3ebd9ea7b905f3a4" name="a9a4f500948c6802a3ebd9ea7b905f3a4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9a4f500948c6802a3ebd9ea7b905f3a4">&#9670;&#160;</a></span>Insert()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto bustub::BPlusTree::Insert </td>
+          <td>(</td>
+          <td class="paramtype">const KeyType &amp;&#160;</td>
+          <td class="paramname"><em>key</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const ValueType &amp;&#160;</td>
+          <td class="paramname"><em>value</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="../../db/d88/classbustub_1_1Transaction.html">Transaction</a> *&#160;</td>
+          <td class="paramname"><em>txn</em> = <code>nullptr</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> -&gt;  bool</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ac9289cc7ef6a0aae28757bba1f0c855e" name="ac9289cc7ef6a0aae28757bba1f0c855e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac9289cc7ef6a0aae28757bba1f0c855e">&#9670;&#160;</a></span>InsertFromFile()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void bustub::BPlusTree::InsertFromFile </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>file_name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="../../db/d88/classbustub_1_1Transaction.html">Transaction</a> *&#160;</td>
+          <td class="paramname"><em>txn</em> = <code>nullptr</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a298d9aa806c90a9ddb3eacff9f9aedcc" name="a298d9aa806c90a9ddb3eacff9f9aedcc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a298d9aa806c90a9ddb3eacff9f9aedcc">&#9670;&#160;</a></span>IsEmpty()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto bustub::BPlusTree::IsEmpty </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const -&gt;  bool</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a21c9225f6334233dab4adbfdcc02e67c" name="a21c9225f6334233dab4adbfdcc02e67c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a21c9225f6334233dab4adbfdcc02e67c">&#9670;&#160;</a></span>Print()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void bustub::BPlusTree::Print </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../d6/d5d/classbustub_1_1BufferPoolManager.html">BufferPoolManager</a> *&#160;</td>
+          <td class="paramname"><em>bpm</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="af499da8d94f18dd4e4f54cf43c95f9e1" name="af499da8d94f18dd4e4f54cf43c95f9e1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af499da8d94f18dd4e4f54cf43c95f9e1">&#9670;&#160;</a></span>PrintTree()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void bustub::BPlusTree::PrintTree </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../de/dda/namespacebustub.html#a8de4ac099b23d712481109bb846decde">page_id_t</a>&#160;</td>
+          <td class="paramname"><em>page_id</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="../../d6/d48/classbustub_1_1BPlusTreePage.html">BPlusTreePage</a> *&#160;</td>
+          <td class="paramname"><em>page</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a2a46d875b8c9231d63cf481831d2e00d" name="a2a46d875b8c9231d63cf481831d2e00d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2a46d875b8c9231d63cf481831d2e00d">&#9670;&#160;</a></span>Remove()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void bustub::BPlusTree::Remove </td>
+          <td>(</td>
+          <td class="paramtype">const KeyType &amp;&#160;</td>
+          <td class="paramname"><em>key</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="../../db/d88/classbustub_1_1Transaction.html">Transaction</a> *&#160;</td>
+          <td class="paramname"><em>txn</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a20507c58a6e689f7f4e5f42b5164bed4" name="a20507c58a6e689f7f4e5f42b5164bed4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a20507c58a6e689f7f4e5f42b5164bed4">&#9670;&#160;</a></span>RemoveFromFile()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void bustub::BPlusTree::RemoveFromFile </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>file_name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="../../db/d88/classbustub_1_1Transaction.html">Transaction</a> *&#160;</td>
+          <td class="paramname"><em>txn</em> = <code>nullptr</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a25eea0149a2adbf261de142519a7193d" name="a25eea0149a2adbf261de142519a7193d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a25eea0149a2adbf261de142519a7193d">&#9670;&#160;</a></span>ToGraph()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void bustub::BPlusTree::ToGraph </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../de/dda/namespacebustub.html#a8de4ac099b23d712481109bb846decde">page_id_t</a>&#160;</td>
+          <td class="paramname"><em>page_id</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="../../d6/d48/classbustub_1_1BPlusTreePage.html">BPlusTreePage</a> *&#160;</td>
+          <td class="paramname"><em>page</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::ofstream &amp;&#160;</td>
+          <td class="paramname"><em>out</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a1eef7e732958cbba0c1a36563aa7bc7e" name="a1eef7e732958cbba0c1a36563aa7bc7e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1eef7e732958cbba0c1a36563aa7bc7e">&#9670;&#160;</a></span>ToPrintableBPlusTree()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto bustub::BPlusTree::ToPrintableBPlusTree </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../de/dda/namespacebustub.html#a8de4ac099b23d712481109bb846decde">page_id_t</a>&#160;</td>
+          <td class="paramname"><em>root_id</em></td><td>)</td>
+          <td> -&gt;  <a class="el" href="../../d8/dd0/structbustub_1_1PrintableBPlusTree.html">PrintableBPlusTree</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Convert A B+ tree into a Printable B+ tree </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">root_id</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>PrintableNode </dd></dl>
+
+</div>
+</div>
+<h2 class="groupheader">类成员变量说明</h2>
+<a id="ac0d13779b26d4bac9f4cc2709fda0b06" name="ac0d13779b26d4bac9f4cc2709fda0b06"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac0d13779b26d4bac9f4cc2709fda0b06">&#9670;&#160;</a></span>bpm_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d6/d5d/classbustub_1_1BufferPoolManager.html">BufferPoolManager</a>* bustub::BPlusTree::bpm_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="addd5ad54bbbc7e71b25c8d848a9ff6d1" name="addd5ad54bbbc7e71b25c8d848a9ff6d1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#addd5ad54bbbc7e71b25c8d848a9ff6d1">&#9670;&#160;</a></span>comparator_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">KeyComparator bustub::BPlusTree::comparator_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="accd94b2a204b6fd131b905f505467af6" name="accd94b2a204b6fd131b905f505467af6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#accd94b2a204b6fd131b905f505467af6">&#9670;&#160;</a></span>header_page_id_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../de/dda/namespacebustub.html#a8de4ac099b23d712481109bb846decde">page_id_t</a> bustub::BPlusTree::header_page_id_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a72d57d6be0dedb9cf92ee31d06f5e435" name="a72d57d6be0dedb9cf92ee31d06f5e435"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a72d57d6be0dedb9cf92ee31d06f5e435">&#9670;&#160;</a></span>index_name_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string bustub::BPlusTree::index_name_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a4760a70c2e82def976361b0ed26e1fe5" name="a4760a70c2e82def976361b0ed26e1fe5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4760a70c2e82def976361b0ed26e1fe5">&#9670;&#160;</a></span>internal_max_size_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int bustub::BPlusTree::internal_max_size_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a31f2e3e8a09bbc09b909e77c55b7e697" name="a31f2e3e8a09bbc09b909e77c55b7e697"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a31f2e3e8a09bbc09b909e77c55b7e697">&#9670;&#160;</a></span>leaf_max_size_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int bustub::BPlusTree::leaf_max_size_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a9e4a8388d7249371d002141a84ffee18" name="a9e4a8388d7249371d002141a84ffee18"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9e4a8388d7249371d002141a84ffee18">&#9670;&#160;</a></span>log</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt;std::string&gt; bustub::BPlusTree::log</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<hr/>该类的文档由以下文件生成:<ul>
+<li>src/include/storage/index/<a class="el" href="../../d8/da5/b__plus__tree_8h_source.html">b_plus_tree.h</a></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
+</small></address>
+</body>
+</html>

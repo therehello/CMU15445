@@ -1,0 +1,1745 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>数据库系统 CMU15-445/645: bustub::Value类 参考</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/searchdata.js"></script>
+<script type="text/javascript" src="../../search/search.js"></script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">数据库系统 CMU15-445/645<span id="projectnumber">&#160;1.0.0</span>
+   </div>
+   <div id="projectbrief">CMU15-445/645 是基于现代 C++ 开发的支持并发操作的简单 SQL 操作的单机数据库</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.9.8 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "../../search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('../../',true,false,'search.php','搜索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="../../de/dda/namespacebustub.html">bustub</a></li><li class="navelem"><a class="el" href="../../d4/df7/classbustub_1_1Value.html">Value</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#nested-classes">类</a> &#124;
+<a href="#pub-methods">Public 成员函数</a> &#124;
+<a href="#pub-static-methods">静态 Public 成员函数</a> &#124;
+<a href="#pro-attribs">Protected 属性</a> &#124;
+<a href="#friends">友元</a> &#124;
+<a href="../../d1/d4b/classbustub_1_1Value-members.html">所有成员列表</a>  </div>
+  <div class="headertitle"><div class="title">bustub::Value类 参考</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p><code>#include &lt;<a class="el" href="../../d4/d3f/value_8h_source.html">value.h</a>&gt;</code></p>
+<div class="dynheader">
+bustub::Value 的协作图:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../d6/d94/classbustub_1_1Value__coll__graph.svg" width="150" height="124"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<center><span class="legend">[<a href="../../graph_legend.html">图例</a>]</span></center></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+类</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">union &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/db9/unionbustub_1_1Value_1_1Val.html">Val</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Public 成员函数</h2></td></tr>
+<tr class="memitem:a275c9c2eb9aa9780d4ac33d2d71f4840" id="r_a275c9c2eb9aa9780d4ac33d2d71f4840"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/df7/classbustub_1_1Value.html#a275c9c2eb9aa9780d4ac33d2d71f4840">Value</a> (const <a class="el" href="../../de/dda/namespacebustub.html#a49735e6748963f5515394bbb228f1fc8">TypeId</a> type)</td></tr>
+<tr class="separator:a275c9c2eb9aa9780d4ac33d2d71f4840"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0e9b246c8c41260dea9fd39a58799ab5" id="r_a0e9b246c8c41260dea9fd39a58799ab5"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/df7/classbustub_1_1Value.html#a0e9b246c8c41260dea9fd39a58799ab5">Value</a> (<a class="el" href="../../de/dda/namespacebustub.html#a49735e6748963f5515394bbb228f1fc8">TypeId</a> type, int8_t i)</td></tr>
+<tr class="separator:a0e9b246c8c41260dea9fd39a58799ab5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a11cf1c9ac36d809d58efc1d57cda9b25" id="r_a11cf1c9ac36d809d58efc1d57cda9b25"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/df7/classbustub_1_1Value.html#a11cf1c9ac36d809d58efc1d57cda9b25">Value</a> (<a class="el" href="../../de/dda/namespacebustub.html#a49735e6748963f5515394bbb228f1fc8">TypeId</a> type, double d)</td></tr>
+<tr class="separator:a11cf1c9ac36d809d58efc1d57cda9b25"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa97eab6a3ce99c31551e56fbd54ddb44" id="r_aa97eab6a3ce99c31551e56fbd54ddb44"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/df7/classbustub_1_1Value.html#aa97eab6a3ce99c31551e56fbd54ddb44">Value</a> (<a class="el" href="../../de/dda/namespacebustub.html#a49735e6748963f5515394bbb228f1fc8">TypeId</a> type, float f)</td></tr>
+<tr class="separator:aa97eab6a3ce99c31551e56fbd54ddb44"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a54e13e4894308ad296b5e172082e6f03" id="r_a54e13e4894308ad296b5e172082e6f03"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/df7/classbustub_1_1Value.html#a54e13e4894308ad296b5e172082e6f03">Value</a> (<a class="el" href="../../de/dda/namespacebustub.html#a49735e6748963f5515394bbb228f1fc8">TypeId</a> type, int16_t i)</td></tr>
+<tr class="separator:a54e13e4894308ad296b5e172082e6f03"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0b1ef06245f86b1df5f21a0fadd89390" id="r_a0b1ef06245f86b1df5f21a0fadd89390"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/df7/classbustub_1_1Value.html#a0b1ef06245f86b1df5f21a0fadd89390">Value</a> (<a class="el" href="../../de/dda/namespacebustub.html#a49735e6748963f5515394bbb228f1fc8">TypeId</a> type, int32_t i)</td></tr>
+<tr class="separator:a0b1ef06245f86b1df5f21a0fadd89390"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a04aaf248b3213d8bfb96342dec4f8fc3" id="r_a04aaf248b3213d8bfb96342dec4f8fc3"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/df7/classbustub_1_1Value.html#a04aaf248b3213d8bfb96342dec4f8fc3">Value</a> (<a class="el" href="../../de/dda/namespacebustub.html#a49735e6748963f5515394bbb228f1fc8">TypeId</a> type, int64_t i)</td></tr>
+<tr class="separator:a04aaf248b3213d8bfb96342dec4f8fc3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a34c6cf4364fbd47b1b05df14ece302f4" id="r_a34c6cf4364fbd47b1b05df14ece302f4"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/df7/classbustub_1_1Value.html#a34c6cf4364fbd47b1b05df14ece302f4">Value</a> (<a class="el" href="../../de/dda/namespacebustub.html#a49735e6748963f5515394bbb228f1fc8">TypeId</a> type, uint64_t i)</td></tr>
+<tr class="separator:a34c6cf4364fbd47b1b05df14ece302f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae5edd3284269ee7e3bcf2080afc2808d" id="r_ae5edd3284269ee7e3bcf2080afc2808d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/df7/classbustub_1_1Value.html#ae5edd3284269ee7e3bcf2080afc2808d">Value</a> (<a class="el" href="../../de/dda/namespacebustub.html#a49735e6748963f5515394bbb228f1fc8">TypeId</a> type, const char *data, uint32_t len, bool manage_data)</td></tr>
+<tr class="separator:ae5edd3284269ee7e3bcf2080afc2808d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad7a2a09b3c0105f4f22dc12084aab72a" id="r_ad7a2a09b3c0105f4f22dc12084aab72a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/df7/classbustub_1_1Value.html#ad7a2a09b3c0105f4f22dc12084aab72a">Value</a> (<a class="el" href="../../de/dda/namespacebustub.html#a49735e6748963f5515394bbb228f1fc8">TypeId</a> type, const std::string &amp;data)</td></tr>
+<tr class="separator:ad7a2a09b3c0105f4f22dc12084aab72a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a869b52c68c961c722ec6f46f10ab5afe" id="r_a869b52c68c961c722ec6f46f10ab5afe"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/df7/classbustub_1_1Value.html#a869b52c68c961c722ec6f46f10ab5afe">Value</a> ()</td></tr>
+<tr class="separator:a869b52c68c961c722ec6f46f10ab5afe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a867a88004b664f106e8a48e1c21ce6f4" id="r_a867a88004b664f106e8a48e1c21ce6f4"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/df7/classbustub_1_1Value.html#a867a88004b664f106e8a48e1c21ce6f4">Value</a> (const <a class="el" href="../../d4/df7/classbustub_1_1Value.html">Value</a> &amp;other)</td></tr>
+<tr class="separator:a867a88004b664f106e8a48e1c21ce6f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0ef15a50b9ecc7eb07638b8fa8cfc1b1" id="r_a0ef15a50b9ecc7eb07638b8fa8cfc1b1"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/df7/classbustub_1_1Value.html#a0ef15a50b9ecc7eb07638b8fa8cfc1b1">operator=</a> (<a class="el" href="../../d4/df7/classbustub_1_1Value.html">Value</a> other) -&gt; <a class="el" href="../../d4/df7/classbustub_1_1Value.html">Value</a> &amp;</td></tr>
+<tr class="separator:a0ef15a50b9ecc7eb07638b8fa8cfc1b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad1658c65b5b97f296d242ffab2c78dde" id="r_ad1658c65b5b97f296d242ffab2c78dde"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/df7/classbustub_1_1Value.html#ad1658c65b5b97f296d242ffab2c78dde">~Value</a> ()</td></tr>
+<tr class="separator:ad1658c65b5b97f296d242ffab2c78dde"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abca828f99cda622188d14d7bf04acb72" id="r_abca828f99cda622188d14d7bf04acb72"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/df7/classbustub_1_1Value.html#abca828f99cda622188d14d7bf04acb72">CheckInteger</a> () const -&gt; bool</td></tr>
+<tr class="separator:abca828f99cda622188d14d7bf04acb72"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa8ab1674c279837bd8fc41f146baa9b5" id="r_aa8ab1674c279837bd8fc41f146baa9b5"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/df7/classbustub_1_1Value.html#aa8ab1674c279837bd8fc41f146baa9b5">CheckComparable</a> (const <a class="el" href="../../d4/df7/classbustub_1_1Value.html">Value</a> &amp;o) const -&gt; bool</td></tr>
+<tr class="separator:aa8ab1674c279837bd8fc41f146baa9b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af578c32bfba5c4090451861e1c4daf0a" id="r_af578c32bfba5c4090451861e1c4daf0a"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/df7/classbustub_1_1Value.html#af578c32bfba5c4090451861e1c4daf0a">GetTypeId</a> () const -&gt; <a class="el" href="../../de/dda/namespacebustub.html#a49735e6748963f5515394bbb228f1fc8">TypeId</a></td></tr>
+<tr class="separator:af578c32bfba5c4090451861e1c4daf0a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a64ee164eb423e4a7fdba8728321eaadd" id="r_a64ee164eb423e4a7fdba8728321eaadd"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/df7/classbustub_1_1Value.html#a64ee164eb423e4a7fdba8728321eaadd">GetLength</a> () const -&gt; uint32_t</td></tr>
+<tr class="separator:a64ee164eb423e4a7fdba8728321eaadd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a66c0050567118f37e93ee751d1091792" id="r_a66c0050567118f37e93ee751d1091792"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/df7/classbustub_1_1Value.html#a66c0050567118f37e93ee751d1091792">GetData</a> () const -&gt; const char *</td></tr>
+<tr class="separator:a66c0050567118f37e93ee751d1091792"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8cab8259655713d0c578afef9e242d03" id="r_a8cab8259655713d0c578afef9e242d03"><td class="memTemplParams" colspan="2">template&lt;class T &gt; </td></tr>
+<tr class="memitem:a8cab8259655713d0c578afef9e242d03"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d4/df7/classbustub_1_1Value.html#a8cab8259655713d0c578afef9e242d03">GetAs</a> () const -&gt; T</td></tr>
+<tr class="separator:a8cab8259655713d0c578afef9e242d03"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6f17c7727d12f8cdf1f1e19f1044f9cf" id="r_a6f17c7727d12f8cdf1f1e19f1044f9cf"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/df7/classbustub_1_1Value.html#a6f17c7727d12f8cdf1f1e19f1044f9cf">CastAs</a> (const <a class="el" href="../../de/dda/namespacebustub.html#a49735e6748963f5515394bbb228f1fc8">TypeId</a> type_id) const -&gt; <a class="el" href="../../d4/df7/classbustub_1_1Value.html">Value</a></td></tr>
+<tr class="separator:a6f17c7727d12f8cdf1f1e19f1044f9cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a02fc42e117ac4ee006cc82ac9c7451d7" id="r_a02fc42e117ac4ee006cc82ac9c7451d7"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/df7/classbustub_1_1Value.html#a02fc42e117ac4ee006cc82ac9c7451d7">CompareExactlyEquals</a> (const <a class="el" href="../../d4/df7/classbustub_1_1Value.html">Value</a> &amp;o) const -&gt; bool</td></tr>
+<tr class="separator:a02fc42e117ac4ee006cc82ac9c7451d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a67f6afe571a42f44abdda212367034f6" id="r_a67f6afe571a42f44abdda212367034f6"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/df7/classbustub_1_1Value.html#a67f6afe571a42f44abdda212367034f6">CompareEquals</a> (const <a class="el" href="../../d4/df7/classbustub_1_1Value.html">Value</a> &amp;o) const -&gt; <a class="el" href="../../de/dda/namespacebustub.html#a0b4071db2dd630bdbf7a86b4f251f560">CmpBool</a></td></tr>
+<tr class="separator:a67f6afe571a42f44abdda212367034f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a71b73cda05876334598f5745ca7ab57e" id="r_a71b73cda05876334598f5745ca7ab57e"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/df7/classbustub_1_1Value.html#a71b73cda05876334598f5745ca7ab57e">CompareNotEquals</a> (const <a class="el" href="../../d4/df7/classbustub_1_1Value.html">Value</a> &amp;o) const -&gt; <a class="el" href="../../de/dda/namespacebustub.html#a0b4071db2dd630bdbf7a86b4f251f560">CmpBool</a></td></tr>
+<tr class="separator:a71b73cda05876334598f5745ca7ab57e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa6fad9496ebfd97b04ce5adc6811cb7d" id="r_aa6fad9496ebfd97b04ce5adc6811cb7d"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/df7/classbustub_1_1Value.html#aa6fad9496ebfd97b04ce5adc6811cb7d">CompareLessThan</a> (const <a class="el" href="../../d4/df7/classbustub_1_1Value.html">Value</a> &amp;o) const -&gt; <a class="el" href="../../de/dda/namespacebustub.html#a0b4071db2dd630bdbf7a86b4f251f560">CmpBool</a></td></tr>
+<tr class="separator:aa6fad9496ebfd97b04ce5adc6811cb7d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a04bb225e7905fb02b50531990e2857c3" id="r_a04bb225e7905fb02b50531990e2857c3"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/df7/classbustub_1_1Value.html#a04bb225e7905fb02b50531990e2857c3">CompareLessThanEquals</a> (const <a class="el" href="../../d4/df7/classbustub_1_1Value.html">Value</a> &amp;o) const -&gt; <a class="el" href="../../de/dda/namespacebustub.html#a0b4071db2dd630bdbf7a86b4f251f560">CmpBool</a></td></tr>
+<tr class="separator:a04bb225e7905fb02b50531990e2857c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7e0d712ba68741978ff821203089dfe9" id="r_a7e0d712ba68741978ff821203089dfe9"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/df7/classbustub_1_1Value.html#a7e0d712ba68741978ff821203089dfe9">CompareGreaterThan</a> (const <a class="el" href="../../d4/df7/classbustub_1_1Value.html">Value</a> &amp;o) const -&gt; <a class="el" href="../../de/dda/namespacebustub.html#a0b4071db2dd630bdbf7a86b4f251f560">CmpBool</a></td></tr>
+<tr class="separator:a7e0d712ba68741978ff821203089dfe9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae062e518628b53ef75f4a6513ffde80e" id="r_ae062e518628b53ef75f4a6513ffde80e"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/df7/classbustub_1_1Value.html#ae062e518628b53ef75f4a6513ffde80e">CompareGreaterThanEquals</a> (const <a class="el" href="../../d4/df7/classbustub_1_1Value.html">Value</a> &amp;o) const -&gt; <a class="el" href="../../de/dda/namespacebustub.html#a0b4071db2dd630bdbf7a86b4f251f560">CmpBool</a></td></tr>
+<tr class="separator:ae062e518628b53ef75f4a6513ffde80e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a735c693db3a0bebfb3c33fd00f23e8ca" id="r_a735c693db3a0bebfb3c33fd00f23e8ca"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/df7/classbustub_1_1Value.html#a735c693db3a0bebfb3c33fd00f23e8ca">Add</a> (const <a class="el" href="../../d4/df7/classbustub_1_1Value.html">Value</a> &amp;o) const -&gt; <a class="el" href="../../d4/df7/classbustub_1_1Value.html">Value</a></td></tr>
+<tr class="separator:a735c693db3a0bebfb3c33fd00f23e8ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8920d56f9749546ca86bd6429945f871" id="r_a8920d56f9749546ca86bd6429945f871"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/df7/classbustub_1_1Value.html#a8920d56f9749546ca86bd6429945f871">Subtract</a> (const <a class="el" href="../../d4/df7/classbustub_1_1Value.html">Value</a> &amp;o) const -&gt; <a class="el" href="../../d4/df7/classbustub_1_1Value.html">Value</a></td></tr>
+<tr class="separator:a8920d56f9749546ca86bd6429945f871"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af1fefd0fdc948c2fee1cc7765cb38ecf" id="r_af1fefd0fdc948c2fee1cc7765cb38ecf"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/df7/classbustub_1_1Value.html#af1fefd0fdc948c2fee1cc7765cb38ecf">Multiply</a> (const <a class="el" href="../../d4/df7/classbustub_1_1Value.html">Value</a> &amp;o) const -&gt; <a class="el" href="../../d4/df7/classbustub_1_1Value.html">Value</a></td></tr>
+<tr class="separator:af1fefd0fdc948c2fee1cc7765cb38ecf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6f8688d446e9ebe45dbf2c39f750092b" id="r_a6f8688d446e9ebe45dbf2c39f750092b"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/df7/classbustub_1_1Value.html#a6f8688d446e9ebe45dbf2c39f750092b">Divide</a> (const <a class="el" href="../../d4/df7/classbustub_1_1Value.html">Value</a> &amp;o) const -&gt; <a class="el" href="../../d4/df7/classbustub_1_1Value.html">Value</a></td></tr>
+<tr class="separator:a6f8688d446e9ebe45dbf2c39f750092b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab7a5c9353718e0ea60747975822b1bfe" id="r_ab7a5c9353718e0ea60747975822b1bfe"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/df7/classbustub_1_1Value.html#ab7a5c9353718e0ea60747975822b1bfe">Modulo</a> (const <a class="el" href="../../d4/df7/classbustub_1_1Value.html">Value</a> &amp;o) const -&gt; <a class="el" href="../../d4/df7/classbustub_1_1Value.html">Value</a></td></tr>
+<tr class="separator:ab7a5c9353718e0ea60747975822b1bfe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a001f3c7d17fc1811b0cf85dad06f2e11" id="r_a001f3c7d17fc1811b0cf85dad06f2e11"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/df7/classbustub_1_1Value.html#a001f3c7d17fc1811b0cf85dad06f2e11">Min</a> (const <a class="el" href="../../d4/df7/classbustub_1_1Value.html">Value</a> &amp;o) const -&gt; <a class="el" href="../../d4/df7/classbustub_1_1Value.html">Value</a></td></tr>
+<tr class="separator:a001f3c7d17fc1811b0cf85dad06f2e11"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5bf78c0ca477d0bf5de0a91a29078bd6" id="r_a5bf78c0ca477d0bf5de0a91a29078bd6"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/df7/classbustub_1_1Value.html#a5bf78c0ca477d0bf5de0a91a29078bd6">Max</a> (const <a class="el" href="../../d4/df7/classbustub_1_1Value.html">Value</a> &amp;o) const -&gt; <a class="el" href="../../d4/df7/classbustub_1_1Value.html">Value</a></td></tr>
+<tr class="separator:a5bf78c0ca477d0bf5de0a91a29078bd6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8a18274fdf61db4491c72d540918f22f" id="r_a8a18274fdf61db4491c72d540918f22f"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/df7/classbustub_1_1Value.html#a8a18274fdf61db4491c72d540918f22f">Sqrt</a> () const -&gt; <a class="el" href="../../d4/df7/classbustub_1_1Value.html">Value</a></td></tr>
+<tr class="separator:a8a18274fdf61db4491c72d540918f22f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adb637389e8c4c5e866e8d0e0032fc225" id="r_adb637389e8c4c5e866e8d0e0032fc225"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/df7/classbustub_1_1Value.html#adb637389e8c4c5e866e8d0e0032fc225">OperateNull</a> (const <a class="el" href="../../d4/df7/classbustub_1_1Value.html">Value</a> &amp;o) const -&gt; <a class="el" href="../../d4/df7/classbustub_1_1Value.html">Value</a></td></tr>
+<tr class="separator:adb637389e8c4c5e866e8d0e0032fc225"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a092a9319d56d2366db0109520eb9f1a9" id="r_a092a9319d56d2366db0109520eb9f1a9"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/df7/classbustub_1_1Value.html#a092a9319d56d2366db0109520eb9f1a9">IsZero</a> () const -&gt; bool</td></tr>
+<tr class="separator:a092a9319d56d2366db0109520eb9f1a9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab1c41ec9063555f4394e0307b475abf0" id="r_ab1c41ec9063555f4394e0307b475abf0"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/df7/classbustub_1_1Value.html#ab1c41ec9063555f4394e0307b475abf0">IsNull</a> () const -&gt; bool</td></tr>
+<tr class="separator:ab1c41ec9063555f4394e0307b475abf0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac8be32b9de7e116d57158442347b6625" id="r_ac8be32b9de7e116d57158442347b6625"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/df7/classbustub_1_1Value.html#ac8be32b9de7e116d57158442347b6625">SerializeTo</a> (char *storage) const</td></tr>
+<tr class="separator:ac8be32b9de7e116d57158442347b6625"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae42cf5a1a6b718ace13fddc1d4449e62" id="r_ae42cf5a1a6b718ace13fddc1d4449e62"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/df7/classbustub_1_1Value.html#ae42cf5a1a6b718ace13fddc1d4449e62">ToString</a> () const -&gt; std::string</td></tr>
+<tr class="separator:ae42cf5a1a6b718ace13fddc1d4449e62"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa79214aa09c9a9491fd41d0e7e42860b" id="r_aa79214aa09c9a9491fd41d0e7e42860b"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/df7/classbustub_1_1Value.html#aa79214aa09c9a9491fd41d0e7e42860b">Copy</a> () const -&gt; <a class="el" href="../../d4/df7/classbustub_1_1Value.html">Value</a></td></tr>
+<tr class="separator:aa79214aa09c9a9491fd41d0e7e42860b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
+静态 Public 成员函数</h2></td></tr>
+<tr class="memitem:a1134305e8eda5e2dd89c8d001f6a9a48" id="r_a1134305e8eda5e2dd89c8d001f6a9a48"><td class="memItemLeft" align="right" valign="top">static auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/df7/classbustub_1_1Value.html#a1134305e8eda5e2dd89c8d001f6a9a48">DeserializeFrom</a> (const char *storage, const <a class="el" href="../../de/dda/namespacebustub.html#a49735e6748963f5515394bbb228f1fc8">TypeId</a> type_id) -&gt; <a class="el" href="../../d4/df7/classbustub_1_1Value.html">Value</a></td></tr>
+<tr class="separator:a1134305e8eda5e2dd89c8d001f6a9a48"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-attribs" name="pro-attribs"></a>
+Protected 属性</h2></td></tr>
+<tr class="memitem:ad77e745e5195370cd16432fd1786b893" id="r_ad77e745e5195370cd16432fd1786b893"><td class="memItemLeft" align="right" valign="top">union <a class="el" href="../../d7/db9/unionbustub_1_1Value_1_1Val.html">bustub::Value::Val</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/df7/classbustub_1_1Value.html#ad77e745e5195370cd16432fd1786b893">value_</a></td></tr>
+<tr class="separator:ad77e745e5195370cd16432fd1786b893"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4d174e2fac3c081b7554dc49849f366d" id="r_a4d174e2fac3c081b7554dc49849f366d"><td class="memItemLeft" >union {&#160;</td><td class="memItemRight" valign="bottom"></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae858b5d10e844cde47747bb615f0423d" id="r_ae858b5d10e844cde47747bb615f0423d"><td class="memItemLeft" >&#160;&#160;&#160;uint32_t&#160;&#160;&#160;<a class="el" href="../../d4/df7/classbustub_1_1Value.html#a50ce01f436ca203c4612db41392de052">len_</a>&#160;</td><td class="memItemRight" valign="bottom"></td></tr>
+<tr class="separator:ae858b5d10e844cde47747bb615f0423d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab478778a14ba338e0dabdecdc0d056fb" id="r_ab478778a14ba338e0dabdecdc0d056fb"><td class="memItemLeft" >&#160;&#160;&#160;<a class="el" href="../../de/dda/namespacebustub.html#a49735e6748963f5515394bbb228f1fc8">TypeId</a>&#160;&#160;&#160;<a class="el" href="../../d4/df7/classbustub_1_1Value.html#af08760ffd3d945e144e8feb763b0425f">elem_type_id_</a>&#160;</td><td class="memItemRight" valign="bottom"></td></tr>
+<tr class="separator:ab478778a14ba338e0dabdecdc0d056fb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4d174e2fac3c081b7554dc49849f366d" id="r_a4d174e2fac3c081b7554dc49849f366d"><td class="memItemLeft" valign="top">}&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/df7/classbustub_1_1Value.html#a4d174e2fac3c081b7554dc49849f366d">size_</a>&#160;</td><td class="memItemRight" valign="bottom"></td></tr>
+<tr class="separator:a4d174e2fac3c081b7554dc49849f366d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1680f1c5aceacdae4287c2b04743ceed" id="r_a1680f1c5aceacdae4287c2b04743ceed"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/df7/classbustub_1_1Value.html#a1680f1c5aceacdae4287c2b04743ceed">manage_data_</a></td></tr>
+<tr class="separator:a1680f1c5aceacdae4287c2b04743ceed"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab39fb104d3db35514ff96b8ed6f1b594" id="r_ab39fb104d3db35514ff96b8ed6f1b594"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../de/dda/namespacebustub.html#a49735e6748963f5515394bbb228f1fc8">TypeId</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/df7/classbustub_1_1Value.html#ab39fb104d3db35514ff96b8ed6f1b594">type_id_</a></td></tr>
+<tr class="separator:ab39fb104d3db35514ff96b8ed6f1b594"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="friends" name="friends"></a>
+友元</h2></td></tr>
+<tr class="memitem:a18dba29b4f3e91d6d2bc53472a6bb7cc" id="r_a18dba29b4f3e91d6d2bc53472a6bb7cc"><td class="memItemLeft" align="right" valign="top">class&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/df7/classbustub_1_1Value.html#a18dba29b4f3e91d6d2bc53472a6bb7cc">Type</a></td></tr>
+<tr class="separator:a18dba29b4f3e91d6d2bc53472a6bb7cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a79159b84381e94ec5d5c80ba7d4da120" id="r_a79159b84381e94ec5d5c80ba7d4da120"><td class="memItemLeft" align="right" valign="top">class&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/df7/classbustub_1_1Value.html#a79159b84381e94ec5d5c80ba7d4da120">NumericType</a></td></tr>
+<tr class="separator:a79159b84381e94ec5d5c80ba7d4da120"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abbaa4aeba44cb76d4a8be26c817a8d3d" id="r_abbaa4aeba44cb76d4a8be26c817a8d3d"><td class="memItemLeft" align="right" valign="top">class&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/df7/classbustub_1_1Value.html#abbaa4aeba44cb76d4a8be26c817a8d3d">IntegerParentType</a></td></tr>
+<tr class="separator:abbaa4aeba44cb76d4a8be26c817a8d3d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad5daa7c4cdceceba369041d829746cb2" id="r_ad5daa7c4cdceceba369041d829746cb2"><td class="memItemLeft" align="right" valign="top">class&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/df7/classbustub_1_1Value.html#ad5daa7c4cdceceba369041d829746cb2">TinyintType</a></td></tr>
+<tr class="separator:ad5daa7c4cdceceba369041d829746cb2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad318ef5bdf47bfa23ef259520e393c86" id="r_ad318ef5bdf47bfa23ef259520e393c86"><td class="memItemLeft" align="right" valign="top">class&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/df7/classbustub_1_1Value.html#ad318ef5bdf47bfa23ef259520e393c86">SmallintType</a></td></tr>
+<tr class="separator:ad318ef5bdf47bfa23ef259520e393c86"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaa06efd1401ee152456eb22a467ddcb3" id="r_aaa06efd1401ee152456eb22a467ddcb3"><td class="memItemLeft" align="right" valign="top">class&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/df7/classbustub_1_1Value.html#aaa06efd1401ee152456eb22a467ddcb3">IntegerType</a></td></tr>
+<tr class="separator:aaa06efd1401ee152456eb22a467ddcb3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0a40f921b043a08617c1ee3885cfe2b6" id="r_a0a40f921b043a08617c1ee3885cfe2b6"><td class="memItemLeft" align="right" valign="top">class&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/df7/classbustub_1_1Value.html#a0a40f921b043a08617c1ee3885cfe2b6">BigintType</a></td></tr>
+<tr class="separator:a0a40f921b043a08617c1ee3885cfe2b6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a74722ac014df85e9013a3d2b1d008f0c" id="r_a74722ac014df85e9013a3d2b1d008f0c"><td class="memItemLeft" align="right" valign="top">class&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/df7/classbustub_1_1Value.html#a74722ac014df85e9013a3d2b1d008f0c">DecimalType</a></td></tr>
+<tr class="separator:a74722ac014df85e9013a3d2b1d008f0c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4352efebead58c24093f4ecf729cfc64" id="r_a4352efebead58c24093f4ecf729cfc64"><td class="memItemLeft" align="right" valign="top">class&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/df7/classbustub_1_1Value.html#a4352efebead58c24093f4ecf729cfc64">TimestampType</a></td></tr>
+<tr class="separator:a4352efebead58c24093f4ecf729cfc64"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae6685da7e972a1fbaf35774b1c4a3c66" id="r_ae6685da7e972a1fbaf35774b1c4a3c66"><td class="memItemLeft" align="right" valign="top">class&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/df7/classbustub_1_1Value.html#ae6685da7e972a1fbaf35774b1c4a3c66">BooleanType</a></td></tr>
+<tr class="separator:ae6685da7e972a1fbaf35774b1c4a3c66"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab48da2a2719dd78acf8e27060d83ecac" id="r_ab48da2a2719dd78acf8e27060d83ecac"><td class="memItemLeft" align="right" valign="top">class&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/df7/classbustub_1_1Value.html#ab48da2a2719dd78acf8e27060d83ecac">VarlenType</a></td></tr>
+<tr class="separator:ab48da2a2719dd78acf8e27060d83ecac"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a77ac879921541d41ad8aa7fffb3d454f" id="r_a77ac879921541d41ad8aa7fffb3d454f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/df7/classbustub_1_1Value.html#a77ac879921541d41ad8aa7fffb3d454f">Swap</a> (<a class="el" href="../../d4/df7/classbustub_1_1Value.html">Value</a> &amp;first, <a class="el" href="../../d4/df7/classbustub_1_1Value.html">Value</a> &amp;second)</td></tr>
+<tr class="separator:a77ac879921541d41ad8aa7fffb3d454f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">构造及析构函数说明</h2>
+<a id="a275c9c2eb9aa9780d4ac33d2d71f4840" name="a275c9c2eb9aa9780d4ac33d2d71f4840"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a275c9c2eb9aa9780d4ac33d2d71f4840">&#9670;&#160;</a></span>Value() <span class="overload">[1/12]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bustub::Value::Value </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="../../de/dda/namespacebustub.html#a49735e6748963f5515394bbb228f1fc8">TypeId</a>&#160;</td>
+          <td class="paramname"><em>type</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">explicit</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a0e9b246c8c41260dea9fd39a58799ab5" name="a0e9b246c8c41260dea9fd39a58799ab5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0e9b246c8c41260dea9fd39a58799ab5">&#9670;&#160;</a></span>Value() <span class="overload">[2/12]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bustub::Value::Value </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../de/dda/namespacebustub.html#a49735e6748963f5515394bbb228f1fc8">TypeId</a>&#160;</td>
+          <td class="paramname"><em>type</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int8_t&#160;</td>
+          <td class="paramname"><em>i</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a11cf1c9ac36d809d58efc1d57cda9b25" name="a11cf1c9ac36d809d58efc1d57cda9b25"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a11cf1c9ac36d809d58efc1d57cda9b25">&#9670;&#160;</a></span>Value() <span class="overload">[3/12]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bustub::Value::Value </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../de/dda/namespacebustub.html#a49735e6748963f5515394bbb228f1fc8">TypeId</a>&#160;</td>
+          <td class="paramname"><em>type</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>d</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aa97eab6a3ce99c31551e56fbd54ddb44" name="aa97eab6a3ce99c31551e56fbd54ddb44"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa97eab6a3ce99c31551e56fbd54ddb44">&#9670;&#160;</a></span>Value() <span class="overload">[4/12]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bustub::Value::Value </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../de/dda/namespacebustub.html#a49735e6748963f5515394bbb228f1fc8">TypeId</a>&#160;</td>
+          <td class="paramname"><em>type</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>f</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a54e13e4894308ad296b5e172082e6f03" name="a54e13e4894308ad296b5e172082e6f03"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a54e13e4894308ad296b5e172082e6f03">&#9670;&#160;</a></span>Value() <span class="overload">[5/12]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bustub::Value::Value </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../de/dda/namespacebustub.html#a49735e6748963f5515394bbb228f1fc8">TypeId</a>&#160;</td>
+          <td class="paramname"><em>type</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int16_t&#160;</td>
+          <td class="paramname"><em>i</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a0b1ef06245f86b1df5f21a0fadd89390" name="a0b1ef06245f86b1df5f21a0fadd89390"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0b1ef06245f86b1df5f21a0fadd89390">&#9670;&#160;</a></span>Value() <span class="overload">[6/12]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bustub::Value::Value </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../de/dda/namespacebustub.html#a49735e6748963f5515394bbb228f1fc8">TypeId</a>&#160;</td>
+          <td class="paramname"><em>type</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int32_t&#160;</td>
+          <td class="paramname"><em>i</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a04aaf248b3213d8bfb96342dec4f8fc3" name="a04aaf248b3213d8bfb96342dec4f8fc3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a04aaf248b3213d8bfb96342dec4f8fc3">&#9670;&#160;</a></span>Value() <span class="overload">[7/12]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bustub::Value::Value </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../de/dda/namespacebustub.html#a49735e6748963f5515394bbb228f1fc8">TypeId</a>&#160;</td>
+          <td class="paramname"><em>type</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int64_t&#160;</td>
+          <td class="paramname"><em>i</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a34c6cf4364fbd47b1b05df14ece302f4" name="a34c6cf4364fbd47b1b05df14ece302f4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a34c6cf4364fbd47b1b05df14ece302f4">&#9670;&#160;</a></span>Value() <span class="overload">[8/12]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bustub::Value::Value </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../de/dda/namespacebustub.html#a49735e6748963f5515394bbb228f1fc8">TypeId</a>&#160;</td>
+          <td class="paramname"><em>type</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint64_t&#160;</td>
+          <td class="paramname"><em>i</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ae5edd3284269ee7e3bcf2080afc2808d" name="ae5edd3284269ee7e3bcf2080afc2808d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae5edd3284269ee7e3bcf2080afc2808d">&#9670;&#160;</a></span>Value() <span class="overload">[9/12]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bustub::Value::Value </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../de/dda/namespacebustub.html#a49735e6748963f5515394bbb228f1fc8">TypeId</a>&#160;</td>
+          <td class="paramname"><em>type</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>data</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>len</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>manage_data</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ad7a2a09b3c0105f4f22dc12084aab72a" name="ad7a2a09b3c0105f4f22dc12084aab72a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad7a2a09b3c0105f4f22dc12084aab72a">&#9670;&#160;</a></span>Value() <span class="overload">[10/12]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bustub::Value::Value </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../de/dda/namespacebustub.html#a49735e6748963f5515394bbb228f1fc8">TypeId</a>&#160;</td>
+          <td class="paramname"><em>type</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>data</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a869b52c68c961c722ec6f46f10ab5afe" name="a869b52c68c961c722ec6f46f10ab5afe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a869b52c68c961c722ec6f46f10ab5afe">&#9670;&#160;</a></span>Value() <span class="overload">[11/12]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bustub::Value::Value </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a867a88004b664f106e8a48e1c21ce6f4" name="a867a88004b664f106e8a48e1c21ce6f4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a867a88004b664f106e8a48e1c21ce6f4">&#9670;&#160;</a></span>Value() <span class="overload">[12/12]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bustub::Value::Value </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="../../d4/df7/classbustub_1_1Value.html">Value</a> &amp;&#160;</td>
+          <td class="paramname"><em>other</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ad1658c65b5b97f296d242ffab2c78dde" name="ad1658c65b5b97f296d242ffab2c78dde"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad1658c65b5b97f296d242ffab2c78dde">&#9670;&#160;</a></span>~Value()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bustub::Value::~Value </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">成员函数说明</h2>
+<a id="a735c693db3a0bebfb3c33fd00f23e8ca" name="a735c693db3a0bebfb3c33fd00f23e8ca"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a735c693db3a0bebfb3c33fd00f23e8ca">&#9670;&#160;</a></span>Add()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto bustub::Value::Add </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="../../d4/df7/classbustub_1_1Value.html">Value</a> &amp;&#160;</td>
+          <td class="paramname"><em>o</em></td><td>)</td>
+          <td> const -&gt; <a class="el" href="../../d4/df7/classbustub_1_1Value.html">Value</a> </td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a6f17c7727d12f8cdf1f1e19f1044f9cf" name="a6f17c7727d12f8cdf1f1e19f1044f9cf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6f17c7727d12f8cdf1f1e19f1044f9cf">&#9670;&#160;</a></span>CastAs()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto bustub::Value::CastAs </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="../../de/dda/namespacebustub.html#a49735e6748963f5515394bbb228f1fc8">TypeId</a>&#160;</td>
+          <td class="paramname"><em>type_id</em></td><td>)</td>
+          <td> const -&gt; <a class="el" href="../../d4/df7/classbustub_1_1Value.html">Value</a> </td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aa8ab1674c279837bd8fc41f146baa9b5" name="aa8ab1674c279837bd8fc41f146baa9b5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa8ab1674c279837bd8fc41f146baa9b5">&#9670;&#160;</a></span>CheckComparable()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto bustub::Value::CheckComparable </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="../../d4/df7/classbustub_1_1Value.html">Value</a> &amp;&#160;</td>
+          <td class="paramname"><em>o</em></td><td>)</td>
+          <td> const -&gt; bool</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="abca828f99cda622188d14d7bf04acb72" name="abca828f99cda622188d14d7bf04acb72"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abca828f99cda622188d14d7bf04acb72">&#9670;&#160;</a></span>CheckInteger()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto bustub::Value::CheckInteger </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const -&gt; bool</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a67f6afe571a42f44abdda212367034f6" name="a67f6afe571a42f44abdda212367034f6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a67f6afe571a42f44abdda212367034f6">&#9670;&#160;</a></span>CompareEquals()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto bustub::Value::CompareEquals </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="../../d4/df7/classbustub_1_1Value.html">Value</a> &amp;&#160;</td>
+          <td class="paramname"><em>o</em></td><td>)</td>
+          <td> const -&gt; <a class="el" href="../../de/dda/namespacebustub.html#a0b4071db2dd630bdbf7a86b4f251f560">CmpBool</a> </td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a02fc42e117ac4ee006cc82ac9c7451d7" name="a02fc42e117ac4ee006cc82ac9c7451d7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a02fc42e117ac4ee006cc82ac9c7451d7">&#9670;&#160;</a></span>CompareExactlyEquals()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto bustub::Value::CompareExactlyEquals </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="../../d4/df7/classbustub_1_1Value.html">Value</a> &amp;&#160;</td>
+          <td class="paramname"><em>o</em></td><td>)</td>
+          <td> const -&gt; bool </td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a7e0d712ba68741978ff821203089dfe9" name="a7e0d712ba68741978ff821203089dfe9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7e0d712ba68741978ff821203089dfe9">&#9670;&#160;</a></span>CompareGreaterThan()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto bustub::Value::CompareGreaterThan </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="../../d4/df7/classbustub_1_1Value.html">Value</a> &amp;&#160;</td>
+          <td class="paramname"><em>o</em></td><td>)</td>
+          <td> const -&gt; <a class="el" href="../../de/dda/namespacebustub.html#a0b4071db2dd630bdbf7a86b4f251f560">CmpBool</a> </td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ae062e518628b53ef75f4a6513ffde80e" name="ae062e518628b53ef75f4a6513ffde80e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae062e518628b53ef75f4a6513ffde80e">&#9670;&#160;</a></span>CompareGreaterThanEquals()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto bustub::Value::CompareGreaterThanEquals </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="../../d4/df7/classbustub_1_1Value.html">Value</a> &amp;&#160;</td>
+          <td class="paramname"><em>o</em></td><td>)</td>
+          <td> const -&gt; <a class="el" href="../../de/dda/namespacebustub.html#a0b4071db2dd630bdbf7a86b4f251f560">CmpBool</a> </td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aa6fad9496ebfd97b04ce5adc6811cb7d" name="aa6fad9496ebfd97b04ce5adc6811cb7d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa6fad9496ebfd97b04ce5adc6811cb7d">&#9670;&#160;</a></span>CompareLessThan()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto bustub::Value::CompareLessThan </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="../../d4/df7/classbustub_1_1Value.html">Value</a> &amp;&#160;</td>
+          <td class="paramname"><em>o</em></td><td>)</td>
+          <td> const -&gt; <a class="el" href="../../de/dda/namespacebustub.html#a0b4071db2dd630bdbf7a86b4f251f560">CmpBool</a> </td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a04bb225e7905fb02b50531990e2857c3" name="a04bb225e7905fb02b50531990e2857c3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a04bb225e7905fb02b50531990e2857c3">&#9670;&#160;</a></span>CompareLessThanEquals()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto bustub::Value::CompareLessThanEquals </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="../../d4/df7/classbustub_1_1Value.html">Value</a> &amp;&#160;</td>
+          <td class="paramname"><em>o</em></td><td>)</td>
+          <td> const -&gt; <a class="el" href="../../de/dda/namespacebustub.html#a0b4071db2dd630bdbf7a86b4f251f560">CmpBool</a> </td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a71b73cda05876334598f5745ca7ab57e" name="a71b73cda05876334598f5745ca7ab57e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a71b73cda05876334598f5745ca7ab57e">&#9670;&#160;</a></span>CompareNotEquals()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto bustub::Value::CompareNotEquals </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="../../d4/df7/classbustub_1_1Value.html">Value</a> &amp;&#160;</td>
+          <td class="paramname"><em>o</em></td><td>)</td>
+          <td> const -&gt; <a class="el" href="../../de/dda/namespacebustub.html#a0b4071db2dd630bdbf7a86b4f251f560">CmpBool</a> </td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aa79214aa09c9a9491fd41d0e7e42860b" name="aa79214aa09c9a9491fd41d0e7e42860b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa79214aa09c9a9491fd41d0e7e42860b">&#9670;&#160;</a></span>Copy()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto bustub::Value::Copy </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const -&gt; <a class="el" href="../../d4/df7/classbustub_1_1Value.html">Value</a> </td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a1134305e8eda5e2dd89c8d001f6a9a48" name="a1134305e8eda5e2dd89c8d001f6a9a48"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1134305e8eda5e2dd89c8d001f6a9a48">&#9670;&#160;</a></span>DeserializeFrom()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static auto bustub::Value::DeserializeFrom </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>storage</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="../../de/dda/namespacebustub.html#a49735e6748963f5515394bbb228f1fc8">TypeId</a>&#160;</td>
+          <td class="paramname"><em>type_id</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> -&gt; <a class="el" href="../../d4/df7/classbustub_1_1Value.html">Value</a> </td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a6f8688d446e9ebe45dbf2c39f750092b" name="a6f8688d446e9ebe45dbf2c39f750092b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6f8688d446e9ebe45dbf2c39f750092b">&#9670;&#160;</a></span>Divide()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto bustub::Value::Divide </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="../../d4/df7/classbustub_1_1Value.html">Value</a> &amp;&#160;</td>
+          <td class="paramname"><em>o</em></td><td>)</td>
+          <td> const -&gt; <a class="el" href="../../d4/df7/classbustub_1_1Value.html">Value</a> </td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a8cab8259655713d0c578afef9e242d03" name="a8cab8259655713d0c578afef9e242d03"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8cab8259655713d0c578afef9e242d03">&#9670;&#160;</a></span>GetAs()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto bustub::Value::GetAs </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const -&gt; T </td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a66c0050567118f37e93ee751d1091792" name="a66c0050567118f37e93ee751d1091792"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a66c0050567118f37e93ee751d1091792">&#9670;&#160;</a></span>GetData()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto bustub::Value::GetData </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const -&gt; const char * </td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a64ee164eb423e4a7fdba8728321eaadd" name="a64ee164eb423e4a7fdba8728321eaadd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a64ee164eb423e4a7fdba8728321eaadd">&#9670;&#160;</a></span>GetLength()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto bustub::Value::GetLength </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const -&gt; uint32_t </td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="af578c32bfba5c4090451861e1c4daf0a" name="af578c32bfba5c4090451861e1c4daf0a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af578c32bfba5c4090451861e1c4daf0a">&#9670;&#160;</a></span>GetTypeId()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto bustub::Value::GetTypeId </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const -&gt; <a class="el" href="../../de/dda/namespacebustub.html#a49735e6748963f5515394bbb228f1fc8">TypeId</a> </td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ab1c41ec9063555f4394e0307b475abf0" name="ab1c41ec9063555f4394e0307b475abf0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab1c41ec9063555f4394e0307b475abf0">&#9670;&#160;</a></span>IsNull()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto bustub::Value::IsNull </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const -&gt; bool </td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a092a9319d56d2366db0109520eb9f1a9" name="a092a9319d56d2366db0109520eb9f1a9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a092a9319d56d2366db0109520eb9f1a9">&#9670;&#160;</a></span>IsZero()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto bustub::Value::IsZero </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const -&gt; bool </td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a5bf78c0ca477d0bf5de0a91a29078bd6" name="a5bf78c0ca477d0bf5de0a91a29078bd6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5bf78c0ca477d0bf5de0a91a29078bd6">&#9670;&#160;</a></span>Max()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto bustub::Value::Max </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="../../d4/df7/classbustub_1_1Value.html">Value</a> &amp;&#160;</td>
+          <td class="paramname"><em>o</em></td><td>)</td>
+          <td> const -&gt; <a class="el" href="../../d4/df7/classbustub_1_1Value.html">Value</a> </td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a001f3c7d17fc1811b0cf85dad06f2e11" name="a001f3c7d17fc1811b0cf85dad06f2e11"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a001f3c7d17fc1811b0cf85dad06f2e11">&#9670;&#160;</a></span>Min()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto bustub::Value::Min </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="../../d4/df7/classbustub_1_1Value.html">Value</a> &amp;&#160;</td>
+          <td class="paramname"><em>o</em></td><td>)</td>
+          <td> const -&gt; <a class="el" href="../../d4/df7/classbustub_1_1Value.html">Value</a> </td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ab7a5c9353718e0ea60747975822b1bfe" name="ab7a5c9353718e0ea60747975822b1bfe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab7a5c9353718e0ea60747975822b1bfe">&#9670;&#160;</a></span>Modulo()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto bustub::Value::Modulo </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="../../d4/df7/classbustub_1_1Value.html">Value</a> &amp;&#160;</td>
+          <td class="paramname"><em>o</em></td><td>)</td>
+          <td> const -&gt; <a class="el" href="../../d4/df7/classbustub_1_1Value.html">Value</a> </td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="af1fefd0fdc948c2fee1cc7765cb38ecf" name="af1fefd0fdc948c2fee1cc7765cb38ecf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af1fefd0fdc948c2fee1cc7765cb38ecf">&#9670;&#160;</a></span>Multiply()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto bustub::Value::Multiply </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="../../d4/df7/classbustub_1_1Value.html">Value</a> &amp;&#160;</td>
+          <td class="paramname"><em>o</em></td><td>)</td>
+          <td> const -&gt; <a class="el" href="../../d4/df7/classbustub_1_1Value.html">Value</a> </td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="adb637389e8c4c5e866e8d0e0032fc225" name="adb637389e8c4c5e866e8d0e0032fc225"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adb637389e8c4c5e866e8d0e0032fc225">&#9670;&#160;</a></span>OperateNull()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto bustub::Value::OperateNull </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="../../d4/df7/classbustub_1_1Value.html">Value</a> &amp;&#160;</td>
+          <td class="paramname"><em>o</em></td><td>)</td>
+          <td> const -&gt; <a class="el" href="../../d4/df7/classbustub_1_1Value.html">Value</a> </td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a0ef15a50b9ecc7eb07638b8fa8cfc1b1" name="a0ef15a50b9ecc7eb07638b8fa8cfc1b1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0ef15a50b9ecc7eb07638b8fa8cfc1b1">&#9670;&#160;</a></span>operator=()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto bustub::Value::operator= </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../d4/df7/classbustub_1_1Value.html">Value</a>&#160;</td>
+          <td class="paramname"><em>other</em></td><td>)</td>
+          <td> -&gt; <a class="el" href="../../d4/df7/classbustub_1_1Value.html">Value</a> &amp;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ac8be32b9de7e116d57158442347b6625" name="ac8be32b9de7e116d57158442347b6625"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac8be32b9de7e116d57158442347b6625">&#9670;&#160;</a></span>SerializeTo()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void bustub::Value::SerializeTo </td>
+          <td>(</td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>storage</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a8a18274fdf61db4491c72d540918f22f" name="a8a18274fdf61db4491c72d540918f22f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8a18274fdf61db4491c72d540918f22f">&#9670;&#160;</a></span>Sqrt()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto bustub::Value::Sqrt </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const -&gt; <a class="el" href="../../d4/df7/classbustub_1_1Value.html">Value</a> </td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a8920d56f9749546ca86bd6429945f871" name="a8920d56f9749546ca86bd6429945f871"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8920d56f9749546ca86bd6429945f871">&#9670;&#160;</a></span>Subtract()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto bustub::Value::Subtract </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="../../d4/df7/classbustub_1_1Value.html">Value</a> &amp;&#160;</td>
+          <td class="paramname"><em>o</em></td><td>)</td>
+          <td> const -&gt; <a class="el" href="../../d4/df7/classbustub_1_1Value.html">Value</a> </td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ae42cf5a1a6b718ace13fddc1d4449e62" name="ae42cf5a1a6b718ace13fddc1d4449e62"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae42cf5a1a6b718ace13fddc1d4449e62">&#9670;&#160;</a></span>ToString()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto bustub::Value::ToString </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const -&gt; std::string </td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">友元及相关函数文档</h2>
+<a id="a0a40f921b043a08617c1ee3885cfe2b6" name="a0a40f921b043a08617c1ee3885cfe2b6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0a40f921b043a08617c1ee3885cfe2b6">&#9670;&#160;</a></span>BigintType</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">friend class <a class="el" href="../../d9/d45/classbustub_1_1BigintType.html">BigintType</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">friend</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ae6685da7e972a1fbaf35774b1c4a3c66" name="ae6685da7e972a1fbaf35774b1c4a3c66"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae6685da7e972a1fbaf35774b1c4a3c66">&#9670;&#160;</a></span>BooleanType</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">friend class <a class="el" href="../../da/d83/classbustub_1_1BooleanType.html">BooleanType</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">friend</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a74722ac014df85e9013a3d2b1d008f0c" name="a74722ac014df85e9013a3d2b1d008f0c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a74722ac014df85e9013a3d2b1d008f0c">&#9670;&#160;</a></span>DecimalType</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">friend class <a class="el" href="../../de/d8f/classbustub_1_1DecimalType.html">DecimalType</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">friend</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="abbaa4aeba44cb76d4a8be26c817a8d3d" name="abbaa4aeba44cb76d4a8be26c817a8d3d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abbaa4aeba44cb76d4a8be26c817a8d3d">&#9670;&#160;</a></span>IntegerParentType</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">friend class <a class="el" href="../../db/d01/classbustub_1_1IntegerParentType.html">IntegerParentType</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">friend</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aaa06efd1401ee152456eb22a467ddcb3" name="aaa06efd1401ee152456eb22a467ddcb3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaa06efd1401ee152456eb22a467ddcb3">&#9670;&#160;</a></span>IntegerType</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">friend class <a class="el" href="../../d7/d0d/classbustub_1_1IntegerType.html">IntegerType</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">friend</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a79159b84381e94ec5d5c80ba7d4da120" name="a79159b84381e94ec5d5c80ba7d4da120"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a79159b84381e94ec5d5c80ba7d4da120">&#9670;&#160;</a></span>NumericType</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">friend class <a class="el" href="../../de/def/classbustub_1_1NumericType.html">NumericType</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">friend</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ad318ef5bdf47bfa23ef259520e393c86" name="ad318ef5bdf47bfa23ef259520e393c86"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad318ef5bdf47bfa23ef259520e393c86">&#9670;&#160;</a></span>SmallintType</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">friend class <a class="el" href="../../dd/dc2/classbustub_1_1SmallintType.html">SmallintType</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">friend</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a77ac879921541d41ad8aa7fffb3d454f" name="a77ac879921541d41ad8aa7fffb3d454f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a77ac879921541d41ad8aa7fffb3d454f">&#9670;&#160;</a></span>Swap</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Swap </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../d4/df7/classbustub_1_1Value.html">Value</a> &amp;&#160;</td>
+          <td class="paramname"><em>first</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="../../d4/df7/classbustub_1_1Value.html">Value</a> &amp;&#160;</td>
+          <td class="paramname"><em>second</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">friend</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a4352efebead58c24093f4ecf729cfc64" name="a4352efebead58c24093f4ecf729cfc64"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4352efebead58c24093f4ecf729cfc64">&#9670;&#160;</a></span>TimestampType</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">friend class <a class="el" href="../../dc/da4/classbustub_1_1TimestampType.html">TimestampType</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">friend</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ad5daa7c4cdceceba369041d829746cb2" name="ad5daa7c4cdceceba369041d829746cb2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad5daa7c4cdceceba369041d829746cb2">&#9670;&#160;</a></span>TinyintType</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">friend class <a class="el" href="../../d2/d1b/classbustub_1_1TinyintType.html">TinyintType</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">friend</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a18dba29b4f3e91d6d2bc53472a6bb7cc" name="a18dba29b4f3e91d6d2bc53472a6bb7cc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a18dba29b4f3e91d6d2bc53472a6bb7cc">&#9670;&#160;</a></span>Type</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">friend class <a class="el" href="../../d9/df4/classbustub_1_1Type.html">Type</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">friend</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ab48da2a2719dd78acf8e27060d83ecac" name="ab48da2a2719dd78acf8e27060d83ecac"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab48da2a2719dd78acf8e27060d83ecac">&#9670;&#160;</a></span>VarlenType</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">friend class <a class="el" href="../../d4/d2c/classbustub_1_1VarlenType.html">VarlenType</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">friend</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">类成员变量说明</h2>
+<a id="af08760ffd3d945e144e8feb763b0425f" name="af08760ffd3d945e144e8feb763b0425f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af08760ffd3d945e144e8feb763b0425f">&#9670;&#160;</a></span>elem_type_id_</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../de/dda/namespacebustub.html#a49735e6748963f5515394bbb228f1fc8">TypeId</a> bustub::Value::elem_type_id_</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a50ce01f436ca203c4612db41392de052" name="a50ce01f436ca203c4612db41392de052"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a50ce01f436ca203c4612db41392de052">&#9670;&#160;</a></span>len_</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32_t bustub::Value::len_</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a1680f1c5aceacdae4287c2b04743ceed" name="a1680f1c5aceacdae4287c2b04743ceed"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1680f1c5aceacdae4287c2b04743ceed">&#9670;&#160;</a></span>manage_data_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool bustub::Value::manage_data_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a4d174e2fac3c081b7554dc49849f366d" name="a4d174e2fac3c081b7554dc49849f366d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4d174e2fac3c081b7554dc49849f366d">&#9670;&#160;</a></span>[union]</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">union  { ... }  bustub::Value::size_</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ab39fb104d3db35514ff96b8ed6f1b594" name="ab39fb104d3db35514ff96b8ed6f1b594"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab39fb104d3db35514ff96b8ed6f1b594">&#9670;&#160;</a></span>type_id_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../de/dda/namespacebustub.html#a49735e6748963f5515394bbb228f1fc8">TypeId</a> bustub::Value::type_id_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ad77e745e5195370cd16432fd1786b893" name="ad77e745e5195370cd16432fd1786b893"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad77e745e5195370cd16432fd1786b893">&#9670;&#160;</a></span>value_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">union <a class="el" href="../../d7/db9/unionbustub_1_1Value_1_1Val.html">bustub::Value::Val</a> bustub::Value::value_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<hr/>该类的文档由以下文件生成:<ul>
+<li>src/include/type/<a class="el" href="../../d4/d3f/value_8h_source.html">value.h</a></li>
+<li>src/type/<a class="el" href="../../d2/dc0/value_8cpp.html">value.cpp</a></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
+</small></address>
+</body>
+</html>
